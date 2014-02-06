@@ -1,0 +1,41 @@
+{
+  "name": "spartacus",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mozilla/spartacus",
+  "authors": [
+    "Mozilla Payments Team"
+  ],
+  "description": "Single Page app for webpay",
+  "license": "MPL2.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ember": "~1.3.1",
+    "requirejs": "~2.1.10",
+    "normalize-css": "~3.0.0",
+    "mp-fonts-stylus": "https://github.com/muffinresearch/mp-fonts-stylus.git"
+  },
+  "exportsOverride": {
+    "normalize-css": {
+      "css": "normalize.css"
+    },
+    "handlebars": {
+      "js": "handlebars.js"
+    },
+    "ember": {
+      "js": "ember.js"
+    },
+    "requirejs": {
+      "js": "require.js"
+    },
+    "jquery": {
+      "js": "jquery.js"
+    }
+  }
+}

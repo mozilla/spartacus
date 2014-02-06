@@ -1,0 +1,28 @@
+{
+  "name": "mp-fonts-stylus",
+  "homepage": "https://github.com/muffinresearch/mp-fonts-stylus",
+  "authors": [
+    "Mozilla Marketplace Team"
+  ],
+  "description": "Fonts for the Firefox Marketplace",
+  "main": "",
+  "license": "MPL2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "bower.json",
+    "README.md"
+  ],
+  "_release": "63c363d15d",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "63c363d15dc3cb5ce7380a705650be5bbd1db965"
+  },
+  "_source": "https://github.com/muffinresearch/mp-fonts-stylus.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/muffinresearch/mp-fonts-stylus.git"
+}

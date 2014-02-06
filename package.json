@@ -1,0 +1,33 @@
+{
+  "name": "spartacus",
+  "version": "0.0.1",
+  "description": "Single Page app for webpay",
+  "main": "media/js/main.js",
+  "dependencies": {
+    "grunt": "~0.4.2",
+    "grunt-bower-task": "~0.3.4",
+    "grunt-concurrent": "~0.4.3",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-stylus": "~0.12.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-stylus": "~0.12.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-bower-task": "~0.3.4",
+    "grunt": "~0.4.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mozilla/spartacus.git"
+  },
+  "author": "Mozilla Payments Team",
+  "license": "MPL2.0",
+  "bugs": {
+    "url": "https://github.com/mozilla/spartacus/issues"
+  },
+  "homepage": "https://github.com/mozilla/spartacus"
+}

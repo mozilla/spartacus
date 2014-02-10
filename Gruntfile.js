@@ -59,6 +59,9 @@ module.exports = function(grunt) {
       stylus: {
         files: ['public/**/*.styl', 'public/images/'],
         tasks: 'stylus',
+      },
+      css: {
+        files: ['public/css/*.css'],
         options: {
           livereload: devConfig.liveReloadPort
         }

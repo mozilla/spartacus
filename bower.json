@@ -13,7 +13,9 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "config", // Config is development only.
+    "public/index.html"
   ],
   "dependencies": {
     "ember": "~1.3.1",

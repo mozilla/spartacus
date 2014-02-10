@@ -10,9 +10,10 @@
 bower_components
 docs/_build
 gyp-mac-tool
-media/css/*.css
-media/locale/*
+public/css/*.css
+public/locale/*
 node_modules/grunt-i18n-abide/node_modules/jsxgettext/node_modules/gettext-parser/node_modules/iconv/build
 node_modules/i18n-abide/node_modules/jsxgettext/node_modules/gettext-parser/node_modules/iconv/build
 uitest/captures/*
 node_modules
+config/local.js

@@ -18,26 +18,27 @@
     "public/index.html"
   ],
   "dependencies": {
-    "ember": "~1.3.1",
     "requirejs": "~2.1.10",
     "normalize-css": "~3.0.0",
-    "mp-fonts-stylus": "https://github.com/muffinresearch/mp-fonts-stylus.git"
+    "mp-fonts-stylus": "https://github.com/muffinresearch/mp-fonts-stylus.git",
+    "nunjucks": "~1.0.1",
+    "backbone": "~1.1.0"
   },
   "exportsOverride": {
-    "normalize-css": {
-      "css": "normalize.css"
-    },
-    "handlebars": {
-      "js": "handlebars.js"
-    },
-    "ember": {
-      "js": "ember.js"
-    },
-    "requirejs": {
-      "js": "require.js"
+    "backbone": {
+      "js": "backbone.js"
     },
     "jquery": {
       "js": "jquery.js"
+    },
+    "normalize-css": {
+      "css": "normalize.css"
+    },
+    "nunjucks": {
+      "js": "browser/nunjucks.js"
+    },
+    "requirejs": {
+      "js": "require.js"
     }
   }
 }

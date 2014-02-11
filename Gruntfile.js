@@ -58,7 +58,7 @@ module.exports = function(grunt) {
 
             // RewriteRules support
             middlewares.push(rewriteModule.getMiddleware([
-              {from: '^/login$', to: '/index.html'},
+              {from: '^/(?:login|create-pin|enter-pin|reset-pin|locked|was-locked)$', to: '/index.html'},
             ]));
 
             if (!Array.isArray(options.base)) {
@@ -96,11 +96,16 @@ module.exports = function(grunt) {
           livereload: devConfig.liveReloadPort
         }
       },
+      js: {
+        files: ['public/**/*.js'],
+        options: {
+          livereload: devConfig.liveReloadPort
+        }
+      },
       jshint: {
         files: ['<%= jshint.files %>'],
         tasks: 'jshint',
       }
-
     },
     bower: {
       install: {

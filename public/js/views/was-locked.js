@@ -1,16 +1,10 @@
-define([
-  'jquery',
-  'backbone',
-  'nunjucks'
-], function($, Backbone, nunjucks){
-  var WasLockedView = Backbone.View.extend({
-    el: $('#app'),
+define(['views/base', 'log'], function(BaseView, log){
+  var console = log('view', 'was-locked');
+  var WasLockedView = BaseView.extend({
     render: function(){
-      var data = {
-        heading: 'Was Locked'
-      };
-      var template = nunjucks.render('was-locked.html', data);
-      this.$el.append(template);
+      console.log('rendering view');
+      this.setTitle('Was Locked');
+      this.renderTemplate('was-locked.html', {heading: 'Was Locked'});
       return this;
     }
   });

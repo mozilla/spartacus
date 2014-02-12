@@ -1,8 +1,9 @@
-define('app', ['jquery', 'underscore', 'backbone', 'router', 'nunjucks'], function($, _, Backbone, Router, nunjucks) {
+define('app', ['jquery', 'underscore', 'backbone', 'log', 'router', 'nunjucks'], function($, _, Backbone, log, Router, nunjucks) {
 
   'use strict';
 
-  console.log('[app] I AM SPARTACUS!');
+  var console = log('app');
+  console.log('Spinning up SPARTACUS!');
 
   // Check User State here and send to the appropriate view.
   //var checkUserState = function checkState(state){
@@ -26,7 +27,7 @@ define('app', ['jquery', 'underscore', 'backbone', 'router', 'nunjucks'], functi
 
   var initialize = function(){
     // Spin up the routing.
-    console.log('[app] Initializing Routing');
+    console.log('Initializing Routing');
     Router.initialize();
   };
 

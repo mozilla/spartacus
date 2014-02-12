@@ -1,16 +1,10 @@
-define([
-  'jquery',
-  'backbone',
-  'nunjucks'
-], function($, Backbone, nunjucks){
-  var LoginView = Backbone.View.extend({
-    el: $('#app'),
+define(['views/base', 'log'], function(BaseView, log){
+  var console = log('view', 'login');
+  var LoginView = BaseView.extend({
     render: function(){
-      var data = {
-        heading: 'Login'
-      };
-      var template = nunjucks.render('login.html', data);
-      this.$el.append(template);
+      console.log('rendering view');
+      this.setTitle('Locked Pin');
+      this.renderTemplate('login.html', {heading: 'Login'});
       return this;
     }
   });

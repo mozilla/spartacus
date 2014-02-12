@@ -1,16 +1,10 @@
-define([
-  'jquery',
-  'backbone',
-  'nunjucks'
-], function($, Backbone, nunjucks){
-  var ResetPinView = Backbone.View.extend({
-    el: $('#app'),
+define(['views/base', 'log'], function(BaseView, log){
+  var console = log('view', 'reset-pin');
+  var ResetPinView = BaseView.extend({
     render: function(){
-      var data = {
-        heading: 'Reset Pin'
-      };
-      var template = nunjucks.render('reset-pin.html', data);
-      this.$el.append(template);
+      console.log('rendering view');
+      this.setTitle('Reset Pin');
+      this.renderTemplate('reset-pin.html', {heading: 'Reset Pin'});
       return this;
     }
   });

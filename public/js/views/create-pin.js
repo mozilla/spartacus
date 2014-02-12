@@ -1,16 +1,10 @@
-define([
-  'jquery',
-  'backbone',
-  'nunjucks'
-], function($, Backbone, nunjucks){
-  var CreatePinView = Backbone.View.extend({
-    el: $('#app'),
+define(['views/base', 'log'], function(BaseView, log){
+  var console = log('view', 'create-pin');
+  var CreatePinView = BaseView.extend({
     render: function(){
-      var data = {
-        heading: 'Create Pin'
-      };
-      var template = nunjucks.render('create-pin.html', data);
-      this.$el.append(template);
+      console.log('rendering view');
+      this.setTitle('Create Pin');
+      this.renderTemplate('create-pin.html', {heading: 'Create Pin'});
       return this;
     }
   });

@@ -3,8 +3,8 @@ define(['views/base', 'log'], function(BaseView, log){
   var LoginView = BaseView.extend({
     render: function(){
       console.log('rendering view');
-      this.setTitle('Locked Pin');
-      this.renderTemplate('login.html', {heading: 'Login'});
+      this.setTitle('Sign In');
+      this.renderTemplate('login.html', {heading: 'Sign In'});
       return this;
     }
   });

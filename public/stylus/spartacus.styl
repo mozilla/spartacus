@@ -10,14 +10,23 @@
 $mp-fonts-path = '../lib/mp-fonts-stylus';
 @import '../lib/mp-fonts-stylus/fonts';
 
+@import '_typography';
+
 html, body {
     background: $bg-color;
     color: $dark-gray;
     grain();
-    font-family: $open-stack;
     height: 100%;
     margin: 0;
     min-width: 250px;
+    width: 100%;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
+    padding: 0 20px;
 }
 
 .hidden {
@@ -28,21 +37,6 @@ html, body {
     display: block;
 }
 
-.page {
-    display-flex();
-    flex-direction(column);
-    margin: 0 auto;
-    max-width: 700px;
-    min-height: 100%;
-    padding: 0 20px 10px;
-    position: relative;
-    width: 100%;
-}
-
-main {
-    flex(1, 1, 100%);
-    width: 100%;
-}
 
 .buttons {
     background: rgba(0,0,0,0.03);
@@ -98,9 +92,4 @@ main {
         height: 1.5em;
         text-align: center;
     }
-}
-
-// Required to ensure the ember-view is full height of the viewport.
-.ember-view {
-    height: 100%;
 }

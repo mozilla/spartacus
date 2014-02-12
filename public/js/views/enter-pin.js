@@ -4,7 +4,7 @@ define(['views/base', 'log'], function(BaseView, log){
     render: function(){
       console.log('rendering...');
       this.setTitle('Enter Pin');
-      this.renderTemplate('enter-pin.html', {heading: 'Enter Pin'});
+      this.renderTemplate('enter-pin.html');
       return this;
     }
   });

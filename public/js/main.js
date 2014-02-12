@@ -7,6 +7,7 @@ require.config({
     'jquery': '/lib/js/jquery/jquery',
     'nunjucks': '/lib/js/nunjucks/nunjucks',
     'require': '/lib/js/requirejs/require',
+    'gettext': '/lib/js/gettext/gettext',
   },
   shim : {
     'underscore': {

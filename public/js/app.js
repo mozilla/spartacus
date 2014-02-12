@@ -1,6 +1,7 @@
-define('app', ['jquery', 'underscore', 'backbone', 'log', 'router', 'nunjucks'], function($, _, Backbone, log, Router, nunjucks) {
+define('app', ['jquery', 'underscore', 'backbone', 'gettext', 'log', 'router', 'nunjucks'], function($, _, Backbone, gettext, log, Router, nunjucks) {
 
   'use strict';
+
 
   var console = log('app');
   console.log('Spinning up SPARTACUS!');

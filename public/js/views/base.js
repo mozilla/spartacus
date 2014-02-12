@@ -1,10 +1,12 @@
 define([
   'jquery',
+  'underscore',
   'backbone',
+  'gettext',
   'log',
   'nunjucks',
   'utils'
-], function($, Backbone, log, nunjucks, utils){
+], function($, _, Backbone, gettext, log, nunjucks, utils){
   var console = log('view', 'base');
   var BaseView = Backbone.View.extend({
     el: $('#app'),
@@ -20,6 +22,8 @@ define([
     },
     template: function(template, data){
       // Builds the specified template with data.
+      data = data || {};
+      _.extend(data, {gettext: gettext.gettext});
       console.log('building template: ' + template);
       return nunjucks.render(template, data);
     }

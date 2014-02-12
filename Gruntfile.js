@@ -1,3 +1,4 @@
+var rewriteModule = require('http-rewrite-middleware');
 var devConfig = require('./config');
 
 
@@ -52,6 +53,29 @@ module.exports = function(grunt) {
           hostname: '*',
           livereload: devConfig.liveReloadPort,
           port: devConfig.port,
+          middleware: function (connect, options) {
+            var middlewares = [];
+
+            // RewriteRules support
+            middlewares.push(rewriteModule.getMiddleware([
+              {from: '^/(?:login|create-pin|enter-pin|reset-pin|locked|was-locked)$', to: '/index.html'},
+            ]));
+
+            if (!Array.isArray(options.base)) {
+              options.base = [options.base];
+            }
+
+            var directory = options.directory || options.base[options.base.length - 1];
+            options.base.forEach(function (base) {
+              // Serve static files.
+              middlewares.push(connect.static(base));
+            });
+
+            // Make directory browse-able.
+            middlewares.push(connect.directory(directory));
+
+            return middlewares;
+          }
         },
       }
     },
@@ -72,11 +96,16 @@ module.exports = function(grunt) {
           livereload: devConfig.liveReloadPort
         }
       },
+      js: {
+        files: ['public/**/*.js'],
+        options: {
+          livereload: devConfig.liveReloadPort
+        }
+      },
       jshint: {
         files: ['<%= jshint.files %>'],
         tasks: 'jshint',
       }
-
     },
     bower: {
       install: {

@@ -8,11 +8,12 @@ define([
   'utils'
 ], function($, _, Backbone, gettext, log, nunjucks, utils){
   var console = log('view', 'base');
+  var gt = gettext.gettext;
   var BaseView = Backbone.View.extend({
     el: $('#app'),
     setTitle: function setTitle(title) {
       // Update the title element in the page.
-      utils.updateTitle(title);
+      utils.updateTitle(gt(title));
     },
     renderTemplate: function renderTemplate(template, data) {
       // Chainable shortcut for rendering the template.

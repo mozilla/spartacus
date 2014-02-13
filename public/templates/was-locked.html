@@ -1,12 +1,14 @@
+{% extends 'base.html' %}
 {% import "_macros.html" as macro %}
 
-<section>
-  <h1>{{ gettext('Your Pin was locked') }}</h1>
-  <p>{{ gettext('Your pin was locked because you entered it incorrectly too many times. You can continue and try entering your pin again or reset your pin.') }}</p>
-</section>
+{% block page %}
+  <section class="content">
+    <h1>{{ gettext('Your Pin was locked') }}</h1>
+    <p>{{ gettext('Your pin was locked because you entered it incorrectly too many times. You can continue and try entering your pin again or reset your pin.') }}</p>
+  </section>
 
-<footer class="buttons">
-  {{ macro.button(gettext('Reset Pin')) }}
-  {{ macro.button(gettext('Continue'), modifier='cta') }}
-</footer>
-
+  <menu class="buttons" type="toolbar">
+    {{ macro.button(gettext('Reset Pin')) }}
+    {{ macro.button(gettext('Continue'), modifier='cta') }}
+  </menu>
+{% endblock %}

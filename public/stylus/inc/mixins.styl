@@ -193,8 +193,34 @@ align-content($value) {
     align-content: $value;
 }
 
+centered() {
+  display-flex();
+  align-items(center);
+  justify-content(center);
+}
+
 grain() {
     background-image: url('../images/grain.png');
+}
+
+transition($property) {
+    -webkit-transition: $property;
+    transition: $property;
+}
+
+transition-property($property) {
+    -webkit-transition-property: $property;
+    transition-property: $property;
+}
+
+transition-duration($duration = 2s) {
+    -webkit-transition-duration: $duration;
+    transition-duration: $duration;
+}
+
+transition-delay($delay = 1s) {
+    -webkit-transition-delay: $delay;
+    transition-delay: $delay;
 }
 
 // http://developer.yahoo.com/blogs/ydn/posts/2012/10/clip-your-hidden-content-for-better-accessibility/

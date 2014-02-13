@@ -1,5 +1,9 @@
+{% extends 'base.html' %}
+
+{% block page %}
 <section class="login">
   <h1>{{ gettext('Sign In') }}</h1>
   <p>{{ gettext('Sign in to continue with the payment') }}</p>
   <a id="signin" class="sign-in" href="#">{{ gettext('Sign in') }}</a>
 </section>
+{% endblock %}

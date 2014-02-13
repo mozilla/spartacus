@@ -12,21 +12,50 @@ $mp-fonts-path = '../lib/mp-fonts-stylus';
 
 @import '_typography';
 
-html, body {
-    background: $bg-color;
+body, html {
     color: $dark-gray;
-    grain();
     height: 100%;
-    margin: 0;
-    min-width: 250px;
     width: 100%;
 }
 
+#app {
+    background-position: 0 0;
+    background-repeat: repeat;
+    background: $bg-color;
+    grain();
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-width: 250px;
+    max-width: 100%;
+}
+
 main {
+    height: 100%;
+}
+
+.page {
+    display-flex();
+    flex-direction(column);
     margin: 0 auto;
-    max-width: 600px;
+    max-width: $S-max;
+    min-height: 100%;
+    padding: 0 20px 10px;
+    position: relative;
     width: 100%;
-    padding: 0 20px;
+}
+
+@media $small-min-width {
+    .page {
+        display: block;
+        padding-top: 30px;
+        // outline: 1px solid red;
+    }
+}
+
+.content {
+    flex(1, 1, 100%);
+    width: 100%;
 }
 
 .hidden {
@@ -37,7 +66,6 @@ main {
     display: block;
 }
 
-
 .buttons {
     background: rgba(0,0,0,0.03);
     border-top: 1px solid #ccc;
@@ -46,8 +74,9 @@ main {
     padding: 10px;
 
     .button {
-        width: calc(50% - 5px);
         margin: 0;
+        width: 48%;
+        width: calc(50% - 5px);
 
         &:first-child {
             margin-right: 5px
@@ -56,6 +85,21 @@ main {
         &:only-child {
             margin: 0;
             width: 100%;
+        }
+    }
+}
+
+@media $small-min-width {
+    .buttons {
+        text-align: right;
+        background: none;
+        border-top: 0;
+        margin: 20px -20px;
+        padding: 20px;
+
+        .button,
+        .button:only-child {
+            width: auto;
         }
     }
 }

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macro %}
+
+{% block page %}
+<section class="content">
+  <h1>{% block heading %}{% endblock %}</h1>
+  <form id="pin" class="pin-form" method="post">
+    <div class="pinbox">PIN CONTROL GOES HERE!!</div>
+  </form>
+</section>
+
+<menu class="buttons" type="toolbar">
+  {{ macro.button(gettext('Cancel')) }}
+  {{ macro.button(gettext('Continue'), modifier='cta', disabled=true) }}
+</menu>
+{% endblock %}

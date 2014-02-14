@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macro %}
+
+{% block mainclass %}full-error{% endblock %}
+
+{% block page %}
+  <section class="content error">
+    <div class="msg">
+      <h1>{{ heading }}</h1>
+      <p>{{ msg }}</p>
+    </div>
+  </section>
+
+  <menu class="buttons" type="toolbar">
+    {% block buttons %}
+      {{ macro.button(gettext('Cancel')) }}
+      {{ macro.button(gettext('OK'), modifier='cta') }}
+    {% endblock %}
+  </menu>
+{% endblock %}

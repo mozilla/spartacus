@@ -1,17 +1,8 @@
-{% extends 'base.html' %}
+{% extends 'base-error.html' %}
 {% import "_macros.html" as macro %}
 
 {% block mainclass %}full-error{% endblock %}
 
-{% block page %}
-  <section class="content error">
-    <div class="msg">
-      <h1>{{ gettext('Error') }}</h1>
-      <p>{{ gettext('You entered the wrong pin too many times. Your account is locked. Please try your purchase again in 5 minutes.') }}</p>
-    </div>
-  </section>
-
-  <menu class="buttons" type="toolbar">
-    {{ macro.button(gettext('OK'), modifier='cta') }}
-  </menu>
+{% block buttons %}
+  {{ macro.button(gettext('OK'), modifier='cta') }}
 {% endblock %}

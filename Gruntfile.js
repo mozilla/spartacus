@@ -58,7 +58,7 @@ module.exports = function(grunt) {
 
             // RewriteRules support
             middlewares.push(rewriteModule.getMiddleware([
-              {from: '^/(?:login|create-pin|enter-pin|reset-pin|locked|was-locked)$', to: '/index.html'},
+              {from: '^/(?:login|create-pin|enter-pin|reset-pin|locked|throbber|was-locked)$', to: '/index.html'},
             ]));
 
             if (!Array.isArray(options.base)) {

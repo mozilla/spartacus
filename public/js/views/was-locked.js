@@ -4,7 +4,7 @@ define(['views/base', 'log'], function(BaseView, log){
     render: function(){
       console.log('rendering view');
       this.setTitle('Was Locked');
-      this.renderTemplate('was-locked.html', {heading: 'Was Locked'});
+      this.renderTemplate('was-locked.html');
       return this;
     }
   });

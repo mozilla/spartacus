@@ -7,8 +7,9 @@ define([
   'views/enter-pin',
   'views/reset-pin',
   'views/locked',
+  'views/throbber',
   'views/was-locked'
-], function($, _, Backbone, LoginView, CreatePinView, EnterPinView, ResetPinView, LockedView, WasLockedView){
+], function($, _, Backbone, LoginView, CreatePinView, EnterPinView, ResetPinView, LockedView, ThrobberView, WasLockedView){
 
   var AppRouter = Backbone.Router.extend({
     routes: {
@@ -17,7 +18,7 @@ define([
       'enter-pin': 'showEnterPin',
       'reset-pin': 'showResetPin',
       'locked': 'showLocked',
-      'was-locked': 'showWasLocked',
+      'throbber': 'showThrobber',
 
       // Default
       '*actions': 'defaultAction'
@@ -46,6 +47,11 @@ define([
     showLocked: function() {
       var lockedView = new LockedView();
       lockedView.render();
+    },
+
+    showThrobber: function() {
+      var throbberView = new ThrobberView();
+      throbberView.render();
     },
 
     showWasLocked: function() {

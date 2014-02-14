@@ -1,55 +1,41 @@
+// This is FF only at present.
+
 .throbber {
-    background: rgba(244, 244, 244, 0.9);
+    // This will normally be overlaid hence it needs it's own background.
+    background: $bg-color;
     bottom: 0;
-    min-height: 100%;
+    grain();
     left: 0;
-    padding-top: 90px;
-    position: fixed;
+    overflow: hidden; // Required as FF18 makes progress larger than needed.
+    padding-top: 80px;
+    position: absolute;
     right: 0;
     top: 0;
-    width: 100%;
+    z-index: 10;
 
-    &:before {
-        // embedurl will embed as base64.
-        background-image: embedurl('throbber.png');
-        content: '';
-        display: block;
-        margin: 0 auto;
-        width: 50px;
-        height: 50px;
-        animation(unquote('.9s spin infinite linear'));
-    }
-    span {
-        display: block;
-        margin: 0 auto;
-        max-width: 320px;
+    .msg {
+        max-width: calc(100%-40px);
         text-align: center;
-        margin-top: 1em;
     }
 }
 
-@-webkit-keyframes spin {
-    from {
-        -webkit-transform: rotate(0deg);
+progress:indeterminate {
+
+    // Nuke the default background.
+    &::-moz-progress-bar {
+        background: none;
     }
-    to {
-        -webkit-transform: rotate(365deg);
-    }
+
+    animation(unquote('0.9s spin infinite linear'));
+    background: transparent embedurl('throbber.png') no-repeat 50% 50%;
+    border: none; // Removes the progress element border.
+    display: block;
+    margin: 0 auto;
+    height: 50px;
+    width: 50px;
 }
-@-moz-keyframes spin {
-    from {
-        -moz-transform: rotate(0deg);
-    }
-    to {
-        -moz-transform: rotate(365deg);
-    }
-}
+
 @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(365deg);
-    }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(365deg); }
 }
-

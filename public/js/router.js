@@ -19,6 +19,7 @@ define([
       'reset-pin': 'showResetPin',
       'locked': 'showLocked',
       'throbber': 'showThrobber',
+      'was-locked': 'showWasLocked',
 
       // Default
       '*actions': 'defaultAction'

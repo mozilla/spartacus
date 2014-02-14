@@ -4,7 +4,7 @@ define(['views/base', 'gettext', 'log'], function(BaseView, gettext, log){
   var ThrobberView = BaseView.extend({
     render: function(){
       console.log('rendering view');
-      this.setTitle('Was Locked');
+      this.setTitle('Throbber');
       this.renderTemplate('throbber.html', {msg: gt('Loading...')});
       return this;
     }

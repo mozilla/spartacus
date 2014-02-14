@@ -1,10 +1,11 @@
-define(['views/base', 'log'], function(BaseView, log){
+define(['views/base', 'log', 'lib/pin'], function(BaseView, log, pin){
   var console = log('view', 'create-pin');
   var CreatePinView = BaseView.extend({
     render: function(){
       console.log('rendering view');
       this.setTitle('Create Pin');
       this.renderTemplate('create-pin.html');
+      pin.init();
       return this;
     }
   });

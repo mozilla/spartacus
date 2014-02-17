@@ -1,13 +1,12 @@
-define('app', [
+define([
   'jquery',
   'underscore',
   'backbone',
   'gettext',
   'log',
   'router',
-  'nunjucks',
-  'utils'
-], function($, _, Backbone, gettext, log, Router, nunjucks, utils) {
+  'nunjucks-env',
+], function($, _, Backbone, gettext, log, Router) {
 
   'use strict';
 
@@ -39,9 +38,6 @@ define('app', [
     console.log('Initializing Routing');
     Router.initialize();
   };
-
-  // Setup nunjucks.
-  nunjucks.configure('/templates', { autoescape: true });
 
   return {
     initialize: initialize,

@@ -35,7 +35,7 @@
       "css": "normalize.css"
     },
     "nunjucks": {
-      "js": "browser/nunjucks.js"
+      "js": "browser/nunjucks-slim.js"
     },
     "requirejs": {
       "js": "require.js"

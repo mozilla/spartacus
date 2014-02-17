@@ -5,15 +5,18 @@ define([
   'gettext',
   'log',
   'nunjucks',
-  'utils'
-], function($, _, Backbone, gettext, log, nunjucks, utils){
+  'templates',
+], function($, _, Backbone, gettext, log, nunjucks){
+
   var console = log('view', 'base');
-  var gt = gettext.gettext;
+  var prefix = 'Webpay | ';
+
   var BaseView = Backbone.View.extend({
     el: $('#app'),
+    gettext: gettext.gettext,
     setTitle: function setTitle(title) {
       // Update the title element in the page.
-      utils.updateTitle(gt(title));
+      $('title').text(prefix + title);
     },
     renderTemplate: function renderTemplate(template, data) {
       // Chainable shortcut for rendering the template.
@@ -24,6 +27,7 @@ define([
     template: function(template, data){
       // Builds the specified template with data.
       data = data || {};
+      // Add gettext to context.
       _.extend(data, {gettext: gettext.gettext});
       console.log('building template: ' + template);
       return nunjucks.render(template, data);

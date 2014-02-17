@@ -1,6 +1,6 @@
 // Borrowed from https://github.com/mozilla/commonplace/blob/master/src/media/js/log.js
 // TOOD: Make a bower component.
-define('log', ['utils'], function(utils) {
+define(['utils'], function(utils) {
 
   if (!('groupCollapsed' in window.console)) {
     window.console.groupCollapsed = window.console.group = window.console.log;

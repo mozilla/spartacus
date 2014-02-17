@@ -1,11 +1,10 @@
-define(['views/base', 'gettext', 'log'], function(BaseView, gettext, log){
+define(['views/base', 'log'], function(BaseView, log){
   var console = log('view', 'throbber');
-  var gt = gettext.gettext;
   var ThrobberView = BaseView.extend({
     render: function(){
       console.log('rendering view');
-      this.setTitle('Throbber');
-      this.renderTemplate('throbber.html', {msg: gt('Loading...')});
+      this.setTitle(this.gettext('Throbber'));
+      this.renderTemplate('throbber.html', {msg: this.gettext('Loading...')});
       return this;
     }
   });

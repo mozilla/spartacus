@@ -3,7 +3,7 @@ define(['views/base', 'log', 'lib/pin'], function(BaseView, log, pin){
   var ResetPinView = BaseView.extend({
     render: function(){
       console.log('rendering view');
-      this.setTitle('Reset Pin');
+      this.setTitle(this.gettext('Reset Pin'));
       this.renderTemplate('reset-pin.html');
       pin.init();
       return this;

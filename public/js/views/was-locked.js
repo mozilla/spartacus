@@ -3,7 +3,7 @@ define(['views/base', 'log'], function(BaseView, log){
   var WasLockedView = BaseView.extend({
     render: function(){
       console.log('rendering view');
-      this.setTitle('Was Locked');
+      this.setTitle(this.gettext('Was Locked'));
       this.renderTemplate('was-locked.html');
       return this;
     }

@@ -1,13 +1,12 @@
-define(['views/base', 'gettext', 'log'], function(BaseView, gettext, log){
+define(['views/base', 'log'], function(BaseView, log){
   var console = log('view', 'locked');
-  var gt = gettext.gettext;
   var LockedView = BaseView.extend({
     render: function(){
       console.log('rendering view');
-      this.setTitle('Locked');
+      this.setTitle(this.gettext('Locked'));
       this.renderTemplate('locked.html', {
-        'heading': gt('Error'),
-        'msg': gt('You entered the wrong pin too many times. Your account is locked. Please try your purchase again in 5 minutes.')
+        'heading': this.gettext('Error'),
+        'msg': this.gettext('You entered the wrong pin too many times. Your account is locked. Please try your purchase again in 5 minutes.')
       });
       return this;
     }

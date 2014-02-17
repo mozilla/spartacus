@@ -77,6 +77,14 @@ module.exports = function(grunt) {
             return middlewares;
           }
         },
+      },
+      tests: {
+        options: {
+          base: '.',
+          hostname: '*',
+          port: devConfig.testsPort,
+          keepalive: true
+        }
       }
     },
     watch: {
@@ -105,6 +113,10 @@ module.exports = function(grunt) {
       jshint: {
         files: ['<%= jshint.files %>'],
         tasks: 'jshint',
+      },
+      nunjucks: {
+        files: 'templates/*',
+        tasks: ['nunjucks']
       }
     },
     bower: {
@@ -119,6 +131,18 @@ module.exports = function(grunt) {
           }
         }
       }
+    },
+    nunjucks: {
+      options: {
+        env: require('./public/js/nunjucks-env'),
+        name: function(filename) {
+          return filename.replace(/^templates\//, '');
+        }
+      },
+      precompile: {
+        src: 'templates/*',
+        dest: 'public/js/templates.js',
+      }
     }
   });
 
@@ -130,8 +154,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-nunjucks');
   //grunt.loadNpmTasks('grunt-i18n-abide');
 
   grunt.registerTask('default', ['jshint', 'stylus']);
-  grunt.registerTask('server', ['jshint', 'stylus', 'connect', 'watch']);
+  grunt.registerTask('server', ['jshint', 'stylus', 'nunjucks', 'connect:devel', 'watch']);
 };

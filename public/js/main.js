@@ -5,11 +5,14 @@ require.config({
     'underscore': '/lib/js/underscore/underscore',
     'backbone': '/lib/js/backbone/backbone',
     'jquery': '/lib/js/jquery/jquery',
-    'nunjucks': '/lib/js/nunjucks/nunjucks',
+    'nunjucks': '/lib/js/nunjucks/nunjucks-slim',
     'require': '/lib/js/requirejs/require',
     'gettext': '/lib/js/gettext/gettext',
   },
   shim : {
+    'jquery': {
+      exports: '$'
+    },
     'underscore': {
       exports: '_'
     },

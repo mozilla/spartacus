@@ -1,15 +1,6 @@
-define(['jquery'], function($) {
-
-  var prefix = 'Webpay | ';
+define([], function() {
 
   return {
-
-    $win: $(window),
-    $doc: $(document),
-
-    updateTitle: function updateTitle(title) {
-      $('title').text(prefix + title);
-    },
 
     encodeURIComponent: function encodeURIComponent(uri) {
       return window.encodeURIComponent(uri).replace(/%20/g, '+');

@@ -3,7 +3,7 @@ define(['views/base', 'log', 'lib/pin'], function(BaseView, log, pin){
   var EnterPinView = BaseView.extend({
     render: function(){
       console.log('rendering...');
-      this.setTitle('Enter Pin');
+      this.setTitle(this.gettext('Enter Pin'));
       this.renderTemplate('enter-pin.html');
       pin.init();
       return this;

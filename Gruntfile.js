@@ -48,7 +48,7 @@ module.exports = function(grunt) {
     connect: {
       devel: {
         options: {
-          base: 'public',
+          base: ['devel', 'public'],
           debug: true,
           hostname: '*',
           livereload: devConfig.liveReloadPort,
@@ -80,10 +80,11 @@ module.exports = function(grunt) {
       },
       tests: {
         options: {
-          base: '.',
+          base: ['tests', 'public'],
+          directory: 'tests',
           hostname: '*',
           port: devConfig.testsPort,
-          keepalive: true
+          keepalive: true,
         }
       }
     },

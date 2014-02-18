@@ -20,9 +20,15 @@
   "passfail": false,
   "predef": [
     "casper",
+    "describe",
+    "expect",
     "exports",
+    "it",
+    "mocha",
+    "process",
     "require",
-    "process"
+    "suite",
+    "test"
   ],
   "shadow": false,
   "strict": false,

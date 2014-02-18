@@ -84,7 +84,6 @@ module.exports = function(grunt) {
           directory: 'tests',
           hostname: '*',
           port: devConfig.testsPort,
-          keepalive: true,
         }
       }
     },
@@ -144,6 +143,16 @@ module.exports = function(grunt) {
         src: 'templates/*',
         dest: 'public/js/templates.js',
       }
+    },
+    shell: {
+      rununittests: {
+        command: 'mocha-phantomjs http://localhost:' + devConfig.testsPort,
+        options: {
+          stderr: true,
+          stdout: true,
+          failOnError: true,
+        }
+      }
     }
   });
 
@@ -156,8 +165,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-nunjucks');
+  grunt.loadNpmTasks('grunt-shell');
   //grunt.loadNpmTasks('grunt-i18n-abide');
 
   grunt.registerTask('default', ['jshint', 'stylus']);
   grunt.registerTask('server', ['jshint', 'stylus', 'nunjucks', 'connect:devel', 'watch']);
+  grunt.registerTask('testserver', ['jshint', 'stylus', 'nunjucks', 'connect:tests:keepalive']);
+  grunt.registerTask('test', ['jshint', 'stylus', 'nunjucks', 'connect:tests', 'shell:rununittests']);
 };

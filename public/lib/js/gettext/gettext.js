@@ -3,7 +3,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-define([], function() {
+define(['underscore'], function(_) {
   'use strict';
 
   function Gettext() {
@@ -37,7 +37,9 @@ define([], function() {
 
   var gt = new Gettext();
   return {
-    gettext: gt.gettext.bind(gt),
-    format: gt.format.bind(gt)
+    // Using _.bind as ES5 bind isn't in phantomjs webkit.
+    // See https://github.com/ariya/phantomjs/issues/10522
+    gettext: _.bind(gt.gettext, gt),
+    format: _.bind(gt.format, gt)
   };
 });

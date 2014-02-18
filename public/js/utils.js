@@ -4,6 +4,9 @@ define(['jquery'], function($) {
 
   return {
 
+    $win: $(window),
+    $doc: $(document),
+
     updateTitle: function updateTitle(title) {
       $('title').text(prefix + title);
     },

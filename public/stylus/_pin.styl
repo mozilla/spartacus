@@ -1,0 +1,58 @@
+#pin {
+    // Hide that input off-screen.
+    position: absolute;
+    top: -100px;
+    z-index: -1;
+}
+
+.pinbox {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    max-width: 300px;
+    margin: 0 auto;
+
+    span {
+        display: inline-block;
+        vertical-align: middle;
+        width: calc(25% - 7.5px);
+        margin-right: 10px;
+        border: 1px solid $light-gray;
+        background: $white;
+        border-radius: 0.3rem;
+        position: relative;
+
+        // This pseudo class makes the box
+        // as close to square as possible
+        // but also resizable relative to the width
+        // of .pinbox.
+        &:before {
+            content: '';
+            display: inline-block;
+            // This is a percentage of the parent width
+            // minus the padding between.
+            padding-bottom: calc(60% - 10px);
+            width: 1px;
+            margin-left: -1px;
+        }
+
+        // This is the dot. Resizes in-line with
+        // the size of the box.
+        &.filled:after {
+            vertical-align: middle;
+            content: '';
+            display: inline-block;
+            border-radius: 50%;
+            background: $medium-gray;
+            position: absolute;
+            top: 25%;
+            bottom: 25%;
+            left: 35%;
+            right: 35%;
+        }
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+}

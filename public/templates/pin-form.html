@@ -1,16 +1,22 @@
 {% extends 'base.html' %}
 {% import "_macros.html" as macro %}
 
+{% block mainclass %}pin{% endblock %}
+
 {% block page %}
 <section class="content">
   <h1>{% block heading %}{% endblock %}</h1>
-  <form id="pin" class="pin-form" method="post">
-    <div class="pinbox">PIN CONTROL GOES HERE!!</div>
-  </form>
+  <input id="pin" type="number" x-inputmode="digit">
+  <div class="pinbox">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </section>
 
 <menu class="buttons" type="toolbar">
   {{ macro.button(gettext('Cancel')) }}
-  {{ macro.button(gettext('Continue'), modifier='cta', disabled=true) }}
+  {{ macro.button(gettext('Continue'), modifier='cta continue', disabled=true) }}
 </menu>
 {% endblock %}

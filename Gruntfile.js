@@ -11,6 +11,9 @@ module.exports = function(grunt) {
         jshintrc: __dirname + '/.jshintrc'
       },
       files: [
+        'config/**/*.js',
+        'public/js/**/*.js',
+        '!public/js/templates.js',
         'Gruntfile.js',
       ],
     },

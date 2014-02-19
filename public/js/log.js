@@ -11,7 +11,6 @@ define(['utils'], function(utils) {
   var filter;
   var logs;
   var allLogs = [];
-  var origConsole = window.console;
 
   var logger = function(type, tag, onlog) {
 
@@ -96,9 +95,6 @@ define(['utils'], function(utils) {
       data = data.replace(e, '---');
     }
     return data;
-  };
-
-  logger.dir = function(data) {
   };
 
   return logger;

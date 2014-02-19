@@ -47,8 +47,9 @@ define(['utils'], function(utils) {
 
         // TODO: Add colorification support here for browsers that support it.
         // *cough cough* not firefox *cough*
-
-        console[logLevel].apply(console, args);
+        if (!window.mochaPhantomJS) {
+          console[logLevel].apply(console, args);
+        }
       };
     }
 

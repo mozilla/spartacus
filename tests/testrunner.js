@@ -39,7 +39,11 @@ require([
     'test-base-view.js',
     'test-utils.js'
   ], function() {
-    mocha.run();
+    if (window.mochaPhantomJS) {
+      mochaPhantomJS.run();
+    } else {
+      mocha.run();
+    }
   });
 
 });

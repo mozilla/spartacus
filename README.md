@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mozilla/spartacus.png?branch=master)](https://travis-ci.org/mozilla/spartacus)
+
 # Spartacus
 
 Spartacus is a single page app front-end for [Webpay](https://github.com/mozilla/webpay/)

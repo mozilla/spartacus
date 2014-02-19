@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+ - "0.10"
+notifications:
+  irc: "irc.mozilla.org#payments"
+install:
+  - "npm install"
+script:
+  - "npm test"

@@ -18,24 +18,46 @@
     "public/index.html"
   ],
   "dependencies": {
-    "requirejs": "~2.1.10",
-    "normalize-css": "~3.0.0",
+    "backbone": "~1.1.0",
+    "gobbledygook": "https://github.com/muffinresearch/gobbledygook.git#bowerise",
     "mp-fonts-stylus": "https://github.com/muffinresearch/mp-fonts-stylus.git",
+    "normalize-css": "~3.0.0",
     "nunjucks": "~1.0.1",
-    "backbone": "~1.1.0"
+    "query-string": "~0.1.1",
+    "requirejs": "~2.1.10"
   },
   "exportsOverride": {
-    "backbone": {"js": "backbone.js"},
-    "jquery": {"js": "jquery.js"},
-    "chai": {"js": "chai.js"},
+    "backbone": {
+      "js": "backbone.js"
+    },
+    "jquery": {
+      "js": "jquery.js"
+    },
+    "chai": {
+      "js": "chai.js"
+    },
+    "gobbledygook": {
+      "js": "gobbledygook.js"
+    },
     "mocha": {
       "js": "mocha.js",
       "css": "mocha.css"
     },
-    "normalize-css": {"css": "normalize.css"},
-    "nunjucks": {"js": "browser/nunjucks-slim.js" },
-    "requirejs": {"js": "require.js"},
-    "underscore": {"js": "underscore.js"}
+    "normalize-css": {
+      "css": "normalize.css"
+    },
+    "nunjucks": {
+      "js": "browser/nunjucks-slim.js"
+    },
+    "requirejs": {
+      "js": "require.js"
+    },
+    "underscore": {
+      "js": "underscore.js"
+    },
+    "query-string": {
+      "js": "query-string.js"
+    }
   },
   "devDependencies": {
     "mocha": "~1.17.1",

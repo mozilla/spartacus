@@ -2,14 +2,15 @@
 require.config({
   baseUrl: 'js',
   paths : {
-    'underscore': '../lib/js/underscore/underscore',
     'backbone': '../lib/js/backbone/backbone',
+    'chai': '../lib/js/chai/chai',
+    'gobbledygook': '../lib/js/gobbledygook/gobbledygook',
+    'i18n-abide-utils': '../lib/js/i18n-abide-utils/i18n-abide-utils',
     'jquery': '../lib/js/jquery/jquery',
+    'mocha': '../lib/js/mocha/mocha',
     'nunjucks': '../lib/js/nunjucks/nunjucks-slim',
     'require': '../lib/js/requirejs/require',
-    'gettext': '../lib/js/gettext/gettext',
-    'chai': '../lib/js/chai/chai',
-    'mocha': '../lib/js/mocha/mocha',
+    'underscore': '../lib/js/underscore/underscore',
   },
   shim : {
     'jquery': {

@@ -6,7 +6,6 @@ Spartacus is a single page app front-end for [Webpay](https://github.com/mozilla
 
 ## Todos
 
-- [-] Setup l10n framework
 - [ ] Setup Styleguide
 - [ ] Setup Fake api
 - [ ] Setup UI Test environment.
@@ -17,6 +16,7 @@ Spartacus is a single page app front-end for [Webpay](https://github.com/mozilla
 
 ## Done
 
+- [x] Setup l10n framework
 - [x] Setup template pre-compilation.
 - [x] Setup stub views L+F
 - [x] Setup Unit Test environment.

@@ -5,9 +5,16 @@ define(['jquery', 'chai', 'views/base'], function($, chai, BaseView) {
   suite('Base View Tests', function(){
 
     suite('BaseView.gettext', function(){
-      test('gettext is defined', function(){
+      test('Check gettext is defined', function(){
         var baseView = new BaseView();
         assert.typeOf(baseView.gettext, 'function');
+      });
+    });
+
+    suite('BaseView.format', function(){
+      test('Check format is defined', function(){
+        var baseView = new BaseView();
+        assert.typeOf(baseView.format, 'function');
       });
     });
 

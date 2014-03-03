@@ -1,8 +1,10 @@
-var rewriteModule = require('http-rewrite-middleware');
-var devConfig = require('./config');
-
+// Dev-only config.
+var config = require('./config');
+// App Settings. Also used client-side.
+var settings = require('./public/js/settings/settings.js');
 
 module.exports = function(grunt) {
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
@@ -45,48 +47,29 @@ module.exports = function(grunt) {
         ext: '.css',
       }
     },
+
+    express: {
+      dev: {
+        options: {
+          script: 'server/index.js',
+          background: true,
+          port: config.port,
+          debug: false
+        }
+      }
+    },
+
+
     // Development only static server.
     // Keeps running by virtue of running 'watch' afterwards.
     // See 'server' task below.
     connect: {
-      devel: {
-        options: {
-          base: ['devel', 'public'],
-          debug: true,
-          hostname: '*',
-          livereload: devConfig.liveReloadPort,
-          port: devConfig.port,
-          middleware: function (connect, options) {
-            var middlewares = [];
-
-            // RewriteRules support
-            middlewares.push(rewriteModule.getMiddleware([
-              {from: '^/(?:login|create-pin|enter-pin|reset-pin|locked|throbber|was-locked)$', to: '/index.html'},
-            ]));
-
-            if (!Array.isArray(options.base)) {
-              options.base = [options.base];
-            }
-
-            var directory = options.directory || options.base[options.base.length - 1];
-            options.base.forEach(function (base) {
-              // Serve static files.
-              middlewares.push(connect.static(base));
-            });
-
-            // Make directory browse-able.
-            middlewares.push(connect.directory(directory));
-
-            return middlewares;
-          }
-        },
-      },
       tests: {
         options: {
           base: ['tests', 'public'],
           directory: 'tests',
           hostname: '*',
-          port: devConfig.testsPort,
+          port: config.testsPort,
         }
       }
     },
@@ -98,19 +81,19 @@ module.exports = function(grunt) {
       css: {
         files: ['public/css/*.css'],
         options: {
-          livereload: devConfig.liveReloadPort
+          livereload: config.liveReloadPort
         }
       },
       html: {
         files: ['public/**/*.html'],
         options: {
-          livereload: devConfig.liveReloadPort
+          livereload: config.liveReloadPort
         }
       },
       js: {
         files: ['public/**/*.js'],
         options: {
-          livereload: devConfig.liveReloadPort
+          livereload: config.liveReloadPort
         }
       },
       jshint: {
@@ -149,14 +132,57 @@ module.exports = function(grunt) {
     },
     shell: {
       rununittests: {
-        command: 'mocha-phantomjs http://localhost:' + devConfig.testsPort,
+        command: 'mocha-phantomjs http://localhost:' + config.testsPort,
         options: {
           stderr: true,
           stdout: true,
           failOnError: true,
         }
       }
-    }
+    },
+
+    abideCreate: {
+      default: { // Target name.
+        options: {
+          template: 'locale/templates/LC_MESSAGES/messages.pot', // (default: 'locale/templates/LC_MESSAGES/messages.pot')
+          languages: settings.supportedLanguages,
+          localeDir: 'locale',
+        }
+      }
+    },
+    abideExtract: {
+      js: {
+        src: 'public/**/*.js',
+        dest: 'locale/templates/LC_MESSAGES/messages.pot',
+        options: {
+          language: 'JavaScript',
+        }
+      },
+      html: {
+        src: 'templates/payments/*.html',
+        dest: 'locale/templates/LC_MESSAGES/messages.pot',
+        options: {
+          language: 'Jinja',
+        }
+      },
+    },
+    abideMerge: {
+      default: { // Target name.
+        options: {
+          template: 'locale/templates/LC_MESSAGES/messages.pot', // (default: 'locale/templates/LC_MESSAGES/messages.pot')
+          localeDir: 'locale',
+        }
+      }
+    },
+    abideCompile: {
+      json: {
+        dest: 'public/i18n',
+        options: {
+          type: 'json',
+          jsVar: '_i18nAbide'
+        },
+      },
+    },
   });
 
   // Always show stack traces when Grunt prints out an uncaught exception.
@@ -169,10 +195,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-nunjucks');
   grunt.loadNpmTasks('grunt-shell');
-  //grunt.loadNpmTasks('grunt-i18n-abide');
+  grunt.loadNpmTasks('grunt-i18n-abide');
+  grunt.loadNpmTasks('grunt-express-server');
 
   grunt.registerTask('default', ['jshint', 'stylus']);
-  grunt.registerTask('server', ['jshint', 'stylus', 'nunjucks', 'connect:devel', 'watch']);
+  //grunt.registerTask('server', ['jshint', 'stylus', 'nunjucks', 'connect:devel', 'watch']);
+  grunt.registerTask('server', ['jshint', 'stylus', 'nunjucks', 'express:dev', 'watch']);
   grunt.registerTask('testserver', ['jshint', 'stylus', 'nunjucks', 'connect:tests:keepalive']);
   grunt.registerTask('test', ['jshint', 'stylus', 'nunjucks', 'connect:tests', 'shell:rununittests']);
 };

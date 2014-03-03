@@ -2,12 +2,15 @@
 
 require.config({
   paths : {
-    'underscore': '/lib/js/underscore/underscore',
     'backbone': '/lib/js/backbone/backbone',
+    'gobbledygook': '/lib/js/gobbledygook/gobbledygook',
+    'i18n-abide-utils': '/lib/js/i18n-abide-utils/i18n-abide-utils',
     'jquery': '/lib/js/jquery/jquery',
     'nunjucks': '/lib/js/nunjucks/nunjucks-slim',
+    'query-string': '/lib/js/query-string/query-string',
     'require': '/lib/js/requirejs/require',
-    'gettext': '/lib/js/gettext/gettext',
+    'settings': '/js/settings/settings',
+    'underscore': '/lib/js/underscore/underscore',
   },
   shim : {
     'jquery': {
@@ -24,6 +27,7 @@ require.config({
 });
 
 
-require(['app'], function(App){
-  App.initialize();
+require(['app', 'lib/i18n'], function(App, i18n){
+  // Setup the locale and then run init.
+  i18n.initLocale(function() { App.initialize(); });
 });

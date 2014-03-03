@@ -17,3 +17,4 @@ node_modules/i18n-abide/node_modules/jsxgettext/node_modules/gettext-parser/node
 uitest/captures/*
 node_modules
 config/local.js
+messages.json

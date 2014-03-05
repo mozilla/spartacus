@@ -1,0 +1,20 @@
+{% extends "base-styleguide.html" %}
+
+{% block content %}
+<h1 class="page-header">Overview</h1>
+<p>This styleguide is a living example of the UI used in Spartacus the single page app front-end for webpay.</p>
+<p>Any examples here that represent pages are the exact same templates used in the front-end. In all cases styles are the same styles used in the front-end.</p>
+
+<h2>View controls</h2>
+<p>For each example there are some buttons that allow you to switch between various sizes. Plus you'll notice that each example is resizable via the drag handle on the bottom-right corner</p>
+
+<p>Currently we support the following screen-size presets:</p>
+<ul>
+  <li><span class="glyphicon glyphicon-lock"></span> Trusted UI - This is the trusted UI window shown on FireFox OS devices. This is used within all the payment flows.</li>
+  <li><span class="glyphicon glyphicon-phone"></span> Android: The android size is a typical android device viewport size as an example as to what this will look like in Firefox for Android.</li>
+  <li><span class="glyphicon glyphicon-fullscreen"></span> Full-screen mode uses the full-screen api to full screen the example element.</li>
+</ul>
+
+<h2>Fork me on Github</h2>
+<p>The source can be found on github here <a href="https://github.com/mozilla/spartacus">mozilla/spartacus</a>
+{% endblock %}

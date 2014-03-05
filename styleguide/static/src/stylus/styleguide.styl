@@ -1,0 +1,114 @@
+// Base structure
+
+// Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+// Global add-ons
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+// Sidebar
+// Hide for mobile, show later
+.sidebar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+    bottom: 0;
+    display: block;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto; // Scrollable contents if viewport is shorter than content.
+    padding: 20px;
+    position: fixed;
+    top: 51px;
+    z-index: 1000;
+  }
+}
+
+// Sidebar navigation
+.nav-sidebar {
+    margin-bottom: 20px;
+    margin-left: -20px;
+    margin-right: -21px; /* 20px padding + 1px border */
+
+    &> li > a {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    &> .active > a,
+    &> .active > a:hover {
+        color: #fff;
+        background-color: #428bca;
+    }
+}
+
+// Main content
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+// Resizable iframes
+iframe {
+    border: 1px solid #ccc;
+    height: 100%;
+    resize: none;
+    width: 100%;
+}
+
+.trusted-ui {
+    height: calc(345px + 10px);
+    width: calc(276px + 10px);
+}
+
+.resizable {
+    overflow: auto;
+    padding: 0 10px 10px 0;
+    resize: both;
+}
+
+.navbar .navbar-brand {
+    color: #fefefe;
+}
+
+h1,h2,h3,h4 {
+    color: #666;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+.panel-default {
+    margin-top: 2em;
+}
+
+pre.panel-footer {
+    border-radius: 0 0 4px 4px;
+    border-top: 1px solid #ddd;
+    border: none;
+    margin: 0;
+}
+
+.size {
+    color: #ccc;
+    font-size: 14px;
+}

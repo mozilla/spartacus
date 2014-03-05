@@ -1,0 +1,14 @@
+{% extends "base-example.html" %}
+
+{% block desc %}
+<h1 class="page-header">Error Page</h1>
+<p>This is a standard error page that is shown when something goes wrong with the payment process.</p>
+<p>Mostly this will feature a retry option where it relates to a timeout. Otherwise this can be used for any other errors.</p>
+<h2>Error code (optional)</h2>
+<p>The error code is optional but is useful to be able to tie back an error to a specific piece of code. For example, timeouts might show the same error message, however the code can be different so it's clear in a bug report where this timeout is ocurring.</p>
+
+<pre>
+  <code class="language-markup">&lt;p class=&quot;error-code&quot;&gt;ERROR_CODE&lt;/p&gt;</code>
+</pre>
+
+{% endblock %}

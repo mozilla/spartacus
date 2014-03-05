@@ -4,7 +4,7 @@
 {% block mainclass %}throbber{% endblock %}
 {% block page %}
 <progress></progress>
-<p class="msg">{{ msg }}</p>
+<p class="msg">{% if msg %}{{ msg }}{% else %}{{ gettext('Loading...')}}{% endif %}</p>
 {% endblock %}
 
 

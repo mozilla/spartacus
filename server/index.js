@@ -37,5 +37,6 @@ app.get('/', function (req, res) {
   res.render('index.html');
 });
 
-
-http.createServer(app).listen(config.port);
+http.createServer(app).listen(config.port, function() {
+  console.log('Listening on port: ' + config.port);
+});

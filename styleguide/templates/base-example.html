@@ -1,0 +1,34 @@
+{% extends "base-styleguide.html" %}
+
+{% block content %}
+
+  {% block desc %}{% endblock %}
+
+  <div class="panel panel-default">
+    <div class="panel-heading clearfix">
+      <h3 class="panel-title pull-left">Example <span class="size">@ 276 x 345</span></h3>
+
+      <div class="btn-group pull-right">
+        <button type="button" class="active btn btn-default btn-xs trusted-ui-size">
+          <span class="glyphicon glyphicon-lock"></span> Trusted UI
+        </button>
+
+        <button type="button" class="btn btn-default btn-xs android-ui-size">
+          <span class="glyphicon glyphicon-phone"></span> Android Phone
+        </button>
+
+        <button type="button" class="btn btn-default btn-xs full-screen">
+          <span class="glyphicon glyphicon-fullscreen"></span> Full Screen
+        </button>
+      </div>
+
+    </div>
+    <div class="panel-body">
+      <div class="trusted-ui resizable ">
+        <iframe src="/if/{{ iframe }}"></iframe>
+      </div>
+    </div>
+    <pre class="panel-footer"><code class="language-markup">{{ code }}</code></pre>
+  </div>
+
+{% endblock %}

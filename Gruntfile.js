@@ -233,7 +233,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['jshint', 'stylus']);
   //grunt.registerTask('server', ['jshint', 'stylus', 'nunjucks', 'connect:devel', 'watch']);
   grunt.registerTask('server', ['jshint', 'stylus', 'nunjucks', 'express:dev', 'watch']);
-  grunt.registerTask('styleguide', ['express:styleguide', 'watch']);
+  grunt.registerTask('styleguide', ['stylus', 'express:styleguide', 'watch']);
 
   grunt.registerTask('testserver', ['jshint', 'stylus', 'nunjucks', 'connect:tests:keepalive']);
   grunt.registerTask('test', ['jshint', 'stylus', 'nunjucks', 'connect:tests', 'shell:rununittests']);

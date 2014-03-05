@@ -20,7 +20,8 @@
     "i18n-abide": "0.0.17",
     "mocha-phantomjs": "~3.3.2",
     "nunjucks": "~1.0.1",
-    "underscore": "~1.6.0"
+    "underscore": "~1.6.0",
+    "js-beautify": "^1.4.2"
   },
   "scripts": {
     "test": "node -e \"require('grunt').cli()\" null test"

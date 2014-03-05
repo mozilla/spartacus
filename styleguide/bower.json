@@ -1,0 +1,38 @@
+{
+  "name": "spartacus-styleguide",
+  "main": "index.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mozilla/spartacus",
+  "authors": [
+    "Mozilla Payments Team"
+  ],
+  "description": "StyleGuide for Spartacuse",
+  "license": "MPL2.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "exportsOverride": {
+    "bootstrap": {
+      "css": "dist/css/bootstrap.min.css",
+      "fonts": "dist/fonts/*",
+      "js": "dist/js/bootstrap.min.js"
+    },
+    "jquery": {
+      "js": "dist/jquery.min.js"
+    },
+    "prism": {
+      "js": "prism.js",
+      "css": "themes/prism.css"
+    }
+
+  },
+  "dependencies": {
+    "prism": "git@github.com:LeaVerou/prism.git#gh-pages",
+    "bootstrap": "~3.1.1"
+  }
+}

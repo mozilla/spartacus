@@ -19,31 +19,48 @@ module.exports = function(grunt) {
         'Gruntfile.js',
       ],
     },
+
     stylus: {
       options: {
         'compress': false,
         'banner': '/* Generated content - do not edit - <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n',
         'include css': true,
         'resolve url': true,
-        'paths': [
-          'public/images',
-          'public/lib/css/',
-          'public/stylus/inc',
-          'public/stylus/lib',
-        ],
-        'urlfunc': 'embedurl',
-        'import': [
-          'normalize-css/normalize.css',
-          'inc/vars',
-          'inc/mixins',
-          'inc/global',
-        ]
+        'urlfunc': 'embedurl'
       },
-      compile: {
+      public: {
+        options: {
+          'paths': [
+            'public/images',
+            'public/lib/css/',
+            'public/stylus/inc',
+            'public/stylus/lib',
+          ],
+          'import': [
+            'normalize-css/normalize.css',
+            'inc/vars',
+            'inc/mixins',
+            'inc/global',
+          ]
+        },
         expand: true,
         cwd: 'public/stylus',
         src: ['*.styl', '!_*.styl'],
         dest: 'public/css/',
+        ext: '.css',
+      },
+      styleguide: {
+        options: {
+          'import': [
+            '../../../../public/stylus/inc/vars',
+            '../../../../public/stylus/inc/mixins',
+            '../../../../public/stylus/inc/global',
+          ]
+        },
+        expand: true,
+        cwd: 'styleguide/static/src/stylus',
+        src: ['*.styl', '!_*.styl'],
+        dest: 'styleguide/static/src/css/',
         ext: '.css',
       }
     },
@@ -56,9 +73,16 @@ module.exports = function(grunt) {
           port: config.port,
           debug: false
         }
+      },
+      styleguide: {
+        options: {
+          script: 'styleguide/index.js',
+          background: true,
+          port: config.styleguide.port,
+          debug: false
+        }
       }
     },
-
 
     // Development only static server.
     // Keeps running by virtue of running 'watch' afterwards.
@@ -73,13 +97,18 @@ module.exports = function(grunt) {
         }
       }
     },
+
     watch: {
-      stylus: {
+      styluspublic: {
         files: ['public/**/*.styl', 'public/images/'],
-        tasks: 'stylus',
+        tasks: 'stylus'
+      },
+      stylusstyleguide: {
+        files: ['styleguide/static/**/*.styl'],
+        tasks: 'stylus'
       },
       css: {
-        files: ['public/css/*.css'],
+        files: ['public/css/*.css', 'styleguide/static/**/*.css'],
         options: {
           livereload: config.liveReloadPort
         }
@@ -105,8 +134,9 @@ module.exports = function(grunt) {
         tasks: ['nunjucks']
       }
     },
+
     bower: {
-      install: {
+      default: {
         options: {
           targetDir: 'public/lib',
           layout: 'byType',
@@ -118,6 +148,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
     nunjucks: {
       options: {
         env: require('./public/js/nunjucks-env'),
@@ -130,6 +161,7 @@ module.exports = function(grunt) {
         dest: 'public/js/templates.js',
       }
     },
+
     shell: {
       rununittests: {
         command: 'mocha-phantomjs http://localhost:' + config.testsPort,
@@ -201,6 +233,8 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['jshint', 'stylus']);
   //grunt.registerTask('server', ['jshint', 'stylus', 'nunjucks', 'connect:devel', 'watch']);
   grunt.registerTask('server', ['jshint', 'stylus', 'nunjucks', 'express:dev', 'watch']);
+  grunt.registerTask('styleguide', ['express:styleguide', 'watch']);
+
   grunt.registerTask('testserver', ['jshint', 'stylus', 'nunjucks', 'connect:tests:keepalive']);
   grunt.registerTask('test', ['jshint', 'stylus', 'nunjucks', 'connect:tests', 'shell:rununittests']);
 };

@@ -8,6 +8,19 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    casper: {
+      options : {
+        test : true,
+      },
+      runtests : {
+        src: ['tests/ui/test-*.js'],
+      }
+    },
+
+    clean: {
+      uitest: ['test/captures']
+    },
+
     jshint: {
       options: {
         jshintrc: __dirname + '/.jshintrc'
@@ -79,6 +92,14 @@ module.exports = function(grunt) {
           script: 'styleguide/index.js',
           background: true,
           port: config.styleguide.port,
+          debug: false,
+        }
+      },
+      test: {
+        options: {
+          script: 'server/index.js',
+          background: true,
+          port: config.uitest.port,
           debug: false
         }
       }
@@ -90,10 +111,10 @@ module.exports = function(grunt) {
     connect: {
       tests: {
         options: {
-          base: ['tests', 'public'],
-          directory: 'tests',
+          base: ['tests/unit', 'public'],
+          directory: 'tests/unit',
           hostname: '*',
-          port: config.testsPort,
+          port: config.test.port,
         }
       }
     },
@@ -164,7 +185,7 @@ module.exports = function(grunt) {
 
     shell: {
       rununittests: {
-        command: 'mocha-phantomjs http://localhost:' + config.testsPort,
+        command: 'mocha-phantomjs http://localhost:' + config.test.port,
         options: {
           stderr: true,
           stdout: true,
@@ -217,10 +238,13 @@ module.exports = function(grunt) {
     },
   });
 
+
   // Always show stack traces when Grunt prints out an uncaught exception.
   grunt.option('stack', true);
 
   grunt.loadNpmTasks('grunt-bower-task');
+  grunt.loadNpmTasks('grunt-casper');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-stylus');
@@ -237,4 +261,5 @@ module.exports = function(grunt) {
 
   grunt.registerTask('testserver', ['jshint', 'stylus', 'nunjucks', 'connect:tests:keepalive']);
   grunt.registerTask('test', ['jshint', 'stylus', 'nunjucks', 'connect:tests', 'shell:rununittests']);
+  grunt.registerTask('uitest', ['stylus', 'clean:uitest', 'express:test', 'casper']);
 };

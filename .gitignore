@@ -18,3 +18,4 @@ uitest/captures/*
 node_modules
 config/local.js
 messages.json
+styleguide/static/src/*

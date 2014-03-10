@@ -1,0 +1,32 @@
+{% set active_page = active_page|default('index') -%}
+
+<ul class="nav nav-sidebar">
+  <li{% if 'index' == active_page %} class="active"{% endif %}><a href="/">Overview</a></li>
+</ul>
+
+{% set examples_navigation_bar = [
+    ['/buttons', 'buttons', 'Buttons'],
+    ['/typography', 'typography', 'Typography']
+] -%}
+
+<h2>Examples</h2>
+<ul class="nav nav-sidebar">
+{% for href, id, caption in examples_navigation_bar %}
+  <li{% if id == active_page %} class="active"{% endif %}><a href="{{ href }}">{{ caption }}</a></li>
+{% endfor %}
+</ul>
+
+{% set navigation_bar = [
+    ['/create-pin', 'create-pin', 'Create Pin'],
+    ['/error', 'error', 'Error'],
+    ['/throbber', 'throbber', 'Throbber'],
+    ['/was-locked', 'was-locked', 'Was locked']
+] -%}
+
+{% set active_page = active_page|default('index') -%}
+<h2>Pages</h2>
+<ul class="nav nav-sidebar">
+{% for href, id, caption in navigation_bar %}
+  <li{% if id == active_page %} class="active"{% endif %}><a href="{{ href }}">{{ caption }}</a></li>
+{% endfor %}
+</ul>

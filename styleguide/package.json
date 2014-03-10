@@ -1,0 +1,15 @@
+{
+  "name": "styleguide",
+  "version": "0.0.1",
+  "description": "Styleguide for Spartacus",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MPL2.0",
+  "devDependencies": {
+    "grunt-bower-task": "^0.3.4",
+    "html": "0.0.7"
+  }
+}

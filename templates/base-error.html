@@ -8,6 +8,7 @@
     <div class="msg">
       <h1>{{ heading }}</h1>
       <p>{{ msg }}</p>
+      {% if error_code %}<p class="error-code">{{ error_code }}</p>{% endif %}
     </div>
   </section>
 

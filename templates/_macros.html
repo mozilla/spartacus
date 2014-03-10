@@ -1,7 +1,7 @@
-{% macro button(value, modifier='', disabled=false) %}
-<button class="button{% if modifier %} {{ modifier }}{% endif %}"{% if disabled %} disabled{% endif %} type="submit">{{ value }}</button>
-{% endmacro %}
+{% macro button(value, modifier='', disabled=false) -%}
+  <button class="button{% if modifier %} {{ modifier }}{% endif %}"{% if disabled %} disabled{% endif %} type="submit">{{ value }}</button>
+{%- endmacro %}
 
-{% macro linkButton(value, modifier='', href='#', disabled=false) %}
-<a class="button{% if modifier %} {{ modifier }}{% endif %}{% if disabled %} disabled{% endif %}" href="{{ href }}">{{ value }}</a>
-{% endmacro %}
+{% macro linkButton(value, modifier='', href='#', disabled=false) -%}
+  <a class="button{% if modifier %} {{ modifier }}{% endif %}{% if disabled %} disabled{% endif %}" href="{{ href }}">{{ value }}</a>
+{%- endmacro %}

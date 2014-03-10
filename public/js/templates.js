@@ -13,7 +13,7 @@ frame.set("value", l_value);
 frame.set("modifier", kwargs.hasOwnProperty("modifier") ? kwargs["modifier"] : "");
 frame.set("disabled", kwargs.hasOwnProperty("disabled") ? kwargs["disabled"] : false);
 var output= "";
-output += "\n<button class=\"button";
+output += "<button class=\"button";
 if(runtime.contextOrFrameLookup(context, frame, "modifier")) {
 output += " ";
 output += runtime.suppressValue(runtime.contextOrFrameLookup(context, frame, "modifier"), env.autoesc);
@@ -26,7 +26,7 @@ output += " disabled";
 }
 output += " type=\"submit\">";
 output += runtime.suppressValue(l_value, env.autoesc);
-output += "</button>\n";
+output += "</button>";
 frame = frame.pop();
 return new runtime.SafeString(output);
 });
@@ -44,7 +44,7 @@ frame.set("modifier", kwargs.hasOwnProperty("modifier") ? kwargs["modifier"] : "
 frame.set("href", kwargs.hasOwnProperty("href") ? kwargs["href"] : "#");
 frame.set("disabled", kwargs.hasOwnProperty("disabled") ? kwargs["disabled"] : false);
 var output= "";
-output += "\n<a class=\"button";
+output += "<a class=\"button";
 if(runtime.contextOrFrameLookup(context, frame, "modifier")) {
 output += " ";
 output += runtime.suppressValue(runtime.contextOrFrameLookup(context, frame, "modifier"), env.autoesc);
@@ -58,7 +58,7 @@ output += "\" href=\"";
 output += runtime.suppressValue(runtime.contextOrFrameLookup(context, frame, "href"), env.autoesc);
 output += "\">";
 output += runtime.suppressValue(l_value, env.autoesc);
-output += "</a>\n";
+output += "</a>";
 frame = frame.pop();
 return new runtime.SafeString(output);
 });
@@ -122,7 +122,14 @@ output += "\n  <section class=\"content error\">\n    <div class=\"msg\">\n     
 output += runtime.suppressValue(runtime.contextOrFrameLookup(context, frame, "heading"), env.autoesc);
 output += "</h1>\n      <p>";
 output += runtime.suppressValue(runtime.contextOrFrameLookup(context, frame, "msg"), env.autoesc);
-output += "</p>\n    </div>\n  </section>\n\n  <menu class=\"buttons\" type=\"toolbar\">\n    ";
+output += "</p>\n      ";
+if(runtime.contextOrFrameLookup(context, frame, "error_code")) {
+output += "<p class=\"error-code\">";
+output += runtime.suppressValue(runtime.contextOrFrameLookup(context, frame, "error_code"), env.autoesc);
+output += "</p>";
+;
+}
+output += "\n    </div>\n  </section>\n\n  <menu class=\"buttons\" type=\"toolbar\">\n    ";
 context.getBlock("buttons")(env, context, frame, runtime, function(t_7,t_6) {
 if(t_7) { cb(t_7); return; }
 output += t_6;
@@ -139,9 +146,9 @@ var colno = null;
 var output = "";
 try {
 output += "\n      ";
-output += runtime.suppressValue((lineno = 15, colno = 19, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [(lineno = 15, colno = 27, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["Cancel"]))])), env.autoesc);
+output += runtime.suppressValue((lineno = 16, colno = 19, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [(lineno = 16, colno = 27, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["Cancel"]))])), env.autoesc);
 output += "\n      ";
-output += runtime.suppressValue((lineno = 16, colno = 19, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [(lineno = 16, colno = 27, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["OK"])),runtime.makeKeywordArgs({"modifier": "cta"})])), env.autoesc);
+output += runtime.suppressValue((lineno = 17, colno = 19, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [(lineno = 17, colno = 27, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["OK"])),runtime.makeKeywordArgs({"modifier": "cta"})])), env.autoesc);
 output += "\n    ";
 cb(null, output);
 ;
@@ -153,6 +160,86 @@ return {
 b_mainclass: b_mainclass,
 b_page: b_page,
 b_buttons: b_buttons,
+root: root
+};
+})();
+})();
+(function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["base-styleguide.html"] = (function() {function root(env, context, frame, runtime, cb) {
+var lineno = null;
+var colno = null;
+var output = "";
+try {
+context.getBlock("pagetitle")(env, context, frame, runtime, function(t_2,t_1) {
+if(t_2) { cb(t_2); return; }
+output += t_1;
+output += "\n";
+context.getBlock("nav")(env, context, frame, runtime, function(t_4,t_3) {
+if(t_4) { cb(t_4); return; }
+output += t_3;
+output += "\n<main class=\"";
+context.getBlock("mainclass")(env, context, frame, runtime, function(t_6,t_5) {
+if(t_6) { cb(t_6); return; }
+output += t_5;
+output += "\">\n  ";
+context.getBlock("content")(env, context, frame, runtime, function(t_8,t_7) {
+if(t_8) { cb(t_8); return; }
+output += t_7;
+output += "\n</main>\n";
+cb(null, output);
+})})})});
+} catch (e) {
+  cb(runtime.handleError(e, lineno, colno));
+}
+}
+function b_pagetitle(env, context, frame, runtime, cb) {
+var lineno = null;
+var colno = null;
+var output = "";
+try {
+cb(null, output);
+;
+} catch (e) {
+  cb(runtime.handleError(e, lineno, colno));
+}
+}
+function b_nav(env, context, frame, runtime, cb) {
+var lineno = null;
+var colno = null;
+var output = "";
+try {
+cb(null, output);
+;
+} catch (e) {
+  cb(runtime.handleError(e, lineno, colno));
+}
+}
+function b_mainclass(env, context, frame, runtime, cb) {
+var lineno = null;
+var colno = null;
+var output = "";
+try {
+cb(null, output);
+;
+} catch (e) {
+  cb(runtime.handleError(e, lineno, colno));
+}
+}
+function b_content(env, context, frame, runtime, cb) {
+var lineno = null;
+var colno = null;
+var output = "";
+try {
+cb(null, output);
+;
+} catch (e) {
+  cb(runtime.handleError(e, lineno, colno));
+}
+}
+return {
+b_pagetitle: b_pagetitle,
+b_nav: b_nav,
+b_mainclass: b_mainclass,
+b_content: b_content,
 root: root
 };
 })();
@@ -527,7 +614,14 @@ var colno = null;
 var output = "";
 try {
 output += "\n<progress></progress>\n<p class=\"msg\">";
+if(runtime.contextOrFrameLookup(context, frame, "msg")) {
 output += runtime.suppressValue(runtime.contextOrFrameLookup(context, frame, "msg"), env.autoesc);
+;
+}
+else {
+output += runtime.suppressValue((lineno = 6, colno = 42, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["Loading..."])), env.autoesc);
+;
+}
 output += "</p>\n";
 cb(null, output);
 ;

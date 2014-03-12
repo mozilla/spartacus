@@ -12,18 +12,13 @@ define([
   var prefix = 'Webpay | ';
 
   var BaseView = Backbone.View.extend({
+
     el: $('#app'),
     gettext: i18n.gettext,
     format: i18n.format,
     setTitle: function setTitle(title) {
       // Update the title element in the page.
       $('title').text(prefix + title);
-    },
-    renderTemplate: function renderTemplate(template, data) {
-      // Chainable shortcut for rendering the template.
-      this.$el.append(this.template(template, data));
-      console.log('appending rendered content');
-      return this;
     },
     template: function(template, data){
       // Builds the specified template with data.
@@ -33,8 +28,13 @@ define([
         gettext: i18n.gettext,
         format: i18n.format
       });
-      console.log('building template: ' + template);
       return nunjucks.render(template, data);
+    },
+    renderTemplate: function renderTemplate(template, data) {
+      // Chainable shortcut for rendering the template.
+      this.$el.html(this.template(template, data));
+      console.log('Replacing $el with rendered content');
+      return this;
     }
   });
   return BaseView;

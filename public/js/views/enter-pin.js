@@ -1,4 +1,4 @@
-define(['views/base', 'log', 'lib/pin'], function(BaseView, log, pin){
+define(['views/base', 'log', 'lib/pin', 'views/throbber'], function(BaseView, log, pin, throbber){
   var console = log('view', 'enter-pin');
   var EnterPinView = BaseView.extend({
     render: function(){
@@ -6,6 +6,7 @@ define(['views/base', 'log', 'lib/pin'], function(BaseView, log, pin){
       this.setTitle(this.gettext('Enter Pin'));
       this.renderTemplate('enter-pin.html');
       pin.init();
+      throbber.hide();
       return this;
     }
   });

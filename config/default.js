@@ -1,6 +1,20 @@
 module.exports = {
   port: 7777,
   liveReloadPort: 35729,
+
+  // Persona settings...
+  // We only trust one issuer to grant us unverified emails.
+  // If UNVERIFIED_ISSUER is set to None, forceIssuer will not
+  // be sent to the client or the verifier.
+
+  //BROWSERID_UNVERIFIED_ISSUER: 'firefoxos.persona.org',
+  //BROWSERID_VERIFICATION_URL: 'https://login.persona.org/verify',
+  //BROWSERID_JS_URL: 'https://login.persona.org/include.js',
+
+  BROWSERID_VERIFICATION_URL: '/fake-verify',
+  BROWSERID_JS_URL: '/testlib/stubbyid.js',
+  RESET_USER_URL: '/logout',
+
   styleguide: {
     port: 7779,
     liveReloadPort: 35729,
@@ -9,8 +23,4 @@ module.exports = {
   test: {
     port: 7778,
   },
-  // UI tests (casper).
-  uitest: {
-    port: 7776,
-  }
 };

@@ -10,7 +10,8 @@ module.exports = function(grunt) {
 
     casper: {
       options : {
-        test : true,
+        test: true,
+        includes: ['tests/static/testlib/bind-poly.js'],
       },
       runtests : {
         src: ['tests/ui/test-*.js'],
@@ -99,22 +100,8 @@ module.exports = function(grunt) {
         options: {
           script: 'server/index.js',
           background: true,
-          port: config.uitest.port,
-          debug: false
-        }
-      }
-    },
-
-    // Development only static server.
-    // Keeps running by virtue of running 'watch' afterwards.
-    // See 'server' task below.
-    connect: {
-      tests: {
-        options: {
-          base: ['tests/unit', 'public'],
-          directory: 'tests/unit',
-          hostname: '*',
           port: config.test.port,
+          debug: false
         }
       }
     },
@@ -185,7 +172,7 @@ module.exports = function(grunt) {
 
     shell: {
       rununittests: {
-        command: 'mocha-phantomjs http://localhost:' + config.test.port,
+        command: 'mocha-phantomjs http://localhost:' + config.test.port + '/unittests',
         options: {
           stderr: true,
           stdout: true,
@@ -255,11 +242,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-express-server');
 
   grunt.registerTask('default', ['jshint', 'stylus']);
-  //grunt.registerTask('server', ['jshint', 'stylus', 'nunjucks', 'connect:devel', 'watch']);
-  grunt.registerTask('server', ['jshint', 'stylus', 'nunjucks', 'express:dev', 'watch']);
+  grunt.registerTask('start', ['jshint', 'stylus', 'nunjucks', 'express:dev', 'watch']);
   grunt.registerTask('styleguide', ['stylus', 'express:styleguide', 'watch']);
-
-  grunt.registerTask('testserver', ['jshint', 'stylus', 'nunjucks', 'connect:tests:keepalive']);
-  grunt.registerTask('test', ['jshint', 'stylus', 'nunjucks', 'connect:tests', 'shell:rununittests']);
+  grunt.registerTask('test', ['jshint', 'stylus', 'nunjucks', 'express:test', 'shell:rununittests']);
   grunt.registerTask('uitest', ['stylus', 'clean:uitest', 'express:test', 'casper']);
 };

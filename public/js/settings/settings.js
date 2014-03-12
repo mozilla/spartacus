@@ -1,4 +1,10 @@
+// Settings that can be consumed by client and server.
 var settings = {
+  // General Ajax timeout (Default 45G).
+  ajax_timeout: 45000,
+  // Timeout for logins (Default 90s).
+  login_timeout: 90000,
+  // i18n settings.
   supportedLanguages: [
     'af',
     'bg',
@@ -45,7 +51,7 @@ var settings = {
   ],
   DEBUG_LOCALE: 'db_LB',
   DEBUG_LANG: 'db-LB',
-  BIDI_RTL_LANGS: ['ar', 'db-LB', 'fa', 'he']
+  BIDI_RTL_LANGS: ['ar', 'db-LB', 'fa', 'he'],
 };
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
@@ -55,4 +61,3 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
     return settings;
   });
 }
-

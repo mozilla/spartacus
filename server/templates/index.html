@@ -7,8 +7,16 @@
     <title>Webpay</title>
     <link rel="stylesheet" href="/css/spartacus.css">
   </head>
-  <body>
+  <body
+    data-privacy-policy="https://marketplace.firefox.com/privacy-policy"
+    data-terms-of-service="https://marketplace.firefox.com/terms-of-use"
+    data-unverified-issuer="{{ settings.BROWSERID_UNVERIFIED_ISSUER }}"
+    data-verify-url="{{ settings.BROWSERID_VERIFICATION_URL }}"
+    data-reset-user-url="{{ settings.RESET_USER_URL }}"
+    >
     <div id="app" class="app"></div>
+    <div id="progress" class="progress"></div>
+    <script src="{{ settings.BROWSERID_JS_URL }}"></script>
     <script data-main="/js/main.js" src="/lib/js/requirejs/require.js"></script>
   </body>
 </html>

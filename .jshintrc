@@ -1,7 +1,7 @@
 {
   "boss": true,
   "browser": true,
-  "camelcase": true,
+  "camelcase": false,
   "eqeqeq": true,
   "eqnull": true,
   "es5": false,
@@ -19,6 +19,7 @@
   "noarg": true,
   "passfail": false,
   "predef": [
+    "app",
     "casper",
     "describe",
     "expect",

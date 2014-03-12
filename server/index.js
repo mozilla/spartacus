@@ -9,7 +9,6 @@ var config = require('../config/');
 
 
 var app = express();
-
 var env = new nunjucks.Environment(new nunjucks.FileSystemLoader(__dirname + '/templates'),
                                    {autoescape: true});
 
@@ -34,11 +33,37 @@ app.use(rewriteModule.getMiddleware([
 app.get(/\/(?:css|fonts|i18n|images|js|lib)\/?.*/, express.static(__dirname + '/../public'));
 
 app.get('/', function (req, res) {
-  res.render('index.html');
+  res.render('index.html', {settings: config});
 });
 
-var port = process.env.PORT || config.port;
+// Serve test assets.
+app.get(/\/testlib\/?.*/, express.static(__dirname + '/../tests/static'));
+app.get(/\/unit\/?.*/, express.static(__dirname + '/../tests/'));
 
+// Fake verification.
+app.post('/fake-verify', function (req, res) {
+  var assertion = req.query.assertion ? req.query.assertion : '';
+  var success = {
+    'status': 'okay',
+    'audience': 'http://localhost:' + config.test.port,
+    'expires': Date.now(),
+    'issuer': 'fake-persona'
+  };
+  success.email = assertion;
+  res.send(success);
+});
+
+// Fake logout
+app.post('/logout', function (req, res) {
+  res.send({'msg': 'logout success'});
+});
+
+app.get('/unittests', function (req, res) {
+  res.render('test.html');
+});
+
+console.log('Starting DEV Server');
+var port = process.env.PORT || config.port;
 http.createServer(app).listen(port, function() {
   console.log('listening on port: ' + port);
 });

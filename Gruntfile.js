@@ -22,6 +22,15 @@ module.exports = function(grunt) {
       uitest: ['test/captures']
     },
 
+    env: {
+      dev: {
+        NODE_ENV: 'development'
+      },
+      test: {
+        NODE_ENV: 'test'
+      }
+    },
+
     jshint: {
       options: {
         jshintrc: __dirname + '/.jshintrc'
@@ -232,18 +241,18 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-casper');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-env');
   grunt.loadNpmTasks('grunt-nunjucks');
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-i18n-abide');
   grunt.loadNpmTasks('grunt-express-server');
 
   grunt.registerTask('default', ['jshint', 'stylus']);
-  grunt.registerTask('start', ['jshint', 'stylus', 'nunjucks', 'express:dev', 'watch']);
+  grunt.registerTask('start', ['env:dev', 'jshint', 'stylus', 'nunjucks', 'express:dev', 'watch']);
   grunt.registerTask('styleguide', ['stylus', 'express:styleguide', 'watch']);
-  grunt.registerTask('test', ['jshint', 'stylus', 'nunjucks', 'express:test', 'shell:rununittests']);
-  grunt.registerTask('uitest', ['stylus', 'clean:uitest', 'express:test', 'casper']);
+  grunt.registerTask('test', ['env:test', 'jshint', 'stylus', 'nunjucks', 'express:test', 'shell:rununittests']);
+  grunt.registerTask('uitest', ['env:test', 'stylus', 'clean:uitest', 'express:test', 'casper']);
 };

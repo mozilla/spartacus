@@ -1,5 +1,5 @@
 module.exports = {
-  BROWSERID_VERIFICATION_URL: '/fake-verify',
-  BROWSERID_JS_URL: '/testlib/stubbyid.js',
-  RESET_USER_URL: '/logout',
+  verifyUserURL: '/fake-verify',
+  browseridJsURL: '/testlib/stubbyid.js',
+  resetUserURL: '/logout',
 };

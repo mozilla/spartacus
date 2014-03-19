@@ -1,13 +1,10 @@
 require(['/js/config.js'], function(config) {
 
-
   // Setup the requires.
   require.config(config);
 
   require([
     'require',
-    'chai',
-    'mocha',
     'main',
   ], function(require){
 
@@ -15,7 +12,9 @@ require(['/js/config.js'], function(config) {
 
     require([
       '/unit/test-base-view.js',
-      '/unit/test-utils.js'
+      '/unit/test-router.js',
+      '/unit/test-utils.js',
+      '/unit/test-base-model.js'
     ], function() {
       if (window.mochaPhantomJS) {
         window.mochaPhantomJS.run();

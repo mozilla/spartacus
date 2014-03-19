@@ -180,7 +180,7 @@ module.exports = function(grunt) {
     },
 
     shell: {
-      rununittests: {
+      unittests: {
         command: 'mocha-phantomjs http://localhost:' + config.test.port + '/unittests',
         options: {
           stderr: true,
@@ -253,6 +253,6 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['jshint', 'stylus']);
   grunt.registerTask('start', ['env:dev', 'jshint', 'stylus', 'nunjucks', 'express:dev', 'watch']);
   grunt.registerTask('styleguide', ['stylus', 'express:styleguide', 'watch']);
-  grunt.registerTask('test', ['env:test', 'jshint', 'stylus', 'nunjucks', 'express:test', 'shell:rununittests']);
+  grunt.registerTask('test', ['env:test', 'jshint', 'stylus', 'nunjucks', 'express:test', 'shell:unittests']);
   grunt.registerTask('uitest', ['env:test', 'stylus', 'clean:uitest', 'express:test', 'casper']);
 };

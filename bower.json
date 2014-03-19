@@ -52,6 +52,9 @@
     "requirejs": {
       "js": "require.js"
     },
+    "sinon": {
+      "js": "index.js"
+    },
     "underscore": {
       "js": "underscore.js"
     },
@@ -61,6 +64,7 @@
   },
   "devDependencies": {
     "mocha": "~1.17.1",
-    "chai": "~1.9.0"
+    "chai": "~1.9.0",
+    "sinon": "http://sinonjs.org/releases/sinon-1.9.0.js"
   }
 }

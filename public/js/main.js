@@ -14,7 +14,7 @@ require(['config'], function(config) {
     'router',
     'utils',
     'views/throbber',
-  ], function(Backbone, id, i18n, log, UserModel, AppRouter, utils, throbber){
+  ], function(Backbone, id, i18n, log, UserModel, router, utils, throbber){
 
     window.app = {};
     var console = log('app');
@@ -26,8 +26,8 @@ require(['config'], function(config) {
       // Spin up the routing.
       console.log('Initializing Routing');
       app.user = new UserModel();
-      app.router = new AppRouter();
-      Backbone.history.start({pushState: true});
+      app.router = new router.AppRouter();
+      Backbone.history.start({pushState: true, root: app.router.root});
     }
 
     // Require locale then run init.

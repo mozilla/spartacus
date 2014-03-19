@@ -57,7 +57,7 @@ define([
     },
 
     resetUser: function _resetUser() {
-      var console = log('UserModel', 'restUser');
+      var console = log('UserModel', 'resetUser');
       console.log('Begin webpay user reset');
       var request = {
         'type': 'POST',

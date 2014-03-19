@@ -21,6 +21,7 @@
   "predef": [
     "app",
     "casper",
+    "chai",
     "describe",
     "expect",
     "exports",
@@ -28,7 +29,10 @@
     "mocha",
     "process",
     "require",
+    "setup",
+    "sinon",
     "suite",
+    "teardown",
     "test"
   ],
   "shadow": false,

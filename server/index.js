@@ -27,12 +27,13 @@ app.use(i18n.abide({
 }));
 
 app.use(rewriteModule.getMiddleware([
-  {from: '^/(?:login|create-pin|enter-pin|reset-pin|locked|throbber|was-locked)', to: '/'},
+  {from: '^/$', to: '/mozpay', redirect: 'permanent'},
+  {from: '^/mozpay/(?:login|create-pin|enter-pin|reset-pin|locked|throbber|was-locked)$', to: '/mozpay'},
 ]));
 
 app.get(/\/(?:css|fonts|i18n|images|js|lib)\/?.*/, express.static(__dirname + '/../public'));
 
-app.get('/', function (req, res) {
+app.get('/mozpay', function (req, res) {
   res.render('index.html', {settings: config});
 });
 

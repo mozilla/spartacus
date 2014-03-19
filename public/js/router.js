@@ -30,7 +30,9 @@ define([
       if (result === false) {
         return false;
       }
-      callback && callback.apply(this, args);
+      if (callback) {
+        callback.apply(this, args);
+      }
       this.after.apply(this, args);
     },
     before: function(){},
@@ -38,9 +40,9 @@ define([
   });
 
   var AppRouter = BaseRouter.extend({
+    root: '/mozpay',
 
     routes: {
-      '': 'showIndex',
       'login': 'showLogin',
       'create-pin': 'showCreatePin',
       'enter-pin': 'showEnterPin',
@@ -50,9 +52,11 @@ define([
     },
 
     before: function() {
+      // Always run id.watch.
+      app.user.checkAuth();
+      // Check login state and prevent routing if unknown.
       if (app.user.get('logged_in') !== true && Backbone.history.fragment !== 'login') {
-        console.log('Checking auth as logged_in state is unknown and not login view.');
-        app.user.checkAuth();
+        console.log('Preventing navigation as logged_in state is unknown and not login view.');
         return false;
       }
     },
@@ -93,5 +97,9 @@ define([
 
   });
 
-  return AppRouter;
+  return {
+    AppRouter: AppRouter,
+    BaseRouter: BaseRouter
+  };
+
 });

@@ -43,6 +43,7 @@ define([
     root: '/mozpay',
 
     routes: {
+      '': 'showIndex',
       'login': 'showLogin',
       'create-pin': 'showCreatePin',
       'enter-pin': 'showEnterPin',

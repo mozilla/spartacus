@@ -1,16 +1,16 @@
 var helpers = require('../helpers');
 
-helpers.startCasper('');
+helpers.startCasper('/mozpay');
 
 casper.test.begin('Login test', {
 
   test: function(test) {
 
-    casper.waitForUrl('/login', function() {
+    casper.waitForUrl('/mozpay/login', function() {
       helpers.logInAsNewUser();
     });
 
-    casper.waitForUrl('/enter-pin', function() {
+    casper.waitForUrl('/mozpay/enter-pin', function() {
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
     });
 

@@ -68,13 +68,13 @@ define([
         .done(function _resetSuccess() {
           console.log('reset webpay user');
           window.localStorage.clear();
-          utils.trackWebpayEvent({'action': 'webpay user reset',
-                                  'label': 'Reset User Success'});
+          utils.trackEvent({'action': 'webpay user reset',
+                            'label': 'Reset User Success'});
         })
         .fail(function _resetFail($xhr, textStatus, errorThrown) {
           console.log('error resetting user:', textStatus, errorThrown);
-          utils.trackWebpayEvent({'action': 'webpay user reset',
-                                  'label': 'Reset User Error'});
+          utils.trackEvent({'action': 'webpay user reset',
+                            'label': 'Reset User Error'});
         });
       return result;
     },
@@ -95,8 +95,8 @@ define([
         timeout: settings.ajax_timeout,
         success: _.bind(function() {
           console.log('verification success');
-          utils.trackWebpayEvent({'action': 'persona login',
-                                  'label': 'Login Success'});
+          utils.trackEvent({'action': 'persona login',
+                            'label': 'Login Success'});
           this.set({'logged_in': true});
           //bango.prepareAll(data.user_hash).done(function _onDone() {
           //  callback(data);
@@ -105,22 +105,22 @@ define([
         error: _.bind(function(xhr, textStatus ) {
           if (textStatus === 'timeout') {
             console.log('login timed out');
-            utils.trackWebpayEvent({'action': 'persona login',
-                                    'label': 'Verification Timed Out'});
+            utils.trackEvent({'action': 'persona login',
+                              'label': 'Verification Timed Out'});
             //var that = this;
             //cli.showFullScreenError({callback: function(){ $.ajax(that); },
             //                         errorCode: 'INTERNAL_TIMEOUT'});
             // TODO: Show retry.
           } else if (xhr.status === 403) {
             console.log('permission denied after auth');
-            utils.trackWebpayEvent({'action': 'persona login',
-                                    'label': 'Login Permission Denied'});
+            utils.trackEvent({'action': 'persona login',
+                              'label': 'Login Permission Denied'});
             //window.location.href = bodyData.deniedUrl;
             // TODO: Show error message.
           } else {
             console.log('login error');
-            utils.trackWebpayEvent({'action': 'persona login',
-                                    'label': 'Login Failed'});
+            utils.trackEvent({'action': 'persona login',
+                              'label': 'Login Failed'});
             this.set({'logged_in': false});
           }
         }, this)

@@ -12,12 +12,12 @@ define(['jquery'], function($) {
     decodeURIComponent: function decodeURIComponent(uri) {
       return window.decodeURIComponent(uri.replace(/\+/g, ' '));
     },
-    trackWebpayClick: function() {
-      console.log('trackWebpayClick');
+    trackClick: function() {
+      console.log('trackClick');
       // TODO: Add real functionality here.
     },
-    trackWebpayEvent: function() {
-      console.log('trackWebpayEvent');
+    trackEvent: function() {
+      console.log('trackEvent');
       // TODO: Add real functionality here.
     },
   };

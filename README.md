@@ -6,7 +6,6 @@ Spartacus is a single page app front-end for [Webpay](https://github.com/mozilla
 
 ## Todos
 
-- ◻ Setup Persona + Tests
 - ◻ Setup Pin Create Flow + Tests
 - ◻ Setup Pin Entry Flow + Tests
 - ◻ Setup Pin Reset Flow + Tests
@@ -16,6 +15,7 @@ Spartacus is a single page app front-end for [Webpay](https://github.com/mozilla
 
 ## Done
 
+- ☑ Setup Persona + Tests
 - ☑ Setup UI Test environment.
 - ☑ Setup Styleguide
 - ☑ Setup l10n framework

@@ -31,6 +31,11 @@ define([
       AppRouter.prototype.after.restore();
       AppRouter.prototype.before.restore();
       AppRouter.prototype.showLogin.restore();
+
+      // Get rid of the fragment so reloading doesn't
+      // start the tests at a different entry point.
+      window.location.replace("#");
+      history.replaceState({}, '', window.location.href.slice(0, -1));
     });
 
     test('Should call before', function(){

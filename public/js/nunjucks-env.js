@@ -4,7 +4,7 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   var env = nunjucks.configure({ autoescape: true });
   module.exports = env;
 } else if (typeof define === 'function' && define.amd) {
-  define(['nunjucks', 'templates'], function(nunjucks) {
+  define(['nunjucks-slim', 'templates'], function(nunjucks) {
     return nunjucks.configure({ autoescape: true });
   });
 }

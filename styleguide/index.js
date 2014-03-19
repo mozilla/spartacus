@@ -21,7 +21,6 @@ var env = utils.env;
 env.express(app);
 
 app.use(i18n.abide({
-  /*jshint camelcase: false */
   supported_languages: config.supportedLanguages,
   debug_lang: 'db-LB',
   default_lang: 'en-US',

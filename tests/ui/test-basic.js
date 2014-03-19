@@ -1,6 +1,6 @@
 var helpers = require('../helpers');
 
-helpers.startCasper('/');
+helpers.startCasper('/mozpay/');
 
 casper.test.begin('Basic test', {
 
@@ -8,7 +8,7 @@ casper.test.begin('Basic test', {
 
     // Run the tests.
     casper.waitForSelector('#app', function then() {
-      test.assertEqual(1, 1);
+      test.assertVisible('#app');
     });
 
     casper.run(function() {

@@ -1,7 +1,7 @@
 {
   "boss": true,
   "browser": true,
-  "camelcase": true,
+  "camelcase": false,
   "eqeqeq": true,
   "eqnull": true,
   "es5": false,
@@ -19,7 +19,9 @@
   "noarg": true,
   "passfail": false,
   "predef": [
+    "app",
     "casper",
+    "chai",
     "describe",
     "expect",
     "exports",
@@ -27,7 +29,10 @@
     "mocha",
     "process",
     "require",
+    "setup",
+    "sinon",
     "suite",
+    "teardown",
     "test"
   ],
   "shadow": false,

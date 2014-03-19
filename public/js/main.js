@@ -1,33 +1,36 @@
-// Main Entry point of the app.
+// Configure requires.
+require(['config'], function(config) {
 
-require.config({
-  paths : {
-    'backbone': '/lib/js/backbone/backbone',
-    'gobbledygook': '/lib/js/gobbledygook/gobbledygook',
-    'i18n-abide-utils': '/lib/js/i18n-abide-utils/i18n-abide-utils',
-    'jquery': '/lib/js/jquery/jquery',
-    'nunjucks': '/lib/js/nunjucks/nunjucks-slim',
-    'query-string': '/lib/js/query-string/query-string',
-    'require': '/lib/js/requirejs/require',
-    'settings': '/js/settings/settings',
-    'underscore': '/lib/js/underscore/underscore',
-  },
-  shim : {
-    'jquery': {
-      exports: '$'
-    },
-    'underscore': {
-      exports: '_'
-    },
-    'backbone': {
-      deps: ['underscore'],
-      exports: 'Backbone'
-    },
-  }
-});
+  // Setup the requires.
+  require.config(config);
 
+  // Main Entry point of the app.
+  require([
+    'backbone',
+    'id',
+    'i18n',
+    'log',
+    'models/user',
+    'router',
+    'utils',
+    'views/throbber',
+  ], function(Backbone, id, i18n, log, UserModel, router, utils, throbber){
 
-require(['app', 'lib/i18n'], function(App, i18n){
-  // Setup the locale and then run init.
-  i18n.initLocale(function() { App.initialize(); });
+    window.app = {};
+    var console = log('app');
+
+    function initialize() {
+      console.log('I AM SPARTACUS!');
+      // Always show throbber.
+      throbber.show();
+      // Spin up the routing.
+      console.log('Initializing Routing');
+      app.user = new UserModel();
+      app.router = new router.AppRouter();
+      Backbone.history.start({pushState: true, root: app.router.root});
+    }
+
+    // Require locale then run init.
+    i18n.initLocale(initialize);
+  });
 });

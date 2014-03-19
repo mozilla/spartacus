@@ -1,5 +1,3 @@
-/*jshint camelcase: false */
-
 var utils = require('./utils');
 var context = require('./context');
 

@@ -34,12 +34,12 @@ define([
     });
 
     test('Should call before', function(){
-      this.router.navigate('/login', opts);
+      this.router.navigate('', opts);
       sinon.assert.calledOnce(AppRouter.prototype.before);
     });
 
     test('Should call after', function(){
-      this.router.navigate('/login', opts);
+      this.router.navigate('', opts);
       sinon.assert.calledOnce(AppRouter.prototype.after);
     });
 

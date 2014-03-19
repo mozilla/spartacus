@@ -26,7 +26,6 @@ define(['gobbledygook'], function() {
     },
 
     gettext: function (msgid) {
-      /*jshint camelcase: false */
       var localeData = typeof window._i18nAbide !== 'undefined' ? window._i18nAbide : window.json_locale_data;
 
       if (localeData && localeData.messages) {

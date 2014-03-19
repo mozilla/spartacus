@@ -7,7 +7,6 @@ var rewriteModule = require('http-rewrite-middleware');
 
 var config = require('../config/');
 
-
 var app = express();
 var env = new nunjucks.Environment(new nunjucks.FileSystemLoader(__dirname + '/templates'),
                                    {autoescape: true});
@@ -19,7 +18,6 @@ app.use(require('connect-livereload')({
 env.express(app);
 
 app.use(i18n.abide({
-  /*jshint camelcase: false */
   supported_languages: config.supportedLanguages,
   debug_lang: 'db-LB',
   default_lang: 'en-US',

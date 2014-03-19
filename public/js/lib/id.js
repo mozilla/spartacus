@@ -8,7 +8,6 @@ define(['jquery', 'log', 'utils'], function($, log,  utils) {
   return {
     request: function _request(options) {
       var console = log('id', 'request');
-      /*jshint camelcase: false */
       var defaults = {
         experimental_allowUnverified: true,
         experimental_forceIssuer: utils.bodyData.unverifiedIssuer,

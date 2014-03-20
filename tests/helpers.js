@@ -1,3 +1,5 @@
+var _ = require('underscore');
+
 var config = require('../config');
 
 var _currTestId;
@@ -6,8 +8,12 @@ var _testInited = {};
 
 var baseTestUrl = 'http://localhost:' + config.test.port;
 
-// Add poly-fill for Function.prototype.bind.
-casper.options.clientScripts = ["tests/static/testlib/bind-poly.js"];
+casper.options.clientScripts = [
+  // Add poly-fill for Function.prototype.bind.
+  'tests/static/testlib/bind-poly.js',
+  // Add sinon for server response faking.
+  'public/lib/js/sinon/index.js'
+];
 
 
 function makeToken() {
@@ -99,8 +105,58 @@ exports.logInAsNewUser = function() {
 };
 
 
-exports.startCasper = function startCasper(path) {
+exports.startCasper = function startCasper(path, cb) {
   var url = baseTestUrl + path;
   casper.echo('Starting with url: ' + url);
-  casper.start(url);
+  if (cb) {
+    casper.start(url, cb);
+  } else {
+    casper.start(url);
+  }
+};
+
+exports.injectSinon = function() {
+  casper.evaluate(function() {
+    window.server = sinon.fakeServer.create();
+    window.server.autoRespond = true;
+  });
+  // Setup the teardown when injecting.
+  casper.test.tearDown(function() {
+    casper.echo('Tearing down Sinon', 'INFO');
+    casper.evaluate(function() {
+      window.server.restore();
+    });
+  });
+};
+
+exports.fakeVerificationSuccess = function() {
+  casper.echo('Faking verification success with Sinon', 'INFO');
+  casper.evaluate(function() {
+    window.server.respondWith('POST', '/fake-verify',
+      [200, {'Content-Type': 'application/json'}, JSON.stringify({
+        'status': 'okay',
+        'audience': 'http://localhost',
+        'expires': Date.now(),
+        'issuer': 'fake-persona'
+      })]);
+  });
+};
+
+var pinDefaults = {
+  pin: false,
+  pin_is_locked_out: false,
+  pin_was_locked_out: false,
+  pin_locked_out: null
+};
+
+exports.fakePinData = function(overrides) {
+  var pinData = _.clone(pinDefaults);
+  _.extend(pinData, overrides || {});
+  pinData = JSON.stringify(pinData);
+  casper.echo('Setting up fakePinData with Sinon', 'INFO');
+  casper.echo(pinData, 'COMMENT');
+  casper.evaluate(function(pinData) {
+    window.server.respondWith('GET', '/mozpay/v1/api/pin/',
+      [200, {'Content-Type': 'application/json'}, pinData]);
+  }, pinData);
 };

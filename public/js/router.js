@@ -53,11 +53,18 @@ define([
     },
 
     before: function() {
-      // Always run id.watch.
-      app.user.checkAuth();
-      // Check login state and prevent routing if unknown.
-      if (app.user.get('logged_in') !== true && Backbone.history.fragment !== 'login') {
-        console.log('Preventing navigation as logged_in state is unknown and not login view.');
+      // If logged_in state hasn't yet been set we need to prevent
+      // routing until it is.
+      if (app.user.get('logged_in') === null) {
+        console.log('Preventing navigation as logged_in state is unknown.');
+        this.navigate('', {replace: true});
+        return false;
+      }
+      // If logged_in state is false then we need to always show the login page.
+      // assuming that's not where we already are.
+      if (app.user.get('logged_in') === false && Backbone.history.fragment !== 'login') {
+        console.log('Not login page and logged_out so navigating to /login');
+        this.navigate('/login', {trigger: true});
         return false;
       }
     },

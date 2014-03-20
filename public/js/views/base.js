@@ -35,6 +35,12 @@ define([
       this.$el.html(this.template(template, data));
       console.log('Replacing $el with rendered content');
       return this;
+    },
+    clear: function clear() {
+      // Remote the content in the view.
+      this.$el.empty();
+      // Disconnect the view's event handlers.
+      this.unbind();
     }
   });
   return BaseView;

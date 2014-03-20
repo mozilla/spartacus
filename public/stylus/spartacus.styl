@@ -19,6 +19,22 @@ body, html {
     width: 100%;
 }
 
+// Add stripes when running the dev server just to make it easier to know if you're looking
+// at a webpay hosted version or the devlopment version.
+.dev-server:before {
+    background-color: yellow;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, black 10px, black 20px);
+    bottom: 0;
+    content: '';
+    display: block;
+    opacity: 0.5;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10px;
+    z-index: 20;
+}
+
 .app {
     background: $bg-color;
     grain();

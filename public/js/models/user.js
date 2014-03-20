@@ -15,54 +15,94 @@ define([
 
   var UserModel = BaseModel.extend({
 
+    // Initialization of the model. Event listeners and setup should happen here.
     initialize: function(){
-      _.bindAll(this, 'checkAuth', 'handleLoginStatechange', 'loginHandler', 'logoutHandler');
-      this.on('change:logged_in', this.handleLoginStatechange);
+      _.bindAll(this, 'handleLoginStateChange', 'loginHandler', 'logoutHandler', 'watchIdentity');
+      this.on('change:logged_in', this.handleLoginStateChange);
     },
 
     defaults: {
       logged_in: null,
+      // Whether the user has a pin.
+      pin: false,
+      // Date object for when the pin was locked.
+      pin_locked_out: null,
+      // If the user has a locked pin
+      pin_is_locked_out: null,
+      // If the user was previously locked out.
+      pin_was_locked_out: null
     },
 
-    handleLoginStatechange: function() {
-      if (this.get('logged_in') === false) {
-        console.log('navigating to /login');
-        app.router.navigate('/login', {trigger: true});
+    baseURL: utils.bodyData.baseApiURL || '',
+
+    url: '/mozpay/v1/api/pin/',
+
+    // Takes the data retrieved from the API and works out how to
+    // dispatch the user based on the reponse.
+    handleUserState: function(data) {
+      if (data.pin_is_locked_out === true) {
+        console.log('User is locked out. Navigating to /locked');
+        return app.router.navigate('/locked', {trigger: true});
+      } else if (data.pin_was_locked_out === true) {
+        console.log('User was locked out. Navigating to /was-locked');
+        return app.router.navigate('/was-locked', {trigger: true});
+      } else if (data.pin === true) {
+        console.log('User has a pin so navigate to /enter-pin');
+        return app.router.navigate('/enter-pin', {trigger: true});
       } else {
-        // TODO: More advanced logic here to check state.
-        if (Backbone.history.fragment === 'enter-pin') {
-          // If we're already trying to get to 'enter-pin' navigating to it
-          // won't cause it to be re-rendered so force it to be rendered by
-          // calling the view direct.
-          console.log('Already on Enter Pin. Re-rendering');
-          app.router.showEnterPin();
-        } else {
-          console.log('navigating to /enter-pin');
-          app.router.navigate('/enter-pin', {trigger: true});
-        }
+        console.log('User has no pin so navigate to /create-pin');
+        return app.router.navigate('/create-pin', {trigger: true});
       }
     },
 
-    checkAuth: function() {
+    // Runs fetch to get the current model state.
+    getUserState: function() {
+      // Check the user's state
+      console.log('Fetching model state');
+      this.fetch()
+        .done(this.handleUserState)
+        .fail(function(){
+          console.log('fail');
+        });
+    },
+
+    // When the `logged_in` attr changes this function decides
+    // if login is required or if the user is logged in it hands off to
+    // checking the User's state e.g. if the user has a PIN or if the user
+    // is currently locked out.
+    handleLoginStateChange: function() {
+      var logged_in = this.get('logged_in');
+      console.log('logged_in state changed to ' + logged_in);
+      if (logged_in === false) {
+        console.log('navigating to /login');
+        app.router.navigate('/login', {trigger: true});
+      } else {
+        this.getUserState();
+      }
+    },
+
+    // Runs navigator.id.watch via Persona.
+    watchIdentity: function() {
       id.watch({
         onlogin: this.loginHandler,
         onlogout: this.logoutHandler,
       });
     },
 
+    // Runs the logout for the user.
     logoutHandler: function() {
-      var self = this;
-      self.set({'logged_in': false});
-      self.resetUser();
+      this.set({'logged_in': false});
+      this.resetUser();
     },
 
+    // Carries out resetting the user.
+    // TODO: Needs timers.
     resetUser: function _resetUser() {
       var console = log('UserModel', 'resetUser');
       console.log('Begin webpay user reset');
       var request = {
         'type': 'POST',
-        url: utils.bodyData.resetUserUrl,
-        headers: {'X-CSRFToken': $('meta[name=csrf]').attr('content')}
+        url: utils.bodyData.resetUserUrl
       };
       var result = $.ajax(request)
         .done(function _resetSuccess() {
@@ -79,6 +119,8 @@ define([
       return result;
     },
 
+    // Handle login from id.watch. Here is where verification occurs.
+    // TODO: needs timers.
     loginHandler: function(assertion) {
 
       if (loginTimer) {
@@ -87,6 +129,7 @@ define([
       }
 
       throbber.show(this.gettext('Connecting to Persona'));
+      console.log('Verifying assertion');
 
       $.ajax({
         type: 'POST',
@@ -102,7 +145,7 @@ define([
           //  callback(data);
           //});
         }, this),
-        error: _.bind(function(xhr, textStatus ) {
+        error: _.bind(function(xhr, textStatus) {
           if (textStatus === 'timeout') {
             console.log('login timed out');
             utils.trackEvent({'action': 'persona login',

@@ -21,4 +21,6 @@ module.exports = {
   test: {
     port: 7778,
   },
+
+  showClientConsole: false
 };

@@ -39,6 +39,17 @@ app.get('/mozpay', function (req, res) {
 app.get(/\/testlib\/?.*/, express.static(__dirname + '/../tests/static'));
 app.get(/\/unit\/?.*/, express.static(__dirname + '/../tests/'));
 
+// Fake API response.
+app.get('/mozpay/v1/api/pin/', function(req, res) {
+  var result = {
+    pin: false,
+    pin_is_locked_out: false,
+    pin_was_locked_out: false,
+    pin_locked_out: null
+  };
+  res.send(result);
+});
+
 // Fake verification.
 app.post('/fake-verify', function (req, res) {
   var assertion = req.query.assertion ? req.query.assertion : '';

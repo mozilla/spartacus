@@ -1,4 +1,9 @@
-define(['views/base', 'log', 'lib/pin', 'views/throbber'], function(BaseView, log, pin, throbber){
+define([
+  'lib/pin',
+  'log',
+  'views/base',
+  'views/throbber'
+], function(pin, log, BaseView, throbber){
   var console = log('view', 'enter-pin');
   var EnterPinView = BaseView.extend({
     render: function(){

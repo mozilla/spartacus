@@ -23,7 +23,7 @@
     "js-beautify": "^1.4.2",
     "mocha-phantomjs": "~3.3.2",
     "nunjucks": "~1.0.1",
-    "underscore": "~1.6.0"
+    "underscore": "^1.6.0"
   },
   "scripts": {
     "test": "node -e \"require('grunt').cli()\" null test",

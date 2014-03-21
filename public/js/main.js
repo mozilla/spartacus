@@ -7,17 +7,25 @@ require(['config'], function(config) {
   // Main Entry point of the app.
   require([
     'backbone',
-    'id',
     'i18n',
+    'id',
+    'jquery',
     'log',
     'models/user',
     'router',
     'utils',
     'views/throbber',
-  ], function(Backbone, id, i18n, log, UserModel, router, utils, throbber){
+  ], function(Backbone, i18n, id, $, log, UserModel, router, utils, throbber){
 
     window.app = {};
     var console = log('app');
+
+    // Common ajax settings.
+    $.ajaxSetup({
+      headers: {
+        "X-CSRFToken": $('meta[name=csrf]').attr('content')
+      }
+    });
 
     function initialize() {
       console.log('I AM SPARTACUS!');
@@ -28,6 +36,8 @@ require(['config'], function(config) {
       app.user = new UserModel();
       app.router = new router.AppRouter();
       Backbone.history.start({pushState: true, root: app.router.root});
+      // Start identity watch.
+      app.user.watchIdentity();
     }
 
     // Require locale then run init.

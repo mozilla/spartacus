@@ -4,6 +4,9 @@ define([
   'views/base',
   'views/throbber'
 ], function(pin, log, BaseView, throbber){
+
+  'use strict';
+
   var console = log('view', 'create-pin');
   var CreatePinView = BaseView.extend({
     render: function(){

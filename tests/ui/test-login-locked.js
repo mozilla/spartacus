@@ -15,7 +15,7 @@ casper.test.begin('Login then locked', {
 
     casper.waitForUrl('/mozpay/locked', function() {
       test.assertSelectorHasText('h1', 'Error');
-      test.assertVisible('.full-error');
+      test.assertVisible('.locked');
       test.assertSelectorHasText('.msg', 'You entered the wrong pin too many times. Your account is locked. Please try your purchase again in 5 minutes.');
     });
 

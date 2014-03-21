@@ -1,4 +1,10 @@
-define(['views/base', 'log'], function(BaseView, log){
+define([
+  'log',
+  'views/base'
+], function(log, BaseView){
+
+  'use strict';
+
   var console = log('view', 'was-locked');
   var WasLockedView = BaseView.extend({
     render: function(){

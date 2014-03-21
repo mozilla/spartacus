@@ -41,12 +41,22 @@ app.get(/\/unit\/?.*/, express.static(__dirname + '/../tests/'));
 
 // Fake API response.
 app.get('/mozpay/v1/api/pin/', function(req, res) {
+
   var result = {
     pin: false,
     pin_is_locked_out: false,
     pin_was_locked_out: false,
     pin_locked_out: null
   };
+
+  if (req.query.pin_is_locked_out) {
+    result.pin_is_locked_out = true;
+  }
+
+  if (req.query.pin) {
+    result.pin = true;
+  }
+
   res.send(result);
 });
 

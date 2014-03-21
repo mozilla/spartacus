@@ -7,8 +7,11 @@ define([
   'models/base',
   'settings',
   'utils',
+  'views/error-overlay',
   'views/throbber'
-], function($, _, Backbone, id, log, BaseModel, settings, utils, throbber){
+], function($, _, Backbone, id, log, BaseModel, settings, utils, ErrorOverlay, throbber){
+
+  'use strict';
 
   var loginTimer = null;
   var console = log('model', 'user');
@@ -40,6 +43,7 @@ define([
     // Takes the data retrieved from the API and works out how to
     // dispatch the user based on the reponse.
     handleUserState: function(data) {
+
       if (data.pin_is_locked_out === true) {
         console.log('User is locked out. Navigating to /locked');
         return app.router.navigate('/locked', {trigger: true});

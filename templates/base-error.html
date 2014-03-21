@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% import "_macros.html" as macro %}
 
-{% block mainclass %}full-error{% endblock %}
+{% block pageclass %}{% if pageclass %}{{ pageclass }}{% else %}full-error{% endif %}{% endblock %}
 
 {% block page %}
   <section class="content error">
@@ -14,7 +14,7 @@
 
   <menu class="buttons" type="toolbar">
     {% block buttons %}
-      {{ macro.button(gettext('Cancel')) }}
+      {{ macro.button(gettext('Cancel'), modifier='cancel') }}
       {{ macro.button(gettext('OK'), modifier='cta') }}
     {% endblock %}
   </menu>

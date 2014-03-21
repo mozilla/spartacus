@@ -1,6 +1,8 @@
 // Configure requires.
 require(['config'], function(config) {
 
+  'use strict';
+
   // Setup the requires.
   require.config(config);
 

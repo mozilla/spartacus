@@ -6,7 +6,7 @@
   "use strict";
 
   var LOGIN_STATE_KEY = "STUBBYID_LOGIN_STATE";
-  var ATTACH_WIDGET = true;
+  var ATTACH_WIDGET = false;
 
   var widget = {
     el: document.createElement('div'),

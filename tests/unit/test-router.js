@@ -8,7 +8,7 @@ define([
 
   suite('Routing Tests', function(){
 
-    setup(function () {
+    setup(function() {
       // Stub route methods.
       sinon.stub(AppRouter.prototype, "before");
       sinon.stub(AppRouter.prototype, "after");
@@ -26,7 +26,7 @@ define([
       this.router.on("route", this.routerSpy);
     });
 
-    teardown(function () {
+    teardown(function() {
       Backbone.history.stop();
       AppRouter.prototype.after.restore();
       AppRouter.prototype.before.restore();

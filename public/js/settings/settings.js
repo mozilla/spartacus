@@ -58,6 +58,7 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = settings;
 } else if (typeof define === 'function' && define.amd) {
   define([], function() {
+    'use strict';
     return settings;
   });
 }

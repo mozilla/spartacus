@@ -1,4 +1,11 @@
-define(['views/base', 'log', 'lib/pin'], function(BaseView, log, pin){
+define([
+  'lib/pin',
+  'log',
+  'views/base'
+], function(pin, log, BaseView){
+
+  'use strict';
+
   var console = log('view', 'reset-pin');
   var ResetPinView = BaseView.extend({
     render: function(){

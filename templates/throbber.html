@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
+{% block pageclass %}throbber{% endblock %}
 
-{% block mainclass %}throbber{% endblock %}
 {% block page %}
 <progress></progress>
 <p class="msg">{% if msg %}{{ msg }}{% else %}{{ gettext('Loading...')}}{% endif %}</p>

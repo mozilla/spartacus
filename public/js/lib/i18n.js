@@ -1,4 +1,5 @@
 define(['jquery', 'i18n-abide-utils', 'log', 'settings', 'query-string'], function($, i18nUtils, log, settings) {
+  'user strict';
 
   var $html = $('html');
   var DEBUG_LANG = settings.DEBUG_LANG;

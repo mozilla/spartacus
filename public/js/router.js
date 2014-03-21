@@ -1,17 +1,19 @@
 define([
-  'jquery',
-  'underscore',
   'backbone',
   'i18n-abide-utils',
+  'jquery',
   'log',
+  'underscore',
   'utils',
-  'views/login',
   'views/create-pin',
   'views/enter-pin',
-  'views/reset-pin',
   'views/locked',
+  'views/login',
+  'views/reset-pin',
   'views/was-locked',
-], function($, _, Backbone, i18n, log, utils, LoginView, CreatePinView, EnterPinView, ResetPinView, LockedView, WasLockedView){
+], function(Backbone, i18n, $, log, _, utils, CreatePinView, EnterPinView, LockedView, LoginView, ResetPinView, WasLockedView){
+
+  'use strict';
 
   var console = log('router');
 

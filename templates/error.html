@@ -1,0 +1,9 @@
+{% extends 'base-error.html' %}
+{% import "_macros.html" as macro %}
+
+{% block buttons %}
+  {{ macro.button(gettext('Cancel'), modifier='cancel') }}
+  {% if buttonText %}
+  {{ macro.button(buttonText, modifier='cta') }}
+  {% endif %}
+{% endblock %}

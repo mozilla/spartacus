@@ -1,5 +1,7 @@
 define(['jquery', 'log'], function($, log) {
 
+  'use strict';
+
   var console = log('pin');
   var pinMaxLength = 4;
   var pinBuffer;

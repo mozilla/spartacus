@@ -1,4 +1,8 @@
-define(['jquery', 'log'], function($, log) {
+define([
+  'i18n-abide-utils',
+  'jquery',
+  'log'
+], function(i18n, $, log) {
 
   'use strict';
 
@@ -9,10 +13,15 @@ define(['jquery', 'log'], function($, log) {
   var numericRx = /^\d$/;
 
   // Placeholders for jQuery elements.
-  var $pinBox;
   var $pseudoInputs;
   var $pinInput;
   var $submitButton;
+  var $errorMessage;
+  var $content;
+
+  function getPin() {
+    return pinBuffer;
+  }
 
   function focusPin() {
     console.log('Focusing pin');
@@ -32,7 +41,6 @@ define(['jquery', 'log'], function($, log) {
         $elm.removeClass('filled');
       }
     });
-
     $submitButton.prop('disabled', (pinBuffer.length !== pinMaxLength));
   }
 
@@ -40,26 +48,36 @@ define(['jquery', 'log'], function($, log) {
     var key = String.fromCharCode(e.charCode);
     // Check if [0-9]
     if (numericRx.test(key) && pinBuffer.length !== pinMaxLength) {
-      console.log('Adding to buffer');
       pinBuffer += key;
     // OR if this is a backspace.
     } else if (e.keyCode === 8 && pinBuffer.length > 0) {
-      console.log('Removing from buffer');
       pinBuffer = pinBuffer.slice(0, -1);
+    } else {
+      showError(i18n.gettext('Pin can only contain digits.'));
+      return false;
     }
-
+    hideError();
     updatePinUI();
     // We don't need to fill up the input at all :).
     return false;
   }
 
+  function showError(errorMessage) {
+    $errorMessage.text(errorMessage);
+    $errorMessage.removeClass('hidden');
+  }
+
+  function hideError() {
+    $errorMessage.addClass('hidden');
+  }
+
   function init() {
-    $pinBox = $('.pinbox');
     $pseudoInputs = $('.pinbox span');
     $pinInput = $('#pin');
     $submitButton = $('button.continue');
-
-    $pinBox.on('click', function(e) {
+    $errorMessage = $('.err-msg');
+    $content = $('.content');
+    $content.on('click', function(e) {
       focusPin();
       e.preventDefault();
     });
@@ -67,8 +85,16 @@ define(['jquery', 'log'], function($, log) {
     focusPin();
   }
 
+  function resetPinUI() {
+    pinBuffer = '';
+    updatePinUI();
+  }
+
   return {
-    init: init
+    init: init,
+    showError: showError,
+    getPin: getPin,
+    resetPinUI: resetPinUI,
   };
 
 });

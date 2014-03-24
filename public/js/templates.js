@@ -555,10 +555,10 @@ output += "\n<section class=\"content\">\n  <h1>";
 context.getBlock("heading")(env, context, frame, runtime, function(t_7,t_6) {
 if(t_7) { cb(t_7); return; }
 output += t_6;
-output += "</h1>\n  <input id=\"pin\" type=\"number\" x-inputmode=\"digit\">\n  <div class=\"pinbox\">\n    <span></span>\n    <span></span>\n    <span></span>\n    <span></span>\n  </div>\n</section>\n\n<menu class=\"buttons\" type=\"toolbar\">\n  ";
-output += runtime.suppressValue((lineno = 18, colno = 15, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [(lineno = 18, colno = 23, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["Cancel"]))])), env.autoesc);
+output += "</h1>\n  <input id=\"pin\" type=\"number\" x-inputmode=\"digit\">\n  <div class=\"pinbox\">\n    <span></span>\n    <span></span>\n    <span></span>\n    <span></span>\n  </div>\n  <p class=\"err-msg hidden\"></p>\n</section>\n\n<menu class=\"buttons\" type=\"toolbar\">\n  ";
+output += runtime.suppressValue((lineno = 19, colno = 15, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [(lineno = 19, colno = 23, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["Cancel"]))])), env.autoesc);
 output += "\n  ";
-output += runtime.suppressValue((lineno = 19, colno = 15, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [(lineno = 19, colno = 23, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["Continue"])),runtime.makeKeywordArgs({"modifier": "cta continue","disabled": true})])), env.autoesc);
+output += runtime.suppressValue((lineno = 20, colno = 15, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [(lineno = 20, colno = 23, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["Continue"])),runtime.makeKeywordArgs({"modifier": "cta continue","disabled": true})])), env.autoesc);
 output += "\n</menu>\n";
 cb(null, output);
 });

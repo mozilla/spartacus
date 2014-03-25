@@ -1,7 +1,8 @@
-/*
-* Thin wrapper around navigator.id for shared code.
-*/
-define(['jquery', 'log', 'utils'], function($, log,  utils) {
+define([
+  'jquery',
+  'log',
+  'utils'
+], function($, log,  utils) {
 
   'use strict';
 

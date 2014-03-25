@@ -101,12 +101,19 @@ parentTemplate.rootRenderFunc(env, context, frame, runtime, cb);
   cb(runtime.handleError(e, lineno, colno));
 }
 }
-function b_mainclass(env, context, frame, runtime, cb) {
+function b_pageclass(env, context, frame, runtime, cb) {
 var lineno = null;
 var colno = null;
 var output = "";
 try {
+if(runtime.contextOrFrameLookup(context, frame, "pageclass")) {
+output += runtime.suppressValue(runtime.contextOrFrameLookup(context, frame, "pageclass"), env.autoesc);
+;
+}
+else {
 output += "full-error";
+;
+}
 cb(null, output);
 ;
 } catch (e) {
@@ -146,7 +153,7 @@ var colno = null;
 var output = "";
 try {
 output += "\n      ";
-output += runtime.suppressValue((lineno = 16, colno = 19, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [(lineno = 16, colno = 27, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["Cancel"]))])), env.autoesc);
+output += runtime.suppressValue((lineno = 16, colno = 19, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [(lineno = 16, colno = 27, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["Cancel"])),runtime.makeKeywordArgs({"modifier": "cancel"})])), env.autoesc);
 output += "\n      ";
 output += runtime.suppressValue((lineno = 17, colno = 19, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [(lineno = 17, colno = 27, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["OK"])),runtime.makeKeywordArgs({"modifier": "cta"})])), env.autoesc);
 output += "\n    ";
@@ -157,7 +164,7 @@ cb(null, output);
 }
 }
 return {
-b_mainclass: b_mainclass,
+b_pageclass: b_pageclass,
 b_page: b_page,
 b_buttons: b_buttons,
 root: root
@@ -249,22 +256,22 @@ var lineno = null;
 var colno = null;
 var output = "";
 try {
-output += "<main class=\"";
-context.getBlock("mainclass")(env, context, frame, runtime, function(t_2,t_1) {
+output += "<div class=\"page ";
+context.getBlock("pageclass")(env, context, frame, runtime, function(t_2,t_1) {
 if(t_2) { cb(t_2); return; }
 output += t_1;
-output += "\">\n  <div class=\"page\">\n    ";
+output += "\">\n  <div class=\"inner\">\n    ";
 context.getBlock("page")(env, context, frame, runtime, function(t_4,t_3) {
 if(t_4) { cb(t_4); return; }
 output += t_3;
-output += "\n  </div>\n</main>\n";
+output += "\n  </div>\n</div>\n";
 cb(null, output);
 })});
 } catch (e) {
   cb(runtime.handleError(e, lineno, colno));
 }
 }
-function b_mainclass(env, context, frame, runtime, cb) {
+function b_pageclass(env, context, frame, runtime, cb) {
 var lineno = null;
 var colno = null;
 var output = "";
@@ -287,7 +294,7 @@ cb(null, output);
 }
 }
 return {
-b_mainclass: b_mainclass,
+b_pageclass: b_pageclass,
 b_page: b_page,
 root: root
 };
@@ -365,6 +372,57 @@ root: root
 };
 })();
 })();
+(function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["error.html"] = (function() {function root(env, context, frame, runtime, cb) {
+var lineno = null;
+var colno = null;
+var output = "";
+try {
+env.getTemplate("base-error.html", true, function(t_2,parentTemplate) {
+if(t_2) { cb(t_2); return; }
+for(var t_1 in parentTemplate.blocks) {
+context.addBlock(t_1, parentTemplate.blocks[t_1]);
+}
+output += "\n";
+env.getTemplate("_macros.html", function(t_4,t_3) {
+if(t_4) { cb(t_4); return; }
+t_3.getExported(function(t_5,t_3) {
+if(t_5) { cb(t_5); return; }
+context.setVariable("macro", t_3);
+output += "\n\n";
+output += "\n";
+parentTemplate.rootRenderFunc(env, context, frame, runtime, cb);
+})})});
+} catch (e) {
+  cb(runtime.handleError(e, lineno, colno));
+}
+}
+function b_buttons(env, context, frame, runtime, cb) {
+var lineno = null;
+var colno = null;
+var output = "";
+try {
+output += "\n  ";
+output += runtime.suppressValue((lineno = 4, colno = 15, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [(lineno = 4, colno = 23, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["Cancel"])),runtime.makeKeywordArgs({"modifier": "cancel"})])), env.autoesc);
+output += "\n  ";
+if(runtime.contextOrFrameLookup(context, frame, "buttonText")) {
+output += "\n  ";
+output += runtime.suppressValue((lineno = 6, colno = 15, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [runtime.contextOrFrameLookup(context, frame, "buttonText"),runtime.makeKeywordArgs({"modifier": "cta"})])), env.autoesc);
+output += "\n  ";
+;
+}
+output += "\n";
+cb(null, output);
+;
+} catch (e) {
+  cb(runtime.handleError(e, lineno, colno));
+}
+}
+return {
+b_buttons: b_buttons,
+root: root
+};
+})();
+})();
 (function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["locked.html"] = (function() {function root(env, context, frame, runtime, cb) {
 var lineno = null;
 var colno = null;
@@ -382,22 +440,9 @@ t_3.getExported(function(t_5,t_3) {
 if(t_5) { cb(t_5); return; }
 context.setVariable("macro", t_3);
 output += "\n\n";
-output += "\n\n";
 output += "\n";
 parentTemplate.rootRenderFunc(env, context, frame, runtime, cb);
 })})});
-} catch (e) {
-  cb(runtime.handleError(e, lineno, colno));
-}
-}
-function b_mainclass(env, context, frame, runtime, cb) {
-var lineno = null;
-var colno = null;
-var output = "";
-try {
-output += "full-error";
-cb(null, output);
-;
 } catch (e) {
   cb(runtime.handleError(e, lineno, colno));
 }
@@ -408,7 +453,7 @@ var colno = null;
 var output = "";
 try {
 output += "\n  ";
-output += runtime.suppressValue((lineno = 6, colno = 15, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [(lineno = 6, colno = 23, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["OK"])),runtime.makeKeywordArgs({"modifier": "cta"})])), env.autoesc);
+output += runtime.suppressValue((lineno = 4, colno = 15, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [(lineno = 4, colno = 23, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["OK"])),runtime.makeKeywordArgs({"modifier": "cta"})])), env.autoesc);
 output += "\n";
 cb(null, output);
 ;
@@ -417,7 +462,6 @@ cb(null, output);
 }
 }
 return {
-b_mainclass: b_mainclass,
 b_buttons: b_buttons,
 root: root
 };
@@ -587,8 +631,8 @@ if(t_2) { cb(t_2); return; }
 for(var t_1 in parentTemplate.blocks) {
 context.addBlock(t_1, parentTemplate.blocks[t_1]);
 }
-output += "\n\n\n";
-output += "\n";
+output += "\n\n";
+output += "\n\n";
 output += "\n\n\n\n";
 parentTemplate.rootRenderFunc(env, context, frame, runtime, cb);
 });
@@ -596,7 +640,7 @@ parentTemplate.rootRenderFunc(env, context, frame, runtime, cb);
   cb(runtime.handleError(e, lineno, colno));
 }
 }
-function b_mainclass(env, context, frame, runtime, cb) {
+function b_pageclass(env, context, frame, runtime, cb) {
 var lineno = null;
 var colno = null;
 var output = "";
@@ -630,7 +674,7 @@ cb(null, output);
 }
 }
 return {
-b_mainclass: b_mainclass,
+b_pageclass: b_pageclass,
 b_page: b_page,
 root: root
 };

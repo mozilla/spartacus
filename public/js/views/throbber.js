@@ -1,9 +1,14 @@
-define(['jquery', 'views/base', 'log'], function($, BaseView, log){
+define([
+  'log',
+  'views/base'
+], function(log, BaseView){
+
+  'use strict';
 
   var console = log('view', 'throbber');
+
   var ThrobberView = BaseView.extend({
     el: '#progress',
-    $el: $('#progress'),
     render: function(msg){
       console.log('rendering throbber');
       this.setTitle(msg || this.gettext('Loading...'));
@@ -24,4 +29,5 @@ define(['jquery', 'views/base', 'log'], function($, BaseView, log){
       throbberView.clear();
     },
   };
+
 });

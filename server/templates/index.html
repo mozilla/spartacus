@@ -16,8 +16,11 @@
     data-unverified-issuer="{{ settings.browseridUnverifiedIssuerl }}"
     data-verify-url="{{ settings.verifyUserURL }}"
     >
-    <div id="app" class="app"></div>
-    <div id="progress" class="progress"></div>
+    <main>
+      <div id="app" class="app"></div>
+      <div id="progress" class="progress"></div>
+      <div id="error" class="error"></div>
+    </main>
     <script src="{{ settings.browseridJsURL }}"></script>
     <script data-main="/js/main.js" src="/lib/js/requirejs/require.js"></script>
   </body>

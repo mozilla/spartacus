@@ -1,5 +1,7 @@
 define([], function(){
 
+  'use strict';
+
   var staticUrl = document.body.getAttribute('data-static-url');
 
   staticUrl = staticUrl ? staticUrl + '/js' : '/js';
@@ -12,6 +14,7 @@ define([], function(){
     baseUrl: staticUrl,
     paths : {
       'backbone': '../lib/js/backbone/backbone',
+      'cancel': 'lib/cancel',
       'gobbledygook': '../lib/js/gobbledygook/gobbledygook',
       'i18n-abide-utils': '../lib/js/i18n-abide-utils/i18n-abide-utils',
       'i18n': 'lib/i18n',

@@ -4,6 +4,8 @@ define([
   'i18n-abide-utils',
 ], function(Backbone, i18n){
 
+  'use strict';
+
   var BaseModel = Backbone.Model.extend({
     gettext: i18n.gettext,
   });

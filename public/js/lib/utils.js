@@ -1,5 +1,7 @@
 define(['jquery'], function($) {
 
+  'use strict';
+
   var $body = $('body');
 
   return {

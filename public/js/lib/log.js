@@ -2,6 +2,8 @@
 // TOOD: Make a bower component.
 define(['utils'], function(utils) {
 
+  'use strict';
+
   if (!('groupCollapsed' in window.console)) {
     window.console.groupCollapsed = window.console.group = window.console.log;
     window.console.groupEnd = function() {};

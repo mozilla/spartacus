@@ -1,6 +1,16 @@
-define(['underscore', 'views/base', 'log', 'id', 'views/throbber'], function(_, BaseView, log, id, throbber){
+define([
+  'id',
+  'log',
+  'underscore',
+  'views/base',
+  'views/throbber'
+], function(id, log, _, BaseView, throbber){
+
+  'use strict';
+
   var console = log('view', 'login');
   var LoginView = BaseView.extend({
+
 
     initialize: function() {
       _.bindAll(this, 'renderTemplate', 'render');

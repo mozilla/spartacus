@@ -16,11 +16,15 @@ define([
   var loginTimer = null;
   var console = log('model', 'user');
 
+  var getURL = function getURL(urlSuffix) {
+    return BaseModel.prototype.getURL(urlSuffix);
+  };
+
   var UserModel = BaseModel.extend({
 
     // Initialization of the model. Event listeners and setup should happen here.
     initialize: function(){
-      _.bindAll(this, 'handleLoginStateChange', 'loginHandler', 'logoutHandler', 'watchIdentity');
+      _.bindAll(this, 'getURL', 'handleLoginStateChange', 'loginHandler', 'logoutHandler', 'watchIdentity');
       this.on('change:logged_in', this.handleLoginStateChange);
     },
 
@@ -36,14 +40,22 @@ define([
       pin_was_locked_out: null
     },
 
-    baseURL: utils.bodyData.baseApiURL || '',
+    // The PIN endpoint.
+    // * Checks state with GET
+    // * Creates PIN with a POST
+    // * Updates PIN with a PATCH
+    url: getURL('/pin/'),
 
-    url: '/mozpay/v1/api/pin/',
+    // Check PIN url.
+    checkURL: getURL('/pin/check/'),
+
+    // Pay URL. Start a purchase.
+    payURL: getURL('/pay/'),
+
 
     // Takes the data retrieved from the API and works out how to
     // dispatch the user based on the reponse.
     handleUserState: function(data) {
-
       if (data.pin_is_locked_out === true) {
         console.log('User is locked out. Navigating to /locked');
         return app.router.navigate('/locked', {trigger: true});
@@ -101,6 +113,7 @@ define([
 
     // Carries out resetting the user.
     // TODO: Needs timers.
+    // TODO: Maybe move this to auth module?
     resetUser: function _resetUser() {
       var console = log('UserModel', 'resetUser');
       console.log('Begin webpay user reset');
@@ -125,6 +138,7 @@ define([
 
     // Handle login from id.watch. Here is where verification occurs.
     // TODO: needs timers.
+    // TODO: maybe move this to auth module?
     loginHandler: function(assertion) {
 
       if (loginTimer) {
@@ -177,5 +191,3 @@ define([
 
   return UserModel;
 });
-
-

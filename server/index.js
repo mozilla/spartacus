@@ -26,7 +26,7 @@ app.use(i18n.abide({
 
 app.use(rewriteModule.getMiddleware([
   {from: '^/$', to: '/mozpay', redirect: 'permanent'},
-  {from: '^/mozpay/(?:login|create-pin|enter-pin|reset-pin|locked|throbber|was-locked)$', to: '/mozpay'},
+  {from: '^/mozpay/(?:login|create-pin|enter-pin|reset-pin|locked|throbber|wait-for-tx|was-locked)$', to: '/mozpay'},
 ]));
 
 app.get(/\/(?:css|fonts|i18n|images|js|lib)\/?.*/, express.static(__dirname + '/../public'));

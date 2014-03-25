@@ -8,7 +8,7 @@ define([
 
   var console = log('pin');
   var pinMaxLength = 4;
-  var pinBuffer;
+  var pinBuffer = '';
 
   var numericRx = /^\d$/;
 
@@ -25,7 +25,6 @@ define([
 
   function focusPin() {
     console.log('Focusing pin');
-    pinBuffer = '';
     updatePinUI();
     $pinInput.focus();
   }
@@ -52,7 +51,7 @@ define([
     // OR if this is a backspace.
     } else if (e.keyCode === 8 && pinBuffer.length > 0) {
       pinBuffer = pinBuffer.slice(0, -1);
-    } else {
+    } else if (pinBuffer.length !== pinMaxLength) {
       showError(i18n.gettext('Pin can only contain digits.'));
       return false;
     }
@@ -63,18 +62,19 @@ define([
   }
 
   function showError(errorMessage) {
+    console.log('Show error message: ' + errorMessage);
     $errorMessage.text(errorMessage);
     $errorMessage.removeClass('hidden');
   }
 
   function hideError() {
-    $errorMessage.addClass('hidden');
+    $('.err-msg').addClass('hidden');
   }
 
   function init() {
     $pseudoInputs = $('.pinbox span');
     $pinInput = $('#pin');
-    $submitButton = $('button.continue');
+    $submitButton = $('.cta[type=submit]');
     $errorMessage = $('.err-msg');
     $content = $('.content');
     $content.on('click', function(e) {
@@ -86,7 +86,9 @@ define([
   }
 
   function resetPinUI() {
+    console.log('Reset pin UI');
     pinBuffer = '';
+    hideError();
     updatePinUI();
   }
 
@@ -95,6 +97,7 @@ define([
     showError: showError,
     getPin: getPin,
     resetPinUI: resetPinUI,
+    focusPin: focusPin,
   };
 
 });

@@ -10,8 +10,9 @@ define([
   'views/locked',
   'views/login',
   'views/reset-pin',
+  'views/wait-for-tx',
   'views/was-locked',
-], function(Backbone, i18n, $, log, _, utils, CreatePinView, EnterPinView, LockedView, LoginView, ResetPinView, WasLockedView){
+], function(Backbone, i18n, $, log, _, utils, CreatePinView, EnterPinView, LockedView, LoginView, ResetPinView, WaitView, WasLockedView){
 
   'use strict';
 
@@ -52,6 +53,7 @@ define([
       'reset-pin': 'showResetPin',
       'locked': 'showLocked',
       'was-locked': 'showWasLocked',
+      'wait-for-tx': 'showWaitForTX',
     },
 
     before: function() {
@@ -103,6 +105,11 @@ define([
     showWasLocked: function() {
       var wasLockedView = new WasLockedView();
       wasLockedView.render();
+    },
+
+    showWaitForTX: function() {
+      var waitView = new WaitView();
+      waitView.render();
     },
 
   });

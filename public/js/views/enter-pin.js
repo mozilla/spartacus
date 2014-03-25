@@ -1,23 +1,24 @@
 define([
   'lib/pin',
   'log',
-  'views/base',
-  'views/throbber'
-], function(pin, log, BaseView, throbber){
+  'views/base-pin',
+], function(pin, log, BasePinView){
 
   'use strict';
 
-  var console = log('view', 'enter-pin');
-  var EnterPinView = BaseView.extend({
-    render: function(){
-      console.log('rendering...');
-      this.setTitle(this.gettext('Enter Pin'));
-      this.renderTemplate('enter-pin.html');
-      pin.init();
-      throbber.hide();
-      return this;
-    }
+  var gettext = BasePinView.prototype.gettext;
+
+  var EnterPinView = BasePinView.extend({
+
+    // Single Stage Pin Form
+    stageOneTitle: gettext('Enter Pin'),
+
+    submitStageOne: function(pinData) {
+      app.user.checkPin(pinData);
+    },
+
   });
+
   // Our module now returns our view
   return EnterPinView;
 });

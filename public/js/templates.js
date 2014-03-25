@@ -130,9 +130,9 @@ output += runtime.suppressValue(runtime.contextOrFrameLookup(context, frame, "he
 output += "</h1>\n      <p>";
 output += runtime.suppressValue(runtime.contextOrFrameLookup(context, frame, "msg"), env.autoesc);
 output += "</p>\n      ";
-if(runtime.contextOrFrameLookup(context, frame, "error_code")) {
+if(runtime.contextOrFrameLookup(context, frame, "errorCode")) {
 output += "<p class=\"error-code\">";
-output += runtime.suppressValue(runtime.contextOrFrameLookup(context, frame, "error_code"), env.autoesc);
+output += runtime.suppressValue(runtime.contextOrFrameLookup(context, frame, "errorCode"), env.autoesc);
 output += "</p>";
 ;
 }
@@ -296,78 +296,6 @@ cb(null, output);
 return {
 b_pageclass: b_pageclass,
 b_page: b_page,
-root: root
-};
-})();
-})();
-(function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["create-pin.html"] = (function() {function root(env, context, frame, runtime, cb) {
-var lineno = null;
-var colno = null;
-var output = "";
-try {
-env.getTemplate("pin-form.html", true, function(t_2,parentTemplate) {
-if(t_2) { cb(t_2); return; }
-for(var t_1 in parentTemplate.blocks) {
-context.addBlock(t_1, parentTemplate.blocks[t_1]);
-}
-output += "\n";
-output += ">\n";
-parentTemplate.rootRenderFunc(env, context, frame, runtime, cb);
-});
-} catch (e) {
-  cb(runtime.handleError(e, lineno, colno));
-}
-}
-function b_heading(env, context, frame, runtime, cb) {
-var lineno = null;
-var colno = null;
-var output = "";
-try {
-output += runtime.suppressValue((lineno = 1, colno = 23, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["Create Pin"])), env.autoesc);
-cb(null, output);
-;
-} catch (e) {
-  cb(runtime.handleError(e, lineno, colno));
-}
-}
-return {
-b_heading: b_heading,
-root: root
-};
-})();
-})();
-(function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["enter-pin.html"] = (function() {function root(env, context, frame, runtime, cb) {
-var lineno = null;
-var colno = null;
-var output = "";
-try {
-env.getTemplate("pin-form.html", true, function(t_2,parentTemplate) {
-if(t_2) { cb(t_2); return; }
-for(var t_1 in parentTemplate.blocks) {
-context.addBlock(t_1, parentTemplate.blocks[t_1]);
-}
-output += "\n";
-output += ">\n";
-parentTemplate.rootRenderFunc(env, context, frame, runtime, cb);
-});
-} catch (e) {
-  cb(runtime.handleError(e, lineno, colno));
-}
-}
-function b_heading(env, context, frame, runtime, cb) {
-var lineno = null;
-var colno = null;
-var output = "";
-try {
-output += runtime.suppressValue((lineno = 1, colno = 23, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["Enter Pin"])), env.autoesc);
-cb(null, output);
-;
-} catch (e) {
-  cb(runtime.handleError(e, lineno, colno));
-}
-}
-return {
-b_heading: b_heading,
 root: root
 };
 })();
@@ -552,25 +480,28 @@ var colno = null;
 var output = "";
 try {
 output += "\n<section class=\"content\">\n  <h1>";
-context.getBlock("heading")(env, context, frame, runtime, function(t_7,t_6) {
+output += runtime.suppressValue(runtime.contextOrFrameLookup(context, frame, "pinTitle"), env.autoesc);
+output += "</h1>\n  <input id=\"pin\" type=\"number\" x-inputmode=\"digit\">\n  <div class=\"pinbox\">\n    <span></span>\n    <span></span>\n    <span></span>\n    <span></span>\n  </div>\n  <p class=\"err-msg hidden\"></p>\n</section>\n\n";
+context.getBlock("buttons")(env, context, frame, runtime, function(t_7,t_6) {
 if(t_7) { cb(t_7); return; }
 output += t_6;
-output += "</h1>\n  <input id=\"pin\" type=\"number\" x-inputmode=\"digit\">\n  <div class=\"pinbox\">\n    <span></span>\n    <span></span>\n    <span></span>\n    <span></span>\n  </div>\n  <p class=\"err-msg hidden\"></p>\n</section>\n\n<menu class=\"buttons\" type=\"toolbar\">\n  ";
-output += runtime.suppressValue((lineno = 19, colno = 15, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [(lineno = 19, colno = 23, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["Cancel"]))])), env.autoesc);
-output += "\n  ";
-output += runtime.suppressValue((lineno = 20, colno = 15, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [(lineno = 20, colno = 23, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["Continue"])),runtime.makeKeywordArgs({"modifier": "cta continue","disabled": true})])), env.autoesc);
-output += "\n</menu>\n";
+output += "\n\n";
 cb(null, output);
 });
 } catch (e) {
   cb(runtime.handleError(e, lineno, colno));
 }
 }
-function b_heading(env, context, frame, runtime, cb) {
+function b_buttons(env, context, frame, runtime, cb) {
 var lineno = null;
 var colno = null;
 var output = "";
 try {
+output += "\n<menu class=\"buttons\" type=\"toolbar\">\n  ";
+output += runtime.suppressValue((lineno = 20, colno = 15, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [(lineno = 20, colno = 23, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["Cancel"])),runtime.makeKeywordArgs({"modifier": "cancel"})])), env.autoesc);
+output += "\n  ";
+output += runtime.suppressValue((lineno = 21, colno = 15, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [runtime.contextOrFrameLookup(context, frame, "buttonText"),runtime.makeKeywordArgs({"modifier": "cta","disabled": true})])), env.autoesc);
+output += "\n</menu>\n";
 cb(null, output);
 ;
 } catch (e) {
@@ -580,43 +511,7 @@ cb(null, output);
 return {
 b_mainclass: b_mainclass,
 b_page: b_page,
-b_heading: b_heading,
-root: root
-};
-})();
-})();
-(function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["reset-pin.html"] = (function() {function root(env, context, frame, runtime, cb) {
-var lineno = null;
-var colno = null;
-var output = "";
-try {
-env.getTemplate("pin-form.html", true, function(t_2,parentTemplate) {
-if(t_2) { cb(t_2); return; }
-for(var t_1 in parentTemplate.blocks) {
-context.addBlock(t_1, parentTemplate.blocks[t_1]);
-}
-output += "\n";
-output += ">\n";
-parentTemplate.rootRenderFunc(env, context, frame, runtime, cb);
-});
-} catch (e) {
-  cb(runtime.handleError(e, lineno, colno));
-}
-}
-function b_heading(env, context, frame, runtime, cb) {
-var lineno = null;
-var colno = null;
-var output = "";
-try {
-output += runtime.suppressValue((lineno = 1, colno = 23, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["Reset Pin"])), env.autoesc);
-cb(null, output);
-;
-} catch (e) {
-  cb(runtime.handleError(e, lineno, colno));
-}
-}
-return {
-b_heading: b_heading,
+b_buttons: b_buttons,
 root: root
 };
 })();

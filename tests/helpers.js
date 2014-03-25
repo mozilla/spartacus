@@ -149,14 +149,20 @@ var pinDefaults = {
   pin_locked_out: null
 };
 
-exports.fakePinData = function(overrides) {
+exports.fakePinData = function(overrides, method, statusCode, url) {
+  method = method || 'GET';
+  url = url || '/mozpay/v1/api/pin/';
+  statusCode = statusCode || 200;
   var pinData = _.clone(pinDefaults);
   _.extend(pinData, overrides || {});
   pinData = JSON.stringify(pinData);
   casper.echo('Setting up fakePinData with Sinon', 'INFO');
-  casper.echo(pinData, 'COMMENT');
-  casper.evaluate(function(pinData) {
-    window.server.respondWith('GET', '/mozpay/v1/api/pin/',
-      [200, {'Content-Type': 'application/json'}, pinData]);
-  }, pinData);
+  casper.echo([pinData, method, statusCode, url], 'COMMENT');
+  casper.evaluate(function(pinData, method, statusCode, url) {
+    console.log([pinData, method, url, statusCode]);
+    window.server.respondWith(method, url, [statusCode, {'Content-Type': 'application/json'}, pinData]);
+  }, pinData, method, statusCode, url);
+  //casper.evaluate(function(pinData) {
+  //  window.server.respondWith('GET', '/mozpay/v1/api/pin/', [200, {'Content-Type': 'application/json'}, pinData]);
+  //}, pinData);
 };

@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mozilla/spartacus.png?branch=master)](https://travis-ci.org/mozilla/spartacus)
+[![Build Status](https://travis-ci.org/mozilla/spartacus.svg?branch=master)](https://travis-ci.org/mozilla/spartacus)
 
 ![SPARTACUS](https://raw.github.com/mozilla/spartacus/master/spartacus.png)
 

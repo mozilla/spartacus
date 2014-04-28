@@ -4,6 +4,31 @@
 
 Spartacus is a single page app front-end for [Webpay](https://github.com/mozilla/webpay/)
 
+
+## Running Spartacus
+
+ * Checkout the build
+ * Run `npm install`
+ * Run `npm install -g grunt-cli` (This is the recommended approach for installing the cli - the runner is local to the project see http://gruntjs.com/getting-started#installing-the-cli)
+ * Use one of the following grunt commands
+
+### Running the dev server
+
+Run `grunt start`
+
+### Running the styleguide 
+
+Run `grunt styleguide`
+
+### Running the unit tests
+
+Run `grunt test`
+
+### Running the UI tests
+
+Runt `grunt uitest`
+
+
 ## Todos
 
 - [ ] Setup Pin Create Flow + Tests

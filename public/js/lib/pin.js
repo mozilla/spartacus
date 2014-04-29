@@ -51,6 +51,8 @@ define([
     // OR if this is a backspace.
     } else if (e.keyCode === 8 && pinBuffer.length > 0) {
       pinBuffer = pinBuffer.slice(0, -1);
+    // If not a number or backspace and we still don't have the whole pin
+    // show a message to indicate to the user that the input is incorrect.
     } else if (pinBuffer.length !== pinMaxLength) {
       showError(i18n.gettext('Pin can only contain digits.'));
       return false;

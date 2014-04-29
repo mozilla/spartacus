@@ -7,6 +7,12 @@ var _currentEmail;
 var _testInited = {};
 
 var baseTestUrl = 'http://localhost:' + config.test.port;
+var pinDefaults = {
+  pin: false,
+  pin_is_locked_out: false,
+  pin_was_locked_out: false,
+  pin_locked_out: null
+};
 
 casper.options.clientScripts = [
   // Add poly-fill for Function.prototype.bind.
@@ -69,7 +75,7 @@ if (config.showClientConsole === true) {
 }
 
 
-var setLoginFilter = exports.setLoginFilter = function(emailAddress) {
+function setLoginFilter(emailAddress) {
   // Set a global email to use in the new filter call.
   // This should work as long as logins are done synchronously.
   _currentEmail = emailAddress;
@@ -82,12 +88,10 @@ var setLoginFilter = exports.setLoginFilter = function(emailAddress) {
       return _currentEmail;
     }
   });
+}
 
-};
 
-
-exports.logInAsNewUser = function() {
-
+function logInAsNewUser() {
   // Sets the filter so we always login as a new user.
   var email = "tester+" + makeToken() + "@fakepersona.mozilla.org";
   setLoginFilter(email);
@@ -102,20 +106,13 @@ exports.logInAsNewUser = function() {
   });
 
   return email;
-};
+}
 
 
-exports.startCasper = function startCasper(path, cb) {
-  var url = baseTestUrl + path;
-  casper.echo('Starting with url: ' + url);
-  if (cb) {
-    casper.start(url, cb);
-  } else {
-    casper.start(url);
-  }
-};
 
-exports.injectSinon = function() {
+
+
+function injectSinon() {
   casper.evaluate(function() {
     window.server = sinon.fakeServer.create();
     window.server.autoRespond = true;
@@ -127,9 +124,10 @@ exports.injectSinon = function() {
       window.server.restore();
     });
   });
-};
+}
 
-exports.fakeVerificationSuccess = function() {
+
+function fakeVerificationSuccess() {
   casper.echo('Faking verification success with Sinon', 'INFO');
   casper.evaluate(function() {
     window.server.respondWith('POST', '/fake-verify',
@@ -140,16 +138,10 @@ exports.fakeVerificationSuccess = function() {
         'issuer': 'fake-persona'
       })]);
   });
-};
+}
 
-var pinDefaults = {
-  pin: false,
-  pin_is_locked_out: false,
-  pin_was_locked_out: false,
-  pin_locked_out: null
-};
 
-exports.fakePinData = function(overrides, method, statusCode, url) {
+function fakePinData(overrides, method, statusCode, url) {
   method = method || 'GET';
   url = url || '/mozpay/v1/api/pin/';
   statusCode = statusCode || 200;
@@ -165,4 +157,39 @@ exports.fakePinData = function(overrides, method, statusCode, url) {
   //casper.evaluate(function(pinData) {
   //  window.server.respondWith('GET', '/mozpay/v1/api/pin/', [200, {'Content-Type': 'application/json'}, pinData]);
   //}, pinData);
+}
+
+
+function doLogin() {
+  casper.waitForUrl('/mozpay/login', function() {
+    logInAsNewUser();
+  });
+}
+
+
+function startCasper(path, cb) {
+  var url = baseTestUrl + path;
+  casper.echo('Starting with url: ' + url);
+
+  var callback = (function(cb) {
+    return function() {
+      injectSinon();
+      fakeVerificationSuccess();
+      if (typeof cb === 'function') {
+        cb();
+      }
+    };
+  })(cb);
+
+  casper.start(url, callback);
+}
+
+
+module.exports = {
+  doLogin: doLogin,
+  fakePinData: fakePinData,
+  fakeVerificationSuccess: fakeVerificationSuccess,
+  injectSinon: injectSinon,
+  setLoginFilter: setLoginFilter,
+  startCasper: startCasper,
 };

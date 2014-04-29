@@ -1,8 +1,6 @@
 var helpers = require('../helpers');
 
 helpers.startCasper('/mozpay', function(){
-  helpers.injectSinon();
-  helpers.fakeVerificationSuccess();
   // Make pinStateCheck return false for pin.
   helpers.fakePinData({pin: false});
   // Make create-pin API call return 204
@@ -12,9 +10,7 @@ helpers.startCasper('/mozpay', function(){
 casper.test.begin('Create pin returns 400 (invalid data)', {
   test: function(test) {
 
-    casper.waitForUrl('/mozpay/login', function() {
-      helpers.logInAsNewUser();
-    });
+    helpers.doLogin();
 
     casper.waitForUrl('/mozpay/create-pin', function() {
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');

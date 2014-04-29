@@ -2,7 +2,7 @@ define([
   'log',
   'views/base',
   'views/throbber'
-], function(log, BaseView, throbber){
+], function(log, BaseView, throbber) {
 
   'use strict';
 
@@ -12,6 +12,6 @@ define([
       return this;
     }
   });
-  // Our module now returns our view
+
   return WaitView;
 });

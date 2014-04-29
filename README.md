@@ -16,7 +16,7 @@ Spartacus is a single page app front-end for [Webpay](https://github.com/mozilla
 
 Run `grunt start`
 
-### Running the styleguide 
+### Running the styleguide
 
 Run `grunt styleguide`
 
@@ -26,7 +26,9 @@ Run `grunt test`
 
 ### Running the UI tests
 
-Runt `grunt uitest`
+Run `grunt uitest`. To run a single UI test pass the file with a flag e.g:
+
+`grunt uitest --test tests/ui/test-basic.js`
 
 
 ## Todos

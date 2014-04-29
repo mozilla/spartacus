@@ -14,7 +14,7 @@ module.exports = function(grunt) {
         includes: ['tests/static/testlib/bind-poly.js'],
       },
       runtests : {
-        src: ['tests/ui/test-*.js'],
+        src: [grunt.option('test') || 'tests/ui/test-*.js'],
       }
     },
 

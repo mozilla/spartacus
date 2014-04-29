@@ -3,7 +3,7 @@ var helpers = require('../helpers');
 helpers.startCasper('/mozpay', function(){
   // Make pinStateCheck return false for pin.
   helpers.fakePinData({pin: false});
-  // Make create-pin API call return 204
+  // Make create-pin API call return 400
   helpers.fakePinData({pin: false}, 'POST', 400);
 });
 
@@ -28,6 +28,7 @@ casper.test.begin('Create pin returns 400 (invalid data)', {
 
     casper.waitUntilVisible('.full-error', function() {
       test.assertVisible('.full-error', 'Error page should be shown');
+      helpers.assertErrorCode('PIN_CREATE_INVALID');
     });
 
     casper.run(function() {

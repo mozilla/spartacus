@@ -21,6 +21,7 @@ casper.test.begin('Enter Pin API call returns 403', {
 
     casper.waitUntilVisible('.full-error', function() {
       test.assertVisible('.full-error', 'Error page should be shown');
+      helpers.assertErrorCode('PIN_ENTER_PERM_DENIED');
     });
 
     casper.run(function() {

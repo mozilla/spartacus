@@ -3,7 +3,7 @@ var helpers = require('../helpers');
 helpers.startCasper('/mozpay', function(){
   // Make pinStateCheck return false for pin.
   helpers.fakePinData({pin: false});
-  // Make create-pin API call return 204
+  // Make create-pin API call return 403
   helpers.fakePinData({pin: false}, 'POST', 403);
 });
 
@@ -28,6 +28,7 @@ casper.test.begin('Create pin returns 403 (not authed / CSRF fail)', {
 
     casper.waitForSelector('.full-error', function() {
       test.assertVisible('.full-error', 'Error page should be shown');
+      helpers.assertErrorCode('PIN_CREATE_PERM_DENIED');
     });
 
     casper.run(function() {

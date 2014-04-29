@@ -185,7 +185,13 @@ function startCasper(path, cb) {
 }
 
 
+function assertErrorCode(errorCode) {
+  casper.test.assertSelectorHasText('.error-code', errorCode, '.error-code should contain: ' + errorCode);
+}
+
+
 module.exports = {
+  assertErrorCode: assertErrorCode,
   doLogin: doLogin,
   fakePinData: fakePinData,
   fakeVerificationSuccess: fakeVerificationSuccess,

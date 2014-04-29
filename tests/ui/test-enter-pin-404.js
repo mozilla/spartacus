@@ -21,6 +21,7 @@ casper.test.begin('Login Enter Pin API call returns 404', {
 
     casper.waitUntilVisible('.full-error', function() {
       test.assertVisible('.full-error', 'Error page should be shown');
+      helpers.assertErrorCode('PIN_ENTER_USER_DOES_NOT_EXIST');
     });
 
     casper.run(function() {

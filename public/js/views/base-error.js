@@ -30,7 +30,7 @@ define([
       template = template || 'error.html';
       console.log('rendering error');
       context.heading = context.heading || this.gettext('Error');
-      context.msg = context.msg || this.gettext('Something went wrong');
+      context.msg = context.msg || this.gettext('Something went wrong.');
       this.setTitle(context.heading);
       this.renderTemplate(template, context || {});
       return this;

@@ -1,8 +1,8 @@
 var helpers = require('../helpers');
 
+console.log(helpers.startCasper);
+
 helpers.startCasper('/mozpay', function(){
-  helpers.injectSinon();
-  helpers.fakeVerificationSuccess();
   helpers.fakePinData({pin: false});
 });
 
@@ -11,19 +11,17 @@ casper.test.begin('Login test no pin', {
 
   test: function(test) {
 
-    casper.waitForUrl('/mozpay/login', function() {
-      helpers.logInAsNewUser();
-    });
+    helpers.doLogin();
 
     casper.waitForUrl('/mozpay/create-pin', function() {
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
-      test.assertExists('button[type=submit]:disabled', 'Submit button is disabled prior to pin entry');
+      test.assertExists('.cta:disabled', 'Submit button is disabled prior to pin entry');
       this.sendKeys('.pinbox', 'a');
       test.assertVisible('.err-msg', 'Error message should be visible on non-digit input.');
       this.sendKeys('.pinbox', '1');
       test.assertNotVisible('.err-msg', 'Error message should be cleared when entering digits after an error being shown.');
       this.sendKeys('.pinbox', '234');
-      test.assertExists('button[type=submit]:enabled', 'Submit button is enabled');
+      test.assertExists('.cta:enabled', 'Submit button is enabled');
     });
 
     casper.run(function() {

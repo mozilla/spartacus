@@ -1,21 +1,27 @@
 define([
   'lib/pin',
   'log',
-  'views/base'
-], function(pin, log, BaseView){
+  'views/base-pin',
+], function(pin, log, BasePinView){
 
   'use strict';
 
-  var console = log('view', 'reset-pin');
-  var ResetPinView = BaseView.extend({
-    render: function(){
-      console.log('rendering view');
-      this.setTitle(this.gettext('Reset Pin'));
-      this.renderTemplate('reset-pin.html');
-      pin.init();
-      return this;
+  var gettext = BasePinView.prototype.gettext;
+
+  var ResetPinView = BasePinView.extend({
+
+    // Two Stage Pin Form
+    stageOneTitle: gettext('Reset Pin'),
+    stageTwoTitle: gettext('Confirm Pin'),
+
+    stageTwoButtonText: gettext('Reset Pin'),
+
+    submitStageTwo: function(pinData) {
+      app.user.resetPin(pinData);
     }
+
   });
+
   // Our module now returns our view
   return ResetPinView;
 });

@@ -15,7 +15,6 @@ define([
 
   var BaseView = Backbone.View.extend({
     el: '#app',
-    //$el: $('#app'),
 
     gettext: i18n.gettext,
     format: i18n.format,

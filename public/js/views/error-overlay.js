@@ -30,7 +30,6 @@ define([
         this.events['click #error .button.cta'] = buttonFunc;
       }
     },
-
   });
 
   return ErrorOverlay;

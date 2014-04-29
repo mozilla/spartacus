@@ -25,8 +25,10 @@ app.use(i18n.abide({
 }));
 
 app.use(rewriteModule.getMiddleware([
+  // 301 / -> /mozpay
   {from: '^/$', to: '/mozpay', redirect: 'permanent'},
-  {from: '^/mozpay/(?:login|create-pin|enter-pin|reset-pin|locked|throbber|was-locked)$', to: '/mozpay'},
+  // Internally redirect urls to be handled by the client-side app serving view.
+  {from: '^/mozpay/(?:login|create-pin|enter-pin|reset-pin|locked|throbber|wait-for-tx|was-locked)$', to: '/mozpay'},
 ]));
 
 app.get(/\/(?:css|fonts|i18n|images|js|lib)\/?.*/, express.static(__dirname + '/../public'));

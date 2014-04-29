@@ -5,7 +5,7 @@
 
 {% block page %}
 <section class="content">
-  <h1>{% block heading %}{% endblock %}</h1>
+  <h1>{{ pinTitle }}</h1>
   <input id="pin" type="number" x-inputmode="digit">
   <div class="pinbox">
     <span></span>
@@ -16,8 +16,11 @@
   <p class="err-msg hidden"></p>
 </section>
 
+{% block buttons %}
 <menu class="buttons" type="toolbar">
-  {{ macro.button(gettext('Cancel')) }}
-  {{ macro.button(gettext('Continue'), modifier='cta continue', disabled=true) }}
+  {{ macro.button(gettext('Cancel'), modifier='cancel') }}
+  {{ macro.button(buttonText, modifier='cta', disabled=true) }}
 </menu>
+{% endblock %}
+
 {% endblock %}

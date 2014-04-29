@@ -62,11 +62,9 @@ define([
     // dispatch the user based on the reponse.
     handleUserState: function(data) {
       if (data.pin_is_locked_out === true) {
-        console.log('User is locked out. Navigating to /locked');
-        return app.router.navigate('/locked', {trigger: true});
+        this.set('pin_is_locked_out', true);
       } else if (data.pin_was_locked_out === true) {
-        console.log('User was locked out. Navigating to /was-locked');
-        return app.router.navigate('/was-locked', {trigger: true});
+        this.set('pin_was_locked_out', true);
       } else if (data.pin === true) {
         console.log('User has a pin so navigate to /enter-pin');
         return app.router.navigate('/enter-pin', {trigger: true});
@@ -121,11 +119,21 @@ define([
     },
 
     handlePinLockedOut: function() {
-      // TODO: Navigate to the pin locked out page.
+      var pin_is_locked_out = this.get('pin_is_locked_out');
+      console.log('pin_is_locked_out state changed to ' + pin_is_locked_out);
+      if (pin_is_locked_out === true) {
+        console.log('navigating to /locked');
+        app.router.navigate('/locked', {trigger: true});
+      }
     },
 
     handlePinWasLockedOut: function() {
-      // TODO: Navigate to the was locked out page.
+      var pin_was_locked_out = this.get('pin_was_locked_out');
+      console.log('pin_was_locked_out state changed to ' + pin_was_locked_out);
+      if (pin_was_locked_out === true) {
+        console.log('navigating to /was-locked');
+        app.router.navigate('/was-locked', {trigger: true});
+      }
     },
 
     // Runs navigator.id.watch via Persona.
@@ -188,9 +196,22 @@ define([
         }
       }).fail(_.bind(function($xhr, textStatus) {
 
-        // TODO: If data is available update model attrs so that
-        // pin_is_locked_out attr listeners can deal with locked state.
         var error = new ErrorOverlay();
+        var data;
+
+        try {
+          data = JSON.parse($xhr.responseText);
+        } catch (e) {
+          utils.trackEvent({'action': pinCheckAction,
+                            'label': "Pin Enter JSON Parse Error."});
+          error.render({errorCode: 'PIN_ENTER_JSON_PARSE_ERROR'});
+          return req;
+        }
+
+        if (data.pin_is_locked_out === true) {
+          this.model.set('pin_is_locked_out', true);
+          return req;
+        }
 
         if (textStatus === 'timeout') {
           console.log('Request timed out');

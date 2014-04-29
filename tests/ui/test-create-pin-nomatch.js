@@ -3,7 +3,7 @@ var helpers = require('../helpers');
 helpers.startCasper('/mozpay', function(){
   // Make pinStateCheck return false for pin.
   helpers.fakePinData({pin: false});
-  // Make create-pin API call return 204
+  // Make create-pin API call return 400
   helpers.fakePinData({pin: true}, 'POST', 400);
 });
 

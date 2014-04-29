@@ -250,9 +250,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-i18n-abide');
   grunt.loadNpmTasks('grunt-express-server');
 
-  grunt.registerTask('default', ['jshint', 'stylus']);
-  grunt.registerTask('start', ['env:dev', 'jshint', 'stylus', 'nunjucks', 'express:dev', 'watch']);
-  grunt.registerTask('styleguide', ['stylus', 'express:styleguide', 'watch']);
-  grunt.registerTask('test', ['env:test', 'jshint', 'stylus', 'nunjucks', 'express:test', 'shell:unittests']);
-  grunt.registerTask('uitest', ['env:test', 'stylus', 'clean:uitest', 'express:test', 'casper']);
+
+  grunt.registerTask('default', 'Does the same thing as grunt start', ['start']);
+  grunt.registerTask('start', 'Run the development server',
+                     ['env:dev', 'jshint', 'stylus', 'nunjucks', 'express:dev', 'watch']);
+  grunt.registerTask('styleguide', 'Run the styleguide server',
+                     ['stylus', 'express:styleguide', 'watch']);
+  grunt.registerTask('test', 'Run unit tests',
+                     ['env:test', 'jshint', 'stylus', 'nunjucks', 'express:test', 'shell:unittests']);
+  grunt.registerTask('uitest', 'Run UI tests with casper.\nUsage: grunt uitest [--test <file>]',
+                     ['env:test', 'stylus', 'clean:uitest', 'express:test', 'casper']);
 };

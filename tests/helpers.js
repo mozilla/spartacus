@@ -109,9 +109,6 @@ function logInAsNewUser() {
 }
 
 
-
-
-
 function injectSinon() {
   casper.evaluate(function() {
     window.server = sinon.fakeServer.create();
@@ -138,6 +135,19 @@ function fakeVerificationSuccess() {
         'issuer': 'fake-persona'
       })]);
   });
+}
+
+
+function fakeBrokenJSON(method, statusCode, url) {
+  method = method || 'GET';
+  url = url || '/mozpay/v1/api/pin/';
+  statusCode = statusCode || 200;
+  casper.echo('Setting up bad JSON with SINON', 'INFO');
+  casper.echo([ method, statusCode, url], 'COMMENT');
+  casper.evaluate(function(pinData, method, statusCode, url) {
+    console.log([method, url, statusCode]);
+    window.server.respondWith(method, url, [statusCode, {'Content-Type': 'application/json'}, {invalidJSON: true}]);
+  }, method, statusCode, url);
 }
 
 
@@ -193,6 +203,7 @@ function assertErrorCode(errorCode) {
 module.exports = {
   assertErrorCode: assertErrorCode,
   doLogin: doLogin,
+  fakeBrokenJSON: fakeBrokenJSON,
   fakePinData: fakePinData,
   fakeVerificationSuccess: fakeVerificationSuccess,
   injectSinon: injectSinon,

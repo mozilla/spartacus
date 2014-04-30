@@ -7,7 +7,7 @@ helpers.startCasper('/mozpay', function(){
   helpers.fakePinData({pin: true}, 'POST', 201);
 });
 
-casper.test.begin('Login test has pin', {
+casper.test.begin('Login successful pin creation.', {
   test: function(test) {
 
     helpers.doLogin();

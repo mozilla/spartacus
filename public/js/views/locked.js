@@ -24,7 +24,8 @@ define([
       BaseErrorView.prototype.render.call(this, {
         'pageclass': 'full-error locked',
         'heading': this.gettext('Error'),
-        'msg': this.gettext('You entered the wrong pin too many times. Your account is locked. Please try your purchase again in 5 minutes.')
+        'msg': this.gettext('You entered the wrong pin too many times. Your account is locked. Please try your purchase again in 5 minutes.'),
+        'errorCode': 'PIN_LOCKED',
       }, 'locked.html');
       return this;
     }

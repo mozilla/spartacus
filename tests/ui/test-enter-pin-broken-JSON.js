@@ -3,11 +3,11 @@ var helpers = require('../helpers');
 helpers.startCasper('/mozpay', function(){
   // Make pinStateCheck return true for pin.
   helpers.fakePinData({pin: true});
-  // Make enter-pin API call return 400
-  helpers.fakePinData({pin: true}, 'POST', 400, '/mozpay/v1/api/pin/check/');
+  // Make create-pin return broken JSON
+  helpers.fakeBrokenJSON('POST', 400, '/mozpay/v1/api/pin/check/');
 });
 
-casper.test.begin('Enter Pin API call returns 400', {
+casper.test.begin('Login Enter Pin API call returns JSON parse error with bad JSON', {
   test: function(test) {
 
     helpers.doLogin();
@@ -19,8 +19,9 @@ casper.test.begin('Enter Pin API call returns 400', {
       this.click('.cta');
     });
 
-    casper.waitUntilVisible('.err-msg', function() {
-      test.assertVisible('.err-msg', 'Error message should be shown as pin is invalid.');
+    casper.waitUntilVisible('.full-error', function() {
+      test.assertVisible('.full-error', 'Error page should be shown');
+      helpers.assertErrorCode('PIN_ENTER_JSON_PARSE_ERROR');
     });
 
     casper.run(function() {

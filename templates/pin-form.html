@@ -7,13 +7,18 @@
 <section class="content">
   <h1>{{ pinTitle }}</h1>
   <input id="pin" type="number" x-inputmode="digit">
-  <div class="pinbox">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+  <div class="pin-container">
+    <div class="pinbox">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    {% if showForgotPin -%}
+      <p class="forgot-pin"><a href="#">{{ gettext('Forgot your pin?') }}</a></p>
+    {%- endif %}
+    <p class="err-msg hidden"></p>
   </div>
-  <p class="err-msg hidden"></p>
 </section>
 
 {% block buttons %}

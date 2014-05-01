@@ -2,9 +2,10 @@ define([
   'cancel',
   'lib/pin',
   'log',
+  'underscore',
   'views/base',
   'views/throbber'
-], function(cancel, pin, log, BaseView, throbber){
+], function(cancel, pin, log, _, BaseView, throbber){
 
   'use strict';
 
@@ -107,13 +108,14 @@ define([
       this.$el.find('.cta').text(text);
     },
 
-    render: function(){
+    render: function(extraContext){
       console.log('rendering...');
-      this.setTitle(this.stageOneTitle);
-      this.renderTemplate('pin-form.html', {
+      var context = {
         buttonText: this.stageOneButtonText || this.gettext('Continue'),
         pinTitle: this.stageOneTitle
-      });
+      };
+      _.extend(context, extraContext || {});
+      this.renderTemplate('pin-form.html', context);
       this.$el.addClass('stage-one');
       pin.init();
       throbber.hide();

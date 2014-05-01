@@ -18,6 +18,7 @@ define([
   var $submitButton;
   var $errorMessage;
   var $content;
+  var $forgotPin;
 
   function getPin() {
     return pinBuffer;
@@ -67,10 +68,12 @@ define([
     console.log('Show error message: ' + errorMessage);
     $errorMessage.text(errorMessage);
     $errorMessage.removeClass('hidden');
+    $forgotPin.addClass('hidden');
   }
 
   function hideError() {
-    $('.err-msg').addClass('hidden');
+    $errorMessage.addClass('hidden');
+    $forgotPin.removeClass('hidden');
   }
 
   function init() {
@@ -78,6 +81,7 @@ define([
     $pinInput = $('#pin');
     $submitButton = $('.cta[type=submit]');
     $errorMessage = $('.err-msg');
+    $forgotPin = $('.forgot-pin');
     $content = $('.content');
     $content.on('click', function(e) {
       focusPin();

@@ -17,6 +17,11 @@ define([
       app.user.checkPin(pinData);
     },
 
+    render: function() {
+      // Call super class render with extraContext.
+      BasePinView.prototype.render.call(this, {'showForgotPin': true });
+    }
+
   });
 
   // Our module now returns our view

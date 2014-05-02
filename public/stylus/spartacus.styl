@@ -121,16 +121,10 @@ main,
     }
 }
 
-.sign-in,
-.sign-in:before {
-    background: url(../images/persona-btn-sprite.png) no-repeat right top;
-}
-
 .sign-in {
-    color: $dark-gray;
+    background: url(../images/persona-btn-sprite.png) no-repeat right top;
     display: block;
     height: 42px;
-    line-height: 42px;
     margin-top: 20px;
     max-width: 231px;
     padding-left: 50px;
@@ -139,6 +133,16 @@ main,
     text-decoration: none;
     text-shadow: 0 1px 1px $white;
     width: 100%;
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active,
+    &:focus {
+        color: $dark-gray;
+        line-height: 42px;
+    }
+
     &:hover,
     &:active,
     &:focus {

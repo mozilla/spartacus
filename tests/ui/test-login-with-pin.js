@@ -12,6 +12,7 @@ casper.test.begin('Login test has pin', {
 
     casper.waitForUrl('/mozpay/enter-pin', function() {
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
+      test.assertExists('.forgot-pin', 'Forgot-pin should be shown for when you enter your pin.');
     });
 
     casper.run(function() {

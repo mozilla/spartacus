@@ -481,7 +481,14 @@ var output = "";
 try {
 output += "\n<section class=\"content\">\n  <h1>";
 output += runtime.suppressValue(runtime.contextOrFrameLookup(context, frame, "pinTitle"), env.autoesc);
-output += "</h1>\n  <input id=\"pin\" type=\"number\" x-inputmode=\"digit\">\n  <div class=\"pinbox\">\n    <span></span>\n    <span></span>\n    <span></span>\n    <span></span>\n  </div>\n  <p class=\"err-msg hidden\"></p>\n</section>\n\n";
+output += "</h1>\n  <input id=\"pin\" type=\"number\" x-inputmode=\"digit\">\n  <div class=\"pin-container\">\n    <div class=\"pinbox\">\n      <span></span>\n      <span></span>\n      <span></span>\n      <span></span>\n    </div>\n    ";
+if(runtime.contextOrFrameLookup(context, frame, "showForgotPin")) {
+output += "<p class=\"forgot-pin\"><a href=\"#\">";
+output += runtime.suppressValue((lineno = 17, colno = 48, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["Forgot your pin?"])), env.autoesc);
+output += "</a></p>";
+;
+}
+output += "\n    <p class=\"err-msg hidden\"></p>\n  </div>\n</section>\n\n";
 context.getBlock("buttons")(env, context, frame, runtime, function(t_7,t_6) {
 if(t_7) { cb(t_7); return; }
 output += t_6;
@@ -498,9 +505,9 @@ var colno = null;
 var output = "";
 try {
 output += "\n<menu class=\"buttons\" type=\"toolbar\">\n  ";
-output += runtime.suppressValue((lineno = 20, colno = 15, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [(lineno = 20, colno = 23, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["Cancel"])),runtime.makeKeywordArgs({"modifier": "cancel"})])), env.autoesc);
+output += runtime.suppressValue((lineno = 25, colno = 15, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [(lineno = 25, colno = 23, runtime.callWrap(runtime.contextOrFrameLookup(context, frame, "gettext"), "gettext", ["Cancel"])),runtime.makeKeywordArgs({"modifier": "cancel"})])), env.autoesc);
 output += "\n  ";
-output += runtime.suppressValue((lineno = 21, colno = 15, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [runtime.contextOrFrameLookup(context, frame, "buttonText"),runtime.makeKeywordArgs({"modifier": "cta","disabled": true})])), env.autoesc);
+output += runtime.suppressValue((lineno = 26, colno = 15, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "macro")),"button", env.autoesc), "macro[\"button\"]", [runtime.contextOrFrameLookup(context, frame, "buttonText"),runtime.makeKeywordArgs({"modifier": "cta","disabled": true})])), env.autoesc);
 output += "\n</menu>\n";
 cb(null, output);
 ;

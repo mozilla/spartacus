@@ -24,6 +24,15 @@ casper.test.begin('Login Enter Pin API call returns locked screen when API says 
     casper.waitForUrl('/mozpay/locked', function() {
       test.assertVisible('.locked');
       helpers.assertErrorCode('PIN_LOCKED');
+
+      // Should only be a single cancel button here.
+      test.assertElementCount('.button', 1);
+      casper.click('.button');
+    });
+
+    casper.waitUntilVisible('.throbber', function() {
+      // Check payment cancelled throbber is displayed.
+      test.assertSelectorHasText('.msg', 'Payment Cancelled');
     });
 
     casper.run(function() {

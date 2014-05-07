@@ -1,20 +1,10 @@
-// Borrowed from https://github.com/mozilla/commonplace/blob/master/src/media/js/log.js
-// TOOD: Make a bower component.
-define(['utils'], function(utils) {
+// Based on https://github.com/mozilla/commonplace/blob/master/src/media/js/log.js
+// TODO: Make a bower component.
+define(['underscore'], function(_) {
 
   'use strict';
 
-  if (!('groupCollapsed' in window.console)) {
-    window.console.groupCollapsed = window.console.group = window.console.log;
-    window.console.groupEnd = function() {};
-  }
-
-  var slice = Array.prototype.slice;
-  var filter;
-  var logs;
-  var allLogs = [];
-
-  var logger = function(type, tag, onlog) {
+  var logger = function(type, tag) {
 
     // Give nice log prefixes:
     // > [log] This is a nice message!
@@ -25,78 +15,20 @@ define(['utils'], function(utils) {
     if (tag) {
       prefix += '[' + tag + ']';
     }
-    prefix += ' ';
-
-    if (!(type in logs)) {
-      logs[type] = [];
-    }
-
-    var logQueue = logs[type];
-
-    function make(logLevel) {
-      return function() {
-        var args = slice.call(arguments, 0);
-        if (args.length) {
-          args[0] = prefix + args[0];
-          args = args.map(filter);
-          logQueue.push(args);
-          allLogs.push(args);
-          if (onlog) {
-            onlog(args);
-          }
-        }
-
-        // TODO: Add colorification support here for browsers that support it.
-        // *cough cough* not firefox *cough*
-        if (!window.mochaPhantomJS) {
-          console[logLevel].apply(console, args);
-        }
-      };
-    }
 
     return {
-      log: make('log'),
-      warn: make('warn'),
-      error: make('error'),
-      dir: function() {
-        if (window.console && window.console.dir) {
-          window.console.dir.apply(console, arguments);
-        }
-      },
-      group: make('group'),
-      groupCollapsed: make('groupCollapsed'),
-      groupEnd: make('groupEnd'),
+      log: _.bind(console.log, console, prefix),
+      warn: _.bind(console.warn, console, prefix),
+      error: _.bind(console.error, console, prefix),
+      dir: _.bind(console.dir, console),
 
       // Have log('payments') but want log('payments', 'mock')?
       // log('payments').tagged('mock') gives you the latter.
       tagged: function(newTag) {
-        return logger(type, tag + '][' + newTag, onlog);
+        return logger(type, tag + '][' + newTag);
       }
     };
-  };
 
-  logger.unmentionables = [];
-  logger.unmention = function(term) {
-    logger.unmentionables.push(term);
-    logger.unmentionables.push(utils.encodeURIComponent(term));
-  };
-
-  logs = logger.logs = {};
-  logger.all = allLogs;
-  logger.getRecent = function(count, type) {
-    var selectedLogs = type ? logs[type] : allLogs;
-    var length = selectedLogs.length;
-    return selectedLogs.slice(Math.max(length - count, 0), length);
-  };
-
-  filter = logger.filter = function(data) {
-    if (typeof data !== 'string') {
-      return data;
-    }
-    for (var i = 0, e; e = logger.unmentionables[i++];) {
-      data = data.replace(e, '---');
-    }
-    return data;
   };
 
   return logger;

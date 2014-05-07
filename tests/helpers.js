@@ -7,6 +7,8 @@ var _currentEmail;
 var _testInited = {};
 
 var baseTestUrl = 'http://localhost:' + config.test.port;
+var basePath = '/mozpay/spa';
+
 var pinDefaults = {
   pin: false,
   pin_is_locked_out: false,
@@ -171,7 +173,7 @@ function fakePinData(overrides, method, statusCode, url) {
 
 
 function doLogin() {
-  casper.waitForUrl('/mozpay/login', function() {
+  casper.waitForUrl(basePath + '/login', function() {
     logInAsNewUser();
   });
 }
@@ -200,13 +202,21 @@ function assertErrorCode(errorCode) {
 }
 
 
+function url(path) {
+  path = path.replace(/^\//, '');
+  return basePath + '/' + path;
+}
+
+
 module.exports = {
   assertErrorCode: assertErrorCode,
   doLogin: doLogin,
+  basePath: basePath,
   fakeBrokenJSON: fakeBrokenJSON,
   fakePinData: fakePinData,
   fakeVerificationSuccess: fakeVerificationSuccess,
   injectSinon: injectSinon,
   setLoginFilter: setLoginFilter,
   startCasper: startCasper,
+  url: url,
 };

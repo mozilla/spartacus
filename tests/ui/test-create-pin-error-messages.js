@@ -12,7 +12,7 @@ casper.test.begin('Test error messages when user has no pin yet.', {
 
     helpers.doLogin();
 
-    casper.waitForUrl('/mozpay/create-pin', function() {
+    casper.waitForUrl(helpers.url('create-pin'), function() {
       test.assertDoesntExist('.forgot-pin', 'No forgot-pin should be present for pin creation');
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
       test.assertExists('.cta:disabled', 'Submit button is disabled prior to pin entry');

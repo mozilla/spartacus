@@ -43,7 +43,7 @@ define([
   });
 
   var AppRouter = BaseRouter.extend({
-    root: '/mozpay',
+    root: '/mozpay/spa',
 
     routes: {
       '': 'showIndex',

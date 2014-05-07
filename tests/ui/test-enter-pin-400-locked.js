@@ -1,6 +1,6 @@
 var helpers = require('../helpers');
 
-helpers.startCasper('/mozpay', function(){
+helpers.startCasper('/mozpay/', function(){
   // Make pinStateCheck return true for pin.
   helpers.fakePinData({pin: true});
   // Make create-pin API call return 400
@@ -12,7 +12,7 @@ casper.test.begin('Login Enter Pin API call returns locked screen when API says 
 
     helpers.doLogin();
 
-    casper.waitForUrl('/mozpay/enter-pin', function() {
+    casper.waitForUrl(helpers.url('enter-pin'), function() {
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
       this.sendKeys('.pinbox', '1234');
       test.assertExists('.cta:enabled', 'Submit button is enabled');
@@ -21,7 +21,7 @@ casper.test.begin('Login Enter Pin API call returns locked screen when API says 
 
     // When the api returns pin_is_locked_out set to true the listeners should redirect
     // to /locked.
-    casper.waitForUrl('/mozpay/locked', function() {
+    casper.waitForUrl(helpers.url('locked'), function() {
       test.assertVisible('.locked');
       helpers.assertErrorCode('PIN_LOCKED');
 

@@ -12,7 +12,7 @@ casper.test.begin('Create pin with non-matching stage two pin.', {
 
     helpers.doLogin();
 
-    casper.waitForUrl('/mozpay/create-pin', function() {
+    casper.waitForUrl(helpers.url('create-pin'), function() {
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
       this.sendKeys('.pinbox', '1234');
       test.assertExists('.cta:enabled', 'Submit button is enabled');

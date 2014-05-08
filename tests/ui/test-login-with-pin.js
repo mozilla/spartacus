@@ -1,7 +1,7 @@
 var helpers = require('../helpers');
 
 
-helpers.startCasper('/mozpay', function(){
+helpers.startCasper('/mozpay/', function(){
   helpers.fakePinData({pin: true});
 });
 
@@ -10,7 +10,7 @@ casper.test.begin('Login test has pin', {
 
     helpers.doLogin();
 
-    casper.waitForUrl('/mozpay/enter-pin', function() {
+    casper.waitForUrl(helpers.url('enter-pin'), function() {
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
       test.assertExists('.forgot-pin', 'Forgot-pin should be shown for when you enter your pin.');
     });

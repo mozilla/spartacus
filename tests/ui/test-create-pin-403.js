@@ -1,6 +1,6 @@
 var helpers = require('../helpers');
 
-helpers.startCasper('/mozpay', function(){
+helpers.startCasper('/mozpay/', function(){
   // Make pinStateCheck return false for pin.
   helpers.fakePinData({pin: false});
   // Make create-pin API call return 403
@@ -12,7 +12,7 @@ casper.test.begin('Create pin returns 403 (not authed / CSRF fail)', {
 
     helpers.doLogin();
 
-    casper.waitForUrl('/mozpay/create-pin', function() {
+    casper.waitForUrl(helpers.url('create-pin'), function() {
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
       this.sendKeys('.pinbox', '1234');
       test.assertExists('.cta:enabled', 'Submit button is enabled');

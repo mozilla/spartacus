@@ -1,6 +1,6 @@
 var helpers = require('../helpers');
 
-helpers.startCasper('/mozpay', function(){
+helpers.startCasper('/mozpay/', function(){
   // Make pinStateCheck return true for pin.
   helpers.fakePinData({pin: true});
   // Make enter-pin API call return 200
@@ -12,14 +12,14 @@ casper.test.begin('Enter Pin API call returns 200', {
 
     helpers.doLogin();
 
-    casper.waitForUrl('/mozpay/enter-pin', function() {
+    casper.waitForUrl(helpers.url('enter-pin'), function() {
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
       this.sendKeys('.pinbox', '1234');
       test.assertExists('.cta:enabled', 'Submit button is enabled');
       this.click('.cta');
     });
 
-    casper.waitForUrl('/mozpay/wait-for-tx', function() {
+    casper.waitForUrl(helpers.url('wait-for-tx'), function() {
       test.assertVisible('progress');
     });
 

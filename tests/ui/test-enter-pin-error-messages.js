@@ -5,7 +5,6 @@ helpers.startCasper('/mozpay/', function(){
   helpers.fakePinData({pin: true});
 });
 
-
 casper.test.begin('Test error message when user has already created a pin', {
 
   test: function(test) {

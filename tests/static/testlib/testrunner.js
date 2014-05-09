@@ -12,11 +12,8 @@ require(['/js/config.js'], function(config) {
 
     require([
       '/unit/test-base-view.js',
-      '/unit/test-router.js',
       '/unit/test-utils.js',
-      '/unit/test-base-model.js',
-      '/unit/test-error-overlay.js',
-      '/unit/test-user-model.js',
+      '/unit/test-errors.js',
     ], function() {
       if (window.mochaPhantomJS) {
         window.mochaPhantomJS.run();

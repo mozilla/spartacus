@@ -1,7 +1,6 @@
 // Note: Certain includes (e.g. mixins + lib files are part of the
 // grunt-contrib-stylus conf.
 
-
 @import '_throbber';
 @import '_buttons';
 @import '_full-error';
@@ -35,7 +34,7 @@ body, html {
     z-index: 20;
 }
 
-.app {
+.view {
     background: $bg-color;
     grain();
     height: 100%;
@@ -73,14 +72,6 @@ main,
 .content {
     flex(1, 1, 100%);
     width: 100%;
-}
-
-.hidden {
-    display: none;
-}
-
-.hidden.show {
-    display: block;
 }
 
 .buttons {

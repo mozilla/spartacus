@@ -11,9 +11,9 @@ var app = express();
 var env = new nunjucks.Environment(new nunjucks.FileSystemLoader(__dirname + '/templates'),
                                    {autoescape: true});
 
-app.use(require('connect-livereload')({
-  port: config.liveReloadPort,
-}));
+//app.use(require('connect-livereload')({
+//  port: config.liveReloadPort,
+//}));
 
 env.express(app);
 
@@ -42,26 +42,36 @@ app.get('/mozpay/', function (req, res) {
 app.get(/\/testlib\/?.*/, express.static(__dirname + '/../tests/static'));
 app.get(/\/unit\/?.*/, express.static(__dirname + '/../tests/'));
 
-// Fake API response.
-app.get('/mozpay/v1/api/pin/', function(req, res) {
+function genFakeResp(pin, status) {
 
-  var result = {
-    pin: false,
-    pin_is_locked_out: false,
-    pin_was_locked_out: false,
-    pin_locked_out: null
+  status = status || 200;
+  pin = pin === true ? true : false;
+
+  return function(req, res) {
+
+    var result = {
+      pin: pin,
+      pin_is_locked_out: false,
+      pin_was_locked_out: false,
+      pin_locked_out: null
+    };
+
+    if (req.query.pin_is_locked_out) {
+      result.pin_is_locked_out = true;
+    }
+
+    if (req.query.pin) {
+      result.pin = true;
+    }
+
+    res.send(status, result);
   };
+}
 
-  if (req.query.pin_is_locked_out) {
-    result.pin_is_locked_out = true;
-  }
-
-  if (req.query.pin) {
-    result.pin = true;
-  }
-
-  res.send(result);
-});
+// Fake API response.
+app.get('/mozpay/v1/api/pin/', genFakeResp(true));
+app.post('/mozpay/v1/api/pin/', genFakeResp(true));
+app.post('/mozpay/v1/api/pin/check', genFakeResp(true));
 
 // Fake verification.
 app.post('/fake-verify', function (req, res) {

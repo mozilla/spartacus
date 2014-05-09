@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>Webpay</title>
+    <title>Webpay | {{ gettext('Loading...')}}</title>
     <link rel="stylesheet" href="/css/spartacus.css">
   </head>
   <body
@@ -16,9 +16,19 @@
     data-unverified-issuer="{{ settings.browseridUnverifiedIssuerl }}"
     data-verify-url="{{ settings.verifyUserURL }}"
     >
-    <main>
-      <div id="app" class="app"></div>
-      <div id="progress" class="progress"></div>
+    <main id="app">
+      {# View placeholder #}
+      <div id="view" class="view"></div>
+      {# Throbber placeholder #}
+      <div id="progress" class="progress">
+        <div class="throbber">
+          <div class="inner">
+            <progress></progress>
+            <p class="msg">{{ gettext('Loading...')}}</p>
+          </div>
+        </div>
+      </div>
+      {# Error placeholder #}
       <div id="error" class="error"></div>
     </main>
     <script src="{{ settings.browseridJsURL }}"></script>

@@ -1,8 +1,7 @@
 define([
   'i18n-abide-utils',
-  'log',
-  'views/throbber'
-], function(i18n, log, throbber) {
+  'log'
+], function(i18n, log) {
 
   'use strict';
 
@@ -30,7 +29,7 @@ define([
 
 
   function callPayFailure() {
-    throbber.show(i18n.gettext('Payment Cancelled'));
+    app.throbber.render(i18n.gettext('Payment Cancelled'));
     pollPaymentFailed();
   }
 

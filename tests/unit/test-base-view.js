@@ -18,7 +18,7 @@ define(['jquery', 'views/base'], function($, BaseView) {
       var baseView = new BaseView();
       assert.typeOf(baseView.template, 'function');
       var scriptContent = '<script>alert("oh hai")</script>';
-      var rendered = baseView.template('base-error.html', {msg: scriptContent});
+      var rendered = baseView.template('error.html', {msg: scriptContent});
       assert.notInclude(rendered, scriptContent);
       assert.include(rendered, '&lt;script&gt;');
     });

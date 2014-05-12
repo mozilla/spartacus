@@ -20,3 +20,4 @@ config/local.js
 messages.json
 styleguide/static/src/*
 tests/captures
+public/js/templates.js

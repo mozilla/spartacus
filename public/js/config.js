@@ -13,6 +13,7 @@ define([], function(){
   return {
     baseUrl: staticUrl,
     paths : {
+      'auth': 'lib/auth',
       'backbone': '../lib/js/backbone/backbone',
       'cancel': 'lib/cancel',
       'gobbledygook': '../lib/js/gobbledygook/gobbledygook',

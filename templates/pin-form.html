@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% import "_macros.html" as macro %}
 
-{% block mainclass %}pin{% endblock %}
+{% block pageclass %}pin{% endblock %}
 
 {% block page %}
 <section class="content">
   <h1>{{ pinTitle }}</h1>
-  <input id="pin" type="number" x-inputmode="digit">
+  <input id="pin" type="number" x-inputmode="digit" />
   <div class="pin-container">
     <div class="pinbox">
       <span></span>

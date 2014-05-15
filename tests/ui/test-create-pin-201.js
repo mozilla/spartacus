@@ -17,10 +17,7 @@ casper.test.begin('Login successful pin creation.', {
       this.sendKeys('.pinbox', '1234');
       test.assertExists('.cta:enabled', 'Submit button is enabled');
       this.click('.cta');
-    });
-
-    casper.waitForSelector('.stage-two', function() {
-      test.assertExists('.cta:disabled', 'Submit button is disabled at start of stage two');
+      test.assertExists('.cta:disabled', 'Submit button is disabled prior to pin confirmation');
       this.sendKeys('.pinbox', '1234');
       test.assertExists('.cta:enabled', 'Submit button is enabled');
       this.click('.cta');

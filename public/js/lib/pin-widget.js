@@ -72,11 +72,13 @@ define([
   }
 
   function hideError() {
+    console.log('hiding error messages.');
     $errorMessage.addClass('hidden');
     $forgotPin.removeClass('hidden');
   }
 
   function init() {
+    console.log('Initing pin widget');
     $pseudoInputs = $('.pinbox span');
     $pinInput = $('#pin');
     $submitButton = $('.cta[type=submit]');

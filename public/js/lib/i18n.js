@@ -1,4 +1,11 @@
-define(['jquery', 'i18n-abide-utils', 'log', 'settings', 'query-string'], function($, i18nUtils, log, settings) {
+define([
+  'i18n-abide-utils',
+  'jquery',
+  'log',
+  'settings',
+  'query-string'
+], function(i18nUtils, $, log, settings) {
+
   'user strict';
 
   var $html = $('html');
@@ -19,6 +26,8 @@ define(['jquery', 'i18n-abide-utils', 'log', 'settings', 'query-string'], functi
   }
 
   return {
+    gettext: i18nUtils.gettext,
+
     initLocale: function initLocale(cb) {
 
       var locale = null;

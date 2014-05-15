@@ -19,7 +19,8 @@ module.exports = function(grunt) {
     },
 
     clean: {
-      uitest: ['test/captures']
+      uitest: ['tests/captures/*'],
+      templates: ['public/js/templates.js']
     },
 
     env: {
@@ -110,7 +111,7 @@ module.exports = function(grunt) {
           script: 'server/index.js',
           background: true,
           port: config.test.port,
-          debug: false
+          debug: false,
         }
       }
     },
@@ -253,11 +254,11 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', 'Does the same thing as grunt start', ['start']);
   grunt.registerTask('start', 'Run the development server',
-                     ['env:dev', 'jshint', 'stylus', 'nunjucks', 'express:dev', 'watch']);
+                     ['env:dev', 'jshint', 'stylus', 'clean:templates', 'nunjucks', 'express:dev', 'watch']);
   grunt.registerTask('styleguide', 'Run the styleguide server',
                      ['stylus', 'express:styleguide', 'watch']);
   grunt.registerTask('test', 'Run unit tests',
-                     ['env:test', 'jshint', 'stylus', 'nunjucks', 'express:test', 'shell:unittests']);
+                     ['env:test', 'jshint', 'stylus', 'clean:templates', 'nunjucks', 'express:test', 'shell:unittests']);
   grunt.registerTask('uitest', 'Run UI tests with casper.\nUsage: grunt uitest [--test <file>]',
-                     ['env:test', 'stylus', 'clean:uitest', 'express:test', 'casper']);
+                     ['env:test', 'stylus', 'clean:templates',  'nunjucks', 'clean:uitest', 'express:test', 'casper']);
 };

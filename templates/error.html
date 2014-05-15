@@ -1,9 +1,23 @@
-{% extends 'base-error.html' %}
+{% extends 'base.html' %}
 {% import "_macros.html" as macro %}
 
-{% block buttons %}
-  {{ macro.button(gettext('Cancel'), modifier='cancel') }}
-  {% if buttonText %}
-  {{ macro.button(buttonText, modifier='cta') }}
-  {% endif %}
+{% block pageclass %}{% if pageclass %}{{ pageclass }}{% else %}full-error{% endif %}{% endblock %}
+
+{% block page %}
+  <section class="content error">
+    <div class="msg">
+      <h1>{{ heading }}</h1>
+      <p>{{ msg }}</p>
+      {% if errorCode %}<p class="error-code">{{ errorCode }}</p>{% endif %}
+    </div>
+  </section>
+
+  <menu class="buttons" type="toolbar">
+    {% if showCancel %}
+      {{ macro.button(cancelText if cancelText else gettext('Cancel'), modifier='cancel') }}
+    {% endif %}
+    {% if showCta %}
+      {{ macro.button(ctaText if ctaText else gettext('OK'), modifier='cta') }}
+    {% endif %}
+  </menu>
 {% endblock %}

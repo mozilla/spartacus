@@ -1,36 +1,39 @@
 define([
+  'backbone',
   'cancel',
   'jquery',
   'log',
-  'views/base-error',
-  'views/throbber'
-], function(cancel, $, log, BaseErrorView, throbber){
+  'views/base'
+], function(Backbone, cancel, $, log, BaseView){
 
   'use strict';
 
   var console = log('view', 'locked');
 
-  var LockedView = BaseErrorView.extend({
-    el: '#app',
-
-    events: {
-      'click .button.cta': cancel.callPayFailure
-    },
+  var LockedView = BaseView.extend({
 
     render: function(){
-      console.log('Rendering view');
-      throbber.hide();
-      // Call the super class render method.
-      BaseErrorView.prototype.render.call(this, {
-        'pageclass': 'full-error locked',
-        'heading': this.gettext('Error'),
-        'msg': this.gettext('You entered the wrong pin too many times. Your account is locked. Please try your purchase again in 5 minutes.'),
-        'errorCode': 'PIN_LOCKED',
-      }, 'locked.html');
+      console.log('Locked! Buy your way out with a crystal.');
+      this.clear();
+
+      // The locked view is just a specialized error message.
+      app.error.render({
+        context: {
+          'pageclass': 'full-error locked',
+          'heading': this.gettext('Error'),
+          'msg': this.gettext('You entered the wrong pin too many times. Your account is locked. Please try your purchase again in 5 minutes.'),
+          'errorCode': 'PIN_LOCKED',
+        },
+        events: {
+          'click .button.cta': cancel.callPayFailure
+        },
+        'showCancel': false // There is only an 'OK' button for this.
+      });
+
       return this;
     }
 
   });
-  // Our module now returns our view
+
   return LockedView;
 });

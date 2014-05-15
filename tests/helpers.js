@@ -35,7 +35,10 @@ casper.on('page.initialized', function(page) {
     // Only initialize the browser state once per test run.
     casper.echo('Clearing browser state', 'INFO');
     page.clearCookies();
-    casper.evaluate(function(){ localStorage.clear(); });
+    casper.evaluate(function(){
+      window._phantom = 1;
+      localStorage.clear();
+    });
     _testInited[_currTestId] = true;
   }
 });
@@ -166,9 +169,6 @@ function fakePinData(overrides, method, statusCode, url) {
     console.log([pinData, method, url, statusCode]);
     window.server.respondWith(method, url, [statusCode, {'Content-Type': 'application/json'}, pinData]);
   }, pinData, method, statusCode, url);
-  //casper.evaluate(function(pinData) {
-  //  window.server.respondWith('GET', '/mozpay/v1/api/pin/', [200, {'Content-Type': 'application/json'}, pinData]);
-  //}, pinData);
 }
 
 

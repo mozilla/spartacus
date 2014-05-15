@@ -1,14 +1,13 @@
 define([
   'log',
-  'views/base',
-  'views/throbber'
-], function(log, BaseView, throbber) {
+  'views/base'
+], function(log, BaseView) {
 
   'use strict';
 
   var WaitView = BaseView.extend({
     render: function(){
-      throbber.show(this.gettext('Starting Payment'));
+      app.throbber.render(this.gettext('Starting Payment'));
       return this;
     }
   });

@@ -5,7 +5,7 @@ define([
   'log',
   'nunjucks',
   'templates',
-  'underscore',
+  'underscore'
 ], function(Backbone, i18n, $, log, nunjucks, templates, _){
 
   'use strict';
@@ -14,12 +14,13 @@ define([
   var prefix = 'Webpay | ';
 
   var BaseView = Backbone.View.extend({
-    el: '#app',
+    el: '#view',
     gettext: i18n.gettext,
     format: i18n.format,
 
     initialize: function() {
       // Unbind any current events as we create a new view.
+      console.log('Unbinding events');
       $(this.el).unbind();
     },
 
@@ -42,6 +43,11 @@ define([
     renderTemplate: function renderTemplate(template, data) {
       // Chainable shortcut for rendering the template.
       this.$el.html(this.template(template, data));
+      // Needed in casper.
+      if (window._phantom) {
+        console.log('Forcing a repaint for casper');
+        this.$el.parent().toggleClass('repaint');
+      }
       console.log('Replacing $el with rendered content');
       return this;
     },
@@ -51,7 +57,17 @@ define([
       this.$el.empty();
       // Disconnect the view's event handlers.
       this.unbind();
+    },
+
+    getSelectorText: function(selector) {
+      return this.$el.find(selector).text();
+    },
+
+    updateSelectorText: function(selector, text) {
+      this.$el.find(selector).text(text);
+      return this.$el;
     }
+
   });
   return BaseView;
 });

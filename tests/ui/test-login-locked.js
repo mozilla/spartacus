@@ -10,7 +10,6 @@ casper.test.begin('Login then locked', {
     helpers.doLogin();
 
     casper.waitForUrl(helpers.url('locked'), function() {
-      test.assertVisible('.locked');
       helpers.assertErrorCode('PIN_LOCKED');
     });
 

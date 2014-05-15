@@ -1,25 +1,100 @@
 define([
-  'lib/pin',
+  'cancel',
+  'jquery',
+  'lib/pin-widget',
   'log',
-  'views/base-pin',
-], function(pin, log, BasePinView){
+  'underscore',
+  'utils',
+  'views/base'
+], function(cancel, $, pin, log, _, utils, BaseView){
 
   'use strict';
 
-  var gettext = BasePinView.prototype.gettext;
+  var EnterPinView = BaseView.extend({
 
-  var EnterPinView = BasePinView.extend({
-
-    // Single Stage Pin Form
-    stageOneTitle: gettext('Enter Pin'),
-
-    submitStageOne: function(pinData) {
-      app.user.checkPin(pinData);
+    events: {
+      'click .cancel': cancel.callPayFailure,
+      'click .cta:enabled': 'handleSubmit',
     },
 
-    render: function() {
-      // Call super class render with extraContext.
-      BasePinView.prototype.render.call(this, {'showForgotPin': true });
+    handleSubmit: function(e) {
+      e.preventDefault();
+      var that = this;
+      var req = app.pin.sync('check', app.pin, {'data': {'pin': pin.getPin()}});
+
+      var pinCheckAction = 'check-pin';
+      app.throbber.render();
+
+      req.done(function() {
+        app.router.navigate('wait-for-tx', {trigger: true});
+      }).fail(function($xhr, textStatus) {
+
+        app.throbber.hide();
+
+        var data;
+        try {
+          data = JSON.parse($xhr.responseText);
+        } catch(e) {
+          console.log('Invalid JSON');
+        }
+        if (data) {
+          data = _.pick(data, _.keys(app.pin.defaults));
+          app.pin.set(data);
+          if (app.pin.changed.pin_is_locked_out === true) {
+            return;
+          }
+        }
+
+        if (textStatus === 'timeout') {
+          console.log('Request timed out');
+          utils.trackEvent({'action': pinCheckAction,
+                            'label': 'Pin Check API Call Timed Out'});
+          app.error.render({
+            context: {
+              buttonText: that.gettext('Retry?'),
+              errorCode: 'ENTER_PIN_REQ_TIMEOUT'
+            },
+            events: {
+              'click .button.cta': function(){ $.ajax(this); }
+            }
+          });
+
+        } else if ($xhr.status === 400) {
+          console.log('Pin data invalid');
+          utils.trackEvent({'action': pinCheckAction,
+                            'label': 'Pin Check API Call Invalid Form Data'});
+          pin.resetPinUI();
+          pin.showError(that.gettext('Pin invalid'));
+        } else if ($xhr.status === 403) {
+          console.log('User not authenticated');
+          utils.trackEvent({'action': pinCheckAction,
+                            'label': 'Pin Check API Call Permission Denied'});
+          app.error.render({context: {errorCode: 'PIN_ENTER_PERM_DENIED'}});
+        } else if ($xhr.status === 404) {
+          console.log("User doesn't exist");
+          utils.trackEvent({'action': pinCheckAction,
+                            'label': "Pin Check API Call User Doesn't exist"});
+          app.error.render({context: {errorCode: 'PIN_ENTER_USER_DOES_NOT_EXIST'}});
+        } else {
+          console.log("Unhandled error");
+          utils.trackEvent({'action': pinCheckAction,
+                            'label': "Pin Check API Call Unhandled error"});
+          app.error.render({context: {errorCode: 'PIN_ENTER_UNHANDLED_ERROR'}});
+        }
+      });
+    },
+
+    render: function(){
+      var context = {
+        buttonText: this.gettext('Submit'),
+        pinTitle: this.gettext('Enter Pin'),
+        showForgotPin: true
+      };
+      this.renderTemplate('pin-form.html', context);
+      this.setTitle(this.gettext('Enter Pin'));
+      pin.init();
+      app.throbber.hide();
+      return this;
     }
 
   });

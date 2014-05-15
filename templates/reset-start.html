@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macro %}
+
+{% block page %}
+  <section class="content">
+    <h1>{{ gettext('Forgot your Pin?') }}</h1>
+    <p>{{ gettext('Are you sure you want to reset your pin? You must sign in to Persona to reset your pin.') }}</p>
+  </section>
+
+  <menu class="buttons" type="toolbar">
+    {{ macro.button(gettext('Back'), modifier='back') }}
+    {{ macro.button(gettext('Continue'), modifier='cta') }}
+  </menu>
+{% endblock %}

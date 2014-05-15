@@ -11,9 +11,9 @@ var app = express();
 var env = new nunjucks.Environment(new nunjucks.FileSystemLoader(__dirname + '/templates'),
                                    {autoescape: true});
 
-//app.use(require('connect-livereload')({
-//  port: config.liveReloadPort,
-//}));
+app.use(require('connect-livereload')({
+  port: config.liveReloadPort,
+}));
 
 env.express(app);
 

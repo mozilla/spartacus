@@ -11,6 +11,20 @@ define([
   var console = log('auth');
   var loginTimer;
 
+  /*
+   * Must be called with the context set to the ajax request.
+   */
+  function showRetryError(errCode) {
+    app.error.render({
+      context: {
+        errorCode: errCode,
+      },
+      events: {
+        'click .button.cta': function(){ $.ajax(this); }
+      }
+    });
+  }
+
   return {
 
     verifyUser: function(assertion) {
@@ -41,40 +55,17 @@ define([
           console.log('login timed out');
           utils.trackEvent({'action': 'persona login',
                             'label': 'Verification Timed Out'});
-          app.error.render({
-            context: {
-              errorCode: 'VERIFICATION_TIMEOUT'
-            },
-            events: {
-              'click .button.cta': function(){ $.ajax(reqConfig); }
-            }
-          });
+          showRetryError.call(this, 'LOGIN_TIMEOUT');
         } else if ($xhr.status === 403) {
           console.log('permission denied after auth');
           utils.trackEvent({'action': 'persona login',
                             'label': 'Login Permission Denied'});
-          app.error.render({
-            context: {
-              errorCode: 'VERIFICATION_DENIED'
-            },
-            events: {
-              'click .button.cta': function(){ $.ajax(reqConfig); }
-            }
-          });
-
+          showRetryError.call(this, 'VERIFICATION_DENIED');
         } else {
           console.log('login error');
           utils.trackEvent({'action': 'persona login',
                             'label': 'Login Failed'});
-          app.error.render({
-            context: {
-              errorCode: 'LOGIN_FAILED'
-            },
-            events: {
-              'click .button.cta': function(){ $.ajax(reqConfig); }
-            }
-          });
-
+          showRetryError.call(this, 'LOGIN_FAILED');
         }
       });
 
@@ -85,7 +76,7 @@ define([
       console.log('Begin webpay user reset');
 
       var reqConfig = {
-        'type': 'POST',
+        type: 'POST',
         url: utils.bodyData.resetUserUrl
       };
 

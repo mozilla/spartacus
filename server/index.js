@@ -15,6 +15,17 @@ app.use(require('connect-livereload')({
   port: config.liveReloadPort,
 }));
 
+var servedViews = [
+  'create-pin',
+  'enter-pin',
+  'locked',
+  'login',
+  'reset-pin',
+  'reset-start',
+  'wait-for-tx',
+  'was-locked',
+];
+
 env.express(app);
 
 app.use(i18n.abide({
@@ -29,7 +40,7 @@ app.use(rewriteModule.getMiddleware([
   {from: '^/$', to: '/mozpay/', redirect: 'permanent'},
   {from: '^/mozpay$', to: '/mozpay/', redirect: 'permanent'},
   // Internally redirect urls to be handled by the client-side app serving view.
-  {from: '^/mozpay/spa/(?:login|create-pin|enter-pin|reset-pin|locked|throbber|wait-for-tx|was-locked)$', to: '/mozpay/'},
+  {from: '^/mozpay/spa/(?:' + servedViews.join('|') + ')$', to: '/mozpay/'},
 ]));
 
 app.get(/\/(?:css|fonts|i18n|images|js|lib)\/?.*/, express.static(__dirname + '/../public'));

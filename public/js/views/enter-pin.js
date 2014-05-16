@@ -15,12 +15,18 @@ define([
     events: {
       'click .cancel': cancel.callPayFailure,
       'click .cta:enabled': 'handleSubmit',
+      'click .forgot-pin a': 'handleForgotPin',
+    },
+
+    handleForgotPin: function(e) {
+      e.preventDefault();
+      app.router.navigate('reset-start', {trigger: true});
     },
 
     handleSubmit: function(e) {
       e.preventDefault();
       var that = this;
-      var req = app.pin.sync('check', app.pin, {'data': {'pin': pin.getPin()}});
+      var req = app.pin.sync('check', app.pin, {data: {pin: pin.getPin()}});
 
       var pinCheckAction = 'check-pin';
       app.throbber.render();
@@ -47,8 +53,8 @@ define([
 
         if (textStatus === 'timeout') {
           console.log('Request timed out');
-          utils.trackEvent({'action': pinCheckAction,
-                            'label': 'Pin Check API Call Timed Out'});
+          utils.trackEvent({action: pinCheckAction,
+                            label: 'Pin Check API Call Timed Out'});
           app.error.render({
             context: {
               buttonText: that.gettext('Retry?'),
@@ -60,25 +66,25 @@ define([
           });
 
         } else if ($xhr.status === 400) {
-          console.log('Pin data invalid');
-          utils.trackEvent({'action': pinCheckAction,
-                            'label': 'Pin Check API Call Invalid Form Data'});
+          console.log('Incorrect PIN');
+          utils.trackEvent({action: pinCheckAction,
+                            label: 'Pin Check API Call Invalid Form Data'});
           pin.resetPinUI();
-          pin.showError(that.gettext('Pin invalid'));
+          pin.showError(that.gettext('Incorrect PIN'));
         } else if ($xhr.status === 403) {
           console.log('User not authenticated');
-          utils.trackEvent({'action': pinCheckAction,
-                            'label': 'Pin Check API Call Permission Denied'});
+          utils.trackEvent({action: pinCheckAction,
+                            label: 'Pin Check API Call Permission Denied'});
           app.error.render({context: {errorCode: 'PIN_ENTER_PERM_DENIED'}});
         } else if ($xhr.status === 404) {
           console.log("User doesn't exist");
-          utils.trackEvent({'action': pinCheckAction,
-                            'label': "Pin Check API Call User Doesn't exist"});
+          utils.trackEvent({action: pinCheckAction,
+                            label: "Pin Check API Call User Doesn't exist"});
           app.error.render({context: {errorCode: 'PIN_ENTER_USER_DOES_NOT_EXIST'}});
         } else {
           console.log("Unhandled error");
-          utils.trackEvent({'action': pinCheckAction,
-                            'label': "Pin Check API Call Unhandled error"});
+          utils.trackEvent({action: pinCheckAction,
+                            label: 'Pin Check API Call Unhandled error'});
           app.error.render({context: {errorCode: 'PIN_ENTER_UNHANDLED_ERROR'}});
         }
       });

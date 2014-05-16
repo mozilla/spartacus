@@ -53,8 +53,12 @@ define([
           crudMethod = crudMethodData.crudMethod;
         }
       }
-      var req = Backbone.sync(crudMethod, model, options);
-      return req;
+      if (options.data) {
+        options.data = JSON.stringify(options.data);
+        options.contentType = 'application/json';
+        options.dataType = 'json';
+      }
+      return Backbone.sync(crudMethod, model, options);
     }
   });
 

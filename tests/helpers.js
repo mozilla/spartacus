@@ -115,6 +115,7 @@ function logInAsNewUser() {
 
 
 function injectSinon() {
+  casper.echo('Injecting Sinon', 'INFO');
   casper.evaluate(function() {
     window.server = sinon.fakeServer.create();
     window.server.autoRespond = true;
@@ -129,17 +130,37 @@ function injectSinon() {
 }
 
 
-function fakeVerificationSuccess() {
-  casper.echo('Faking verification success with Sinon', 'INFO');
+function clientTimeoutResponse() {
   casper.evaluate(function() {
-    window.server.respondWith('POST', '/fake-verify',
-      [200, {'Content-Type': 'application/json'}, JSON.stringify({
-        'status': 'okay',
-        'audience': 'http://localhost',
-        'expires': Date.now(),
-        'issuer': 'fake-persona'
-      })]);
+    window.server.respondWith(function(xhr) {
+      xhr.status = 0;
+      xhr.statusText = 'timeout';
+      xhr.readyState = sinon.FakeXMLHttpRequest.UNSENT;
+      xhr.abort();
+    });
   });
+}
+
+
+function fakeVerification(options) {
+  options = options || {};
+  var timeout = options.timeout || false;
+  casper.echo('Faking verification with Sinon', 'INFO');
+  if (timeout) {
+    casper.echo('Faking a XHR timeout for verification', 'INFO');
+    clientTimeoutResponse();
+  } else {
+    casper.echo('Faking a successful verification', 'INFO');
+    casper.evaluate(function(statusCode) {
+      window.server.respondWith('POST', '/fake-verify',
+        [statusCode, {'Content-Type': 'application/json'}, JSON.stringify({
+          'status': 'okay',
+          'audience': 'http://localhost',
+          'expires': Date.now(),
+          'issuer': 'fake-persona'
+        })]);
+    }, options.statusCode || 200);
+  }
 }
 
 
@@ -179,19 +200,19 @@ function doLogin() {
 }
 
 
-function startCasper(path, cb) {
+function startCasper(path, cb, verifyOptions) {
   var url = baseTestUrl + path;
   casper.echo('Starting with url: ' + url);
 
-  var callback = (function(cb) {
+  var callback = (function(cb, verifyOptions) {
     return function() {
       injectSinon();
-      fakeVerificationSuccess();
+      fakeVerification(verifyOptions);
       if (typeof cb === 'function') {
         cb();
       }
     };
-  })(cb);
+  })(cb, verifyOptions);
 
   casper.start(url, callback);
 }
@@ -214,7 +235,7 @@ module.exports = {
   basePath: basePath,
   fakeBrokenJSON: fakeBrokenJSON,
   fakePinData: fakePinData,
-  fakeVerificationSuccess: fakeVerificationSuccess,
+  fakeVerification: fakeVerification,
   injectSinon: injectSinon,
   setLoginFilter: setLoginFilter,
   startCasper: startCasper,

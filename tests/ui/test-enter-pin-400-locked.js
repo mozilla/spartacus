@@ -1,10 +1,12 @@
 var helpers = require('../helpers');
 
-helpers.startCasper('/mozpay/', function(){
-  // Make pinStateCheck return true for pin.
-  helpers.fakePinData({pin: true});
-  // Make create-pin API call return 400
-  helpers.fakePinData({pin: true, pin_is_locked_out: true}, 'POST', 400, '/mozpay/v1/api/pin/check/');
+helpers.startCasper({
+  setUp: function(){
+    helpers.fakeVerification();
+    helpers.fakeStartTransaction();
+    helpers.fakePinData({pin: true});
+    helpers.fakePinData({pin: true, pin_is_locked_out: true}, 'POST', 400, '/mozpay/v1/api/pin/check/');
+  },
 });
 
 casper.test.begin('Login Enter Pin API call returns locked screen when API says it\'s locked', {

@@ -14,6 +14,7 @@ require(['/js/config.js'], function(config) {
       '/unit/test-base-view.js',
       '/unit/test-utils.js',
       '/unit/test-errors.js',
+      '/unit/test-mcc-mnc.js'
     ], function() {
       if (window.mochaPhantomJS) {
         window.mochaPhantomJS.run();

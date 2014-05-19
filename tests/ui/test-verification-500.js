@@ -1,7 +1,11 @@
 var helpers = require('../helpers');
 
-var verifyOptions = {statusCode: 500};
-helpers.startCasper('/mozpay/', null, verifyOptions);
+helpers.startCasper({
+  setUp: function(){
+    helpers.fakeVerification({statusCode: 500});
+    helpers.fakeStartTransaction();
+  },
+});
 
 casper.test.begin('Failed verification, retry and success.', {
 

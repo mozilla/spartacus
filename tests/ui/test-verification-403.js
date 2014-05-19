@@ -1,7 +1,10 @@
 var helpers = require('../helpers');
 
-var verifyOptions = {statusCode: 403};
-helpers.startCasper('/mozpay/', null, verifyOptions);
+helpers.startCasper({
+  setUp: function(){
+    helpers.fakeVerification({statusCode: 403});
+  },
+});
 
 casper.test.begin('Denied verification should only have cancel option.', {
 

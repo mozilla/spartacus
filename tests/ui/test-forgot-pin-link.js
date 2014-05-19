@@ -1,8 +1,11 @@
 var helpers = require('../helpers');
 
-helpers.startCasper('/mozpay/', function(){
-  // Make pinStateCheck return true for pin.
-  helpers.fakePinData({pin: true});
+helpers.startCasper({
+  setUp: function(){
+    helpers.fakeVerification();
+    helpers.fakeStartTransaction();
+    helpers.fakePinData({pin: true});
+  },
 });
 
 casper.test.begin('Test forgot pin link leads to reset-start page.', {

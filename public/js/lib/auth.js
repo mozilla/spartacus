@@ -23,10 +23,7 @@ define([
         msg: msg,
       },
       events: {
-        'click .button.cancel': function(){
-          app.error.clear();
-          cancel.callPayFailure();
-        },
+        'click .button.cancel': cancel.callPayFailure,
         'click .button.cta': function(){
           app.error.clear();
           app.throbber.render(gettext('Retrying...'));

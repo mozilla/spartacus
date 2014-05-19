@@ -1,10 +1,12 @@
 var helpers = require('../helpers');
 
-helpers.startCasper('/mozpay/', function(){
-  // Make pinStateCheck return true for pin.
-  helpers.fakePinData({pin: true});
-  // Make enter-pin API call return 200
-  helpers.fakePinData({pin: true}, 'POST', 200, '/mozpay/v1/api/pin/check/');
+helpers.startCasper({
+  setUp: function(){
+    helpers.fakeVerification();
+    helpers.fakeStartTransaction();
+    helpers.fakePinData({pin: true});
+    helpers.fakePinData({pin: true}, 'POST', 200, '/mozpay/v1/api/pin/check/');
+  },
 });
 
 casper.test.begin('Enter Pin API call returns 200', {

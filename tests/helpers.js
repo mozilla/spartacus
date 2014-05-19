@@ -130,27 +130,27 @@ function injectSinon() {
 }
 
 
-function clientTimeoutResponse() {
-  casper.evaluate(function() {
-    window.server.respondWith(function(xhr) {
+function clientTimeoutResponse(method, url) {
+  casper.evaluate(function(method, url) {
+    window.server.respondWith(method, url, function(xhr) {
+      console.log('timeout');
       xhr.status = 0;
       xhr.statusText = 'timeout';
       xhr.readyState = sinon.FakeXMLHttpRequest.UNSENT;
       xhr.abort();
     });
-  });
+  }, method, url);
 }
 
 
 function fakeVerification(options) {
   options = options || {};
   var timeout = options.timeout || false;
-  casper.echo('Faking verification with Sinon', 'INFO');
   if (timeout) {
-    casper.echo('Faking a XHR timeout for verification', 'INFO');
-    clientTimeoutResponse();
+    casper.echo('Setting up a fake XHR timeout for verification', 'INFO');
+    clientTimeoutResponse('POST', '/fake-verify');
   } else {
-    casper.echo('Faking a successful verification', 'INFO');
+    casper.echo('Setting up a fake verification success', 'INFO');
     casper.evaluate(function(statusCode) {
       window.server.respondWith('POST', '/fake-verify',
         [statusCode, {'Content-Type': 'application/json'}, JSON.stringify({
@@ -160,6 +160,21 @@ function fakeVerification(options) {
           'issuer': 'fake-persona'
         })]);
     }, options.statusCode || 200);
+  }
+}
+
+
+function fakeStartTransaction(options) {
+  options = options || {};
+  var timeout = options.timeout || false;
+  if (timeout) {
+    casper.echo('Setting up an XHR timeout for start of transaction', 'INFO');
+    clientTimeoutResponse('POST', '/mozpay/v1/api/pay/');
+  } else {
+    casper.echo('Setting up successful transaction start response', 'INFO');
+    casper.evaluate(function(statusCode) {
+      window.server.respondWith('POST', '/mozpay/v1/api/pay/', [statusCode, {'Content-Type': 'application/json'}, '{}']);
+    }, options.statusCode || 201);
   }
 }
 
@@ -185,9 +200,8 @@ function fakePinData(overrides, method, statusCode, url) {
   _.extend(pinData, overrides || {});
   pinData = JSON.stringify(pinData);
   casper.echo('Setting up fakePinData with Sinon', 'INFO');
-  casper.echo([pinData, method, statusCode, url], 'COMMENT');
+  casper.echo([pinData, method, statusCode, url], 'INFO');
   casper.evaluate(function(pinData, method, statusCode, url) {
-    console.log([pinData, method, url, statusCode]);
     window.server.respondWith(method, url, [statusCode, {'Content-Type': 'application/json'}, pinData]);
   }, pinData, method, statusCode, url);
 }
@@ -200,20 +214,23 @@ function doLogin() {
 }
 
 
-function startCasper(path, cb, verifyOptions) {
+function startCasper(options) {
+  options = options || {};
+  if (options.url) {
+    casper.echo('You supplied a "url" option when you probably meant "path"', 'WARNING');
+  }
+  var setUp = options.setUp;
+  var path = options.path || '/mozpay/?req=foo';
   var url = baseTestUrl + path;
   casper.echo('Starting with url: ' + url);
-
-  var callback = (function(cb, verifyOptions) {
+  var callback = (function(setUp) {
     return function() {
       injectSinon();
-      fakeVerification(verifyOptions);
-      if (typeof cb === 'function') {
-        cb();
+      if (typeof setUp === 'function') {
+        setUp();
       }
     };
-  })(cb, verifyOptions);
-
+  })(setUp);
   casper.start(url, callback);
 }
 
@@ -235,6 +252,7 @@ module.exports = {
   basePath: basePath,
   fakeBrokenJSON: fakeBrokenJSON,
   fakePinData: fakePinData,
+  fakeStartTransaction: fakeStartTransaction,
   fakeVerification: fakeVerification,
   injectSinon: injectSinon,
   setLoginFilter: setLoginFilter,

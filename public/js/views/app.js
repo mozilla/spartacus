@@ -1,16 +1,19 @@
 define([
   'auth',
   'backbone',
+  'cancel',
   'i18n',
   'jquery',
   'log',
-  'models/session',
   'models/pin',
+  'models/session',
+  'models/transaction',
   'router',
   'underscore',
+  'utils',
   'views/throbber',
   'views/error'
-], function(auth, Backbone, i18n, $, log, SessionModel, PinModel, AppRouter, _, ThrobberView, ErrorView) {
+], function(auth, Backbone, cancel, i18n, $, log, PinModel, SessionModel, TransactionModel, AppRouter, _, utils, ThrobberView, ErrorView) {
 
   'use strict';
 
@@ -23,17 +26,23 @@ define([
     initialize: function() {
       console.log("Initing app view");
 
-      // Regardless of what url is given start from /mozpay/ for
-      // the app to initialize.
-      history.replaceState({}, '', '/mozpay/');
-
       // Create Model Instances.
       app.session = new SessionModel();
       app.pin = new PinModel();
+      app.transaction = new TransactionModel();
 
       // Create overlaid view instances.
       app.throbber = new ThrobberView();
       app.error = new ErrorView();
+
+      // If the start url isn't /mozpay/?req=[jwt] then we should
+      // bail.
+      if (window.location.pathname !== '/mozpay/') {
+        app.error.render({context: {'errorCode': 'INVALID_START'},
+                          showCancel: false,
+                          events: {'click .button.cta': cancel.callPayFailure}});
+        return;
+      }
 
       // Create the router instance and fire-up history.
       app.router = new AppRouter();
@@ -46,8 +55,19 @@ define([
       this.listenTo(app.pin, 'change', this.handlePinStateChange);
 
       i18n.initLocale(_.bind(function(){
-        app.session.watchIdentity();
+        // Extract JWT for use post-login.
+        if (app.transaction.setJWT() === false) {
+          utils.trackEvent({action: 'extract jwt before login',
+                            label: 'Invalid or missing JWT'});
+          app.error.render({context: {'errorCode': 'INVALID_JWT'},
+                            showCancel: false,
+                            events: {'click .button.cta': cancel.callPayFailure}});
+        } else {
+          console.log('Starting login');
+          app.session.watchIdentity();
+        }
       }, this));
+
       return this;
     },
 
@@ -72,8 +92,29 @@ define([
         console.log('navigating to /login');
         app.router.navigate('login', {trigger: true});
       } else {
-        console.log('Asking for pin state');
-        app.pin.fetch();
+        // Retrieve the JWT we store prior to login.
+        var jwt = app.transaction.get('jwt');
+        if (jwt) {
+          var req = app.transaction.startTransaction(jwt);
+          req.done(function() {
+            console.log('Transaction started successfully');
+            utils.trackEvent({action: 'start-transaction',
+                              label: 'Transaction started successfully'});
+            app.pin.fetch();
+          }).fail(function($xhr, textStatus) {
+            console.log($xhr.status);
+            console.log(textStatus);
+            utils.trackEvent({action: 'start-transaction',
+                              label: 'Transaction failed to start'});
+            app.error.render({'context': {'errorCode': 'FAILED_TO_START_TRANSACTION'}, showCta: false});
+          });
+        } else {
+          utils.trackEvent({action: 'start-transaction',
+                            label: 'Invalid or missing JWT'});
+          app.error.render({context: {'errorCode': 'INVALID_JWT'},
+                            showCancel: false,
+                            events: {'click .button.cta': cancel.callPayFailure}});
+        }
       }
     },
 

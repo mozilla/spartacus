@@ -14,6 +14,7 @@ define(['jquery'], function($) {
     decodeURIComponent: function decodeURIComponent(uri) {
       return window.decodeURIComponent(uri.replace(/\+/g, ' '));
     },
+    mozPaymentProvider: window.mozPaymentProvider || {},
     trackClick: function() {
       console.log('trackClick');
       // TODO: Add real functionality here.

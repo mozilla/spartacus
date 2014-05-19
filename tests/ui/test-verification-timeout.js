@@ -1,10 +1,13 @@
 var helpers = require('../helpers');
 
-var verifyOptions = {timeout: true};
-helpers.startCasper('/mozpay/', null, verifyOptions);
+helpers.startCasper({
+  setUp: function(){
+    helpers.fakeVerification({timeout: true});
+    helpers.fakeStartTransaction();
+  }
+});
 
 casper.test.begin('Timeout verfication, retry then success.', {
-
   test: function(test) {
 
     helpers.doLogin();

@@ -1,0 +1,37 @@
+import os
+
+import fabdeploytools.envs
+from fabric.api import env, lcd, local, task
+from fabdeploytools import helpers
+
+import deploysettings as settings
+
+env.key_filename = settings.SSH_KEY
+fabdeploytools.envs.loadenv(settings.CLUSTER)
+ROOT, SPARTACUS = helpers.get_app_dirs(__file__)
+
+
+@task
+def pre_update(ref):
+    with lcd(SPARTACUS):
+        local('git fetch')
+        local('git fetch -t')
+        local('git reset --hard %s' % ref)
+
+
+@task
+def update():
+    with lcd(SPARTACUS):
+        local('npm install')
+        local('./node_modules/.bin/grunt stylus')
+        local('./node_modules/.bin/grunt nunjucks')
+
+
+@task
+def deploy():
+    helpers.deploy(name=settings.PROJECT_NAME,
+                   app_dir='spartacus',
+                   env=settings.ENV,
+                   cluster=settings.CLUSTER,
+                   domain=settings.DOMAIN,
+                   root=ROOT)

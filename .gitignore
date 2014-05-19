@@ -6,6 +6,7 @@
 *.mo
 *.node
 *.o
+*.pyc
 .DS_Store
 bower_components
 docs/_build

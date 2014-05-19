@@ -24,15 +24,12 @@ casper.test.begin('Login Enter Pin API call returns locked screen when API says 
     casper.waitForUrl(helpers.url('locked'), function() {
       test.assertVisible('.locked');
       helpers.assertErrorCode('PIN_LOCKED');
-
-      // Should only be a single cancel button here.
-      test.assertElementCount('.button', 1);
+      test.assertElementCount('.button', 1, 'Should only be one button for cancelling the flow');
       casper.click('.button');
     });
 
     casper.waitUntilVisible('.throbber', function() {
-      // Check payment cancelled throbber is displayed.
-      test.assertSelectorHasText('.msg', 'Payment Cancelled');
+      test.assertSelectorHasText('.msg', 'Payment Cancelled', 'Check cancelled throbber is displayed');
     });
 
     casper.run(function() {

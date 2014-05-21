@@ -35,8 +35,7 @@ define([
       app.throbber = new ThrobberView();
       app.error = new ErrorView();
 
-      // If the start url isn't /mozpay/?req=[jwt] then we should
-      // bail.
+      // Bail early if initial url is below /mozpay/.
       if (window.location.pathname !== '/mozpay/') {
         app.error.render({context: {'errorCode': 'INVALID_START'},
                           showCancel: false,
@@ -56,13 +55,16 @@ define([
 
       i18n.initLocale(_.bind(function(){
         // Extract JWT for use post-login.
-        if (app.transaction.setJWT() === false) {
+        var qs = window.queryString.parse(location.search) || {};
+        var jwt = qs.req;
+        if (!jwt) {
           utils.trackEvent({action: 'extract jwt before login',
                             label: 'Invalid or missing JWT'});
           app.error.render({context: {'errorCode': 'INVALID_JWT'},
                             showCancel: false,
                             events: {'click .button.cta': cancel.callPayFailure}});
         } else {
+          app.transaction.set('jwt', jwt);
           console.log('Starting login');
           app.session.watchIdentity();
         }
@@ -85,6 +87,43 @@ define([
       auth.verifyUser(assertion);
     },
 
+    setUpPayment: function() {
+      // Retrieve the JWT we store prior to login.
+      var jwt = app.transaction.get('jwt');
+      var that = this;
+      if (jwt) {
+        var req = app.transaction.startTransaction(jwt);
+        req.done(function() {
+          console.log('Transaction started successfully');
+          utils.trackEvent({action: 'start-transaction',
+                            label: 'Transaction started successfully'});
+          app.pin.fetch();
+        }).fail(function($xhr, textStatus) {
+          console.log($xhr.status);
+          console.log(textStatus);
+          if (textStatus === 'timeout') {
+            utils.trackEvent({action: 'start-transaction',
+                              label: 'Transaction start timed-out'});
+            app.error.render({'context': {'errorCode': 'START_TRANS_TIMEOUT'},
+                              events: {'click .button.cta': that.setUpPayment}});
+          } else {
+            utils.trackEvent({action: 'start-transaction',
+                              label: 'Transaction failed to start'});
+            app.error.render({'context': {'errorCode': 'START_TRANS_FAILURE'},
+                              showCancel: false,
+                              events: {'click .button.cta': cancel.callPayFailure}});
+          }
+        });
+      } else {
+        utils.trackEvent({action: 'start-transaction',
+                          label: 'Invalid or missing JWT'});
+        app.error.render({context: {'errorCode': 'INVALID_JWT'},
+                          showCancel: false,
+                          events: {'click .button.cta': cancel.callPayFailure}});
+      }
+    },
+
+
     // Deal with the logged-in attribute state change.
     handleLoginStateChange: function(model, value) {
       console.log('logged_in state changed to ' + value);
@@ -92,29 +131,8 @@ define([
         console.log('navigating to /login');
         app.router.navigate('login', {trigger: true});
       } else {
-        // Retrieve the JWT we store prior to login.
-        var jwt = app.transaction.get('jwt');
-        if (jwt) {
-          var req = app.transaction.startTransaction(jwt);
-          req.done(function() {
-            console.log('Transaction started successfully');
-            utils.trackEvent({action: 'start-transaction',
-                              label: 'Transaction started successfully'});
-            app.pin.fetch();
-          }).fail(function($xhr, textStatus) {
-            console.log($xhr.status);
-            console.log(textStatus);
-            utils.trackEvent({action: 'start-transaction',
-                              label: 'Transaction failed to start'});
-            app.error.render({'context': {'errorCode': 'FAILED_TO_START_TRANSACTION'}, showCta: false});
-          });
-        } else {
-          utils.trackEvent({action: 'start-transaction',
-                            label: 'Invalid or missing JWT'});
-          app.error.render({context: {'errorCode': 'INVALID_JWT'},
-                            showCancel: false,
-                            events: {'click .button.cta': cancel.callPayFailure}});
-        }
+        // Process JWT and configure_transaction.
+        this.setUpPayment();
       }
     },
 

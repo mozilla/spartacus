@@ -12,7 +12,7 @@ define([
 
   var TransactionModel = Backbone.Model.extend({
 
-    url: (utils.bodyData.baseApiURL || window.location.origin) + '/mozpay/v1/api/pay/',
+    url: utils.apiUrl('pay'),
 
     defaults: {
       jwt: null,
@@ -42,16 +42,6 @@ define([
       return this.sync('create', this,  options);
     },
 
-    setJWT: function() {
-      var qs = window.queryString.parse(location.search) || {};
-      var jwt = qs.req;
-      if (jwt) {
-        this.set('jwt', jwt);
-      } else {
-        return false;
-      }
-    },
-
     getNetworkCodes: function() {
       // Returns mcc/mnc if available.
       var mpp = utils.mozPaymentProvider;
@@ -62,11 +52,12 @@ define([
       // Pre 1.4
       if (mpp.mcc && mpp.mnc) {
         mcc = mpp.mcc[0];
-        console.log('[cli] mcc: ' + mpp.mcc);
+        console.log('mcc: ' + mpp.mcc);
         mnc = mpp.mnc[0];
-        console.log('[cli] mnc: ' + mpp.mnc);
+        console.log('mnc: ' + mpp.mnc);
       // 1.4+ multi-sim support
       } else if (mpp.iccInfo) {
+        console.log('Using B2G 1.4+ mcc/mnc lookup');
         var values = _.values(mpp.iccInfo);
         for (var i=0, j=values.length; i<j; i++) {
           if (values[i].dataPrimary === true) {

@@ -1,13 +1,14 @@
 var helpers = require('../helpers');
 
-
-helpers.startCasper('/mozpay', function(){
-  helpers.fakePinData({pin: false});
+helpers.startCasper({
+  setUp: function(){
+    helpers.fakeVerification();
+    helpers.fakeStartTransaction();
+    helpers.fakePinData({pin: false});
+  },
 });
 
-
 casper.test.begin('Test error messages when user has no pin yet.', {
-
   test: function(test) {
 
     helpers.doLogin();

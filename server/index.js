@@ -82,7 +82,10 @@ function genFakeResp(pin, status) {
 // Fake API response.
 app.get('/mozpay/v1/api/pin/', genFakeResp(true));
 app.post('/mozpay/v1/api/pin/', genFakeResp(true));
-app.post('/mozpay/v1/api/pin/check', genFakeResp(true));
+app.post('/mozpay/v1/api/pin/check/', genFakeResp(true));
+app.post('/mozpay/v1/api/pay/', function(req, res) {
+  res.send(201, {});
+});
 
 // Fake verification.
 app.post('/fake-verify', function (req, res) {

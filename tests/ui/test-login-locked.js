@@ -1,7 +1,11 @@
 var helpers = require('../helpers');
 
-helpers.startCasper('/mozpay/', function(){
-  helpers.fakePinData({pin: true, pin_is_locked_out: true});
+helpers.startCasper({
+  setUp: function(){
+    helpers.fakeVerification();
+    helpers.fakeStartTransaction();
+    helpers.fakePinData({pin: true, pin_is_locked_out: true});
+  },
 });
 
 casper.test.begin('Login then locked', {

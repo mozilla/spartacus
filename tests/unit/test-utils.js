@@ -11,5 +11,21 @@ define(['utils'], function(utils) {
       assert.equal(utils.decodeURIComponent('foo+bar'), 'foo bar');
     });
 
+    test('Check apiUrl ends with correct path', function() {
+      assert.equal(utils.apiUrl('/pay/'), '/mozpay/v1/api/pay/');
+    });
+
+    test('Check apiUrl ends with correct path with no trailing slash', function() {
+      assert.equal(utils.apiUrl('/pay'), '/mozpay/v1/api/pay/');
+    });
+
+    test('Check apiUrl ends with correct path with no leading slash', function() {
+      assert.equal(utils.apiUrl('pay/'), '/mozpay/v1/api/pay/');
+    });
+
+    test('Check apiUrl ends with correct path with no leading or trailing slash', function() {
+      assert.equal(utils.apiUrl('pay'), '/mozpay/v1/api/pay/');
+    });
+
   });
 });

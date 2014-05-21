@@ -9,7 +9,7 @@ define([
   'use strict';
 
   var console = log('model', 'pin');
-  var baseApiURL = (utils.bodyData.baseApiURL || window.location.origin) + '/mozpay/v1/api/pin/';
+  var baseApiURL = utils.apiUrl('pin');
 
   var PinModel = Backbone.Model.extend({
 

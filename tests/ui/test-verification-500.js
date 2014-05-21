@@ -1,7 +1,11 @@
 var helpers = require('../helpers');
 
-var verifyOptions = {statusCode: 500};
-helpers.startCasper('/mozpay/', null, verifyOptions);
+helpers.startCasper({
+  setUp: function(){
+    helpers.fakeVerification({statusCode: 500});
+    helpers.fakeStartTransaction();
+  },
+});
 
 casper.test.begin('Failed verification, retry and success.', {
 
@@ -13,8 +17,11 @@ casper.test.begin('Failed verification, retry and success.', {
       helpers.assertErrorCode('LOGIN_FAILED');
       test.assertVisible('.button.cta', 'CTA buttons should be visible');
       test.assertVisible('.button.cancel', 'Cancel button should be visible');
+
+      // Setup success.
       helpers.fakeVerification({statusCode: 200});
       helpers.fakePinData({pin: true});
+
       casper.click('.button.cta');
     });
 

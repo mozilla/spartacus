@@ -2,23 +2,24 @@ var helpers = require('../helpers');
 
 helpers.startCasper({
   setUp: function(){
-    helpers.fakeVerification({timeout: true});
-    helpers.fakeStartTransaction();
-  }
+    helpers.fakeVerification();
+    helpers.fakeStartTransaction({timeout: true});
+  },
 });
 
-casper.test.begin('Start transaction timeout, retry then success.', {
+casper.test.begin('Start transaction timout, retry then success.', {
+
   test: function(test) {
 
     helpers.doLogin();
 
     casper.waitForSelector('.full-error', function() {
-      helpers.assertErrorCode('LOGIN_TIMEOUT');
+      helpers.assertErrorCode('START_TRANS_TIMEOUT');
       test.assertVisible('.button.cta', 'CTA buttons should be visible');
       test.assertVisible('.button.cancel', 'Cancel button should be visible');
 
-      // Setup success.
-      helpers.fakeVerification();
+      // Now setup success.
+      helpers.fakeStartTransaction();
       helpers.fakePinData({pin: true});
 
       casper.click('.button.cta');

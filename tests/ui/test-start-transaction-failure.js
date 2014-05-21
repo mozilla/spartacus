@@ -2,21 +2,27 @@ var helpers = require('../helpers');
 
 helpers.startCasper({
   setUp: function(){
-    helpers.fakeVerification({statusCode: 403});
+    helpers.fakeVerification();
+    helpers.fakeStartTransaction({statusCode: 500});
   },
 });
 
-casper.test.begin('Denied verification should only have cancel option.', {
+casper.test.begin('Transaction failure should only have cancel option.', {
 
   test: function(test) {
 
     helpers.doLogin();
 
     casper.waitForSelector('.full-error', function() {
-      helpers.assertErrorCode('VERIFICATION_DENIED');
-      test.assertVisible('.button.cancel', 'Cancel button should be visible');
+      helpers.assertErrorCode('START_TRANS_FAILURE');
+      test.assertVisible('.button.cta', 'Cancel button should be visible');
       test.assertElementCount('.button', 1, 'Should only be one button for cancelling the flow');
-      casper.click('.button');
+
+      // Setup success.
+      helpers.fakeStartTransaction();
+      helpers.fakePinData({pin: true});
+
+      casper.click('.button.cta');
     });
 
     casper.waitUntilVisible('.throbber', function() {
@@ -26,6 +32,5 @@ casper.test.begin('Denied verification should only have cancel option.', {
     casper.run(function() {
       test.done();
     });
-
   },
 });

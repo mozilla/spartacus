@@ -1,10 +1,12 @@
 var helpers = require('../helpers');
 
-helpers.startCasper('/mozpay/', function(){
-  // Make pinStateCheck return false for pin.
-  helpers.fakePinData({pin: false});
-  // Make create-pin API call return 404
-  helpers.fakePinData({pin: false}, 'POST', 404, '/mozpay/v1/api/pin/');
+helpers.startCasper({
+  setUp: function(){
+    helpers.fakeVerification();
+    helpers.fakeStartTransaction();
+    helpers.fakePinData({pin: false});
+    helpers.fakePinData({pin: false}, 'POST', 404, '/mozpay/v1/api/pin/');
+  },
 });
 
 casper.test.begin('Create pin returns 404 (no user)', {

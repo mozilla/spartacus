@@ -23,8 +23,8 @@ def pre_update(ref):
 def update():
     with lcd(SPARTACUS):
         local('npm install')
-        local('./node_modules/.bin/grunt stylus')
-        local('./node_modules/.bin/grunt nunjucks')
+        local('node -e "require(\'grunt\').cli()" null stylus')
+        local('node -e "require(\'grunt\').cli()" null nunjucks')
 
 
 @task

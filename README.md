@@ -31,25 +31,6 @@ Run `grunt uitest`. To run a single UI test pass the file with a flag e.g:
 `grunt uitest --test tests/ui/test-basic.js`
 
 
-## Todos
+### Bugs
 
-- [ ] Setup Pin Create Flow + Tests
-- [ ] Setup Pin Entry Flow + Tests
-- [ ] Setup Pin Reset Flow + Tests
-- [ ] Setup Tracking + Tests
-- [ ] Define build processes (e.g. minification) for JS/CSS etc.
-- [ ] Work out deployment strategy.
-
-## Done
-
-- [x] Setup Persona + Tests
-- [x] Setup UI Test environment.
-- [x] Setup Styleguide
-- [x] Setup l10n framework
-- [x] Setup template pre-compilation.
-- [x] Setup stub views L+F
-- [x] Setup Unit Test environment.
-- [x] Setup views
-- [x] Sort out serving
-
-
+Tracker bug is here: https://bugzilla.mozilla.org/show_bug.cgi?id=837289

@@ -9,7 +9,8 @@ define([
   var SessionModel = Backbone.Model.extend({
 
     defaults: {
-      logged_in: null
+      logged_in: null,
+      persona_called_back: null,
     },
 
     initialize: function() {
@@ -28,6 +29,10 @@ define([
           console.log('Firing onlogout event');
           that.trigger('onlogout');
         },
+        onready: function() {
+          console.log('Firing onready event');
+          that.trigger('onready');
+        }
       });
     },
 

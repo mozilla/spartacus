@@ -20,7 +20,7 @@ casper.test.begin('Failed verification, retry and success.', {
 
       // Setup success.
       helpers.fakeVerification({statusCode: 200});
-      helpers.fakePinData({pin: true});
+      helpers.fakePinData({data: {pin: true}});
 
       casper.click('.button.cta');
     });

@@ -4,8 +4,8 @@ helpers.startCasper({
   setUp: function(){
     helpers.fakeVerification();
     helpers.fakeStartTransaction();
-    helpers.fakePinData({pin: false});
-    helpers.fakePinData({pin: false}, 'POST', 403);
+    helpers.fakePinData({data: {pin: false}});
+    helpers.fakePinData({data: {pin: false}, method: 'POST', statusCode: 403});
   },
 });
 

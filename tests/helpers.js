@@ -192,18 +192,24 @@ function fakeBrokenJSON(method, statusCode, url) {
 }
 
 
-function fakePinData(overrides, method, statusCode, url) {
-  method = method || 'GET';
-  url = url || '/mozpay/v1/api/pin/';
-  statusCode = statusCode || 200;
-  var pinData = _.clone(pinDefaults);
-  _.extend(pinData, overrides || {});
-  pinData = JSON.stringify(pinData);
-  casper.echo('Setting up fakePinData with Sinon', 'INFO');
-  casper.echo([pinData, method, statusCode, url], 'INFO');
-  casper.evaluate(function(pinData, method, statusCode, url) {
-    window.server.respondWith(method, url, [statusCode, {'Content-Type': 'application/json'}, pinData]);
-  }, pinData, method, statusCode, url);
+function fakePinData(options) {
+  var method = options.method || 'GET';
+  var url = options.url || '/mozpay/v1/api/pin/';
+  if (options.timeout) {
+    casper.echo('Setting up a fake XHR timeout for verification', 'INFO');
+    clientTimeoutResponse(method, url);
+  } else {
+    var statusCode = options.statusCode || 200;
+    var overrides = options.data || {};
+    var pinData = _.clone(pinDefaults);
+    _.extend(pinData, overrides);
+    pinData = JSON.stringify(pinData);
+    casper.echo('Setting up fakePinData with Sinon', 'INFO');
+    casper.echo([pinData, method, statusCode, url], 'INFO');
+    casper.evaluate(function(pinData, method, statusCode, url) {
+      window.server.respondWith(method, url, [statusCode, {'Content-Type': 'application/json'}, pinData]);
+    }, pinData, method, statusCode, url);
+  }
 }
 
 

@@ -4,8 +4,8 @@ helpers.startCasper({
   setUp: function(){
     helpers.fakeVerification();
     helpers.fakeStartTransaction();
-    helpers.fakePinData({pin: true});
-    helpers.fakePinData({pin: true}, 'POST', 403, '/mozpay/v1/api/pin/check/');
+    helpers.fakePinData({data: {pin: true}});
+    helpers.fakePinData({data: {pin: true}, method: 'POST', statusCode: 403, url: '/mozpay/v1/api/pin/check/'});
   },
 });
 

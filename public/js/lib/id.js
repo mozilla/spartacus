@@ -7,7 +7,7 @@ define([
   'use strict';
 
   return {
-    request: function _request(options) {
+    request: function(options) {
       var console = log('id', 'request');
       var defaults = {
         experimental_allowUnverified: true,
@@ -23,7 +23,7 @@ define([
       console.log('Running navigator.id.request');
       navigator.id.request(options);
     },
-    watch: function _watch(options) {
+    watch: function(options) {
       var console = log('id', 'watch');
       var user = utils.bodyData.loggedInUser;
       console.log('loggedInUser', typeof user, user);

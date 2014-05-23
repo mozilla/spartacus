@@ -28,6 +28,10 @@ define([
           console.log('Firing onlogout event');
           that.trigger('onlogout');
         },
+        onready: function() {
+          console.log('Firing onready event');
+          that.trigger('onready');
+        }
       });
     },
 

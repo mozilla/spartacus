@@ -4,7 +4,7 @@ helpers.startCasper({
   setUp: function(){
     helpers.fakeVerification();
     helpers.fakeStartTransaction();
-    helpers.fakePinData({pin: true, pin_is_locked_out: true});
+    helpers.fakePinData({data: {pin: true, pin_is_locked_out: true}});
   },
 });
 

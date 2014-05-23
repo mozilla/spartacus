@@ -20,7 +20,7 @@ casper.test.begin('Start transaction timout, retry then success.', {
 
       // Now setup success.
       helpers.fakeStartTransaction();
-      helpers.fakePinData({pin: true});
+      helpers.fakePinData({data: {pin: true}});
 
       casper.click('.button.cta');
     });

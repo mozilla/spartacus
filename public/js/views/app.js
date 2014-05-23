@@ -97,7 +97,20 @@ define([
           console.log('Transaction started successfully');
           utils.trackEvent({action: 'start-transaction',
                             label: 'Transaction started successfully'});
-          app.pin.fetch();
+          app.pin.fetch().fail(function($xhr, textStatus) {
+            if (textStatus === 'timeout') {
+              utils.trackEvent({action: 'fetch-state',
+                                label: 'Fetching initial state timed-out.'});
+              app.error.render({'context': {'errorCode': 'PIN_STATE_TIMEOUT'},
+                                events: {'click .button.cta': that.setUpPayment}});
+            } else {
+              utils.trackEvent({action: 'fetch-state',
+                                label: 'Fecthing initial state error.'});
+              app.error.render({'context': {'errorCode': 'PIN_STATE_ERROR'},
+                                showCancel: false,
+                                events: {'click .button.cta': cancel.callPayFailure}});
+            }
+          });
         }).fail(function($xhr, textStatus) {
           console.log($xhr.status);
           console.log(textStatus);

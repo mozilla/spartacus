@@ -25,8 +25,14 @@ define([
   }
 
   function focusPin() {
-    console.log('Focusing pin');
+    // In the trusted UI we need to ensure it has
+    // focus otherwise programmatic focus doesn't work.
+    if (window.focus) {
+      console.log('Focusing window');
+      window.focus();
+    }
     updatePinUI();
+    console.log('Focusing pin');
     $pinInput.focus();
   }
 
@@ -69,6 +75,7 @@ define([
     $errorMessage.text(errorMessage);
     $errorMessage.removeClass('hidden');
     $forgotPin.addClass('hidden');
+    focusPin();
   }
 
   function hideError() {

@@ -64,10 +64,10 @@ define([
           app.error.render({
             context: {
               buttonText: that.gettext('Retry?'),
-              errorCode: 'CREATE_PIN_REQ_TIMEOUT'
+              errorCode: 'CREATE_PIN_TIMEOUT'
             },
             events: {
-              'click .button.cta': function(){ $.ajax(this); }
+              'click .button.cta': function(){ that.submitData(pinData); }
             }
           });
 

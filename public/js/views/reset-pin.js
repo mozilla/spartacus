@@ -13,6 +13,7 @@ define([
   var ResetPinView = CreatePinView.extend({
 
     submitData: function(pinData) {
+      var that = this;
       var pinResetAction = 'reset-pin';
       var req = app.pin.sync('update', app.pin, {'data': {'pin': pinData}});
 
@@ -26,10 +27,10 @@ define([
           app.error.render({
             context: {
               buttonText: this.gettext('Retry?'),
-              errorCode: 'RESET_PIN_REQ_TIMEOUT'
+              errorCode: 'PIN_RESET_TIMEOUT'
             },
             events: {
-              'click .button.cta': function(){ $.ajax(this); }
+              'click .button.cta': function(){ that.submitData(pinData); }
             }
           });
 

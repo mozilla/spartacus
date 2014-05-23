@@ -24,7 +24,9 @@ define([
     },
 
     handleSubmit: function(e) {
-      e.preventDefault();
+      if (e) {
+        e.preventDefault();
+      }
       var that = this;
       var req = app.pin.sync('check', app.pin, {data: {pin: pin.getPin()}});
 
@@ -58,10 +60,10 @@ define([
           app.error.render({
             context: {
               buttonText: that.gettext('Retry?'),
-              errorCode: 'ENTER_PIN_REQ_TIMEOUT'
+              errorCode: 'ENTER_PIN_TIMEOUT'
             },
             events: {
-              'click .button.cta': function(){ $.ajax(this); }
+              'click .button.cta': that.handleSubmit
             }
           });
 

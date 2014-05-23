@@ -9,8 +9,7 @@ define([
   var SessionModel = Backbone.Model.extend({
 
     defaults: {
-      logged_in: null,
-      persona_called_back: null,
+      logged_in: null
     },
 
     initialize: function() {

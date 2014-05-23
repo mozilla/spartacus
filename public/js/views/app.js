@@ -21,6 +21,8 @@ define([
 
   var AppView = Backbone.View.extend({
 
+    personaCalledBack: false,
+
     el: '#app',
 
     initialize: function() {
@@ -79,21 +81,21 @@ define([
       // TODO: Nothing is tied to the resetUser success or failure. Is this ok?
       auth.resetUser();
       // This will result in the login screen appearing.
-      app.session.set('persona_called_back', true);
+      this.personaCalledBack = true;
       app.session.set('logged_in', false);
     },
 
     // Persona has told use we should be logged out.
     handlePersonaLogin: function(assertion) {
       // Persona has told us we should be logged-in.
-      app.session.set('persona_called_back', true);
+      this.personaCalledBack = true;
       auth.verifyUser(assertion);
     },
 
     handlePersonaReady: function() {
       // Browser's state matches loggedInUser so we're probably logged in.
       console.log('Probably logged in, Persona never called back');
-      if (!app.session.get('persona_called_back') && utils.bodyData.loggedInUser) {
+      if (this.personaCalledBack === false && utils.bodyData.loggedInUser) {
         app.session.set('logged_in', true);
       }
     },

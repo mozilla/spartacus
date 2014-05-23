@@ -20,7 +20,7 @@ casper.test.begin('Denied verification should only have cancel option.', {
     });
 
     casper.waitUntilVisible('.throbber', function() {
-      test.assertSelectorHasText('.msg', 'Payment Cancelled', 'Check cancelled throbber is displayed');
+      test.assertSelectorHasText('.msg', 'Payment cancelled', 'Check cancelled throbber is displayed');
     });
 
     casper.run(function() {

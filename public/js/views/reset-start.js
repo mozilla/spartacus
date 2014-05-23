@@ -26,7 +26,7 @@ define([
 
     render: function(){
       console.log('rendering reset-start view');
-      this.setTitle(this.gettext('Reset your Pin?'));
+      this.setTitle(this.gettext('Reset your PIN?'));
       this.renderTemplate('reset-start.html');
       app.throbber.hide();
       return this;

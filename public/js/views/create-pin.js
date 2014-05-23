@@ -45,7 +45,7 @@ define([
         this.submitData(this.curPin);
       } else {
         this.clearPin();
-        pin.showError(this.gettext('Pins do not match'));
+        pin.showError(this.gettext('Pins do not match.'));
       }
     },
 

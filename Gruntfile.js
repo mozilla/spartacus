@@ -214,7 +214,7 @@ module.exports = function(grunt) {
         }
       },
       html: {
-        src: 'templates/payments/*.html',
+        src: 'templates/*.html',
         dest: 'locale/templates/LC_MESSAGES/messages.pot',
         options: {
           language: 'Jinja',

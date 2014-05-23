@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-07 09:18-0700\n"
+"POT-Creation-Date: 2014-05-23 12:05+0000\n"
 "PO-Revision-Date: 2014-05-08 14:03+0000\n"
 "Last-Translator: Aman <amanpreet.alam@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,209 +14,16 @@ msgstr ""
 "X-Generator: Pootle 2.5.0\n"
 "X-POOTLE-MTIME: 1399557812.0\n"
 
-#: webpay/bango/templates/bango/cancel.html:10 webpay/base/templates/base.html:35
+#: public/js/lib/cancel.js:33
 msgid "Payment cancelled."
 msgstr "ਭੁਗਤਾਨ ਨੂੰ ਰੱਦ ਕੀਤਾ ਗਿਆ ਹੈ।"
 
-#: webpay/bango/templates/bango/success.html:10 webpay/pay/templates/pay/simulate_done.html:9 webpay/provider/templates/provider/success.html:10
-msgid "Your payment is complete."
-msgstr "ਭੁਗਤਾਨ ਪੂਰਾ ਹੋ ਗਿਆ ਹੈ।"
-
-#: webpay/base/dev_messages.py:90
-msgid "Mozilla received an invalid code from the payment provider (Bango) when processing the payment"
-msgstr "ਮੋਜ਼ੀਲਾ ਨੂੰ ਭੁਗਤਾਨ ਕਰਨ ਦੋਰਾਨ ਭੁਗਤਾਨ ਪ੍ਰਦਾਤਾ (Bango) ਤੋ ਇੱਕ ਗਲਤ ਕੋਡ ਮਿਲਿਆ ਹੈ"
-
-#. L10n: First argument is an example of the proper key format.
-#: webpay/base/dev_messages.py:94
-msgid "An image icon key was not an object. Correct example: {0}"
-msgstr "ਇੱਕ ਚਿੱਤਰ ਆਈਕਾਨ ਕੁੰਜੀ ਇੱਕ ਆਬਜੈਕਟ ਨਹੀ ਸੀ​​। ਸਹੀ ਉਦਾਹਰਨ: {0}"
-
-#. L10n: JWT stands for JSON Web Token and does not need to be
-#. localized.
-#: webpay/base/dev_messages.py:98
-msgid "No one has been registered for this JWT issuer."
-msgstr "ਕੋਈ ਕਿਸੇ ਨੂੰ ਇਸ JWT ਜਾਰੀਕਰਤਾ ਲਈ ਦਰਜ ਨਹੀ ਕੀਤਾ ਗਿਆ ਹੈ।"
-
-#: webpay/base/dev_messages.py:99
-msgid "The price point is unknown or invalid."
-msgstr "ਕੀਮਤ ਪੁਆਇੰਟ ਅਣਜਾਣ ਜਾ ਗਲਤ ਹੈ।"
-
-#: webpay/base/dev_messages.py:100
-msgid "The request to begin payment was invalid."
-msgstr "ਭੁਗਤਾਨ ਦੇ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਮੰਗ ਨੂੰ ਗਲਤ ਸੀ।"
-
-#: webpay/base/dev_messages.py:102
-msgid "The requested payment simulation result is not supported."
-msgstr "ਬੇਨਤੀ ਕੀਤੀ ਅਦਾਇਗੀ ਨੂੰ ਸਿਮੂਲੇਸ਼ਨ ਨਤੀਜੇ ਨੂੰ ਸਹਿਯੋਗ ਨਹੀ ਹੈ।"
-
-#: webpay/base/dev_messages.py:104
-msgid "The payment provider (Bango) returned an error while processing the payment"
-msgstr "ਭੁਗਤਾਨ ਕਰਨ ਦੌਰਾਨ ਭੁਗਤਾਨ ਪ੍ਰਦਾਤਾ (Bango) ਨੇ ਇੱਕ ਗਲਤੀ ਵਾਪਸ ਕੀਤੀ ਹੈ"
-
-#. L10n: JWT stands for JSON Web Token and does not need to be
-#. localized.
-#: webpay/base/dev_messages.py:108
-msgid "The JWT has expired."
-msgstr "JWT ਦੀ ਮਿਆਦ ਪੁੱਗ ਗਈ ਹੈ।"
-
-#: webpay/base/dev_messages.py:110
-msgid "The external payment processor returned an error while handling the payment"
-msgstr "ਭੁਗਤਾਨ ਦਾ ਪਰਬੰਧਨ ਕਰਨ ਦੌਰਾਨ ਬਾਹਰੀ ਭੁਗਤਾਨ ਦਾ ਪਰੋਸੈੱਸਰ ਨੇ ਇੱਕ ਗਲਤੀ ਵਾਪਸ ਕੀਤੀ ਹੈ"
-
-#: webpay/base/dev_messages.py:112
-msgid "An internal web request timed out."
-msgstr "ਇੱਕ ਅੰਦਰੂਨੀ ਵੈੱਬ ਮੰਗ ਟਾਇਮ ਆਉਟ ਹੋ ਗਈ ਹੈ।"
-
-#. L10n: JWT stands for JSON Web Token and does not need to be
-#. localized.
-#: webpay/base/dev_messages.py:116
-msgid "The JWT signature is invalid or the JWT is malformed."
-msgstr "JWT ਦਸਤਖਤ ਗਲਤ ਹੈ ਜਾ JWT ਨੁਕਸਦਾਰ ਹੈ।"
-
-#. L10n: JWT stands for JSON Web Token and does not need to be
-#. localized.
-#: webpay/base/dev_messages.py:119
-msgid "The JWT did not decode to a JSON object."
-msgstr "JWT ਨੇ ਇੱਕ JSON ਆਬਜੈਕਟ ਨੂੰ ਡੀਕੋਡ ਨਹੀ ਕੀਤਾ।"
-
-#. L10n: JWT stands for JSON Web Token and does not need to be
-#. localized.
-#: webpay/base/dev_messages.py:122
-msgid "Error decoding JWT."
-msgstr "JWT ਡਿਕੋਡਿੰਗ ਗਲਤੀ।"
-
-#: webpay/base/dev_messages.py:123
-msgid "The system timed out while trying to log in."
-msgstr "ਲਾਗਇਨ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਦੌਰਾਨ ਸਿਸਟਮ ਟਾਇਮ ਆਉਟ।"
-
-#: webpay/base/dev_messages.py:124
-msgid "The system timed out while trying to log out."
-msgstr "ਲਾਗ ਆਉਟ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਦੌਰਾਨ ਸਿਸਟਮ ਟਾਇਮ ਆਉਟ।"
-
-#. L10n: 'postback' is a term that means a URL accepting HTTP posts.
-#: webpay/base/dev_messages.py:126
-msgid "A URL is malformed. This could be a postback URL or an icon URL."
-msgstr "ਇੱਕ URL ਨਿਕਾਰਾ ਹੈ। ਇਹ ਇੱਕ postback URL ਹੋ ਸਕਦਾ ਹੈ ਜਾ ਇੱਕ ਆਈਕਾਨ URL।"
-
-#: webpay/base/dev_messages.py:128
-msgid "The transaction ID was missing from the session when processing a payment return."
-msgstr "ਭੁਗਤਾਨ ਵਾਪਸੀ ਕਰਨ ਦੋਰਾਨ ਸੰਚਾਰ ID ਸ਼ੈਸ਼ਨ ਤੋ ਗੁੰਮ ਹੋ ਗਿਆ ਸੀ।"
-
-#. L10n: First and second arguements are the names of keys.
-#: webpay/base/dev_messages.py:132
-msgid "If {0} is defined, then you must also define {1}."
-msgstr "{0} ਪਰਿਭਾਸ਼ਤ ਕੀਤਾ ਹੈ, ਹੋ, ਫਿਰ ਵੀ ਤੁਹਾਨੂੰ {1} ਪ੍ਰਭਾਸ਼ਿਤ ਕਰਨੀ ਜਰੂਰੀ ਹੈ।"
-
-#. L10n: First argument is the name of the key, 'reason'.
-#: webpay/base/dev_messages.py:136
-msgid "The requested chargeback simulation is missing the key '{0}'."
-msgstr "ਬੇਨਤੀ ਕੀਤੀ chargeback ਸਿਮੂਲੇਸ਼ਨ '{0}' ਨੂੰ ਕੁੰਜੀ ਗੁੰਮ ਹੈ।"
-
-#: webpay/base/dev_messages.py:138
-msgid "The notification service responded with an error while verifying the payment notice"
-msgstr "ਭੁਗਤਾਨ ਦੇ ਨੋਟਿਸ ਦੇ ਪੜਤਾਲ ਦੌਰਾਨ ਟਿੱਪਣੀ ਦੀ ਸੇਵਾ ਇੱਕ ਗਲਤੀ ਦੇ ਨਾਲ ਜਵਾਬ ਦਿਤਾ ਹੈ।"
-
-#: webpay/base/dev_messages.py:140
-msgid "The notification service raised an unexpected exception while verifying the payment notice"
-msgstr "ਭੁਗਤਾਨ ਦੇ ਨੋਟਿਸ ਦੇ ਪੜਤਾਲ ਦੌਰਾਨ ਟਿੱਪਣੀ ਦੀ ਸੇਵਾ ਇੱਕ ਅਚਾਨਕ ਅਪਵਾਦ ਉਭਾਰਿਆ।"
-
-#: webpay/base/dev_messages.py:143 webpay/pay/views.py:54
-msgid "Payments are temporarily disabled."
-msgstr "ਭੁਗਤਾਨ ਆਰਜ਼ੀ ਤੌਰ ਤੇ ਅਯੋਗ ਕਰ ਰਹੇ ਹਨ।"
-
-#: webpay/base/dev_messages.py:145
-msgid "The resource has been modified within the timing of the previous request. The action should be performed again."
-msgstr "ਸਰੋਤ ਪਿਛਲੇ ਬੇਨਤੀ ਦੀ ਟਾਈਮਿੰਗ ਦੇ ਅੰਦਰ ਸੋਧਿਆ ਗਿਆ ਹੈ। ਕਾਰਵਾਈ ਫਿਰ ਤੋ ਕੀਤੀ ਜਾਣੀ ਚਾਹੀਦੀ ਹੈ।"
-
-#: webpay/base/dev_messages.py:147
-msgid "Payment simulations are disabled at this time."
-msgstr "ਭੁਗਤਾਨ ਨਕਲ ਇਸ ਵਾਰ 'ਤੇ ਆਯੋਗ ਕੀਤੇ ਹਨ।"
-
-#: webpay/base/dev_messages.py:149
-msgid "This payment key can only be used to simulate purchases."
-msgstr "ਇਹ ਭੁਗਤਾਨ ਨੂੰ ਕੁੰਜੀ ਨੂੰ ਸਿਰਫ ਖਰੀਦ ਨਕਲ ਕਰਨ ਲਈ ਵਰਤਿਆ ਜਾ ਸਕਦਾ ਹੈ।"
-
-#: webpay/base/dev_messages.py:151
-msgid "The configuration of the payment transaction failed."
-msgstr "ਭੁਗਤਾਨ ਲੈਣ-ਦੇਣ ਦੀ ਸੰਰਚਨਾ ਫੇਲ੍ਹ ਹੋਈ।"
-
-#: webpay/base/dev_messages.py:153
-msgid "The purchase cannot be completed because the current transaction has already ended."
-msgstr "ਖਰੀਦ ਨੂੰ ਪੂਰਾ ਨਹੀ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ ਕਿਉਕਿ ਮੌਜੂਦਾ ਸੰਚਾਰ ਪਹਿਲਾ ਹੀ ਖਤਮ ਹੋ ਗਿਆ ਹੈ।"
-
-#: webpay/base/dev_messages.py:155
-msgid "No transaction ID could be found."
-msgstr "ਕੋਈ ਸੰਚਾਰ ਲਈ ID ਲੱਭਿਆ ਜਾ ਸਕਿਆ ਹੈ।"
-
-#: webpay/base/dev_messages.py:157
-msgid "The system timed out while waiting for a transaction to start."
-msgstr "ਟਰਾਜੇਕਸਨ ਨੂੰ ਸੁਰੂ ਕਰਨ ਦੋਰਾਨ ਸਿਸਟਮ ਟਾਇਮ ਆਉਟ।"
-
-#: webpay/base/dev_messages.py:160
-msgid "The payment method or price point is not supported for this region or operator."
-msgstr "ਭੁਗਤਾਨ ਦੇ ਢੰਗ ਨੂੰ ਜਾ ਕੀਮਤ ਪੁਆਇੰਟ ਨੂੰ ਇਸ ਖਿੱਤੇ ਜਾ ਆਪਰੇਟਰ ਲਈ ਸਹਿਯੋਗੀ ਨਹੀ ਹੈ।"
-
-#: webpay/base/dev_messages.py:162
-msgid "The user cancelled the payment."
-msgstr "ਉਪਭੋਗੀ ਨੇ ਭੁਗਤਾਨ ਰੱਦ ਕੀਤਾ।"
-
-#. L10n: First argument is the name of a key. Second
-#. argument is a number.
-#: webpay/base/dev_messages.py:169
-msgid "The value for key \"{0}\" exceeds the maximum length of {1}"
-msgstr "ਕੁੰਜੀ ਲਈ ਮੁੱਲ \"{0}\" ਦਾ ਵੱਧ ਤੋ ਵੱਧ ਲੰਬਾਈ ਵੱਧ {1}"
-
-#: webpay/base/utils.py:56
-msgid "There was an error setting up the payment. Try again or contact the app if it persists."
-msgstr "ਭੁਗਤਾਨ ਦਾ ਸਥਾਪਤ ਕਰਨ ਦੌਰਾਨ ਇੱਕ ਗਲਤੀ ਆਈ ਸੀ। ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ ਜੇ ਇਹ ਜਾਰੀ ਰਹਿਦੀ ਹੈ ਤਾ ਐਪ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।"
-
-#: webpay/base/utils.py:62
-msgid "There was an internal error processing the payment. Try again or contact Mozilla if it persists."
-msgstr "ਭੁਗਤਾਨ ਦਾ ਕਾਰਵਾਈ ਕਰਨ ਲਈ ਇੱਕ ਅੰਦਰੂਨੀ ਗਲਤੀ ਆਈ ਹੈ। ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ ਜੇ ਇਹ ਜਾਰੀ ਰਹਿਦੀ ਹੈ ਤਾ ਮੋਜ਼ੀਲਾ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।"
-
-#: webpay/base/templates/403.html:4
-msgid "Not Allowed"
-msgstr "ਨਾ ਮਨਜ਼ੂਰ"
-
-#: webpay/base/templates/403.html:5
-msgid "Sorry, you are not allowed to do that."
-msgstr "ਮੁਆਫ਼ ਕਰਨਾ, ਤੁਹਾਨੂੰ ਅਜਿਹਾ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀ ਹੈ।"
-
-#: webpay/base/templates/403.html:8 webpay/base/templates/base.html:45 webpay/base/templates/error.html:17 webpay/pay/templates/pay/simulate.html:18 webpay/pin/templates/pin/pin_form.html:39
-#: webpay/pin/templates/pin/pin_form.html:43 webpay/pin/templates/pin/reset_start.html:17
+#: public/js/views/create-pin.js:105 templates/error.html:20
+#: templates/pin-form.html:26
 msgid "Cancel"
 msgstr "ਰੱਦ"
 
-#: webpay/base/templates/404.html:2 webpay/base/templates/404.html:3
-msgid "Page not found"
-msgstr "ਸਫਾ ਨਹੀ ਲੱਭਾ"
-
-#: webpay/base/templates/404.html:5
-msgid "Sorry, but we couldn't find the page you're looking for."
-msgstr "ਅਫਸੋਸ ਹੈ, ਪਰ ਅਸੀ ਸਫੇ ਨੂੰ ਲੱਭ ਨਹੀ ਸਕਦੇ ਜਿਸ ਲਈ ਤੁਸੀ ਦੇਖ ਰਹੇ ਹੋ।"
-
-#: webpay/base/templates/500.html:2 webpay/base/templates/500.html:3
-msgid "Something went wrong!"
-msgstr "ਕੁੱਝ ਗਲਤ ਹੋਇਆ!"
-
-#: webpay/base/templates/500.html:5
-msgid "There was an error processing that request."
-msgstr "ਬਿਨਤੀ ਦੀ ਕਾਰਵਾਈ ਕਰਨ ਦੌਰਾਨ ਇੱਕ ਗਲਤੀ ਆਈ ਸੀ।"
-
-#: webpay/base/templates/500.html:6
-msgid "Please try again in a few moments."
-msgstr "ਕਿਰਪਾ ਕਰਕੇ ਕੁਝ ਹੀ ਪਲ ਵਿੱਚ ਮੁੜ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
-
-#. Web Pay is what we call the payment server/flow.
-#: webpay/base/templates/base.html:9
-msgid "Web Pay"
-msgstr "ਵੈਬ ਭੁਗਤਾਨ"
-
-#: webpay/base/templates/base.html:28
-msgid "Pin must be 4 digits."
-msgstr "ਪਿੰਨ 4 ਅੰਕਾ ਦਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।"
-
-#: webpay/base/templates/base.html:29
+#: public/js/lib/pin-widget.js:58
 msgid "Pin can only contain digits."
 msgstr "Pin ਅੰਕ ਹੀ ਹੋ ਸਕਦਾ ਹੈ।"
 
@@ -224,7 +31,8 @@ msgstr "Pin ਅੰਕ ਹੀ ਹੋ ਸਕਦਾ ਹੈ।"
 msgid "You logged in as a different user, you must start the payment again."
 msgstr "ਤੁਹਾਨੂੰ ਇੱਕ ਵੱਖਰੇ ਯੂਜ਼ਰ ਦੇ ਤੌਰ ਤੇ ਲਾਗਇਨ, ਤੁਹਾਨੂੰ ਦੁਬਾਰਾ ਅਦਾਇਗੀ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ।"
 
-#: webpay/base/templates/base.html:31
+#: public/js/views/throbber.js:15 public/js/views/throbber.js:16
+#: templates/throbber.html:7
 msgid "Loading"
 msgstr "ਲੋਡਿਗ"
 
@@ -232,7 +40,7 @@ msgstr "ਲੋਡਿਗ"
 msgid "Beginning payment&hellip;"
 msgstr "ਭੁਗਤਾਨ ਸ਼ੁਰੂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ&hellip;"
 
-#: webpay/base/templates/base.html:33
+#: public/js/views/login.js:19
 msgid "Connecting to Persona"
 msgstr "Persona ਨੂੰ ਕੁਨੈਕਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
@@ -240,87 +48,53 @@ msgstr "Persona ਨੂੰ ਕੁਨੈਕਟ ਕੀਤਾ ਜਾ ਰਿਹਾ �
 msgid "Payment complete"
 msgstr "ਭੁਗਤਾਨ ਪੂਰਾ"
 
-#: webpay/base/templates/base.html:41
+#: public/js/lib/auth.js:22
 msgid "Oops&hellip;"
 msgstr "ਉਪਸ&hellip;"
 
-#: webpay/base/templates/base.html:42
+#: public/js/lib/auth.js:65
 msgid "This is taking longer than expected. Try again?"
 msgstr "ਇਹ ਉਮੀਦ ਤੋ ਕੀਤੇ ਸਮਾ ਲੇ ਰਿਹਾ ਹੈ। ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ?"
 
-#: webpay/base/templates/base.html:43
+#: public/js/lib/auth.js:19
 msgid "Something went wrong. Try again?"
 msgstr "ਕੁੱਝ ਗਲਤ ਹੋਇਆ ਹੈ। ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ?"
 
-#: webpay/base/templates/base.html:44 webpay/pin/templates/pin/pin_is_locked.html:17
+#: templates/error.html:27
 msgid "OK"
 msgstr "ਉਕੇ"
 
-#: webpay/base/templates/base.html:48
-msgid "The transaction failed. You have not been charged for this purchase."
-msgstr "ਲੈਣ-ਦੇਣ  ਫੇਲ੍ਹ ਹੈ। ਤੁਸੀਂ ਇਹ ਖਰੀਦ ਲਈ ਭੁਗਤਾਨ ਨਹੀਂ ਕੀਤਾ ਹੈ।"
-
-#: webpay/base/templates/error.html:9 webpay/pin/templates/pin/pin_is_locked.html:12
+#: public/js/views/error.js:44 public/js/views/locked.js:23
 msgid "Error"
 msgstr "ਗਲਤੀ"
 
-#: webpay/pay/views.py:216 webpay/pin/views.py:93
+#: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100
 msgid "Enter Pin"
 msgstr "ਪਿੰਨ ਭਰੋ"
 
-#: webpay/pay/templates/pay/bounce.html:12 webpay/pay/templates/pay/lobby.html:11
+#: public/js/views/login.js:25 templates/login.html:5
 msgid "Sign In"
 msgstr "ਸਾਇਨ ਇੰਨ"
 
-#: webpay/pay/templates/pay/bounce.html:13 webpay/pay/templates/pay/lobby.html:12
+#: templates/login.html:6
 msgid "Sign in to continue with the payment"
 msgstr "ਭੁਗਤਾਨ ਦੇ ਨਾਲ ਜਾਰੀ ਰਹਿਣ ਲਈ ਸਾਇਨ ਇੰਨ ਕਰੋ"
 
-#: webpay/pay/templates/pay/bounce.html:14 webpay/pay/templates/pay/lobby.html:13
+#: templates/login.html:7
 msgid "Sign in"
 msgstr "ਸਾਇਨ ਇੰਨ"
 
-#: webpay/pay/templates/pay/simulate.html:7 webpay/pay/templates/pay/simulate_done.html:8
-msgid "Simulate Payment"
-msgstr "ਭੁਗਤਾਨ ਨਕਲ"
-
-#: webpay/pay/templates/pay/simulate.html:8
-msgid "You will not be charged."
-msgstr "ਤੁਹਾਨੂੰ ਭੁਗਤਾਨ ਨਹੀ ਦੇਣਾ ਪਵੇਗਾ।"
-
-#: webpay/pay/templates/pay/simulate.html:10
-msgid "result"
-msgstr "ਨਤੀਜਾ"
-
-#: webpay/pay/templates/pay/simulate.html:20 webpay/pin/templates/pin/pin_form.html:46 webpay/pin/templates/pin/pin_was_locked.html:16
+#: public/js/views/create-pin.js:106 public/js/views/create-pin.js:113
+#: public/js/views/reset-pin.js:64 templates/reset-start.html:12
+#: templates/was-locked.html:12
 msgid "Continue"
 msgstr "ਜਾਰੀ"
 
-#: webpay/pay/templates/pay/super_simulate.html:4
-msgid "You have super powers"
-msgstr "ਤੁਹਾਡੇ ਕੋਲ ਸੁਪਰ ਪਾਵਰਾ ਹਨ"
-
-#: webpay/pay/templates/pay/super_simulate.html:8
-msgid "Simulate a payment"
-msgstr "ਨਕਲ ਭੁਗਤਾਨ"
-
-#: webpay/pay/templates/pay/super_simulate.html:12
-msgid "Make a real payment"
-msgstr "ਅਸਲੀ ਭੁਗਤਾਨ ਕਰੋ"
-
-#: webpay/pay/templates/pay/wait-to-start.html:6 webpay/pay/templates/pay/wait-to-start.html:12
-msgid "Setting up payment&hellip;"
-msgstr "ਭੁਗਤਾਨ ਸੈਟ ਕਰ ਰਿਹਾ&hellip;"
-
-#: webpay/pin/forms.py:90
-msgid "You have already created a PIN."
-msgstr "ਤੁਹਾਨੂੰ ਪਹਿਲਾ ਹੀ ਇੱਕ ਪਿੰਨ ਬਣਾਇਆ ਹੈ।"
-
-#: webpay/pin/forms.py:111
+#: public/js/views/enter-pin.js:73
 msgid "Wrong pin"
 msgstr "ਗਲਤ ਪਿੰਨ"
 
-#: webpay/pin/forms.py:123 webpay/pin/forms.py:146
+#: public/js/views/create-pin.js:48
 msgid "Pins do not match."
 msgstr "ਪਿੰਨ ਮੇਲ ਨਹੀ ਖਾਦਾ।"
 
@@ -329,47 +103,314 @@ msgid "Create a Pin"
 msgstr "ਪਿੰਨ ਬਣਾਉ"
 
 #: webpay/pin/views.py:68 webpay/pin/views.py:185
+#: public/js/views/create-pin.js:36
 msgid "Confirm Pin"
 msgstr "ਪਿੰਨ ਦੀ ਪੁਸ਼ਟੀ"
 
-#: webpay/pin/views.py:131 webpay/pin/views.py:157 webpay/pin/templates/pin/pin_was_locked.html:13
+#: webpay/pin/views.py:131 webpay/pin/views.py:157
+#: webpay/pin/templates/pin/pin_was_locked.html:13
+#: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
+#: templates/was-locked.html:11
 msgid "Reset Pin"
 msgstr "ਰਿਸੇਟ ਪਿੰਨ"
 
-#: webpay/pin/views.py:178
-msgid "Pin reset"
-msgstr "ਪਿੰਨ ਰਿਸੇਟ"
-
-#: webpay/pin/templates/pin/pin_form.html:13
-msgid "For testing only. Marketplace users <b>should not</b> use this site."
-msgstr "ਸਿਰਫ ਟੈਸਟਿੰਗ ਲਈ। ਮਾਰਕਿਟਪਲੇਸ ਯੂਜ਼ਰਾ <b> ਨੂੰ ਇਸ ਸਾਈਟ ਦੀ ਵਰਤੋ ਨਹੀ</ b> ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ।"
-
 #. This is the same as the standard forgot
-#.                  password that most sites have.
-#: webpay/pin/templates/pin/pin_form.html:31 webpay/pin/templates/pin/reset_start.html:13
+#. password that most sites have.
+#: templates/pin-form.html:18 templates/reset-start.html:6
 msgid "Forgot your pin?"
 msgstr "ਤੁਸੀ ਆਪਣਾ ਪਿੰਨ ਭੁੱਲ ਗਏ ਹੋ"
 
-#: webpay/pin/templates/pin/pin_is_locked.html:13
-msgid "You entered the wrong pin too many times. Your account is locked. Please try your purchase again in 5 minutes."
-msgstr "ਤੁਹਾਨੂੰ ਗਲਤ ਪਿੰਨ ਬਹੁਤ ਵਾਰ ਦਿੱਤਾ ਹੈ| ਤੁਹਾਡੇ ਖਾਤਾ ਲਾਕ ਹੋ ਗਿਆ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ 5 ਮਿੰਟ ਵਿੱਚ ਮੁੜ ਕੇ ਆਪਣੀ ਖਰੀਦ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ ਜੀ|"
+#: public/js/views/locked.js:24
+msgid ""
+"You entered the wrong pin too many times. Your account is locked. Please try "
+"your purchase again in 5 minutes."
+msgstr ""
+"ਤੁਹਾਨੂੰ ਗਲਤ ਪਿੰਨ ਬਹੁਤ ਵਾਰ ਦਿੱਤਾ ਹੈ| ਤੁਹਾਡੇ ਖਾਤਾ ਲਾਕ ਹੋ ਗਿਆ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ 5 ਮਿੰਟ ਵਿੱਚ ਮੁੜ ਕੇ "
+"ਆਪਣੀ ਖਰੀਦ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ ਜੀ|"
 
-#: webpay/pin/templates/pin/pin_was_locked.html:9
+#: templates/was-locked.html:6
 msgid "Your Pin was locked"
 msgstr "ਤੁਹਾਡੇ ਪਿੰਨ ਲਾਕ ਹੋ ਗਿਆ ਹੈ"
 
-#: webpay/pin/templates/pin/pin_was_locked.html:10
-msgid "Your pin was locked because you entered it incorrectly too many times. You can continue and try entering your pin again or reset your pin."
-msgstr "ਤੁਹਾਡੇ ਪਿੰਨ ਲਾਕ ਹੋ ਗਿਆ ਹੈ ਕਿਉਕਿ ਤੁਸੀ ਇਸਨੂੰ ਕਈ ਵਾਰ ਗਲਤ ਭਰਿਆ ਹੈ। ਤੁਸੀ ਜਾਰੀ ਰੱਖ ਸਕਦੇ ਹੋ ਅਤੇ ਤੁਹਾਡੇ ਪਿੰਨ ਦੇ ਕੇ ਕੋਸਿਸ ਕਰੋ ਜਾ ਪਿੰਨ ਫਿਰ ਤੋ ਰੀਸੈਟ ਕਰ ਕੇ।"
+#: templates/was-locked.html:7
+msgid ""
+"Your pin was locked because you entered it incorrectly too many times. You "
+"can continue and try entering your pin again or reset your pin."
+msgstr ""
+"ਤੁਹਾਡੇ ਪਿੰਨ ਲਾਕ ਹੋ ਗਿਆ ਹੈ ਕਿਉਕਿ ਤੁਸੀ ਇਸਨੂੰ ਕਈ ਵਾਰ ਗਲਤ ਭਰਿਆ ਹੈ। ਤੁਸੀ ਜਾਰੀ ਰੱਖ ਸਕਦੇ ਹੋ ਅਤੇ "
+"ਤੁਹਾਡੇ ਪਿੰਨ ਦੇ ਕੇ ਕੋਸਿਸ ਕਰੋ ਜਾ ਪਿੰਨ ਫਿਰ ਤੋ ਰੀਸੈਟ ਕਰ ਕੇ।"
 
-#: webpay/pin/templates/pin/reset_start.html:14
-msgid "Are you sure you want to reset your pin? You must sign in to Persona to reset your pin."
-msgstr "ਤੁਹਾਨੂੰ ਯਕੀਨ ਹੈ ਕਿ ਤੁਸੀ ਪਿੰਨ ਰਿਸੈੱਟ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ? ਤੁਹਾਨੂੰ ਆਪਣੇ ਪਿੰਨ ਰੀਸੈੱਟ ਕਰਨ ਲਈ Persona ਨੂੰ ਵਿੱਚ ਲਾਗਿਨ ਕਰਨਾ ਲਾਜ਼ਮੀ ਹੈ।"
+#: templates/reset-start.html:7
+msgid ""
+"Are you sure you want to reset your pin? You must sign in to Persona to "
+"reset your pin."
+msgstr ""
+"ਤੁਹਾਨੂੰ ਯਕੀਨ ਹੈ ਕਿ ਤੁਸੀ ਪਿੰਨ ਰਿਸੈੱਟ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ? ਤੁਹਾਨੂੰ ਆਪਣੇ ਪਿੰਨ ਰੀਸੈੱਟ ਕਰਨ ਲਈ Persona ਨੂੰ "
+"ਵਿੱਚ ਲਾਗਿਨ ਕਰਨਾ ਲਾਜ਼ਮੀ ਹੈ।"
 
-#: webpay/pin/templates/pin/reset_start.html:20
-msgid "Reset"
-msgstr "ਰੀਸੈੱਟ"
-
-#: webpay/provider/templates/provider/wait-to-finish.html:6 webpay/provider/templates/provider/wait-to-finish.html:12
+#: webpay/provider/templates/provider/wait-to-finish.html:6
+#: webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment&hellip;"
 msgstr "ਭੁਗਤਾਨ ਜਾਂਚ ਜਾਰੀ&hellip;"
+
+#: public/js/lib/auth.js:29 public/js/lib/auth.js:30
+msgid "Retrying..."
+msgstr ""
+
+#: public/js/lib/auth.js:64
+#, fuzzy
+msgid "That took longer than expected. Retry?"
+msgstr "ਇਹ ਉਮੀਦ ਤੋ ਕੀਤੇ ਸਮਾ ਲੇ ਰਿਹਾ ਹੈ। ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ?"
+
+#: public/js/views/create-pin.js:37 templates/reset-start.html:11
+msgid "Back"
+msgstr ""
+
+#: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95
+msgid "Submit"
+msgstr ""
+
+#: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60
+#: public/js/views/reset-pin.js:28
+msgid "Retry?"
+msgstr ""
+
+#: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
+#, fuzzy
+msgid "Create Pin"
+msgstr "ਪਿੰਨ ਬਣਾਉ"
+
+#: public/js/views/error.js:45
+#, fuzzy
+msgid "Something went wrong."
+msgstr "ਕੁੱਝ ਗਲਤ ਹੋਇਆ!"
+
+#: public/js/views/reset-start.js:29
+#, fuzzy
+msgid "Reset your PIN?"
+msgstr "ਰਿਸੇਟ ਪਿੰਨ"
+
+#: public/js/views/was-locked.js:13
+msgid "Was Locked"
+msgstr ""
+
+#: public/js/views/wait-for-tx.js:10
+msgid "Setting up payment&hellip;"
+msgstr "ਭੁਗਤਾਨ ਸੈਟ ਕਰ ਰਿਹਾ&hellip;"
+
+#~ msgid "Your payment is complete."
+#~ msgstr "ਭੁਗਤਾਨ ਪੂਰਾ ਹੋ ਗਿਆ ਹੈ।"
+
+#~ msgid ""
+#~ "Mozilla received an invalid code from the payment provider (Bango) when "
+#~ "processing the payment"
+#~ msgstr "ਮੋਜ਼ੀਲਾ ਨੂੰ ਭੁਗਤਾਨ ਕਰਨ ਦੋਰਾਨ ਭੁਗਤਾਨ ਪ੍ਰਦਾਤਾ (Bango) ਤੋ ਇੱਕ ਗਲਤ ਕੋਡ ਮਿਲਿਆ ਹੈ"
+
+#~ msgid "An image icon key was not an object. Correct example: {0}"
+#~ msgstr "ਇੱਕ ਚਿੱਤਰ ਆਈਕਾਨ ਕੁੰਜੀ ਇੱਕ ਆਬਜੈਕਟ ਨਹੀ ਸੀ​​। ਸਹੀ ਉਦਾਹਰਨ: {0}"
+
+#~ msgid "No one has been registered for this JWT issuer."
+#~ msgstr "ਕੋਈ ਕਿਸੇ ਨੂੰ ਇਸ JWT ਜਾਰੀਕਰਤਾ ਲਈ ਦਰਜ ਨਹੀ ਕੀਤਾ ਗਿਆ ਹੈ।"
+
+#~ msgid "The price point is unknown or invalid."
+#~ msgstr "ਕੀਮਤ ਪੁਆਇੰਟ ਅਣਜਾਣ ਜਾ ਗਲਤ ਹੈ।"
+
+#~ msgid "The request to begin payment was invalid."
+#~ msgstr "ਭੁਗਤਾਨ ਦੇ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਮੰਗ ਨੂੰ ਗਲਤ ਸੀ।"
+
+#~ msgid "The requested payment simulation result is not supported."
+#~ msgstr "ਬੇਨਤੀ ਕੀਤੀ ਅਦਾਇਗੀ ਨੂੰ ਸਿਮੂਲੇਸ਼ਨ ਨਤੀਜੇ ਨੂੰ ਸਹਿਯੋਗ ਨਹੀ ਹੈ।"
+
+#~ msgid ""
+#~ "The payment provider (Bango) returned an error while processing the "
+#~ "payment"
+#~ msgstr "ਭੁਗਤਾਨ ਕਰਨ ਦੌਰਾਨ ਭੁਗਤਾਨ ਪ੍ਰਦਾਤਾ (Bango) ਨੇ ਇੱਕ ਗਲਤੀ ਵਾਪਸ ਕੀਤੀ ਹੈ"
+
+#~ msgid "The JWT has expired."
+#~ msgstr "JWT ਦੀ ਮਿਆਦ ਪੁੱਗ ਗਈ ਹੈ।"
+
+#~ msgid ""
+#~ "The external payment processor returned an error while handling the "
+#~ "payment"
+#~ msgstr "ਭੁਗਤਾਨ ਦਾ ਪਰਬੰਧਨ ਕਰਨ ਦੌਰਾਨ ਬਾਹਰੀ ਭੁਗਤਾਨ ਦਾ ਪਰੋਸੈੱਸਰ ਨੇ ਇੱਕ ਗਲਤੀ ਵਾਪਸ ਕੀਤੀ ਹੈ"
+
+#~ msgid "An internal web request timed out."
+#~ msgstr "ਇੱਕ ਅੰਦਰੂਨੀ ਵੈੱਬ ਮੰਗ ਟਾਇਮ ਆਉਟ ਹੋ ਗਈ ਹੈ।"
+
+#~ msgid "The JWT signature is invalid or the JWT is malformed."
+#~ msgstr "JWT ਦਸਤਖਤ ਗਲਤ ਹੈ ਜਾ JWT ਨੁਕਸਦਾਰ ਹੈ।"
+
+#~ msgid "The JWT did not decode to a JSON object."
+#~ msgstr "JWT ਨੇ ਇੱਕ JSON ਆਬਜੈਕਟ ਨੂੰ ਡੀਕੋਡ ਨਹੀ ਕੀਤਾ।"
+
+#~ msgid "Error decoding JWT."
+#~ msgstr "JWT ਡਿਕੋਡਿੰਗ ਗਲਤੀ।"
+
+#~ msgid "The system timed out while trying to log in."
+#~ msgstr "ਲਾਗਇਨ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਦੌਰਾਨ ਸਿਸਟਮ ਟਾਇਮ ਆਉਟ।"
+
+#~ msgid "The system timed out while trying to log out."
+#~ msgstr "ਲਾਗ ਆਉਟ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਦੌਰਾਨ ਸਿਸਟਮ ਟਾਇਮ ਆਉਟ।"
+
+#~ msgid "A URL is malformed. This could be a postback URL or an icon URL."
+#~ msgstr "ਇੱਕ URL ਨਿਕਾਰਾ ਹੈ। ਇਹ ਇੱਕ postback URL ਹੋ ਸਕਦਾ ਹੈ ਜਾ ਇੱਕ ਆਈਕਾਨ URL।"
+
+#~ msgid ""
+#~ "The transaction ID was missing from the session when processing a payment "
+#~ "return."
+#~ msgstr "ਭੁਗਤਾਨ ਵਾਪਸੀ ਕਰਨ ਦੋਰਾਨ ਸੰਚਾਰ ID ਸ਼ੈਸ਼ਨ ਤੋ ਗੁੰਮ ਹੋ ਗਿਆ ਸੀ।"
+
+#~ msgid "If {0} is defined, then you must also define {1}."
+#~ msgstr "{0} ਪਰਿਭਾਸ਼ਤ ਕੀਤਾ ਹੈ, ਹੋ, ਫਿਰ ਵੀ ਤੁਹਾਨੂੰ {1} ਪ੍ਰਭਾਸ਼ਿਤ ਕਰਨੀ ਜਰੂਰੀ ਹੈ।"
+
+#~ msgid "The requested chargeback simulation is missing the key '{0}'."
+#~ msgstr "ਬੇਨਤੀ ਕੀਤੀ chargeback ਸਿਮੂਲੇਸ਼ਨ '{0}' ਨੂੰ ਕੁੰਜੀ ਗੁੰਮ ਹੈ।"
+
+#~ msgid ""
+#~ "The notification service responded with an error while verifying the "
+#~ "payment notice"
+#~ msgstr "ਭੁਗਤਾਨ ਦੇ ਨੋਟਿਸ ਦੇ ਪੜਤਾਲ ਦੌਰਾਨ ਟਿੱਪਣੀ ਦੀ ਸੇਵਾ ਇੱਕ ਗਲਤੀ ਦੇ ਨਾਲ ਜਵਾਬ ਦਿਤਾ ਹੈ।"
+
+#~ msgid ""
+#~ "The notification service raised an unexpected exception while verifying "
+#~ "the payment notice"
+#~ msgstr "ਭੁਗਤਾਨ ਦੇ ਨੋਟਿਸ ਦੇ ਪੜਤਾਲ ਦੌਰਾਨ ਟਿੱਪਣੀ ਦੀ ਸੇਵਾ ਇੱਕ ਅਚਾਨਕ ਅਪਵਾਦ ਉਭਾਰਿਆ।"
+
+#~ msgid "Payments are temporarily disabled."
+#~ msgstr "ਭੁਗਤਾਨ ਆਰਜ਼ੀ ਤੌਰ ਤੇ ਅਯੋਗ ਕਰ ਰਹੇ ਹਨ।"
+
+#~ msgid ""
+#~ "The resource has been modified within the timing of the previous request. "
+#~ "The action should be performed again."
+#~ msgstr ""
+#~ "ਸਰੋਤ ਪਿਛਲੇ ਬੇਨਤੀ ਦੀ ਟਾਈਮਿੰਗ ਦੇ ਅੰਦਰ ਸੋਧਿਆ ਗਿਆ ਹੈ। ਕਾਰਵਾਈ ਫਿਰ ਤੋ ਕੀਤੀ ਜਾਣੀ ਚਾਹੀਦੀ ਹੈ।"
+
+#~ msgid "Payment simulations are disabled at this time."
+#~ msgstr "ਭੁਗਤਾਨ ਨਕਲ ਇਸ ਵਾਰ 'ਤੇ ਆਯੋਗ ਕੀਤੇ ਹਨ।"
+
+#~ msgid "This payment key can only be used to simulate purchases."
+#~ msgstr "ਇਹ ਭੁਗਤਾਨ ਨੂੰ ਕੁੰਜੀ ਨੂੰ ਸਿਰਫ ਖਰੀਦ ਨਕਲ ਕਰਨ ਲਈ ਵਰਤਿਆ ਜਾ ਸਕਦਾ ਹੈ।"
+
+#~ msgid "The configuration of the payment transaction failed."
+#~ msgstr "ਭੁਗਤਾਨ ਲੈਣ-ਦੇਣ ਦੀ ਸੰਰਚਨਾ ਫੇਲ੍ਹ ਹੋਈ।"
+
+#~ msgid ""
+#~ "The purchase cannot be completed because the current transaction has "
+#~ "already ended."
+#~ msgstr "ਖਰੀਦ ਨੂੰ ਪੂਰਾ ਨਹੀ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ ਕਿਉਕਿ ਮੌਜੂਦਾ ਸੰਚਾਰ ਪਹਿਲਾ ਹੀ ਖਤਮ ਹੋ ਗਿਆ ਹੈ।"
+
+#~ msgid "No transaction ID could be found."
+#~ msgstr "ਕੋਈ ਸੰਚਾਰ ਲਈ ID ਲੱਭਿਆ ਜਾ ਸਕਿਆ ਹੈ।"
+
+#~ msgid "The system timed out while waiting for a transaction to start."
+#~ msgstr "ਟਰਾਜੇਕਸਨ ਨੂੰ ਸੁਰੂ ਕਰਨ ਦੋਰਾਨ ਸਿਸਟਮ ਟਾਇਮ ਆਉਟ।"
+
+#~ msgid ""
+#~ "The payment method or price point is not supported for this region or "
+#~ "operator."
+#~ msgstr "ਭੁਗਤਾਨ ਦੇ ਢੰਗ ਨੂੰ ਜਾ ਕੀਮਤ ਪੁਆਇੰਟ ਨੂੰ ਇਸ ਖਿੱਤੇ ਜਾ ਆਪਰੇਟਰ ਲਈ ਸਹਿਯੋਗੀ ਨਹੀ ਹੈ।"
+
+#~ msgid "The user cancelled the payment."
+#~ msgstr "ਉਪਭੋਗੀ ਨੇ ਭੁਗਤਾਨ ਰੱਦ ਕੀਤਾ।"
+
+#~ msgid "The value for key \"{0}\" exceeds the maximum length of {1}"
+#~ msgstr "ਕੁੰਜੀ ਲਈ ਮੁੱਲ \"{0}\" ਦਾ ਵੱਧ ਤੋ ਵੱਧ ਲੰਬਾਈ ਵੱਧ {1}"
+
+#~ msgid ""
+#~ "There was an error setting up the payment. Try again or contact the app "
+#~ "if it persists."
+#~ msgstr ""
+#~ "ਭੁਗਤਾਨ ਦਾ ਸਥਾਪਤ ਕਰਨ ਦੌਰਾਨ ਇੱਕ ਗਲਤੀ ਆਈ ਸੀ। ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ ਜੇ ਇਹ ਜਾਰੀ ਰਹਿਦੀ ਹੈ ਤਾ "
+#~ "ਐਪ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।"
+
+#~ msgid ""
+#~ "There was an internal error processing the payment. Try again or contact "
+#~ "Mozilla if it persists."
+#~ msgstr ""
+#~ "ਭੁਗਤਾਨ ਦਾ ਕਾਰਵਾਈ ਕਰਨ ਲਈ ਇੱਕ ਅੰਦਰੂਨੀ ਗਲਤੀ ਆਈ ਹੈ। ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ ਜੇ ਇਹ ਜਾਰੀ ਰਹਿਦੀ "
+#~ "ਹੈ ਤਾ ਮੋਜ਼ੀਲਾ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।"
+
+#~ msgid "Not Allowed"
+#~ msgstr "ਨਾ ਮਨਜ਼ੂਰ"
+
+#~ msgid "Sorry, you are not allowed to do that."
+#~ msgstr "ਮੁਆਫ਼ ਕਰਨਾ, ਤੁਹਾਨੂੰ ਅਜਿਹਾ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀ ਹੈ।"
+
+#~ msgid "Page not found"
+#~ msgstr "ਸਫਾ ਨਹੀ ਲੱਭਾ"
+
+#~ msgid "Sorry, but we couldn't find the page you're looking for."
+#~ msgstr "ਅਫਸੋਸ ਹੈ, ਪਰ ਅਸੀ ਸਫੇ ਨੂੰ ਲੱਭ ਨਹੀ ਸਕਦੇ ਜਿਸ ਲਈ ਤੁਸੀ ਦੇਖ ਰਹੇ ਹੋ।"
+
+#~ msgid "Something went wrong!"
+#~ msgstr "ਕੁੱਝ ਗਲਤ ਹੋਇਆ!"
+
+#~ msgid "There was an error processing that request."
+#~ msgstr "ਬਿਨਤੀ ਦੀ ਕਾਰਵਾਈ ਕਰਨ ਦੌਰਾਨ ਇੱਕ ਗਲਤੀ ਆਈ ਸੀ।"
+
+#~ msgid "Please try again in a few moments."
+#~ msgstr "ਕਿਰਪਾ ਕਰਕੇ ਕੁਝ ਹੀ ਪਲ ਵਿੱਚ ਮੁੜ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
+
+#~ msgid "Web Pay"
+#~ msgstr "ਵੈਬ ਭੁਗਤਾਨ"
+
+#~ msgid "Pin must be 4 digits."
+#~ msgstr "ਪਿੰਨ 4 ਅੰਕਾ ਦਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।"
+
+#~ msgid "The transaction failed. You have not been charged for this purchase."
+#~ msgstr "ਲੈਣ-ਦੇਣ  ਫੇਲ੍ਹ ਹੈ। ਤੁਸੀਂ ਇਹ ਖਰੀਦ ਲਈ ਭੁਗਤਾਨ ਨਹੀਂ ਕੀਤਾ ਹੈ।"
+
+#~ msgid "Simulate Payment"
+#~ msgstr "ਭੁਗਤਾਨ ਨਕਲ"
+
+#~ msgid "You will not be charged."
+#~ msgstr "ਤੁਹਾਨੂੰ ਭੁਗਤਾਨ ਨਹੀ ਦੇਣਾ ਪਵੇਗਾ।"
+
+#~ msgid "result"
+#~ msgstr "ਨਤੀਜਾ"
+
+#~ msgid "You have super powers"
+#~ msgstr "ਤੁਹਾਡੇ ਕੋਲ ਸੁਪਰ ਪਾਵਰਾ ਹਨ"
+
+#~ msgid "Simulate a payment"
+#~ msgstr "ਨਕਲ ਭੁਗਤਾਨ"
+
+#~ msgid "Make a real payment"
+#~ msgstr "ਅਸਲੀ ਭੁਗਤਾਨ ਕਰੋ"
+
+#~ msgid "You have already created a PIN."
+#~ msgstr "ਤੁਹਾਨੂੰ ਪਹਿਲਾ ਹੀ ਇੱਕ ਪਿੰਨ ਬਣਾਇਆ ਹੈ।"
+
+#~ msgid "Pin reset"
+#~ msgstr "ਪਿੰਨ ਰਿਸੇਟ"
+
+#~ msgid "For testing only. Marketplace users <b>should not</b> use this site."
+#~ msgstr ""
+#~ "ਸਿਰਫ ਟੈਸਟਿੰਗ ਲਈ। ਮਾਰਕਿਟਪਲੇਸ ਯੂਜ਼ਰਾ <b> ਨੂੰ ਇਸ ਸਾਈਟ ਦੀ ਵਰਤੋ ਨਹੀ</ b> ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ।"
+
+#~ msgid "Reset"
+#~ msgstr "ਰੀਸੈੱਟ"
+
+#, fuzzy
+#~ msgid "Oops something went wrong. Retry?"
+#~ msgstr "ਕੁੱਝ ਗਲਤ ਹੋਇਆ ਹੈ। ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ?"
+
+#, fuzzy
+#~ msgid "Payment Cancelled"
+#~ msgstr "ਭੁਗਤਾਨ ਨੂੰ ਰੱਦ ਕੀਤਾ ਗਿਆ ਹੈ।"
+
+#, fuzzy
+#~ msgid "Pins do not match"
+#~ msgstr "ਪਿੰਨ ਮੇਲ ਨਹੀ ਖਾਦਾ।"
+
+#, fuzzy
+#~ msgid "Loading..."
+#~ msgstr "ਲੋਡਿਗ"
+
+#, fuzzy
+#~ msgid "Starting Payment"
+#~ msgstr "ਭੁਗਤਾਨ ਨਕਲ"
+
+#, fuzzy
+#~ msgid "Forgot your Pin?"
+#~ msgstr "ਤੁਸੀ ਆਪਣਾ ਪਿੰਨ ਭੁੱਲ ਗਏ ਹੋ"

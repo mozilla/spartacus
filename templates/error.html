@@ -14,10 +14,18 @@
 
   <menu class="buttons" type="toolbar">
     {% if showCancel %}
-      {{ macro.button(cancelText if cancelText else gettext('Cancel'), modifier='cancel') }}
+      {% if cancelText %}
+        {{ macro.button(cancelText, modifier='cancel') }}
+      {% else %}
+        {{ macro.button(gettext('Cancel'), modifier='cancel') }}
+      {% endif %}
     {% endif %}
     {% if showCta %}
-      {{ macro.button(ctaText if ctaText else gettext('OK'), modifier='cta') }}
+      {% if ctaText %}
+        {{ macro.button(ctaText, modifier='cta') }}
+      {% else %}
+        {{ macro.button(gettext('OK'), modifier='cta') }}
+      {% endif %}
     {% endif %}
   </menu>
 {% endblock %}

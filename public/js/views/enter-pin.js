@@ -68,11 +68,11 @@ define([
           });
 
         } else if ($xhr.status === 400) {
-          console.log('Incorrect PIN');
+          console.log('Wrong pin');
           utils.trackEvent({action: pinCheckAction,
                             label: 'Pin Check API Call Invalid Form Data'});
           pin.resetPinUI();
-          pin.showError(that.gettext('Incorrect PIN'));
+          pin.showError(that.gettext('Wrong pin'));
         } else if ($xhr.status === 403) {
           console.log('User not authenticated');
           utils.trackEvent({action: pinCheckAction,

@@ -1,0 +1,40 @@
+var helpers = require('../helpers');
+
+helpers.startCasper({
+  setUp: function(){
+    helpers.fakeVerification();
+    helpers.fakeStartTransaction();
+    helpers.fakePinData({data: {pin: true}});
+    helpers.fakePinData({timeout:true, method: 'POST', url:'/mozpay/v1/api/pin/check/'});
+  },
+});
+
+casper.test.begin('Enter pin timeout then success', {
+  test: function(test) {
+
+    helpers.doLogin();
+
+    casper.waitForUrl(helpers.url('enter-pin'), function() {
+      test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
+      this.sendKeys('.pinbox', '1234');
+      test.assertExists('.cta:enabled', 'Submit button is enabled');
+      this.click('.cta');
+    });
+
+    casper.waitForSelector('.full-error', function() {
+      helpers.assertErrorCode('ENTER_PIN_TIMEOUT');
+      test.assertVisible('.button.cta', 'CTA buttons should be visible');
+      test.assertVisible('.button.cancel', 'Cancel button should be visible');
+      helpers.fakePinData({data: {pin: true}, method: 'POST', statusCode: 200, url:'/mozpay/v1/api/pin/check/'});
+      this.click('.cta');
+    });
+
+    casper.waitForUrl(helpers.url('wait-for-tx'), function() {
+      test.assertVisible('progress');
+    });
+
+    casper.run(function() {
+      test.done();
+    });
+  },
+});

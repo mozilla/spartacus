@@ -22,5 +22,6 @@ module.exports = {
     port: 7778,
   },
 
-  showClientConsole: false
+  showClientConsole: false,
+  staticDocsURL: 'https://marketplace-dev-cdn.allizom.org/'
 };

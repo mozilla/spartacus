@@ -3,12 +3,13 @@ define([
   'jquery',
   'log',
   'settings',
+  'utils',
   'query-string'
-], function(i18nUtils, $, log, settings) {
+], function(i18nUtils, $, log, settings, utils) {
 
-  'user strict';
+  'use strict';
 
-  var $html = $('html');
+  var $html = utils.$html;
   var DEBUG_LANG = settings.DEBUG_LANG;
   var DEBUG_LOCALE = settings.DEBUG_LOCALE;
   var BIDI_RTL_LANGS = settings.BIDI_RTL_LANGS;
@@ -16,17 +17,30 @@ define([
 
   var console = log('i18n');
 
+  function getLangFromLangAttr() {
+    var lang = $html.attr('lang') || 'en-US';
+    if (settings.supportedLanguages.indexOf(lang) > -1)  {
+      return lang;
+    } else {
+      console.log('Unsupported lang: ' + lang);
+      return 'en-US';
+    }
+  }
+
   function getLocaleFromLangAttr() {
     var lang = $html.attr('lang') || 'en-US';
     if (settings.supportedLanguages.indexOf(lang) > -1)  {
       return i18nUtils.localeFromLang(lang);
     } else {
       console.log('Unsupported lang: ' + lang);
+      return 'en_US';
     }
   }
 
   return {
     gettext: i18nUtils.gettext,
+    getLangFromLangAttr: getLangFromLangAttr,
+    getLocaleFromLangAttr: getLocaleFromLangAttr,
 
     initLocale: function initLocale(cb) {
 

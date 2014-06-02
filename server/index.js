@@ -5,7 +5,10 @@ var i18n = require('i18n-abide');
 var nunjucks = require('nunjucks');
 var rewriteModule = require('http-rewrite-middleware');
 
+// Node only config.
 var config = require('../config/');
+// Setting (shared by client-side + node);
+var settings = require('../public/js/settings/settings');
 
 var app = express();
 var env = new nunjucks.Environment(new nunjucks.FileSystemLoader(__dirname + '/templates'),
@@ -14,6 +17,7 @@ var env = new nunjucks.Environment(new nunjucks.FileSystemLoader(__dirname + '/t
 app.use(require('connect-livereload')({
   port: config.liveReloadPort,
 }));
+
 
 var servedViews = [
   'create-pin',
@@ -29,11 +33,12 @@ var servedViews = [
 env.express(app);
 
 app.use(i18n.abide({
-  supported_languages: config.supportedLanguages,
+  supported_languages: settings.supportedLanguages,
   debug_lang: 'db-LB',
   default_lang: 'en-US',
   translation_directory: 'public/i18n'
 }));
+
 
 app.use(rewriteModule.getMiddleware([
   // 301 / -> /mozpay

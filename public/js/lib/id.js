@@ -1,14 +1,15 @@
 define([
+  'i18n',
   'jquery',
   'log',
   'utils'
-], function($, log,  utils) {
+], function(i18n, $, log,  utils) {
 
   'use strict';
 
   return {
-    request: function(options) {
-      var console = log('id', 'request');
+
+    getWatchConfig: function(options) {
       var defaults = {
         experimental_allowUnverified: true,
         experimental_forceIssuer: utils.bodyData.unverifiedIssuer,
@@ -16,13 +17,22 @@ define([
         privacyPolicy: utils.bodyData.privacyPolicy,
         termsOfService: utils.bodyData.termsOfService
       };
-
-      // TODO: Add localised terms/privacy policy here.
-
-      options = $.extend({}, defaults, options || {});
-      console.log('Running navigator.id.request');
-      navigator.id.request(options);
+      var docLangs = ['cs', 'de', 'el', 'en-US', 'es', 'hr', 'hu', 'it', 'pl', 'pt-BR', 'sr', 'zh-CN'];
+      var lang = i18n.getLangFromLangAttr();
+      var docLang = docLangs.indexOf(lang) >= 0 ? lang : 'en-US';
+      var docLocation = utils.bodyData.staticDocsUrl + 'media/docs/{type}/' + docLang + '.html?20131014-4';
+      defaults.termsOfService = utils.format(docLocation, {type: 'terms'});
+      defaults.privacyPolicy = utils.format(docLocation, {type: 'privacy'});
+      return $.extend({}, defaults, options || {});
     },
+
+    request: function(options) {
+      var console = log('id', 'request');
+      var config = this.getWatchConfig(options);
+      console.log('Running navigator.id.request');
+      navigator.id.request(config);
+    },
+
     watch: function(options) {
       var console = log('id', 'watch');
       var user = utils.bodyData.loggedInUser;

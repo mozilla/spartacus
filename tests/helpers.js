@@ -225,8 +225,9 @@ function startCasper(options) {
   if (options.url) {
     casper.echo('You supplied a "url" option when you probably meant "path"', 'WARNING');
   }
-  var setUp = options.setUp;
+  var headers = options.headers;
   var path = options.path || '/mozpay/?req=foo';
+  var setUp = options.setUp;
   var url = baseTestUrl + path;
   casper.echo('Starting with url: ' + url);
   var callback = (function(setUp) {
@@ -237,7 +238,16 @@ function startCasper(options) {
       }
     };
   })(setUp);
-  casper.start(url, callback);
+
+  if (!headers) {
+    casper.start(url, callback);
+  } else {
+    casper.start();
+    casper.echo(JSON.stringify(headers));
+    casper.open(url, {headers: headers}).then(function() {
+      callback.call(this);
+    });
+  }
 }
 
 

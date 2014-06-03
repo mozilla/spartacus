@@ -33,6 +33,10 @@
       <div id="error" class="error"></div>
     </main>
     <script src="{{ settings.browseridJsURL }}"></script>
-    <script data-main="/js/main.js" src="/lib/js/requirejs/require.js"></script>
+    {% if settings.useMinJS == true -%}
+      <script src="/js/main.min.js"></script>
+    {%- else -%}
+      <script data-main="/js/main.js" src="/lib/js/requirejs/require.js"></script>
+    {%- endif %}
   </body>
 </html>

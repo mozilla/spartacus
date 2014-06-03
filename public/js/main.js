@@ -1,16 +1,12 @@
-// Configure requires.
-require(['config'], function(config) {
-
-  'use strict';
-
-  // Setup the requires.
-  require.config(config);
+require(['require-config'], function() {
 
   // Main Entry point of the app.
   require([
     'jquery',
     'views/app'
   ], function($, AppView){
+
+    'use strict';
 
     // Common ajax settings.
     $.ajaxSetup({
@@ -24,4 +20,5 @@ require(['config'], function(config) {
     app.AppView = new AppView();
 
   });
+
 });

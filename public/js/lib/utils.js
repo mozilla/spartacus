@@ -31,9 +31,7 @@ define(['jquery'], function($) {
       if (path[0] !== '/') {
         path = '/' + path;
       }
-      var url = (this.bodyData.baseApiURL || '/mozpay/v1/api') + path;
-      console.log(url);
-      return url;
+      return (this.bodyData.baseApiURL || '/mozpay/v1/api') + path;
     },
     format: (function() {
       var re = /\{([^}]+)\}/g;

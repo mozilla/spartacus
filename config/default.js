@@ -25,4 +25,5 @@ module.exports = {
   showClientConsole: false,
   staticDocsURL: 'https://marketplace-dev-cdn.allizom.org/',
   useMinCSS: true,
+  useMinJS: true,
 };

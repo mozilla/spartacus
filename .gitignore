@@ -22,3 +22,4 @@ messages.json
 styleguide/static/src/*
 tests/captures
 public/js/templates.js
+public/js/main.min.js

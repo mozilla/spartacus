@@ -10,7 +10,8 @@ define([
   var SessionModel = Backbone.Model.extend({
 
     defaults: {
-      logged_in: null
+      logged_in: null,
+      user_hash: null
     },
 
     initialize: function() {

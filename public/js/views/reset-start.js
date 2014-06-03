@@ -69,8 +69,19 @@ define([
 
       app.throbber.render(this.gettext('Connecting to Persona'));
 
+      var providerInst;
+      var providerName = app.transaction.get('provider');
+      if (providerName) {
+        providerInst = provider.providerFactory(providerName);
+      } else {
+        utils.trackEvent({'action': 'forgot pin',
+                            'label': 'Missing Provider'});
+        app.error.render({context: {errorCode: 'MISSING_PROVIDER'}});
+        return;
+      }
+
       var authResetUser = auth.resetUser();
-      var providerLogout = provider.logout();
+      var providerLogout = providerInst.logout();
       var personaLogout = this.logoutPersona();
 
       if (this.resetLogoutTimeout) {
@@ -82,7 +93,7 @@ define([
         // If the log-out times-out then abort/reject the requests/deferred.
         console.log('logout timed-out');
         authResetUser.abort();
-        providerLogout.reject();
+        providerLogout.abort();
         personaLogout.reject();
       }, settings.logout_timeout);
 

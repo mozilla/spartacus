@@ -1,5 +1,6 @@
 var http = require('http');
 
+var crypto = require('crypto');
 var express = require('express');
 var i18n = require('i18n-abide');
 var nunjucks = require('nunjucks');
@@ -94,8 +95,9 @@ if (env !== 'test') {
   spa.get('/mozpay/v1/api/pin/', genFakeResp(true));
   spa.post('/mozpay/v1/api/pin/', genFakeResp(true));
   spa.post('/mozpay/v1/api/pin/check/', genFakeResp(true));
+
   spa.post('/mozpay/v1/api/pay/', function(req, res) {
-    res.send(201, {});
+    res.send(201, {provider: 'reference'});
   });
 
   // Fake verification.
@@ -105,7 +107,8 @@ if (env !== 'test') {
       'status': 'okay',
       'audience': 'http://localhost:' + config.test.port,
       'expires': Date.now(),
-      'issuer': 'fake-persona'
+      'issuer': 'fake-persona',
+      'user_hash': crypto.createHmac('sha256', 'noddy-key-dev-only').update(assertion).digest('hex')
     };
     success.email = assertion;
     res.send(success);

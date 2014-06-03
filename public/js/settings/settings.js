@@ -1,5 +1,6 @@
 // Settings that can be consumed by client and server.
 var settings = {
+  validProviders: ['reference', 'boku', 'bango'],
   // General Ajax timeout (Default 45s).
   ajax_timeout: 45000,
   // Timeout for logins (Default 90s).

@@ -1,10 +1,12 @@
 define([
   'auth',
   'log',
+  'provider',
+  'settings',
   'underscore',
   'utils',
   'views/base'
-], function(auth, log, _, utils, BaseView){
+], function(auth, log, provider, settings, _, utils, BaseView){
 
   'use strict';
 
@@ -57,7 +59,7 @@ define([
       if (value === false) {
         console.log('Displaying login view.');
         app.router.showLogin();
-      } else {
+      } else if (value === true) {
         // If we're on the wait-to-finish route, show it.
         if (app.router.current().name === 'showWaitToFinish') {
           app.router.showWaitToFinish();
@@ -66,6 +68,11 @@ define([
         } else {
           this.setUpPayment();
         }
+      } else {
+        utils.trackEvent({action: 'login state change',
+                          label: 'Unexpected change value'});
+        app.error.render({'context': {'errorCode': 'UNEXPECTED_LOGIN_STATE'}});
+        return;
       }
     },
 
@@ -89,29 +96,40 @@ define([
       }
     },
 
+
     setUpPayment: function() {
       var jwt = app.transaction.get('jwt');
       var that = this;
       if (jwt) {
         var req = app.transaction.startTransaction(jwt);
-        req.done(function() {
+
+        req.done(function(data) {
           console.log('Transaction started successfully');
           utils.trackEvent({action: 'start-transaction',
                             label: 'Transaction started successfully'});
-          // TODO: Move this into it's own function.
-          // TODO: Store that a transaction has started on the client.
-          app.pin.fetch().fail(function($xhr, textStatus) {
-            if (textStatus === 'timeout') {
-              utils.trackEvent({action: 'fetch-state',
-                                label: 'Fetching initial state timed-out.'});
-              app.error.render({'context': {'errorCode': 'PIN_STATE_TIMEOUT'},
-                                ctaCallback: that.setUpPayment});
-            } else {
-              utils.trackEvent({action: 'fetch-state',
-                                label: 'Fecthing initial state error.'});
-              app.error.render({'context': {'errorCode': 'PIN_STATE_ERROR'}});
-            }
-          });
+
+          var providerName = data.provider;
+          if (settings.validProviders.indexOf(providerName) > -1) {
+            app.transaction.set('provider', providerName);
+            var Provider = provider.providerFactory(providerName);
+            Provider.prepareAll(app.session.get('user_hash')).done(function() {
+              var req = app.pin.fetch().fail(function($xhr, textStatus) {
+                if (textStatus === 'timeout') {
+                  utils.trackEvent({action: 'fetch-state',
+                                    label: 'Fetching initial state timed-out.'});
+                  app.error.render({'context': {'errorCode': 'PIN_STATE_TIMEOUT'},
+                                    ctaCallback: that.setUpPayment});
+                } else {
+                  utils.trackEvent({action: 'fetch-state',
+                                    label: 'Fetching initial state error.'});
+                  app.error.render({'context': {'errorCode': 'PIN_STATE_ERROR'}});
+                }
+              });
+              return req;
+            });
+          } else {
+            app.error.render({'context': {'errorCode': 'UNEXPECTED_PROVIDER'}});
+          }
         }).fail(function($xhr, textStatus) {
           console.log($xhr.status);
           console.log(textStatus);
@@ -119,7 +137,7 @@ define([
             utils.trackEvent({action: 'start-transaction',
                               label: 'Transaction start timed-out'});
             app.error.render({'context': {'errorCode': 'START_TRANS_TIMEOUT'},
-                              ctaCallback: that.setUpPayment});
+                              ctaCallback: function(){ that.setUpPayment(); } });
           } else {
             utils.trackEvent({action: 'start-transaction',
                               label: 'Transaction failed to start'});

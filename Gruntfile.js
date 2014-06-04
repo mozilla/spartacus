@@ -46,7 +46,7 @@ module.exports = function(grunt) {
 
     stylus: {
       options: {
-        'compress': false,
+        'compress': config.useMinCSS,
         'banner': '/* Generated content - do not edit - <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n',
         'include css': true,
         'resolve url': true,

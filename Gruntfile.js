@@ -275,7 +275,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', 'Does the same thing as grunt start', ['start']);
   grunt.registerTask('start', 'Run the development server',
-                     ['env:dev', 'requirejs', 'jshint', 'stylus', 'clean:templates', 'nunjucks', 'express:dev', 'watch']);
+                     ['abideCompile', 'env:dev', 'requirejs', 'jshint', 'stylus', 'clean:templates', 'nunjucks', 'express:dev', 'watch']);
   grunt.registerTask('styleguide', 'Run the styleguide server',
                      ['stylus', 'express:styleguide', 'watch']);
   grunt.registerTask('test', 'Run unit tests',

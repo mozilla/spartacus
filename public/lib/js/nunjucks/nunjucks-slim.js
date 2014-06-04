@@ -1,4 +1,4 @@
-// Browser bundle of nunjucks 1.0.0 (slim, only works with precompiled templates)
+// Browser bundle of nunjucks 1.0.5 (slim, only works with precompiled templates)
 
 (function() {
 var modules = {};
@@ -77,6 +77,8 @@ var escapeMap = {
     ">": '&gt;'
 };
 
+var escapeRegex = /[&"'<>]/g;
+
 var lookupEscape = function(ch) {
     return escapeMap[ch];
 };
@@ -152,7 +154,7 @@ exports.TemplateError = function(message, lineno, colno) {
 exports.TemplateError.prototype = Error.prototype;
 
 exports.escape = function(val) {
-    return val.replace(/[&"'<>]/g, lookupEscape);
+  return val.replace(escapeRegex, lookupEscape);
 };
 
 exports.isFunction = function(obj) {
@@ -168,7 +170,7 @@ exports.isString = function(obj) {
 };
 
 exports.isObject = function(obj) {
-    return obj === Object(obj);
+    return ObjProto.toString.call(obj) == '[object Object]';
 };
 
 exports.groupBy = function(obj, val) {
@@ -252,27 +254,6 @@ exports.map = function(obj, func) {
     }
 
     return results;
-};
-
-exports.asyncParallel = function(funcs, done) {
-    var count = funcs.length,
-        result = new Array(count),
-        current = 0;
-
-    var makeNext = function(i) {
-        return function(res) {
-            result[i] = res;
-            current += 1;
-
-            if (current === count) {
-                done(result);
-            }
-        };
-    };
-
-    for (var i = 0; i < count; i++) {
-        funcs[i](makeNext(i));
-    }
 };
 
 exports.asyncIter = function(arr, iter, cb) {
@@ -368,12 +349,12 @@ exports.keys = function(obj) {
 (function() {
 
 var lib = modules["lib"];
-var Object = modules["object"];
+var Obj = modules["object"];
 
 // Frames keep track of scoping both at compile-time and run-time so
 // we know how to access variables. Block tags can introduce special
 // variables, for example.
-var Frame = Object.extend({
+var Frame = Obj.extend({
     init: function(parent) {
         this.variables = {};
         this.parent = parent;
@@ -505,25 +486,16 @@ function SafeString(val) {
         return val;
     }
 
-    this.toString = function() {
-        return val;
-    };
-
-    this.length = val.length;
-
-    var methods = [
-        'charAt', 'charCodeAt', 'concat', 'contains',
-        'endsWith', 'fromCharCode', 'indexOf', 'lastIndexOf',
-        'length', 'localeCompare', 'match', 'quote', 'replace',
-        'search', 'slice', 'split', 'startsWith', 'substr',
-        'substring', 'toLocaleLowerCase', 'toLocaleUpperCase',
-        'toLowerCase', 'toUpperCase', 'trim', 'trimLeft', 'trimRight'
-    ];
-
-    for(var i=0; i<methods.length; i++) {
-        this[methods[i]] = markSafe(val[methods[i]]);
-    }
+    this.val = val;
 }
+
+SafeString.prototype = Object.create(String.prototype);
+SafeString.prototype.valueOf = function() {
+    return this.val;
+};
+SafeString.prototype.toString = function() {
+    return this.val;
+};
 
 function copySafeness(dest, target) {
     if(dest instanceof SafeString) {
@@ -689,7 +661,6 @@ modules['runtime'] = {
     callWrap: callWrap,
     handleError: handleError,
     isArray: lib.isArray,
-    asyncEach: lib.asyncEach,
     keys: lib.keys,
     SafeString: SafeString,
     copySafeness: copySafeness,
@@ -752,7 +723,7 @@ var WebLoader = Loader.extend({
 
             return { src: src,
                      path: name,
-                     noCache: this.neverUpdate };
+                     noCache: !this.neverUpdate };
         }
     },
 
@@ -793,7 +764,7 @@ modules['web-loaders'] = {
 };
 })();
 (function() {
-if(typeof window === 'undefined') {
+if(typeof window === 'undefined' || window !== this) {
     modules['loaders'] = modules["node-loaders"];
 }
 else {
@@ -801,7 +772,6 @@ else {
 }
 })();
 (function() {
-
 var lib = modules["lib"];
 var r = modules["runtime"];
 
@@ -879,7 +849,7 @@ var filters = {
                 "dictsort filter: You can only sort by either key or value");
         }
 
-        array.sort(function(t1, t2) { 
+        array.sort(function(t1, t2) {
             var a = t1[si];
             var b = t2[si];
 
@@ -897,9 +867,9 @@ var filters = {
 
         return array;
     },
-    
+
     escape: function(str) {
-        if(typeof str == 'string' || 
+        if(typeof str == 'string' ||
            str instanceof r.SafeString) {
             return lib.escape(str);
         }
@@ -1088,7 +1058,7 @@ var filters = {
                 x = x.toLowerCase();
                 y = y.toLowerCase();
             }
-               
+
             if(x < y) {
                 return reverse ? 1 : -1;
             }
@@ -1167,8 +1137,55 @@ var filters = {
         }
     },
 
+    urlize: function(str, length, nofollow) {
+        if (isNaN(length)) length = Infinity;
+
+        var noFollowAttr = (nofollow === true ? ' rel="nofollow"' : '');
+
+        // For the jinja regexp, see
+        // https://github.com/mitsuhiko/jinja2/blob/f15b814dcba6aa12bc74d1f7d0c881d55f7126be/jinja2/utils.py#L20-L23
+        var puncRE = /^(?:\(|<|&lt;)?(.*?)(?:\.|,|\)|\n|&gt;)?$/;
+        // from http://blog.gerv.net/2011/05/html5_email_address_regexp/
+        var emailRE = /^[\w.!#$%&'*+\-\/=?\^`{|}~]+@[a-z\d\-]+(\.[a-z\d\-]+)+$/i;
+        var httpHttpsRE = /^https?:\/\/.*$/;
+        var wwwRE = /^www\./;
+        var tldRE = /\.(?:org|net|com)(?:\:|\/|$)/;
+
+        var words = str.split(/\s+/).filter(function(word) {
+          // If the word has no length, bail. This can happen for str with
+          // trailing whitespace.
+          return word && word.length;
+        }).map(function(word) {
+          var matches = word.match(puncRE);
+
+          var possibleUrl = matches && matches[1] || word;
+
+          // url that starts with http or https
+          if (httpHttpsRE.test(possibleUrl))
+            return '<a href="' + possibleUrl + '"' + noFollowAttr + '>' + possibleUrl.substr(0, length) + '</a>';
+
+          // url that starts with www.
+          if (wwwRE.test(possibleUrl))
+            return '<a href="http://' + possibleUrl + '"' + noFollowAttr + '>' + possibleUrl.substr(0, length) + '</a>';
+
+          // an email address of the form username@domain.tld
+          if (emailRE.test(possibleUrl))
+            return '<a href="mailto:' + possibleUrl + '">' + possibleUrl + '</a>';
+
+          // url that ends in .com, .org or .net that is not an email address
+          if (tldRE.test(possibleUrl))
+            return '<a href="http://' + possibleUrl + '"' + noFollowAttr + '>' + possibleUrl.substr(0, length) + '</a>';
+
+          return possibleUrl;
+
+        });
+
+        return words.join(' ');
+    },
+
     wordcount: function(str) {
-        return str.match(/\w+/g).length;
+        var words = (str) ? str.match(/\w+/g) : null;
+        return (words) ? words.length : null;
     },
 
     'float': function(val, def) {
@@ -1317,9 +1334,11 @@ var Environment = Obj.extend({
         var cache = {};
 
         lib.each(this.loaders, function(loader) {
-            loader.on('update', function(template) {
-                cache[template] = null;
-            });
+            if(typeof loader.on === 'function'){
+                loader.on('update', function(template) {
+                    cache[template] = null;
+                });
+            }
         });
 
         this.cache = cache;
@@ -1725,7 +1744,7 @@ nunjucks = {};
 nunjucks.Environment = env.Environment;
 nunjucks.Template = env.Template;
 
-nunjucks.Loader = env.Loader;
+nunjucks.Loader = Loader;
 nunjucks.FileSystemLoader = loaders.FileSystemLoader;
 nunjucks.WebLoader = loaders.WebLoader;
 
@@ -1744,15 +1763,22 @@ nunjucks.configure = function(templatesPath, opts) {
         templatesPath = null;
     }
 
-    var watch = 'watch' in opts ? !opts.watch : true;
+    var noWatch = 'watch' in opts ? !opts.watch : false;
     var loader = loaders.FileSystemLoader || loaders.WebLoader;
-    e = new env.Environment(new loader(templatesPath, watch), opts);
+    e = new env.Environment(new loader(templatesPath, noWatch), opts);
 
     if(opts && opts.express) {
         e.express(opts.express);
     }
 
     return e;
+};
+
+nunjucks.compile = function(src, env, path, eagerCompile) {
+    if(!e) {
+        nunjucks.configure();
+    }
+    return new nunjucks.Template(src, env, path, eagerCompile);
 };
 
 nunjucks.render = function(name, ctx, cb) {
@@ -1783,6 +1809,7 @@ if(typeof define === 'function' && define.amd) {
 }
 else {
     window.nunjucks = nunjucks;
+    if(typeof module !== 'undefined') module.exports = nunjucks;
 }
 
 })();

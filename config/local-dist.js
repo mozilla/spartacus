@@ -12,6 +12,8 @@ module.exports = {
   // browseridJsURL: '/testlib/stubbyid.js',
   // resetUserURL: '/logout',
 
+  useMinCSS: false,
+
   /* ADD OTHER SETTINGS HERE */
   // ...
 };

@@ -2,8 +2,15 @@
 
   'use strict';
 
+  // Use static path for runTime config.
+  // When built with r.js it's all relative.
+  var staticURL = '';
+  if (typeof document !== 'undefined') {
+    staticURL = document.body.getAttribute('data-static-url') || '';
+  }
+
   var config = {
-    baseUrl: '/js',
+    baseUrl: staticURL + '/js',
     paths : {
       'auth': 'lib/auth',
       'backbone': '../lib/js/backbone/backbone',

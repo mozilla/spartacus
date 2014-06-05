@@ -1,17 +1,9 @@
-define([], function(){
+(function(){
 
   'use strict';
 
-  var staticUrl = document.body.getAttribute('data-static-url');
-
-  staticUrl = staticUrl ? staticUrl + '/js' : '/js';
-
-  // Note: all paths here should be relative. Anything that starts with a
-  // slash will end up being resolved relative to the document which is probably not
-  // what you want.
-
-  return {
-    baseUrl: staticUrl,
+  var config = {
+    baseUrl: '/js',
     paths : {
       'auth': 'lib/auth',
       'backbone': '../lib/js/backbone/backbone',
@@ -43,5 +35,11 @@ define([], function(){
       }
     }
   };
-});
 
+  if (typeof module !== 'undefined') {
+    module.exports = config;
+  } else if (typeof require.config !== 'undefined') {
+    require.config(config);
+  }
+
+})();

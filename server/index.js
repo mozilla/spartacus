@@ -10,14 +10,18 @@ var config = require('../config/');
 // Setting (shared by client-side + node);
 var settings = require('../public/js/settings/settings');
 
-var app = express();
-var env = new nunjucks.Environment(new nunjucks.FileSystemLoader(__dirname + '/templates'),
-                                   {autoescape: true});
+var spa = express();
+var nunjucksEnv = new nunjucks.Environment(new nunjucks.FileSystemLoader(__dirname + '/templates'),
+                                           {autoescape: true});
+nunjucksEnv.express(spa);
 
-app.use(require('connect-livereload')({
-  port: config.liveReloadPort,
-}));
+var env = spa.settings.env;
 
+if (env !== 'test') {
+  spa.use(require('connect-livereload')({
+    port: config.liveReloadPort,
+  }));
+}
 
 var servedViews = [
   'create-pin',
@@ -30,33 +34,30 @@ var servedViews = [
   'was-locked',
 ];
 
-env.express(app);
-
-app.use(i18n.abide({
+spa.use(i18n.abide({
   supported_languages: settings.supportedLanguages,
   debug_lang: 'db-LB',
   default_lang: 'en-US',
   translation_directory: 'public/i18n'
 }));
 
-
-app.use(rewriteModule.getMiddleware([
+spa.use(rewriteModule.getMiddleware([
   // 301 / -> /mozpay
   {from: '^/$', to: '/mozpay/', redirect: 'permanent'},
   {from: '^/mozpay$', to: '/mozpay/', redirect: 'permanent'},
-  // Internally redirect urls to be handled by the client-side app serving view.
+  // Internally redirect urls to be handled by the client-side spa serving view.
   {from: '^/mozpay/spa/(?:' + servedViews.join('|') + ')$', to: '/mozpay/'},
 ]));
 
-app.get(/\/(?:css|fonts|i18n|images|js|lib)\/?.*/, express.static(__dirname + '/../public'));
+spa.get(/\/(?:css|fonts|i18n|images|js|lib)\/?.*/, express.static(__dirname + '/../public'));
 
-app.get('/mozpay/', function (req, res) {
+spa.get('/mozpay/', function (req, res) {
   res.render('index.html', {settings: config});
 });
 
 // Serve test assets.
-app.get(/\/testlib\/?.*/, express.static(__dirname + '/../tests/static'));
-app.get(/\/unit\/?.*/, express.static(__dirname + '/../tests/'));
+spa.get(/\/testlib\/?.*/, express.static(__dirname + '/../tests/static'));
+spa.get(/\/unit\/?.*/, express.static(__dirname + '/../tests/'));
 
 function genFakeResp(pin, status) {
 
@@ -84,16 +85,18 @@ function genFakeResp(pin, status) {
   };
 }
 
-// Fake API response.
-app.get('/mozpay/v1/api/pin/', genFakeResp(true));
-app.post('/mozpay/v1/api/pin/', genFakeResp(true));
-app.post('/mozpay/v1/api/pin/check/', genFakeResp(true));
-app.post('/mozpay/v1/api/pay/', function(req, res) {
-  res.send(201, {});
-});
+// Fake API responses for non-test dev env.
+if (env !== 'test') {
+  spa.get('/mozpay/v1/api/pin/', genFakeResp(true));
+  spa.post('/mozpay/v1/api/pin/', genFakeResp(true));
+  spa.post('/mozpay/v1/api/pin/check/', genFakeResp(true));
+  spa.post('/mozpay/v1/api/pay/', function(req, res) {
+    res.send(201, {});
+  });
+}
 
 // Fake verification.
-app.post('/fake-verify', function (req, res) {
+spa.post('/fake-verify', function (req, res) {
   var assertion = req.query.assertion ? req.query.assertion : '';
   var success = {
     'status': 'okay',
@@ -106,16 +109,16 @@ app.post('/fake-verify', function (req, res) {
 });
 
 // Fake logout
-app.post('/logout', function (req, res) {
+spa.post('/logout', function (req, res) {
   res.send({'msg': 'logout success'});
 });
 
-app.get('/unittests', function (req, res) {
+spa.get('/unittests', function (req, res) {
   res.render('test.html');
 });
 
 console.log('Starting DEV Server');
 var port = process.env.PORT || config.port;
-http.createServer(app).listen(port, function() {
+http.createServer(spa).listen(port, function() {
   console.log('listening on port: ' + port);
 });

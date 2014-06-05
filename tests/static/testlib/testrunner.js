@@ -1,7 +1,4 @@
-require(['/js/config.js'], function(config) {
-
-  // Setup the requires.
-  require.config(config);
+require(['/js/require-config.js'], function() {
 
   require([
     'require',
@@ -25,4 +22,5 @@ require(['/js/config.js'], function(config) {
       }
     });
   });
+
 });

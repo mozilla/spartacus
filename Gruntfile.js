@@ -1,9 +1,11 @@
-// Dev-only config.
-var config = require('./config');
-// App Settings. Also used client-side.
-var settings = require('./public/js/settings/settings.js');
-
 module.exports = function(grunt) {
+
+  // Dev-only config.
+  var config = require('./config');
+  // App Settings. Also used client-side.
+  var settings = require('./public/js/settings/settings.js');
+  // The requirejs config data.
+  var requireConfig = require('./public/js/require-config.js');
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -40,7 +42,8 @@ module.exports = function(grunt) {
         'config/**/*.js',
         'public/js/**/*.js',
         '!public/js/templates.js',
-        'Gruntfile.js',
+        '!public/js/main.min.js',
+        'Gruntfile.js'
       ],
     },
 
@@ -73,6 +76,7 @@ module.exports = function(grunt) {
         dest: 'public/css/',
         ext: '.css',
       },
+
       styleguide: {
         options: {
           'import': [
@@ -200,6 +204,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
     abideExtract: {
       js: {
         src: 'public/**/*.js',
@@ -216,6 +221,7 @@ module.exports = function(grunt) {
         }
       },
     },
+
     abideMerge: {
       default: { // Target name.
         options: {
@@ -224,6 +230,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
     abideCompile: {
       json: {
         dest: 'public/i18n',
@@ -232,6 +239,19 @@ module.exports = function(grunt) {
           jsVar: '_i18nAbide'
         },
       },
+    },
+
+    requirejs: {
+      compile: {
+        options: grunt.util._.merge(requireConfig, {
+          include: ['../lib/js/requirejs/require.js'],
+          findNestedDependencies: true,
+          name: 'main',
+          baseUrl: 'public/js',
+          optimize: 'uglify2',
+          out: 'public/js/main.min.js'
+        })
+      }
     },
   });
 
@@ -243,6 +263,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-casper');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-env');
@@ -254,11 +275,11 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', 'Does the same thing as grunt start', ['start']);
   grunt.registerTask('start', 'Run the development server',
-                     ['env:dev', 'jshint', 'stylus', 'clean:templates', 'nunjucks', 'express:dev', 'watch']);
+                     ['env:dev', 'requirejs', 'jshint', 'stylus', 'clean:templates', 'nunjucks', 'express:dev', 'watch']);
   grunt.registerTask('styleguide', 'Run the styleguide server',
                      ['stylus', 'express:styleguide', 'watch']);
   grunt.registerTask('test', 'Run unit tests',
-                     ['env:test', 'jshint', 'stylus', 'clean:templates', 'nunjucks', 'express:test', 'shell:unittests']);
+                     ['abideCompile', 'env:test', 'jshint', 'stylus', 'clean:templates', 'nunjucks', 'express:test', 'shell:unittests']);
   grunt.registerTask('uitest', 'Run UI tests with casper.\nUsage: grunt uitest [--test <file>]',
-                     ['env:test', 'stylus', 'clean:templates',  'nunjucks', 'clean:uitest', 'express:test', 'casper']);
+                     ['abideCompile', 'env:test', 'requirejs', 'stylus', 'clean:templates',  'nunjucks', 'clean:uitest', 'express:test', 'casper']);
 };

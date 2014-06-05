@@ -17,10 +17,11 @@ nunjucksEnv.express(spa);
 
 var env = spa.settings.env;
 
-spa.use(require('connect-livereload')({
-  port: config.liveReloadPort,
-}));
-
+if (env !== 'test') {
+  spa.use(require('connect-livereload')({
+    port: config.liveReloadPort,
+  }));
+}
 
 var servedViews = [
   'create-pin',

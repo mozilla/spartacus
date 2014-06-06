@@ -23,6 +23,7 @@ def pre_update(ref):
 def update():
     with lcd(SPARTACUS):
         local('npm install')
+        local('node -e "require(\'grunt\').cli()" null abideCompile')
         local('node -e "require(\'grunt\').cli()" null stylus')
         local('node -e "require(\'grunt\').cli()" null requirejs')
         local('node -e "require(\'grunt\').cli()" null nunjucks')

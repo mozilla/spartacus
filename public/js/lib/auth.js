@@ -5,8 +5,7 @@ define([
   'jquery',
   'log',
   'utils',
-  'settings'
-], function(cancel, i18n, id, $, log, utils, settings) {
+], function(cancel, i18n, id, $, log, utils) {
 
   'use strict';
 
@@ -44,8 +43,7 @@ define([
     var reqConfig = {
       type: 'POST',
       url: utils.bodyData.verifyUrl,
-      data: {assertion: assertion},
-      timeout: settings.ajax_timeout
+      data: {assertion: assertion}
     };
 
     var req = $.ajax(reqConfig);

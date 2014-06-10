@@ -63,7 +63,10 @@ define([
               errorCode: 'ENTER_PIN_TIMEOUT'
             },
             events: {
-              'click .button.cta': that.handleSubmit
+              'click .button.cta': function(e) {
+                e.preventDefault();
+                that.handleSubmit();
+              }
             }
           });
 

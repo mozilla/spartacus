@@ -13,7 +13,7 @@ casper.test.begin('Denied verification should only have cancel option.', {
     helpers.doLogin();
 
     casper.waitForSelector('.full-error', function() {
-      helpers.assertErrorCode('VERIFICATION_DENIED');
+      helpers.assertErrorCode('VERIFY_DENIED');
       test.assertVisible('.button.cancel', 'Cancel button should be visible');
       test.assertElementCount('.button', 1, 'Should only be one button for cancelling the flow');
       casper.click('.button');

@@ -1,21 +1,27 @@
 define([
+  'cancel',
   'i18n',
   'jquery',
   'log',
   'utils'
-], function(i18n, $, log,  utils) {
+], function(cancel, i18n, $, log,  utils) {
 
   'use strict';
 
   return {
 
-    getWatchConfig: function(options) {
+    getRequestConfig: function(options) {
       var defaults = {
         experimental_allowUnverified: true,
         experimental_forceIssuer: utils.bodyData.unverifiedIssuer,
         experimental_emailHint: utils.bodyData.loggedInUser,
         privacyPolicy: utils.bodyData.privacyPolicy,
-        termsOfService: utils.bodyData.termsOfService
+        termsOfService: utils.bodyData.termsOfService,
+        oncancel: function() {
+          utils.trackwebpayevent({'action': 'persona login',
+                                  'label': 'cancelled'});
+          cancel.callPayFailure();
+        }
       };
       var docLangs = ['cs', 'de', 'el', 'en-US', 'es', 'hr', 'hu', 'it', 'pl', 'pt-BR', 'sr', 'zh-CN'];
       var lang = i18n.getLangFromLangAttr();
@@ -28,7 +34,7 @@ define([
 
     request: function(options) {
       var console = log('id', 'request');
-      var config = this.getWatchConfig(options);
+      var config = this.getRequestConfig(options);
       console.log('Running navigator.id.request');
       navigator.id.request(config);
     },

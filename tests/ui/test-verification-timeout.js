@@ -13,7 +13,7 @@ casper.test.begin('Make initial pin fetch error, then retry with success.', {
     helpers.doLogin();
 
     casper.waitForSelector('.full-error', function() {
-      helpers.assertErrorCode('LOGIN_TIMEOUT');
+      helpers.assertErrorCode('VERIFY_TIMEOUT');
       test.assertVisible('.button.cta', 'CTA buttons should be visible');
       test.assertVisible('.button.cancel', 'Cancel button should be visible');
 

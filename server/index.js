@@ -93,20 +93,34 @@ if (env !== 'test') {
   spa.post('/mozpay/v1/api/pay/', function(req, res) {
     res.send(201, {});
   });
-}
 
-// Fake verification.
-spa.post('/fake-verify', function (req, res) {
-  var assertion = req.query.assertion ? req.query.assertion : '';
-  var success = {
-    'status': 'okay',
-    'audience': 'http://localhost:' + config.test.port,
-    'expires': Date.now(),
-    'issuer': 'fake-persona'
-  };
-  success.email = assertion;
-  res.send(success);
-});
+  // Fake verification.
+  spa.post('/fake-verify', function (req, res) {
+    var assertion = req.query.assertion ? req.query.assertion : '';
+    var success = {
+      'status': 'okay',
+      'audience': 'http://localhost:' + config.test.port,
+      'expires': Date.now(),
+      'issuer': 'fake-persona'
+    };
+    success.email = assertion;
+    res.send(success);
+  });
+
+  // Fake re-verification.
+  spa.post('/fake-reverify', function (req, res) {
+    var assertion = req.query.assertion ? req.query.assertion : '';
+    var success = {
+      'status': 'reverified okay',
+      'audience': 'http://localhost:' + config.test.port,
+      'expires': Date.now(),
+      'issuer': 'fake-persona'
+    };
+    success.email = assertion;
+    res.send(success);
+  });
+
+}
 
 // Fake logout
 spa.post('/logout', function (req, res) {

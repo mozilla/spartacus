@@ -145,24 +145,45 @@ function clientTimeoutResponse(method, url) {
 
 function fakeVerification(options) {
   options = options || {};
+  var url = options.reverify === true ? '/fake-reverify' : '/fake-verify';
+  // This doesn't reflect the real response but allows us to
+  // know if the response represents a verification or reverification.
+  var statusData = options.reverify === true ? 'reverify' : 'verify';
+  var statusCode = options.statusCode || 200;
   var timeout = options.timeout || false;
   if (timeout) {
     casper.echo('Setting up a fake XHR timeout for verification', 'INFO');
-    clientTimeoutResponse('POST', '/fake-verify');
+    clientTimeoutResponse('POST', url);
   } else {
     casper.echo('Setting up a fake verification success', 'INFO');
-    casper.evaluate(function(statusCode) {
-      window.server.respondWith('POST', '/fake-verify',
+    casper.evaluate(function(statusCode, statusData, url) {
+      window.server.respondWith('POST', url,
         [statusCode, {'Content-Type': 'application/json'}, JSON.stringify({
-          'status': 'okay',
+          'status': statusData,
           'audience': 'http://localhost',
           'expires': Date.now(),
           'issuer': 'fake-persona'
         })]);
-    }, options.statusCode || 200);
+    }, statusCode, statusData, url);
   }
 }
 
+function fakeLogout(options) {
+  options = options || {};
+  var statusCode = options.statusCode || 200;
+  var timeout = options.timeout || false;
+  if (timeout) {
+    casper.echo('Setting up a fake XHR timeout for logout', 'INFO');
+    clientTimeoutResponse('POST', '/logout');
+  } else {
+    casper.evaluate(function(statusCode) {
+      window.server.respondWith('POST', '/logout',
+        [statusCode, {'Content-Type': 'application/json'}, JSON.stringify({
+          'status': 'ok',
+        })]);
+    }, statusCode);
+  }
+}
 
 function fakeStartTransaction(options) {
   options = options || {};
@@ -196,7 +217,7 @@ function fakePinData(options) {
   var method = options.method || 'GET';
   var url = options.url || '/mozpay/v1/api/pin/';
   if (options.timeout) {
-    casper.echo('Setting up a fake XHR timeout for verification', 'INFO');
+    casper.echo('Setting up a fake XHR timeout for fakePinData', 'INFO');
     clientTimeoutResponse(method, url);
   } else {
     var statusCode = options.statusCode || 200;
@@ -267,6 +288,7 @@ module.exports = {
   doLogin: doLogin,
   basePath: basePath,
   fakeBrokenJSON: fakeBrokenJSON,
+  fakeLogout: fakeLogout,
   fakePinData: fakePinData,
   fakeStartTransaction: fakeStartTransaction,
   fakeVerification: fakeVerification,

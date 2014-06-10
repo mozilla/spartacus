@@ -14,7 +14,7 @@ casper.test.begin('Failed verification, retry and success.', {
     helpers.doLogin();
 
     casper.waitForSelector('.full-error', function() {
-      helpers.assertErrorCode('LOGIN_FAILED');
+      helpers.assertErrorCode('VERIFY_FAILED');
       test.assertVisible('.button.cta', 'CTA buttons should be visible');
       test.assertVisible('.button.cancel', 'Cancel button should be visible');
 

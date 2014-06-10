@@ -67,7 +67,10 @@ define([
               errorCode: 'CREATE_PIN_TIMEOUT'
             },
             events: {
-              'click .button.cta': function(){ that.submitData(pinData); }
+              'click .button.cta': function(e){
+                e.preventDefault();
+                that.submitData(pinData);
+              }
             }
           });
 

@@ -35,7 +35,7 @@ define([
       // endpoint as it shares the attrs of this model.
       'create': {'url': baseApiURL },
       'read': {'url': baseApiURL },
-      'update': {'url': baseApiURL },
+      'update': {'url': baseApiURL, 'method': 'PATCH'},
       'check': {'url': baseApiURL + 'check/', 'method': 'POST', 'crudMethod': 'create'},
     },
 

@@ -28,7 +28,10 @@ define([
   };
 
 
-  function callPayFailure() {
+  function callPayFailure(e) {
+    if (e) {
+      e.preventDefault();
+    }
     app.error.clear();
     app.throbber.render(i18n.gettext('Payment cancelled.'));
     pollPaymentFailed();

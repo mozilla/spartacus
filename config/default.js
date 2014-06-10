@@ -11,6 +11,7 @@ module.exports = {
 
   // You'll want to override these in you local settings.
   verifyUserURL: 'http://localhost:9000/mozpay/auth/verify',
+  reVerifyUserURL: 'http://localhost:9000/mozpay/auth/reverify',
   resetUserURL: 'http://localhost:9000/mozpay/auth/reset_user',
 
   styleguide: {

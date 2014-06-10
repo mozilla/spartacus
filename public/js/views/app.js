@@ -78,6 +78,7 @@ define([
 
     // Persona has told use we should be logged out.
     handlePersonaLogout: function() {
+      console.log('Responding to onlogout event');
       // TODO: Nothing is tied to the resetUser success or failure. Is this ok?
       auth.resetUser();
       // This will result in the login screen appearing.
@@ -85,23 +86,31 @@ define([
       app.session.set('logged_in', false);
     },
 
-    // Persona has told use we should be logged out.
+    // Persona has told us we should be logged-in.
     handlePersonaLogin: function(assertion) {
-      // Persona has told us we should be logged-in.
+      console.log('Responding to onlogin event');
       this.personaCalledBack = true;
       auth.verifyUser(assertion);
     },
 
+    // Browser's state matches loggedInUser so we're probably logged in.
     handlePersonaReady: function() {
-      // Browser's state matches loggedInUser so we're probably logged in.
       console.log('Probably logged in, Persona never called back');
       if (this.personaCalledBack === false && utils.bodyData.loggedInUser) {
         app.session.set('logged_in', true);
       }
     },
 
+    stopLogoutListener: function() {
+      this.stopListening(app.session, 'onlogout');
+    },
+
+    startLogoutListener: function() {
+      this.listenTo(app.session, 'onlogout', this.handlePersonaLogout);
+    },
+
+    // Retrieve the JWT we store prior to login.
     setUpPayment: function() {
-      // Retrieve the JWT we store prior to login.
       var jwt = app.transaction.get('jwt');
       var that = this;
       if (jwt) {

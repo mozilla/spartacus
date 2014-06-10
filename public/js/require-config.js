@@ -23,6 +23,7 @@
       'log': 'lib/log',
       'nunjucks-slim': '../lib/js/nunjucks/nunjucks-slim',
       'nunjucks': 'nunjucks-env',
+      'provider': 'lib/provider',
       'query-string': '../lib/js/query-string/query-string',
       'require': '../lib/js/requirejs/require',
       'settings': 'settings/settings',

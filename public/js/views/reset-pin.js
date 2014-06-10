@@ -18,6 +18,7 @@ define([
       var req = app.pin.sync('update', app.pin, {'data': {'pin': pinData}});
 
       req.done(function() {
+        console.log('pin reset successfully');
         app.router.navigate('wait-for-tx', {trigger: true});
       }).fail(function($xhr, textStatus) {
         if (textStatus === 'timeout') {
@@ -26,14 +27,16 @@ define([
                             'label': 'Pin Reset API Call Timed Out'});
           app.error.render({
             context: {
-              buttonText: this.gettext('Retry?'),
+              buttonText: that.gettext('Retry?'),
               errorCode: 'PIN_RESET_TIMEOUT'
             },
             events: {
-              'click .button.cta': function(){ that.submitData(pinData); }
+              'click .button.cta': function(e){
+                e.preventDefault();
+                that.submitData(pinData);
+              }
             }
           });
-
         } else if ($xhr.status === 400) {
           console.log('Pin data invalid');
           utils.trackEvent({'action': pinResetAction,
@@ -44,23 +47,18 @@ define([
           utils.trackEvent({'action': pinResetAction,
                             'label': 'Pin Reset API Call Permission Denied'});
           app.error.render({context: {errorCode: 'PIN_RESET_PERM_DENIED'}});
-        } else if ($xhr.status === 404) {
-          console.log("User doesn't exist");
-          utils.trackEvent({'action': pinResetAction,
-                            'label': "Pin Reset API Call User Doesn't exist"});
-          app.error.render({context: {errorCode: 'PIN_RESET_USER_DOES_NOT_EXIST'}});
         } else {
           console.log("Unhandled error");
           utils.trackEvent({'action': pinResetAction,
                             'label': "Pin Reset API Call Unhandled error"});
-          app.error.render({context: {errorCode: 'PIN_RESET_UNHANDLED_ERROR'}});
+          app.error.render({context: {errorCode: 'PIN_RESET_ERROR'}});
         }
-
         return req;
       });
     },
 
     render: function(){
+      app.error.hide();
       var context = {
         buttonText: this.gettext('Continue'),
         pinTitle: this.gettext('Reset Pin')

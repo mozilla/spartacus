@@ -27,7 +27,7 @@ define([
                             'label': 'Pin Reset API Call Timed Out'});
           app.error.render({
             context: {
-              buttonText: that.gettext('Retry?'),
+              ctaText: that.gettext('Retry?'),
               errorCode: 'PIN_RESET_TIMEOUT'
             },
             events: {
@@ -60,7 +60,7 @@ define([
     render: function(){
       app.error.hide();
       var context = {
-        buttonText: this.gettext('Continue'),
+        ctaText: this.gettext('Continue'),
         pinTitle: this.gettext('Reset Pin')
       };
       this.renderTemplate('pin-form.html', context);

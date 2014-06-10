@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Webpay\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-22 09:18-0700\n"
-"PO-Revision-Date: 2014-01-30 07:39+0000\n"
-"Last-Translator: yfdyh000 <yfdyh000@gmail.com>\n"
+"POT-Creation-Date: 2014-05-23 12:05+0000\n"
+"PO-Revision-Date: 2014-05-08 01:18+0000\n"
+"Last-Translator: Shen <steekid@icloud.com>\n"
 "Language-Team: Chinese Simplified, China <LL@li.org>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -12,207 +12,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1391067543.0\n"
+"X-POOTLE-MTIME: 1399511888.0\n"
 
-#: webpay/bango/templates/bango/cancel.html:10 webpay/base/templates/base.html:35
+#: public/js/lib/cancel.js:33
 msgid "Payment cancelled."
 msgstr "付款已取消。"
 
-#: webpay/bango/templates/bango/success.html:10 webpay/pay/templates/pay/simulate_done.html:9 webpay/provider/templates/provider/success.html:10
-msgid "Your payment is complete."
-msgstr "支付完成。"
-
-#: webpay/base/dev_messages.py:89
-msgid "Mozilla received an invalid code from the payment provider (Bango) when processing the payment"
-msgstr "Mozilla 处理付款时收到了来自付款服务供应商（Bango）的无效代码"
-
-#. L10n: First argument is an example of the proper key format.
-#: webpay/base/dev_messages.py:93
-msgid "An image icon key was not an object. Correct example: {0}"
-msgstr "图像图标键不是一个对象。正确范例：{0}"
-
-#. L10n: JWT stands for JSON Web Token and does not need to be
-#. localized.
-#: webpay/base/dev_messages.py:97
-msgid "No one has been registered for this JWT issuer."
-msgstr "这个 JWT 发行者没有注册任何项目。"
-
-#: webpay/base/dev_messages.py:98
-msgid "The price point is unknown or invalid."
-msgstr "价格点无效或未知。"
-
-#: webpay/base/dev_messages.py:99
-msgid "The request to begin payment was invalid."
-msgstr "开始付费的请求无效。"
-
-#: webpay/base/dev_messages.py:101
-msgid "The requested payment simulation result is not supported."
-msgstr "请求支付的模拟结果不受支持。"
-
-#: webpay/base/dev_messages.py:103
-msgid "The payment provider (Bango) returned an error while processing the payment"
-msgstr "处理付款时，付款服务供应商（Bango）返回了错误"
-
-#. L10n: JWT stands for JSON Web Token and does not need to be
-#. localized.
-#: webpay/base/dev_messages.py:107
-msgid "The JWT has expired."
-msgstr "JWT 已过期。"
-
-#: webpay/base/dev_messages.py:109
-msgid "The external payment processor returned an error while handling the payment"
-msgstr "外部的付款处理器处理付款时返回一个错误。"
-
-#: webpay/base/dev_messages.py:111
-msgid "An internal web request timed out."
-msgstr "内部的网页请求超时。"
-
-#. L10n: JWT stands for JSON Web Token and does not need to be
-#. localized.
-#: webpay/base/dev_messages.py:115
-msgid "The JWT signature is invalid or the JWT is malformed."
-msgstr "JWT 签名无效或者 JWT 有问题。"
-
-#. L10n: JWT stands for JSON Web Token and does not need to be
-#. localized.
-#: webpay/base/dev_messages.py:118
-msgid "The JWT did not decode to a JSON object."
-msgstr "JWT 没有解码为 JSON 对象。"
-
-#. L10n: JWT stands for JSON Web Token and does not need to be
-#. localized.
-#: webpay/base/dev_messages.py:121
-msgid "Error decoding JWT."
-msgstr "JWT 解码错误。"
-
-#: webpay/base/dev_messages.py:122
-msgid "The system timed out while trying to log in."
-msgstr "尝试登录过程中系统超时。"
-
-#: webpay/base/dev_messages.py:123
-msgid "The system timed out while trying to log out."
-msgstr "尝试登出过程中系统超时。"
-
-#. L10n: 'postback' is a term that means a URL accepting HTTP posts.
-#: webpay/base/dev_messages.py:125
-msgid "A URL is malformed. This could be a postback URL or an icon URL."
-msgstr "网址有问题，应该是一个回传网址或者一个图标网址。"
-
-#: webpay/base/dev_messages.py:127
-msgid "The transaction ID was missing from the session when processing a payment return."
-msgstr "处理付款返回信息时，会话中的交易 ID 无效。"
-
-#. L10n: First and second arguements are the names of keys.
-#: webpay/base/dev_messages.py:131
-msgid "If {0} is defined, then you must also define {1}."
-msgstr "如果 {0} 已定义，就还必须定义 {1} 。"
-
-#. L10n: First argument is the name of the key, 'reason'.
-#: webpay/base/dev_messages.py:135
-msgid "The requested chargeback simulation is missing the key '{0}'."
-msgstr "模拟退款请求缺少密钥'{0}'。"
-
-#: webpay/base/dev_messages.py:137
-msgid "The notification service responded with an error while verifying the payment notice"
-msgstr "确认付款通知时，通知服务回应了错误。"
-
-#: webpay/base/dev_messages.py:139
-msgid "The notification service raised an unexpected exception while verifying the payment notice"
-msgstr "通知服务在验证付款通知时遇到意外的异常"
-
-#: webpay/base/dev_messages.py:142
-msgid "Payments are temporarily disabled"
-msgstr "已暂时停用了付款功能"
-
-#: webpay/base/dev_messages.py:144
-msgid "The resource has been modified within the timing of the previous request. The action should be performed again."
-msgstr "在上一个请求中的资源已被修改。需要重新操作。"
-
-#: webpay/base/dev_messages.py:146
-msgid "Payment simulations are disabled at this time."
-msgstr "模拟付款目前暂时已停用。"
-
-#: webpay/base/dev_messages.py:148
-msgid "This payment key can only be used to simulate purchases."
-msgstr "付费密钥仅能用来模拟付款流程。"
-
-#: webpay/base/dev_messages.py:150
-msgid "The purchase cannot be completed because the current transaction has already ended."
-msgstr "因为目前的交易已结束，无法完成购买。"
-
-#: webpay/base/dev_messages.py:152
-msgid "No transaction ID could be found."
-msgstr "没有找到交易ID。"
-
-#: webpay/base/dev_messages.py:154
-msgid "The system timed out while waiting for a transaction to start."
-msgstr "等待交易开始过程中系统超时。"
-
-#: webpay/base/dev_messages.py:157
-msgid "The payment method or price point is not supported for this region or operator."
-msgstr "此区域或者电信服务供应商不支持此付款方式或价格点。"
-
-#: webpay/base/dev_messages.py:159
-msgid "The user cancelled the payment."
-msgstr "用户取消付款。"
-
-#. L10n: First argument is the name of a key. Second
-#. argument is a number.
-#: webpay/base/dev_messages.py:166
-msgid "The value for key \"{0}\" exceeds the maximum length of {1}"
-msgstr "键值 \"{0}\" 超过了最大允许长度 {1}"
-
-#: webpay/base/utils.py:47
-msgid "There was an error setting up the payment. Try again or contact the app if it persists."
-msgstr "设置付款时发生错误，请重试，如果问题持续存在请联络 app 开发者。"
-
-#: webpay/base/utils.py:53
-msgid "There was an internal error processing the payment. Try again or contact Mozilla if it persists."
-msgstr "处理付款时发生内部错误。请重试一次，如果问题持续存在，请联系 Mozilla。"
-
-#: webpay/base/templates/403.html:4
-msgid "Not Allowed"
-msgstr "不被允许"
-
-#: webpay/base/templates/403.html:5
-msgid "Sorry, you are not allowed to do that."
-msgstr "抱歉，您不被允许这么做。"
-
-#: webpay/base/templates/403.html:8 webpay/base/templates/base.html:45 webpay/base/templates/error.html:17 webpay/pay/templates/pay/simulate.html:18 webpay/pin/templates/pin/pin_form.html:39
-#: webpay/pin/templates/pin/pin_form.html:43 webpay/pin/templates/pin/reset_start.html:17
+#: public/js/views/create-pin.js:105 templates/error.html:20
+#: templates/pin-form.html:26
 msgid "Cancel"
 msgstr "取消"
 
-#: webpay/base/templates/404.html:2 webpay/base/templates/404.html:3
-msgid "Page not found"
-msgstr "找不到页面"
-
-#: webpay/base/templates/404.html:5
-msgid "Sorry, but we couldn't find the page you're looking for."
-msgstr "对不起，我们找不到您想打开的网页。"
-
-#: webpay/base/templates/500.html:2 webpay/base/templates/500.html:3
-msgid "Something went wrong!"
-msgstr "有些东西不对劲！"
-
-#: webpay/base/templates/500.html:5
-msgid "There was an error processing that request."
-msgstr "处理该请求时发生错误。"
-
-#: webpay/base/templates/500.html:6
-msgid "Please try again in a few moments."
-msgstr "请稍候重试。"
-
-#. Web Pay is what we call the payment server/flow.
-#: webpay/base/templates/base.html:9 webpay/spa/templates/spa.html:8
-msgid "Web Pay"
-msgstr "Web Pay"
-
-#: webpay/base/templates/base.html:28
-msgid "Pin must be 4 digits."
-msgstr "Pin 码只能为四个数字。"
-
-#: webpay/base/templates/base.html:29
+#: public/js/lib/pin-widget.js:58
 msgid "Pin can only contain digits."
 msgstr "Pin 码只能为数字。"
 
@@ -220,7 +31,8 @@ msgstr "Pin 码只能为数字。"
 msgid "You logged in as a different user, you must start the payment again."
 msgstr "您已登录为另一个用户，需要重新开始支付过程。"
 
-#: webpay/base/templates/base.html:31
+#: public/js/views/throbber.js:15 public/js/views/throbber.js:16
+#: templates/throbber.html:7
 msgid "Loading"
 msgstr "正在载入"
 
@@ -228,7 +40,7 @@ msgstr "正在载入"
 msgid "Beginning payment&hellip;"
 msgstr "正在开始付款&hellip;"
 
-#: webpay/base/templates/base.html:33
+#: public/js/views/login.js:19
 msgid "Connecting to Persona"
 msgstr "正在连接至 Persona"
 
@@ -236,132 +48,147 @@ msgstr "正在连接至 Persona"
 msgid "Payment complete"
 msgstr "付款完成"
 
-#: webpay/base/templates/base.html:41
+#: public/js/lib/auth.js:22
 msgid "Oops&hellip;"
 msgstr "啊哦&hellip;"
 
-#: webpay/base/templates/base.html:42
+#: public/js/lib/auth.js:65
 msgid "This is taking longer than expected. Try again?"
 msgstr "话的时间比预期的要久，重试一次？"
 
-#: webpay/base/templates/base.html:43
+#: public/js/lib/auth.js:19
 msgid "Something went wrong. Try again?"
 msgstr "有些东西出错了。重试？"
 
-#: webpay/base/templates/base.html:44 webpay/pin/templates/pin/pin_is_locked.html:17
+#: templates/error.html:27
 msgid "OK"
 msgstr "确定"
 
-#: webpay/base/templates/error.html:9 webpay/pin/templates/pin/pin_is_locked.html:12
+#: public/js/views/error.js:44 public/js/views/locked.js:23
 msgid "Error"
 msgstr "错误"
 
-#: webpay/pay/views.py:56
-msgid "Payments are temporarily disabled."
-msgstr "目前暂时停用付款功能。"
-
-#: webpay/pay/views.py:191 webpay/pin/views.py:93
+#: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100
 msgid "Enter Pin"
 msgstr "输入 Pin 码"
 
-#: webpay/pay/templates/pay/bounce.html:12 webpay/pay/templates/pay/lobby.html:11
+#: public/js/views/login.js:25 templates/login.html:5
 msgid "Sign In"
 msgstr "登录"
 
-#: webpay/pay/templates/pay/bounce.html:13 webpay/pay/templates/pay/lobby.html:12
+#: templates/login.html:6
 msgid "Sign in to continue with the payment"
 msgstr "登录以继续付款"
 
-#: webpay/pay/templates/pay/bounce.html:14 webpay/pay/templates/pay/lobby.html:13
+#: templates/login.html:7
 msgid "Sign in"
 msgstr "登录"
 
-#: webpay/pay/templates/pay/simulate.html:7 webpay/pay/templates/pay/simulate_done.html:8
-msgid "Simulate Payment"
-msgstr "模拟付款"
-
-#: webpay/pay/templates/pay/simulate.html:8
-msgid "You will not be charged."
-msgstr "您将不会被收费。"
-
-#: webpay/pay/templates/pay/simulate.html:10
-msgid "result"
-msgstr "结果"
-
-#: webpay/pay/templates/pay/simulate.html:20 webpay/pin/templates/pin/pin_form.html:46 webpay/pin/templates/pin/pin_was_locked.html:16
+#: public/js/views/create-pin.js:106 public/js/views/create-pin.js:113
+#: public/js/views/reset-pin.js:64 templates/reset-start.html:12
+#: templates/was-locked.html:12
 msgid "Continue"
 msgstr "继续"
 
-#: webpay/pay/templates/pay/super_simulate.html:4
-msgid "You have super powers"
-msgstr "您有超级权限"
-
-#: webpay/pay/templates/pay/super_simulate.html:8
-msgid "Simulate a payment"
-msgstr "模拟付款"
-
-#: webpay/pay/templates/pay/super_simulate.html:12
-msgid "Make a real payment"
-msgstr "进行真实付款"
-
-#: webpay/pay/templates/pay/wait-to-start.html:6 webpay/pay/templates/pay/wait-to-start.html:12
-msgid "Setting up payment&hellip;"
-msgstr "设置付款&hellip;"
-
-#: webpay/pin/forms.py:90
-msgid "You have already created a PIN."
-msgstr "您已创建 Pin 码。"
-
-#: webpay/pin/forms.py:111
+#: public/js/views/enter-pin.js:73
 msgid "Wrong pin"
 msgstr "Pin 码错误"
 
-#: webpay/pin/forms.py:123 webpay/pin/forms.py:146
+#: public/js/views/create-pin.js:48
 msgid "Pins do not match."
 msgstr "输入的 Pin 码不同。"
 
-#: webpay/pin/views.py:46
+#: webpay/pin/views.py:46 webpay/testing/views.py:25
 msgid "Create a Pin"
 msgstr "创建 Pin 码"
 
 #: webpay/pin/views.py:68 webpay/pin/views.py:185
+#: public/js/views/create-pin.js:36
 msgid "Confirm Pin"
 msgstr "确认 Pin 码"
 
-#: webpay/pin/views.py:131 webpay/pin/views.py:157 webpay/pin/templates/pin/pin_was_locked.html:13
+#: webpay/pin/views.py:131 webpay/pin/views.py:157
+#: webpay/pin/templates/pin/pin_was_locked.html:13
+#: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
+#: templates/was-locked.html:11
 msgid "Reset Pin"
 msgstr "重置 Pin 码"
 
-#: webpay/pin/views.py:178
-msgid "Pin reset"
-msgstr "重设 Pin 码"
-
-#: webpay/pin/templates/pin/pin_form.html:13
-msgid "For testing only. Marketplace users <b>should not</b> use this site."
-msgstr "仅供测试。Marketplace 用户<b>不应该</b>使用此网站。"
-
 #. This is the same as the standard forgot
-#.                  password that most sites have.
-#: webpay/pin/templates/pin/pin_form.html:31 webpay/pin/templates/pin/reset_start.html:13
+#. password that most sites have.
+#: templates/pin-form.html:18 templates/reset-start.html:6
 msgid "Forgot your pin?"
 msgstr "忘记了您的 Pin 码？"
 
-#: webpay/pin/templates/pin/pin_is_locked.html:13
-msgid "You entered the wrong pin too many times. Your account is locked. Please try your purchase again in 5 minutes."
+#: public/js/views/locked.js:24
+msgid ""
+"You entered the wrong pin too many times. Your account is locked. Please try "
+"your purchase again in 5 minutes."
 msgstr "您输错太多次 Pin 码，帐号已被锁定。请等候 5 分钟之后再尝试购买。"
 
-#: webpay/pin/templates/pin/pin_was_locked.html:9
+#: templates/was-locked.html:6
 msgid "Your Pin was locked"
 msgstr "您的 Pin 码已被锁定"
 
-#: webpay/pin/templates/pin/pin_was_locked.html:10
-msgid "Your pin was locked because you entered it incorrectly too many times. You can continue and try entering your pin again or reset your pin."
-msgstr "您输错太多次 Pin 码，已被锁定。您可以继续尝试输入，或者重置您的 Pin 码。"
+#: templates/was-locked.html:7
+msgid ""
+"Your pin was locked because you entered it incorrectly too many times. You "
+"can continue and try entering your pin again or reset your pin."
+msgstr ""
+"您输错太多次 Pin 码，已被锁定。您可以继续尝试输入，或者重置您的 Pin 码。"
 
-#: webpay/pin/templates/pin/reset_start.html:14
-msgid "Are you sure you want to reset your pin? You must sign in to Persona to reset your pin."
+#: templates/reset-start.html:7
+msgid ""
+"Are you sure you want to reset your pin? You must sign in to Persona to "
+"reset your pin."
 msgstr "您确定要重置 Pin 码吗？必须登录 Persona 才能重置您的 Pin 码。"
 
-#: webpay/pin/templates/pin/reset_start.html:20
-msgid "Reset"
-msgstr "重置"
+#: webpay/provider/templates/provider/wait-to-finish.html:6
+#: webpay/provider/templates/provider/wait-to-finish.html:12
+msgid "Verifying payment&hellip;"
+msgstr "正在确认付款&hellip;"
+
+#: public/js/lib/auth.js:29 public/js/lib/auth.js:30
+msgid "Retrying..."
+msgstr ""
+
+#: public/js/lib/auth.js:64
+#, fuzzy
+msgid "That took longer than expected. Retry?"
+msgstr "话的时间比预期的要久，重试一次？"
+
+#: public/js/views/create-pin.js:37 templates/reset-start.html:11
+msgid "Back"
+msgstr ""
+
+#: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95
+msgid "Submit"
+msgstr ""
+
+#: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60
+#: public/js/views/reset-pin.js:28
+msgid "Retry?"
+msgstr ""
+
+#: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
+#, fuzzy
+msgid "Create Pin"
+msgstr "创建 Pin 码"
+
+#: public/js/views/error.js:45
+#, fuzzy
+msgid "Something went wrong."
+msgstr "有些东西不对劲！"
+
+#: public/js/views/reset-start.js:29
+#, fuzzy
+msgid "Reset your PIN?"
+msgstr "重置 Pin 码"
+
+#: public/js/views/was-locked.js:13
+msgid "Was Locked"
+msgstr ""
+
+#: public/js/views/wait-for-tx.js:10
+msgid "Setting up payment&hellip;"
+msgstr "设置付款&hellip;"

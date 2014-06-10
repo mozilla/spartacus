@@ -15,9 +15,10 @@ define([
 
 
   function showRetryError(assertion, errCode, msg) {
-    msg = msg || gettext('Oops something went wrong. Retry?');
+    msg = msg || gettext('Something went wrong. Try again?');
     app.error.render({
       context: {
+        heading: gettext('Oops&hellip;'),
         errorCode: errCode,
         msg: msg,
       },
@@ -59,7 +60,7 @@ define([
         console.log('login timed out');
         utils.trackEvent({'action': 'persona login',
                           'label': 'Verification Timed Out'});
-        showRetryError(assertion, 'LOGIN_TIMEOUT', gettext('That took longer than expected. Retry?'));
+        showRetryError(assertion, 'LOGIN_TIMEOUT', gettext('This is taking longer than expected. Try again?'));
       } else if ($xhr.status === 403) {
         console.log('permission denied after auth');
         utils.trackEvent({'action': 'persona login',

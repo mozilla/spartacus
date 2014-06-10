@@ -21,7 +21,7 @@ casper.test.begin('Make initial pin fetch error, then retry with success.', {
     });
 
     casper.waitUntilVisible('.throbber', function() {
-      test.assertSelectorHasText('.msg', 'Payment Cancelled', 'Check cancelled throbber is displayed');
+      test.assertSelectorHasText('.msg', 'Payment cancelled', 'Check cancelled throbber is displayed');
     });
 
     casper.run(function() {

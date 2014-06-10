@@ -185,11 +185,11 @@ define([
       this.forceAuthRequest();
     },
 
-    handlePersonaLogin: function() {
+    handlePersonaLogin: function(assertion) {
       // Do the reverification step now.
       console.log('re-auth login happened. moving to re-verify');
       window.clearTimeout(this.reAuthTimer);
-      auth.reVerifyUser();
+      auth.verifyUser(assertion, {reverify: true});
     }
 
   });

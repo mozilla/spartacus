@@ -17,7 +17,7 @@ define([
     var errCode = options.errCode;
     var assertion = options.assertion;
     var msg = options.msg || gettext('Something went wrong. Try again?');
-    var verifyFunc = options.verifyFunc || verifyUser;
+    var reverify = options.reverify || false;
 
     app.error.render({
       context: {
@@ -31,19 +31,34 @@ define([
           e.preventDefault();
           app.error.clear();
           app.throbber.render(gettext('Retrying...'));
-          verifyFunc(assertion);
+          verifyUser(assertion, {reverify: reverify});
         }
       }
     });
   }
 
-  function verifyUser(assertion) {
+  function verifyUser(assertion, options) {
 
-    console.log('Verifying assertion');
+    options = options || {};
+    var reverify = options.reverify || false;
+    var url = reverify === true ? utils.bodyData.reverifyUrl : utils.bodyData.verifyUrl;
+
+    var prefix = reverify === true ? 'Reverify' : 'Verify';
+    var prefixUC = prefix.toUpperCase();
+
+    if (!url) {
+      console.log('Error: No url. Please set one. Bailing out!');
+      app.error.render({context: {
+        errorCode: 'MISSING_' + prefixUC + '_URL'
+      }, showCta: false});
+      return;
+    }
+
+    console.log(prefix + 'ing assertion');
 
     var reqConfig = {
       type: 'POST',
-      url: utils.bodyData.verifyUrl,
+      url: url,
       data: {assertion: assertion}
     };
 
@@ -51,90 +66,52 @@ define([
 
     var req = $.ajax(reqConfig);
     req.done(function() {
-      console.log('Verification success');
+      console.log(prefix + ' success');
       utils.trackEvent({'action': 'persona login',
-                        'label': 'Login Success'});
-      // Setting the attr will cause the listeners
-      // to deal with login success.
-      app.session.set('logged_in', true);
+                        'label': prefix + ' Success'});
+      if (reverify === true) {
+        // Set logged_in and manually direct to reset-pin which is
+        // implied having successfully carried out a re-auth.
+        app.session.set('logged_in', true, {silent: true});
+        app.router.navigate('reset-pin', {trigger: true});
+      } else {
+        // Setting the attr will cause the listeners
+        // to deal with login success.
+        app.session.set('logged_in', true);
+      }
     }).fail(function($xhr, textStatus) {
       console.log(textStatus);
       console.log($xhr.status);
       if (textStatus === 'timeout') {
         console.log('login timed out');
         utils.trackEvent({'action': 'persona login',
-                          'label': 'Verification Timed Out'});
+                          'label': prefix + ' Timed Out'});
         showRetryError({
           assertion: assertion,
-          errCode: 'LOGIN_TIMEOUT',
+          errCode: prefixUC + '_TIMEOUT',
           msg: gettext('This is taking longer than expected. Try again?'),
+          reverify: reverify,
         });
       } else if ($xhr.status === 403) {
         console.log('permission denied after auth');
         utils.trackEvent({'action': 'persona login',
-                          'label': 'Login Permission Denied'});
-        app.error.render({context: {errorCode: 'VERIFY_DENIED'}, showCta: false});
+                          'label': prefix + ' Permission Denied'});
+        app.error.render({context: {
+          errorCode: prefixUC + '_DENIED'
+        }, showCta: false});
       } else {
         console.log('login error');
         utils.trackEvent({'action': 'persona login',
-                          'label': 'Login Failed'});
+                          'label': prefix + ' Failed'});
         showRetryError({
           assertion: assertion,
-          errCode: 'LOGIN_FAILED',
+          errCode: prefixUC + '_FAILED',
+          reverify: reverify,
         });
-
       }
     });
 
     return req;
-  }
-
-  function reVerifyUser(assertion) {
-    console.log('Re-verifying assertion');
-
-    var reqConfig = {
-      type: 'POST',
-      url: utils.bodyData.reverifyUrl,
-      data: {assertion: assertion},
-    };
-
-    var req = $.ajax(reqConfig);
-
-    req.done(function _resetLoginSuccess() {
-    //req.done(function _resetLoginSuccess(data) {
-      console.log('login success');
-      //provider.prepareAll(data.user_hash).done(function _forceAuthReady() {
-      utils.trackEvent({'action': 'reset force auth',
-                        'label': 'Login Success'});
-      app.router.navigate('reset-pin', {trigger: true});
-      //});
-    }).fail(function _resetLoginError($xhr, textStatus) {
-      if (textStatus === 'timeout') {
-        console.log('login timed out');
-        utils.trackEvent({'action': 'reset force auth',
-                          'label': 'Re-verification Timed Out'});
-        showRetryError({
-          assertion: assertion,
-          errCode: 'REVERIFY_TIMEOUT',
-          msg: gettext('That took longer than expected. Retry?'),
-          verifyFunc: reVerifyUser
-        });
-      } else if ($xhr.status === 403) {
-        console.log('login error');
-        utils.trackEvent({'action': 'reset force auth',
-                          'label': 'Permission Denied'});
-        app.error.render({context: {errorCode: 'REVERIFY_DENIED'}, showCta: false});
-      } else {
-        console.log('login error');
-        utils.trackEvent({'action': 'reset force auth',
-                          'label': 'Login Failure'});
-        showRetryError({
-          assertion: assertion,
-          errCode: 'REVERIFY_FAILED',
-          verifyFunc: reVerifyUser
-        });
-      }
-    });
   }
 
   function resetUser() {
@@ -163,7 +140,6 @@ define([
     resetUser: resetUser,
     showRetryError: showRetryError,
     verifyUser: verifyUser,
-    reVerifyUser: reVerifyUser
   };
 
 });

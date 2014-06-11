@@ -59,7 +59,7 @@ define([
                             label: 'Pin Check API Call Timed Out'});
           app.error.render({
             context: {
-              buttonText: that.gettext('Retry?'),
+              ctaText: that.gettext('Retry?'),
               errorCode: 'ENTER_PIN_TIMEOUT'
             },
             events: {
@@ -97,7 +97,7 @@ define([
 
     render: function(){
       var context = {
-        buttonText: this.gettext('Submit'),
+        ctaText: this.gettext('Submit'),
         pinTitle: this.gettext('Enter Pin'),
         showForgotPin: true
       };

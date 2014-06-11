@@ -63,7 +63,7 @@ define([
                             'label': 'Pin Create API Call Timed Out'});
           app.error.render({
             context: {
-              buttonText: that.gettext('Retry?'),
+              ctaText: that.gettext('Retry?'),
               errorCode: 'CREATE_PIN_TIMEOUT'
             },
             events: {
@@ -113,7 +113,7 @@ define([
 
     render: function(){
       var context = {
-        buttonText: this.gettext('Continue'),
+        ctaText: this.gettext('Continue'),
         pinTitle: this.gettext('Create Pin')
       };
       this.setTitle(this.gettext('Create Pin'));

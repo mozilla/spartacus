@@ -153,7 +153,7 @@ define([
       }
       app.error.render({
         context: {
-          buttonText: that.gettext('Retry?'),
+          ctaText: that.gettext('Retry?'),
           errorCode: 'REAUTH_LOGIN_TIMEOUT'
         },
         events: {

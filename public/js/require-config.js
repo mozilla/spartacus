@@ -43,7 +43,7 @@
     }
   };
 
-  var requireBustToken = typeof(document) !== 'undefined' ?
+  var requireBustToken = typeof document !== 'undefined' ?
                          document.body.getAttribute('data-build-id') :
                          null;
   if (requireBustToken) {

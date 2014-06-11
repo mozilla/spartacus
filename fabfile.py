@@ -10,6 +10,15 @@ env.key_filename = settings.SSH_KEY
 fabdeploytools.envs.loadenv(settings.CLUSTER)
 ROOT, SPARTACUS = helpers.get_app_dirs(__file__)
 
+WEBPAY = '%s/webpay' % settings.WEBPAY_DIR
+WEBPAY_PYTHON = '%s/venv/bin/python' % settings.WEBPAY_DIR
+
+SPARTACUS_REF = helpers.git_ref(SPARTACUS)
+
+SCL_NAME = getattr(settings, 'SCL_NAME', False)
+if SCL_NAME:
+    helpers.scl_enable(SCL_NAME)
+
 
 @task
 def pre_update(ref):
@@ -27,6 +36,7 @@ def update():
         local('node -e "require(\'grunt\').cli()" null stylus')
         local('node -e "require(\'grunt\').cli()" null requirejs')
         local('node -e "require(\'grunt\').cli()" null nunjucks')
+        update_build_id()
 
 
 @task
@@ -37,3 +47,9 @@ def deploy():
                    cluster=settings.CLUSTER,
                    domain=settings.DOMAIN,
                    root=ROOT)
+
+
+@task
+def update_build_id():
+    with lcd(WEBPAY):
+        local('%s manage.py spa_build_id %s' % (WEBPAY_PYTHON, SPARTACUS_REF))

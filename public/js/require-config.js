@@ -43,6 +43,13 @@
     }
   };
 
+  var requireBustToken = typeof(document) !== 'undefined' ?
+                         document.body.getAttribute('data-build-id') :
+                         null;
+  if (requireBustToken) {
+    config.urlArgs = "bust=" + requireBustToken;
+  }
+
   if (typeof module !== 'undefined') {
     module.exports = config;
   } else if (typeof require.config !== 'undefined') {

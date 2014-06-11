@@ -39,7 +39,7 @@ msgid "Loading"
 msgstr "Laden"
 
 #: webpay/base/templates/base.html:32
-msgid "Beginning payment&hellip;"
+msgid "Beginning payment…"
 msgstr "Betaling starten…"
 
 #: public/js/views/login.js:19
@@ -51,7 +51,7 @@ msgid "Payment complete"
 msgstr "Betaling voltooid"
 
 #: public/js/lib/auth.js:22
-msgid "Oops&hellip;"
+msgid "Oops…"
 msgstr "Oeps…"
 
 #: public/js/lib/auth.js:65
@@ -153,8 +153,8 @@ msgstr ""
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6
 #: webpay/provider/templates/provider/wait-to-finish.html:12
-msgid "Verifying payment&hellip;"
-msgstr "Betaling verifiëren&hellip;"
+msgid "Verifying payment…"
+msgstr "Betaling verifiëren…"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30
 msgid "Retrying..."
@@ -198,5 +198,5 @@ msgid "Was Locked"
 msgstr ""
 
 #: public/js/views/wait-for-tx.js:10
-msgid "Setting up payment&hellip;"
+msgid "Setting up payment…"
 msgstr "Betaling instellen…"

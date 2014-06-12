@@ -5,12 +5,12 @@ define([
   'log',
   'underscore',
   'utils',
-  'views/base'
-], function(cancel, $, pin, log, _, utils, BaseView){
+  'views/page'
+], function(cancel, $, pin, log, _, utils, PageView){
 
   'use strict';
 
-  var EnterPinView = BaseView.extend({
+  var EnterPinView = PageView.extend({
 
     events: {
       'click .cancel': cancel.callPayFailure,
@@ -20,7 +20,7 @@ define([
 
     handleForgotPin: function(e) {
       e.preventDefault();
-      app.router.navigate('reset-start', {trigger: true});
+      app.router.navigate('spa/reset-start', {trigger: true});
     },
 
     handleSubmit: function(e) {
@@ -34,10 +34,10 @@ define([
       app.throbber.render();
 
       req.done(function() {
-        app.router.navigate('wait-for-tx', {trigger: true});
+        app.router.navigate('spa/wait-to-start', {trigger: true});
       }).fail(function($xhr, textStatus) {
 
-        app.throbber.hide();
+        app.throbber.close();
 
         var data;
         try {
@@ -102,7 +102,7 @@ define([
       this.renderTemplate('pin-form.html', context);
       this.setTitle(this.gettext('Enter PIN'));
       pin.init();
-      app.throbber.hide();
+      app.throbber.close();
       return this;
     }
 

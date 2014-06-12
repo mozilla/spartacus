@@ -19,7 +19,7 @@ define([
 
       req.done(function() {
         console.log('pin reset successfully');
-        app.router.navigate('wait-for-tx', {trigger: true});
+        app.router.navigate('spa/wait-to-start', {trigger: true});
       }).fail(function($xhr, textStatus) {
         if (textStatus === 'timeout') {
           console.log('Request timed out');
@@ -56,7 +56,7 @@ define([
     },
 
     render: function(){
-      app.error.hide();
+      app.error.close();
       var context = {
         ctaText: this.gettext('Continue'),
         pinTitle: this.gettext('Reset PIN')
@@ -64,7 +64,7 @@ define([
       this.renderTemplate('pin-form.html', context);
       this.setTitle(this.gettext('Reset PIN'));
       pin.init();
-      app.throbber.hide();
+      app.throbber.close();
       return this;
     }
 

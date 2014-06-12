@@ -17,10 +17,8 @@ require(['require-config'], function() {
       }
     });
 
-    console.log('I AM SPARTACUS!');
-    window.app = window.app || {};
-    app.AppView = new AppView();
-
+    var app = window.app = new AppView();
+    app.start();
   });
 
 });

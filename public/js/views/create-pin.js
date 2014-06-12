@@ -5,12 +5,12 @@ define([
   'log',
   'underscore',
   'utils',
-  'views/base'
-], function(cancel, $, pin, log, _, utils, BaseView){
+  'views/page'
+], function(cancel, $, pin, log, _, utils, PageView){
 
   'use strict';
 
-  var CreatePinView = BaseView.extend({
+  var CreatePinView = PageView.extend({
 
     curPin: '',
 
@@ -55,7 +55,7 @@ define([
       var req = app.pin.sync('create', app.pin, {'data': {'pin': pinData}});
       var that = this;
       req.done(function() {
-        app.router.navigate('wait-for-tx', {trigger: true});
+        app.router.navigate('spa/wait-to-start', {trigger: true});
       }).fail(function($xhr, textStatus) {
         if (textStatus === 'timeout') {
           console.log('Request timed out');
@@ -117,7 +117,7 @@ define([
       this.setTitle(this.gettext('Create PIN'));
       this.renderTemplate('pin-form.html', context);
       pin.init();
-      app.throbber.hide();
+      app.throbber.close();
       return this;
     }
 

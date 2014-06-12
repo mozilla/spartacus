@@ -16,6 +16,7 @@ define([
 
     defaults: {
       jwt: null,
+      transaction_started: false
     },
 
     initialize: function() {

@@ -19,21 +19,17 @@ define([
   'settings',
   'underscore',
   'utils',
-  'views/base',
-], function(auth, cancel, id, $, log, provider, settings, _, utils, BaseView){
+  'views/page',
+], function(auth, cancel, id, $, log, provider, settings, _, utils, PageView){
 
   'use strict';
 
   var console = log('view', 'reset-start');
 
-  var ResetStartView = BaseView.extend({
+  var ResetStartView = PageView.extend({
 
     forceAuthTimer: null,
     resetLogoutTimer: null,
-
-    initialize: function() {
-      BaseView.prototype.initialize();
-    },
 
     events: {
       'click .back': 'handleBack',
@@ -42,45 +38,25 @@ define([
 
     handleBack: function(e) {
       e.preventDefault();
-      app.router.navigate('enter-pin', {trigger: true});
+      app.router.navigate('spa/enter-pin', {trigger: true});
+    },
+
+    handlePersonaLogout: function() {
+      app.session.set({logged_in: false}, {silent: true});
+      this.deferredLogout.resolve();
     },
 
     // Wrap logout in deferred.
     logoutPersona: function() {
-      console.log('logging out persona');
-      var deferredLogout = $.Deferred();
-      var that = this;
-
-      // Tell the app to temporarily stop listening to logout events.
-      // So we can noop the logout handling for reset.
-      app.AppView.stopSessionListener('onlogout');
-
-      function handleOnLogout() {
-        console.log('Responding to one-off onlogout listener');
-        // Update model but don't fire any events.
-        app.session.set({logged_in: false}, {silent: true});
-        deferredLogout.resolve();
-      }
-
-      deferredLogout.always(function() {
-        console.log('Re-starting app onlogout listener');
-        // Kill the one-off listener in-case it was never fired.
-        that.stopListening(app.session, 'onlogout', handleOnLogout);
-        // Always restart the app logout listener.
-        app.AppView.startSessionListener('onlogout');
-      });
-
-      this.listenToOnce(app.session, 'onlogout', handleOnLogout);
-
+      this.deferredLogout = $.Deferred();
       if (app.session.get('logged_in') === true) {
         console.log('Logging out of Persona');
         navigator.id.logout();
       } else {
         console.log('Already logged out of Persona resolving the deferred.');
-        deferredLogout.resolve();
+        this.deferredLogout.resolve();
       }
-
-      return deferredLogout;
+      return this.deferredLogout;
     },
 
     handleResetStart: function(e) {
@@ -117,7 +93,7 @@ define([
           console.log('Forgot-pin logout done');
           utils.trackEvent({'action': 'forgot pin',
                             'label': 'Logout Success'});
-          app.router.navigate('force-auth', {trigger: true});
+          app.router.navigate('spa/force-auth', {trigger: true});
         })
         .fail(function _failedLogout() {
           // Called when we manually abort everything
@@ -143,7 +119,7 @@ define([
       console.log('rendering reset-start view');
       this.setTitle(this.gettext('Reset your PIN?'));
       this.renderTemplate('reset-start.html');
-      app.throbber.hide();
+      app.throbber.close();
       return this;
     },
 

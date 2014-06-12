@@ -32,7 +32,7 @@ define([
     if (e) {
       e.preventDefault();
     }
-    app.error.clear();
+    app.error.close();
     app.throbber.render(i18n.gettext('Payment cancelled.'));
     pollPaymentFailed();
   }

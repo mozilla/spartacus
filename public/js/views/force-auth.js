@@ -7,46 +7,22 @@ define([
   'settings',
   'underscore',
   'utils',
-  'views/base'
-], function(auth, cancel, id, $, log, settings, _, utils, BaseView){
+  'views/page'
+], function(auth, cancel, id, $, log, settings, _, utils, PageView){
 
   'use strict';
 
   var console = log('view', 'force-auth');
-  var ForceAuthView = BaseView.extend({
+  var ForceAuthView = PageView.extend({
 
-    deferredLogin: null,
     forceAuthTimer: null,
 
     events: {
       'click #signin': 'handleSignInClick'
     },
 
-    setupLoginListener: function() {
-      var that = this;
-      this.deferredLogin = $.Deferred();
-
-      // Tell the app to temporarily stop listening to login events.
-      app.AppView.stopSessionListener('onlogin');
-
-      this.deferredLogin.always(function() {
-        console.log('Re-starting app onlogin listener');
-        // Kill event in-case it wasn't ever fired.
-        that.stopListening(app.session, 'onlogin', that.handlePersonaLogin);
-        // Always restart the app logout listener.
-        app.AppView.startSessionListener('onlogin');
-      });
-
-      // Set up a one-off listener to handle login as part of the
-      // forceAuth step.
-      this.listenToOnce(app.session, 'onlogin', function(assertion) {
-        this.handlePersonaLogin(assertion);
-        this.deferredLogin.resolve();
-      });
-    },
-
     handlePersonaLogin: function(assertion) {
-      // Do the reverification step now.
+      // Override handlePersonaLogin for re-verification.
       console.log('re-auth login happened. moving to re-verify');
       window.clearTimeout(this.forceAuthTimer);
       auth.verifyUser(assertion, {reverify: true});
@@ -65,12 +41,6 @@ define([
       if (this.forceAuthTimer) {
         console.log('Clearing Reset login timer');
         window.clearTimeout(this.forceAuthTimer);
-      }
-
-      // Reject the login deferred to reset listeners.
-      if (this.deferredLogin) {
-        console.log('Rejecting login deferred');
-        this.deferredLogin.reject();
       }
 
       app.error.render({
@@ -98,9 +68,8 @@ define([
 
     forceReAuthentication: function() {
       console.log('Starting forceAuthTimer');
-      this.setupLoginListener();
       this.forceAuthTimer = window.setTimeout(_.bind(this.onForceAuthTimeout, this), settings.login_timeout);
-      app.error.hide();
+      app.error.close();
       app.throbber.render(this.gettext('Connecting to Persona'));
       this.forceAuthRequest();
     },
@@ -112,7 +81,7 @@ define([
         heading: this.gettext('Reset PIN'),
         msg: this.gettext('Please sign in to reset your PIN.')
       });
-      app.throbber.hide();
+      app.throbber.close();
       return this;
     },
 

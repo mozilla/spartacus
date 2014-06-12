@@ -53,7 +53,7 @@ casper.test.begin('Reset pin timeout followed by success.', {
       this.click('.cta');
     });
 
-    casper.waitForUrl(helpers.url('wait-for-tx'), function() {
+    casper.waitForUrl(helpers.url('wait-to-start'), function() {
       // Throbber should be visible.
       test.assertVisible('progress');
     });

@@ -27,10 +27,10 @@ var servedViews = [
   'create-pin',
   'enter-pin',
   'locked',
-  'login',
   'reset-pin',
   'reset-start',
-  'wait-for-tx',
+  'wait-to-start',
+  'provider/[a-z]+/wait-to-finish',
   'was-locked',
 ];
 
@@ -52,7 +52,11 @@ spa.use(rewriteModule.getMiddleware([
 spa.get(/\/(?:css|fonts|i18n|images|js|lib)\/?.*/, express.static(__dirname + '/../public'));
 
 spa.get('/mozpay/', function (req, res) {
-  res.render('index.html', {settings: config});
+  var context = {settings: config};
+  if (req.originalUrl === '/mozpay/spa/provider/boku/wait-to-finish') {
+    context.transaction_status_url = '/poll-wait-to-finish';
+  }
+  res.render('index.html', context);
 });
 
 // Serve test assets.
@@ -120,7 +124,24 @@ if (env !== 'test') {
     res.send(success);
   });
 
+  // Fake wait-to-start
+  spa.get('/poll-wait-to-start', function (req, res) {
+    // O is STATUS_PENDING.
+    res.send({'url': '/fake-provider', 'status': 0});
+  });
+
+  // Fake wait-to-finish
+  spa.get('/poll-wait-to-finish', function(req, res) {
+    // 1 is STATUS_COMPLETED
+    res.send({'status': 1, 'url': null});
+  });
+
 }
+
+// A pretend provider.
+spa.get('/fake-provider', function(req, res) {
+  res.render('fake-provider.html');
+});
 
 // Fake logout
 spa.post('/logout', function (req, res) {

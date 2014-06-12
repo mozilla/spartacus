@@ -14,14 +14,18 @@ define([
   var prefix = 'Webpay | ';
 
   var BaseView = Backbone.View.extend({
+
     el: '#view',
     gettext: i18n.gettext,
     format: i18n.format,
 
-    initialize: function() {
-      // Unbind any current events as we create a new view.
-      console.log('Unbinding events');
+    close: function() {
+      this.stopListening();
       $(this.el).unbind();
+      $(this.el).empty();
+      if (this.onClose){
+        this.onClose();
+      }
     },
 
     setTitle: function setTitle(title) {
@@ -50,13 +54,6 @@ define([
       }
       console.log('Replacing $el with rendered content');
       return this;
-    },
-
-    clear: function clear() {
-      // Remote the content in the view.
-      this.$el.empty();
-      // Disconnect the view's event handlers.
-      this.unbind();
     },
 
     getSelectorText: function(selector) {

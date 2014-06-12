@@ -1,88 +1,126 @@
 define([
   'backbone',
+  'underscore',
   'views/create-pin',
   'views/enter-pin',
   'views/force-auth',
+  'views/init',
   'views/locked',
   'views/login',
   'views/reset-pin',
   'views/reset-start',
-  'views/wait-for-tx',
+  'views/wait-to-finish',
+  'views/wait-to-start',
   'views/was-locked'
 ], function(
   Backbone,
+  _,
   CreatePinView,
   EnterPinView,
   ForceAuthView,
+  InitView,
   LockedView,
   LoginView,
   ResetPinView,
   ResetStartView,
-  WaitView,
+  WaitToFinishView,
+  WaitToStartView,
   WasLockedView
 ){
 
   'use strict';
 
   var AppRouter = Backbone.Router.extend({
-    root: '/mozpay/spa',
+
+    initialize: function(options){
+      this.viewManager = new options.ViewManager();
+      this.app = options.app;
+    },
+
+    root: '/mozpay',
 
     routes: {
-      '': 'showIndex',
-      'login': 'showLogin',
-      'create-pin': 'showCreatePin',
-      'enter-pin': 'showEnterPin',
-      'force-auth': 'showForceAuth',
-      'reset-pin': 'showResetPin',
-      'reset-start': 'showResetStart',
-      'locked': 'showLocked',
-      'was-locked': 'showWasLocked',
-      'wait-for-tx': 'showWaitForTX',
+      '': 'showInit',
+      'spa/create-pin': 'showCreatePin',
+      'spa/enter-pin': 'showEnterPin',
+      'spa/force-auth': 'showForceAuth',
+      'spa/reset-pin': 'showResetPin',
+      'spa/reset-start': 'showResetStart',
+      'spa/locked': 'showLocked',
+      'spa/was-locked': 'showWasLocked',
+      'spa/provider/:provider/wait-to-finish': 'showWaitToFinish',
+      'spa/wait-to-start': 'showWaitToStart',
+    },
+
+    current: function () {
+      // Based on a snippet from http://stackoverflow.com/questions/7563949/backbone-js-get-current-route
+      var fragment = Backbone.history.fragment;
+      var routes = _.pairs(this.routes);
+      var route;
+      var name;
+      var found;
+
+      found = _.find(routes, function (namedRoute) {
+        route = namedRoute[0];
+        name = namedRoute[1];
+        if (!_.isRegExp(route)) {
+          route = this._routeToRegExp(route);
+        }
+        return route.test(fragment);
+      }, this);
+
+      if (found) {
+        return {
+          name: name,
+          params: this._extractParameters(route, fragment),
+          fragment: fragment
+        };
+      }
+    },
+
+    showInit: function() {
+      this.viewManager.renderView(InitView);
     },
 
     showCreatePin: function() {
-      var createPinView = new CreatePinView();
-      createPinView.render();
+      this.viewManager.renderView(CreatePinView);
     },
 
     showEnterPin: function() {
-      var enterPinView = new EnterPinView();
-      enterPinView.render();
+      this.viewManager.renderView(EnterPinView);
     },
 
     showForceAuth: function() {
-      var forceAuthView = new ForceAuthView();
-      forceAuthView.render();
+      this.viewManager.renderView(ForceAuthView);
     },
 
     showLocked: function() {
-      var lockedView = new LockedView();
-      lockedView.render();
+      this.viewManager.renderView(LockedView);
     },
 
     showLogin: function() {
-      var loginView = new LoginView();
-      loginView.render();
+      // Note: This view isn't directly routed.
+      this.viewManager.renderView(LoginView);
     },
 
     showResetPin: function() {
-      var resetPinView = new ResetPinView();
-      resetPinView.render();
+      this.viewManager.renderView(ResetPinView);
     },
 
     showResetStart: function() {
-      var resetStartView = new ResetStartView();
-      resetStartView.render();
+      this.viewManager.renderView(ResetStartView);
     },
 
-    showWaitForTX: function() {
-      var waitView = new WaitView();
-      waitView.render();
+    showWaitToFinish: function() {
+      this.viewManager.renderView(WaitToFinishView);
+    },
+
+    showWaitToStart: function() {
+      this.viewManager.renderView(WaitToStartView);
     },
 
     showWasLocked: function() {
-      var wasLockedView = new WasLockedView();
-      wasLockedView.render();
+      this.viewManager.renderView(WasLockedView);
     },
 
   });

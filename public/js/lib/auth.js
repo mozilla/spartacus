@@ -21,7 +21,7 @@ define([
 
     app.error.render({
       context: {
-        heading: gettext('Oops&hellip;'),
+        heading: gettext('Oops…'),
         errorCode: errCode,
         msg: msg,
       },

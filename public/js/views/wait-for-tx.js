@@ -7,7 +7,7 @@ define([
 
   var WaitView = BaseView.extend({
     render: function(){
-      app.throbber.render(this.gettext('Setting up payment&hellip;'));
+      app.throbber.render(this.gettext('Setting up payment…'));
       return this;
     }
   });

@@ -37,8 +37,8 @@ msgid "Loading"
 msgstr "正在载入"
 
 #: webpay/base/templates/base.html:32
-msgid "Beginning payment&hellip;"
-msgstr "正在开始付款&hellip;"
+msgid "Beginning payment…"
+msgstr "正在开始付款…"
 
 #: public/js/views/login.js:19
 msgid "Connecting to Persona"
@@ -49,8 +49,8 @@ msgid "Payment complete"
 msgstr "付款完成"
 
 #: public/js/lib/auth.js:22
-msgid "Oops&hellip;"
-msgstr "啊哦&hellip;"
+msgid "Oops…"
+msgstr "啊哦…"
 
 #: public/js/lib/auth.js:65
 msgid "This is taking longer than expected. Try again?"
@@ -145,8 +145,8 @@ msgstr "您确定要重置 Pin 码吗？必须登录 Persona 才能重置您的 
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6
 #: webpay/provider/templates/provider/wait-to-finish.html:12
-msgid "Verifying payment&hellip;"
-msgstr "正在确认付款&hellip;"
+msgid "Verifying payment…"
+msgstr "正在确认付款…"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30
 msgid "Retrying..."
@@ -190,5 +190,5 @@ msgid "Was Locked"
 msgstr ""
 
 #: public/js/views/wait-for-tx.js:10
-msgid "Setting up payment&hellip;"
-msgstr "设置付款&hellip;"
+msgid "Setting up payment…"
+msgstr "设置付款…"

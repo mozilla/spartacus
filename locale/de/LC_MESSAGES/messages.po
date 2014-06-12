@@ -39,8 +39,8 @@ msgid "Loading"
 msgstr "Laden"
 
 #: webpay/base/templates/base.html:32
-msgid "Beginning payment&hellip;"
-msgstr "Zahlung beginnt &hellip;"
+msgid "Beginning payment…"
+msgstr "Zahlung beginnt …"
 
 #: public/js/views/login.js:19
 msgid "Connecting to Persona"
@@ -51,8 +51,8 @@ msgid "Payment complete"
 msgstr "Zahlung vollständig"
 
 #: public/js/lib/auth.js:22
-msgid "Oops&hellip;"
-msgstr "Hoppla&hellip;"
+msgid "Oops…"
+msgstr "Hoppla…"
 
 #: public/js/lib/auth.js:65
 msgid "This is taking longer than expected. Try again?"
@@ -153,8 +153,8 @@ msgstr ""
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6
 #: webpay/provider/templates/provider/wait-to-finish.html:12
-msgid "Verifying payment&hellip;"
-msgstr "Zahlung wird verifiziert&hellip;"
+msgid "Verifying payment…"
+msgstr "Zahlung wird verifiziert…"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30
 msgid "Retrying..."
@@ -198,5 +198,5 @@ msgid "Was Locked"
 msgstr ""
 
 #: public/js/views/wait-for-tx.js:10
-msgid "Setting up payment&hellip;"
-msgstr "Zahlung wird eingerichtet&hellip;"
+msgid "Setting up payment…"
+msgstr "Zahlung wird eingerichtet…"

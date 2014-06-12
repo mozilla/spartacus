@@ -37,7 +37,7 @@ msgid "Loading"
 msgstr "読み込み中"
 
 #: webpay/base/templates/base.html:32
-msgid "Beginning payment&hellip;"
+msgid "Beginning payment…"
 msgstr "決済を開始しています..."
 
 #: public/js/views/login.js:19
@@ -49,7 +49,7 @@ msgid "Payment complete"
 msgstr "決済が完了しました"
 
 #: public/js/lib/auth.js:22
-msgid "Oops&hellip;"
+msgid "Oops…"
 msgstr "おっと..."
 
 #: public/js/lib/auth.js:65
@@ -150,7 +150,7 @@ msgstr ""
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6
 #: webpay/provider/templates/provider/wait-to-finish.html:12
-msgid "Verifying payment&hellip;"
+msgid "Verifying payment…"
 msgstr "決済を検証しています..."
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30
@@ -195,5 +195,5 @@ msgid "Was Locked"
 msgstr ""
 
 #: public/js/views/wait-for-tx.js:10
-msgid "Setting up payment&hellip;"
+msgid "Setting up payment…"
 msgstr "決済を設定する..."

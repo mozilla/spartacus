@@ -37,8 +37,8 @@ msgid "Loading"
 msgstr "Načítava sa"
 
 #: webpay/base/templates/base.html:32
-msgid "Beginning payment&hellip;"
-msgstr "Spúšťa sa platba&hellip;"
+msgid "Beginning payment…"
+msgstr "Spúšťa sa platba…"
 
 #: public/js/views/login.js:19
 msgid "Connecting to Persona"
@@ -49,8 +49,8 @@ msgid "Payment complete"
 msgstr "Platba dokončená"
 
 #: public/js/lib/auth.js:22
-msgid "Oops&hellip;"
-msgstr "Ups&hellip;"
+msgid "Oops…"
+msgstr "Ups…"
 
 #: public/js/lib/auth.js:65
 msgid "This is taking longer than expected. Try again?"
@@ -150,8 +150,8 @@ msgstr ""
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6
 #: webpay/provider/templates/provider/wait-to-finish.html:12
-msgid "Verifying payment&hellip;"
-msgstr "Platba sa overuje&hellip;"
+msgid "Verifying payment…"
+msgstr "Platba sa overuje…"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30
 msgid "Retrying..."
@@ -195,5 +195,5 @@ msgid "Was Locked"
 msgstr ""
 
 #: public/js/views/wait-for-tx.js:10
-msgid "Setting up payment&hellip;"
-msgstr "Nastavenia platby&hellip;"
+msgid "Setting up payment…"
+msgstr "Nastavenia platby…"

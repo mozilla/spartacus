@@ -62,11 +62,9 @@ define([
               ctaText: that.gettext('Retry?'),
               errorCode: 'ENTER_PIN_TIMEOUT'
             },
-            events: {
-              'click .button.cta': function(e) {
-                e.preventDefault();
-                that.handleSubmit();
-              }
+            ctaCallback: function(e) {
+              e.preventDefault();
+              that.handleSubmit();
             }
           });
 

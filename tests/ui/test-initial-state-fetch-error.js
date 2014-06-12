@@ -15,9 +15,9 @@ casper.test.begin('Make initial pin fetch error, then retry with success.', {
 
     casper.waitForSelector('.full-error', function() {
       helpers.assertErrorCode('PIN_STATE_ERROR');
-      test.assertVisible('.button.cta', 'Cancel button should be visible');
-      test.assertElementCount('.button', 1, 'Should only be one button for cancelling the flow');
-      casper.click('.button.cta');
+      test.assertVisible('.full-error .button', 'Cancel button should be visible');
+      test.assertElementCount('.full-error .button', 1, 'Should only be one button for cancelling the flow');
+      casper.click('.full-error .button');
     });
 
     casper.waitUntilVisible('.throbber', function() {

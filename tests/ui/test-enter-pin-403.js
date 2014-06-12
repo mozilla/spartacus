@@ -24,6 +24,12 @@ casper.test.begin('Enter Pin API call returns 403', {
     casper.waitUntilVisible('.full-error', function() {
       test.assertVisible('.full-error', 'Error page should be shown');
       helpers.assertErrorCode('PIN_ENTER_PERM_DENIED');
+      test.assertElementCount('.full-error .button', 1, 'Should only be one button for cancelling the flow');
+      casper.click('.full-error .button');
+    });
+
+    casper.waitUntilVisible('.throbber', function() {
+      test.assertSelectorHasText('.msg', 'Payment cancelled', 'Check cancelled throbber is displayed');
     });
 
     casper.run(function() {

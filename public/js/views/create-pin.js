@@ -66,11 +66,9 @@ define([
               ctaText: that.gettext('Retry?'),
               errorCode: 'CREATE_PIN_TIMEOUT'
             },
-            events: {
-              'click .button.cta': function(e){
-                e.preventDefault();
-                that.submitData(pinData);
-              }
+            ctaCallback: function(e){
+              e.preventDefault();
+              that.submitData(pinData);
             }
           });
 

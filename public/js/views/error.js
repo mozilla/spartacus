@@ -37,8 +37,8 @@ define([
 
       // Default to showing the cancel button.
       context.showCancel = options.showCancel === false ? false : true;
-      // Default to showing the call to action button.
-      context.showCta = options.showCta === false ? false : true;
+      // Default to showing not the call to action button.
+      context.showCta = options.showCta || false;
 
       // Add default heading + msg.
       context.heading = context.heading || this.gettext('Error');
@@ -49,8 +49,19 @@ define([
 
       // If events are passed as an option this removes and re-attaches
       // the specified events.
-      if (options.events) {
-        this.delegateEvents(options.events);
+      if (options.ctaCallback || options.cancelCallback) {
+        var customEvents = {};
+        if (options.cancelCallback) {
+          customEvents['click .button.cancel'] = options.cancelCallback;
+          context.showCancel = true;
+        } else if (context.showCancel) {
+          customEvents['click .button.cancel'] = this.defaultCancel;
+        }
+        if (options.ctaCallback) {
+          customEvents['click .button.cta'] = options.ctaCallback;
+          context.showCta = true;
+        }
+        this.delegateEvents(customEvents);
       }
 
       // Make it so!

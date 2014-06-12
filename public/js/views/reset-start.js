@@ -126,10 +126,8 @@ define([
               ctaText: that.gettext('Retry?'),
               errorCode: 'LOGOUT_ERROR'
             },
-            events: {
-              'click .button.cta': function(e) {
-                that.handleResetStart(e);
-              }
+            ctaCallback: function(e) {
+              that.handleResetStart(e);
             }
           });
         });
@@ -156,10 +154,9 @@ define([
           ctaText: that.gettext('Retry?'),
           errorCode: 'REAUTH_LOGIN_TIMEOUT'
         },
-        events: {
-          'click .button.cta': function(e) {
-            that.forceReAuthentication(e);
-          }
+        ctaCallback: function(e) {
+          e.preventDefault();
+          that.forceReAuthentication(e);
         }
       });
     },

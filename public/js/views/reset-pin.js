@@ -30,11 +30,9 @@ define([
               ctaText: that.gettext('Retry?'),
               errorCode: 'PIN_RESET_TIMEOUT'
             },
-            events: {
-              'click .button.cta': function(e){
-                e.preventDefault();
-                that.submitData(pinData);
-              }
+            ctaCallback: function(e){
+              e.preventDefault();
+              that.submitData(pinData);
             }
           });
         } else if ($xhr.status === 400) {

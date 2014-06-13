@@ -5,7 +5,7 @@
  *  - User is logged out (Persona/Provider/Webpay) and the default logout handler is overriden.
  *  - Assuming a succesful logout the user is then prompted to login.
  *  - The login happens via a customised navigator.id.request.
- *  - The login handler is specialized to do a special reVerification request.
+ *  - The login handler (added via a one-off listener) does a reVerification request.
  *  - Assuming that's successful the user should then be directed to reset-pin.
  */
 

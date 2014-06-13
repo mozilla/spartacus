@@ -33,8 +33,8 @@ define([
     urlLookup: {
       // There's no 'check' in CRUD but this allows us to use the check
       // endpoint as it shares the attrs of this model.
-      'create': {'url': baseApiURL },
-      'read': {'url': baseApiURL },
+      'create': {'url': baseApiURL},
+      'read': {'url': baseApiURL},
       'update': {'url': baseApiURL, 'method': 'PATCH'},
       'check': {'url': baseApiURL + 'check/', 'method': 'POST', 'crudMethod': 'create'},
     },

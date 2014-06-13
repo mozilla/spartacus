@@ -23,9 +23,7 @@ define([
       } else {
         utils.trackEvent({action: 'was-locked',
                           label: 'Unexpected state'});
-        app.error.render({'context': {'errorCode': 'UNEXPECTED_STATE'},
-                          showCancel: false,
-                          events: {'click .button.cta': cancel.callPayFailure}});
+        app.error.render({'context': {'errorCode': 'UNEXPECTED_STATE'}});
       }
     },
 

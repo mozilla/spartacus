@@ -44,9 +44,7 @@ define([
 
       // Bail early if initial url is below /mozpay/.
       if (window.location.pathname !== '/mozpay/') {
-        app.error.render({context: {'errorCode': 'INVALID_START'},
-                          showCancel: false,
-                          events: {'click .button.cta': cancel.callPayFailure}});
+        app.error.render({context: {'errorCode': 'INVALID_START'}});
         return;
       }
 
@@ -68,9 +66,7 @@ define([
         if (!jwt) {
           utils.trackEvent({action: 'extract jwt before login',
                             label: 'Invalid or missing JWT'});
-          app.error.render({context: {'errorCode': 'INVALID_JWT'},
-                            showCancel: false,
-                            events: {'click .button.cta': cancel.callPayFailure}});
+          app.error.render({context: {'errorCode': 'INVALID_JWT'}});
         } else {
           app.transaction.set('jwt', jwt);
           console.log('Starting login');
@@ -140,13 +136,11 @@ define([
               utils.trackEvent({action: 'fetch-state',
                                 label: 'Fetching initial state timed-out.'});
               app.error.render({'context': {'errorCode': 'PIN_STATE_TIMEOUT'},
-                                events: {'click .button.cta': that.setUpPayment}});
+                                ctaCallback: that.setUpPayment});
             } else {
               utils.trackEvent({action: 'fetch-state',
                                 label: 'Fecthing initial state error.'});
-              app.error.render({'context': {'errorCode': 'PIN_STATE_ERROR'},
-                                showCancel: false,
-                                events: {'click .button.cta': cancel.callPayFailure}});
+              app.error.render({'context': {'errorCode': 'PIN_STATE_ERROR'}});
             }
           });
         }).fail(function($xhr, textStatus) {
@@ -156,21 +150,17 @@ define([
             utils.trackEvent({action: 'start-transaction',
                               label: 'Transaction start timed-out'});
             app.error.render({'context': {'errorCode': 'START_TRANS_TIMEOUT'},
-                              events: {'click .button.cta': that.setUpPayment}});
+                              ctaCallback: that.setUpPayment});
           } else {
             utils.trackEvent({action: 'start-transaction',
                               label: 'Transaction failed to start'});
-            app.error.render({'context': {'errorCode': 'START_TRANS_FAILURE'},
-                              showCancel: false,
-                              events: {'click .button.cta': cancel.callPayFailure}});
+            app.error.render({'context': {'errorCode': 'START_TRANS_FAILURE'}});
           }
         });
       } else {
         utils.trackEvent({action: 'start-transaction',
                           label: 'Invalid or missing JWT'});
-        app.error.render({context: {'errorCode': 'INVALID_JWT'},
-                          showCancel: false,
-                          events: {'click .button.cta': cancel.callPayFailure}});
+        app.error.render({context: {'errorCode': 'INVALID_JWT'}});
       }
     },
 

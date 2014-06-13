@@ -25,14 +25,11 @@ define([
         errorCode: errCode,
         msg: msg,
       },
-      events: {
-        'click .button.cancel': cancel.callPayFailure,
-        'click .button.cta': function(e){
-          e.preventDefault();
-          app.error.clear();
-          app.throbber.render(gettext('Retrying...'));
-          verifyUser(assertion, {reverify: reverify});
-        }
+      ctaCallback: function(e){
+        e.preventDefault();
+        app.error.clear();
+        app.throbber.render(gettext('Retrying...'));
+        verifyUser(assertion, {reverify: reverify});
       }
     });
   }
@@ -48,9 +45,7 @@ define([
 
     if (!url) {
       console.log('Error: No url. Please set one. Bailing out!');
-      app.error.render({context: {
-        errorCode: 'MISSING_' + prefixUC + '_URL'
-      }, showCta: false});
+      app.error.render({context: {errorCode: 'MISSING_' + prefixUC + '_URL'}});
       return;
     }
 
@@ -96,9 +91,7 @@ define([
         console.log('permission denied after auth');
         utils.trackEvent({'action': 'persona login',
                           'label': prefix + ' Permission Denied'});
-        app.error.render({context: {
-          errorCode: prefixUC + '_DENIED'
-        }, showCta: false});
+        app.error.render({context: {errorCode: prefixUC + '_DENIED'}});
       } else {
         console.log('login error');
         utils.trackEvent({'action': 'persona login',

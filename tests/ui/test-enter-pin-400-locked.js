@@ -26,8 +26,8 @@ casper.test.begin('Login Enter Pin API call returns locked screen when API says 
     casper.waitForUrl(helpers.url('locked'), function() {
       test.assertVisible('.locked');
       helpers.assertErrorCode('PIN_LOCKED');
-      test.assertElementCount('.button', 1, 'Should only be one button for cancelling the flow');
-      casper.click('.button');
+      test.assertElementCount('.locked .button', 1, 'Should only be one button for cancelling the flow');
+      casper.click('.locked .button');
     });
 
     casper.waitUntilVisible('.throbber', function() {

@@ -28,6 +28,12 @@ casper.test.begin('Create pin returns 400 (invalid data)', {
     casper.waitUntilVisible('.full-error', function() {
       test.assertVisible('.full-error', 'Error page should be shown');
       helpers.assertErrorCode('PIN_CREATE_INVALID');
+      test.assertElementCount('.full-error .button', 1, 'Should only be one button for cancelling the flow');
+      casper.click('.full-error .button');
+    });
+
+    casper.waitUntilVisible('.throbber', function() {
+      test.assertSelectorHasText('.msg', 'Payment cancelled', 'Check cancelled throbber is displayed');
     });
 
     casper.run(function() {

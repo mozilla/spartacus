@@ -59,10 +59,10 @@ define([
       app.error.hide();
       var context = {
         ctaText: this.gettext('Continue'),
-        pinTitle: this.gettext('Reset Pin')
+        pinTitle: this.gettext('Reset PIN')
       };
       this.renderTemplate('pin-form.html', context);
-      this.setTitle(this.gettext('Reset Pin'));
+      this.setTitle(this.gettext('Reset PIN'));
       pin.init();
       app.throbber.hide();
       return this;

@@ -24,8 +24,8 @@ msgid "Cancel"
 msgstr "取消"
 
 #: public/js/lib/pin-widget.js:58
-msgid "Pin can only contain digits."
-msgstr "Pin 码只能为数字。"
+msgid "PIN can only contain digits."
+msgstr "PIN 码只能为数字。"
 
 #: webpay/base/templates/base.html:30
 msgid "You logged in as a different user, you must start the payment again."
@@ -69,8 +69,8 @@ msgid "Error"
 msgstr "错误"
 
 #: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100
-msgid "Enter Pin"
-msgstr "输入 Pin 码"
+msgid "Enter PIN"
+msgstr "输入 PIN 码"
 
 #: public/js/views/login.js:25 templates/login.html:5
 msgid "Sign In"
@@ -91,57 +91,57 @@ msgid "Continue"
 msgstr "继续"
 
 #: public/js/views/enter-pin.js:73
-msgid "Wrong pin"
-msgstr "Pin 码错误"
+msgid "Wrong PIN"
+msgstr "PIN 码错误"
 
 #: public/js/views/create-pin.js:48
-msgid "Pins do not match."
-msgstr "输入的 Pin 码不同。"
+msgid "PINs do not match."
+msgstr "输入的 PIN 码不同。"
 
 #: webpay/pin/views.py:46 webpay/testing/views.py:25
-msgid "Create a Pin"
-msgstr "创建 Pin 码"
+msgid "Create a PIN"
+msgstr "创建 PIN 码"
 
 #: webpay/pin/views.py:68 webpay/pin/views.py:185
 #: public/js/views/create-pin.js:36
-msgid "Confirm Pin"
-msgstr "确认 Pin 码"
+msgid "Confirm PIN"
+msgstr "确认 PIN 码"
 
 #: webpay/pin/views.py:131 webpay/pin/views.py:157
 #: webpay/pin/templates/pin/pin_was_locked.html:13
 #: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
 #: templates/was-locked.html:11
-msgid "Reset Pin"
-msgstr "重置 Pin 码"
+msgid "Reset PIN"
+msgstr "重置 PIN 码"
 
 #. This is the same as the standard forgot
 #. password that most sites have.
 #: templates/pin-form.html:18 templates/reset-start.html:6
-msgid "Forgot your pin?"
-msgstr "忘记了您的 Pin 码？"
+msgid "Forgot your PIN?"
+msgstr "忘记了您的 PIN 码？"
 
 #: public/js/views/locked.js:24
 msgid ""
-"You entered the wrong pin too many times. Your account is locked. Please try "
+"You entered the wrong PIN too many times. Your account is locked. Please try "
 "your purchase again in 5 minutes."
-msgstr "您输错太多次 Pin 码，帐号已被锁定。请等候 5 分钟之后再尝试购买。"
+msgstr "您输错太多次 PIN 码，帐号已被锁定。请等候 5 分钟之后再尝试购买。"
 
 #: templates/was-locked.html:6
-msgid "Your Pin was locked"
-msgstr "您的 Pin 码已被锁定"
+msgid "Your PIN was locked"
+msgstr "您的 PIN 码已被锁定"
 
 #: templates/was-locked.html:7
 msgid ""
-"Your pin was locked because you entered it incorrectly too many times. You "
-"can continue and try entering your pin again or reset your pin."
+"Your PIN was locked because you entered it incorrectly too many times. You "
+"can continue and try entering your PIN again or reset your PIN."
 msgstr ""
-"您输错太多次 Pin 码，已被锁定。您可以继续尝试输入，或者重置您的 Pin 码。"
+"您输错太多次 PIN 码，已被锁定。您可以继续尝试输入，或者重置您的 PIN 码。"
 
 #: templates/reset-start.html:7
 msgid ""
-"Are you sure you want to reset your pin? You must sign in to Persona to "
-"reset your pin."
-msgstr "您确定要重置 Pin 码吗？必须登录 Persona 才能重置您的 Pin 码。"
+"Are you sure you want to reset your PIN? You must sign in to Persona to "
+"reset your PIN."
+msgstr "您确定要重置 PIN 码吗？必须登录 Persona 才能重置您的 PIN 码。"
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6
 #: webpay/provider/templates/provider/wait-to-finish.html:12
@@ -172,8 +172,8 @@ msgstr ""
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
 #, fuzzy
-msgid "Create Pin"
-msgstr "创建 Pin 码"
+msgid "Create PIN"
+msgstr "创建 PIN 码"
 
 #: public/js/views/error.js:45
 #, fuzzy
@@ -183,7 +183,7 @@ msgstr "有些东西不对劲！"
 #: public/js/views/reset-start.js:29
 #, fuzzy
 msgid "Reset your PIN?"
-msgstr "重置 Pin 码"
+msgstr "重置 PIN 码"
 
 #: public/js/views/was-locked.js:13
 msgid "Was Locked"

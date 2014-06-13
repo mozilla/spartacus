@@ -14,7 +14,7 @@ casper.test.begin('Login then was-locked', {
     helpers.doLogin();
 
     casper.waitForUrl(helpers.url('was-locked'), function() {
-      test.assertSelectorHasText('h1', 'Your Pin was locked');
+      test.assertSelectorHasText('h1', 'Your PIN was locked');
       test.assertNotVisible('.throbber', 'Throbber should not be obscuring was-locked page.');
     });
 

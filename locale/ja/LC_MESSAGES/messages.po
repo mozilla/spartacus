@@ -23,7 +23,7 @@ msgid "Cancel"
 msgstr "キャンセル"
 
 #: public/js/lib/pin-widget.js:58
-msgid "Pin can only contain digits."
+msgid "PIN can only contain digits."
 msgstr "暗証番号に数字以外の文字を含めることはできません。"
 
 #: webpay/base/templates/base.html:30
@@ -69,7 +69,7 @@ msgid "Error"
 msgstr "エラー"
 
 #: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100
-msgid "Enter Pin"
+msgid "Enter PIN"
 msgstr "暗証番号を入力"
 
 #: public/js/views/login.js:25 templates/login.html:5
@@ -91,59 +91,59 @@ msgid "Continue"
 msgstr "続ける"
 
 #: public/js/views/enter-pin.js:73
-msgid "Wrong pin"
+msgid "Wrong PIN"
 msgstr "暗証番号が違います"
 
 #: public/js/views/create-pin.js:48
-msgid "Pins do not match."
+msgid "PINs do not match."
 msgstr "暗証番号が一致しません。"
 
 #: webpay/pin/views.py:46 webpay/testing/views.py:25
-msgid "Create a Pin"
+msgid "Create a PIN"
 msgstr "暗証番号を登録"
 
 #: webpay/pin/views.py:68 webpay/pin/views.py:185
 #: public/js/views/create-pin.js:36
-msgid "Confirm Pin"
+msgid "Confirm PIN"
 msgstr "暗証番号を確認"
 
 #: webpay/pin/views.py:131 webpay/pin/views.py:157
 #: webpay/pin/templates/pin/pin_was_locked.html:13
 #: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
 #: templates/was-locked.html:11
-msgid "Reset Pin"
+msgid "Reset PIN"
 msgstr "暗証番号をリセット"
 
 #. This is the same as the standard forgot
 #. password that most sites have.
 #: templates/pin-form.html:18 templates/reset-start.html:6
-msgid "Forgot your pin?"
+msgid "Forgot your PIN?"
 msgstr "暗証番号を忘れた場合"
 
 #: public/js/views/locked.js:24
 msgid ""
-"You entered the wrong pin too many times. Your account is locked. Please try "
+"You entered the wrong PIN too many times. Your account is locked. Please try "
 "your purchase again in 5 minutes."
 msgstr ""
 "間違った暗証番号が何度も入力されたため、あなたのアカウントはロックされまし"
 "た。5 分後にまた試してください。"
 
 #: templates/was-locked.html:6
-msgid "Your Pin was locked"
+msgid "Your PIN was locked"
 msgstr "あなたの暗証番号はロックされました"
 
 #: templates/was-locked.html:7
 msgid ""
-"Your pin was locked because you entered it incorrectly too many times. You "
-"can continue and try entering your pin again or reset your pin."
+"Your PIN was locked because you entered it incorrectly too many times. You "
+"can continue and try entering your PIN again or reset your PIN."
 msgstr ""
 "間違った暗証番号が何度も入力されたため、あなたの暗証番号はロックされました。"
 "暗証番号をもう一度入力するか、リセットすることもできます。"
 
 #: templates/reset-start.html:7
 msgid ""
-"Are you sure you want to reset your pin? You must sign in to Persona to "
-"reset your pin."
+"Are you sure you want to reset your PIN? You must sign in to Persona to "
+"reset your PIN."
 msgstr ""
 "本当に暗証番号をリセットしますか？ 続けるには Persona でログインする必要があ"
 "ります。"
@@ -177,7 +177,7 @@ msgstr ""
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
 #, fuzzy
-msgid "Create Pin"
+msgid "Create PIN"
 msgstr "暗証番号を登録"
 
 #: public/js/views/error.js:45

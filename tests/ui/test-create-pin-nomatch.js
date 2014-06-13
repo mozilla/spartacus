@@ -23,7 +23,7 @@ casper.test.begin('Create pin with non-matching stage two pin.', {
       test.assertExists('.cta:enabled', 'Submit button is enabled');
       this.click('.cta');
       test.assertVisible('.err-msg', 'Error message should be visible as pins do not match.');
-      test.assertSelectorHasText('h1', 'Confirm Pin');
+      test.assertSelectorHasText('h1', 'Confirm PIN');
     });
 
     casper.run(function() {

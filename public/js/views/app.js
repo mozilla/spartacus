@@ -111,7 +111,7 @@ define([
         console.log('Stopping listening to "' + eventName + '" on app.session');
         this.stopListening(app.session, eventName);
       } else {
-        console.log('Unknown event ' + eventName);
+        console.error('Unknown event ' + eventName);
       }
     },
 
@@ -121,7 +121,7 @@ define([
         console.log('Starting listening to "' + eventName + '" on app.session with callback ' + funcName);
         this.listenTo(app.session, eventName, this[funcName]);
       } else {
-        console.log('Unknown event ' + eventName);
+        console.error('Unknown event ' + eventName);
       }
     },
 

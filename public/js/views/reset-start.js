@@ -213,7 +213,7 @@ define([
     forceReAuthentication: function() {
       console.log('Starting forceAuthTimer');
       this.setupLoginListener();
-      this.forceAuthTimer = window.setTimeout(_.bind(this.onForceAuthTimeout, this), 3000);
+      this.forceAuthTimer = window.setTimeout(_.bind(this.onForceAuthTimeout, this), settings.login_timeout);
       app.error.hide();
       app.throbber.render(this.gettext('Connecting to Persona'));
       this.forceAuthRequest();

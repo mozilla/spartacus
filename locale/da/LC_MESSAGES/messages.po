@@ -36,8 +36,8 @@ msgid "Loading"
 msgstr "Indlæser"
 
 #: webpay/base/templates/base.html:32
-msgid "Beginning payment…"
-msgstr "Begynder betaling…"
+msgid "Beginning payment"
+msgstr "Begynder betaling"
 
 #: public/js/views/login.js:19
 msgid "Connecting to Persona"
@@ -48,8 +48,8 @@ msgid "Payment complete"
 msgstr "Betaling gennemført"
 
 #: public/js/lib/auth.js:22
-msgid "Oops…"
-msgstr "Ups…"
+msgid "Oops"
+msgstr "Ups"
 
 #: public/js/lib/auth.js:65
 msgid "This is taking longer than expected. Try again?"
@@ -150,11 +150,11 @@ msgstr ""
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6
 #: webpay/provider/templates/provider/wait-to-finish.html:12
-msgid "Verifying payment…"
-msgstr "Bekræfter betaling…"
+msgid "Verifying payment"
+msgstr "Bekræfter betaling"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30
-msgid "Retrying..."
+msgid "Retrying"
 msgstr ""
 
 #: public/js/lib/auth.js:64
@@ -195,5 +195,5 @@ msgid "Was Locked"
 msgstr ""
 
 #: public/js/views/wait-for-tx.js:10
-msgid "Setting up payment…"
-msgstr "Opsæt betaling…"
+msgid "Setting up payment"
+msgstr "Opsæt betaling"

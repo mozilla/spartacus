@@ -37,8 +37,8 @@ msgid "Loading"
 msgstr "불러오는 중"
 
 #: webpay/base/templates/base.html:32
-msgid "Beginning payment…"
-msgstr "결제 시작…"
+msgid "Beginning payment"
+msgstr "결제 시작"
 
 #: public/js/views/login.js:19
 msgid "Connecting to Persona"
@@ -49,8 +49,8 @@ msgid "Payment complete"
 msgstr "결제 완료"
 
 #: public/js/lib/auth.js:22
-msgid "Oops…"
-msgstr "문제 발생…"
+msgid "Oops"
+msgstr "문제 발생"
 
 #: public/js/lib/auth.js:65
 msgid "This is taking longer than expected. Try again?"
@@ -148,11 +148,11 @@ msgstr "비밀번호를 재설정하시겠습니까? Persona 로그인을 다시
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6
 #: webpay/provider/templates/provider/wait-to-finish.html:12
-msgid "Verifying payment…"
-msgstr "결제 확인하기…"
+msgid "Verifying payment"
+msgstr "결제 확인하기"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30
-msgid "Retrying..."
+msgid "Retrying"
 msgstr ""
 
 #: public/js/lib/auth.js:64
@@ -193,5 +193,5 @@ msgid "Was Locked"
 msgstr ""
 
 #: public/js/views/wait-for-tx.js:10
-msgid "Setting up payment…"
-msgstr "결제 설정…"
+msgid "Setting up payment"
+msgstr "결제 설정"

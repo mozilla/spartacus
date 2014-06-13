@@ -37,8 +37,8 @@ msgid "Loading"
 msgstr "ਲੋਡਿਗ"
 
 #: webpay/base/templates/base.html:32
-msgid "Beginning payment…"
-msgstr "ਭੁਗਤਾਨ ਸ਼ੁਰੂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ…"
+msgid "Beginning payment"
+msgstr "ਭੁਗਤਾਨ ਸ਼ੁਰੂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
 #: public/js/views/login.js:19
 msgid "Connecting to Persona"
@@ -49,8 +49,8 @@ msgid "Payment complete"
 msgstr "ਭੁਗਤਾਨ ਪੂਰਾ"
 
 #: public/js/lib/auth.js:22
-msgid "Oops…"
-msgstr "ਉਪਸ…"
+msgid "Oops"
+msgstr "ਉਪਸ"
 
 #: public/js/lib/auth.js:65
 msgid "This is taking longer than expected. Try again?"
@@ -150,11 +150,11 @@ msgstr ""
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6
 #: webpay/provider/templates/provider/wait-to-finish.html:12
-msgid "Verifying payment…"
-msgstr "ਭੁਗਤਾਨ ਜਾਂਚ ਜਾਰੀ…"
+msgid "Verifying payment"
+msgstr "ਭੁਗਤਾਨ ਜਾਂਚ ਜਾਰੀ"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30
-msgid "Retrying..."
+msgid "Retrying"
 msgstr ""
 
 #: public/js/lib/auth.js:64
@@ -195,5 +195,5 @@ msgid "Was Locked"
 msgstr ""
 
 #: public/js/views/wait-for-tx.js:10
-msgid "Setting up payment…"
-msgstr "ਭੁਗਤਾਨ ਸੈਟ ਕਰ ਰਿਹਾ…"
+msgid "Setting up payment"
+msgstr "ਭੁਗਤਾਨ ਸੈਟ ਕਰ ਰਿਹਾ"

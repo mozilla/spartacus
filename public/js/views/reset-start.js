@@ -171,6 +171,7 @@ define([
 
     onForceAuthTimeout: function() {
       var that = this;
+      console.log('force auth timed-out');
       utils.trackEvent({'action': 'reset force auth',
                         'label': 'Log-in Timeout'});
       if (this.forceAuthTimer) {

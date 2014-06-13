@@ -41,7 +41,6 @@ define([
       // Tell the app to temporarily stop listening to login events.
       app.AppView.stopSessionListener('onlogin');
 
-      // Happen on reject/resolve.
       this.loginDeferred.always(function() {
         console.log('Re-starting app onlogin listener');
         // Kill event in-case it wasn't ever fired.

@@ -24,7 +24,7 @@ msgid "Cancel"
 msgstr "취소"
 
 #: public/js/lib/pin-widget.js:58
-msgid "Pin can only contain digits."
+msgid "PIN can only contain digits."
 msgstr "비밀번호는 숫자로 입력하세요."
 
 #: webpay/base/templates/base.html:30
@@ -69,7 +69,7 @@ msgid "Error"
 msgstr "오류"
 
 #: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100
-msgid "Enter Pin"
+msgid "Enter PIN"
 msgstr "비밀번호 입력"
 
 #: public/js/views/login.js:25 templates/login.html:5
@@ -91,59 +91,59 @@ msgid "Continue"
 msgstr "계속"
 
 #: public/js/views/enter-pin.js:73
-msgid "Wrong pin"
+msgid "Wrong PIN"
 msgstr "맞지 않는 비밀번호"
 
 #: public/js/views/create-pin.js:48
-msgid "Pins do not match."
+msgid "PINs do not match."
 msgstr "비밀번호가 맞지 않습니다."
 
 #: webpay/pin/views.py:46 webpay/testing/views.py:25
-msgid "Create a Pin"
+msgid "Create a PIN"
 msgstr "비밀번호 입력"
 
 #: webpay/pin/views.py:68 webpay/pin/views.py:185
 #: public/js/views/create-pin.js:36
-msgid "Confirm Pin"
+msgid "Confirm PIN"
 msgstr "비밀번호 확인"
 
 #: webpay/pin/views.py:131 webpay/pin/views.py:157
 #: webpay/pin/templates/pin/pin_was_locked.html:13
 #: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
 #: templates/was-locked.html:11
-msgid "Reset Pin"
+msgid "Reset PIN"
 msgstr "비밀번호 재성정"
 
 #. This is the same as the standard forgot
 #. password that most sites have.
 #: templates/pin-form.html:18 templates/reset-start.html:6
-msgid "Forgot your pin?"
+msgid "Forgot your PIN?"
 msgstr "비밀번호를 잃어버리셨습니까?"
 
 #: public/js/views/locked.js:24
 msgid ""
-"You entered the wrong pin too many times. Your account is locked. Please try "
+"You entered the wrong PIN too many times. Your account is locked. Please try "
 "your purchase again in 5 minutes."
 msgstr ""
 "틀린 비밀번호를 너무 많이 입력했습니다. 현재 계정이 잠깁니다. 5분후에 다시 구"
 "매를 시도하세요."
 
 #: templates/was-locked.html:6
-msgid "Your Pin was locked"
+msgid "Your PIN was locked"
 msgstr "비밀번호 잠김"
 
 #: templates/was-locked.html:7
 msgid ""
-"Your pin was locked because you entered it incorrectly too many times. You "
-"can continue and try entering your pin again or reset your pin."
+"Your PIN was locked because you entered it incorrectly too many times. You "
+"can continue and try entering your PIN again or reset your PIN."
 msgstr ""
 "틀린 비밀번호를 여러 번 입력함으로서 비밀번호 입력이 잠금 상태로 바뀌어습니"
 "다. 잠시 후 비밀번호 입력을 다시하거나 재설정하십시오."
 
 #: templates/reset-start.html:7
 msgid ""
-"Are you sure you want to reset your pin? You must sign in to Persona to "
-"reset your pin."
+"Are you sure you want to reset your PIN? You must sign in to Persona to "
+"reset your PIN."
 msgstr "비밀번호를 재설정하시겠습니까? Persona 로그인을 다시 하셔야 합니다."
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6
@@ -175,7 +175,7 @@ msgstr ""
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
 #, fuzzy
-msgid "Create Pin"
+msgid "Create PIN"
 msgstr "비밀번호 입력"
 
 #: public/js/views/error.js:45

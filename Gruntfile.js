@@ -207,7 +207,10 @@ module.exports = function(grunt) {
 
     abideExtract: {
       js: {
-        src: 'public/**/*.js',
+        src: [
+          'public/**/*.js',
+          '!public/js/main.min.js'
+        ],
         dest: 'locale/templates/LC_MESSAGES/messages.pot',
         options: {
           language: 'JavaScript',

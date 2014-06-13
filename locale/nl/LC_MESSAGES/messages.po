@@ -24,8 +24,8 @@ msgid "Cancel"
 msgstr "Annuleren"
 
 #: public/js/lib/pin-widget.js:58
-msgid "Pin can only contain digits."
-msgstr "Pincode mag alleen cijfers bevatten."
+msgid "PIN can only contain digits."
+msgstr "PINcode mag alleen cijfers bevatten."
 
 #: webpay/base/templates/base.html:30
 msgid "You logged in as a different user, you must start the payment again."
@@ -71,8 +71,8 @@ msgid "Error"
 msgstr "Fout"
 
 #: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100
-msgid "Enter Pin"
-msgstr "Voer pincode in"
+msgid "Enter PIN"
+msgstr "Voer PINcode in"
 
 #: public/js/views/login.js:25 templates/login.html:5
 msgid "Sign In"
@@ -93,63 +93,63 @@ msgid "Continue"
 msgstr "Doorgaan"
 
 #: public/js/views/enter-pin.js:73
-msgid "Wrong pin"
-msgstr "Foutieve pincode"
+msgid "Wrong PIN"
+msgstr "Foutieve PINcode"
 
 #: public/js/views/create-pin.js:48
-msgid "Pins do not match."
-msgstr "Pincodes komen niet overeen."
+msgid "PINs do not match."
+msgstr "PINcodes komen niet overeen."
 
 #: webpay/pin/views.py:46 webpay/testing/views.py:25
-msgid "Create a Pin"
-msgstr "Pincode aanmaken"
+msgid "Create a PIN"
+msgstr "PINcode aanmaken"
 
 #: webpay/pin/views.py:68 webpay/pin/views.py:185
 #: public/js/views/create-pin.js:36
-msgid "Confirm Pin"
-msgstr "Pincode bevestigen"
+msgid "Confirm PIN"
+msgstr "PINcode bevestigen"
 
 #: webpay/pin/views.py:131 webpay/pin/views.py:157
 #: webpay/pin/templates/pin/pin_was_locked.html:13
 #: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
 #: templates/was-locked.html:11
-msgid "Reset Pin"
-msgstr "Pincode opnieuw instellen"
+msgid "Reset PIN"
+msgstr "PINcode opnieuw instellen"
 
 #. This is the same as the standard forgot
 #. password that most sites have.
 #: templates/pin-form.html:18 templates/reset-start.html:6
-msgid "Forgot your pin?"
-msgstr "Pincode vergeten?"
+msgid "Forgot your PIN?"
+msgstr "PINcode vergeten?"
 
 #: public/js/views/locked.js:24
 msgid ""
-"You entered the wrong pin too many times. Your account is locked. Please try "
+"You entered the wrong PIN too many times. Your account is locked. Please try "
 "your purchase again in 5 minutes."
 msgstr ""
-"U hebt te vaak de verkeerde pincode ingevoerd. Uw account is vergrendeld. "
+"U hebt te vaak de verkeerde PINcode ingevoerd. Uw account is vergrendeld. "
 "Probeer het over 5 minuten opnieuw."
 
 #: templates/was-locked.html:6
-msgid "Your Pin was locked"
-msgstr "Uw pincode is vergrendeld"
+msgid "Your PIN was locked"
+msgstr "Uw PINcode is vergrendeld"
 
 #: templates/was-locked.html:7
 msgid ""
-"Your pin was locked because you entered it incorrectly too many times. You "
-"can continue and try entering your pin again or reset your pin."
+"Your PIN was locked because you entered it incorrectly too many times. You "
+"can continue and try entering your PIN again or reset your PIN."
 msgstr ""
-"Uw pincode is vergrendeld, omdat u deze te vaak onjuist hebt ingevoerd. U "
-"kunt doorgaan en proberen uw pincode nogmaals in te voeren of uw pincode "
+"Uw PINcode is vergrendeld, omdat u deze te vaak onjuist hebt ingevoerd. U "
+"kunt doorgaan en proberen uw PINcode nogmaals in te voeren of uw PINcode "
 "opnieuw instellen."
 
 #: templates/reset-start.html:7
 msgid ""
-"Are you sure you want to reset your pin? You must sign in to Persona to "
-"reset your pin."
+"Are you sure you want to reset your PIN? You must sign in to Persona to "
+"reset your PIN."
 msgstr ""
-"Weet u zeker dat u uw pincode opnieuw wilt instellen? U dient zich bij "
-"Persona aan te melden om uw pincode opnieuw in te stellen."
+"Weet u zeker dat u uw PINcode opnieuw wilt instellen? U dient zich bij "
+"Persona aan te melden om uw PINcode opnieuw in te stellen."
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6
 #: webpay/provider/templates/provider/wait-to-finish.html:12
@@ -180,8 +180,8 @@ msgstr ""
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
 #, fuzzy
-msgid "Create Pin"
-msgstr "Pincode aanmaken"
+msgid "Create PIN"
+msgstr "PINcode aanmaken"
 
 #: public/js/views/error.js:45
 #, fuzzy
@@ -191,7 +191,7 @@ msgstr "Er is iets misgegaan!"
 #: public/js/views/reset-start.js:29
 #, fuzzy
 msgid "Reset your PIN?"
-msgstr "Pincode opnieuw instellen"
+msgstr "PINcode opnieuw instellen"
 
 #: public/js/views/was-locked.js:13
 msgid "Was Locked"

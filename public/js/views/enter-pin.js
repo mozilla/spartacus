@@ -75,7 +75,7 @@ define([
           utils.trackEvent({action: pinCheckAction,
                             label: 'Pin Check API Call Invalid Form Data'});
           pin.resetPinUI();
-          pin.showError(that.gettext('Wrong pin'));
+          pin.showError(that.gettext('Wrong PIN'));
         } else if ($xhr.status === 403) {
           console.log('User not authenticated');
           utils.trackEvent({action: pinCheckAction,
@@ -98,11 +98,11 @@ define([
     render: function(){
       var context = {
         ctaText: this.gettext('Submit'),
-        pinTitle: this.gettext('Enter Pin'),
+        pinTitle: this.gettext('Enter PIN'),
         showForgotPin: true
       };
       this.renderTemplate('pin-form.html', context);
-      this.setTitle(this.gettext('Enter Pin'));
+      this.setTitle(this.gettext('Enter PIN'));
       pin.init();
       app.throbber.hide();
       return this;

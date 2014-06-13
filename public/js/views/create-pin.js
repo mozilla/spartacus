@@ -33,7 +33,7 @@ define([
       });
       this.curPin = pin.getPin();
       this._origHeading = this.getSelectorText('h1');
-      this.updateSelectorText('h1', this.gettext('Confirm Pin'));
+      this.updateSelectorText('h1', this.gettext('Confirm PIN'));
       this.updateSelectorText('.button.cancel', this.gettext('Back'));
       this.updateSelectorText('.button.cta', this.gettext('Submit'));
       this.clearPin();
@@ -45,7 +45,7 @@ define([
         this.submitData(this.curPin);
       } else {
         this.clearPin();
-        pin.showError(this.gettext('Pins do not match.'));
+        pin.showError(this.gettext('PINs do not match.'));
       }
     },
 
@@ -114,9 +114,9 @@ define([
     render: function(){
       var context = {
         ctaText: this.gettext('Continue'),
-        pinTitle: this.gettext('Create Pin')
+        pinTitle: this.gettext('Create PIN')
       };
-      this.setTitle(this.gettext('Create Pin'));
+      this.setTitle(this.gettext('Create PIN'));
       this.renderTemplate('pin-form.html', context);
       pin.init();
       app.throbber.hide();

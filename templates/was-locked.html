@@ -3,12 +3,12 @@
 
 {% block page %}
   <section class="content">
-    <h1>{{ gettext('Your Pin was locked') }}</h1>
-    <p>{{ gettext('Your pin was locked because you entered it incorrectly too many times. You can continue and try entering your pin again or reset your pin.') }}</p>
+    <h1>{{ gettext('Your PIN was locked') }}</h1>
+    <p>{{ gettext('Your PIN was locked because you entered it incorrectly too many times. You can continue and try entering your PIN again or reset your PIN.') }}</p>
   </section>
 
   <menu class="buttons" type="toolbar">
-    {{ macro.button(gettext('Reset Pin'), modifier='reset-start') }}
+    {{ macro.button(gettext('Reset PIN'), modifier='reset-start') }}
     {{ macro.button(gettext('Continue'), modifier='cta') }}
   </menu>
 {% endblock %}

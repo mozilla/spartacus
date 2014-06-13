@@ -35,23 +35,23 @@ msgstr ""
 #: public/js/views/throbber.js:15 public/js/views/throbber.js:16
 #: templates/throbber.html:7
 msgid "Loading"
-msgstr "Caricamento in corso…"
+msgstr "Caricamento in corso"
 
 #: webpay/base/templates/base.html:32
-msgid "Beginning payment…"
-msgstr "Inizio del pagamento in corso…"
+msgid "Beginning payment"
+msgstr "Inizio del pagamento in corso"
 
 #: public/js/views/login.js:19
 msgid "Connecting to Persona"
-msgstr "Connessione a Persona in corso…"
+msgstr "Connessione a Persona in corso"
 
 #: webpay/base/templates/base.html:34
 msgid "Payment complete"
 msgstr "Pagamento effettuato"
 
 #: public/js/lib/auth.js:22
-msgid "Oops…"
-msgstr "Oops…"
+msgid "Oops"
+msgstr "Oops"
 
 #: public/js/lib/auth.js:65
 msgid "This is taking longer than expected. Try again?"
@@ -151,11 +151,11 @@ msgstr ""
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6
 #: webpay/provider/templates/provider/wait-to-finish.html:12
-msgid "Verifying payment…"
-msgstr "È in corso la verifica del pagamento…"
+msgid "Verifying payment"
+msgstr "È in corso la verifica del pagamento"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30
-msgid "Retrying..."
+msgid "Retrying"
 msgstr ""
 
 #: public/js/lib/auth.js:64
@@ -196,5 +196,5 @@ msgid "Was Locked"
 msgstr ""
 
 #: public/js/views/wait-for-tx.js:10
-msgid "Setting up payment…"
-msgstr "Impostazione pagamento in corso…"
+msgid "Setting up payment"
+msgstr "Impostazione pagamento in corso"

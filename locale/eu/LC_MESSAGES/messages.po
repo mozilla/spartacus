@@ -40,8 +40,8 @@ msgid "Loading"
 msgstr "Kargatzen"
 
 #: webpay/base/templates/base.html:32
-msgid "Beginning payment…"
-msgstr "Ordainketa hasten…"
+msgid "Beginning payment"
+msgstr "Ordainketa hasten"
 
 #: public/js/views/login.js:19
 msgid "Connecting to Persona"
@@ -52,8 +52,8 @@ msgid "Payment complete"
 msgstr "Ordainketa burututa"
 
 #: public/js/lib/auth.js:22
-msgid "Oops…"
-msgstr "Hara…"
+msgid "Oops"
+msgstr "Hara"
 
 #: public/js/lib/auth.js:65
 msgid "This is taking longer than expected. Try again?"
@@ -153,11 +153,11 @@ msgstr ""
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6
 #: webpay/provider/templates/provider/wait-to-finish.html:12
-msgid "Verifying payment…"
-msgstr "Ordainketa egiaztatzen…"
+msgid "Verifying payment"
+msgstr "Ordainketa egiaztatzen"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30
-msgid "Retrying..."
+msgid "Retrying"
 msgstr ""
 
 #: public/js/lib/auth.js:64
@@ -198,5 +198,5 @@ msgid "Was Locked"
 msgstr ""
 
 #: public/js/views/wait-for-tx.js:10
-msgid "Setting up payment…"
-msgstr "Ordainketa konfiguratzen…"
+msgid "Setting up payment"
+msgstr "Ordainketa konfiguratzen"

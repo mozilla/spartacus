@@ -21,14 +21,14 @@ define([
 
     app.error.render({
       context: {
-        heading: gettext('Oops…'),
+        heading: gettext('Oops'),
         errorCode: errCode,
         msg: msg,
       },
       ctaCallback: function(e){
         e.preventDefault();
         app.error.clear();
-        app.throbber.render(gettext('Retrying...'));
+        app.throbber.render(gettext('Retrying'));
         verifyUser(assertion, {reverify: reverify});
       }
     });

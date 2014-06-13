@@ -37,8 +37,8 @@ msgid "Loading"
 msgstr "読み込み中"
 
 #: webpay/base/templates/base.html:32
-msgid "Beginning payment…"
-msgstr "決済を開始しています..."
+msgid "Beginning payment"
+msgstr "決済を開始しています"
 
 #: public/js/views/login.js:19
 msgid "Connecting to Persona"
@@ -49,8 +49,8 @@ msgid "Payment complete"
 msgstr "決済が完了しました"
 
 #: public/js/lib/auth.js:22
-msgid "Oops…"
-msgstr "おっと..."
+msgid "Oops"
+msgstr "おっと"
 
 #: public/js/lib/auth.js:65
 msgid "This is taking longer than expected. Try again?"
@@ -150,11 +150,11 @@ msgstr ""
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6
 #: webpay/provider/templates/provider/wait-to-finish.html:12
-msgid "Verifying payment…"
-msgstr "決済を検証しています..."
+msgid "Verifying payment"
+msgstr "決済を検証しています"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30
-msgid "Retrying..."
+msgid "Retrying"
 msgstr ""
 
 #: public/js/lib/auth.js:64
@@ -195,5 +195,5 @@ msgid "Was Locked"
 msgstr ""
 
 #: public/js/views/wait-for-tx.js:10
-msgid "Setting up payment…"
-msgstr "決済を設定する..."
+msgid "Setting up payment"
+msgstr "決済を設定する"

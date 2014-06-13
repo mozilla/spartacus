@@ -29,6 +29,7 @@ define([
 
     forceAuthTimer: null,
     resetLogoutTimer: null,
+    loginDeferred: null,
 
     initialize: function() {
       BaseView.prototype.initialize();
@@ -178,8 +179,13 @@ define([
         console.log('Clearing Reset login timer');
         window.clearTimeout(this.forceAuthTimer);
       }
+
       // Reject the login deferred to reset listeners.
-      this.loginDeferred.reject();
+      if (this.logoutDeferred) {
+        console.log('Rejecting login deferred');
+        this.loginDeferred.reject();
+      }
+
       app.error.render({
         context: {
           ctaText: that.gettext('Retry?'),
@@ -205,9 +211,9 @@ define([
 
     forceReAuthentication: function() {
       console.log('Starting forceAuthTimer');
+      this.setupLoginListener();
       this.forceAuthTimer = window.setTimeout(this.onForceAuthTimeout, settings.login_timeout);
       app.throbber.render(this.gettext('Connecting to Persona'));
-      this.setupLoginListener();
       this.forceAuthRequest();
     },
 

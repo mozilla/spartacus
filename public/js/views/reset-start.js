@@ -17,9 +17,10 @@ define([
   'log',
   'provider',
   'settings',
+  'underscore',
   'utils',
   'views/base',
-], function(auth, cancel, id, $, log, provider, settings, utils, BaseView){
+], function(auth, cancel, id, $, log, provider, settings, _, utils, BaseView){
 
   'use strict';
 
@@ -193,7 +194,7 @@ define([
         },
         ctaCallback: function(e) {
           e.preventDefault();
-          that.forceReAuthentication(e);
+          that.forceReAuthentication();
         }
       });
     },
@@ -212,7 +213,8 @@ define([
     forceReAuthentication: function() {
       console.log('Starting forceAuthTimer');
       this.setupLoginListener();
-      this.forceAuthTimer = window.setTimeout(this.onForceAuthTimeout, settings.login_timeout);
+      this.forceAuthTimer = window.setTimeout(_.bind(this.onForceAuthTimeout, this), 3000);
+      app.error.hide();
       app.throbber.render(this.gettext('Connecting to Persona'));
       this.forceAuthRequest();
     },

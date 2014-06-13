@@ -17,25 +17,13 @@ define([
       console.log('session model inited');
     },
 
-    watchIdentity: function(options) {
+    watchIdentity: function() {
       var that = this;
-
-      options = options || {};
-
-      var forceAuth = options.forceAuth || false;
-      console.log('forceAuth is ', forceAuth);
 
       id.watch({
         onlogin: function(assertion){
-          if (!forceAuth) {
-            console.log('Firing onlogin event');
-            that.trigger('onlogin', assertion);
-          } else {
-            // Allow special handling of login following
-            // a re-auth.
-            console.log('Firing onlogin (forceAuth) event');
-            that.trigger('onlogin-force-auth', assertion);
-          }
+          console.log('Firing onlogin event');
+          that.trigger('onlogin', assertion);
         },
         onlogout: function() {
           console.log('Firing onlogout event');

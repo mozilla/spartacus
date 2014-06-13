@@ -4,8 +4,8 @@
  *  - User clicks reset to start the reset pin process
  *  - User is logged out (Persona/Provider/Webpay) and the default logout handler is overriden.
  *  - Assuming a succesful logout the user is then prompted to login.
- *  - The login happens via a customised navigator.id.request / navigator.id.watch
- *  - The logout handler is specialized to do a special reVerification step.
+ *  - The login happens via a customised navigator.id.request.
+ *  - The login handler is specialized to do a special reVerification request.
  *  - Assuming that's successful the user should then be directed to reset-pin.
  */
 
@@ -27,12 +27,35 @@ define([
 
   var ResetStartView = BaseView.extend({
 
-    reAuthTimer: null,
+    forceAuthTimer: null,
     resetLogoutTimer: null,
 
     initialize: function() {
       BaseView.prototype.initialize();
-      this.listenTo(app.session, 'onlogin-force-auth', this.handlePersonaLogin);
+    },
+
+    setupLoginListener: function() {
+      var that = this;
+      this.loginDeferred = $.Deferred();
+
+      // Tell the app to temporarily stop listening to login events.
+      app.AppView.stopSessionListener('onlogin');
+
+      // Happen on reject/resolve.
+      this.loginDeferred.always(function() {
+        console.log('Re-starting app onlogin listener');
+        // Kill event in-case it wasn't ever fired.
+        that.stopListening(app.session, 'onlogin', that.handlePersonaLogin);
+        // Always restart the app logout listener.
+        app.AppView.startSessionListener('onlogin');
+      });
+
+      // Setup a one-off listener to handle login as part of the
+      // forceAuth step.
+      this.listenToOnce(app.session, 'onlogin', function(assertion) {
+        this.handlePersonaLogin(assertion);
+        this.loginDeferred.resolve();
+      });
     },
 
     events: {
@@ -48,33 +71,39 @@ define([
     // Wrap logout in deferred.
     logoutPersona: function() {
       console.log('logging out persona');
-      var def = $.Deferred();
+      var logoutDeferred = $.Deferred();
+      var that = this;
 
       // Tell the app to temporarily stop listening to logout events.
       // So we can noop the logout handling for reset.
-      app.AppView.stopLogoutListener();
+      app.AppView.stopSessionListener('onlogout');
 
-      def.always(function() {
-        // Always restart the app logout listener.
-        console.log('Re-starting app onlogout listener');
-        app.AppView.startLogoutListener();
-      });
-
-      this.listenToOnce(app.session, 'onlogout', function() {
+      function handleOnLogout() {
         console.log('Responding to one-off onlogout listener');
         // Update model but don't fire any events.
         app.session.set({logged_in: false}, {silent: true});
-        def.resolve();
+        logoutDeferred.resolve();
+      }
+
+      logoutDeferred.always(function() {
+        console.log('Re-starting app onlogout listener');
+        // Kill the one-off listener in-case it was never fired.
+        that.stopListening(app.session, 'onlogout', handleOnLogout);
+        // Always restart the app logout listener.
+        app.AppView.startSessionListener('onlogout');
       });
+
+      this.listenToOnce(app.session, 'onlogout', handleOnLogout);
 
       if (app.session.get('logged_in') === true) {
         console.log('Logging out of Persona');
         navigator.id.logout();
       } else {
         console.log('Already logged out of Persona resolving the deferred.');
-        def.resolve();
+        logoutDeferred.resolve();
       }
-      return def;
+
+      return logoutDeferred;
     },
 
     handleResetStart: function(e) {
@@ -107,7 +136,7 @@ define([
       $.when(authResetUser, providerLogout, personaLogout)
         .done(function _allLoggedOut() {
           console.log('Clearing logout reset timer.');
-          window.clearTimeout(this.resetLogoutTimeout);
+          window.clearTimeout(that.resetLogoutTimeout);
           console.log('Forgot-pin logout done');
           utils.trackEvent({'action': 'forgot pin',
                             'label': 'Logout Success'});
@@ -117,7 +146,7 @@ define([
           // Called when we manually abort everything
           // or if something fails.
           console.log('Clearing logout reset timer.');
-          window.clearTimeout(this.resetLogoutTimeout);
+          window.clearTimeout(that.resetLogoutTimeout);
           utils.trackEvent({'action': 'forgot pin',
                             'label': 'Logout Error'});
           // This can be a timeout or a failure. So a more generic message is needed.
@@ -143,14 +172,16 @@ define([
       return this;
     },
 
-    onResetLoginTimeout: function() {
+    onForceAuthTimeout: function() {
       var that = this;
       utils.trackEvent({'action': 'reset force auth',
                         'label': 'Log-in Timeout'});
-      if (this.reAuthTimer) {
+      if (this.forceAuthTimer) {
         console.log('Clearing Reset login timer');
-        window.clearTimeout(this.reAuthTimer);
+        window.clearTimeout(this.forceAuthTimer);
       }
+      // Reject the login deferred to reset listeners.
+      this.loginDeferred.reject();
       app.error.render({
         context: {
           ctaText: that.gettext('Retry?'),
@@ -176,19 +207,17 @@ define([
     },
 
     forceReAuthentication: function() {
-      console.log('Starting reAuthTimer');
-      this.reAuthTimer = window.setTimeout(this.onResetLoginTimeout, settings.login_timeout);
+      console.log('Starting forceAuthTimer');
+      this.forceAuthTimer = window.setTimeout(this.onForceAuthTimeout, settings.login_timeout);
       app.throbber.render(this.gettext('Connecting to Persona'));
-
-      // Kick off watch for persona.
-      app.session.watchIdentity({forceAuth: true});
+      this.setupLoginListener();
       this.forceAuthRequest();
     },
 
     handlePersonaLogin: function(assertion) {
       // Do the reverification step now.
       console.log('re-auth login happened. moving to re-verify');
-      window.clearTimeout(this.reAuthTimer);
+      window.clearTimeout(this.forceAuthTimer);
       auth.verifyUser(assertion, {reverify: true});
     }
 

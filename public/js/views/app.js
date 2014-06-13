@@ -21,6 +21,11 @@ define([
 
   var AppView = Backbone.View.extend({
 
+    listenerMap: {
+      'onlogout': 'handlePersonaLogout',
+      'onlogin': 'handlePersonaLogin'
+    },
+
     personaCalledBack: false,
 
     el: '#app',
@@ -101,12 +106,23 @@ define([
       }
     },
 
-    stopLogoutListener: function() {
-      this.stopListening(app.session, 'onlogout');
+    stopSessionListener: function(eventName) {
+      if (Object.keys(this.listenerMap).indexOf(eventName) > -1) {
+        console.log('Stopping listening to "' + eventName + '" on app.session');
+        this.stopListening(app.session, eventName);
+      } else {
+        console.log('Unknown event ' + eventName);
+      }
     },
 
-    startLogoutListener: function() {
-      this.listenTo(app.session, 'onlogout', this.handlePersonaLogout);
+    startSessionListener: function(eventName) {
+      if (Object.keys(this.listenerMap).indexOf(eventName) > -1) {
+        var funcName = this.listenerMap[eventName];
+        console.log('Starting listening to "' + eventName + '" on app.session with callback ' + funcName);
+        this.listenTo(app.session, eventName, this[funcName]);
+      } else {
+        console.log('Unknown event ' + eventName);
+      }
     },
 
     // Retrieve the JWT we store prior to login.

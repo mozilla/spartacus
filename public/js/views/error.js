@@ -42,7 +42,6 @@ define([
 
       // Add default heading + msg.
       context.heading = context.heading || this.gettext('Error');
-      context.msg = context.msg || this.gettext('Something went wrong.');
       console.log(JSON.stringify(context));
 
       this.setTitle(context.heading);
@@ -60,6 +59,8 @@ define([
         if (options.ctaCallback) {
           customEvents['click .button.cta'] = options.ctaCallback;
           context.showCta = true;
+          // If there's a callback chances are we want to retry.
+          context.msg = context.msg || this.gettext('Something went wrong. Retry?');
         }
         this.delegateEvents(customEvents);
       }

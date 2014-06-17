@@ -21,6 +21,8 @@ define([
 
   var AppView = Backbone.View.extend({
 
+    loginTimer: null,
+
     listenerMap: {
       'onlogout': 'handlePersonaLogout',
       'onlogin': 'handlePersonaLogin'
@@ -77,6 +79,15 @@ define([
       return this;
     },
 
+    onLoginTimeout: function(callback) {
+      this.clearLoginTimer();
+      console.log('Persona login timed-out');
+      utils.trackEvent({action: 'persona login',
+                        label: 'Login Timed Out'});
+      app.error.render({context: {errorCode: 'LOGIN_TIMEOUT'},
+                        ctaCallback: callback});
+    },
+
     // Persona has told use we should be logged out.
     handlePersonaLogout: function() {
       console.log('Responding to onlogout event');
@@ -87,8 +98,16 @@ define([
       app.session.set('logged_in', false);
     },
 
+    clearLoginTimer: function() {
+      if (this.loginTimer) {
+        console.log('Clear login timer');
+        window.clearTimeout(this.loginTimer);
+      }
+    },
+
     // Persona has told us we should be logged-in.
     handlePersonaLogin: function(assertion) {
+      this.clearLoginTimer();
       console.log('Responding to onlogin event');
       this.personaCalledBack = true;
       auth.verifyUser(assertion);
@@ -96,6 +115,7 @@ define([
 
     // Browser's state matches loggedInUser so we're probably logged in.
     handlePersonaReady: function() {
+      this.clearLoginTimer();
       console.log('Probably logged in, Persona never called back');
       if (this.personaCalledBack === false && utils.bodyData.loggedInUser) {
         app.session.set('logged_in', true);

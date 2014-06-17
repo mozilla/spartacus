@@ -21,11 +21,14 @@ casper.test.begin('Reset pin returns 400 invalid data.', {
 
     // Then continue...
     casper.waitForUrl(helpers.url('reset-start'), function() {
-      // Setup re-auth verification.
-      helpers.fakeVerification({reverify: true});
       helpers.fakeLogout();
-      // Setup the fetch which proivided pin_reset_started state.
       this.click('.button.cta');
+    });
+
+    // Click for re-auth...
+    casper.waitForUrl(helpers.url('force-auth'), function() {
+      helpers.fakeVerification({reverify: true});
+      this.click('#signin');
     });
 
     casper.waitForUrl(helpers.url('reset-pin'), function() {

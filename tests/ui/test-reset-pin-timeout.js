@@ -21,10 +21,14 @@ casper.test.begin('Reset pin timeout followed by success.', {
 
     // Then continue...
     casper.waitForUrl(helpers.url('reset-start'), function() {
-      // Setup re-auth verification.
-      helpers.fakeVerification({reverify: true});
       helpers.fakeLogout();
       this.click('.button.cta');
+    });
+
+    // Click for re-auth...
+    casper.waitForUrl(helpers.url('force-auth'), function() {
+      helpers.fakeVerification({reverify: true});
+      this.click('#signin');
     });
 
     casper.waitForUrl(helpers.url('reset-pin'), function() {

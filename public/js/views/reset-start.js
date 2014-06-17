@@ -141,7 +141,7 @@ define([
           console.log('Forgot-pin logout done');
           utils.trackEvent({'action': 'forgot pin',
                             'label': 'Logout Success'});
-          that.forceReAuthentication();
+          app.router.navigate('force-auth', {trigger: true});
         })
         .fail(function _failedLogout() {
           // Called when we manually abort everything
@@ -170,61 +170,6 @@ define([
       app.throbber.hide();
       return this;
     },
-
-    onForceAuthTimeout: function() {
-      var that = this;
-      console.log('force auth timed-out');
-      utils.trackEvent({'action': 'reset force auth',
-                        'label': 'Log-in Timeout'});
-      if (this.forceAuthTimer) {
-        console.log('Clearing Reset login timer');
-        window.clearTimeout(this.forceAuthTimer);
-      }
-
-      // Reject the login deferred to reset listeners.
-      if (this.logoutDeferred) {
-        console.log('Rejecting login deferred');
-        this.loginDeferred.reject();
-      }
-
-      app.error.render({
-        context: {
-          ctaText: that.gettext('Retry?'),
-          errorCode: 'REAUTH_LOGIN_TIMEOUT'
-        },
-        ctaCallback: function(e) {
-          e.preventDefault();
-          that.forceReAuthentication();
-        }
-      });
-    },
-
-    forceAuthRequest: function() {
-      id.request({
-        experimental_forceAuthentication: true,
-        oncancel: function() {
-          utils.trackEvent({'action': 'reset force auth',
-                            'label': 'cancelled'});
-          cancel.callPayFailure();
-        }
-      });
-    },
-
-    forceReAuthentication: function() {
-      console.log('Starting forceAuthTimer');
-      this.setupLoginListener();
-      this.forceAuthTimer = window.setTimeout(_.bind(this.onForceAuthTimeout, this), settings.login_timeout);
-      app.error.hide();
-      app.throbber.render(this.gettext('Connecting to Persona'));
-      this.forceAuthRequest();
-    },
-
-    handlePersonaLogin: function(assertion) {
-      // Do the reverification step now.
-      console.log('re-auth login happened. moving to re-verify');
-      window.clearTimeout(this.forceAuthTimer);
-      auth.verifyUser(assertion, {reverify: true});
-    }
 
   });
 

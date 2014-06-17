@@ -22,9 +22,15 @@ casper.test.begin('Reverification fails with 500 then retry success.', {
     // Then continue...
     casper.waitForUrl(helpers.url('reset-start'), function() {
       helpers.fakeLogout();
-      helpers.fakeVerification({reverify: true, statusCode: 500});
       this.click('.button.cta');
     });
+
+    // Click for re-auth...
+    casper.waitForUrl(helpers.url('force-auth'), function() {
+      helpers.fakeVerification({reverify: true, statusCode: 500});
+      this.click('#signin');
+    });
+
 
     casper.waitForSelector('.full-error', function() {
       test.assertVisible('.full-error', 'Error page should be shown');

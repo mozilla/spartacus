@@ -33,9 +33,13 @@ casper.test.begin('Logout fails then retry with success.', {
       test.assertVisible('.button.cancel', 'Cancel button should be visible');
 
       helpers.fakeLogout();
-      helpers.fakeVerification({reverify: true});
-
       this.click('button.cta');
+    });
+
+    // Click for re-auth...
+    casper.waitForUrl(helpers.url('force-auth'), function() {
+      helpers.fakeVerification({reverify: true});
+      this.click('#signin');
     });
 
     casper.waitForUrl(helpers.url('reset-pin'), function() {

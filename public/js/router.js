@@ -2,6 +2,7 @@ define([
   'backbone',
   'views/create-pin',
   'views/enter-pin',
+  'views/force-auth',
   'views/locked',
   'views/login',
   'views/reset-pin',
@@ -12,6 +13,7 @@ define([
   Backbone,
   CreatePinView,
   EnterPinView,
+  ForceAuthView,
   LockedView,
   LoginView,
   ResetPinView,
@@ -30,16 +32,12 @@ define([
       'login': 'showLogin',
       'create-pin': 'showCreatePin',
       'enter-pin': 'showEnterPin',
+      'force-auth': 'showForceAuth',
       'reset-pin': 'showResetPin',
       'reset-start': 'showResetStart',
       'locked': 'showLocked',
       'was-locked': 'showWasLocked',
       'wait-for-tx': 'showWaitForTX',
-    },
-
-    showLogin: function() {
-      var loginView = new LoginView();
-      loginView.render();
     },
 
     showCreatePin: function() {
@@ -52,6 +50,21 @@ define([
       enterPinView.render();
     },
 
+    showForceAuth: function() {
+      var forceAuthView = new ForceAuthView();
+      forceAuthView.render();
+    },
+
+    showLocked: function() {
+      var lockedView = new LockedView();
+      lockedView.render();
+    },
+
+    showLogin: function() {
+      var loginView = new LoginView();
+      loginView.render();
+    },
+
     showResetPin: function() {
       var resetPinView = new ResetPinView();
       resetPinView.render();
@@ -62,19 +75,14 @@ define([
       resetStartView.render();
     },
 
-    showLocked: function() {
-      var lockedView = new LockedView();
-      lockedView.render();
+    showWaitForTX: function() {
+      var waitView = new WaitView();
+      waitView.render();
     },
 
     showWasLocked: function() {
       var wasLockedView = new WasLockedView();
       wasLockedView.render();
-    },
-
-    showWaitForTX: function() {
-      var waitView = new WaitView();
-      waitView.render();
     },
 
   });

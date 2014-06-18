@@ -22,8 +22,13 @@ casper.test.begin('Reverification fails with timeout then retry success.', {
     // Then continue...
     casper.waitForUrl(helpers.url('reset-start'), function() {
       helpers.fakeLogout();
-      helpers.fakeVerification({reverify: true, timeout: true});
       this.click('.button.cta');
+    });
+
+    // Click for re-auth...
+    casper.waitForUrl(helpers.url('force-auth'), function() {
+      helpers.fakeVerification({reverify: true, timeout: true});
+      this.click('#signin');
     });
 
     casper.waitForSelector('.full-error', function() {

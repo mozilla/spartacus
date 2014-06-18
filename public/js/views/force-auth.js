@@ -15,7 +15,7 @@ define([
   var console = log('view', 'force-auth');
   var ForceAuthView = BaseView.extend({
 
-    loginDeferred: null,
+    deferredLogin: null,
     forceAuthTimer: null,
 
     events: {
@@ -24,12 +24,12 @@ define([
 
     setupLoginListener: function() {
       var that = this;
-      this.loginDeferred = $.Deferred();
+      this.deferredLogin = $.Deferred();
 
       // Tell the app to temporarily stop listening to login events.
       app.AppView.stopSessionListener('onlogin');
 
-      this.loginDeferred.always(function() {
+      this.deferredLogin.always(function() {
         console.log('Re-starting app onlogin listener');
         // Kill event in-case it wasn't ever fired.
         that.stopListening(app.session, 'onlogin', that.handlePersonaLogin);
@@ -37,11 +37,11 @@ define([
         app.AppView.startSessionListener('onlogin');
       });
 
-      // Setup a one-off listener to handle login as part of the
+      // Set up a one-off listener to handle login as part of the
       // forceAuth step.
       this.listenToOnce(app.session, 'onlogin', function(assertion) {
         this.handlePersonaLogin(assertion);
-        this.loginDeferred.resolve();
+        this.deferredLogin.resolve();
       });
     },
 
@@ -68,9 +68,9 @@ define([
       }
 
       // Reject the login deferred to reset listeners.
-      if (this.loginDeferred) {
+      if (this.deferredLogin) {
         console.log('Rejecting login deferred');
-        this.loginDeferred.reject();
+        this.deferredLogin.reject();
       }
 
       app.error.render({

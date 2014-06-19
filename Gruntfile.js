@@ -278,11 +278,11 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', 'Does the same thing as grunt start', ['start']);
   grunt.registerTask('start', 'Run the development server',
-                     ['abideCompile', 'env:dev', 'requirejs', 'jshint', 'stylus', 'clean:templates', 'nunjucks', 'express:dev', 'watch']);
+                     ['abideCompile', 'env:dev', 'jshint', 'clean:templates', 'nunjucks', 'requirejs', 'stylus', 'express:dev', 'watch']);
   grunt.registerTask('styleguide', 'Run the styleguide server',
                      ['stylus', 'express:styleguide', 'watch']);
   grunt.registerTask('test', 'Run unit tests',
                      ['abideCompile', 'env:test', 'jshint', 'stylus', 'clean:templates', 'nunjucks', 'express:test', 'shell:unittests']);
   grunt.registerTask('uitest', 'Run UI tests with casper.\nUsage: grunt uitest [--test <file>]',
-                     ['abideCompile', 'env:test', 'requirejs', 'stylus', 'clean:templates',  'nunjucks', 'clean:uitest', 'express:test', 'casper']);
+                     ['abideCompile', 'env:test', 'clean:templates', 'nunjucks', 'requirejs', 'stylus', 'clean:uitest', 'express:test', 'casper']);
 };

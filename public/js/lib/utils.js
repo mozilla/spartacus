@@ -1,10 +1,13 @@
 define([
   'jquery',
   'settings',
+  'tracking',
   'underscore'
-], function($, settings, _) {
+], function($, settings, tracking, _) {
 
   'use strict';
+
+  var uaTrackingCategory = settings.ua_tracking_category;
 
   var $body = $('body');
 
@@ -29,13 +32,10 @@ define([
         return app.error.render({errorCode: 'NO_PAY_FAILED_FUNC'});
       },
     },
-    trackClick: function() {
-      console.log('trackClick');
-      // TODO: Add real functionality here.
-    },
-    trackEvent: function() {
-      console.log('trackEvent');
-      // TODO: Add real functionality here.
+    trackEvent: function(options) {
+      options = options || {};
+      tracking.trackEvent(uaTrackingCategory, options.action, options.label,
+                          options.value, options.nonInteraction);
     },
     apiUrl: function(path) {
       if (path.slice(-1) !== '/') {

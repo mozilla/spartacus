@@ -8,18 +8,19 @@ define([
 
   "use strict";
 
-  var startUrl;
-  var pollTimeout;
-  var transactionTimeout;
-  var request;
-  var gettext = i18n.gettext;
-
   var console = log('wait');
+  var gettext = i18n.gettext;
+  var pollTimeout;
+  var request;
+  var startUrl = utils.bodyData.transStartUrl;
+  var transactionTimeout;
+
 
   function clearPoll() {
     if (pollTimeout) {
       console.log('Clearing poll timer.');
       window.clearTimeout(pollTimeout);
+      pollTimeout = null;
     }
   }
 
@@ -56,7 +57,6 @@ define([
   function startWaiting(expectedStatus) {
     app.error.close();
     app.throbber.render(gettext('Retrieving Transaction'));
-    startUrl = utils.bodyData.transStartUrl;
     startGlobalTimer();
     poll(expectedStatus);
     utils.trackEvent({'action': 'payment',

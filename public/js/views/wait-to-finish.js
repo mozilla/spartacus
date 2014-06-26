@@ -7,7 +7,7 @@ define([
 
   'use strict';
 
-  var console = log('woit-to-finish');
+  var console = log('wait-to-finish');
 
   // This view is called on return from the payment provider.
   var WaitToFinishView = PageView.extend({

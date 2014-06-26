@@ -9,9 +9,9 @@ define([
   var InitView = PageView.extend({
 
     render: function() {
-      var initialRoute = app.initialRoute = app.router.current();
+      app.initialRoute = app.router.current();
       app.throbber.render(this.gettext('Initializing'));
-      if (!app.transaction.get('jwt') && initialRoute.name !== 'showWaitToFinish') {
+      if (!app.transaction.get('jwt') && app.initialRoute.name !== 'showWaitToFinish') {
         this.extractJWT();
       }
       app.session.watchIdentity();

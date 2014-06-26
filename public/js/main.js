@@ -17,8 +17,8 @@ require(['require-config'], function() {
       }
     });
 
-    var app = window.app = new AppView();
-    app.start();
+    window.app = new AppView();
+    window.app.start();
   });
 
 });

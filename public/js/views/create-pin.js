@@ -1,12 +1,12 @@
 define([
   'cancel',
   'jquery',
-  'lib/pin-widget',
   'log',
+  'pin-widget',
   'underscore',
   'utils',
   'views/page'
-], function(cancel, $, pin, log, _, utils, PageView){
+], function(cancel, $, log, pin, _, utils, PageView){
 
   'use strict';
 

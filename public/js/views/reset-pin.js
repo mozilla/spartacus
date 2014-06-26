@@ -1,10 +1,10 @@
 define([
   'jquery',
-  'lib/pin-widget',
   'log',
+  'pin-widget',
   'utils',
   'views/create-pin'
-], function($, pin, log, utils, CreatePinView){
+], function($, log, pin, utils, CreatePinView){
 
   'use strict';
 

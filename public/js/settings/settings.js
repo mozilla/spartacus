@@ -96,8 +96,11 @@ var settings = {
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = settings;
 } else if (typeof define === 'function' && define.amd) {
-  define([], function() {
+  define(['jquery', 'underscore'], function($, _) {
+
     'use strict';
-    return settings;
+
+    var overrides = $('body').data('settings') || {};
+    return _.extend(settings, overrides);
   });
 }

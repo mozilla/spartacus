@@ -7,15 +7,12 @@ define([
 
   'use strict';
 
-  var console = log('wait-to-finish');
-
   // This view is called on return from the payment provider.
   var WaitToFinishView = PageView.extend({
 
     render: function(){
       app.throbber.render(this.gettext('Completing payment'));
       var statusCompleted = utils.bodyData.transStatusCompleted;
-      console.log(statusCompleted);
       if (typeof statusCompleted !== 'undefined') {
         wait.startWaiting(statusCompleted);
       } else {

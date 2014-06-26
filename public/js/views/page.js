@@ -63,7 +63,7 @@ define([
           app.router.showWaitToFinish();
         // Otherwise we're now needing to check the app state
         // and hand-off to the right view.
-        } else if (!app.transaction.get('transaction_started')) {
+        } else {
           this.setUpPayment();
         }
       }
@@ -98,7 +98,8 @@ define([
           console.log('Transaction started successfully');
           utils.trackEvent({action: 'start-transaction',
                             label: 'Transaction started successfully'});
-          app.transaction.set('transaction_started', true);
+          // TODO: Move this into it's own function.
+          // TODO: Store that a transaction has started on the client.
           app.pin.fetch().fail(function($xhr, textStatus) {
             if (textStatus === 'timeout') {
               utils.trackEvent({action: 'fetch-state',

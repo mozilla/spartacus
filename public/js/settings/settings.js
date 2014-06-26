@@ -6,6 +6,10 @@ var settings = {
   login_timeout: 90000,
   // Timeout for logout (Default 45s).
   logout_timeout: 45000,
+  // Timeout for finishing transaction.
+  wait_timeout: 35000,
+  // Poll interval for wait-to-start/finish.
+  poll_interval: 1000,
   // i18n settings.
   supportedLanguages: [
     'af',

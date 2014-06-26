@@ -29,6 +29,7 @@
       'settings': 'settings/settings',
       'underscore': '../lib/js/underscore/underscore',
       'utils': 'lib/utils',
+      'wait': 'lib/wait'
     },
     shim : {
       'jquery': {

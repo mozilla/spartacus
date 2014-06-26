@@ -17,6 +17,15 @@
     data-verify-url="{{ settings.verifyUserURL }}"
     data-reverify-url="{{ settings.reVerifyUserURL }}"
     data-static-docs-url="{{ settings.staticURL }}"
+    {% if transaction_status_url %}
+      data-trans-start-url="{{ transaction_status_url }}"
+    {% else %}
+      data-trans-start-url="/poll-wait-to-start"
+    {% endif %}
+    data-trans-status-completed="1"
+    data-trans-status-pending="0"
+    data-trans-status-failed="4"
+    data-trans-status-cancelled="5"
     >
     <main id="app">
       {# View placeholder #}

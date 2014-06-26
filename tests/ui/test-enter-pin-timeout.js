@@ -29,7 +29,7 @@ casper.test.begin('Enter pin timeout then success', {
       this.click('.cta');
     });
 
-    casper.waitForUrl(helpers.url('wait-for-tx'), function() {
+    casper.waitForUrl(helpers.url('wait-to-start'), function() {
       test.assertVisible('progress');
     });
 

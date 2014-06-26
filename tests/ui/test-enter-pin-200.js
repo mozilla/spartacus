@@ -5,7 +5,7 @@ helpers.startCasper({
     helpers.fakeVerification();
     helpers.fakeStartTransaction();
     helpers.fakePinData({data: {pin: true}});
-    helpers.fakePinData({data: {pin: true}, method: 'POST', statusCode: 200, url:'/mozpay/v1/api/pin/check/'});
+    helpers.fakePinData({data: {pin: true}, method: 'POST', statusCode: 200, url: '/mozpay/v1/api/pin/check/'});
   },
 });
 
@@ -21,7 +21,7 @@ casper.test.begin('Enter Pin API call returns 200', {
       this.click('.cta');
     });
 
-    casper.waitForUrl(helpers.url('wait-for-tx'), function() {
+    casper.waitForUrl(helpers.url('wait-to-start'), function() {
       test.assertVisible('progress');
     });
 

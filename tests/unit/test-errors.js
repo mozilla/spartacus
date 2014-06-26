@@ -9,7 +9,7 @@ define(['jquery', 'views/error'], function($, ErrorView) {
     });
 
     teardown(function(){
-      this.error.clear();
+      this.error.close();
     });
 
     test('Check error overlay appears', function(){
@@ -18,11 +18,11 @@ define(['jquery', 'views/error'], function($, ErrorView) {
       assert.ok($('#error .full-error').length === 1);
     });
 
-    test('Check error overlay is cleared', function(){
+    test('Check error overlay is closed', function(){
       assert.ok($('#error .full-error').length === 0);
       this.error.render();
       assert.ok($('#error .full-error').length === 1);
-      this.error.clear();
+      this.error.close();
       assert.ok($('#error .full-error').length === 0);
     });
 

@@ -20,17 +20,18 @@ define([
 
     defaultCancel: function(e) {
       e.preventDefault();
-      this.clear();
+      this.close();
       cancel.callPayFailure();
     },
 
     render: function(options){
+      this.close();
       options = options || {};
       this.$el.empty();
       this.delegateEvents(this.events);
 
       if (window.app && app.throbber) {
-        app.throbber.hide();
+        app.throbber.close();
       }
       var context = options.context || {};
       var template = options.template || 'error.html';
@@ -68,11 +69,6 @@ define([
       console.log('Rendering Error template');
       this.renderTemplate(template, context);
       return this;
-    },
-
-    hide: function() {
-      console.log('Hiding Error');
-      this.clear();
     }
 
   });

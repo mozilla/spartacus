@@ -15,12 +15,7 @@ define([
       this.setTitle(msg || this.gettext('Loading'));
       this.renderTemplate('throbber.html', {msg: msg || this.gettext('Loading')});
       return this;
-    },
-
-    hide: function _hide() {
-      console.log('Hiding progress');
-      this.clear();
-    },
+    }
 
   });
 

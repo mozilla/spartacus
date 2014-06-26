@@ -5,4 +5,5 @@ module.exports = {
   resetUserURL: '/logout',
   useMinCSS: true,
   useMinJS: true,
+  showClientConsole: true,
 };

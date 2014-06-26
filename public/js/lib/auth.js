@@ -27,7 +27,7 @@ define([
       },
       ctaCallback: function(e){
         e.preventDefault();
-        app.error.clear();
+        app.error.close();
         app.throbber.render(gettext('Retrying'));
         verifyUser(assertion, {reverify: reverify});
       }
@@ -68,7 +68,7 @@ define([
         // Set logged_in and manually direct to reset-pin which is
         // implied having successfully carried out a re-auth.
         app.session.set('logged_in', true, {silent: true});
-        app.router.navigate('reset-pin', {trigger: true});
+        app.router.navigate('spa/reset-pin', {trigger: true});
       } else {
         // Setting the attr will cause the listeners
         // to deal with login success.

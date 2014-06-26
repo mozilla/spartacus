@@ -2,13 +2,13 @@ define([
   'id',
   'log',
   'underscore',
-  'views/base'
-], function(id, log, _, BaseView){
+  'views/page'
+], function(id, log, _, PageView){
 
   'use strict';
 
   var console = log('view', 'login');
-  var LoginView = BaseView.extend({
+  var LoginView = PageView.extend({
 
     events: {
       'click #signin': 'handleSignIn'
@@ -27,7 +27,7 @@ define([
         heading: this.gettext('Sign In'),
         msg: this.gettext('Sign in to continue with the payment')
       });
-      app.throbber.hide();
+      app.throbber.close();
       return this;
     }
 

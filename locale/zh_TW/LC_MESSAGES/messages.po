@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-05-23 12:05+0000\n"
-"PO-Revision-Date: 2014-06-27 14:53+0000\n"
+"PO-Revision-Date: 2014-06-27 14:55+0000\n"
 "Last-Translator: Peter <petercpg@mail.moztw.org>\n"
 "Language-Team: MozTW <petercpg@mail.moztw.org>\n"
 "Language: zh_TW\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1403880830.0\n"
+"X-POOTLE-MTIME: 1403880926.0\n"
 
 #: public/js/lib/cancel.js:33
 msgid "Payment cancelled."
@@ -25,11 +25,11 @@ msgstr "取消"
 
 #: public/js/lib/pin-widget.js:58
 msgid "PIN can only contain digits."
-msgstr "PIN 碼只能為數字。"
+msgstr "PIN 碼只能包含數字。"
 
 #: webpay/base/templates/base.html:30
 msgid "You logged in as a different user, you must start the payment again."
-msgstr "您已登入為不同使用者，您必須重新開始付款流程。"
+msgstr "您已登入為不同使用者，必須重新開始付款流程。"
 
 #: public/js/views/throbber.js:15 public/js/views/throbber.js:16
 #: templates/throbber.html:7

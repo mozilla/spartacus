@@ -3,15 +3,16 @@ msgstr ""
 "Project-Id-Version: Webpay\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-05-23 12:05+0000\n"
-"PO-Revision-Date: 2014-05-09 21:49+0100\n"
-"Last-Translator: Jørgen Rasmussen <joergenr@stofanet.dk>\n"
+"PO-Revision-Date: 2014-06-28 19:21+0000\n"
+"Last-Translator: Jørgen   <joergenr@stofanet.dk>\n"
 "Language-Team: MozillaDanmark\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.5\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1403983269.0\n"
 
 #: public/js/lib/cancel.js:33
 msgid "Payment cancelled."
@@ -24,7 +25,7 @@ msgstr "Annuller"
 
 #: public/js/lib/pin-widget.js:58
 msgid "PIN can only contain digits."
-msgstr "PINkoden kan kun indholde tal."
+msgstr "Pinkoden kan kun indeholde tal."
 
 #: webpay/base/templates/base.html:30
 msgid "You logged in as a different user, you must start the payment again."
@@ -69,7 +70,7 @@ msgstr "Fejl"
 
 #: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100
 msgid "Enter PIN"
-msgstr "Indtast PINkode"
+msgstr "Indtast pinkode"
 
 #: public/js/views/login.js:25 templates/login.html:5
 msgid "Sign In"
@@ -91,62 +92,62 @@ msgstr "Fortsæt"
 
 #: public/js/views/enter-pin.js:73
 msgid "Wrong PIN"
-msgstr "Forkert PINkode"
+msgstr "Forkert pinkode"
 
 #: public/js/views/create-pin.js:48
 msgid "PINs do not match."
-msgstr "PINkoder matcher ikke."
+msgstr "Pinkoder matcher ikke."
 
 #: webpay/pin/views.py:46 webpay/testing/views.py:25
 msgid "Create a PIN"
-msgstr "Opret en PINkode"
+msgstr "Opret en pinkode"
 
 #: webpay/pin/views.py:68 webpay/pin/views.py:185
 #: public/js/views/create-pin.js:36
 msgid "Confirm PIN"
-msgstr "Bekræft PINkode"
+msgstr "Bekræft pinkode"
 
 #: webpay/pin/views.py:131 webpay/pin/views.py:157
 #: webpay/pin/templates/pin/pin_was_locked.html:13
 #: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
 #: templates/was-locked.html:11
 msgid "Reset PIN"
-msgstr "Nulstil PINkode"
+msgstr "Nulstil pinkode"
 
 #. This is the same as the standard forgot
 #. password that most sites have.
 #: templates/pin-form.html:18 templates/reset-start.html:6
 msgid "Forgot your PIN?"
-msgstr "Glemt din PINkode?"
+msgstr "Glemt din pinkode?"
 
 #: public/js/views/locked.js:24
 msgid ""
 "You entered the wrong PIN too many times. Your account is locked. Please try "
 "your purchase again in 5 minutes."
 msgstr ""
-"Du indtastede den forkerte PINkode for mange gange. Din konto er spærret. "
+"Du indtastede den forkerte pinkode for mange gange. Din konto er spærret. "
 "Prøv at foretage dit køb igen om 5 minutter."
 
 #: templates/was-locked.html:6
 msgid "Your PIN was locked"
-msgstr "Din PINkode er blevet spærret"
+msgstr "Din pinkode er blevet spærret"
 
 #: templates/was-locked.html:7
 msgid ""
 "Your PIN was locked because you entered it incorrectly too many times. You "
 "can continue and try entering your PIN again or reset your PIN."
 msgstr ""
-"Din PINkode blev spærret fordi du indtastede den forkert for mange gange. Du "
-"kan fortsætte og prøve at indtaste din PINkode igen eller nulstille din "
-"PINkode."
+"Din pinkode blev spærret fordi du indtastede den forkert for mange gange. Du "
+"kan fortsætte og prøve at indtaste din pinkode igen eller nulstille din "
+"pinkode."
 
 #: templates/reset-start.html:7
 msgid ""
 "Are you sure you want to reset your PIN? You must sign in to Persona to "
 "reset your PIN."
 msgstr ""
-"Er du sikker på, at du vil nulstille din PINkode? Du skal logge ind med "
-"Persona for at nulstille din PINkode."
+"Er du sikker på, at du vil nulstille din pinkode? Du skal logge ind med "
+"Persona for at nulstille din pinkode."
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6
 #: webpay/provider/templates/provider/wait-to-finish.html:12
@@ -155,44 +156,40 @@ msgstr "Bekræfter betaling"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30
 msgid "Retrying"
-msgstr ""
+msgstr "Prøver igen"
 
 #: public/js/lib/auth.js:64
-#, fuzzy
 msgid "That took longer than expected. Retry?"
-msgstr "Dette tager længere tid end forventet. Prøv igen?"
+msgstr "Dette tog længere tid end forventet. Prøv igen?"
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11
 msgid "Back"
-msgstr ""
+msgstr "Tilbage"
 
 #: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95
 msgid "Submit"
-msgstr ""
+msgstr "Indsend"
 
 #: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60
 #: public/js/views/reset-pin.js:28
 msgid "Retry?"
-msgstr ""
+msgstr "Prøv igen?"
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
-#, fuzzy
 msgid "Create PIN"
-msgstr "Opret en PINkode"
+msgstr "Opret pinkode"
 
 #: public/js/views/error.js:45
-#, fuzzy
 msgid "Something went wrong."
-msgstr "Noget gik galt!"
+msgstr "Noget gik galt."
 
 #: public/js/views/reset-start.js:29
-#, fuzzy
 msgid "Reset your PIN?"
-msgstr "Nulstil PINkode"
+msgstr "Nulstil din pinkode?"
 
 #: public/js/views/was-locked.js:13
 msgid "Was Locked"
-msgstr ""
+msgstr "Blev spærret"
 
 #: public/js/views/wait-for-tx.js:10
 msgid "Setting up payment"

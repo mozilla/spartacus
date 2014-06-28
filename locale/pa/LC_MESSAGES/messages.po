@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-05-23 12:05+0000\n"
-"PO-Revision-Date: 2014-05-08 14:03+0000\n"
+"PO-Revision-Date: 2014-06-28 21:21+0000\n"
 "Last-Translator: Aman <amanpreet.alam@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pa\n"
@@ -11,8 +11,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1) ;\n"
-"X-Generator: Translate Toolkit 1.9.0\n"
-"X-POOTLE-MTIME: 1399557812.0\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1403990473.0\n"
 
 #: public/js/lib/cancel.js:33
 msgid "Payment cancelled."
@@ -170,7 +170,7 @@ msgstr "ਭੁਗਤਾਨ ਜਾਂਚ ਜਾਰੀ"
 #: public/js/lib/auth.js:29
 #: public/js/lib/auth.js:30
 msgid "Retrying"
-msgstr ""
+msgstr "ਮੁੜ-ਕੋਸ਼ਿਸ਼ ਜਾਰੀ"
 
 #: public/js/lib/auth.js:64
 #, fuzzy

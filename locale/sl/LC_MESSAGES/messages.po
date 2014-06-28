@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-05-23 12:05+0000\n"
-"PO-Revision-Date: 2014-06-27 13:44+0000\n"
+"PO-Revision-Date: 2014-06-28 15:47+0000\n"
 "Last-Translator: Matjaž <m@owca.info>\n"
 "Language-Team: none\n"
 "Language: sl\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
 "n%100==4 ? 2 : 3);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1403876655.0\n"
+"X-POOTLE-MTIME: 1403970444.0\n"
 
 #: public/js/lib/cancel.js:33
 msgid "Payment cancelled."
@@ -63,7 +63,7 @@ msgstr ""
 
 #: templates/error.html:27
 msgid "OK"
-msgstr ""
+msgstr "V redu"
 
 #: public/js/views/error.js:44 public/js/views/locked.js:23
 msgid "Error"

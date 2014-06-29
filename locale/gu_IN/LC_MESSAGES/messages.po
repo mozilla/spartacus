@@ -1,0 +1,204 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-23 12:05+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: gu_IN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.9.0\n"
+
+#: public/js/lib/cancel.js:33
+msgid "Payment cancelled."
+msgstr ""
+
+#: public/js/views/create-pin.js:105
+#: templates/error.html:20
+#: templates/pin-form.html:26
+msgid "Cancel"
+msgstr ""
+
+#: public/js/lib/pin-widget.js:58
+msgid "PIN can only contain digits."
+msgstr ""
+
+#: webpay/base/templates/base.html:30
+msgid "You logged in as a different user, you must start the payment again."
+msgstr ""
+
+#: public/js/views/throbber.js:15
+#: public/js/views/throbber.js:16
+#: templates/throbber.html:7
+msgid "Loading"
+msgstr ""
+
+#: webpay/base/templates/base.html:32
+msgid "Beginning payment"
+msgstr ""
+
+#: public/js/views/login.js:19
+msgid "Connecting to Persona"
+msgstr ""
+
+#: webpay/base/templates/base.html:34
+msgid "Payment complete"
+msgstr ""
+
+#: public/js/lib/auth.js:22
+msgid "Oops"
+msgstr ""
+
+#: public/js/lib/auth.js:65
+msgid "This is taking longer than expected. Try again?"
+msgstr ""
+
+#: public/js/lib/auth.js:19
+msgid "Something went wrong. Try again?"
+msgstr ""
+
+#: templates/error.html:27
+msgid "OK"
+msgstr ""
+
+#: public/js/views/error.js:44
+#: public/js/views/locked.js:23
+msgid "Error"
+msgstr ""
+
+#: public/js/views/enter-pin.js:96
+#: public/js/views/enter-pin.js:100
+msgid "Enter PIN"
+msgstr ""
+
+#: public/js/views/login.js:25
+#: templates/login.html:5
+msgid "Sign In"
+msgstr ""
+
+#: templates/login.html:6
+msgid "Sign in to continue with the payment"
+msgstr ""
+
+#: templates/login.html:7
+msgid "Sign in"
+msgstr ""
+
+#: public/js/views/create-pin.js:106
+#: public/js/views/create-pin.js:113
+#: public/js/views/reset-pin.js:64
+#: templates/reset-start.html:12
+#: templates/was-locked.html:12
+msgid "Continue"
+msgstr ""
+
+#: public/js/views/enter-pin.js:73
+msgid "Wrong PIN"
+msgstr ""
+
+#: public/js/views/create-pin.js:48
+msgid "PINs do not match."
+msgstr ""
+
+#: webpay/pin/views.py:46
+#: webpay/testing/views.py:25
+msgid "Create a PIN"
+msgstr ""
+
+#: webpay/pin/views.py:68
+#: webpay/pin/views.py:185
+#: public/js/views/create-pin.js:36
+msgid "Confirm PIN"
+msgstr ""
+
+#: webpay/pin/views.py:131
+#: webpay/pin/views.py:157
+#: webpay/pin/templates/pin/pin_was_locked.html:13
+#: public/js/views/reset-pin.js:65
+#: public/js/views/reset-pin.js:68
+#: templates/was-locked.html:11
+msgid "Reset PIN"
+msgstr ""
+
+#. This is the same as the standard forgot
+#. password that most sites have.
+#: templates/pin-form.html:18
+#: templates/reset-start.html:6
+msgid "Forgot your PIN?"
+msgstr ""
+
+#: public/js/views/locked.js:24
+msgid ""
+"You entered the wrong PIN too many times. Your account is locked. Please "
+"try your purchase again in 5 minutes."
+msgstr ""
+
+#: templates/was-locked.html:6
+msgid "Your PIN was locked"
+msgstr ""
+
+#: templates/was-locked.html:7
+msgid ""
+"Your PIN was locked because you entered it incorrectly too many times. You "
+"can continue and try entering your PIN again or reset your PIN."
+msgstr ""
+
+#: templates/reset-start.html:7
+msgid ""
+"Are you sure you want to reset your PIN? You must sign in to Persona to "
+"reset your PIN."
+msgstr ""
+
+#: webpay/provider/templates/provider/wait-to-finish.html:6
+#: webpay/provider/templates/provider/wait-to-finish.html:12
+msgid "Verifying payment"
+msgstr ""
+
+#: public/js/lib/auth.js:29
+#: public/js/lib/auth.js:30
+msgid "Retrying"
+msgstr ""
+
+#: public/js/lib/auth.js:64
+msgid "That took longer than expected. Retry?"
+msgstr ""
+
+#: public/js/views/create-pin.js:37
+#: templates/reset-start.html:11
+msgid "Back"
+msgstr ""
+
+#: public/js/views/create-pin.js:38
+#: public/js/views/enter-pin.js:95
+msgid "Submit"
+msgstr ""
+
+#: public/js/views/create-pin.js:66
+#: public/js/views/enter-pin.js:60
+#: public/js/views/reset-pin.js:28
+msgid "Retry?"
+msgstr ""
+
+#: public/js/views/create-pin.js:114
+#: public/js/views/create-pin.js:116
+msgid "Create PIN"
+msgstr ""
+
+#: public/js/views/error.js:45
+msgid "Something went wrong."
+msgstr ""
+
+#: public/js/views/reset-start.js:29
+msgid "Reset your PIN?"
+msgstr ""
+
+#: public/js/views/was-locked.js:13
+msgid "Was Locked"
+msgstr ""
+
+#: public/js/views/wait-for-tx.js:10
+msgid "Setting up payment"
+msgstr ""

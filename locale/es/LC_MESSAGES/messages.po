@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-05-23 12:05+0000\n"
-"PO-Revision-Date: 2014-05-12 18:45+0000\n"
-"Last-Translator: Daniel <danielscott171@gmail.com>\n"
+"PO-Revision-Date: 2014-06-29 19:33+0000\n"
+"Last-Translator: Ricardo <rpmdisguise-otros@yahoo.es>\n"
 "Language-Team: none\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1399920321.0\n"
+"X-POOTLE-MTIME: 1404070397.0\n"
 
 #: public/js/lib/cancel.js:33
 msgid "Payment cancelled."
@@ -157,44 +157,40 @@ msgstr "Comprobando pago"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30
 msgid "Retrying"
-msgstr ""
+msgstr "Reintentando"
 
 #: public/js/lib/auth.js:64
-#, fuzzy
 msgid "That took longer than expected. Retry?"
-msgstr "Está tardando más de lo esperado. ¿Probamos de nuevo?"
+msgstr "Está tardando más de lo esperado. ¿Volver a intentar?"
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11
 msgid "Back"
-msgstr ""
+msgstr "Atrás"
 
 #: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95
 msgid "Submit"
-msgstr ""
+msgstr "Enviar"
 
 #: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60
 #: public/js/views/reset-pin.js:28
 msgid "Retry?"
-msgstr ""
+msgstr "¿Volver a intentar?"
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
-#, fuzzy
 msgid "Create PIN"
-msgstr "Crear un PIN"
+msgstr "Crear un código PIN"
 
 #: public/js/views/error.js:45
-#, fuzzy
 msgid "Something went wrong."
 msgstr "Algo no salió bien."
 
 #: public/js/views/reset-start.js:29
-#, fuzzy
 msgid "Reset your PIN?"
-msgstr "Restablecer PIN"
+msgstr "¿Restablecer tu código PIN?"
 
 #: public/js/views/was-locked.js:13
 msgid "Was Locked"
-msgstr ""
+msgstr "Estaba bloqueado"
 
 #: public/js/views/wait-for-tx.js:10
 msgid "Setting up payment"

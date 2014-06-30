@@ -1,4 +1,8 @@
-define(['jquery'], function($) {
+define([
+  'jquery',
+  'settings',
+  'underscore'
+], function($, settings, _) {
 
   'use strict';
 
@@ -44,7 +48,22 @@ define(['jquery'], function($) {
           args = Array.prototype.slice.call(arguments, 1);
         return s.replace(re, function(_, match){ return args[match]; });
       };
-    })()
+    })(),
+    checkURL: function(url, options) {
+      options = options || {};
+      var validSchemes = options.validSchemes || settings.validSchemes;
+      var validHosts = options.validHosts || settings.validHosts;
+      if (url && _.isArray(validSchemes) && _.isArray(validHosts)) {
+        // Always allow urls that match window.location.hostname.
+        validHosts.push(window.location.hostname);
+        var a = document.createElement('a');
+        a.href = url;
+        var scheme = a.protocol.replace(':','');
+        var hostname = a.hostname;
+        return validSchemes.indexOf(scheme) > -1 && validHosts.indexOf(hostname) > -1;
+      }
+      return false;
+    }
   };
 });
 

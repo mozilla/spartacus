@@ -6,4 +6,11 @@ module.exports = {
   useMinCSS: true,
   useMinJS: true,
   showClientConsole: true,
+  appSettingsOverrides: JSON.stringify({
+    validRedirSites: [
+      'http://mozilla.bango.net',
+      'https://zippy.pass.allizom.org',
+      'http://localhost'
+    ]
+  })
 };

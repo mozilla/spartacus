@@ -12,7 +12,7 @@ define([
 
   var PageView = BaseView.extend({
 
-    personaCalledBack: null,
+    personaCalledBack: false,
 
     initialize: function() {
       console.log('Page initialize');

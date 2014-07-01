@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-05-23 12:05+0000\n"
-"PO-Revision-Date: 2014-05-07 12:25-0400\n"
+"PO-Revision-Date: 2014-06-30 20:33-0400\n"
 "Last-Translator: Kohei Yoshino <kohei.yoshino@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -155,44 +155,40 @@ msgstr "決済を検証しています"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30
 msgid "Retrying"
-msgstr ""
+msgstr "再試行中"
 
 #: public/js/lib/auth.js:64
-#, fuzzy
 msgid "That took longer than expected. Retry?"
 msgstr "通常よりもこの処理に時間が掛かっています。再度試しますか？"
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11
 msgid "Back"
-msgstr ""
+msgstr "戻る"
 
 #: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95
 msgid "Submit"
-msgstr ""
+msgstr "送信"
 
 #: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60
 #: public/js/views/reset-pin.js:28
 msgid "Retry?"
-msgstr ""
+msgstr "再度試しますか？"
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
-#, fuzzy
 msgid "Create PIN"
 msgstr "暗証番号を登録"
 
 #: public/js/views/error.js:45
-#, fuzzy
 msgid "Something went wrong."
 msgstr "何か問題が発生しました。"
 
 #: public/js/views/reset-start.js:29
-#, fuzzy
 msgid "Reset your PIN?"
-msgstr "暗証番号をリセット"
+msgstr "暗証番号をリセットしますか？"
 
 #: public/js/views/was-locked.js:13
 msgid "Was Locked"
-msgstr ""
+msgstr "ロックされました"
 
 #: public/js/views/wait-for-tx.js:10
 msgid "Setting up payment"

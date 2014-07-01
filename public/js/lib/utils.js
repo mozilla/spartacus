@@ -1,12 +1,14 @@
 define([
+  'i18n-abide-utils',
   'jquery',
   'settings',
   'underscore'
-], function($, settings, _) {
+], function(i18n, $, settings, _) {
 
   'use strict';
 
   var $body = $('body');
+  var gettext = i18n.gettext;
 
   return {
     $body: $body,
@@ -19,7 +21,26 @@ define([
     decodeURIComponent: function decodeURIComponent(uri) {
       return window.decodeURIComponent(uri.replace(/\+/g, ' '));
     },
-    mozPaymentProvider: window.mozPaymentProvider || {},
+    mozPaymentProvider: window.mozPaymentProvider || {
+      paymentSuccess: window.paymentSuccess || function() {
+        console.log('No paymentSuccess function');
+        app.error.render({
+          context: {
+            errorCode: 'NO_PAY_SUCCESS_FUNC',
+            msg: gettext('This looks to have completed successfully but you have no native paymentSuccess func.')
+          },
+        });
+      },
+      paymentFailed: window.paymentFailed || function() {
+        console.log('No paymentFailed function');
+        app.error.render({
+          context: {
+            errorCode: 'NO_PAY_FAILED_FUNC',
+            msg: gettext("This transaction has been cancelled. No paymentFailed function exists so can't call it,")
+          },
+        });
+      },
+    },
     trackClick: function() {
       console.log('trackClick');
       // TODO: Add real functionality here.

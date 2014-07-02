@@ -17,10 +17,9 @@ define([
       if (typeof statusPending !== 'undefined') {
         wait.startWaiting(statusPending);
       } else {
-        app.error.render({
+        return app.error.render({
           context: {
             errorCode: 'STATUS_PENDING_UNDEF',
-            msg: this.gettext('Pending status has not been set as a data attr. Aborting.')
           },
         });
       }

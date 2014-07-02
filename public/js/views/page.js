@@ -61,8 +61,8 @@ define([
         app.router.showLogin();
       } else if (value === true) {
         // If we're on the wait-to-finish route, show it.
-        if (app.router.current().name === 'showWaitToFinish') {
-          app.router.showWaitToFinish();
+        if (app.router.current().name === 'showCompletePayment') {
+          app.router.showCompletePayment();
         // Otherwise we're now needing to check the app state
         // and hand-off to the right view.
         } else {

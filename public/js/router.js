@@ -1,6 +1,7 @@
 define([
   'backbone',
   'underscore',
+  'views/complete-payment',
   'views/create-pin',
   'views/enter-pin',
   'views/force-auth',
@@ -9,12 +10,12 @@ define([
   'views/login',
   'views/reset-pin',
   'views/reset-start',
-  'views/wait-to-finish',
   'views/wait-to-start',
   'views/was-locked'
 ], function(
   Backbone,
   _,
+  CompletePaymentView,
   CreatePinView,
   EnterPinView,
   ForceAuthView,
@@ -23,7 +24,6 @@ define([
   LoginView,
   ResetPinView,
   ResetStartView,
-  WaitToFinishView,
   WaitToStartView,
   WasLockedView
 ){
@@ -48,7 +48,7 @@ define([
       'spa/reset-start': 'showResetStart',
       'spa/locked': 'showLocked',
       'spa/was-locked': 'showWasLocked',
-      'spa/provider/:provider/wait-to-finish': 'showWaitToFinish',
+      'spa/provider/:provider/complete-payment': 'showCompletePayment',
       'spa/wait-to-start': 'showWaitToStart',
     },
 
@@ -111,8 +111,9 @@ define([
       this.viewManager.renderView(ResetStartView);
     },
 
-    showWaitToFinish: function() {
-      this.viewManager.renderView(WaitToFinishView);
+    showCompletePayment: function(provider) {
+      var options = {params: {provider: provider}};
+      this.viewManager.renderView(CompletePaymentView, options);
     },
 
     showWaitToStart: function() {

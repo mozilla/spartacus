@@ -1,7 +1,7 @@
 var helpers = require('../helpers');
 
 helpers.startCasper({
-  path: '/mozpay/spa/provider/boku/wait-to-finish',
+  path: '/mozpay/spa/provider/boku/complet-payment',
   sinon: {
     consumeStack: true
   },
@@ -20,7 +20,7 @@ helpers.startCasper({
   },
 });
 
-casper.test.begin('Check wait-to-finish polling timeout followed by retry.', {
+casper.test.begin('Check complete-payment polling timeout followed by retry.', {
   test: function(test) {
 
     // The expectation here is that the user should be logged in already.
@@ -30,7 +30,7 @@ casper.test.begin('Check wait-to-finish polling timeout followed by retry.', {
 
     casper.waitForSelector('.throbber', function() {
       // Progress will be shown as we are returning a non-pending state for the first 2 requests.
-      test.assertVisible('progress', 'Check progress is shown on wait-to-finish');
+      test.assertVisible('progress', 'Check progress is shown on complete-payment');
     });
 
     casper.waitForSelector('.full-error', function() {
@@ -39,7 +39,7 @@ casper.test.begin('Check wait-to-finish polling timeout followed by retry.', {
     });
 
     casper.waitForSelector('.throbber', function() {
-      test.assertVisible('progress', 'Check progress is shown on wait-to-finish');
+      test.assertVisible('progress', 'Check progress is shown on complete-payment');
     });
 
     casper.waitForSelector('.full-error', function() {

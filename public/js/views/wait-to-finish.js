@@ -16,10 +16,9 @@ define([
       if (typeof statusCompleted !== 'undefined') {
         wait.startWaiting(statusCompleted);
       } else {
-        app.error.render({
+        return app.error.render({
           context: {
             errorCode: 'STATUS_COMPLETE_UNDEF',
-            msg: this.gettext('Complete status has not been set as a data attr. Aborting.')
           },
         });
       }

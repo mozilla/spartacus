@@ -92,11 +92,6 @@ define([
                           'label': 'Closing Pay Flow'});
       }
 
-      var paymentSuccess = (utils.mozPaymentProvider.paymentSuccess ||
-                            window.paymentSuccess);
-      var paymentFailed = (utils.mozPaymentProvider.paymentFailed ||
-                           window.paymentFailed);
-
       if (data.status === expectedStatus) {
         // This wait screen can be used in different contexts.
         // If we are finishing or beginning the pay flow,
@@ -105,22 +100,12 @@ define([
         if (data.url) {
           utils.trackEvent({'action': 'payment',
                             'label': 'Redirect To Pay Flow'});
-          console.log('transaction completed; redirect to ' + data.url);
+          console.log('transaction found; redirect to ' + data.url);
           window.location = data.url;
         } else {
           console.log('transaction completed; closing pay flow');
           trackClosePayFlow();
-          if (paymentSuccess) {
-            paymentSuccess();
-          } else {
-            console.log('No paymentSuccess function');
-            app.error.render({
-              context: {
-                errorCode: 'NO_PAY_SUCCESS_FUNC',
-                msg: gettext('This looks to have completed successfully but you have no native paymentSuccess func.')
-              },
-            });
-          }
+          utils.mozPaymentProvider.paymentSuccess();
         }
       } else if (data.status === utils.bodyData.transStatusFailed) {
         clear();
@@ -139,17 +124,7 @@ define([
         trackClosePayFlow();
         // This string is used to determine the message on Marketplace;
         // change it at your peril.
-        if (paymentFailed) {
-          paymentFailed('USER_CANCELLED');
-        } else {
-          app.error.render({
-            context: {
-              errorCode: 'NO_PAY_FAILED_FUNC',
-              msg: gettext("This transaction has been cancelled. No paymentFailed function exists so can't call it,")
-            },
-          });
-        }
-
+        utils.mozPaymentProvider.paymentFailed('USER_CANCELLED');
       } else {
         // The transaction is in some kind of incomplete state.
         console.log('[wait] transaction status: ' + data.status +'; expecting: ' + expectedStatus);

@@ -19,7 +19,24 @@ define([
     decodeURIComponent: function decodeURIComponent(uri) {
       return window.decodeURIComponent(uri.replace(/\+/g, ' '));
     },
-    mozPaymentProvider: window.mozPaymentProvider || {},
+    mozPaymentProvider: window.mozPaymentProvider || {
+      paymentSuccess: window.paymentSuccess || function() {
+        console.error('No paymentSuccess function');
+        app.error.render({
+          context: {
+            errorCode: 'NO_PAY_SUCCESS_FUNC',
+          },
+        });
+      },
+      paymentFailed: window.paymentFailed || function() {
+        console.error('No paymentFailed function');
+        app.error.render({
+          context: {
+            errorCode: 'NO_PAY_FAILED_FUNC',
+          },
+        });
+      },
+    },
     trackClick: function() {
       console.log('trackClick');
       // TODO: Add real functionality here.

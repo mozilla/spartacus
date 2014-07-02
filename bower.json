@@ -19,6 +19,7 @@
   ],
   "dependencies": {
     "backbone": "~1.1.2",
+    "fastclick": "~1.0.2",
     "gobbledygook": "https://github.com/muffinresearch/gobbledygook.git#bowerise",
     "mp-fonts-stylus": "https://github.com/muffinresearch/mp-fonts-stylus.git",
     "normalize-css": "~3.0.0",
@@ -30,14 +31,17 @@
     "backbone": {
       "js": "backbone.js"
     },
-    "jquery": {
-      "js": "jquery.js"
-    },
     "chai": {
       "js": "chai.js"
     },
+    "fastclick": {
+      "js": "lib/fastclick.js"
+    },
     "gobbledygook": {
       "js": "gobbledygook.js"
+    },
+    "jquery": {
+      "js": "jquery.js"
     },
     "mocha": {
       "js": "mocha.js",
@@ -49,6 +53,9 @@
     "nunjucks": {
       "js": "browser/nunjucks-slim.js"
     },
+    "query-string": {
+      "js": "query-string.js"
+    },
     "requirejs": {
       "js": "require.js"
     },
@@ -57,9 +64,6 @@
     },
     "underscore": {
       "js": "underscore.js"
-    },
-    "query-string": {
-      "js": "query-string.js"
     }
   },
   "devDependencies": {

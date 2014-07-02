@@ -15,6 +15,7 @@
       'auth': 'lib/auth',
       'backbone': '../lib/js/backbone/backbone',
       'cancel': 'lib/cancel',
+      'fastclick': '../lib/js/fastclick/fastclick',
       'gobbledygook': '../lib/js/gobbledygook/gobbledygook',
       'i18n-abide-utils': '../lib/js/i18n-abide-utils/i18n-abide-utils',
       'i18n': 'lib/i18n',

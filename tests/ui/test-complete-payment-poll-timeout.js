@@ -1,7 +1,7 @@
 var helpers = require('../helpers');
 
 helpers.startCasper({
-  path: '/mozpay/spa/provider/boku/complet-payment',
+  path: '/mozpay/spa/provider/boku/complete-payment',
   sinon: {
     consumeStack: true
   },

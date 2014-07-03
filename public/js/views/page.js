@@ -60,9 +60,10 @@ define([
         console.log('Displaying login view.');
         app.router.showLogin();
       } else if (value === true) {
-        // If we're on the wait-to-finish route, show it.
-        if (app.router.current().name === 'showCompletePayment') {
-          app.router.showCompletePayment();
+        // If we're on the complete-payment route, show it.
+        var currentRoute = app.router.current();
+        if (currentRoute.name === 'showCompletePayment') {
+          app.router.showCompletePayment.apply(app.router, currentRoute.params);
         // Otherwise we're now needing to check the app state
         // and hand-off to the right view.
         } else {

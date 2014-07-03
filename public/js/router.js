@@ -82,6 +82,11 @@ define([
       this.viewManager.renderView(InitView);
     },
 
+    showCompletePayment: function(provider) {
+      var options = {params: {provider: provider}};
+      this.viewManager.renderView(CompletePaymentView, options);
+    },
+
     showCreatePin: function() {
       this.viewManager.renderView(CreatePinView);
     },
@@ -109,11 +114,6 @@ define([
 
     showResetStart: function() {
       this.viewManager.renderView(ResetStartView);
-    },
-
-    showCompletePayment: function(provider) {
-      var options = {params: {provider: provider}};
-      this.viewManager.renderView(CompletePaymentView, options);
     },
 
     showWaitToStart: function() {

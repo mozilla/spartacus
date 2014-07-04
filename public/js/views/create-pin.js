@@ -61,11 +61,9 @@ define([
           console.log('Request timed out');
           utils.trackEvent({'action': pinCreateAction,
                             'label': 'Pin Create API Call Timed Out'});
-          app.error.render({
-            context: {
-              ctaText: that.gettext('Retry?'),
-              errorCode: 'CREATE_PIN_TIMEOUT'
-            },
+          return app.error.render({
+            ctaText: that.gettext('Retry?'),
+            errorCode: 'PIN_CREATE_TIMEOUT',
             ctaCallback: function(e){
               e.preventDefault();
               that.submitData(pinData);
@@ -76,22 +74,22 @@ define([
           console.log('Pin data invalid');
           utils.trackEvent({'action': pinCreateAction,
                             'label': 'Pin Create API Call Invalid Form Data'});
-          app.error.render({context: {errorCode: 'PIN_CREATE_INVALID'}});
+          return app.error.render({errorCode: 'PIN_CREATE_INVALID'});
         } else if ($xhr.status === 403) {
           console.log('User not authenticated');
           utils.trackEvent({'action': pinCreateAction,
                             'label': 'Pin Create API Call Permission Denied'});
-          app.error.render({context: {errorCode: 'PIN_CREATE_PERM_DENIED'}});
+          return app.error.render({errorCode: 'PIN_CREATE_PERM_DENIED'});
         } else if ($xhr.status === 404) {
           console.log("User doesn't exist");
           utils.trackEvent({'action': pinCreateAction,
                             'label': "Pin Create API Call User Doesn't exist"});
-          app.error.render({context: {errorCode: 'PIN_CREATE_USER_DOES_NOT_EXIST'}});
+          return app.error.render({errorCode: 'PIN_CREATE_NO_USER'});
         } else {
           console.log("Unhandled error");
           utils.trackEvent({'action': pinCreateAction,
                             'label': "Pin Create API Call Unhandled error"});
-          app.error.render({context: {errorCode: 'PIN_CREATE_UNHANDLED_ERROR'}});
+          return app.error.render({errorCode: 'PIN_CREATE_ERROR'});
         }
       });
       return req;

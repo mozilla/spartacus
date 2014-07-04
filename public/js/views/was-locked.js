@@ -23,7 +23,7 @@ define([
       } else {
         utils.trackEvent({action: 'was-locked',
                           label: 'Unexpected state'});
-        app.error.render({'context': {'errorCode': 'UNEXPECTED_STATE'}});
+        return app.error.render({'errorCode': 'UNEXPECTED_STATE'});
       }
     },
 

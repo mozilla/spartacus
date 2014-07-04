@@ -2,9 +2,10 @@
 // That sits in it's own container.
 define([
   'cancel',
+  'error-codes',
   'log',
   'views/base'
-], function(cancel, log, BaseView){
+], function(cancel, errorCodes, log, BaseView){
 
   'use strict';
 
@@ -25,25 +26,43 @@ define([
     },
 
     render: function(options){
-      this.close();
       options = options || {};
+
+      this.close();
       this.$el.empty();
       this.delegateEvents(this.events);
 
       if (window.app && app.throbber) {
         app.throbber.close();
       }
-      var context = options.context || {};
+
+      var errorCode = options.errorCode;
+      var msg = options.msg;
       var template = options.template || 'error.html';
 
-      // Default to showing the cancel button.
-      context.showCancel = options.showCancel === false ? false : true;
-      // Default to showing not the call to action button.
-      context.showCta = options.showCta || false;
+      if (!msg && errorCode) {
+        msg = errorCodes[errorCode];
+      }
 
-      // Add default heading + msg.
-      context.heading = context.heading || this.gettext('Error');
-      context.msg = context.msg || this.gettext('Something went wrong.');
+      var context = {
+        // The call to action button text.
+        ctaText: options.ctaText,
+        // The cancelText for the cancel button.
+        cancelText: options.cancelText,
+        // The error code to display.
+        errorCode: errorCode,
+        // Add default heading + msg.
+        heading: options.heading || this.gettext('Error'),
+        // Use passed-in msg / or errorCode message / or default.
+        msg: msg || this.gettext('Something went wrong.'),
+        // The page class for the error message.
+        pageclass: options.pageclass,
+        // Default to showing the cancel button.
+        showCancel: options.showCancel === false ? false : true,
+        // Default to showing not the call to action button.
+        showCta: options.showCta || false,
+      };
+
       console.log(JSON.stringify(context));
 
       this.setTitle(context.heading);
@@ -68,7 +87,6 @@ define([
       // Make it so!
       console.log('Rendering Error template');
       this.renderTemplate(template, context);
-      return this;
     }
 
   });

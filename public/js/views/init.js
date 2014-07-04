@@ -27,7 +27,7 @@ define([
       } else {
         utils.trackEvent({action: 'extract jwt before login',
                           label: 'Invalid or missing JWT'});
-        app.error.render({context: {'errorCode': 'INVALID_JWT'}});
+        return app.error.render({'errorCode': 'MISSING_JWT'});
       }
     }
 

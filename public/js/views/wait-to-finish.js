@@ -16,11 +16,7 @@ define([
       if (typeof statusCompleted !== 'undefined') {
         wait.startWaiting(statusCompleted);
       } else {
-        return app.error.render({
-          context: {
-            errorCode: 'STATUS_COMPLETE_UNDEF',
-          },
-        });
+        return app.error.render({errorCode: 'STATUS_COMPLETE_UNDEF'});
       }
       return this;
     }

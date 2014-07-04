@@ -26,7 +26,7 @@ casper.test.begin('Create pin timeout then success.', {
     });
 
     casper.waitForSelector('.full-error', function() {
-      helpers.assertErrorCode('CREATE_PIN_TIMEOUT');
+      helpers.assertErrorCode('PIN_CREATE_TIMEOUT');
       test.assertVisible('.button.cta', 'CTA buttons should be visible');
       test.assertVisible('.button.cancel', 'Cancel button should be visible');
       helpers.fakePinData({data: {pin: true}, method: 'POST', statusCode: 204});

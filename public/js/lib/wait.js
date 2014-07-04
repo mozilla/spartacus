@@ -46,11 +46,7 @@ define([
       utils.trackEvent({'action': 'payment',
                         'label': 'Transaction Failed to be found'});
       app.throbber.close();
-      app.error.render({
-        context: {
-          errorCode: 'TRANS_NOT_FOUND'
-        },
-      });
+      return app.error.render({errorCode: 'TRANS_NOT_FOUND'});
     }, settings.wait_timeout);
   }
 
@@ -72,13 +68,7 @@ define([
     }
 
     if (!startUrl) {
-      app.error.render({
-        context: {
-          errorCode: 'WAIT_URL_NOT_SET',
-          msg: gettext('No wait URL has been set. Aborting.')
-        },
-      });
-      return;
+      return app.error.render({errorCode: 'WAIT_URL_NOT_SET'});
     }
 
     request = $.ajax({
@@ -111,12 +101,7 @@ define([
         clear();
         app.throbber.close();
         console.log('transaction failed');
-        app.error.render({
-          context: {
-            errorCode: 'TRANS_FAILED',
-            msg: gettext('The transaction failed. You have not been charged for this purchase.')
-          },
-        });
+        return app.error.render({errorCode: 'TRANS_FAILED'});
 
       } else if (data.status === utils.bodyData.transStatusCancelled) {
         clear();
@@ -142,11 +127,9 @@ define([
         utils.trackEvent({'action': 'payment',
                           'label': 'Transaction Request Timed Out'});
         app.throbber.close();
-        app.error.render({
-          context: {
-            ctaText: gettext('Retry?'),
-            errorCode: 'TRANS_TIMEOUT'
-          },
+        return app.error.render({
+          ctaText: gettext('Retry?'),
+          errorCode: 'TRANS_TIMEOUT',
           ctaCallback: function(e){
             e.preventDefault();
             startWaiting(expectedStatus);

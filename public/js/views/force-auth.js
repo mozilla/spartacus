@@ -43,11 +43,9 @@ define([
         window.clearTimeout(this.forceAuthTimer);
       }
 
-      app.error.render({
-        context: {
-          ctaText: that.gettext('Retry?'),
-          errorCode: 'REAUTH_LOGIN_TIMEOUT'
-        },
+      return app.error.render({
+        ctaText: that.gettext('Retry?'),
+        errorCode: 'REAUTH_LOGIN_TIMEOUT',
         ctaCallback: function(e) {
           e.preventDefault();
           that.forceReAuthentication();

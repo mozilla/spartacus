@@ -71,7 +71,7 @@ define(['jquery', 'log', 'underscore', 'utils'], function($, log, _, utils) {
     prepareAll: function(userHash) {
 
       if (!userHash) {
-        app.error.render({context: {errorCode: 'USER_HASH_EMPTY'}});
+        app.error.render({errorCode: 'USER_HASH_EMPTY'});
         return $.Deferred().reject();
       }
 
@@ -126,7 +126,7 @@ define(['jquery', 'log', 'underscore', 'utils'], function($, log, _, utils) {
       return req;
     } else {
       console.error('Bango logout url missing');
-      app.error.render({'context': {'errorCode': 'LOGOUT_URL_MISSING'}});
+      app.error.render({errorCode: 'LOGOUT_URL_MISSING'});
       return $.Deferred().reject();
     }
   };

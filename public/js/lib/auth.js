@@ -60,15 +60,29 @@ define([
     console.log(reqConfig.url);
 
     var req = $.ajax(reqConfig);
-    req.done(function() {
+    req.done(function(data) {
       console.log(prefix + ' success');
       utils.trackEvent({'action': 'persona login',
                         'label': prefix + ' Success'});
+      app.session.set('user_hash', data.user_hash);
       if (reverify === true) {
         // Set logged_in and manually direct to reset-pin which is
         // implied having successfully carried out a re-auth.
         app.session.set('logged_in', true, {silent: true});
-        app.router.navigate('spa/reset-pin', {trigger: true});
+        // provider (boku/bango/reference) was set when transaction was created.
+        // Therefore we should just be able to get it and use
+        // it to run the provider preparation ahead of the reset.
+        var providerName = app.transaction.get('provider');
+        if (providerName) {
+          var Provider = provider.providerFactory(providerName);
+          Provider.prepareAll(data.user_hash).done(function() {
+            app.router.navigate('spa/reset-pin', {trigger: true});
+          });
+        } else {
+          utils.trackEvent({'action': 'persona login',
+                            'label': prefix + ' Missing Provider'});
+          app.error.render({context: {errorCode: 'MISSING_PROVIDER'}});
+        }
       } else {
         // Setting the attr will cause the listeners
         // to deal with login success.

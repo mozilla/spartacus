@@ -236,7 +236,8 @@ function fakeVerification(options) {
           'status': statusData,
           'audience': 'http://localhost',
           'expires': Date.now(),
-          'issuer': 'fake-persona'
+          'issuer': 'fake-persona',
+          'user_hash': 'test-hash'
         })]);
     }, statusCode, statusData, url);
   }
@@ -304,9 +305,11 @@ function fakeStartTransaction(options) {
     clientTimeoutResponse('POST', '/mozpay/v1/api/pay/');
   } else {
     casper.echo('Setting up successful transaction start response', 'INFO');
-    casper.evaluate(function(statusCode) {
-      window.server.respondWith('POST', '/mozpay/v1/api/pay/', [statusCode, {'Content-Type': 'application/json'}, '{}']);
-    }, options.statusCode || 201);
+    var data = JSON.stringify(options.data || {provider: "boku"});
+    casper.evaluate(function(statusCode, data) {
+      window.server.respondWith('POST', '/mozpay/v1/api/pay/', [statusCode, {'Content-Type': 'application/json'}, data]);
+
+    }, options.statusCode || 201, data);
   }
 }
 

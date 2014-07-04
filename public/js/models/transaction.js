@@ -16,6 +16,7 @@ define([
 
     defaults: {
       jwt: null,
+      provider: null
     },
 
     initialize: function() {

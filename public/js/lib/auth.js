@@ -16,15 +16,11 @@ define([
   function showRetryError(options) {
     var errCode = options.errCode;
     var assertion = options.assertion;
-    var msg = options.msg || gettext('Something went wrong. Try again?');
     var reverify = options.reverify || false;
 
     app.error.render({
-      context: {
-        heading: gettext('Oops'),
-        errorCode: errCode,
-        msg: msg,
-      },
+      heading: gettext('Oops'),
+      errorCode: errCode,
       ctaCallback: function(e){
         e.preventDefault();
         app.error.close();
@@ -45,8 +41,7 @@ define([
 
     if (!url) {
       console.log('Error: No url. Please set one. Bailing out!');
-      app.error.render({context: {errorCode: 'MISSING_' + prefixUC + '_URL'}});
-      return;
+      return app.error.render({errorCode: prefixUC + '_MISSING_URL'});
     }
 
     console.log(prefix + 'ing assertion');
@@ -81,7 +76,7 @@ define([
         } else {
           utils.trackEvent({'action': 'persona login',
                             'label': prefix + ' Missing Provider'});
-          app.error.render({context: {errorCode: 'MISSING_PROVIDER'}});
+          return app.error.render({errorCode: 'MISSING_PROVIDER'});
         }
       } else {
         // Setting the attr will cause the listeners
@@ -95,7 +90,7 @@ define([
         console.log('login timed out');
         utils.trackEvent({'action': 'persona login',
                           'label': prefix + ' Timed Out'});
-        showRetryError({
+        return showRetryError({
           assertion: assertion,
           errCode: prefixUC + '_TIMEOUT',
           msg: gettext('This is taking longer than expected. Try again?'),
@@ -105,12 +100,12 @@ define([
         console.log('permission denied after auth');
         utils.trackEvent({'action': 'persona login',
                           'label': prefix + ' Permission Denied'});
-        app.error.render({context: {errorCode: prefixUC + '_DENIED'}});
+        return app.error.render({errorCode: prefixUC + '_DENIED'});
       } else {
         console.log('login error');
         utils.trackEvent({'action': 'persona login',
                           'label': prefix + ' Failed'});
-        showRetryError({
+        return showRetryError({
           assertion: assertion,
           errCode: prefixUC + '_FAILED',
           reverify: reverify,

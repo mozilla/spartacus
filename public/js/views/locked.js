@@ -17,13 +17,11 @@ define([
 
       // The locked view is just a specialized error message.
       app.error.render({
-        context: {
-          pageclass: 'full-error locked',
-          heading: this.gettext('Error'),
-          msg: this.gettext('You entered the wrong PIN too many times. Your account is locked. Please try your purchase again in 5 minutes.'),
-          errorCode: 'PIN_LOCKED',
-          cancelText: this.gettext('OK')
-        }
+        pageclass: 'full-error locked',
+        heading: this.gettext('Error'),
+        msg: this.gettext('You entered the wrong PIN too many times. Your account is locked. Please try your purchase again in 5 minutes.'),
+        errorCode: 'PIN_LOCKED',
+        cancelText: this.gettext('OK')
       });
 
       return this;

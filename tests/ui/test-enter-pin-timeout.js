@@ -22,7 +22,7 @@ casper.test.begin('Enter pin timeout then success', {
     });
 
     casper.waitForSelector('.full-error', function() {
-      helpers.assertErrorCode('ENTER_PIN_TIMEOUT');
+      helpers.assertErrorCode('PIN_ENTER_TIMEOUT');
       test.assertVisible('.button.cta', 'CTA buttons should be visible');
       test.assertVisible('.button.cancel', 'Cancel button should be visible');
       helpers.fakePinData({data: {pin: true}, method: 'POST', statusCode: 200, url:'/mozpay/v1/api/pin/check/'});

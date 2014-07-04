@@ -76,8 +76,7 @@ define([
       } else {
         utils.trackEvent({'action': 'forgot pin',
                             'label': 'Missing Provider'});
-        app.error.render({context: {errorCode: 'MISSING_PROVIDER'}});
-        return;
+        return app.error.render({errorCode: 'MISSING_PROVIDER'});
       }
 
       var authResetUser = auth.resetUser();
@@ -114,11 +113,9 @@ define([
           utils.trackEvent({'action': 'forgot pin',
                             'label': 'Logout Error'});
           // This can be a timeout or a failure. So a more generic message is needed.
-          app.error.render({
-            context: {
-              ctaText: that.gettext('Retry?'),
-              errorCode: 'LOGOUT_ERROR'
-            },
+          return app.error.render({
+            ctaText: that.gettext('Retry?'),
+            errorCode: 'LOGOUT_ERROR',
             ctaCallback: function(e) {
               that.handleResetStart(e);
             }

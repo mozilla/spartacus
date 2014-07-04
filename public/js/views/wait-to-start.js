@@ -17,11 +17,7 @@ define([
       if (typeof statusPending !== 'undefined') {
         wait.startWaiting(statusPending);
       } else {
-        return app.error.render({
-          context: {
-            errorCode: 'STATUS_PENDING_UNDEF',
-          },
-        });
+        return app.error.render({errorCode: 'STATUS_PENDING_UNDEF'});
       }
       return this;
     }

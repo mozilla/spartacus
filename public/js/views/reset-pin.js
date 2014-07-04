@@ -25,11 +25,9 @@ define([
           console.log('Request timed out');
           utils.trackEvent({'action': pinResetAction,
                             'label': 'Pin Reset API Call Timed Out'});
-          app.error.render({
-            context: {
-              ctaText: that.gettext('Retry?'),
-              errorCode: 'PIN_RESET_TIMEOUT'
-            },
+          return app.error.render({
+            ctaText: that.gettext('Retry?'),
+            errorCode: 'PIN_RESET_TIMEOUT',
             ctaCallback: function(e){
               e.preventDefault();
               that.submitData(pinData);
@@ -39,17 +37,22 @@ define([
           console.log('Pin data invalid');
           utils.trackEvent({'action': pinResetAction,
                             'label': 'Pin Reset API Call Invalid Form Data'});
-          app.error.render({context: {errorCode: 'PIN_RESET_INVALID'}});
+          return app.error.render({errorCode: 'PIN_RESET_INVALID'});
         } else if ($xhr.status === 403) {
           console.log('User not authenticated');
           utils.trackEvent({'action': pinResetAction,
                             'label': 'Pin Reset API Call Permission Denied'});
-          app.error.render({context: {errorCode: 'PIN_RESET_PERM_DENIED'}});
+          return app.error.render({errorCode: 'PIN_RESET_PERM_DENIED'});
+        } else if ($xhr.status === 404) {
+          console.log('User not authenticated');
+          utils.trackEvent({'action': pinResetAction,
+                            'label': "Pin Reset API Call User doesn't exist"});
+          return app.error.render({errorCode: 'PIN_RESET_NO_USER'});
         } else {
           console.log("Unhandled error");
           utils.trackEvent({'action': pinResetAction,
                             'label': "Pin Reset API Call Unhandled error"});
-          app.error.render({context: {errorCode: 'PIN_RESET_ERROR'}});
+          return app.error.render({errorCode: 'PIN_RESET_ERROR'});
         }
         return req;
       });

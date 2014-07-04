@@ -183,8 +183,8 @@ function injectSinon(options) {
             request.respond(response[0], response[1], response[2]);
           }
         } catch (e) {
-          console.log(i);
           console.log('Sinon exception error', e);
+          throw e;
         }
       };
     }

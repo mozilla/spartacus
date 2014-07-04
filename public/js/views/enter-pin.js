@@ -57,11 +57,9 @@ define([
           console.log('Request timed out');
           utils.trackEvent({action: pinCheckAction,
                             label: 'Pin Check API Call Timed Out'});
-          app.error.render({
-            context: {
-              ctaText: that.gettext('Retry?'),
-              errorCode: 'ENTER_PIN_TIMEOUT'
-            },
+          return app.error.render({
+            ctaText: that.gettext('Retry?'),
+            errorCode: 'PIN_ENTER_TIMEOUT',
             ctaCallback: function(e) {
               e.preventDefault();
               that.handleSubmit();
@@ -78,17 +76,17 @@ define([
           console.log('User not authenticated');
           utils.trackEvent({action: pinCheckAction,
                             label: 'Pin Check API Call Permission Denied'});
-          app.error.render({context: {errorCode: 'PIN_ENTER_PERM_DENIED'}});
+          return app.error.render({errorCode: 'PIN_ENTER_PERM_DENIED'});
         } else if ($xhr.status === 404) {
           console.log("User doesn't exist");
           utils.trackEvent({action: pinCheckAction,
                             label: "Pin Check API Call User Doesn't exist"});
-          app.error.render({context: {errorCode: 'PIN_ENTER_USER_DOES_NOT_EXIST'}});
+          return app.error.render({errorCode: 'PIN_ENTER_NO_USER'});
         } else {
           console.log("Unhandled error");
           utils.trackEvent({action: pinCheckAction,
                             label: 'Pin Check API Call Unhandled error'});
-          app.error.render({context: {errorCode: 'PIN_ENTER_UNHANDLED_ERROR'}});
+          return app.error.render({errorCode: 'PIN_ENTER_ERROR'});
         }
       });
     },

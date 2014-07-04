@@ -28,26 +28,33 @@ define(['jquery', 'views/error'], function($, ErrorView) {
 
     test('Check error overlay page class is set', function(){
       assert.ok($('#error .full-error').length === 0);
-      this.error.render({context: {'pageclass': 'full-error whatevs'}});
+      this.error.render({'pageclass': 'full-error whatevs'});
       assert.ok($('#error .page').hasClass('whatevs'));
     });
 
     test('Check error overlay heading is set', function(){
       assert.ok($('#error .full-error').length === 0);
-      this.error.render({context: {'heading': 'wassup'}});
-      assert.ok($('#error .full-error h1').text('wassap'));
+      this.error.render({'heading': 'wassup'});
+      assert.equal($('#error .full-error h1').text(), 'wassup');
     });
 
     test('Check error overlay msg is set', function(){
       assert.ok($('#error .full-error').length === 0);
-      this.error.render({context: {'msg': 'woops'}});
-      assert.ok($('#error .full-error .msg').text('woops'));
+      this.error.render({'msg': 'woops'});
+      assert.equal($('#error .full-error .message').text(), 'woops');
     });
 
     test('Check error overlay msg escaping', function(){
       assert.ok($('#error .full-error').length === 0);
-      this.error.render({context: {'msg': '<b>woops</b>'}});
-      assert.ok($('#error .full-error .msg').text('&lt;b&gt;woops&lt;/b&gt;'));
+      this.error.render({'msg': '<b>woops</b>'});
+      assert.include($('#error .full-error .msg').html(), '&lt;b&gt;woops&lt;/b&gt;');
+    });
+
+    test('Check render errorCode', function(){
+      assert.ok($('#error .full-error').length === 0);
+      this.error.render({errorCode: 'MISSING_JWT'});
+      assert.equal($('#error .full-error .message').text(), 'The JWT signature is missing or invalid.');
+      assert.equal($('#error .full-error .error-code').text(), 'MISSING_JWT');
     });
 
   });

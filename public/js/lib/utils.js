@@ -22,19 +22,11 @@ define([
     mozPaymentProvider: window.mozPaymentProvider || {
       paymentSuccess: window.paymentSuccess || function() {
         console.error('No paymentSuccess function');
-        app.error.render({
-          context: {
-            errorCode: 'NO_PAY_SUCCESS_FUNC',
-          },
-        });
+        return app.error.render({errorCode: 'NO_PAY_SUCCESS_FUNC'});
       },
       paymentFailed: window.paymentFailed || function() {
         console.error('No paymentFailed function');
-        app.error.render({
-          context: {
-            errorCode: 'NO_PAY_FAILED_FUNC',
-          },
-        });
+        return app.error.render({errorCode: 'NO_PAY_FAILED_FUNC'});
       },
     },
     trackClick: function() {

@@ -14,7 +14,7 @@ casper.test.begin('Start transaction timout, retry then success.', {
     helpers.doLogin();
 
     casper.waitForSelector('.full-error', function() {
-      helpers.assertErrorCode('START_TRANS_TIMEOUT');
+      helpers.assertErrorCode('TRANS_TIMEOUT');
       test.assertVisible('.button.cta', 'CTA button should be visible');
       test.assertVisible('.button.cancel', 'Cancel button should be visible');
 

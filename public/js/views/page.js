@@ -71,8 +71,7 @@ define([
       } else {
         utils.trackEvent({action: 'login state change',
                           label: 'Unexpected change value'});
-        app.error.render({'context': {'errorCode': 'UNEXPECTED_LOGIN_STATE'}});
-        return;
+        return app.error.render({errorCode: 'UNEXPECTED_LOGIN_STATE'});
       }
     },
 
@@ -107,7 +106,6 @@ define([
           console.log('Transaction started successfully');
           utils.trackEvent({action: 'start-transaction',
                             label: 'Transaction started successfully'});
-
           var providerName = data.provider;
           if (settings.validProviders.indexOf(providerName) > -1) {
             app.transaction.set('provider', providerName);
@@ -117,18 +115,18 @@ define([
                 if (textStatus === 'timeout') {
                   utils.trackEvent({action: 'fetch-state',
                                     label: 'Fetching initial state timed-out.'});
-                  app.error.render({'context': {'errorCode': 'PIN_STATE_TIMEOUT'},
-                                    ctaCallback: that.setUpPayment});
+                  return app.error.render({errorCode: 'PIN_STATE_TIMEOUT',
+                                           ctaCallback: that.setUpPayment});
                 } else {
                   utils.trackEvent({action: 'fetch-state',
                                     label: 'Fetching initial state error.'});
-                  app.error.render({'context': {'errorCode': 'PIN_STATE_ERROR'}});
+                  return app.error.render({errorCode: 'PIN_STATE_ERROR'});
                 }
               });
               return req;
             });
           } else {
-            app.error.render({'context': {'errorCode': 'UNEXPECTED_PROVIDER'}});
+            return app.error.render({'errorCode': 'UNEXPECTED_PROVIDER'});
           }
         }).fail(function($xhr, textStatus) {
           console.log($xhr.status);
@@ -136,18 +134,18 @@ define([
           if (textStatus === 'timeout') {
             utils.trackEvent({action: 'start-transaction',
                               label: 'Transaction start timed-out'});
-            app.error.render({'context': {'errorCode': 'START_TRANS_TIMEOUT'},
-                              ctaCallback: function(){ that.setUpPayment(); } });
+            return app.error.render({errorCode: 'TRANS_TIMEOUT',
+                                     ctaCallback: function(){ that.setUpPayment(); }});
           } else {
             utils.trackEvent({action: 'start-transaction',
                               label: 'Transaction failed to start'});
-            app.error.render({'context': {'errorCode': 'START_TRANS_FAILURE'}});
+            return app.error.render({errorCode: 'TRANS_CONFIG_FAILED'});
           }
         });
       } else {
         utils.trackEvent({action: 'start-transaction',
                           label: 'Invalid or missing JWT'});
-        app.error.render({context: {'errorCode': 'INVALID_JWT'}});
+        return app.error.render({errorCode: 'MISSING_JWT'});
       }
     },
 

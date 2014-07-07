@@ -32,6 +32,7 @@ var servedViews = [
   'reset-start',
   'wait-to-start',
   'provider/[a-z]+/complete-payment',
+  'provider/[a-z]+/payment-failed/[A-Z_]+',
   'was-locked',
 ];
 

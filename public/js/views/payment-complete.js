@@ -9,7 +9,7 @@ define([
   'use strict';
 
   // This view is called on return from the payment provider.
-  var CompletePaymentView = PageView.extend({
+  var PaymentCompleteView = PageView.extend({
 
     provider: null,
 
@@ -53,5 +53,5 @@ define([
 
   });
 
-  return CompletePaymentView;
+  return PaymentCompleteView;
 });

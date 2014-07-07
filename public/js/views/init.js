@@ -11,7 +11,9 @@ define([
     render: function() {
       app.initialRoute = app.router.current();
       app.throbber.render(this.gettext('Initializing'));
-      if (!app.transaction.get('jwt') && app.initialRoute.name !== 'showCompletePayment') {
+      if (!app.transaction.get('jwt') &&
+          app.initialRoute.name !== 'showPaymentComplete' &&
+          app.initialRoute.name !== 'showPaymentFailed') {
         this.extractJWT();
       }
       app.session.watchIdentity();

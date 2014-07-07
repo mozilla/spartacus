@@ -1,13 +1,14 @@
 define([
   'backbone',
   'underscore',
-  'views/complete-payment',
   'views/create-pin',
   'views/enter-pin',
   'views/force-auth',
   'views/init',
   'views/locked',
   'views/login',
+  'views/payment-complete',
+  'views/payment-failed',
   'views/reset-pin',
   'views/reset-start',
   'views/wait-to-start',
@@ -15,13 +16,14 @@ define([
 ], function(
   Backbone,
   _,
-  CompletePaymentView,
   CreatePinView,
   EnterPinView,
   ForceAuthView,
   InitView,
   LockedView,
   LoginView,
+  PaymentCompleteView,
+  PaymentFailedView,
   ResetPinView,
   ResetStartView,
   WaitToStartView,
@@ -48,7 +50,8 @@ define([
       'spa/reset-start': 'showResetStart',
       'spa/locked': 'showLocked',
       'spa/was-locked': 'showWasLocked',
-      'spa/provider/:provider/complete-payment': 'showCompletePayment',
+      'spa/provider/:provider/complete-payment': 'showPaymentComplete',
+      'spa/provider/:provider/payment-failed/:error': 'showPaymentFailed',
       'spa/wait-to-start': 'showWaitToStart',
     },
 
@@ -82,11 +85,6 @@ define([
       this.viewManager.renderView(InitView);
     },
 
-    showCompletePayment: function(provider) {
-      var options = {params: {provider: provider}};
-      this.viewManager.renderView(CompletePaymentView, options);
-    },
-
     showCreatePin: function() {
       this.viewManager.renderView(CreatePinView);
     },
@@ -106,6 +104,16 @@ define([
     showLogin: function() {
       // Note: This view isn't directly routed.
       this.viewManager.renderView(LoginView);
+    },
+
+    showPaymentComplete: function(provider) {
+      var options = {params: {provider: provider}};
+      this.viewManager.renderView(PaymentCompleteView, options);
+    },
+
+    showPaymentFailed: function(provider, error) {
+      var options = {params: {provider: provider, error: error}};
+      this.viewManager.renderView(PaymentFailedView, options);
     },
 
     showResetPin: function() {

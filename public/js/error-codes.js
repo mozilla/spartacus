@@ -69,6 +69,7 @@ define([
     TRANS_MISSING: gettext('No transaction ID could be found.'),
     TRANS_TIMEOUT: gettext('The system timed out while waiting for a transaction.'),
     UNEXPECTED_ERROR: gettext('An unexpected error occurred.'),
+    UNEXPECTED_ERROR_CODE: gettext('An unexpected error code was specified.'),
     UNEXPECTED_STATE: gettext('An unexpected error occurred.'),
     UNSUPPORTED_PAY: gettext('The payment method or price point is not supported for this region or operator.'),
     USER_CANCELLED: gettext('The user cancelled the payment.'),

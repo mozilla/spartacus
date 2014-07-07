@@ -96,7 +96,7 @@ var settings = {
     'https://mozilla.bango.net',
     'https://buy.boku.com'
   ],
-  validProviders: ['bango', 'boku', 'reference']
+  validProviders: ['bango', 'boku', 'reference'],
 };
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {

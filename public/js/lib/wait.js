@@ -97,11 +97,7 @@ define([
             utils.trackEvent({'action': 'payment',
                               'label': 'Invalid Redirect URL'});
             console.log('Redirect url supplied but was invalid ' + data.url);
-            return app.error.render({
-              context: {
-                errorCode: 'INVALID_REDIR_URL',
-              },
-            });
+            return app.error.render({errorCode: 'INVALID_REDIR_URL'});
           }
         } else {
           console.log('transaction completed; closing pay flow');

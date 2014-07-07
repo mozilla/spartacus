@@ -42,6 +42,14 @@ define([
 
       if (!msg && errorCode) {
         msg = errorCodes[errorCode];
+
+        // If we don't have a msg defined
+        // make this an unexpected error.
+        console.error('errorCode "'+ errorCode + '" is not defined. Please add it to error-codes.js');
+        if (typeof msg === 'undefined') {
+          errorCode = 'UNEXPECTED_ERROR';
+          msg = errorCodes[errorCode];
+        }
       }
 
       var context = {

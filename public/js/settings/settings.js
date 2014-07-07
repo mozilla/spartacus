@@ -94,7 +94,8 @@ var settings = {
   BIDI_RTL_LANGS: ['ar', 'db-LB', 'fa', 'he'],
   validRedirSites: [
     'http://mozilla.bango.net',
-    'https://mozilla.bango.net'
+    'https://mozilla.bango.net',
+    'https://buy.boku.com'
   ],
 };
 

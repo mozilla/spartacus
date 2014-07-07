@@ -88,10 +88,17 @@ define([
         // redirect to the destination URL.
         clear();
         if (data.url) {
-          utils.trackEvent({'action': 'payment',
-                            'label': 'Redirect To Pay Flow'});
-          console.log('transaction found; redirect to ' + data.url);
-          window.location = data.url;
+          if (utils.isValidRedirURL(data.url)) {
+            utils.trackEvent({'action': 'payment',
+                              'label': 'Redirect To Pay Flow'});
+            console.log('transaction completed; redirect to ' + data.url);
+            window.location = data.url;
+          } else {
+            utils.trackEvent({'action': 'payment',
+                              'label': 'Invalid Redirect URL'});
+            console.log('Redirect url supplied but was invalid ' + data.url);
+            return app.error.render({errorCode: 'INVALID_REDIR_URL'});
+          }
         } else {
           console.log('transaction completed; closing pay flow');
           trackClosePayFlow();

@@ -58,18 +58,13 @@ define([
         return s.replace(re, function(_, match){ return args[match]; });
       };
     })(),
-    checkURL: function(url, options) {
+    isValidRedirURL: function(url, options) {
       options = options || {};
-      var validSchemes = options.validSchemes || settings.validSchemes;
-      var validHosts = options.validHosts || settings.validHosts;
-      if (url && _.isArray(validSchemes) && _.isArray(validHosts)) {
-        // Always allow urls that match window.location.hostname.
-        validHosts.push(window.location.hostname);
+      var validRedirSites = options.validRedirSites || settings.validRedirSites;
+      if (url && _.isArray(validRedirSites)) {
         var a = document.createElement('a');
         a.href = url;
-        var scheme = a.protocol.replace(':','');
-        var hostname = a.hostname;
-        return validSchemes.indexOf(scheme) > -1 && validHosts.indexOf(hostname) > -1;
+        return validRedirSites.indexOf(a.protocol + '//' + a.hostname) > -1;
       }
       return false;
     }

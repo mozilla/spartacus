@@ -57,5 +57,10 @@ define(['jquery', 'views/error'], function($, ErrorView) {
       assert.equal($('#error .full-error .error-code').text(), 'MISSING_JWT');
     });
 
+    test('Check default error on invalid code', function(){
+      assert.ok($('#error .full-error').length === 0);
+      this.error.render({errorCode: 'WHAT_THE_HECK_NO_WAY_MAN'});
+      assert.equal($('#error .full-error .error-code').text(), 'UNEXPECTED_ERROR');
+    });
   });
 });

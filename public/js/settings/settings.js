@@ -92,9 +92,11 @@ var settings = {
   DEBUG_LOCALE: 'db_LB',
   DEBUG_LANG: 'db-LB',
   BIDI_RTL_LANGS: ['ar', 'db-LB', 'fa', 'he'],
-  // Note: currently served hostname is added by default.
-  validHosts: ['bango.net', 'boku.com'],
-  validSchemes: ['https']
+  validRedirSites: [
+    'http://mozilla.bango.net',
+    'https://mozilla.bango.net',
+    'https://buy.boku.com'
+  ],
 };
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {

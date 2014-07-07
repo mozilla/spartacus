@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   // Dev-only config.
   var config = require('./config');
   // App Settings. Also used client-side.
-  var settings = require('./public/js/settings/settings.js');
+  var settings = require('./public/js/settings.js');
   // The requirejs config data.
   var requireConfig = require('./public/js/require-config.js');
 

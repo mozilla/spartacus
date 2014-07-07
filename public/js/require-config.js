@@ -28,7 +28,6 @@
       'provider': 'lib/provider',
       'query-string': '../lib/js/query-string/query-string',
       'require': '../lib/js/requirejs/require',
-      'settings': 'settings/settings',
       'underscore': '../lib/js/underscore/underscore',
       'utils': 'lib/utils',
       'wait': 'lib/wait'

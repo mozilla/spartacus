@@ -31,7 +31,8 @@ var servedViews = [
   'reset-pin',
   'reset-start',
   'wait-to-start',
-  'provider/[a-z]+/wait-to-finish',
+  'provider/[a-z]+/complete-payment',
+  'provider/[a-z]+/payment-failed/[A-Z_]+',
   'was-locked',
 ];
 
@@ -54,8 +55,8 @@ spa.get(/\/(?:css|fonts|i18n|images|js|lib)\/?.*/, express.static(__dirname + '/
 
 spa.get('/mozpay/', function (req, res) {
   var context = {settings: config};
-  if (req.originalUrl === '/mozpay/spa/provider/boku/wait-to-finish') {
-    context.transaction_status_url = '/poll-wait-to-finish';
+  if (req.originalUrl === '/mozpay/spa/provider/boku/complete-payment') {
+    context.transaction_status_url = '/poll-complete-payment';
   }
   res.render('index.html', context);
 });
@@ -133,8 +134,8 @@ if (env !== 'test') {
     res.send({'url': '/fake-provider', 'status': 0});
   });
 
-  // Fake wait-to-finish
-  spa.get('/poll-wait-to-finish', function(req, res) {
+  // Fake complete-payment
+  spa.get('/poll-complete-payment', function(req, res) {
     // 1 is STATUS_COMPLETED
     res.send({'status': 1, 'url': null});
   });

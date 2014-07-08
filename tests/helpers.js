@@ -277,7 +277,7 @@ function fakeWaitPoll(options) {
     urlData = options.urlData || '/fake-provider';
   } else if (options.type === 'finish') {
     statusData = options.statusData || 1;
-    url = '/poll-wait-to-finish';
+    url = '/poll-complete-payment';
     urlData = options.urlData || null;
   } else {
     casper.fail('type options should be either "start" or "finish"');

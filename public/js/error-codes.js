@@ -17,6 +17,7 @@ define([
     EXPIRED_JWT: gettext('The JWT has expired.'),
     EXT_ERROR: gettext('The external payment processor returned an error while handling the payment'),
     INTERNAL_TIMEOUT: gettext('An internal web request timed out.'),
+    INVALID_PROVIDER: gettext('An unexpected provider was specified'),
     INVALID_JWT: gettext('The JWT signature is invalid or the JWT is malformed.'),
     INVALID_JWT_OBJ: gettext('The JWT did not decode to a JSON object.'),
     INVALID_REDIR_URL: gettext('The url given was not valid'),
@@ -25,7 +26,7 @@ define([
     LOGOUT_ERROR: gettext('An error occurred whilst trying to log out.'),
     LOGOUT_TIMEOUT: gettext('The system timed out while trying to log out.'),
     LOGOUT_URL_MISSING: gettext('Misconfiguration Error. The logout URL is missing'),
-    MALFORMED_URL: gettext('A URL is malformed. This could be a postback URL or an icon URL.'),
+    MALFORMED_URL: format(gettext('A URL is malformed. This could be a {0} URL or an {1} URL.'), 'postback', 'icon'),
     MISSING_JWT: gettext('The JWT signature is missing or invalid.'),
     NOTICE_ERROR: gettext('The notification service responded with an error while verifying the payment notice'),
     NOTICE_EXCEPTION: gettext('The notification service raised an unexpected exception while verifying the payment notice'),
@@ -68,6 +69,7 @@ define([
     TRANS_MISSING: gettext('No transaction ID could be found.'),
     TRANS_TIMEOUT: gettext('The system timed out while waiting for a transaction.'),
     UNEXPECTED_ERROR: gettext('An unexpected error occurred.'),
+    UNEXPECTED_ERROR_CODE: gettext('An unexpected error code was specified.'),
     UNEXPECTED_STATE: gettext('An unexpected error occurred.'),
     UNSUPPORTED_PAY: gettext('The payment method or price point is not supported for this region or operator.'),
     USER_CANCELLED: gettext('The user cancelled the payment.'),
@@ -77,7 +79,7 @@ define([
     VERIFY_MISSING_PROVIDER: gettext('The provider did not exist'),
     VERIFY_MISSING_URL: gettext('The verification url is not configured.'),
     VERIFY_TIMEOUT: gettext('The request to the server timed out during verification.'),
-    WAIT_URL_NOT_SET: gettext('Misconfiguration error. No wait URL has been configured.')
+    WAIT_URL_NOT_SET: gettext('Misconfiguration error. No wait URL has been configured.'),
   };
 
 });

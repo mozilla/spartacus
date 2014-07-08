@@ -7,9 +7,10 @@ define([
   'views/init',
   'views/locked',
   'views/login',
+  'views/payment-complete',
+  'views/payment-failed',
   'views/reset-pin',
   'views/reset-start',
-  'views/wait-to-finish',
   'views/wait-to-start',
   'views/was-locked'
 ], function(
@@ -21,9 +22,10 @@ define([
   InitView,
   LockedView,
   LoginView,
+  PaymentCompleteView,
+  PaymentFailedView,
   ResetPinView,
   ResetStartView,
-  WaitToFinishView,
   WaitToStartView,
   WasLockedView
 ){
@@ -48,7 +50,8 @@ define([
       'spa/reset-start': 'showResetStart',
       'spa/locked': 'showLocked',
       'spa/was-locked': 'showWasLocked',
-      'spa/provider/:provider/wait-to-finish': 'showWaitToFinish',
+      'spa/provider/:provider/complete-payment': 'showPaymentComplete',
+      'spa/provider/:provider/payment-failed/:error': 'showPaymentFailed',
       'spa/wait-to-start': 'showWaitToStart',
     },
 
@@ -103,16 +106,22 @@ define([
       this.viewManager.renderView(LoginView);
     },
 
+    showPaymentComplete: function(provider) {
+      var options = {params: {provider: provider}};
+      this.viewManager.renderView(PaymentCompleteView, options);
+    },
+
+    showPaymentFailed: function(provider, error) {
+      var options = {params: {provider: provider, error: error}};
+      this.viewManager.renderView(PaymentFailedView, options);
+    },
+
     showResetPin: function() {
       this.viewManager.renderView(ResetPinView);
     },
 
     showResetStart: function() {
       this.viewManager.renderView(ResetStartView);
-    },
-
-    showWaitToFinish: function() {
-      this.viewManager.renderView(WaitToFinishView);
     },
 
     showWaitToStart: function() {

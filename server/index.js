@@ -9,7 +9,7 @@ var rewriteModule = require('http-rewrite-middleware');
 // Node only config.
 var config = require('../config/');
 // Setting (shared by client-side + node);
-var settings = require('../public/js/settings/settings');
+var settings = require('../public/js/settings');
 
 var spa = express();
 var nunjucksEnv = new nunjucks.Environment(new nunjucks.FileSystemLoader(__dirname + '/templates'),

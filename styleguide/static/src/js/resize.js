@@ -1,15 +1,26 @@
 /* global $ */
 (function(){
+
   var $resizable = $('.resizable');
+
+  if (!$resizable.length) {
+    return;
+  }
+
   var $panel = $resizable.closest('.panel');
   var $size = $panel.find('.size');
 
   var $fullscreen = $panel.find('.full-screen');
   var $trustedui = $panel.find('.trusted-ui-size');
   var $androidui = $panel.find('.android-ui-size');
+  var $androidtablet = $panel.find('.android-tablet-size');
 
   var resizePadding = 10;
   var vp = {
+    androidtablet: {
+      w: 600,
+      h: 887,
+    },
     androidui: {
       w: 350,
       h: 598,
@@ -38,6 +49,8 @@
     $size.text('@ ' + w + ' x ' + h);
     handleActive($trustedui, 'trustedui');
     handleActive($androidui, 'androidui');
+    handleActive($androidtablet, 'androidtablet');
+    window.localStorage.setItem('sg-vp', parseInt(w + resizePadding, 10) + ':' + parseInt(h + resizePadding, 10));
   }
 
   var watch = new MutationObserver(function(){
@@ -75,10 +88,28 @@
     handleClick('androidui');
   });
 
+  $androidtablet.on('click', function() {
+    handleClick('androidtablet');
+  });
+
   if ($resizable.length) {
     // Currently this won't work on webkit. :(
     // See https://code.google.com/p/chromium/issues/detail?id=293948
     watch.observe($resizable[0],{attributes:true}) ;
+  }
+
+  var storedSize = window.localStorage.getItem('sg-vp');
+  if (storedSize) {
+    var parts = storedSize.split(':');
+    var storedWidth = parseInt(parts[0], 10);
+    var storedHeight = parseInt(parts[1], 10);
+    if (!isNaN(storedWidth) && !isNaN(storedHeight)) {
+      $resizable.css({width: storedWidth, height: storedHeight});
+      updateDimensions();
+    } else {
+      console.log('Stored values invalid. Ignoring');
+      window.localStorage.removeItem('sg-vp');
+    }
   }
 })();
 

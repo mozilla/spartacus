@@ -1,5 +1,10 @@
-<main>
-  <div class="page">
-  {% block page %}{% endblock %}
+<main id="app">
+  <div id="view" class="view">
+    <div class="page {% block pageclass %}{% endblock %}">
+      <div class="inner">
+        {% block page %}{% endblock %}
+      </div>
+    </div>
   </div>
 </main>
+

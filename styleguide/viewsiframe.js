@@ -7,7 +7,7 @@ module.exports = {
   },
 
   createpin: function(req, res) {
-    res.render('iframed/create-pin.html');
+    res.render('iframed/create-pin.html', context.pinForm);
   },
 
   error: function(req, res) {
@@ -25,4 +25,9 @@ module.exports = {
   waslocked: function(req, res) {
     res.render('iframed/was-locked.html');
   },
+
+  locked: function(req, res) {
+    res.render('iframed/locked.html', context.locked);
+  },
+
 };

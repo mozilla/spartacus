@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="/css/spartacus.css">
   </head>
   <body>
-    <div id="app" class="app">{% block content %}{% endblock %}</div>
+    <main id="app">
+      <div id="view" class="view">{% block content %}{% endblock %}</div>
+      <div id="error" class="error">{% block error %}{% endblock %}</div>
+      <div id="progress" class="progress">{% block throbber %}{% endblock %}</div>
+    </main>
   </body>
 </html>

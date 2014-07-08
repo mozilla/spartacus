@@ -18,7 +18,7 @@ module.exports = {
 
   createpin: function(req, res) {
     res.render('pages/create-pin.html', {
-      code: utils.prettyTemplateRender('create-pin.html', req),
+      code: utils.prettyTemplateRender('pin-form.html', req),
       iframe: 'create-pin',
       active_page: 'create-pin'
     });
@@ -26,7 +26,7 @@ module.exports = {
 
   error: function(req, res) {
     res.render('pages/error.html', {
-      code: utils.prettyTemplateRender('base-error.html', req, context.error),
+      code: utils.prettyTemplateRender('error.html', req, context.error),
       iframe: 'error',
       active_page: 'error'
     });
@@ -50,9 +50,17 @@ module.exports = {
 
   waslocked: function(req, res) {
     res.render('pages/was-locked.html', {
-      code: utils.prettyTemplateRender('was-locked.html', req, context.error),
+      code: utils.prettyTemplateRender('was-locked.html', req),
       iframe: 'was-locked',
       active_page: 'was-locked'
+    });
+  },
+
+  locked: function(req, res) {
+    res.render('pages/locked.html', {
+      code: utils.prettyTemplateRender('error.html', req, context.locked),
+      iframe: 'locked',
+      active_page: 'locked'
     });
   },
 

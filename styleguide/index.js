@@ -43,6 +43,7 @@ app.get('/error', views.error);
 app.get('/typography', views.typography);
 app.get('/throbber', views.throbber);
 app.get('/was-locked', views.waslocked);
+app.get('/locked', views.locked);
 
 // Iframed Example Pages
 app.get('/if/buttons', viewsiframe.buttons);
@@ -51,6 +52,7 @@ app.get('/if/error', viewsiframe.error);
 app.get('/if/typography', viewsiframe.typography);
 app.get('/if/throbber', viewsiframe.throbber);
 app.get('/if/was-locked', viewsiframe.waslocked);
+app.get('/if/locked', viewsiframe.locked);
 
 http.createServer(app).listen(config.styleguide.port, function() {
   console.log('Listening on port: ' + config.styleguide.port);

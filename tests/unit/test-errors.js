@@ -52,15 +52,16 @@ define(['jquery', 'views/error'], function($, ErrorView) {
 
     test('Check render errorCode', function(){
       assert.ok($('#error .full-error').length === 0);
-      this.error.render({errorCode: 'MISSING_JWT'});
-      assert.equal($('#error .full-error .message').text(), 'The JWT signature is missing or invalid.');
-      assert.equal($('#error .full-error .error-code').text(), 'MISSING_JWT');
+      this.error.render({errorCode: 'PAY_DISABLED'});
+      assert.equal($('#error .full-error .message').text(), 'Payments are temporarily disabled.');
+      assert.equal($('#error .full-error .error-code').text(), 'PAY_DISABLED');
     });
 
-    test('Check default error on invalid code', function(){
+    test('Check default error on undefined code.', function(){
       assert.ok($('#error .full-error').length === 0);
-      this.error.render({errorCode: 'WHAT_THE_HECK_NO_WAY_MAN'});
-      assert.equal($('#error .full-error .error-code').text(), 'UNEXPECTED_ERROR');
+      this.error.render({errorCode: 'AN_UNUSUAL_ERROR_CODE'});
+      assert.equal($('#error .full-error .error-code').text(), 'AN_UNUSUAL_ERROR_CODE');
+      assert.equal($('#error .full-error .message').text(), 'An unexpected error occurred.');
     });
   });
 });

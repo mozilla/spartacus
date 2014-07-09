@@ -4,7 +4,6 @@ require(['/js/require-config.js'], function() {
 
   require([
     '/unit/test-base-view.js',
-    '/unit/test-error-codes.js',
     '/unit/test-errors.js',
     '/unit/test-locale-utils.js',
     '/unit/test-mcc-mnc.js',

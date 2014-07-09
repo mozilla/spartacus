@@ -42,14 +42,6 @@ define([
 
       if (!msg && errorCode) {
         msg = errorCodes[errorCode];
-
-        // If we don't have a msg defined
-        // make this an unexpected error.
-        console.error('errorCode "'+ errorCode + '" is not defined. Please add it to error-codes.js');
-        if (typeof msg === 'undefined') {
-          errorCode = 'UNEXPECTED_ERROR';
-          msg = errorCodes[errorCode];
-        }
       }
 
       var context = {
@@ -62,7 +54,7 @@ define([
         // Add default heading + msg.
         heading: options.heading || this.gettext('Error'),
         // Use passed-in msg / or errorCode message / or default.
-        msg: msg || this.gettext('Something went wrong.'),
+        msg: msg || this.gettext('An unexpected error occurred.'),
         // The page class for the error message.
         pageclass: options.pageclass,
         // Default to showing the cancel button.

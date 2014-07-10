@@ -17,21 +17,21 @@
     data-verify-url="{{ settings.verifyUserURL }}"
     data-reverify-url="{{ settings.reVerifyUserURL }}"
     data-static-docs-url="{{ settings.staticURL }}"
-    {% if transaction_status_url %}
+    {% if transaction_status_url -%}
       data-trans-start-url="{{ transaction_status_url }}"
-    {% else %}
+    {%- else -%}
       data-trans-start-url="/poll-wait-to-start"
-    {% endif %}
+    {%- endif %}
     data-trans-status-completed="1"
     data-trans-status-pending="0"
     data-trans-status-failed="4"
     data-trans-status-cancelled="5"
     data-settings="{{ settings.appSettingsOverrides }}"
+    data-start-view="{{ startView }}"
+    data-error-code="{{ errorCode }}"
     >
     <main id="app">
-      {# View placeholder #}
       <div id="view" class="view"></div>
-      {# Throbber placeholder #}
       <div id="progress" class="progress">
         <div class="throbber">
           <div class="inner">
@@ -40,7 +40,6 @@
           </div>
         </div>
       </div>
-      {# Error placeholder #}
       <div id="error" class="error"></div>
     </main>
     <script src="{{ settings.browseridJsURL }}"></script>
@@ -48,6 +47,6 @@
       <script src="/js/main.min.js"></script>
     {%- else -%}
       <script data-main="/js/main.js" src="/lib/js/requirejs/require.js"></script>
-    {%- endif %}
+    {%- endif -%}
   </body>
 </html>

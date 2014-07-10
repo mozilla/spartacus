@@ -39,6 +39,9 @@ define([
 
   var AppView = Backbone.View.extend({
 
+    // A specific starting point.
+    startView: null,
+
     initialize: function() {
       console.log('I AM SPARTACUS!');
       console.log('Initing app view');
@@ -55,6 +58,10 @@ define([
       // Create the router instance and fire-up history.
       this.router = new AppRouter({ViewManager: ViewManager, app: this});
 
+      // Start view is used to allow the backend to tell Spartacus
+      // a specific view to start on. Only views added to
+      // app.router.mapping are allowed.
+      this.startView = utils.bodyData.startView || null;
 
       return this;
     },

@@ -60,12 +60,23 @@ define([
         console.log('Displaying login view.');
         app.router.showLogin();
       } else if (value === true) {
-        // If we're on the wait-to-finish route, show it.
-        if (app.router.current().name === 'showWaitToFinish') {
-          app.router.showWaitToFinish();
-        // Otherwise we're now needing to check the app state
-        // and hand-off to the right view.
+        if (app.startView) {
+          // app.startView is set by an data attr data-start-view.
+          // if defined we will use that as the starting view instead
+          // of assuming the need to set up a Payment.
+          // This will be a no-op function if the route doesn't exist.
+          try {
+            app.router.getMappedRouteFunc(app.startView)();
+          } catch(e) {
+            if (e instanceof Error && e.message === 'NO_MAPPED_ROUTE') {
+              return app.error.render({errorCode: e.message});
+            } else {
+              throw e;
+            }
+          }
         } else {
+          // Otherwise we're now needing to setup a payment before
+          // checking the app state to hand off to the correct view.
           this.setUpPayment();
         }
       } else {
@@ -94,7 +105,6 @@ define([
         return app.router.navigate('spa/create-pin', {trigger: true});
       }
     },
-
 
     setUpPayment: function() {
       var jwt = app.transaction.get('jwt');

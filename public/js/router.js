@@ -26,16 +26,11 @@ define([
   WaitToFinishView,
   WaitToStartView,
   WasLockedView
-){
+) {
 
   'use strict';
 
   var AppRouter = Backbone.Router.extend({
-
-    initialize: function(options){
-      this.viewManager = new options.ViewManager();
-      this.app = options.app;
-    },
 
     root: '/mozpay',
 
@@ -48,8 +43,30 @@ define([
       'spa/reset-start': 'showResetStart',
       'spa/locked': 'showLocked',
       'spa/was-locked': 'showWasLocked',
-      'spa/provider/:provider/wait-to-finish': 'showWaitToFinish',
       'spa/wait-to-start': 'showWaitToStart',
+    },
+
+    // This mapping provides a key for data attrs.
+    // only routes listed here are available to be
+    // mapped to from data attrs.
+    mapping: {
+      'wait-to-finish': 'showWaitToFinish',
+    },
+
+    getMappedRouteFunc: function(key) {
+      var mapping = this.mapping;
+      if (mapping[key]) {
+        // Bind 'this' to the router.
+        return _.bind(this[mapping[key]], this);
+      } else {
+        console.error('No route mapped for key: ' + key);
+        throw new Error('NO_MAPPED_ROUTE');
+      }
+    },
+
+    initialize: function(options){
+      this.viewManager = new options.ViewManager();
+      this.app = options.app;
     },
 
     current: function () {

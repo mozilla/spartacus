@@ -47,7 +47,9 @@ spa.use(rewriteModule.getMiddleware([
   {from: '^/$', to: '/mozpay/', redirect: 'permanent'},
   {from: '^/mozpay$', to: '/mozpay/', redirect: 'permanent'},
   // This is emulating the url used by webpay for wait-to-finish.
-  {from: '^/mozpay/provider/.*?/wait-to-finish', to: '/mozpay/'},
+  {from: '^/mozpay/provider/boku/wait-to-finish', to: '/mozpay/'},
+  // This is emulating the url used by webpay for payment success/failure.
+  {from: '^/mozpay/provider/reference/(?:success|error|no-error-code)', to: '/mozpay/'},
   // Allow a view that sets an incorrect data-start-view attr.
   {from: '^/mozpay/bogus-start-attr', to: '/mozpay/'},
   // Internally redirect urls to be handled by the client-side spa serving view.
@@ -62,10 +64,22 @@ spa.get('/mozpay/', function (req, res) {
   if (req.originalUrl === '/mozpay/provider/boku/wait-to-finish') {
     context.transaction_status_url = '/poll-wait-to-finish';
     context.startView = 'wait-to-finish';
-  // Allow a view that sets an incorrect data-start-view attr.
+  // Set up a view that sets an incorrect data-start-view attr.
   } else if (req.originalUrl === '/mozpay/bogus-start-attr') {
     context.startView = 'a-bogus-start-attr';
+  // Set up that sets a example of success like webpay would.
+  } else if (req.originalUrl === '/mozpay/provider/reference/success') {
+    context.startView = 'payment-success';
+  // Setup a view that sets a example of an error like webpay would.
+  } else if (req.originalUrl === '/mozpay/provider/reference/error') {
+    context.startView = 'payment-failed';
+    context.errorCode = 'TEST_ERROR_CODE';
+  // Setup a view that sets a example of an error like webpay would
+  // but this time withn no error code attr.
+  } else if (req.originalUrl === '/mozpay/provider/reference/no-error-code') {
+    context.startView = 'payment-failed';
   }
+
   res.render('index.html', context);
 });
 

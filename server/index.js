@@ -48,6 +48,8 @@ spa.use(rewriteModule.getMiddleware([
   {from: '^/mozpay$', to: '/mozpay/', redirect: 'permanent'},
   // This is emulating the url used by webpay for wait-to-finish.
   {from: '^/mozpay/provider/.*?/wait-to-finish', to: '/mozpay/'},
+  // Allow a view that sets an incorrect data-start-view attr.
+  {from: '^/mozpay/bogus-start-attr', to: '/mozpay/'},
   // Internally redirect urls to be handled by the client-side spa serving view.
   {from: '^/mozpay/spa/(?:' + servedViews.join('|') + ')$', to: '/mozpay/'},
 ]));
@@ -60,6 +62,9 @@ spa.get('/mozpay/', function (req, res) {
   if (req.originalUrl === '/mozpay/provider/boku/wait-to-finish') {
     context.transaction_status_url = '/poll-wait-to-finish';
     context.startView = 'wait-to-finish';
+  // Allow a view that sets an incorrect data-start-view attr.
+  } else if (req.originalUrl === '/mozpay/bogus-start-attr') {
+    context.startView = 'a-bogus-start-attr';
   }
   res.render('index.html', context);
 });

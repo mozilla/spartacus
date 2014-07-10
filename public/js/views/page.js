@@ -65,7 +65,15 @@ define([
           // if defined we will use that as the starting view instead
           // of assuming the need to set up a Payment.
           // This will be a no-op function if the route doesn't exist.
-          app.router.getMappedRouteFunc(app.startView)();
+          try {
+            app.router.getMappedRouteFunc(app.startView)();
+          } catch(e) {
+            if (e instanceof Error && e.message === 'NO_MAPPED_ROUTE') {
+              return app.error.render({errorCode: e.message});
+            } else {
+              throw e;
+            }
+          }
         } else {
           // Otherwise we're now needing to setup a payment before
           // checking the app state to hand off to the correct view.

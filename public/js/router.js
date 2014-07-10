@@ -59,10 +59,8 @@ define([
         // Bind 'this' to the router.
         return _.bind(this[mapping[key]], this);
       } else {
-        console.error('No mapped route for key: ' + key);
-        return function() {
-          app.error.render({errorCode: 'NO_MAPPED_ROUTE'});
-        };
+        console.error('No route mapped for key: ' + key);
+        throw new Error('NO_MAPPED_ROUTE');
       }
     },
 

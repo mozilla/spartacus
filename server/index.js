@@ -60,23 +60,23 @@ spa.get(/\/(?:css|fonts|i18n|images|js|lib)\/?.*/, express.static(__dirname + '/
 
 spa.get('/mozpay/', function (req, res) {
   var context = {settings: config};
-  // This is emulating the url used by webpay for wait-to-finish.
   if (req.originalUrl === '/mozpay/provider/boku/wait-to-finish') {
+    // This is emulating the url used by webpay for wait-to-finish.
     context.transaction_status_url = '/poll-wait-to-finish';
     context.startView = 'wait-to-finish';
-  // Set up a view that sets an incorrect data-start-view attr.
   } else if (req.originalUrl === '/mozpay/bogus-start-attr') {
+    // Set up a view that sets an incorrect data-start-view attr.
     context.startView = 'a-bogus-start-attr';
-  // Set up that sets a example of success like webpay would.
   } else if (req.originalUrl === '/mozpay/provider/reference/success') {
+    // Set up that sets a example of success like webpay would.
     context.startView = 'payment-success';
-  // Setup a view that sets a example of an error like webpay would.
   } else if (req.originalUrl === '/mozpay/provider/reference/error') {
+    // Setup a view that sets a example of an error like webpay would.
     context.startView = 'payment-failed';
     context.errorCode = 'TEST_ERROR_CODE';
-  // Setup a view that sets a example of an error like webpay would
-  // but this time withn no error code attr.
   } else if (req.originalUrl === '/mozpay/provider/reference/no-error-code') {
+    // Setup a view that sets a example of an error like webpay would
+    // but this time withn no error code attr.
     context.startView = 'payment-failed';
   }
 

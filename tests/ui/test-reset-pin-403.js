@@ -52,8 +52,11 @@ casper.test.begin('Reset pin returns 403 (not authed / CSRF fail)', {
       casper.click('.full-error .button');
     });
 
-    casper.waitUntilVisible('.throbber', function() {
-      test.assertSelectorHasText('.msg', 'Payment cancelled', 'Check cancelled throbber is displayed');
+    casper.waitForSelector('.full-error', function() {
+      // This is shown when paymentFailed is called.
+      // TODO: This will need updating at the point
+      // we have an API on desktop.
+      helpers.assertErrorCode('NO_PAY_FAILED_FUNC');
     });
 
     casper.run(function() {

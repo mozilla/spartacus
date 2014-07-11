@@ -12,8 +12,8 @@ define([
   var PaymentFailedView = PageView.extend({
 
     render: function(){
-      console.log('Showing error for payment failure');
       var errorCode = utils.bodyData.errorCode || 'MISSING_ERROR_CODE';
+      console.log('Showing error for payment failure: ' + errorCode);
       return app.error.render({errorCode: errorCode});
     }
 

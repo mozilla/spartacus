@@ -3,185 +3,194 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-05-23 12:05+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-07-11 20:32+0000\n"
+"Last-Translator: Artem <a.polivanchuk@outlook.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.9.0\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1405110752.0\n"
 
 #: public/js/lib/cancel.js:33
 msgid "Payment cancelled."
-msgstr ""
+msgstr "Оплату скасовано."
 
 #: public/js/views/create-pin.js:105 templates/error.html:20
 #: templates/pin-form.html:26
 msgid "Cancel"
-msgstr ""
+msgstr "Скасувати"
 
 #: public/js/lib/pin-widget.js:58
 msgid "PIN can only contain digits."
-msgstr ""
+msgstr "PIN може містити тільки цифри."
 
 #: webpay/base/templates/base.html:30
 msgid "You logged in as a different user, you must start the payment again."
-msgstr ""
+msgstr "Ви увійшли як інший користувач, тому ви повинні почати оплату заново."
 
 #: public/js/views/throbber.js:15 public/js/views/throbber.js:16
 #: templates/throbber.html:7
 msgid "Loading"
-msgstr ""
+msgstr "Завантаження"
 
 #: webpay/base/templates/base.html:32
 msgid "Beginning payment"
-msgstr ""
+msgstr "Початок оплати"
 
 #: public/js/views/login.js:19
 msgid "Connecting to Persona"
-msgstr ""
+msgstr "З'єднання з Persona"
 
 #: webpay/base/templates/base.html:34
 msgid "Payment complete"
-msgstr ""
+msgstr "Оплату завершено"
 
 #: public/js/lib/auth.js:22
 msgid "Oops"
-msgstr ""
+msgstr "Ой"
 
 #: public/js/lib/auth.js:65
 msgid "This is taking longer than expected. Try again?"
-msgstr ""
+msgstr "Це триває довше ніж очікувалось. Спробувати знову?"
 
 #: public/js/lib/auth.js:19
 msgid "Something went wrong. Try again?"
-msgstr ""
+msgstr "Щось пішло не так. Спробувати знову?"
 
 #: templates/error.html:27
 msgid "OK"
-msgstr ""
+msgstr "ОК"
 
 #: public/js/views/error.js:44 public/js/views/locked.js:23
 msgid "Error"
-msgstr ""
+msgstr "Помилка"
 
 #: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100
 msgid "Enter PIN"
-msgstr ""
+msgstr "Уведіть PIN"
 
 #: public/js/views/login.js:25 templates/login.html:5
 msgid "Sign In"
-msgstr ""
+msgstr "Увійти"
 
 #: templates/login.html:6
 msgid "Sign in to continue with the payment"
-msgstr ""
+msgstr "Увійти, щоб продовжити оплату"
 
 #: templates/login.html:7
 msgid "Sign in"
-msgstr ""
+msgstr "Увійти"
 
 #: public/js/views/create-pin.js:106 public/js/views/create-pin.js:113
 #: public/js/views/reset-pin.js:64 templates/reset-start.html:12
 #: templates/was-locked.html:12
 msgid "Continue"
-msgstr ""
+msgstr "Продовжити"
 
 #: public/js/views/enter-pin.js:73
 msgid "Wrong PIN"
-msgstr ""
+msgstr "Неправильний PIN"
 
 #: public/js/views/create-pin.js:48
 msgid "PINs do not match."
-msgstr ""
+msgstr "PIN коди не співпадають."
 
 #: webpay/pin/views.py:46 webpay/testing/views.py:25
 msgid "Create a PIN"
-msgstr ""
+msgstr "Створити PIN"
 
 #: webpay/pin/views.py:68 webpay/pin/views.py:185
 #: public/js/views/create-pin.js:36
 msgid "Confirm PIN"
-msgstr ""
+msgstr "Підтвердити PIN"
 
 #: webpay/pin/views.py:131 webpay/pin/views.py:157
 #: webpay/pin/templates/pin/pin_was_locked.html:13
 #: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
 #: templates/was-locked.html:11
 msgid "Reset PIN"
-msgstr ""
+msgstr "Скинути PIN"
 
 #. This is the same as the standard forgot
 #. password that most sites have.
 #: templates/pin-form.html:18 templates/reset-start.html:6
 msgid "Forgot your PIN?"
-msgstr ""
+msgstr "Забули свій PIN?"
 
 #: public/js/views/locked.js:24
 msgid ""
 "You entered the wrong PIN too many times. Your account is locked. Please try "
 "your purchase again in 5 minutes."
 msgstr ""
+"Ви ввели неправильний PIN багато разів. Ваш обліковий запис заблоковано. "
+"Спробуйте покупку знову через 5 хвилин."
 
 #: templates/was-locked.html:6
 msgid "Your PIN was locked"
-msgstr ""
+msgstr "Ваш PIN було заблоковано"
 
 #: templates/was-locked.html:7
 msgid ""
 "Your PIN was locked because you entered it incorrectly too many times. You "
 "can continue and try entering your PIN again or reset your PIN."
 msgstr ""
+"Ваш PIN було заблоковано, тому що ви ввели його неправильно багато разів. Ви "
+"можете продовжити та спробувати ввести свій PIN знову або скинути його."
 
 #: templates/reset-start.html:7
 msgid ""
 "Are you sure you want to reset your PIN? You must sign in to Persona to "
 "reset your PIN."
 msgstr ""
+"Ви впевнені, що хочете скинути свій PIN? Щоб зробити це, ви повинні увійти в "
+"Persona."
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6
 #: webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"
-msgstr ""
+msgstr "Перевірка оплати"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30
 msgid "Retrying"
-msgstr ""
+msgstr "Повторення"
 
 #: public/js/lib/auth.js:64
 msgid "That took longer than expected. Retry?"
-msgstr ""
+msgstr "Це тривало довше ніж очікувалось. Повторити?"
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11
 msgid "Back"
-msgstr ""
+msgstr "Назад"
 
 #: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95
 msgid "Submit"
-msgstr ""
+msgstr "Надіслати"
 
 #: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60
 #: public/js/views/reset-pin.js:28
 msgid "Retry?"
-msgstr ""
+msgstr "Повторити?"
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
 msgid "Create PIN"
-msgstr ""
+msgstr "Створити PIN"
 
 #: public/js/views/error.js:45
 msgid "Something went wrong."
-msgstr ""
+msgstr "Щось пішло не так."
 
 #: public/js/views/reset-start.js:29
 msgid "Reset your PIN?"
-msgstr ""
+msgstr "Скинути ваш PIN?"
 
 #: public/js/views/was-locked.js:13
 msgid "Was Locked"
-msgstr ""
+msgstr "Було заблоковано"
 
 #: public/js/views/wait-for-tx.js:10
 msgid "Setting up payment"
-msgstr ""
+msgstr "Налаштування оплати"

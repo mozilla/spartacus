@@ -4,9 +4,8 @@ define([
   'id',
   'jquery',
   'log',
-  'provider',
   'utils',
-], function(cancel, i18n, id, $, log, provider, utils) {
+], function(cancel, i18n, id, $, log, utils) {
 
   'use strict';
 
@@ -64,20 +63,7 @@ define([
         // Set logged_in and manually direct to reset-pin which is
         // implied having successfully carried out a re-auth.
         app.session.set('logged_in', true, {silent: true});
-        // provider (boku/bango/reference) was set when transaction was created.
-        // Therefore we should just be able to get it and use
-        // it to run the provider preparation ahead of the reset.
-        var providerName = app.transaction.get('provider');
-        if (providerName) {
-          var Provider = provider.providerFactory(providerName);
-          Provider.prepareAll(data.user_hash).done(function() {
-            app.router.navigate('spa/reset-pin', {trigger: true});
-          });
-        } else {
-          utils.trackEvent({'action': 'persona login',
-                            'label': prefix + ' Missing Provider'});
-          return app.error.render({errorCode: 'MISSING_PROVIDER'});
-        }
+        app.router.navigate('spa/reset-pin', {trigger: true});
       } else {
         // Setting the attr will cause the listeners
         // to deal with login success.

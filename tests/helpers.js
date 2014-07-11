@@ -219,6 +219,7 @@ function clientTimeoutResponse(method, url) {
 
 function fakeVerification(options) {
   options = options || {};
+  options.userHash = options.userHash || 'test-hash';
   var url = options.reverify === true ? '/fake-reverify' : '/fake-verify';
   // This doesn't reflect the real response but allows us to
   // know if the response represents a verification or reverification.
@@ -230,16 +231,16 @@ function fakeVerification(options) {
     clientTimeoutResponse('POST', url);
   } else {
     casper.echo('Setting up a fake verification success', 'INFO');
-    casper.evaluate(function(statusCode, statusData, url) {
+    casper.evaluate(function(statusCode, statusData, url, userHash) {
       window.server.respondWith('POST', url,
         [statusCode, {'Content-Type': 'application/json'}, JSON.stringify({
           'status': statusData,
           'audience': 'http://localhost',
           'expires': Date.now(),
           'issuer': 'fake-persona',
-          'user_hash': 'test-hash'
+          'user_hash': userHash
         })]);
-    }, statusCode, statusData, url);
+    }, statusCode, statusData, url, options.userHash);
   }
 }
 
@@ -262,8 +263,25 @@ function fakeLogout(options) {
 }
 
 
+function fakeProviderLogout(options) {
+  options = options || {};
+  options.statusCode = options.statusCode || 200;
+
+  casper.echo('Setting up successful provider logout response', 'INFO');
+  casper.evaluate(function(statusCode, content) {
+    window.server.respondWith('GET', /\/fake\/bango\/logout\//,
+                              [statusCode,
+                               {'Content-Type': 'text/plain'}, content]);
+
+  }, options.statusCode, '');
+}
+
+
 function fakeWaitPoll(options) {
   options = options || {};
+  if (typeof options.provider === 'undefined') {
+    options.provider = 'bango';
+  }
   var statusCode = options.statusCode || 200;
   var timeout = options.timeout || false;
   var url;
@@ -287,15 +305,17 @@ function fakeWaitPoll(options) {
     casper.echo('Setting up a fake XHR timeout for wait Poll', 'INFO');
     clientTimeoutResponse('GET', url);
   } else {
-    casper.evaluate(function(url, statusCode, statusData, urlData) {
+    casper.evaluate(function(url, provider, statusCode, statusData, urlData) {
       window.server.respondWith('GET', url,
         [statusCode, {'Content-Type': 'application/json'}, JSON.stringify({
+          'provider': provider,
           'status': statusData,
           'url': urlData,
         })]);
-    }, url, statusCode, statusData, urlData);
+    }, url, options.provider, statusCode, statusData, urlData);
   }
 }
+
 
 function fakeStartTransaction(options) {
   options = options || {};
@@ -305,11 +325,12 @@ function fakeStartTransaction(options) {
     clientTimeoutResponse('POST', '/mozpay/v1/api/pay/');
   } else {
     casper.echo('Setting up successful transaction start response', 'INFO');
-    var data = JSON.stringify(options.data || {provider: "boku"});
-    casper.evaluate(function(statusCode, data) {
-      window.server.respondWith('POST', '/mozpay/v1/api/pay/', [statusCode, {'Content-Type': 'application/json'}, data]);
+    casper.evaluate(function(statusCode) {
+      window.server.respondWith('POST', '/mozpay/v1/api/pay/',
+                                [statusCode,
+                                 {'Content-Type': 'text/plain'}, '']);
 
-    }, options.statusCode || 201, data);
+    }, options.statusCode || 204);
   }
 }
 
@@ -405,6 +426,7 @@ module.exports = {
   fakeBrokenJSON: fakeBrokenJSON,
   fakeLogout: fakeLogout,
   fakePinData: fakePinData,
+  fakeProviderLogout: fakeProviderLogout,
   fakeStartTransaction: fakeStartTransaction,
   fakeVerification: fakeVerification,
   fakeWaitPoll: fakeWaitPoll,

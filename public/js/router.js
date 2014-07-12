@@ -7,6 +7,8 @@ define([
   'views/init',
   'views/locked',
   'views/login',
+  'views/payment-failed',
+  'views/payment-success',
   'views/reset-pin',
   'views/reset-start',
   'views/wait-to-finish',
@@ -21,6 +23,8 @@ define([
   InitView,
   LockedView,
   LoginView,
+  PaymentFailedView,
+  PaymentSuccessView,
   ResetPinView,
   ResetStartView,
   WaitToFinishView,
@@ -51,6 +55,8 @@ define([
     // mapped to from data attrs.
     mapping: {
       'wait-to-finish': 'showWaitToFinish',
+      'payment-failed': 'showPaymentFailed',
+      'payment-success': 'showPaymentSuccess',
     },
 
     getMappedRouteFunc: function(key) {
@@ -118,6 +124,14 @@ define([
     showLogin: function() {
       // Note: This view isn't directly routed.
       this.viewManager.renderView(LoginView);
+    },
+
+    showPaymentFailed: function() {
+      this.viewManager.renderView(PaymentFailedView);
+    },
+
+    showPaymentSuccess: function() {
+      this.viewManager.renderView(PaymentSuccessView);
     },
 
     showResetPin: function() {

@@ -9,12 +9,26 @@ Spartacus is a single page app front-end for [Webpay](https://github.com/mozilla
 
  * Checkout the build
  * Run `npm install`
- * Run `npm install -g grunt-cli` (This is the recommended approach for installing the cli - the runner is local to the project see http://gruntjs.com/getting-started#installing-the-cli)
+ * Run `npm install -g grunt-cli` (This is the recommended approach for
+   installing the cli - the runner is local to the project see
+   http://gruntjs.com/getting-started#installing-the-cli)
  * Use one of the following grunt commands
 
 ### Running the dev server
 
 Run `grunt start`
+
+### Running with Webpay
+
+You'll need to point webpay at your running Spartacus installation for static
+files only.
+
+The webpay setting `SPARTACUS_STATIC` is pointing at `localhost:7777` by default.
+Modify this if your local settings if you need to.
+
+You'll also need to make sure your local webpay settings have `SPA_ENABLE` and
+`SPA_ENABLE_URLS` are both set to `True`. This will enable webpay to serve
+Spartacus for the relevant urls.
 
 ### Running the styleguide
 
@@ -29,7 +43,6 @@ Run `grunt test`
 Run `grunt uitest`. To run a single UI test pass the file with a flag e.g:
 
 `grunt uitest --test tests/ui/test-basic.js`
-
 
 ### Bugs
 

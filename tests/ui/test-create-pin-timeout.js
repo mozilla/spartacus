@@ -35,7 +35,7 @@ casper.test.begin('Create pin timeout then success.', {
 
     casper.waitForUrl(helpers.url('wait-to-start'), function() {
       // Throbber should be visible.
-      test.assertVisible('progress');
+      test.assertVisible('.progress');
     });
 
     casper.run(function() {

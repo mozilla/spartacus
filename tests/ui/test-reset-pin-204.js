@@ -46,7 +46,7 @@ casper.test.begin('Reset pin returns 204, then onto wait for tx.', {
     });
 
     casper.waitForUrl(helpers.url('wait-to-start'), function() {
-      test.assertVisible('progress');
+      test.assertVisible('.progress');
     });
 
     casper.run(function() {

@@ -1,4 +1,13 @@
-// This is FF only at present.
+@keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(365deg);
+        transform: rotate(365deg);
+    }
+}
 
 .throbber {
     // This will normally be overlaid hence it needs it's own background.
@@ -7,8 +16,6 @@
     bottom: 0;
     grain();
     left: 0;
-    overflow: hidden; // Required as FF18 makes progress larger than needed.
-    padding-top: 80px;
     position: absolute;
     right: 0;
     top: 0;
@@ -17,25 +24,15 @@
     .msg {
         text-align: center;
     }
-}
 
-progress:indeterminate {
-
-    // Nuke the default background.
-    &::-moz-progress-bar {
-        background: none;
+    .progress {
+        display: block;
+        margin: 80px auto 0;
+        height: 50px;
+        width: 50px;
+        animation(1s spin infinite steps(12));
+        background: transparent embedurl('throbber.png') no-repeat 50% 50%;
     }
-
-    animation(unquote('0.9s spin infinite linear'));
-    background: transparent embedurl('throbber.png') no-repeat 50% 50%;
-    border: none; // Removes the progress element border.
-    display: block;
-    margin: 0 auto;
-    height: 50px;
-    width: 50px;
 }
 
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(365deg); }
-}
+

@@ -30,7 +30,7 @@ casper.test.begin('Enter pin timeout then success', {
     });
 
     casper.waitForUrl(helpers.url('wait-to-start'), function() {
-      test.assertVisible('progress');
+      test.assertVisible('.progress');
     });
 
     casper.run(function() {

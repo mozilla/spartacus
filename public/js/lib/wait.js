@@ -2,9 +2,10 @@ define([
   'i18n',
   'jquery',
   'log',
+  'provider',
   'settings',
   'utils'
-], function(i18n, $, log, settings, utils) {
+], function(i18n, $, log, provider, settings, utils) {
 
   "use strict";
 
@@ -60,7 +61,7 @@ define([
   }
 
   function poll(expectedStatus) {
-    console.log('[wait] polling ' + startUrl + ' until status ' + expectedStatus);
+    console.log('polling ' + startUrl + ' until status ' + expectedStatus);
 
     function clear() {
       clearPoll();
@@ -77,6 +78,7 @@ define([
     });
 
     request.done(function(data) {
+
       function trackClosePayFlow() {
         utils.trackEvent({'action': 'payment',
                           'label': 'Closing Pay Flow'});
@@ -91,8 +93,27 @@ define([
           if (utils.isValidRedirURL(data.url)) {
             utils.trackEvent({'action': 'payment',
                               'label': 'Redirect To Pay Flow'});
-            console.log('transaction completed; redirect to ' + data.url);
-            window.location = data.url;
+
+            console.log('about to prepare provider', data.provider);
+            if (!data.provider) {
+              console.error('The API response returned a falsey provider:',
+                            data.provider);
+              return app.error.render({errorCode: 'MISSING_PROVIDER'});
+            }
+            var Provider = provider.providerFactory(data.provider);
+            var preparation = Provider.prepareAll(app.session.get('user_hash'));
+
+            preparation.done(function() {
+              console.log('Successfully prepared payment provider', data.provider);
+              console.log('transaction completed; redirect to ' + data.url);
+              window.location = data.url;
+            });
+
+            preparation.fail(function() {
+              console.error('Failed to log out of payment provider', data.provider);
+              return app.error.render({errorCode: 'PROVIDER_LOGOUT_FAIL'});
+            });
+
           } else {
             utils.trackEvent({'action': 'payment',
                               'label': 'Invalid Redirect URL'});

@@ -78,8 +78,11 @@ define(['jquery', 'log', 'underscore', 'utils'], function($, log, _, utils) {
       var existingUser = this.storage.getItem('spa-user-hash');
       this.storage.setItem('spa-user-hash', userHash);
 
+      console.log('new user hash =', userHash,
+                  'existing user hash =', existingUser);
+
       if (existingUser && existingUser !== userHash) {
-        console.log('logout: new user hash', userHash, '!== saved hash', existingUser);
+        console.log('User has changed: do logout');
         utils.trackEvent({'action': 'user change detection',
                           'label': 'User Changed'});
         return this.logout();
@@ -105,8 +108,8 @@ define(['jquery', 'log', 'underscore', 'utils'], function($, log, _, utils) {
   Bango.prototype.logout = function() {
 
     // Log out of Bango so that cookies are cleared.
-    console.log('Logging out of Bango');
     var url = utils.bodyData.bangoLogoutUrl;
+    console.log('Logging out of Bango at', url);
     if (url) {
       var req = $.ajax({url: url, dataType: 'script'});
 

@@ -15,12 +15,11 @@ define([
   'id',
   'jquery',
   'log',
-  'provider',
   'settings',
   'underscore',
   'utils',
   'views/page',
-], function(auth, cancel, id, $, log, provider, settings, _, utils, PageView){
+], function(auth, cancel, id, $, log, settings, _, utils, PageView){
 
   'use strict';
 
@@ -69,18 +68,7 @@ define([
 
       app.throbber.render(this.gettext('Connecting to Persona'));
 
-      var providerInst;
-      var providerName = app.transaction.get('provider');
-      if (providerName) {
-        providerInst = provider.providerFactory(providerName);
-      } else {
-        utils.trackEvent({'action': 'forgot pin',
-                            'label': 'Missing Provider'});
-        return app.error.render({errorCode: 'MISSING_PROVIDER'});
-      }
-
       var authResetUser = auth.resetUser();
-      var providerLogout = providerInst.logout();
       var personaLogout = this.logoutPersona();
 
       if (this.resetLogoutTimeout) {
@@ -92,11 +80,10 @@ define([
         // If the log-out times-out then abort/reject the requests/deferred.
         console.log('logout timed-out');
         authResetUser.abort();
-        providerLogout.abort();
         personaLogout.reject();
       }, settings.logout_timeout);
 
-      $.when(authResetUser, providerLogout, personaLogout)
+      $.when(authResetUser, personaLogout)
         .done(function _allLoggedOut() {
           console.log('Clearing logout reset timer.');
           window.clearTimeout(that.resetLogoutTimeout);

@@ -1,12 +1,11 @@
 define([
   'auth',
   'log',
-  'provider',
   'settings',
   'underscore',
   'utils',
   'views/base'
-], function(auth, log, provider, settings, _, utils, BaseView){
+], function(auth, log, settings, _, utils, BaseView){
 
   'use strict';
 
@@ -112,32 +111,23 @@ define([
       if (jwt) {
         var req = app.transaction.startTransaction(jwt);
 
-        req.done(function(data) {
+        req.done(function() {
           console.log('Transaction started successfully');
           utils.trackEvent({action: 'start-transaction',
                             label: 'Transaction started successfully'});
-          var providerName = data.provider;
-          if (settings.validProviders.indexOf(providerName) > -1) {
-            app.transaction.set('provider', providerName);
-            var Provider = provider.providerFactory(providerName);
-            Provider.prepareAll(app.session.get('user_hash')).done(function() {
-              var req = app.pin.fetch().fail(function($xhr, textStatus) {
-                if (textStatus === 'timeout') {
-                  utils.trackEvent({action: 'fetch-state',
-                                    label: 'Fetching initial state timed-out.'});
-                  return app.error.render({errorCode: 'PIN_STATE_TIMEOUT',
-                                           ctaCallback: that.setUpPayment});
-                } else {
-                  utils.trackEvent({action: 'fetch-state',
-                                    label: 'Fetching initial state error.'});
-                  return app.error.render({errorCode: 'PIN_STATE_ERROR'});
-                }
-              });
-              return req;
-            });
-          } else {
-            return app.error.render({'errorCode': 'UNEXPECTED_PROVIDER'});
-          }
+          var req = app.pin.fetch().fail(function($xhr, textStatus) {
+            if (textStatus === 'timeout') {
+              utils.trackEvent({action: 'fetch-state',
+                                label: 'Fetching initial state timed-out.'});
+              return app.error.render({errorCode: 'PIN_STATE_TIMEOUT',
+                                       ctaCallback: that.setUpPayment});
+            } else {
+              utils.trackEvent({action: 'fetch-state',
+                                label: 'Fetching initial state error.'});
+              return app.error.render({errorCode: 'PIN_STATE_ERROR'});
+            }
+          });
+          return req;
         }).fail(function($xhr, textStatus) {
           console.log($xhr.status);
           console.log(textStatus);

@@ -35,7 +35,7 @@ define([
     trackEvent: function(options) {
       options = options || {};
       tracking.trackEvent(uaTrackingCategory, options.action, options.label,
-                          options.value, options.nonInteraction);
+                          options.value);
     },
     apiUrl: function(path) {
       if (path.slice(-1) !== '/') {

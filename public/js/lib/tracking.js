@@ -17,7 +17,8 @@ define(['caps', 'log', 'settings'], function(caps, log, settings) {
   if (caps.hasLocalStorage) {
     clientID = window.localStorage.getItem('clientID');
     if (!clientID && enabled) {
-      window.localStorage.setItem('clientID', clientID = (Date.now() + Math.random()).toString(36));
+      clientID = (Date.now() + Math.random()).toString(36);
+      window.localStorage.setItem('clientID', clientID);
     }
   }
 
@@ -31,7 +32,7 @@ define(['caps', 'log', 'settings'], function(caps, log, settings) {
     };
   }
 
-  function setupUATracking(id, initialUrl, clientID) {
+  function setupUATracking(id, initialUrl) {
     window.GoogleAnalyticsObject = 'ga';
     window.ga = window.ga || function() {
       (window.ga.q = window.ga.q || []).push(arguments);
@@ -48,13 +49,12 @@ define(['caps', 'log', 'settings'], function(caps, log, settings) {
     // In Spartacus we will attempt to use the same clientId.
     // However, if it's not accessible we'll fall-back to
     // Letting analytics.js persist a Unique client id.
+    var opts = {};
     if (clientID) {
-      window.ga('create', id, {
-        storage: 'none',
-        clientId: clientID,
-      });
+      opts.storage = 'none';
+      opts.clientId = clientID;
     }
-
+    window.ga('create', id, opts);
     window.ga('set', 'checkProtocolTask', function(){});
     window.ga('send', 'pageview', initialUrl);
   }

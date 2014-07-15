@@ -9,7 +9,7 @@ var settings = {
   ua_dnt_override: false,
   // The category used in all event tracking.
   ua_tracking_category: 'Consumer Payment Flow',
-  //Turn UA tracking on/off wholesale.
+  // Turn UA tracking on/off wholesale.
   ua_tracking_enabled: false,
   // General Ajax timeout (Default 45s).
   ajax_timeout: 45000,

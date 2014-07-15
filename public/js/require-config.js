@@ -15,6 +15,7 @@
       'auth': 'lib/auth',
       'backbone': '../lib/js/backbone/backbone',
       'cancel': 'lib/cancel',
+      'caps': 'lib/capabilities',
       'fastclick': '../lib/js/fastclick/fastclick',
       'gobbledygook': '../lib/js/gobbledygook/gobbledygook',
       'i18n-abide-utils': '../lib/js/i18n-abide-utils/i18n-abide-utils',
@@ -28,6 +29,7 @@
       'provider': 'lib/provider',
       'query-string': '../lib/js/query-string/query-string',
       'require': '../lib/js/requirejs/require',
+      'tracking': 'lib/tracking',
       'underscore': '../lib/js/underscore/underscore',
       'utils': 'lib/utils',
       'wait': 'lib/wait'

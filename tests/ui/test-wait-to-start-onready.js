@@ -36,7 +36,7 @@ casper.test.begin('Test wait to start polling', {
 
     casper.waitForSelector('.throbber', function() {
       // Progress will be shown as we are returning a non-pending state for the first request.
-      test.assertVisible('progress', 'Check progress is shown on wait-to-start');
+      test.assertVisible('.progress', 'Check progress is shown on wait-to-start');
     });
 
     casper.waitForUrl('/fake-provider', function() {

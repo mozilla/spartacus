@@ -30,7 +30,7 @@ casper.test.begin('Check wait-to-finish polling timeout followed by retry.', {
 
     casper.waitForSelector('.throbber', function() {
       // Progress will be shown as we are returning a non-pending state for the first 2 requests.
-      test.assertVisible('progress', 'Check progress is shown on wait-to-finish');
+      test.assertVisible('.progress', 'Check progress is shown on wait-to-finish');
     });
 
     casper.waitForSelector('.full-error', function() {
@@ -39,7 +39,7 @@ casper.test.begin('Check wait-to-finish polling timeout followed by retry.', {
     });
 
     casper.waitForSelector('.throbber', function() {
-      test.assertVisible('progress', 'Check progress is shown on wait-to-finish');
+      test.assertVisible('.progress', 'Check progress is shown on wait-to-finish');
     });
 
     casper.waitForSelector('.full-error', function() {

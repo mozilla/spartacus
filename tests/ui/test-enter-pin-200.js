@@ -22,7 +22,7 @@ casper.test.begin('Enter Pin API call returns 200', {
     });
 
     casper.waitForUrl(helpers.url('wait-to-start'), function() {
-      test.assertVisible('progress');
+      test.assertVisible('.progress');
     });
 
     casper.run(function() {

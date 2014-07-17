@@ -48,7 +48,14 @@ define([
     handlePersonaReady: function() {
       console.log('Probably logged in, Persona never called back');
       if (this.personaCalledBack === false && utils.bodyData.loggedInUser) {
+        console.log('Updating app.session: logged_in -> true');
         app.session.set('logged_in', true);
+        // Set user_hash to false so we know it
+        // was not set with an assertion.
+        if (app.session.get('user_hash') === null) {
+          console.log('Updating app.session: user_hash -> false');
+          app.session.set('user_hash', false);
+        }
       }
     },
 

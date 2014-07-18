@@ -71,7 +71,6 @@ define(['jquery', 'log', 'underscore', 'utils'], function($, log, _, utils) {
     prepareAll: function(userHash) {
 
       if (!userHash) {
-        app.error.render({errorCode: 'USER_HASH_EMPTY'});
         return $.Deferred().reject();
       }
 

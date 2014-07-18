@@ -12,7 +12,7 @@ module.exports = {
     msg: "Loading",
   },
   pinForm: {
-    pinTitle: "Create Pin",
+    pinTitle: "Create PIN",
     ctaText: "Continue"
   },
   locked: {

@@ -30,6 +30,12 @@ You'll also need to make sure your local webpay settings have `SPA_ENABLE` and
 `SPA_ENABLE_URLS` are both set to `True`. This will enable webpay to serve
 Spartacus for the relevant urls.
 
+#### Changing settings via Webpay
+
+To change settings you can override any of the JS settings (see
+`public/js/settings.js`) by updating the settings in webpay. The settings
+key to look for is `SPA_SETTINGS`.
+
 ### Running the styleguide
 
 Run `grunt styleguide`

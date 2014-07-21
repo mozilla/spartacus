@@ -45,10 +45,12 @@ define([
       }
 
       var context = {
-        // The call to action button text.
-        ctaText: options.ctaText,
+        // The cancel modifier.
+        cancelModifier: 'cancel',
         // The cancelText for the cancel button.
-        cancelText: options.cancelText,
+        cancelText: options.cancelText || this.gettext('Cancel'),
+        // The call to action button text.
+        ctaText: options.ctaText || this.gettext('OK'),
         // The error code to display.
         errorCode: errorCode,
         // Add default heading + msg.
@@ -82,6 +84,14 @@ define([
           context.showCta = true;
         }
         this.delegateEvents(customEvents);
+      }
+
+      if (!options.cancelCallback && context.showCancel === true &&
+          context.showCta === false) {
+        if (!options.cancelText) {
+          context.cancelText = this.gettext('OK');
+        }
+        context.cancelModifier = 'cancel cta';
       }
 
       // Make it so!

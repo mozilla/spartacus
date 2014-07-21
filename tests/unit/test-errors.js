@@ -63,5 +63,31 @@ define(['jquery', 'views/error'], function($, ErrorView) {
       assert.equal($('#error .full-error .error-code').text(), 'AN_UNUSUAL_ERROR_CODE');
       assert.equal($('#error .full-error .message').text(), 'An unexpected error occurred.');
     });
+
+    test('Check cancel button defaults to OK.', function(){
+      assert.ok($('#error .full-error').length === 0);
+      this.error.render({errorCode: 'TESTING_CANCEL_TXT'});
+      assert.equal($('button').length, 1);
+      assert.ok($('button').hasClass('cancel'));
+      assert.ok($('button').hasClass('cta'));
+      assert.equal($('button').text(), 'OK');
+    });
+
+    test('Check single cancel has cta class when text is changed', function(){
+      assert.ok($('#error .full-error').length === 0);
+      this.error.render({errorCode: 'TESTING_CANCEL_TXT', cancelText: 'whatever'});
+      assert.equal($('button').length, 1);
+      assert.ok($('button').hasClass('cancel'));
+      assert.ok($('button').hasClass('cta'));
+      assert.equal($('button').text(), 'whatever');
+    });
+
+    test('Check single cancel has no cta class when CTA is showing', function(){
+      assert.ok($('#error .full-error').length === 0);
+      this.error.render({errorCode: 'TESTING_CANCEL_TXT', showCta: true});
+      assert.equal($('button').length, 2);
+      assert.equal($('button.cancel').hasClass('cta'), false);
+      assert.equal($('button.cancel').text(), 'Cancel');
+    });
   });
 });

@@ -71,6 +71,7 @@ define(['jquery', 'log', 'underscore', 'utils'], function($, log, _, utils) {
     prepareAll: function(userHash) {
 
       if (!userHash) {
+        console.log('userHash not set. Rejecting deferred');
         return $.Deferred().reject();
       }
 

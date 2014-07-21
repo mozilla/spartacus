@@ -45,23 +45,17 @@ define([
       }
 
       var context = {
-        // The cancel modifier.
+        // The cancel modifier (determines the class added to the button).
         cancelModifier: 'cancel',
-        // The cancelText for the cancel button.
         cancelText: options.cancelText || this.gettext('Cancel'),
-        // The call to action button text.
         ctaText: options.ctaText || this.gettext('OK'),
-        // The error code to display.
         errorCode: errorCode,
-        // Add default heading + msg.
         heading: options.heading || this.gettext('Error'),
-        // Use passed-in msg / or errorCode message / or default.
         msg: msg || this.gettext('An unexpected error occurred.'),
-        // The page class for the error message.
         pageclass: options.pageclass,
         // Default to showing the cancel button.
         showCancel: options.showCancel === false ? false : true,
-        // Default to showing not the call to action button.
+        // Default to not showing the call to action button.
         showCta: options.showCta || false,
       };
 

@@ -45,21 +45,17 @@ define([
       }
 
       var context = {
-        // The call to action button text.
-        ctaText: options.ctaText,
-        // The cancelText for the cancel button.
-        cancelText: options.cancelText,
-        // The error code to display.
+        // The cancel modifier (determines the class added to the button).
+        cancelModifier: 'cancel',
+        cancelText: options.cancelText || this.gettext('Cancel'),
+        ctaText: options.ctaText || this.gettext('OK'),
         errorCode: errorCode,
-        // Add default heading + msg.
         heading: options.heading || this.gettext('Error'),
-        // Use passed-in msg / or errorCode message / or default.
         msg: msg || this.gettext('An unexpected error occurred.'),
-        // The page class for the error message.
         pageclass: options.pageclass,
         // Default to showing the cancel button.
         showCancel: options.showCancel === false ? false : true,
-        // Default to showing not the call to action button.
+        // Default to not showing the call to action button.
         showCta: options.showCta || false,
       };
 
@@ -82,6 +78,14 @@ define([
           context.showCta = true;
         }
         this.delegateEvents(customEvents);
+      }
+
+      if (!options.cancelCallback && context.showCancel === true &&
+          context.showCta === false) {
+        if (!options.cancelText) {
+          context.cancelText = this.gettext('OK');
+        }
+        context.cancelModifier = 'cancel cta';
       }
 
       // Make it so!

@@ -31,7 +31,7 @@ app.use(rewriteModule.getMiddleware([
   {from: '^/lib/css/fonts/(.*)', to: '/lib/fonts/bootstrap/$1'},
 ]));
 
-app.get(/\/(?:css|fonts|i18n|images)\/?.*/, express.static(__dirname + '/../public'));
+app.get(/\/(?:js|css|fonts|i18n|images)\/?.*/, express.static(__dirname + '/../public'));
 app.get(/\/(?:lib|src)\/?.*/, express.static(__dirname + '/static'));
 
 app.get('/', views.index);

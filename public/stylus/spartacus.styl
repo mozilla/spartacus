@@ -62,9 +62,30 @@ main,
 }
 
 @media $small-min-width {
+
+    .view {
+        min-height: 100%;
+        height: auto;
+    }
+
+    main {
+        height: 100%;
+    }
+
+    .page {
+        height: auto;
+    }
+
+    main,
+    .page {
+        min-height: 100%;
+        overflow: visible;
+    }
+
+
     .inner {
         display: block;
-        padding-top: 30px;
+        padding: 85px;
     }
 }
 

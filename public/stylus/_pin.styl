@@ -66,3 +66,26 @@
         }
     }
 }
+
+@media $small-min-width {
+    .pin {
+
+        margin: 0 auto;
+        max-width: 520px;
+
+        .pin-container {
+            max-width: 100%;
+        }
+
+        .buttons {
+            margin-top: 10px;
+
+            .button,
+            .button:only-child {
+                width: 48%;
+                width: calc(50% - 5px);
+            }
+        }
+
+    }
+}

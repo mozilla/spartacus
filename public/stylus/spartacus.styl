@@ -171,3 +171,14 @@ main,
         font-size: 14px;
     }
 }
+
+html[dir="rtl"] .button {
+    &:first-child {
+        margin-left: 5px
+        margin-right: 0;
+    }
+
+    &:only-child {
+        margin: 0;
+    }
+}

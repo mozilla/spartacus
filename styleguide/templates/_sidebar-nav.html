@@ -16,7 +16,7 @@
 {% endfor %}
 </ul>
 
-{% set navigation_bar = [
+{% set pages_navigation_bar = [
     ['/create-pin', 'create-pin', 'Create Pin'],
     ['/error', 'error', 'Error'],
     ['/locked', 'locked', 'Locked'],
@@ -24,10 +24,9 @@
     ['/was-locked', 'was-locked', 'Was locked']
 ] -%}
 
-{% set active_page = active_page|default('index') -%}
 <h2>Pages</h2>
 <ul class="nav nav-sidebar">
-{% for href, id, caption in navigation_bar %}
+{% for href, id, caption in pages_navigation_bar %}
   <li{% if id == active_page %} class="active"{% endif %}><a href="{{ href }}">{{ caption }}</a></li>
 {% endfor %}
 </ul>

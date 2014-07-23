@@ -1,5 +1,5 @@
 module.exports = {
-  port: 7777,
+  port: 2604,
   liveReloadPort: 35729,
 
   // Persona settings...

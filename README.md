@@ -23,7 +23,7 @@ Run `grunt start`
 You'll need to point webpay at your running Spartacus installation for static
 files only.
 
-The webpay setting `SPARTACUS_STATIC` is pointing at `localhost:7777` by default.
+The webpay setting `SPARTACUS_STATIC` is pointing at `localhost:2604` by default.
 Modify this if your local settings if you need to.
 
 You'll also need to make sure your local webpay settings have `SPA_ENABLE` and

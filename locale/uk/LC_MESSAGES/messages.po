@@ -43,7 +43,7 @@ msgstr "Початок оплати"
 
 #: public/js/views/login.js:19
 msgid "Connecting to Persona"
-msgstr "З'єднання з Persona"
+msgstr "Під'єднання до Persona"
 
 #: webpay/base/templates/base.html:34
 msgid "Payment complete"

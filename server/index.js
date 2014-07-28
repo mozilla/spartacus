@@ -54,6 +54,7 @@ spa.use(rewriteModule.getMiddleware([
   {from: '^/mozpay/bogus-start-attr', to: '/mozpay/'},
   // Internally redirect urls to be handled by the client-side spa serving view.
   {from: '^/mozpay/spa/(?:' + servedViews.join('|') + ')$', to: '/mozpay/'},
+  {from: '^/mozpay/spa/fxa-auth.*', to: '/mozpay/'},
 ]));
 
 spa.get(/\/(?:css|fonts|i18n|images|js|lib)\/?.*/, express.static(__dirname + '/../public'));
@@ -86,6 +87,9 @@ spa.get('/mozpay/', function (req, res) {
 // Serve test assets.
 spa.get(/\/testlib\/?.*/, express.static(__dirname + '/../tests/static'));
 spa.get(/\/unit\/?.*/, express.static(__dirname + '/../tests/'));
+spa.get(/\/fake-fxa-login/, function(req, res) {
+  res.redirect('/mozpay/spa/fxa-auth?fxa_data=fake');
+});
 
 function genFakeResp(pin, status) {
 

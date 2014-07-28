@@ -22,6 +22,14 @@ define([
     decodeURIComponent: function decodeURIComponent(uri) {
       return window.decodeURIComponent(uri.replace(/\+/g, ' '));
     },
+
+    getCenteredCoordinates: function getCenteredCoordinates(width, height, win) {
+      var x = win.screenX + Math.max(0, Math.floor(
+        (win.innerWidth - width) / 2));
+      var y = win.screenY + Math.max(0, Math.floor(
+        (win.innerHeight - height) / 2));
+      return [x, y];
+    },
     mozPaymentProvider: window.mozPaymentProvider || {
       paymentSuccess: window.paymentSuccess || function() {
         console.error('No paymentSuccess function');

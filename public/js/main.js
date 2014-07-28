@@ -10,6 +10,14 @@ require(['require-config'], function() {
 
     'use strict';
 
+     //  For fxa auth verification, skip the usual stuff.
+    if (window.location.pathname === "/mozpay/spa/fxa-auth") {
+      console.log('authorizing FxA login');
+      window.opener.postMessage({auth_code: window.location.toString()},
+                                window.location.origin);
+      window.close();
+      return;
+    }
     // Common ajax settings.
     $.ajaxSetup({
       headers: {

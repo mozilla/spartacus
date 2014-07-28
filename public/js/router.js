@@ -1,9 +1,11 @@
 define([
   'backbone',
   'underscore',
+  'utils',
   'views/create-pin',
   'views/enter-pin',
   'views/force-auth',
+  'views/fxa-login',
   'views/init',
   'views/locked',
   'views/login',
@@ -17,9 +19,11 @@ define([
 ], function(
   Backbone,
   _,
+  utils,
   CreatePinView,
   EnterPinView,
   ForceAuthView,
+  FxALoginView,
   InitView,
   LockedView,
   LoginView,
@@ -123,7 +127,11 @@ define([
 
     showLogin: function() {
       // Note: This view isn't directly routed.
-      this.viewManager.renderView(LoginView);
+      if (utils.bodyData.fxaUrl) {
+        this.viewManager.renderView(FxALoginView);
+      } else {
+        this.viewManager.renderView(LoginView);
+      }
     },
 
     showPaymentFailed: function() {

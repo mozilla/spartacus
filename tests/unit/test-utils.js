@@ -57,6 +57,10 @@ define(['utils'], function(utils) {
     test('test isValidRedirURL function with other domain (allowed by override settings)', function() {
       assert.equal(utils.isValidRedirURL('http://whatever.com/foo/bar/baz', {validRedirSites: ['http://whatever.com']}), true);
     });
-
+    test('getCenteredCoordinates provides X/Y coordinates for a centered popup window', function() {
+      var coords = utils.getCenteredCoordinates(320, 500, {screenX: 0, screenY: 30, innerWidth: 1280, innerHeight: 800});
+      assert.equal(coords[0], 480);
+      assert.equal(coords[1], 180);
+    });
   });
 });

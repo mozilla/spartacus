@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-05-23 12:05+0000\n"
-"PO-Revision-Date: 2014-05-14 11:47+0000\n"
+"PO-Revision-Date: 2014-07-29 12:33+0000\n"
 "Last-Translator: Gábor <kelemeng@ubuntu.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n !=1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1400068022.0\n"
+"X-POOTLE-MTIME: 1406637239.0\n"
 
 #: public/js/lib/cancel.js:33
 msgid "Payment cancelled."
@@ -158,44 +158,40 @@ msgstr "Vásárlás ellenőrzése"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30
 msgid "Retrying"
-msgstr ""
+msgstr "Újrapróbálkozás"
 
 #: public/js/lib/auth.js:64
-#, fuzzy
 msgid "That took longer than expected. Retry?"
-msgstr "Ez tovább tart a vártnál. Újra megpróbálja?"
+msgstr "Ez tovább tartott a vártnál. Újra megpróbálja?"
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11
 msgid "Back"
-msgstr ""
+msgstr "Vissza"
 
 #: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95
 msgid "Submit"
-msgstr ""
+msgstr "Elküldés"
 
 #: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60
 #: public/js/views/reset-pin.js:28
 msgid "Retry?"
-msgstr ""
+msgstr "Újrapróbálja?"
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
-#, fuzzy
 msgid "Create PIN"
 msgstr "PIN létrehozása"
 
 #: public/js/views/error.js:45
-#, fuzzy
 msgid "Something went wrong."
-msgstr "Valami hiba történt!"
+msgstr "Valami hiba történt."
 
 #: public/js/views/reset-start.js:29
-#, fuzzy
 msgid "Reset your PIN?"
-msgstr "PIN visszaállítása"
+msgstr "Visszaállítja a PIN-t?"
 
 #: public/js/views/was-locked.js:13
 msgid "Was Locked"
-msgstr ""
+msgstr "Zárolva lett"
 
 #: public/js/views/wait-for-tx.js:10
 msgid "Setting up payment"

@@ -13,9 +13,9 @@ require(['require-config'], function() {
     // Common ajax settings.
     $.ajaxSetup({
       headers: {
-        "X-CSRFToken": $('meta[name=csrf]').attr('content'),
-        timeout: settings.ajax_timeout
-      }
+        "X-CSRFToken": $('meta[name=csrf]').attr('content')
+      },
+      timeout: settings.ajax_timeout
     });
 
     fastclick.attach(document.body);

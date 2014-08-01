@@ -121,6 +121,9 @@ module.exports = function(grunt) {
     },
 
     watch: {
+      options: {
+        interval: 10000,
+      },
       styluspublic: {
         files: ['public/**/*.styl', 'public/images/'],
         tasks: 'stylus'
@@ -262,6 +265,13 @@ module.exports = function(grunt) {
   // Always show stack traces when Grunt prints out an uncaught exception.
   grunt.option('stack', true);
 
+  // Workaround having node_modules in parent dir for Docker.
+  var cwd;
+  if (process.env.IS_DOCKER) {
+    cwd = process.cwd();
+    process.chdir(__dirname);
+  }
+
   grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-casper');
   grunt.loadNpmTasks('grunt-contrib-clean');
@@ -275,10 +285,15 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-i18n-abide');
   grunt.loadNpmTasks('grunt-express-server');
 
+  if (cwd && process.env.IS_DOCKER) {
+    process.chdir(cwd);
+  }
 
   grunt.registerTask('default', 'Does the same thing as grunt start', ['start']);
   grunt.registerTask('start', 'Run the development server',
                      ['abideCompile', 'env:dev', 'jshint', 'clean:templates', 'nunjucks', 'requirejs', 'stylus', 'express:dev', 'watch']);
+  grunt.registerTask('docker', 'Run the processes for docker',
+                     ['abideCompile', 'jshint', 'clean:templates', 'nunjucks', 'requirejs', 'stylus', 'watch']);
   grunt.registerTask('styleguide', 'Run the styleguide server',
                      ['stylus', 'express:styleguide', 'watch']);
   grunt.registerTask('test', 'Run unit tests',

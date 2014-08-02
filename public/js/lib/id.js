@@ -29,6 +29,10 @@ define([
       var docLocation = utils.bodyData.staticDocsUrl + 'media/docs/{type}/' + docLang + '.html?20131014-4';
       defaults.termsOfService = utils.format(docLocation, {type: 'terms'});
       defaults.privacyPolicy = utils.format(docLocation, {type: 'privacy'});
+      if (utils.supportsNativeFxA()) {
+        // On Firefox OS 2.0 and later, request Firefox Accounts login.
+        defaults.wantIssuer = 'firefox-accounts';
+      }
       return $.extend({}, defaults, options || {});
     },
 

@@ -57,10 +57,27 @@ define(['utils'], function(utils) {
     test('test isValidRedirURL function with other domain (allowed by override settings)', function() {
       assert.equal(utils.isValidRedirURL('http://whatever.com/foo/bar/baz', {validRedirSites: ['http://whatever.com']}), true);
     });
+
     test('getCenteredCoordinates provides X/Y coordinates for a centered popup window', function() {
       var coords = utils.getCenteredCoordinates(320, 500, {screenX: 0, screenY: 30, innerWidth: 1280, innerHeight: 800});
       assert.equal(coords[0], 480);
       assert.equal(coords[1], 180);
+    });
+
+    test('test native-FxA UA detection', function() {
+      assert.notOk(utils.supportsNativeFxA(
+        {userAgent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'}));
+      assert.notOk(utils.supportsNativeFxA({
+        mozId: {},
+        userAgent: 'Mozilla/5.0 (Mobile; rv:26.0) Gecko/26.0 Firefox/26.0'}));
+
+      assert.ok(utils.supportsNativeFxA({
+        mozId: {},
+        userAgent: 'Mozilla/5.0 (Mobile; rv:32.0) Gecko/26.0 Firefox/32.0'}));
+
+      assert.ok(utils.supportsNativeFxA({
+        mozId: {},
+        userAgent: 'Mozilla/5.0 (Mobile; rv:34.0) Gecko/26.0 Firefox/34.0'}));
     });
   });
 });

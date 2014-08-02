@@ -75,6 +75,10 @@ define([
         return validRedirSites.indexOf(a.protocol + '//' + a.hostname) > -1;
       }
       return false;
+    },
+    supportsNativeFxA: function(nav) {
+      nav = nav || navigator;
+      return nav.mozId && nav.userAgent.match(/rv:(\d{2})/)[1] >= 32;
     }
   };
 });

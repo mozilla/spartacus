@@ -29,6 +29,59 @@ define([
     });
   }
 
+  function showFxARetryError(options) {
+    app.error.render({
+      errorCode: options.errCode,
+      ctaCallback: function(e){
+        e.preventDefault();
+        app.error.close();
+        app.throbber.render(gettext('Retrying'));
+        verifyFxAUser(options.code);
+      }
+    });
+  }
+
+  function verifyFxAUser(code) {
+    var url = utils.bodyData.fxaAuthUrl;
+    var data = {
+        auth_response: code,
+        state: utils.bodyData.fxaState
+      };
+    $.ajax({url: url, type: 'POST', data: data}
+          ).done(function(data) {
+            console.log('FxA login success');
+            utils.trackEvent({'action': 'FxA login',
+                              'label': 'Success'});
+            app.session.set('user_hash', data.user_hash);
+            app.session.set('logged_in', true);
+          }).fail(function($xhr, textStatus) {
+            console.log(textStatus);
+            console.log($xhr.status);
+            if (textStatus === 'timeout') {
+              console.log('login timed out');
+              utils.trackEvent({'action': 'FxA login',
+                                'label': 'Timed Out'});
+              return showFxARetryError({
+                code: code,
+                msg: gettext('This is taking longer than expected. Try again?'),
+              });
+            } else if ($xhr.status === 403) {
+              console.log('permission denied after auth');
+              utils.trackEvent({'action': 'FxA login',
+                                'label': 'Permission Denied'});
+              return app.error.render({errorCode: 'FXA_DENIED'});
+            } else {
+              console.log('login error');
+              utils.trackEvent({'action': 'FxA login',
+                                'label': 'Failed'});
+              return showRetryError({
+                code: code,
+                errCode: 'FXA_FAILED',
+              });
+            }
+          });
+  }
+
   function verifyUser(assertion, options) {
 
     options = options || {};
@@ -128,6 +181,7 @@ define([
     resetUser: resetUser,
     showRetryError: showRetryError,
     verifyUser: verifyUser,
+    verifyFxAUser: verifyFxAUser,
   };
 
 });

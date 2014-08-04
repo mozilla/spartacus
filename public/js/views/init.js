@@ -13,7 +13,15 @@ define([
       if (!app.transaction.get('jwt') && !app.startView) {
         this.extractJWT();
       }
-      app.session.watchIdentity();
+      if (utils.bodyData.fxaUrl) {
+        console.log("FxA enabled, checking login");
+        if (!app.session.get('logged_in')) {
+          console.log("showing FxA login");
+          app.router.showLogin();
+        }
+      } else {
+        app.session.watchIdentity();
+      }
     },
 
     extractJWT: function() {

@@ -114,7 +114,7 @@ function logInAsNewUser() {
 }
 
 
-function injectSinon(options) {
+function injectSinon(options, teardownFxA) {
   options = options || {};
   var autoRespond = (typeof options.autoRespond === 'undefined') ? true : options.autoRespond;
   var consumeStack = options.consumeStack || false;
@@ -200,6 +200,13 @@ function injectSinon(options) {
       window.server.responses = [];
       window.server.restore();
     }, consumeStack);
+    if (teardownFxA) {
+      casper.evaluate(function() {
+        document.body.removeAttribute('data-fxa-auth-url');
+        document.body.removeAttribute('data-fxa-url');
+        document.body.removeAttribute('fxa-state');
+      })
+    }
   });
 }
 
@@ -214,6 +221,15 @@ function clientTimeoutResponse(method, url) {
       xhr.abort();
     });
   }, method, url);
+}
+
+
+function fakeFxA() {
+  console.log("Installing stubs for FxA login");
+  casper.evaluate(function () {
+    window.server.respondWith(
+      'POST', /\/fake-fxa/,
+      [200, {}, JSON.stringify({user_hash: 'test-hash'})])});
 }
 
 
@@ -384,12 +400,23 @@ function startCasper(options) {
   var setUp = options.setUp;
   var url = baseTestUrl + path;
   casper.echo('Starting with url: ' + url);
-
+  if (options.useFxA) {
+    casper.once('load.finished', function() {
+      casper.evaluate(function() {
+        console.log('injecting FxA test config');
+        document.body.setAttribute('data-fxa-auth-url', '/fake-fxa');
+        document.body.setAttribute('data-fxa-url', '/fake-fxa-login');
+        document.body.setAttribute('fxa-state', 'fake-fxa-state');
+      });
+    });
+  } else {
+    casper.on('load.finished', function() {});
+  }
   var sinonOptions = options.sinon || {};
 
   var callback = (function(setUp) {
     return function() {
-      injectSinon(sinonOptions);
+      injectSinon(sinonOptions, options.useFxA);
       if (typeof setUp === 'function') {
         setUp();
       }
@@ -424,6 +451,7 @@ module.exports = {
   doLogin: doLogin,
   basePath: basePath,
   fakeBrokenJSON: fakeBrokenJSON,
+  fakeFxA: fakeFxA,
   fakeLogout: fakeLogout,
   fakePinData: fakePinData,
   fakeProviderLogout: fakeProviderLogout,

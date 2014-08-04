@@ -34,16 +34,18 @@ define(['jquery', 'log', 'underscore', 'utils'], function($, log, _, utils) {
         if (utils.mozPaymentProvider.iccInfo[paymentServiceId]) {
           iccKey = utils.mozPaymentProvider.iccInfo[paymentServiceId].iccId;
         }
+        console.log('got iccKey from iccInfo', iccKey);
       } else if (utils.mozPaymentProvider.iccIds) {
         // Firefox OS version < 1.4
         iccKey = utils.mozPaymentProvider.iccIds.join(';');
+        console.log('got iccKey from iccIds', iccKey);
       }
 
       if (iccKey) {
         lastIcc = this.storage.getItem('spa-last-icc');
         this.storage.setItem('spa-last-icc', iccKey);
+        console.log('new icc', iccKey, 'saved icc', lastIcc);
         if (lastIcc && lastIcc !== iccKey) {
-          console.log('new icc', iccKey, '!== saved icc', lastIcc);
           changed = true;
           console.log('sim changed');
           utils.trackEvent({'action': 'sim change detection',

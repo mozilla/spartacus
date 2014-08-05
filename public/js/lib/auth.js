@@ -166,7 +166,6 @@ define([
     var req = $.ajax(reqConfig);
     req.done(function _resetSuccess() {
       console.log('reset webpay user');
-      window.localStorage.clear();
       utils.trackEvent({'action': 'webpay user reset',
                         'label': 'Reset User Success'});
     }).fail(function _resetFail($xhr, textStatus, errorThrown) {

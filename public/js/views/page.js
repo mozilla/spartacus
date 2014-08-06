@@ -13,8 +13,6 @@ define([
 
   var PageView = BaseView.extend({
 
-    personaCalledBack: false,
-
     initialize: function() {
       console.log('Page initialize');
       BaseView.prototype.initialize.call(this);
@@ -33,21 +31,22 @@ define([
       // TODO: Nothing is tied to the resetUser success or failure. Is this ok?
       auth.resetUser();
       // This will result in the login screen appearing.
-      this.personaCalledBack = true;
+      app.session.set('persona_called_back', true);
       app.session.set('logged_in', false);
     },
 
     // Persona has told us we should be logged-in.
     handlePersonaLogin: function(assertion) {
       console.log('Responding to onlogin event');
-      this.personaCalledBack = true;
+      app.session.set('persona_called_back', true);
       auth.verifyUser(assertion);
     },
 
     // Browser's state matches loggedInUser so we're probably logged in.
     handlePersonaReady: function() {
-      console.log('Probably logged in, Persona never called back');
-      if (this.personaCalledBack === false && utils.bodyData.loggedInUser) {
+      var personaCalledBack = app.session.get('persona_called_back');
+      if (personaCalledBack === false && utils.bodyData.loggedInUser) {
+        console.log('Probably logged in, Persona never called back');
         console.log('Updating app.session: logged_in -> true');
         app.session.set('logged_in', true);
         // Set user_hash to false so we know it
@@ -56,6 +55,8 @@ define([
           console.log('Updating app.session: user_hash -> false');
           app.session.set('user_hash', false);
         }
+      } else {
+        console.log('handlePersonaReady no-op');
       }
     },
 

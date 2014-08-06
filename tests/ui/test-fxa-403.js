@@ -3,11 +3,8 @@ var helpers = require('../helpers');
 helpers.startCasper({
   useFxA: true,
   setUp: function(){
-  casper.evaluate(function (code) {
-    window.server.respondWith(
-      'POST', /\/fake-fxa/,
-      [403, {}, ''])})
-  },
+    helpers.fakeFxA({statusCode: 403, data: ''});
+  }
 });
 
 casper.test.begin('Denied verification should only have cancel option.', {

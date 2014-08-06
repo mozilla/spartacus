@@ -11,7 +11,8 @@ define([
 
     defaults: {
       logged_in: null,
-      user_hash: null
+      user_hash: null,
+      persona_called_back: false,
     },
 
     initialize: function() {

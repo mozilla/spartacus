@@ -37,6 +37,7 @@ define([
     },
 
     request: function(options) {
+      app.session.set('persona_called_back', false);
       var console = log('id', 'request');
       var config = this.getRequestConfig(options);
       console.log('Running navigator.id.request');
@@ -44,6 +45,7 @@ define([
     },
 
     watch: function(options) {
+      app.session.set('persona_called_back', false);
       var console = log('id', 'watch');
       var user = utils.bodyData.loggedInUser;
       console.log('loggedInUser', typeof user, user);

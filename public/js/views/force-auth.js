@@ -24,6 +24,12 @@ define([
     handlePersonaLogin: function(assertion) {
       // Override handlePersonaLogin for re-verification.
       console.log('re-auth login happened. moving to re-verify');
+      // Render a generic loading throbber to cover us until the
+      // verification moves us to reset.
+      app.throbber.render();
+      // Close the error in-case one was shown when the timeout fired.
+      // This callback being fired means re-auth was successful so we
+      // can clear the timeout error.
       app.error.close();
       window.clearTimeout(this.forceAuthTimer);
       auth.verifyUser(assertion, {reverify: true});

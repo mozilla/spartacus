@@ -24,6 +24,7 @@ define([
     handlePersonaLogin: function(assertion) {
       // Override handlePersonaLogin for re-verification.
       console.log('re-auth login happened. moving to re-verify');
+      app.error.close();
       window.clearTimeout(this.forceAuthTimer);
       auth.verifyUser(assertion, {reverify: true});
     },

@@ -210,9 +210,15 @@ function fakeFxA(options) {
   console.log("Installing stubs for FxA login");
   var data = options.data || JSON.stringify({user_hash: 'test-hash'});
   var statusCode = options.statusCode || 200;
-  casper.evaluate(function (data, statusCode) {
-    window.server.respondWith('POST', /\/fake-fxa/, [statusCode, {}, data]);
-  }, data, statusCode);
+  var timeout = options.timeout || false;
+  if (timeout) {
+    casper.echo('Setting up a fake XHR timeout for FxA', 'INFO');
+    clientTimeoutResponse('POST', '/fake-fxa');
+  } else {
+    casper.evaluate(function (data, statusCode) {
+      window.server.respondWith('POST', /\/fake-fxa/, [statusCode, {}, data]);
+    }, data, statusCode);
+  }
 }
 
 

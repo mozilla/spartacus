@@ -323,19 +323,41 @@ function fakeWaitPoll(options) {
 
 
 function fakeStartTransaction(options) {
+  var url = '/mozpay/v1/api/pay/';
   options = options || {};
-  var timeout = options.timeout || false;
-  if (timeout) {
+  options.simulate = options.simulate || false;
+  options.timeout = options.timeout || false;
+
+  if (options.timeout) {
     casper.echo('Setting up an XHR timeout for start of transaction', 'INFO');
-    clientTimeoutResponse('POST', '/mozpay/v1/api/pay/');
+    clientTimeoutResponse('POST', url);
   } else {
     casper.echo('Setting up successful transaction start response', 'INFO');
-    casper.evaluate(function(statusCode) {
-      window.server.respondWith('POST', '/mozpay/v1/api/pay/',
+    casper.evaluate(function(statusCode, url, simulate) {
+      window.server.respondWith('POST', url,
                                 [statusCode,
-                                 {'Content-Type': 'text/plain'}, '']);
+                                 {'Content-Type': 'application/json'},
+                                  JSON.stringify({simulation: simulate,
+                                                  status: 'ok'})]);
 
-    }, options.statusCode || 204);
+    }, options.statusCode || 200, url, options.simulate);
+  }
+}
+
+
+function fakeSimulate(options) {
+  var url = '/mozpay/v1/api/simulate/';
+  options = options || {};
+  options.timeout = options.timeout || false;
+
+  if (options.timeout) {
+    casper.echo('Setting up an XHR timeout for simulate payment', 'INFO');
+    clientTimeoutResponse('POST', url);
+  } else {
+    casper.echo('Setting up successful simulate payment response', 'INFO');
+    casper.evaluate(function(statusCode, url) {
+      window.server.respondWith('POST', url, [statusCode, {}, '']);
+    }, options.statusCode || 204, url);
   }
 }
 
@@ -494,6 +516,7 @@ module.exports = {
   fakeLogout: fakeLogout,
   fakePinData: fakePinData,
   fakeProviderLogout: fakeProviderLogout,
+  fakeSimulate: fakeSimulate,
   fakeStartTransaction: fakeStartTransaction,
   fakeVerification: fakeVerification,
   fakeWaitPoll: fakeWaitPoll,

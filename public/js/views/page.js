@@ -1,11 +1,12 @@
 define([
   'auth',
+  'jquery',
   'log',
   'settings',
   'underscore',
   'utils',
   'views/base'
-], function(auth, log, settings, _, utils, BaseView){
+], function(auth, $, log, settings, _, utils, BaseView){
 
   'use strict';
 
@@ -80,6 +81,7 @@ define([
             }
           }
         } else {
+          console.log('Setting up payment');
           // Otherwise we're now needing to setup a payment before
           // checking the app state to hand off to the correct view.
           this.setUpPayment();
@@ -112,31 +114,31 @@ define([
     },
 
     setUpPayment: function() {
-      var jwt = app.transaction.get('jwt');
       var that = this;
+      var jwt = app.transaction.get('jwt');
       if (jwt) {
         var req = app.transaction.startTransaction(jwt);
+        var getTransaction = $.Deferred();
 
-        req.done(function() {
-          console.log('Transaction started successfully');
-          utils.trackEvent({action: 'start-transaction',
+        req.done(function(result) {
+          console.log('Transaction started successfully; simulation?',
+                      result.simulation);
+          var action = (result.simulation ? 'start-simulated-transaction':
+                        'start-transaction');
+          utils.trackEvent({action: action,
                             label: 'Transaction started successfully'});
-          var req = app.pin.fetch().fail(function($xhr, textStatus) {
-            if (textStatus === 'timeout') {
-              utils.trackEvent({action: 'fetch-state',
-                                label: 'Fetching initial state timed-out.'});
-              return app.error.render({errorCode: 'PIN_STATE_TIMEOUT',
-                                       ctaCallback: that.setUpPayment});
-            } else {
-              utils.trackEvent({action: 'fetch-state',
-                                label: 'Fetching initial state error.'});
-              return app.error.render({errorCode: 'PIN_STATE_ERROR'});
-            }
-          });
-          return req;
+
+          var transResult = {simulation: false};
+          if (result.simulation) {
+            console.log('transaction is a simulation; result:',
+                        result.simulation);
+            transResult.simulation = result.simulation;
+          }
+          console.log('Got transaction result');
+          getTransaction.resolve(transResult);
         }).fail(function($xhr, textStatus) {
-          console.log($xhr.status);
-          console.log(textStatus);
+          console.error('XHR status', $xhr.status);
+          console.error('response status', textStatus);
           if (textStatus === 'timeout') {
             utils.trackEvent({action: 'start-transaction',
                               label: 'Transaction start timed-out'});
@@ -148,13 +150,34 @@ define([
             return app.error.render({errorCode: 'TRANS_CONFIG_FAILED'});
           }
         });
+
+        getTransaction.then(function(result) {
+          if (!result.simulation) {
+            app.pin.fetch().fail(function($xhr, textStatus) {
+              if (textStatus === 'timeout') {
+                utils.trackEvent({action: 'fetch-state',
+                                  label: 'Fetching initial state timed-out.'});
+                return app.error.render({errorCode: 'PIN_STATE_TIMEOUT',
+                                         ctaCallback: that.setUpPayment});
+              } else {
+                utils.trackEvent({action: 'fetch-state',
+                                  label: 'Fetching initial state error.'});
+                return app.error.render({errorCode: 'PIN_STATE_ERROR'});
+              }
+            });
+          } else {
+            app.session.set('simulate_result', result.simulation);
+            console.log('navigating to simulation screen');
+            app.router.navigate('spa/simulate', {trigger: true});
+          }
+        });
+
       } else {
         utils.trackEvent({action: 'start-transaction',
                           label: 'Invalid or missing JWT'});
         return app.error.render({errorCode: 'MISSING_JWT'});
       }
     },
-
   });
 
   return PageView;

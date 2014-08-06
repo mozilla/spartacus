@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macro %}
+
+{% block pageclass %}simulate{% endblock %}
+
+{% block page %}
+<section class="content">
+  <h1>{{ heading }}</h1>
+  <p>{{ msg }}</p>
+  <p>
+    <pre><code>{{ simulateResult }}</code></pre>
+  </p>
+</section>
+
+{% block buttons %}
+<menu class="buttons" type="toolbar">
+  {{ macro.button(gettext('Cancel'), modifier='cancel') }}
+  {{ macro.button(gettext('Continue'), modifier='cta') }}
+</menu>
+{% endblock %}
+
+{% endblock %}

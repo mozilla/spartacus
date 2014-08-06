@@ -13,6 +13,7 @@ define([
   'views/payment-success',
   'views/reset-pin',
   'views/reset-start',
+  'views/simulate',
   'views/wait-to-finish',
   'views/wait-to-start',
   'views/was-locked'
@@ -31,6 +32,7 @@ define([
   PaymentSuccessView,
   ResetPinView,
   ResetStartView,
+  SimulateView,
   WaitToFinishView,
   WaitToStartView,
   WasLockedView
@@ -49,6 +51,7 @@ define([
       'spa/force-auth': 'showForceAuth',
       'spa/reset-pin': 'showResetPin',
       'spa/reset-start': 'showResetStart',
+      'spa/simulate': 'showSimulate',
       'spa/locked': 'showLocked',
       'spa/was-locked': 'showWasLocked',
       'spa/wait-to-start': 'showWaitToStart',
@@ -148,6 +151,10 @@ define([
 
     showResetStart: function() {
       this.viewManager.renderView(ResetStartView);
+    },
+
+    showSimulate: function() {
+      this.viewManager.renderView(SimulateView);
     },
 
     showWaitToFinish: function() {

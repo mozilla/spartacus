@@ -60,14 +60,18 @@ define([
     },
 
     forceAuthRequest: function() {
-      app.session.login({
-        experimental_forceAuthentication: true,
-        oncancel: function() {
-          utils.trackEvent({'action': 'reset force auth',
-                            'label': 'cancelled'});
-          cancel.callPayFailure();
-        }
-      });
+      if (utils.bodyData.fxaUrl) {
+        auth.startFxA(true);
+      } else {
+        app.session.login({
+          experimental_forceAuthentication: true,
+          oncancel: function() {
+            utils.trackEvent({'action': 'reset force auth',
+                              'label': 'cancelled'});
+            cancel.callPayFailure();
+          }
+        });
+      }
     },
 
     forceReAuthentication: function() {

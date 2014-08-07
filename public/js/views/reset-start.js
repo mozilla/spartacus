@@ -67,7 +67,12 @@ define([
       app.throbber.render(this.gettext('Connecting to Persona'));
 
       var authResetUser = auth.resetUser();
-      var personaLogout = this.logoutPersona();
+      var personaLogout = null;
+      if (utils.bodyData.fxaUrl) {
+        personaLogout = $.Deferred().resolve();
+      } else {
+        personaLogout = this.logoutPersona();
+      }
 
       if (this.resetLogoutTimeout) {
         window.clearTimeout(this.resetLogoutTimeout);

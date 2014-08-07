@@ -2,9 +2,8 @@ define([
   'auth',
   'log',
   'underscore',
-  'utils',
   'views/page'
-], function(auth, log, _, utils, PageView){
+], function(auth, log, _, PageView){
 
   'use strict';
 
@@ -16,23 +15,9 @@ define([
     },
 
     handleSignIn: function(e) {
-      var w = 320;
-      var h = 500;
-      var i = utils.getCenteredCoordinates(w, h, window);
-      e.preventDefault();
       console.log("FxA login button clicked");
-      window.addEventListener('message', function (msg) {
-        if (!msg.data || !msg.data.auth_code || msg.origin !== window.location.origin) {
-          console.log("not a login message, ignoring");
-          return;
-        }
-        auth.verifyFxAUser(msg.data.auth_code);
-      }, false);
-      console.log("Launching popup for FxA: " + utils.bodyData.fxaUrl);
-      window.open(
-        utils.bodyData.fxaUrl, 'fxa',
-          'width=' + w + ',height=' + h + ',left=' + i[0] + ',top=' + i[1]);
-      app.throbber.render(this.gettext('Waiting for login'));
+      e.preventDefault();
+      auth.startFxA(false);
     },
 
     render: function(){

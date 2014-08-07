@@ -29,18 +29,22 @@ define([
   }
 
   function showFxARetryError(options) {
+    options = options || {};
+    var reverify = options.reverify || false;
     app.error.render({
       errorCode: options.errCode,
       ctaCallback: function(e){
         e.preventDefault();
         app.error.close();
         app.throbber.render(gettext('Retrying'));
-        verifyFxAUser(options.code);
+        verifyFxAUser(options.code, {reverify: reverify});
       }
     });
   }
 
-  function verifyFxAUser(code) {
+  function verifyFxAUser(code, options) {
+    options = options || {};
+    var reverify = options.reverify || false;
     var url = utils.bodyData.fxaAuthUrl;
     var data = {
       auth_response: code,
@@ -55,6 +59,17 @@ define([
                         'label': 'Success'});
       app.session.set('user_hash', data.user_hash);
       app.session.set('logged_in', true);
+      if (reverify === true) {
+        console.log("Reverifying FxA login");
+        // Set logged_in and manually direct to reset-pin which is
+        // implied having successfully carried out a re-auth.
+        app.session.set('logged_in', true, {silent: true});
+        app.router.navigate('spa/reset-pin', {trigger: true});
+      } else {
+        // Setting the attr will cause the listeners
+        // to deal with login success.
+        app.session.set('logged_in', true);
+      }
     });
 
     req.fail(function($xhr, textStatus) {
@@ -65,8 +80,9 @@ define([
         utils.trackEvent({'action': 'FxA login',
                           'label': 'Timed Out'});
         return showFxARetryError({
-          code: code,
+          errCode: 'FXA_TIMEOUT',
           msg: gettext('This is taking longer than expected. Try again?'),
+          reverify: reverify
         });
       } else if ($xhr.status === 403) {
         console.log('permission denied after auth');
@@ -77,9 +93,10 @@ define([
         console.log('login error');
         utils.trackEvent({'action': 'FxA login',
                           'label': 'Failed'});
-        return showRetryError({
+        return showFxARetryError({
           code: code,
           errCode: 'FXA_FAILED',
+          reverify: reverify
         });
       }
     });
@@ -179,11 +196,29 @@ define([
     return req;
   }
 
+  function startFxA(reverify) {
+    var w = 320;
+    var h = 500;
+    var i = utils.getCenteredCoordinates(w, h, window);
+    window.addEventListener('message', function (msg) {
+      if (!msg.data || !msg.data.auth_code || msg.origin !== window.location.origin) {
+        console.log("not a login message, ignoring");
+        return;
+      }
+      verifyFxAUser(msg.data.auth_code, {reverify: reverify});
+    }, false);
+    console.log("Launching popup for FxA: " + utils.bodyData.fxaUrl);
+    window.open(
+      utils.bodyData.fxaUrl, 'fxa',
+      'width=' + w + ',height=' + h + ',left=' + i[0] + ',top=' + i[1]);
+    app.throbber.render(gettext('Waiting for login'));
+  }
+
   return {
     resetUser: resetUser,
     showRetryError: showRetryError,
+    startFxA: startFxA,
     verifyUser: verifyUser,
-    verifyFxAUser: verifyFxAUser,
   };
 
 });

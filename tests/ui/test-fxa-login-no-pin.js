@@ -5,7 +5,7 @@ helpers.startCasper({
   useFxA: true,
   path: '/mozpay/?req=foo&test-fxa=1',
   setUp: function(){
-    helpers.fakeFxA(200);
+    helpers.fakeFxA();
     helpers.fakeStartTransaction();
     helpers.fakePinData({data: {pin: false}});
   },

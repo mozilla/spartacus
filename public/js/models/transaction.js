@@ -1,11 +1,10 @@
 define([
   'backbone',
-  'id',
   'log',
   'underscore',
   'utils',
   'query-string' // must be last.
-], function(Backbone, id, log, _, utils){
+], function(Backbone, log, _, utils){
 
   var console = log('model', 'transaction');
   var netCodeRX = /^[0-9]{2,3}$/;

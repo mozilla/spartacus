@@ -20,7 +20,6 @@
       'gobbledygook': '../lib/js/gobbledygook/gobbledygook',
       'i18n-abide-utils': '../lib/js/i18n-abide-utils/i18n-abide-utils',
       'i18n': 'lib/i18n',
-      'id': 'lib/id',
       'jquery': '../lib/js/jquery/jquery',
       'log': 'lib/log',
       'nunjucks-slim': '../lib/js/nunjucks/nunjucks-slim',

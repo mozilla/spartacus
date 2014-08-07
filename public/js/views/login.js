@@ -1,9 +1,8 @@
 define([
-  'id',
   'log',
   'underscore',
   'views/page'
-], function(id, log, _, PageView){
+], function(log, _, PageView){
 
   'use strict';
 
@@ -17,7 +16,7 @@ define([
     handleSignIn: function(e) {
       e.preventDefault();
       app.throbber.render(this.gettext('Connecting to Persona'));
-      id.request();
+      app.session.login();
     },
 
     render: function(){

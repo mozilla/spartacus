@@ -78,11 +78,15 @@
     if (state) {
       window.localStorage.setItem(LOGIN_STATE_KEY, state);
       widget.update();
-      if (notifyWatcher) watchOptions.onlogin(state);
+      if (notifyWatcher) {
+        watchOptions.onlogin(state);
+      }
     } else {
       window.localStorage.removeItem(LOGIN_STATE_KEY);
       widget.update();
-      if (notifyWatcher) watchOptions.onlogout();
+      if (notifyWatcher) {
+        watchOptions.onlogout();
+      }
     }
   };
   var getLoginState = function() {
@@ -101,6 +105,7 @@
   var watchOptions = {
     _onlogin: null,
     _onlogout: null,
+    _onready: null,
     onlogin: function(assertion) {
       if (watchOptions._onlogin) {
         log("Calling onlogin().");
@@ -112,6 +117,12 @@
         log("Calling onlogout().");
         watchOptions._onlogout();
       }
+    },
+    onready: function() {
+      if (watchOptions._onready) {
+        log("Calling onready().");
+        watchOptions._onready();
+      }
     }
   };
 
@@ -120,6 +131,7 @@
       reset: function() {
         watchOptions._onlogin = null;
         watchOptions._onlogout = null;
+        watchOptions._onready = null;
         setLoginState(null);
       },
       onlog: null,
@@ -137,6 +149,9 @@
         fail("onlogin must be a function");
       if (typeof(options.onlogout) !== "function")
         fail("onlogout must be a function");
+      if (typeof(options.onready) !== "function")
+        fail("onready must be a function");
+
 
       var personaState = getLoginState();
       var loggedInUser = options.loggedInUser;
@@ -144,6 +159,7 @@
 
       watchOptions._onlogin = options.onlogin;
       watchOptions._onlogout = options.onlogout;
+      watchOptions._onready = options.onready;
 
       if (typeof(loggedInUser) === "undefined") {
         reasoning = "Client doesn't know if user is logged in or not ";
@@ -151,9 +167,11 @@
           log(reasoning + "and they want to be logged in as " +
               personaState + ".");
           watchOptions.onlogin(personaState);
+          watchOptions.onready();
         } else {
           log(reasoning + "and they want to be logged out. ");
           watchOptions.onlogout();
+          watchOptions.onready();
         }
       } else if (typeof(loggedInUser) === "string") {
         reasoning = "Client thinks the user is logged in as " +
@@ -162,14 +180,17 @@
         if (personaState) {
           if (personaState === loggedInUser) {
             log(reasoning + "and they want to be, so doing nothing.");
+            watchOptions.onready();
           } else {
             log(reasoning + "but they want to be logged in as " +
                 personaState + ".");
             watchOptions.onlogin(personaState);
+            watchOptions.onready();
           }
         } else {
           log(reasoning + "but they want to be logged out.");
           watchOptions.onlogout();
+          watchOptions.onready();
         }
       } else if (loggedInUser === null) {
         reasoning = "Client thinks the user is logged out ";
@@ -177,6 +198,7 @@
           log(reasoning + "but they want to be logged in as " +
               personaState + ".");
           watchOptions.onlogin(personaState);
+          watchOptions.onready();
         } else {
           log(reasoning + "and they want to be, so doing nothing.");
         }

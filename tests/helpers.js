@@ -114,7 +114,7 @@ function logInAsNewUser() {
 }
 
 
-function injectSinon(options, teardownFxA) {
+function injectSinon(options) {
   options = options || {};
   var autoRespond = (typeof options.autoRespond === 'undefined') ? true : options.autoRespond;
   var consumeStack = options.consumeStack || false;
@@ -189,25 +189,6 @@ function injectSinon(options, teardownFxA) {
       };
     }
   }, autoRespond, consumeStack);
-  // Setup the teardown when injecting.
-  casper.test.tearDown(function() {
-    casper.echo('Tearing down Sinon', 'INFO');
-    casper.evaluate(function(consumeStack) {
-      if (consumeStack && window.server._oldProcessRequest) {
-        console.log('restoring server.processRequest');
-        window.server.processRequest = window.server._oldProcessRequest;
-      }
-      window.server.responses = [];
-      window.server.restore();
-    }, consumeStack);
-    if (teardownFxA) {
-      casper.evaluate(function() {
-        document.body.removeAttribute('data-fxa-auth-url');
-        document.body.removeAttribute('data-fxa-url');
-        document.body.removeAttribute('fxa-state');
-      })
-    }
-  });
 }
 
 
@@ -224,12 +205,14 @@ function clientTimeoutResponse(method, url) {
 }
 
 
-function fakeFxA() {
+function fakeFxA(options) {
+  options = options || {};
   console.log("Installing stubs for FxA login");
-  casper.evaluate(function () {
-    window.server.respondWith(
-      'POST', /\/fake-fxa/,
-      [200, {}, JSON.stringify({user_hash: 'test-hash'})])});
+  var data = options.data || JSON.stringify({user_hash: 'test-hash'});
+  var statusCode = options.statusCode || 200;
+  casper.evaluate(function (data, statusCode) {
+    window.server.respondWith('POST', /\/fake-fxa/, [statusCode, {}, data]);
+  }, data, statusCode);
 }
 
 
@@ -390,6 +373,32 @@ function doLogin() {
 }
 
 
+function doLogout() {
+  casper.evaluate(function() {
+    navigator.id.logout();
+  });
+}
+
+
+function setUpFxA() {
+  casper.evaluate(function() {
+    console.log('injecting FxA test config');
+    document.body.setAttribute('data-fxa-auth-url', '/fake-fxa');
+    document.body.setAttribute('data-fxa-url', '/fake-fxa-login');
+    document.body.setAttribute('fxa-state', 'fake-fxa-state');
+  });
+}
+
+
+function tearDownFxA() {
+  casper.evaluate(function() {
+    document.body.removeAttribute('data-fxa-auth-url');
+    document.body.removeAttribute('data-fxa-url');
+    document.body.removeAttribute('fxa-state');
+  });
+}
+
+
 function startCasper(options) {
   options = options || {};
   if (options.url) {
@@ -398,30 +407,53 @@ function startCasper(options) {
   var headers = options.headers;
   var path = options.path || '/mozpay/?req=foo';
   var setUp = options.setUp;
+  var onLoadFinished = options.onLoadFinished;
+  var tearDown = options.tearDown;
   var url = baseTestUrl + path;
-  casper.echo('Starting with url: ' + url);
-  if (options.useFxA) {
-    casper.once('load.finished', function() {
-      casper.evaluate(function() {
-        console.log('injecting FxA test config');
-        document.body.setAttribute('data-fxa-auth-url', '/fake-fxa');
-        document.body.setAttribute('data-fxa-url', '/fake-fxa-login');
-        document.body.setAttribute('fxa-state', 'fake-fxa-state');
-      });
-    });
-  } else {
-    casper.on('load.finished', function() {});
-  }
   var sinonOptions = options.sinon || {};
+  var useFxA = options.useFxA;
+  var callback = options.callback || function() {
+    injectSinon(sinonOptions);
+    if (typeof setUp === 'function') {
+      casper.echo('Running test setUp func');
+      setUp();
+    }
+  };
 
-  var callback = (function(setUp) {
-    return function() {
-      injectSinon(sinonOptions, options.useFxA);
-      if (typeof setUp === 'function') {
-        setUp();
+  casper.echo('Starting with url: ' + url);
+
+  // One-off event for setup of things that need to be in
+  // place before JS execution.
+  casper.once('load.finished', function() {
+    if (useFxA) {
+      setUpFxA();
+    } else if (typeof onLoadFinished === 'function') {
+      onLoadFinished();
+    }
+  });
+
+  casper.test.tearDown(function() {
+    casper.echo('Starting tearDown');
+    casper.echo('Tearing down Sinon', 'INFO');
+    casper.evaluate(function(consumeStack) {
+      if (consumeStack && window.server._oldProcessRequest) {
+        console.log('restoring server.processRequest');
+        window.server.processRequest = window.server._oldProcessRequest;
       }
-    };
-  })(setUp);
+      window.server.responses = [];
+      window.server.restore();
+    }, sinonOptions.consumeStack);
+
+    if (useFxA) {
+      casper.echo('Tearing-down FxA');
+      tearDownFxA();
+    }
+
+    if (typeof tearDown === 'function') {
+      casper.echo('Running test tearDown func');
+      tearDown();
+    }
+  });
 
   if (!headers) {
     casper.start(url, callback);
@@ -449,6 +481,7 @@ function url(path) {
 module.exports = {
   assertErrorCode: assertErrorCode,
   doLogin: doLogin,
+  doLogout: doLogout,
   basePath: basePath,
   fakeBrokenJSON: fakeBrokenJSON,
   fakeFxA: fakeFxA,

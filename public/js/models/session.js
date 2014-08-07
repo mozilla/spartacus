@@ -9,9 +9,10 @@ define([
 
   var console = log('model', 'session');
 
-  var calledBack = false;
 
   var SessionModel = Backbone.Model.extend({
+
+    calledBack: false,
 
     defaults: {
       logged_in: null,
@@ -50,7 +51,7 @@ define([
     },
 
     login: function(options) {
-      calledBack = false;
+      this.calledBack = false;
       var console = log('session', 'login');
       var config = this.getRequestConfig(options);
       console.log('Running navigator.id.request');
@@ -59,7 +60,7 @@ define([
 
     watchIdentity: function(options) {
       var that = this;
-      calledBack = false;
+      this.calledBack = false;
       var console = log('session', 'watchIdentity');
       var user = utils.bodyData.loggedInUser;
       console.log('loggedInUser', typeof user, user);
@@ -67,19 +68,19 @@ define([
       var defaults = {
         loggedInUser: user || undefined,
         onlogin: function(assertion){
-          calledBack = true;
+          that.calledBack = true;
           console.log('Firing onlogin event');
           that.trigger('onLogin', assertion);
         },
         onlogout: function() {
-          calledBack = true;
+          that.calledBack = true;
           console.log('Firing onlogout event');
           that.trigger('onLogout');
         },
         onready: function() {
           console.log('Firing onready event');
           that.trigger('onReady');
-          if (calledBack === false && utils.bodyData.loggedInUser) {
+          if (that.calledBack === false && utils.bodyData.loggedInUser) {
             console.log('Firing onImpliedLogin event');
             that.trigger('onImpliedLogin');
           }

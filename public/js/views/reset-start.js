@@ -27,8 +27,7 @@ define([
 
   var ResetStartView = PageView.extend({
 
-    forceAuthTimer: null,
-    resetLogoutTimer: null,
+    resetLogoutTimeout: null,
 
     events: {
       'click .back': 'handleBack',

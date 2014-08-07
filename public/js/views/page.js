@@ -18,9 +18,10 @@ define([
       BaseView.prototype.initialize.call(this);
       // Init Model event listeners;
       console.log('Initializing event listeners');
-      this.listenTo(app.session, 'onlogout', this.handlePersonaLogout);
-      this.listenTo(app.session, 'onlogin', this.handlePersonaLogin);
-      this.listenTo(app.session, 'onready', this.handlePersonaReady);
+      this.listenTo(app.session, 'onLogout', this.handlePersonaLogout);
+      this.listenTo(app.session, 'onLogin', this.handlePersonaLogin);
+      this.listenTo(app.session, 'onReady', this.handlePersonaReady);
+      this.listenTo(app.session, 'onImpliedLogin', this.handlePersonaImpliedLogin);
       this.listenTo(app.session, 'change:logged_in', this.handleLoginStateChange);
       this.listenTo(app.pin, 'change', this.handlePinStateChange);
     },
@@ -31,32 +32,29 @@ define([
       // TODO: Nothing is tied to the resetUser success or failure. Is this ok?
       auth.resetUser();
       // This will result in the login screen appearing.
-      app.session.set('persona_called_back', true);
       app.session.set('logged_in', false);
     },
 
     // Persona has told us we should be logged-in.
     handlePersonaLogin: function(assertion) {
       console.log('Responding to onlogin event');
-      app.session.set('persona_called_back', true);
       auth.verifyUser(assertion);
     },
 
-    // Browser's state matches loggedInUser so we're probably logged in.
     handlePersonaReady: function() {
-      var personaCalledBack = app.session.get('persona_called_back');
-      if (personaCalledBack === false && utils.bodyData.loggedInUser) {
-        console.log('Probably logged in, Persona never called back');
-        console.log('Updating app.session: logged_in -> true');
-        app.session.set('logged_in', true);
+      console.log('handlePersonReady no-op');
+    },
+
+    // Browser's state matches loggedInUser so we're probably logged in.
+    handlePersonaImpliedLogin: function() {
+      console.log('Probably logged in, Persona never called back');
+      console.log('Updating app.session: logged_in -> true');
+      app.session.set('logged_in', true);
+      if (app.session.get('user_hash') === null) {
         // Set user_hash to false so we know it
         // was not set with an assertion.
-        if (app.session.get('user_hash') === null) {
-          console.log('Updating app.session: user_hash -> false');
-          app.session.set('user_hash', false);
-        }
-      } else {
-        console.log('handlePersonaReady no-op');
+        console.log('Updating app.session: user_hash -> false');
+        app.session.set('user_hash', false);
       }
     },
 

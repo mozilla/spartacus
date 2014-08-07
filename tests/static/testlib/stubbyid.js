@@ -80,14 +80,12 @@
       widget.update();
       if (notifyWatcher) {
         watchOptions.onlogin(state);
-        watchOptions.onready();
       }
     } else {
       window.localStorage.removeItem(LOGIN_STATE_KEY);
       widget.update();
       if (notifyWatcher) {
         watchOptions.onlogout();
-        watchOptions.onready();
       }
     }
   };

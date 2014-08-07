@@ -12,14 +12,13 @@
 define([
   'auth',
   'cancel',
-  'id',
   'jquery',
   'log',
   'settings',
   'underscore',
   'utils',
   'views/page',
-], function(auth, cancel, id, $, log, settings, _, utils, PageView){
+], function(auth, cancel, $, log, settings, _, utils, PageView){
 
   'use strict';
 

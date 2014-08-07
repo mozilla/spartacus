@@ -9,7 +9,6 @@ define([
 
   var console = log('model', 'session');
 
-
   var SessionModel = Backbone.Model.extend({
 
     calledBack: false,
@@ -52,7 +51,6 @@ define([
 
     login: function(options) {
       this.calledBack = false;
-      var console = log('session', 'login');
       var config = this.getRequestConfig(options);
       console.log('Running navigator.id.request');
       navigator.id.request(config);
@@ -61,7 +59,6 @@ define([
     watchIdentity: function(options) {
       var that = this;
       this.calledBack = false;
-      var console = log('session', 'watchIdentity');
       var user = utils.bodyData.loggedInUser;
       console.log('loggedInUser', typeof user, user);
 

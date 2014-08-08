@@ -7,6 +7,7 @@ define([
   'log',
   'models/pin',
   'models/session',
+  'models/simulate',
   'models/transaction',
   'router',
   'settings',
@@ -14,7 +15,9 @@ define([
   'utils',
   'views/throbber',
   'views/error'
-], function(auth, Backbone, cancel, i18n, $, log, PinModel, SessionModel, TransactionModel, AppRouter, settings, _, utils, ThrobberView, ErrorView) {
+], function(auth, Backbone, cancel, i18n, $, log, PinModel, SessionModel,
+            SimulateModel, TransactionModel, AppRouter, settings, _,
+            utils, ThrobberView, ErrorView) {
 
   'use strict';
 
@@ -49,6 +52,7 @@ define([
       // Create Model Instances.
       this.session = new SessionModel();
       this.pin = new PinModel();
+      this.simulate = new SimulateModel();
       this.transaction = new TransactionModel();
 
       // Create overlaid view instances.

@@ -1,9 +1,10 @@
 define([
+  'i18n',
   'jquery',
   'settings',
   'tracking',
   'underscore'
-], function($, settings, tracking, _) {
+], function(i18n, $, settings, tracking, _) {
 
   'use strict';
 
@@ -22,7 +23,6 @@ define([
     decodeURIComponent: function decodeURIComponent(uri) {
       return window.decodeURIComponent(uri.replace(/\+/g, ' '));
     },
-
     mozPaymentProvider: window.mozPaymentProvider || {
       paymentSuccess: window.paymentSuccess || function() {
         console.error('No paymentSuccess function');
@@ -77,6 +77,20 @@ define([
     },
     useOAuthFxA: function() {
       return this.bodyData.fxaUrl && !this.supportsNativeFxA();
-    }
+    },
+    getL10nLinkBase: function() {
+      var docLangs = ['cs', 'de', 'el', 'en-US', 'es', 'hr', 'hu', 'it', 'pl', 'pt-BR', 'sr', 'zh-CN'];
+      var lang = i18n.getLangFromLangAttr();
+      var docLang = docLangs.indexOf(lang) >= 0 ? lang : 'en-US';
+      return this.bodyData.staticDocsUrl + 'media/docs/{type}/' + docLang + '.html?20131014-4';
+    },
+    getTermsLink: function() {
+      var baseLink = this.getL10nLinkBase();
+      return this.format(baseLink, {type: 'terms'});
+    },
+    getPrivacyLink: function() {
+      var baseLink = this.getL10nLinkBase();
+      return this.format(baseLink, {type: 'privacy'});
+    },
   };
 });

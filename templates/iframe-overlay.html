@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macro %}
+
+{% block pageclass %}{% if pageclass %}{{ pageclass }}{% else %}iframe-overlay{% endif %}{% endblock %}
+
+{% block page %}
+  <section class="content overlay">
+    <div class="msg">
+        <iframe src="{{ iframeSrc }}" sandbox security="restricted"></iframe>
+    </div>
+  </section>
+
+  <menu class="buttons" type="toolbar">
+    {{ macro.button(gettext('OK'), modifier='cta') }}
+  </menu>
+{% endblock %}

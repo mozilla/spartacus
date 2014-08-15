@@ -10,6 +10,8 @@ define([
 
   'use strict';
 
+  var console = log('view', 'enter-pin');
+
   var EnterPinView = PageView.extend({
 
     events: {

@@ -5,10 +5,13 @@ define([
   'pin-widget',
   'underscore',
   'utils',
+  'views/iframe-overlay',
   'views/page'
-], function(cancel, $, log, pin, _, utils, PageView){
+], function(cancel, $, log, pin, _, utils, IframeOverlayView, PageView){
 
   'use strict';
+
+  var console = log('view', 'create-pin');
 
   var CreatePinView = PageView.extend({
 
@@ -17,11 +20,43 @@ define([
     events: {
       'click .cancel': cancel.callPayFailure,
       'click .cta:enabled': 'handleContinue',
+      'click .tos': function(e) {
+        e.preventDefault();
+        this.openExtUrl(utils.getTermsLink(), utils.bodyData.termsOfService);
+      },
+      'click .pp': function(e) {
+        e.preventDefault();
+        this.openExtUrl(utils.getPrivacyLink(), utils.bodyData.privacyPolicy);
+      }
     },
 
     clearPin: function() {
       pin.resetPinUI();
       pin.focusPin();
+    },
+
+    openExtUrl: function(iframeURL, nonIframeURL) {
+      // If in the trusted UI, we show links in an iframe
+      // otherwise, we open a window and use a standard link.
+      // The iframed URL directly links to the CDN terms/privacy content
+      // to minimise what's shown as part of the UI.
+      console.log('Iframe URL: ', iframeURL);
+      console.log('Non-iframe URL: ', nonIframeURL);
+
+      if (window.open) {
+        // Based on https://github.com/mozilla/persona/blob/dev/resources/static/dialog/js/modules/inline_tospp.js
+        // A reference to the new window will be returned if the environment can
+        // open one. If there is no reference, window.opened failed and the
+        // TOS/PP should be shown in an iframe.
+        var winRef = window.open(nonIframeURL);
+        if (winRef) {
+          console.log('window.open ok - so returning');
+          return;
+        }
+      }
+
+      var IframedOverlay = new IframeOverlayView();
+      IframedOverlay.render({iframeSrc: iframeURL});
     },
 
     handleContinue: function(e) {
@@ -111,7 +146,8 @@ define([
     render: function(){
       var context = {
         ctaText: this.gettext('Continue'),
-        pinTitle: this.gettext('Create PIN')
+        pinTitle: this.gettext('Create PIN'),
+        showFxATerms: utils.bodyData.fxaUrl
       };
       this.setTitle(this.gettext('Create PIN'));
       this.renderTemplate('pin-form.html', context);

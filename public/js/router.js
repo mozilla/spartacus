@@ -83,7 +83,6 @@ define([
       this.app = options.app;
     },
 
-
     finishFxALogin: function () {
       // Not routed, since routing happens after login.
       this.viewManager.renderView(FxAAuthView);

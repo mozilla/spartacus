@@ -5,7 +5,8 @@ module.exports = {
   resetUserURL: '/logout',
   useMinCSS: true,
   useMinJS: true,
-  showClientConsole: true,
+  showClientConsole: false,
+  staticURL: 'https://marketplace-dev-cdn.allizom.org/',
   appSettingsOverrides: JSON.stringify({
     validRedirSites: [
       'http://mozilla.bango.net',

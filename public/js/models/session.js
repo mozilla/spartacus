@@ -42,13 +42,10 @@ define([
           cancel.callPayFailure();
         }
       };
-      var docLangs = ['cs', 'de', 'el', 'en-US', 'es', 'hr', 'hu', 'it', 'pl', 'pt-BR', 'sr', 'zh-CN'];
 
-      var lang = i18n.getLangFromLangAttr();
-      var docLang = docLangs.indexOf(lang) >= 0 ? lang : 'en-US';
-      var docLocation = utils.bodyData.staticDocsUrl + 'media/docs/{type}/' + docLang + '.html?20131014-4';
-      defaults.termsOfService = utils.format(docLocation, {type: 'terms'});
-      defaults.privacyPolicy = utils.format(docLocation, {type: 'privacy'});
+      defaults.termsOfService = utils.getTermsLink();
+      defaults.privacyPolicy = utils.getPrivacyLink();
+
       // Persona calls it 'experimental_forceAuthentication', FxA calls it
       // 'refreshAuthentication'.
       if (utils.supportsNativeFxA() && options.experimental_forceAuthentication) {

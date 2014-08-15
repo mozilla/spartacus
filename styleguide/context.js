@@ -25,6 +25,10 @@ module.exports = {
     showCancel: true,
     cancelText: 'OK',
     cancelModifier: 'cancel cta',
+  },
+  iframeoverlay: {
+    iframeSrc: "https://marketplace-dev-cdn.allizom.org/media/docs/terms/es.html?20140717",
+    ctaText: 'OK'
   }
 
 };

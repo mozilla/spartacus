@@ -14,6 +14,11 @@
       <span></span>
       <span></span>
     </div>
+    {% if showFxATerms -%}
+      <p class="terms">{{ format(gettext('By proceeding you agree to our <a href="%(terms)s">terms</a> and <a href="%(privacy)s">Privacy Policy</a>'), {
+            'terms': 'https://marketplace.firefox.com/terms-of-use',
+            'privacy': 'https://marketplace.firefox.com/privacy-policy' }, true)|safe }}</p>
+    {%- endif %}
     {% if showForgotPin -%}
       <p class="forgot-pin"><a href="#">{{ gettext('Forgot your PIN?') }}</a></p>
     {%- endif %}

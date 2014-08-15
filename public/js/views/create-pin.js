@@ -110,7 +110,8 @@ define([
     render: function(){
       var context = {
         ctaText: this.gettext('Continue'),
-        pinTitle: this.gettext('Create PIN')
+        pinTitle: this.gettext('Create PIN'),
+        showFxATerms: utils.bodyData.fxaUrl
       };
       this.setTitle(this.gettext('Create PIN'));
       this.renderTemplate('pin-form.html', context);

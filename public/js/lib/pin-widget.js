@@ -19,6 +19,7 @@ define([
   var $errorMessage;
   var $content;
   var $forgotPin;
+  var $terms;
 
   function getPin() {
     return pinBuffer;
@@ -39,6 +40,9 @@ define([
   function updatePinUI() {
     console.log('Updating pin UI');
     var numFilled = pinBuffer.length;
+    if (numFilled >= 1) {
+      $terms.addClass('hidden');
+    }
     $pseudoInputs.each(function(index, elm) {
       var $elm = $(elm);
       if (index + 1 <= numFilled) {
@@ -75,6 +79,7 @@ define([
     $errorMessage.text(errorMessage);
     $errorMessage.removeClass('hidden');
     $forgotPin.addClass('hidden');
+    $terms.addClass('hidden');
     focusPin();
   }
 
@@ -91,6 +96,7 @@ define([
     $submitButton = $('.cta[type=submit]');
     $errorMessage = $('.err-msg');
     $forgotPin = $('.forgot-pin');
+    $terms = $('.terms');
     $content = $('.content');
     $content.on('click', function(e) {
       focusPin();

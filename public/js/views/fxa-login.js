@@ -2,8 +2,9 @@ define([
   'auth',
   'log',
   'underscore',
+  'utils',
   'views/page'
-], function(auth, log, _, PageView){
+], function(auth, log, _, utils, PageView){
 
   'use strict';
 
@@ -15,9 +16,9 @@ define([
     },
 
     handleSignIn: function(e) {
-      console.log("FxA login button clicked");
+      console.log("FxA login clicked, redirecting to " + utils.bodyData.fxaUrl);
       e.preventDefault();
-      auth.startFxA(false);
+      window.location.href = utils.bodyData.fxaUrl;
     },
 
     render: function(){

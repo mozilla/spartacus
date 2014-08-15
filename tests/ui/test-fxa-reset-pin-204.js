@@ -3,9 +3,12 @@ var helpers = require('../helpers');
 helpers.startCasper({
   useFxA: true,
   setUp: function(){
-    helpers.fakeFxA(200);
+    helpers.fakeFxA();
     helpers.fakeStartTransaction();
-    helpers.fakePinData({data: {pin: true}});
+    casper.on('url.changed', function () {
+      helpers.fakeFxA();
+      helpers.fakePinData({data: {pin: true}});
+    });
   },
 });
 

@@ -215,8 +215,13 @@ function fakeFxA(options) {
     casper.echo('Setting up a fake XHR timeout for FxA', 'INFO');
     clientTimeoutResponse('POST', '/fake-fxa');
   } else {
+    casper.page.injectJs('public/lib/js/sinon/index.js');
+    injectSinon();
     casper.evaluate(function (data, statusCode) {
-      window.server.respondWith('POST', /\/fake-fxa/, [statusCode, {}, data]);
+      window.server.respondWith(
+          'POST', /\/fake-fxa/,
+          [statusCode, {"Content-Type": "application/json"}, data]);
+      console.log("Stubs installed");
     }, data, statusCode);
   }
 }
@@ -413,7 +418,7 @@ function setUpFxA() {
     console.log('injecting FxA test config');
     document.body.setAttribute('data-fxa-auth-url', '/fake-fxa');
     document.body.setAttribute('data-fxa-url', '/fake-fxa-login');
-    document.body.setAttribute('fxa-state', 'fake-fxa-state');
+    document.body.setAttribute('data-fxa-state', 'fake-fxa-state');
   });
 }
 
@@ -422,7 +427,7 @@ function tearDownFxA() {
   casper.evaluate(function() {
     document.body.removeAttribute('data-fxa-auth-url');
     document.body.removeAttribute('data-fxa-url');
-    document.body.removeAttribute('fxa-state');
+    document.body.removeAttribute('data-fxa-state');
   });
 }
 

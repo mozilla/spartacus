@@ -5,6 +5,7 @@ define([
   'views/create-pin',
   'views/enter-pin',
   'views/force-auth',
+  'views/fxa-authorize',
   'views/fxa-login',
   'views/init',
   'views/locked',
@@ -24,6 +25,7 @@ define([
   CreatePinView,
   EnterPinView,
   ForceAuthView,
+  FxAAuthView,
   FxALoginView,
   InitView,
   LockedView,
@@ -80,6 +82,13 @@ define([
       this.viewManager = new options.ViewManager();
       this.app = options.app;
     },
+
+
+    finishFxALogin: function () {
+      // Not routed, since routing happens after login.
+      this.viewManager.renderView(FxAAuthView);
+    },
+
 
     showInit: function() {
       // Doesn't have a URL so no calls to navigate.

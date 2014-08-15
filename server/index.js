@@ -60,7 +60,7 @@ spa.use(rewriteModule.getMiddleware([
 spa.get(/\/(?:css|fonts|i18n|images|js|lib)\/?.*/, express.static(__dirname + '/../public'));
 
 spa.get('/mozpay/', function (req, res) {
-  var context = {settings: config};
+  var context = {settings: config, useFxA: false};
   if (req.originalUrl === '/mozpay/provider/boku/wait-to-finish') {
     // This is emulating the url used by webpay for wait-to-finish.
     context.transaction_status_url = '/poll-wait-to-finish';
@@ -79,6 +79,8 @@ spa.get('/mozpay/', function (req, res) {
     // Setup a view that sets a example of an error like webpay would
     // but this time withn no error code attr.
     context.startView = 'payment-failed';
+  } else if (req.originalUrl.match(/\/mozpay\/spa\/fxa-auth/)) {
+    context.useFxA = true;
   }
 
   res.render('index.html', context);

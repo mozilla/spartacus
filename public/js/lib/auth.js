@@ -197,21 +197,7 @@ define([
   }
 
   function startFxA(reverify) {
-    var w = 320;
-    var h = 500;
-    var i = utils.getCenteredCoordinates(w, h, window);
-    window.addEventListener('message', function (msg) {
-      if (!msg.data || !msg.data.auth_code || msg.origin !== window.location.origin) {
-        console.log("not a login message, ignoring");
-        return;
-      }
-      verifyFxAUser(msg.data.auth_code, {reverify: reverify});
-    }, false);
-    console.log("Launching popup for FxA: " + utils.bodyData.fxaUrl);
-    window.open(
-      utils.bodyData.fxaUrl, 'fxa',
-      'width=' + w + ',height=' + h + ',left=' + i[0] + ',top=' + i[1]);
-    app.throbber.render(gettext('Waiting for login'));
+    verifyFxAUser(window.location.href, {reverify: reverify});
   }
 
   return {

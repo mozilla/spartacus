@@ -9,6 +9,11 @@ define([
   var InitView = PageView.extend({
 
     render: function() {
+      if (window.location.pathname === "/mozpay/spa/fxa-auth") {
+        // Not a 'real' page view, skip all the usual stuff.
+        app.router.finishFxALogin();
+        return;
+      }
       app.throbber.render(this.gettext('Initializing'));
       this.extractJWT();
       if (utils.bodyData.fxaUrl) {

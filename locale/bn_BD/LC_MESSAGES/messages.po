@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-05-23 12:05+0000\n"
-"PO-Revision-Date: 2014-08-13 16:10+0000\n"
-"Last-Translator: Zobayer Ahmed <zobayer_mc@yahoo.com>\n"
+"PO-Revision-Date: 2014-08-18 09:26+0000\n"
+"Last-Translator: Hossain <hossainalikram@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: bn_BD\n"
 "MIME-Version: 1.0\n"
@@ -12,11 +12,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1407946227.0\n"
+"X-POOTLE-MTIME: 1408353971.0\n"
 
 #: public/js/lib/cancel.js:33
 msgid "Payment cancelled."
-msgstr "পরিশোধ বাতিল হয়েছে।"
+msgstr "মূল্য পরিশোধ বাতিল হয়েছে।"
 
 #: public/js/views/create-pin.js:105 templates/error.html:20
 #: templates/pin-form.html:26

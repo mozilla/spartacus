@@ -26,6 +26,10 @@ files only.
 The webpay setting `SPARTACUS_STATIC` is pointing at `localhost:2604` by default.
 Modify this if your local settings if you need to.
 
+Spartacus must be reachable by the client making payments, so you'll need to
+either expose the port it's running on (2604 by default)  or reverse proxy it
+through something like nginx.
+
 You'll also need to make sure your local webpay settings have `SPA_ENABLE` and
 `SPA_ENABLE_URLS` are both set to `True`. This will enable webpay to serve
 Spartacus for the relevant urls.

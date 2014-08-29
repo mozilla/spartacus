@@ -22,7 +22,7 @@ define([
     defaultCancel: function(e) {
       e.preventDefault();
       this.close();
-      cancel.callPayFailure();
+      cancel.callPayFailure(e, this.errorCode);
     },
 
     render: function(options){
@@ -36,12 +36,13 @@ define([
         app.throbber.close();
       }
 
-      var errorCode = options.errorCode;
+      this.errorCode = options.errorCode;
+
       var msg = options.msg;
       var template = options.template || 'error.html';
 
-      if (!msg && errorCode) {
-        msg = errorCodes[errorCode];
+      if (!msg && this.errorCode) {
+        msg = errorCodes[this.errorCode];
       }
 
       var context = {
@@ -49,7 +50,7 @@ define([
         cancelModifier: 'cancel',
         cancelText: options.cancelText || this.gettext('Cancel'),
         ctaText: options.ctaText || this.gettext('OK'),
-        errorCode: errorCode,
+        errorCode: this.errorCode,
         heading: options.heading || this.gettext('Error'),
         msg: msg || this.gettext('An unexpected error occurred.'),
         pageclass: options.pageclass,

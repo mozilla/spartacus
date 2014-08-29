@@ -1,5 +1,5 @@
 /*
- * Note: Error messages placed here sholuld only be user-facing messages.
+ * Note: Error messages placed here should only be user-facing messages.
  * All other technical information should be added to the dev_messages API in webapy.
  */
 define([

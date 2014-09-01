@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-23 12:05+0000\n"
+"POT-Creation-Date: 2014-09-01 10:55+0000\n"
 "PO-Revision-Date: 2013-12-11 13:32+0000\n"
 "Last-Translator: Goce <goce.mitevski@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,16 +13,17 @@ msgstr ""
 "X-Generator: Pootle 2.5.0\n"
 "X-POOTLE-MTIME: 1386768729.0\n"
 
-#: public/js/lib/cancel.js:33
+#: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
 msgid "Payment cancelled."
 msgstr "Плаќањето е откажано."
 
 #: public/js/views/create-pin.js:105 templates/error.html:20
-#: templates/pin-form.html:26
+#: templates/pin-form.html:26 public/js/views/create-pin.js:104
+#: public/js/views/error.js:51 templates/simulate.html:17
 msgid "Cancel"
 msgstr "Откажи"
 
-#: public/js/lib/pin-widget.js:58
+#: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64
 msgid "PIN can only contain digits."
 msgstr "Пинот може да содржи само бројки."
 
@@ -40,7 +41,8 @@ msgstr "Се вчитува"
 msgid "Beginning payment"
 msgstr "Започнува плаќањето"
 
-#: public/js/views/login.js:19
+#: public/js/views/login.js:19 public/js/views/force-auth.js:81
+#: public/js/views/login.js:18 public/js/views/reset-start.js:67
 msgid "Connecting to Persona"
 msgstr "Се врши поврзување со Persona"
 
@@ -48,11 +50,11 @@ msgstr "Се врши поврзување со Persona"
 msgid "Payment complete"
 msgstr "Плаќањето е завршено"
 
-#: public/js/lib/auth.js:22
+#: public/js/lib/auth.js:22 public/js/lib/auth.js:20
 msgid "Oops"
 msgstr "Опа"
 
-#: public/js/lib/auth.js:65
+#: public/js/lib/auth.js:65 public/js/lib/auth.js:84 public/js/lib/auth.js:155
 msgid "This is taking longer than expected. Try again?"
 msgstr "Ова трае подолго од очекуваното. Да пробаме повторно?"
 
@@ -60,37 +62,44 @@ msgstr "Ова трае подолго од очекуваното. Да про�
 msgid "Something went wrong. Try again?"
 msgstr "Нешто тргна наопаку. Да пробаме повторно?"
 
-#: templates/error.html:27
+#: templates/error.html:27 public/js/views/error.js:52
+#: public/js/views/error.js:87 public/js/views/locked.js:24
 msgid "OK"
 msgstr "Во ред"
 
 #: public/js/views/error.js:44 public/js/views/locked.js:23
+#: public/js/views/error.js:54
 msgid "Error"
 msgstr "Грешка"
 
 #: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100
+#: public/js/views/enter-pin.js:97 public/js/views/enter-pin.js:101
 msgid "Enter PIN"
 msgstr "Внесете пин"
 
 #: public/js/views/login.js:25 templates/login.html:5
+#: public/js/views/fxa-login.js:25 public/js/views/fxa-login.js:27
+#: public/js/views/login.js:24 public/js/views/login.js:26
 msgid "Sign In"
 msgstr "Најавете се"
 
-#: templates/login.html:6
+#: templates/login.html:6 public/js/views/fxa-login.js:28
+#: public/js/views/login.js:27
 msgid "Sign in to continue with the payment"
 msgstr "Најавете се за да продолжите со плаќањето"
 
-#: templates/login.html:7
+#: templates/login.html:7 templates/login.html:9
 msgid "Sign in"
 msgstr "Најавете се"
 
 #: public/js/views/create-pin.js:106 public/js/views/create-pin.js:113
 #: public/js/views/reset-pin.js:64 templates/reset-start.html:12
-#: templates/was-locked.html:12
+#: templates/was-locked.html:12 public/js/views/create-pin.js:105
+#: public/js/views/create-pin.js:112 templates/simulate.html:18
 msgid "Continue"
 msgstr "Продолжи"
 
-#: public/js/views/enter-pin.js:73
+#: public/js/views/enter-pin.js:73 public/js/views/enter-pin.js:74
 msgid "Wrong PIN"
 msgstr "Погрешен пин"
 
@@ -110,7 +119,7 @@ msgstr "Потврди пин"
 #: webpay/pin/views.py:131 webpay/pin/views.py:157
 #: webpay/pin/templates/pin/pin_was_locked.html:13
 #: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
-#: templates/was-locked.html:11
+#: templates/was-locked.html:11 public/js/views/force-auth.js:89
 msgid "Reset PIN"
 msgstr "Ресетирај пин"
 
@@ -120,7 +129,7 @@ msgstr "Ресетирај пин"
 msgid "Forgot your PIN?"
 msgstr "Го заборавивте пинот?"
 
-#: public/js/views/locked.js:24
+#: public/js/views/locked.js:24 public/js/views/locked.js:22
 msgid ""
 "You entered the wrong PIN too many times. Your account is locked. Please try "
 "your purchase again in 5 minutes."
@@ -154,7 +163,8 @@ msgstr ""
 msgid "Verifying payment"
 msgstr ""
 
-#: public/js/lib/auth.js:29 public/js/lib/auth.js:30
+#: public/js/lib/auth.js:29 public/js/lib/auth.js:30 public/js/lib/auth.js:25
+#: public/js/lib/auth.js:39
 msgid "Retrying"
 msgstr ""
 
@@ -168,15 +178,20 @@ msgid "Back"
 msgstr ""
 
 #: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95
+#: public/js/views/enter-pin.js:96
 msgid "Submit"
 msgstr ""
 
 #: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60
-#: public/js/views/reset-pin.js:28
+#: public/js/views/reset-pin.js:28 public/js/lib/wait.js:171
+#: public/js/views/create-pin.js:65 public/js/views/enter-pin.js:61
+#: public/js/views/force-auth.js:53 public/js/views/reset-pin.js:29
+#: public/js/views/reset-start.js:107
 msgid "Retry?"
 msgstr ""
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
+#: public/js/views/create-pin.js:113 public/js/views/create-pin.js:115
 #, fuzzy
 msgid "Create PIN"
 msgstr "Создај пин"
@@ -186,15 +201,148 @@ msgstr "Создај пин"
 msgid "Something went wrong."
 msgstr "Нешто тргна наопаку!"
 
-#: public/js/views/reset-start.js:29
+#: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118
 #, fuzzy
 msgid "Reset your PIN?"
 msgstr "Ресетирај пин"
 
-#: public/js/views/was-locked.js:13
+#: public/js/views/was-locked.js:13 public/js/views/was-locked.js:38
 msgid "Was Locked"
 msgstr ""
 
-#: public/js/views/wait-for-tx.js:10
+#: public/js/views/wait-for-tx.js:10 public/js/views/wait-to-start.js:13
 msgid "Setting up payment"
 msgstr "Се поставува плаќањето"
+
+#: public/js/error-codes.js:12
+msgid "An internal web request timed out."
+msgstr ""
+
+#: public/js/error-codes.js:13
+msgid "The system timed out while trying to log in."
+msgstr ""
+
+#: public/js/error-codes.js:14
+msgid "An error occurred whilst trying to log out."
+msgstr ""
+
+#: public/js/error-codes.js:15
+msgid "The system timed out while trying to log out."
+msgstr ""
+
+#: public/js/error-codes.js:16
+msgid "Payments are temporarily disabled."
+msgstr ""
+
+#: public/js/error-codes.js:17
+msgid "An unexpected error occurred when creating your PIN."
+msgstr ""
+
+#: public/js/error-codes.js:18 public/js/error-codes.js:27
+msgid "The PIN data submitted was invalid."
+msgstr ""
+
+#: public/js/error-codes.js:19
+msgid "No valid user found whilst attempting to create your PIN"
+msgstr ""
+
+#: public/js/error-codes.js:20
+msgid "Permission denied attempting to create your PIN."
+msgstr ""
+
+#: public/js/error-codes.js:21
+msgid "The request timed out whilst attempting to create your PIN."
+msgstr ""
+
+#: public/js/error-codes.js:22
+msgid "An unexpected error occurred whilst checking your PIN."
+msgstr ""
+
+#: public/js/error-codes.js:23
+msgid "No valid user found whilst checking your PIN"
+msgstr ""
+
+#: public/js/error-codes.js:24
+msgid "Permission denied attempting to check your PIN"
+msgstr ""
+
+#: public/js/error-codes.js:25
+msgid "The request timed out whilst trying to check your PIN"
+msgstr ""
+
+#: public/js/error-codes.js:26
+msgid "An unexpected error occurred when resetting your PIN."
+msgstr ""
+
+#: public/js/error-codes.js:28
+msgid "No valid user found whilst attempting to reset your PIN"
+msgstr ""
+
+#: public/js/error-codes.js:29
+msgid "Permission denied attempting to reset your PIN."
+msgstr ""
+
+#: public/js/error-codes.js:30
+msgid "The request timed out whilst attempting to reset your PIN."
+msgstr ""
+
+#: public/js/error-codes.js:31
+msgid "The transaction failed. You have not been charged for this purchase."
+msgstr ""
+
+#: public/js/error-codes.js:32
+msgid ""
+"The payment method or price point is not supported for this region or "
+"operator."
+msgstr ""
+
+#: public/js/lib/auth.js:214
+msgid "Waiting for login"
+msgstr ""
+
+#: public/js/lib/wait.js:56
+msgid "Retrieving Transaction"
+msgstr ""
+
+#: public/js/views/error.js:55
+msgid "An unexpected error occurred."
+msgstr ""
+
+#: public/js/views/force-auth.js:87
+msgid "Sign-in to reset PIN"
+msgstr ""
+
+#: public/js/views/force-auth.js:90
+msgid "Please sign in to reset your PIN."
+msgstr ""
+
+#: public/js/views/init.js:12
+msgid "Initializing"
+msgstr ""
+
+#: public/js/views/locked.js:21
+#, fuzzy
+msgid "PIN Locked"
+msgstr "Вашиот пин беше заклучен"
+
+#: public/js/views/payment-success.js:15 public/js/views/wait-to-finish.js:14
+#, fuzzy
+msgid "Completing payment"
+msgstr "Се поставува плаќањето"
+
+#: public/js/views/simulate.js:23
+msgid "Processing"
+msgstr ""
+
+#: public/js/views/simulate.js:51
+msgid "Simulate Payment"
+msgstr ""
+
+#: public/js/views/simulate.js:55
+msgid "You will not be charged."
+msgstr ""
+
+#: templates/reset-start.html:12
+#, fuzzy
+msgid "Reset"
+msgstr "Ресетирај пин"

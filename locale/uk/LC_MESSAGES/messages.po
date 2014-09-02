@@ -3,17 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-01 10:55+0000\n"
-"PO-Revision-Date: 2014-07-11 20:32+0000\n"
+"PO-Revision-Date: 2014-09-02 19:41+0000\n"
 "Last-Translator: Artem <a.polivanchuk@outlook.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1405110752.0\n"
+"X-POOTLE-MTIME: 1409686893.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
 msgid "Payment cancelled."
@@ -45,7 +45,7 @@ msgstr "Початок оплати"
 #: public/js/views/login.js:19 public/js/views/force-auth.js:81
 #: public/js/views/login.js:18 public/js/views/reset-start.js:67
 msgid "Connecting to Persona"
-msgstr "Під'єднання до Persona"
+msgstr "З'єднання з Persona"
 
 #: webpay/base/templates/base.html:34
 msgid "Payment complete"
@@ -212,133 +212,132 @@ msgstr "Налаштування оплати"
 
 #: public/js/error-codes.js:12
 msgid "An internal web request timed out."
-msgstr ""
+msgstr "Час очікування внутрішнього веб запиту вийшов."
 
 #: public/js/error-codes.js:13
 msgid "The system timed out while trying to log in."
-msgstr ""
+msgstr "При спробі виконати вхід, вийшов час очікування системи."
 
 #: public/js/error-codes.js:14
 msgid "An error occurred whilst trying to log out."
-msgstr ""
+msgstr "Поки тривав вихід, сталася помилка."
 
 #: public/js/error-codes.js:15
 msgid "The system timed out while trying to log out."
-msgstr ""
+msgstr "При спробі виконати вихід, вийшов час очікування системи."
 
 #: public/js/error-codes.js:16
 msgid "Payments are temporarily disabled."
-msgstr ""
+msgstr "Платежі тимчасово відключено."
 
 #: public/js/error-codes.js:17
 msgid "An unexpected error occurred when creating your PIN."
-msgstr ""
+msgstr "При створенні вашого PIN-коду, сталася непередбачувана помилка."
 
 #: public/js/error-codes.js:18 public/js/error-codes.js:27
 msgid "The PIN data submitted was invalid."
-msgstr ""
+msgstr "Відправлений PIN був недійсним."
 
 #: public/js/error-codes.js:19
 msgid "No valid user found whilst attempting to create your PIN"
-msgstr ""
+msgstr "Поки тривала спроба створити ваш PIN, не знайдено дійсного користувача"
 
 #: public/js/error-codes.js:20
 msgid "Permission denied attempting to create your PIN."
-msgstr ""
+msgstr "При спробі створити ваш PIN, заборонено дозвіл."
 
 #: public/js/error-codes.js:21
 msgid "The request timed out whilst attempting to create your PIN."
-msgstr ""
+msgstr "При спробі створити ваш PIN, вийшов час очікування запиту."
 
 #: public/js/error-codes.js:22
 msgid "An unexpected error occurred whilst checking your PIN."
-msgstr ""
+msgstr "При перевірці вашого PIN сталася неочікувана помилка."
 
 #: public/js/error-codes.js:23
 msgid "No valid user found whilst checking your PIN"
-msgstr ""
+msgstr "Поки тривала перевірка вашого PIN, не знайдено дійсного користувача"
 
 #: public/js/error-codes.js:24
 msgid "Permission denied attempting to check your PIN"
-msgstr ""
+msgstr "Заборонено дозвіл при спробі перевірити ваш PIN"
 
 #: public/js/error-codes.js:25
 msgid "The request timed out whilst trying to check your PIN"
-msgstr ""
+msgstr "Час очікування запиту вийшов поки тривала спроба перевірки вашого PIN"
 
 #: public/js/error-codes.js:26
 msgid "An unexpected error occurred when resetting your PIN."
-msgstr ""
+msgstr "Під час скидання вашого PIN-коду сталася непередбачувана помилка."
 
 #: public/js/error-codes.js:28
 msgid "No valid user found whilst attempting to reset your PIN"
-msgstr ""
+msgstr "Поки тривала спроба скинути ваш PIN, не знайдено дійсного користувача"
 
 #: public/js/error-codes.js:29
 msgid "Permission denied attempting to reset your PIN."
-msgstr ""
+msgstr "Заборонено дозвіл при спробі скинути ваш PIN."
 
 #: public/js/error-codes.js:30
 msgid "The request timed out whilst attempting to reset your PIN."
-msgstr ""
+msgstr "Поки тривала спроба скинути ваш PIN, вийшов час очікування запиту."
 
 #: public/js/error-codes.js:31
 msgid "The transaction failed. You have not been charged for this purchase."
-msgstr ""
+msgstr "Транзакція невдала. З вас не знято гроші за цю покупку."
 
 #: public/js/error-codes.js:32
 msgid ""
 "The payment method or price point is not supported for this region or "
 "operator."
 msgstr ""
+"Тип оплати або стандартна ціна не підтримується для цього регіону або "
+"оператора."
 
 #: public/js/lib/auth.js:214
 msgid "Waiting for login"
-msgstr ""
+msgstr "Очікування входу"
 
 #: public/js/lib/wait.js:56
 msgid "Retrieving Transaction"
-msgstr ""
+msgstr "Відновлення транзакції"
 
 #: public/js/views/error.js:55
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "Сталася неочікувана помилка."
 
 #: public/js/views/force-auth.js:87
 msgid "Sign-in to reset PIN"
-msgstr ""
+msgstr "Увійти для скидання PIN"
 
 #: public/js/views/force-auth.js:90
 msgid "Please sign in to reset your PIN."
-msgstr ""
+msgstr "Будь ласка, увійдіть, щоб скинути свій PIN."
 
 #: public/js/views/init.js:12
 msgid "Initializing"
-msgstr ""
+msgstr "Ініціалізація"
 
 #: public/js/views/locked.js:21
-#, fuzzy
 msgid "PIN Locked"
-msgstr "Було заблоковано"
+msgstr "PIN заблоковано"
 
 #: public/js/views/payment-success.js:15 public/js/views/wait-to-finish.js:14
-#, fuzzy
 msgid "Completing payment"
-msgstr "Налаштування оплати"
+msgstr "Завершення платежу"
 
 #: public/js/views/simulate.js:23
 msgid "Processing"
-msgstr ""
+msgstr "Обробка"
 
 #: public/js/views/simulate.js:51
 msgid "Simulate Payment"
-msgstr ""
+msgstr "Симулювати платіж"
 
 #: public/js/views/simulate.js:55
 msgid "You will not be charged."
-msgstr ""
+msgstr "З вас не знімуться гроші."
 
 #: templates/reset-start.html:12
-#, fuzzy
 msgid "Reset"
-msgstr "Скинути PIN"
+msgstr "Скинути"

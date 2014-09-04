@@ -78,7 +78,9 @@ define([
         onready: function() {
           console.log('Firing onready event');
           that.trigger('onReady');
-          if (that.calledBack === false && utils.bodyData.loggedInUser) {
+          console.log('calledBack', that.calledBack);
+          console.log('loggedInUser', typeof user, user);
+          if (that.calledBack === false && user) {
             console.log('Firing onImpliedLogin event');
             that.trigger('onImpliedLogin');
           }

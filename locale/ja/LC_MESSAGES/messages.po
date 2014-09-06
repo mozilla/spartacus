@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-01 10:55+0000\n"
-"PO-Revision-Date: 2014-09-06 00:00-0400\n"
+"PO-Revision-Date: 2014-09-06 00:02-0400\n"
 "Last-Translator: Kohei Yoshino <kohei.yoshino@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -316,14 +316,12 @@ msgid "Initializing"
 msgstr "初期化中"
 
 #: public/js/views/locked.js:21
-#, fuzzy
 msgid "PIN Locked"
-msgstr "ロックされました"
+msgstr "暗証番号がロックされました"
 
 #: public/js/views/payment-success.js:15 public/js/views/wait-to-finish.js:14
-#, fuzzy
 msgid "Completing payment"
-msgstr "決済を設定する"
+msgstr "決済を完了しています"
 
 #: public/js/views/simulate.js:23
 msgid "Processing"
@@ -338,6 +336,5 @@ msgid "You will not be charged."
 msgstr "課金は行われません。"
 
 #: templates/reset-start.html:12
-#, fuzzy
 msgid "Reset"
-msgstr "暗証番号をリセット"
+msgstr "リセット"

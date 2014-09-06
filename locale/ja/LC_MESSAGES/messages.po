@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-01 10:55+0000\n"
-"PO-Revision-Date: 2014-06-30 20:33-0400\n"
+"PO-Revision-Date: 2014-09-06 00:00-0400\n"
 "Last-Translator: Kohei Yoshino <kohei.yoshino@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -211,109 +211,109 @@ msgstr "決済を設定する"
 
 #: public/js/error-codes.js:12
 msgid "An internal web request timed out."
-msgstr ""
+msgstr "内部 Web リクエストがタイムアウトしました。"
 
 #: public/js/error-codes.js:13
 msgid "The system timed out while trying to log in."
-msgstr ""
+msgstr "ログイン試行中にシステムがタイムアウトしました。"
 
 #: public/js/error-codes.js:14
 msgid "An error occurred whilst trying to log out."
-msgstr ""
+msgstr "ログアウト試行中に問題が発生しました。"
 
 #: public/js/error-codes.js:15
 msgid "The system timed out while trying to log out."
-msgstr ""
+msgstr "ログアウト試行中にシステムがタイムアウトしました。"
 
 #: public/js/error-codes.js:16
 msgid "Payments are temporarily disabled."
-msgstr ""
+msgstr "決済は一時的に無効化されています。"
 
 #: public/js/error-codes.js:17
 msgid "An unexpected error occurred when creating your PIN."
-msgstr ""
+msgstr "暗証番号の登録中に予期せぬ問題が発生しました。"
 
 #: public/js/error-codes.js:18 public/js/error-codes.js:27
 msgid "The PIN data submitted was invalid."
-msgstr ""
+msgstr "送信された暗証番号データが正しくありません。"
 
 #: public/js/error-codes.js:19
 msgid "No valid user found whilst attempting to create your PIN"
-msgstr ""
+msgstr "暗証番号の登録中に正規ユーザが見つかりませんでした。"
 
 #: public/js/error-codes.js:20
 msgid "Permission denied attempting to create your PIN."
-msgstr ""
+msgstr "暗証番号の登録中に権限がないため操作が拒否されました。"
 
 #: public/js/error-codes.js:21
 msgid "The request timed out whilst attempting to create your PIN."
-msgstr ""
+msgstr "暗証番号の登録中にリクエストがタイムアウトしました。"
 
 #: public/js/error-codes.js:22
 msgid "An unexpected error occurred whilst checking your PIN."
-msgstr ""
+msgstr "暗証番号の確認中に予期せぬ問題が発生しました。"
 
 #: public/js/error-codes.js:23
 msgid "No valid user found whilst checking your PIN"
-msgstr ""
+msgstr "暗証番号の確認中に正規ユーザが見つかりませんでした。"
 
 #: public/js/error-codes.js:24
 msgid "Permission denied attempting to check your PIN"
-msgstr ""
+msgstr "暗証番号の確認中に権限がないため操作が拒否されました。"
 
 #: public/js/error-codes.js:25
 msgid "The request timed out whilst trying to check your PIN"
-msgstr ""
+msgstr "暗証番号の確認中にリクエストがタイムアウトしました。"
 
 #: public/js/error-codes.js:26
 msgid "An unexpected error occurred when resetting your PIN."
-msgstr ""
+msgstr "暗証番号のリセット中に予期せぬ問題が発生しました。"
 
 #: public/js/error-codes.js:28
 msgid "No valid user found whilst attempting to reset your PIN"
-msgstr ""
+msgstr "暗証番号のリセット中に正規ユーザが見つかりませんでした。"
 
 #: public/js/error-codes.js:29
 msgid "Permission denied attempting to reset your PIN."
-msgstr ""
+msgstr "暗証番号のリセット中に権限がないため操作が拒否されました。"
 
 #: public/js/error-codes.js:30
 msgid "The request timed out whilst attempting to reset your PIN."
-msgstr ""
+msgstr "暗証番号のリセット中にリクエストがタイムアウトしました。"
 
 #: public/js/error-codes.js:31
 msgid "The transaction failed. You have not been charged for this purchase."
-msgstr ""
+msgstr "トランザクションが失敗しました。今回の購入にはまだ課金されていません。"
 
 #: public/js/error-codes.js:32
 msgid ""
 "The payment method or price point is not supported for this region or "
 "operator."
-msgstr ""
+msgstr "この地域もしくはキャリアは、この決済方法もしくは価格帯に対応していません。"
 
 #: public/js/lib/auth.js:214
 msgid "Waiting for login"
-msgstr ""
+msgstr "ログイン待機中"
 
 #: public/js/lib/wait.js:56
 msgid "Retrieving Transaction"
-msgstr ""
+msgstr "トランザクション取得中"
 
 #: public/js/views/error.js:55
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "予期せぬ問題が発生しました。"
 
 #: public/js/views/force-auth.js:87
 msgid "Sign-in to reset PIN"
-msgstr ""
+msgstr "ログインして暗証番号をリセット"
 
 #: public/js/views/force-auth.js:90
 msgid "Please sign in to reset your PIN."
-msgstr ""
+msgstr "暗証番号をリセットするにはログインしてください。"
 
 #: public/js/views/init.js:12
 msgid "Initializing"
-msgstr ""
+msgstr "初期化中"
 
 #: public/js/views/locked.js:21
 #, fuzzy
@@ -327,15 +327,15 @@ msgstr "決済を設定する"
 
 #: public/js/views/simulate.js:23
 msgid "Processing"
-msgstr ""
+msgstr "処理中"
 
 #: public/js/views/simulate.js:51
 msgid "Simulate Payment"
-msgstr ""
+msgstr "決済をシミュレート"
 
 #: public/js/views/simulate.js:55
 msgid "You will not be charged."
-msgstr ""
+msgstr "課金は行われません。"
 
 #: templates/reset-start.html:12
 #, fuzzy

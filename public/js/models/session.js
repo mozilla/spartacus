@@ -31,8 +31,8 @@ define([
         privacyPolicy: utils.bodyData.privacyPolicy,
         termsOfService: utils.bodyData.termsOfService,
         oncancel: function() {
-          utils.trackwebpayevent({'action': 'persona login',
-                                  'label': 'cancelled'});
+          utils.trackEvent({'action': 'persona login',
+                            'label': 'cancelled'});
           cancel.callPayFailure();
         }
       };

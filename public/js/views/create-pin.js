@@ -42,6 +42,7 @@ define([
     handleSubmit: function(e) {
       e.preventDefault();
       if (this.curPin === pin.getPin()) {
+        $(e.target).prop('disabled', true);
         this.submitData(this.curPin);
       } else {
         this.clearPin();

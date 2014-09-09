@@ -19,6 +19,7 @@ casper.test.begin('Enter Pin API call returns 200', {
       this.sendKeys('.pinbox', '1234');
       test.assertExists('.cta:enabled', 'Submit button is enabled');
       this.click('.cta');
+      test.assertExists('.cta:disabled', 'Submit button is disabled on click');
     });
 
     casper.waitForUrl(helpers.url('wait-to-start'), function() {

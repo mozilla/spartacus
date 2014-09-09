@@ -93,7 +93,8 @@ define([
           console.log('Forgot-pin logout done');
           utils.trackEvent({'action': 'forgot pin',
                             'label': 'Logout Success'});
-          app.router.navigate('spa/force-auth', {trigger: true});
+          // Call directly rather than change the URL to workaround bug 1063575.
+          app.router.showForceAuth();
         })
         .fail(function _failedLogout() {
           // Called when we manually abort everything

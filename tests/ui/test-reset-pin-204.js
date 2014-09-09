@@ -26,7 +26,7 @@ casper.test.begin('Reset pin returns 204, then onto wait for tx.', {
     });
 
     // Click for re-auth...
-    casper.waitForUrl(helpers.url('force-auth'), function() {
+    casper.waitForSelector('#signin', function() {
       helpers.fakeVerification({reverify: true});
       this.click('#signin');
     });

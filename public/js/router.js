@@ -48,7 +48,6 @@ define([
       '': 'showInit',
       'spa/create-pin': 'showCreatePin',
       'spa/enter-pin': 'showEnterPin',
-      'spa/force-auth': 'showForceAuth',
       'spa/reset-pin': 'showResetPin',
       'spa/reset-start': 'showResetStart',
       'spa/simulate': 'showSimulate',
@@ -121,6 +120,8 @@ define([
     },
 
     showForceAuth: function() {
+      // Note: this view isn't directly routed
+      // just like showLogin.
       this.viewManager.renderView(ForceAuthView);
     },
 

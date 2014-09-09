@@ -26,7 +26,7 @@ casper.test.begin('Reset pin returns 403 (not authed / CSRF fail)', {
     });
 
     // Click for re-auth...
-    casper.waitForUrl(helpers.url('force-auth'), function() {
+    casper.waitForSelector('#signin', function() {
       helpers.fakeVerification({reverify: true});
       this.click('#signin');
     });

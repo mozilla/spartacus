@@ -27,7 +27,7 @@ casper.test.begin('Reverification fails with 500 then retry success.', {
     });
 
     // Click for re-auth...
-    casper.waitForUrl(helpers.url('force-auth'), function() {
+    casper.waitForSelector('#signin', function() {
       helpers.fakeFxA({statusCode: 500});
       this.click('#signin');
     });

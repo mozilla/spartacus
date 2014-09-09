@@ -23,6 +23,10 @@ define([
       console.log('session model inited');
     },
 
+    runWatch: function(params) {
+      navigator.id.watch(params);
+    },
+
     getRequestConfig: function(options) {
       var defaults = {
         experimental_allowUnverified: true,
@@ -67,29 +71,32 @@ define([
         loggedInUser: user || undefined,
         onlogin: function(assertion){
           that.calledBack = true;
-          console.log('Firing onlogin event');
+          console.log('Firing onLogin');
           that.trigger('onLogin', assertion);
         },
         onlogout: function() {
           that.calledBack = true;
-          console.log('Firing onlogout event');
+          console.log('Firing onLogout');
           that.trigger('onLogout');
         },
         onready: function() {
-          console.log('Firing onready event');
+          console.log('Firing onReady');
           that.trigger('onReady');
-          console.log('calledBack', that.calledBack);
-          console.log('loggedInUser', typeof user, user);
           if (that.calledBack === false && user) {
-            console.log('Firing onImpliedLogin event');
+            console.log('Firing onImpliedLogin');
             that.trigger('onImpliedLogin');
+          } else if (that.calledBack === false) {
+            // Run logout if loggedInUser is not set
+            // and only `onready` was called by Persona.
+            console.log('Firing implied onLogout');
+            that.trigger('onLogout');
           }
         }
       };
 
       var params = $.extend({}, defaults, options || {});
       console.log('Running navigator.id.watch');
-      navigator.id.watch(params);
+      this.runWatch(params);
     },
 
   });

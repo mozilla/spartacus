@@ -26,7 +26,7 @@ casper.test.begin('Reverification fails with timeout then retry success.', {
     });
 
     // Click for re-auth...
-    casper.waitForUrl(helpers.url('force-auth'), function() {
+    casper.waitForSelector('#signin', function() {
       helpers.fakeVerification({reverify: true, timeout: true});
       this.click('#signin');
     });

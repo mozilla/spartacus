@@ -26,7 +26,7 @@ casper.test.begin('Reset pin timeout followed by success.', {
     });
 
     // Click for re-auth...
-    casper.waitForUrl(helpers.url('force-auth'), function() {
+    casper.waitForSelector('#signin', function() {
       helpers.fakeVerification({reverify: true});
       this.click('#signin');
     });

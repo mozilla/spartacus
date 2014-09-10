@@ -14,13 +14,13 @@ casper.test.begin('Make initial pin fetch error, then retry with success.', {
 
     casper.waitForSelector('.full-error', function() {
       helpers.assertErrorCode('VERIFY_TIMEOUT');
-      test.assertVisible('.button.cta', 'CTA buttons should be visible');
-      test.assertVisible('.button.cancel', 'Cancel button should be visible');
+      test.assertVisible('.full-error .cta', 'CTA buttons should be visible');
+      test.assertVisible('.full-error .cancel', 'Cancel button should be visible');
 
       // Setup success.
       helpers.fakeVerification();
       helpers.fakePinData({data: {pin: true}});
-      casper.click('.button.cta');
+      casper.click('.full-error .cta');
     });
 
     casper.waitForUrl(helpers.url('enter-pin'), function() {

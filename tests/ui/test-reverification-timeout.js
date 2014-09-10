@@ -35,12 +35,12 @@ casper.test.begin('Reverification fails with timeout then retry success.', {
       test.assertVisible('.full-error', 'Error page should be shown');
       helpers.assertErrorCode('REVERIFY_TIMEOUT');
 
-      test.assertVisible('.button.cta', 'CTA buttons should be visible');
-      test.assertVisible('.button.cancel', 'Cancel button should be visible');
+      test.assertVisible('.full-error .cta', 'CTA buttons should be visible');
+      test.assertVisible('.full-error .cancel', 'Cancel button should be visible');
 
       helpers.fakeVerification({reverify: true});
 
-      this.click('button.cta');
+      this.click('.full-error .cta');
     });
 
     casper.waitForUrl(helpers.url('reset-pin'), function() {

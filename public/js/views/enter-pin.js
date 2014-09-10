@@ -26,7 +26,9 @@ define([
     handleSubmit: function(e) {
       if (e) {
         e.preventDefault();
+        $(e.target).prop('disabled', true);
       }
+
       var that = this;
       var req = app.pin.sync('check', app.pin, {data: {pin: pin.getPin()}});
 

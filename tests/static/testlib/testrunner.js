@@ -10,6 +10,7 @@ require(['/js/require-config.js'], function() {
     '/unit/test-mcc-mnc.js',
     '/unit/test-persona-config.js',
     '/unit/test-provider-obj.js',
+    '/unit/test-session-callbacks.js',
     '/unit/test-settings.js',
     '/unit/test-utils.js'
   ], function() {

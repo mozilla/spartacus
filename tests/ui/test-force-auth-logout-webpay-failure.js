@@ -29,11 +29,11 @@ casper.test.begin('Logout fails then retry with success.', {
       test.assertVisible('.full-error', 'Error page should be shown');
       helpers.assertErrorCode('LOGOUT_ERROR');
 
-      test.assertVisible('.button.cta', 'CTA buttons should be visible');
-      test.assertVisible('.button.cancel', 'Cancel button should be visible');
+      test.assertVisible('.full-error .cta', 'CTA buttons should be visible');
+      test.assertVisible('.full-error .cancel', 'Cancel button should be visible');
 
       helpers.fakeLogout();
-      this.click('button.cta');
+      this.click('.full-error .cta');
     });
 
     // Click for re-auth...

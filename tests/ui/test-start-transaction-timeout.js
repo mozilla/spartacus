@@ -15,14 +15,14 @@ casper.test.begin('Start transaction timout, retry then success.', {
 
     casper.waitForSelector('.full-error', function() {
       helpers.assertErrorCode('TRANS_TIMEOUT');
-      test.assertVisible('.button.cta', 'CTA button should be visible');
-      test.assertVisible('.button.cancel', 'Cancel button should be visible');
+      test.assertVisible('.full-error .cta', 'CTA button should be visible');
+      test.assertVisible('.full-error .cancel', 'Cancel button should be visible');
 
       // Now setup success.
       helpers.fakeStartTransaction();
       helpers.fakePinData({data: {pin: true}});
 
-      casper.click('.button.cta');
+      casper.click('.full-error .cta');
     });
 
     casper.waitForUrl(helpers.url('enter-pin'), function() {

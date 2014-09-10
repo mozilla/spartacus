@@ -32,17 +32,16 @@ casper.test.begin('Reverification fails with 500 then retry success.', {
       this.click('#signin');
     });
 
-
     casper.waitForSelector('.full-error', function() {
       test.assertVisible('.full-error', 'Error page should be shown');
       helpers.assertErrorCode('FXA_FAILED');
 
-      test.assertVisible('.button.cta', 'CTA buttons should be visible');
-      test.assertVisible('.button.cancel', 'Cancel button should be visible');
+      test.assertVisible('.full-error .cta', 'CTA buttons should be visible');
+      test.assertVisible('.full-error .cancel', 'Cancel button should be visible');
 
       helpers.fakeFxA();
 
-      this.click('button.cta');
+      this.click('.full-error .cta');
     });
 
     casper.waitForUrl(helpers.url('reset-pin'), function() {

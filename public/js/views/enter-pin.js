@@ -20,8 +20,6 @@ define([
 
     handleForgotPin: function(e) {
       e.preventDefault();
-      // Workaround failure to blur in 1.1 (bug 1065563)
-      $('input').blur();
       app.router.navigate('spa/reset-start', {trigger: true});
     },
 

@@ -93,8 +93,15 @@ define([
     $forgotPin = $('.forgot-pin');
     $content = $('.content');
     $content.on('click', function(e) {
-      focusPin();
-      e.preventDefault();
+      var targetNodeName;
+      if (e.target) {
+        targetNodeName = e.target.nodeName.toLowerCase();
+      }
+      // Filter out links and buttons as a workaround to bug 1065563.
+      if (['a','button'].indexOf(targetNodeName) === -1) {
+        focusPin();
+        e.preventDefault();
+      }
     });
     $pinInput.on('keypress', handleKeyPress);
     focusPin();

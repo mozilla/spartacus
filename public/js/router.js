@@ -81,56 +81,33 @@ define([
       this.app = options.app;
     },
 
-    current: function () {
-      // Based on a snippet from http://stackoverflow.com/questions/7563949/backbone-js-get-current-route
-      var fragment = Backbone.history.fragment;
-      var routes = _.pairs(this.routes);
-      var route;
-      var name;
-      var found;
-
-      found = _.find(routes, function (namedRoute) {
-        route = namedRoute[0];
-        name = namedRoute[1];
-        if (!_.isRegExp(route)) {
-          route = this._routeToRegExp(route);
-        }
-        return route.test(fragment);
-      }, this);
-
-      if (found) {
-        return {
-          name: name,
-          params: this._extractParameters(route, fragment),
-          fragment: fragment
-        };
-      }
-    },
-
     showInit: function() {
+      // Doesn't have a URL so no calls to navigate.
       this.viewManager.renderView(InitView);
     },
 
     showCreatePin: function() {
+      this.navigate('spa/create-pin');
       this.viewManager.renderView(CreatePinView);
     },
 
     showEnterPin: function() {
+      this.navigate('spa/enter-pin');
       this.viewManager.renderView(EnterPinView);
     },
 
     showForceAuth: function() {
-      // Note: this view isn't directly routed
-      // just like showLogin.
+      // Doesn't have a URL so no calls to navigate.
       this.viewManager.renderView(ForceAuthView);
     },
 
     showLocked: function() {
+      this.navigate('spa/locked');
       this.viewManager.renderView(LockedView);
     },
 
     showLogin: function() {
-      // Note: This view isn't directly routed.
+      // Doesn't have a URL so no calls to navigate.
       if (utils.bodyData.fxaUrl) {
         this.viewManager.renderView(FxALoginView);
       } else {
@@ -139,34 +116,42 @@ define([
     },
 
     showPaymentFailed: function() {
+      // Doesn't have a URL so no calls to navigate.
       this.viewManager.renderView(PaymentFailedView);
     },
 
     showPaymentSuccess: function() {
+      // Doesn't have a URL so no calls to navigate.
       this.viewManager.renderView(PaymentSuccessView);
     },
 
     showResetPin: function() {
+      this.navigate('spa/reset-pin');
       this.viewManager.renderView(ResetPinView);
     },
 
     showResetStart: function() {
+      this.navigate('spa/reset-start');
       this.viewManager.renderView(ResetStartView);
     },
 
     showSimulate: function() {
+      this.navigate('spa/simulate');
       this.viewManager.renderView(SimulateView);
     },
 
     showWaitToFinish: function() {
+      this.navigate('spa/wait-to-finish');
       this.viewManager.renderView(WaitToFinishView);
     },
 
     showWaitToStart: function() {
+      this.navigate('spa/wait-to-start');
       this.viewManager.renderView(WaitToStartView);
     },
 
     showWasLocked: function() {
+      this.navigate('spa/was-locked');
       this.viewManager.renderView(WasLockedView);
     },
 

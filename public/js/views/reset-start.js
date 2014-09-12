@@ -35,7 +35,7 @@ define([
 
     handleBack: function(e) {
       e.preventDefault();
-      app.router.navigate('spa/enter-pin', {trigger: true});
+      app.router.showEnterPin();
     },
 
     handlePersonaLogout: function() {

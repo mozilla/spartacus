@@ -1,26 +1,19 @@
 define([
   'jquery',
-  'utils',
   'models/session'
-], function($, utils, SessionModel) {
+], function($, SessionModel) {
 
   var assert = chai.assert;
-  var $body = utils.$body;
 
   suite('Session', function(){
 
     setup(function(){
-      this.oldBodyData = utils.bodyData;
-      this.oldLoggedInUser = $body.data('loggedInUser');
-      $body.data('loggedInUser', '');
-      utils.bodyData = $body.data();
       this.session = new SessionModel();
+      this.session.set('logged_in_user', '');
       this.stub = sinon.stub(this.session, 'trigger');
     });
 
     teardown(function(){
-      utils.bodyData = this.oldBodyData;
-      $body.data('loggedInUser', this.oldLoggedInUser);
       this.stub.restore();
     });
 
@@ -34,8 +27,7 @@ define([
     });
 
     test('Check when onready is called and user is set, impliedLogin is fired', function(){
-      $body.data('loggedInUser', 'whatever');
-      utils.bodyData = $body.data();
+      this.session.set('logged_in_user', 'whatever');
       this.session.runWatch = function(params) {
         params.onready();
       };
@@ -45,8 +37,7 @@ define([
     });
 
     test('Check onLogin called with assertion', function(){
-      $body.data('loggedInUser', 'whatever');
-      utils.bodyData = $body.data();
+      this.session.set('logged_in_user', 'whatever');
       this.session.runWatch = function(params) {
         params.onlogin('assertion-test');
         params.onready();
@@ -56,5 +47,15 @@ define([
       assert.ok(this.stub.calledWithExactly('onReady'));
     });
 
+    test('Check onLogout clears logged_in_user', function(){
+      this.session.set('logged_in_user', 'whatever');
+      this.session.runWatch = function(params) {
+        params.onlogout();
+      };
+      assert.equal(this.session.get('logged_in_user'), 'whatever');
+      this.session.watchIdentity();
+      assert.ok(this.stub.calledWithExactly('onLogout'));
+      assert.equal(this.session.get('logged_in_user'), '');
+    });
   });
 });

@@ -19,7 +19,7 @@ define([
       e.preventDefault();
       // Expectation is the user has a pin to go to enter pin.
       if (app.pin.get('pin') === true) {
-        app.router.navigate('spa/enter-pin', {trigger: true});
+        app.router.showEnterPin();
       } else {
         utils.trackEvent({action: 'was-locked',
                           label: 'Unexpected state'});
@@ -29,7 +29,7 @@ define([
 
     handleResetStart: function(e) {
       e.preventDefault();
-      app.router.navigate('spa/reset-start', {trigger: true});
+      app.router.showResetStart();
     },
 
     render: function(){

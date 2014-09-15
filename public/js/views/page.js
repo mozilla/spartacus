@@ -100,22 +100,40 @@ define([
       var data = model.changed;
       if (data.pin_is_locked_out === true) {
         console.log('User is locked out -> locked');
-        return app.router.navigate('spa/locked', {trigger: true});
+        return app.router.showLocked();
       } else if (data.pin_was_locked_out === true) {
         console.log('User was-locked out -> was-locked');
-        return app.router.navigate('spa/was-locked', {trigger: true});
+        return app.router.showWasLocked();
       } else if (data.pin === true) {
         console.log('User has a pin so -> enter-pin');
-        return app.router.navigate('spa/enter-pin', {trigger: true});
+        return app.router.showEnterPin();
       } else if (data.pin === false) {
         console.log('User has no pin so -> create-pin');
-        return app.router.navigate('spa/create-pin', {trigger: true});
+        return app.router.showCreatePin();
       }
+    },
+
+
+    getState: function() {
+      var that = this;
+      app.pin.fetch().fail(function($xhr, textStatus) {
+        if (textStatus === 'timeout') {
+          utils.trackEvent({action: 'fetch-state',
+                            label: 'Fetching initial state timed-out.'});
+          return app.error.render({errorCode: 'PIN_STATE_TIMEOUT',
+                                   ctaCallback: function() { that.setUpPayment(); } });
+        } else {
+          utils.trackEvent({action: 'fetch-state',
+                            label: 'Fetching initial state error.'});
+          return app.error.render({errorCode: 'PIN_STATE_ERROR'});
+        }
+      });
     },
 
     setUpPayment: function() {
       var that = this;
       var jwt = app.transaction.get('jwt');
+
       if (jwt) {
         var req = app.transaction.startTransaction(jwt);
         var getTransaction = $.Deferred();
@@ -153,29 +171,16 @@ define([
 
         getTransaction.then(function(result) {
           if (!result.simulation) {
-            app.pin.fetch().fail(function($xhr, textStatus) {
-              if (textStatus === 'timeout') {
-                utils.trackEvent({action: 'fetch-state',
-                                  label: 'Fetching initial state timed-out.'});
-                return app.error.render({errorCode: 'PIN_STATE_TIMEOUT',
-                                         ctaCallback: that.setUpPayment});
-              } else {
-                utils.trackEvent({action: 'fetch-state',
-                                  label: 'Fetching initial state error.'});
-                return app.error.render({errorCode: 'PIN_STATE_ERROR'});
-              }
-            });
+            that.getState();
           } else {
             app.session.set('simulate_result', result.simulation);
             console.log('navigating to simulation screen');
-            app.router.navigate('spa/simulate', {trigger: true});
+            app.router.showSimulate();
           }
         });
 
       } else {
-        utils.trackEvent({action: 'start-transaction',
-                          label: 'Invalid or missing JWT'});
-        return app.error.render({errorCode: 'MISSING_JWT'});
+        this.getState();
       }
     },
   });

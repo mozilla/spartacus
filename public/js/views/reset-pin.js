@@ -19,7 +19,7 @@ define([
 
       req.done(function() {
         console.log('pin reset successfully');
-        app.router.navigate('spa/wait-to-start', {trigger: true});
+        app.router.showWaitToStart();
       }).fail(function($xhr, textStatus) {
         if (textStatus === 'timeout') {
           console.log('Request timed out');

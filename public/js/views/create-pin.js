@@ -56,7 +56,7 @@ define([
       var req = app.pin.sync('create', app.pin, {'data': {'pin': pinData}});
       var that = this;
       req.done(function() {
-        app.router.navigate('spa/wait-to-start', {trigger: true});
+        app.router.showWaitToStart();
       }).fail(function($xhr, textStatus) {
         if (textStatus === 'timeout') {
           console.log('Request timed out');

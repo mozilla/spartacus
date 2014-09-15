@@ -20,7 +20,7 @@ define([
 
     handleForgotPin: function(e) {
       e.preventDefault();
-      app.router.navigate('spa/reset-start', {trigger: true});
+      app.router.showResetStart();
     },
 
     handleSubmit: function(e) {
@@ -36,7 +36,7 @@ define([
       app.throbber.render();
 
       req.done(function() {
-        app.router.navigate('spa/wait-to-start', {trigger: true});
+        app.router.showWaitToStart();
       }).fail(function($xhr, textStatus) {
 
         app.throbber.close();

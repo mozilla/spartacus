@@ -16,6 +16,7 @@ casper.test.begin('Reset pin returns 204, then onto wait for tx.', {
     helpers.doLogin();
     // On enter pin page click forgot pin link.
     casper.waitForUrl(helpers.url('enter-pin'), function() {
+      test.assertDoesntExist('.terms', 'Terms are not visible on enter-pin');
       this.click('.forgot-pin a');
     });
 

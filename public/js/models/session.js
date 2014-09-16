@@ -14,6 +14,7 @@ define([
     calledBack: false,
 
     defaults: {
+      logged_in_user: utils.bodyData.loggedInUser,
       logged_in: null,
       user_hash: null,
       simulate_result: null
@@ -31,7 +32,7 @@ define([
       var defaults = {
         experimental_allowUnverified: true,
         experimental_forceIssuer: utils.bodyData.unverifiedIssuer,
-        experimental_emailHint: utils.bodyData.loggedInUser,
+        experimental_emailHint: this.get('logged_in_user'),
         privacyPolicy: utils.bodyData.privacyPolicy,
         termsOfService: utils.bodyData.termsOfService,
         oncancel: function() {
@@ -64,7 +65,7 @@ define([
     watchIdentity: function(options) {
       var that = this;
       this.calledBack = false;
-      var user = utils.bodyData.loggedInUser;
+      var user = this.get('logged_in_user');
       console.log('loggedInUser', typeof user, user);
 
       var defaults = {
@@ -78,6 +79,8 @@ define([
           that.calledBack = true;
           console.log('Firing onLogout');
           that.trigger('onLogout');
+          // Unset the loggedInUser hint.
+          that.set('logged_in_user', '');
         },
         onready: function() {
           console.log('Firing onReady');

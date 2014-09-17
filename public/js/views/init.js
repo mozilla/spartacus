@@ -14,7 +14,6 @@ define([
         app.router.finishFxALogin();
         return;
       }
-      app.throbber.render(this.gettext('Initializing'));
       this.extractJWT();
       if (utils.bodyData.fxaUrl) {
         console.log("FxA enabled, checking login");

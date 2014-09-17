@@ -22,7 +22,9 @@ casper.test.begin('Refresh from locked page.', {
         helpers.injectSinon();
         helpers.fakeVerification();
         helpers.fakePinData({data: {pin: true, pin_is_locked_out: true}});
+      });
 
+      casper.then(function() {
         casper.waitForUrl(helpers.url('locked'), function() {
           test.assertUrlMatch(/\/mozpay\/spa\/locked/, 'Check we reload into the locked page');
           helpers.assertErrorCode('PIN_LOCKED');

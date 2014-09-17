@@ -37,7 +37,9 @@ casper.test.begin('Refresh from reset-pin page.', {
         helpers.injectSinon();
         helpers.fakeVerification();
         helpers.fakePinData({data: {pin: true}});
+      });
 
+      casper.then(function() {
         casper.waitForUrl(helpers.url('enter-pin'), function() {
           test.assertUrlMatch(/\/mozpay\/spa\/enter-pin/, 'Check we reload into enter-pin');
           test.assertVisible('.pinbox', 'Pin entry widget should be displayed');

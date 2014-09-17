@@ -215,6 +215,8 @@ function fakeFxA(options) {
     casper.echo('Setting up a fake XHR timeout for FxA', 'INFO');
     clientTimeoutResponse('POST', '/fake-fxa');
   } else {
+    // clientScripts doesn't seem to apply to requests caused by redirects, so
+    // we reinstall sinon here.
     casper.page.injectJs('public/lib/js/sinon/index.js');
     injectSinon();
     casper.evaluate(function (data, statusCode) {

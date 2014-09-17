@@ -5,7 +5,10 @@ helpers.startCasper({
   setUp: function(){
     helpers.fakeFxA();
     helpers.fakeStartTransaction();
-    helpers.fakePinData({data: {pin: true}});
+    casper.on('url.changed', function () {
+      helpers.fakeFxA();
+      helpers.fakePinData({data: {pin: true}});
+    });
   },
 });
 

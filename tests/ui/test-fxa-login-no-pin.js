@@ -3,11 +3,13 @@ var helpers = require('../helpers');
 
 helpers.startCasper({
   useFxA: true,
-  path: '/mozpay/?req=foo&test-fxa=1',
   setUp: function(){
     helpers.fakeFxA();
     helpers.fakeStartTransaction();
-    helpers.fakePinData({data: {pin: false}});
+    casper.on('url.changed', function () {
+      helpers.fakeFxA();
+      helpers.fakePinData({data: {pin: false}});
+    });
   },
 });
 

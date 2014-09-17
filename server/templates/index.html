@@ -30,6 +30,11 @@
     data-settings="{{ settings.appSettingsOverrides }}"
     data-start-view="{{ startView }}"
     data-error-code="{{ errorCode }}"
+    {% if useFxA -%}
+      data-fxa-auth-url="/fake-fxa"
+      data-fxa-url="/fake-fxa-login"
+      data-fxa-state="fake-fxa-state"
+    {%- endif -%}
     >
     <main id="app">
       <div id="view" class="view"></div>

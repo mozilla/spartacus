@@ -68,7 +68,7 @@ define([
 
       var authResetUser = auth.resetUser();
       var personaLogout = null;
-      if (utils.bodyData.fxaUrl) {
+      if (utils.useOAuthFxA()) {
         personaLogout = $.Deferred().resolve();
       } else {
         personaLogout = this.logoutPersona();

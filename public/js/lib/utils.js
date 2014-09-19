@@ -70,8 +70,13 @@ define([
       return false;
     },
     supportsNativeFxA: function(nav) {
+      // Check user-agent string to find out if we're on a FxOS device with
+      // native FxA support.
       nav = nav || navigator;
       return nav.mozId && nav.userAgent.match(/rv:(\d{2})/)[1] >= 32;
+    },
+    useOAuthFxA: function() {
+      return this.bodyData.fxaUrl && !this.supportsNativeFxA();
     }
   };
 });

@@ -48,9 +48,11 @@ define([
       var docLocation = utils.bodyData.staticDocsUrl + 'media/docs/{type}/' + docLang + '.html?20131014-4';
       defaults.termsOfService = utils.format(docLocation, {type: 'terms'});
       defaults.privacyPolicy = utils.format(docLocation, {type: 'privacy'});
-      if (utils.supportsNativeFxA()) {
-        // On Firefox OS 2.0 and later, request Firefox Accounts login.
-        defaults.wantIssuer = 'firefox-accounts';
+      // Persona calls it 'experimental_forceAuthentication', FxA calls it
+      // 'refreshAuthentication'.
+      if (utils.supportsNativeFxA() && options.experimental_forceAuthentication) {
+        // See https://developer.mozilla.org/en-US/docs/Firefox-Accounts-on-FirefoxOS
+        options.refreshAuthentication = 0;
       }
       return $.extend({}, defaults, options || {});
     },
@@ -96,8 +98,12 @@ define([
           }
         }
       };
-
       var params = $.extend({}, defaults, options || {});
+
+      if (utils.supportsNativeFxA()) {
+        // On Firefox OS 2.0 and later, request Firefox Accounts login.
+        defaults.wantIssuer = 'firefox-accounts';
+      }
       console.log('Running navigator.id.watch');
       this.runWatch(params);
     },

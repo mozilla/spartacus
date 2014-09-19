@@ -15,7 +15,7 @@ define([
         return;
       }
       this.extractJWT();
-      if (utils.bodyData.fxaUrl) {
+      if (utils.useOAuthFxA()) {
         console.log("FxA enabled, checking login");
         if (!app.session.get('logged_in')) {
           console.log("showing FxA login");

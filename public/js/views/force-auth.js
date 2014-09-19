@@ -60,7 +60,7 @@ define([
     },
 
     forceAuthRequest: function() {
-      if (utils.bodyData.fxaUrl) {
+      if (utils.useOAuthFxA()) {
         auth.startFxA(true);
       } else {
         app.session.login({

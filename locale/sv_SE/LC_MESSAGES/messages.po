@@ -3,175 +3,184 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-01 10:55+0000\n"
-"PO-Revision-Date: 2013-01-08 08:50-0700\n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2014-09-21 19:41+0000\n"
+"Last-Translator: Andreas <az@kth.se>\n"
 "Language-Team: none\n"
-"Language: sv\n"
+"Language: sv_SE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.9.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1411328466.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
 msgid "Payment cancelled."
-msgstr ""
+msgstr "Betalning avbruten."
 
 #: public/js/views/create-pin.js:105 templates/error.html:20
 #: templates/pin-form.html:26 public/js/views/create-pin.js:104
 #: public/js/views/error.js:51 templates/simulate.html:17
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64
 msgid "PIN can only contain digits."
-msgstr ""
+msgstr "PIN-koden kan endast innehålla siffror."
 
 #: webpay/base/templates/base.html:30
 msgid "You logged in as a different user, you must start the payment again."
 msgstr ""
+"Du loggade in som en annan användare. Du måste börja om med betalningen."
 
 #: public/js/views/throbber.js:15 public/js/views/throbber.js:16
 #: templates/throbber.html:7
 msgid "Loading"
-msgstr ""
+msgstr "Laddar"
 
 #: webpay/base/templates/base.html:32
 msgid "Beginning payment"
-msgstr ""
+msgstr "Börjar betalning"
 
 #: public/js/views/login.js:19 public/js/views/force-auth.js:81
 #: public/js/views/login.js:18 public/js/views/reset-start.js:67
 msgid "Connecting to Persona"
-msgstr ""
+msgstr "Ansluter till Persona"
 
 #: webpay/base/templates/base.html:34
 msgid "Payment complete"
-msgstr ""
+msgstr "Betalning slutförd"
 
 #: public/js/lib/auth.js:22 public/js/lib/auth.js:20
 msgid "Oops"
-msgstr ""
+msgstr "Oj"
 
 #: public/js/lib/auth.js:65 public/js/lib/auth.js:84 public/js/lib/auth.js:155
 msgid "This is taking longer than expected. Try again?"
-msgstr ""
+msgstr "Detta tar längre tid än väntat. Försök igen?"
 
 #: public/js/lib/auth.js:19
 msgid "Something went wrong. Try again?"
-msgstr ""
+msgstr "Något gick fel. Försök igen?"
 
 #: templates/error.html:27 public/js/views/error.js:52
 #: public/js/views/error.js:87 public/js/views/locked.js:24
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: public/js/views/error.js:44 public/js/views/locked.js:23
 #: public/js/views/error.js:54
 msgid "Error"
-msgstr ""
+msgstr "Fel"
 
 #: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100
 #: public/js/views/enter-pin.js:97 public/js/views/enter-pin.js:101
 msgid "Enter PIN"
-msgstr ""
+msgstr "Ange PIN-kod"
 
 #: public/js/views/login.js:25 templates/login.html:5
 #: public/js/views/fxa-login.js:25 public/js/views/fxa-login.js:27
 #: public/js/views/login.js:24 public/js/views/login.js:26
 msgid "Sign In"
-msgstr ""
+msgstr "Logga in"
 
 #: templates/login.html:6 public/js/views/fxa-login.js:28
 #: public/js/views/login.js:27
 msgid "Sign in to continue with the payment"
-msgstr ""
+msgstr "Logga in för att fortsätta med betalningen"
 
 #: templates/login.html:7 templates/login.html:9
 msgid "Sign in"
-msgstr ""
+msgstr "Logga in"
 
 #: public/js/views/create-pin.js:106 public/js/views/create-pin.js:113
 #: public/js/views/reset-pin.js:64 templates/reset-start.html:12
 #: templates/was-locked.html:12 public/js/views/create-pin.js:105
 #: public/js/views/create-pin.js:112 templates/simulate.html:18
 msgid "Continue"
-msgstr ""
+msgstr "Fortsätt"
 
 #: public/js/views/enter-pin.js:73 public/js/views/enter-pin.js:74
 msgid "Wrong PIN"
-msgstr ""
+msgstr "Fel PIN-kod"
 
 #: public/js/views/create-pin.js:48
 msgid "PINs do not match."
-msgstr ""
+msgstr "PIN-koderna matchar inte."
 
 #: webpay/pin/views.py:46 webpay/testing/views.py:25
 msgid "Create a PIN"
-msgstr ""
+msgstr "Skapa en PIN-kod"
 
 #: webpay/pin/views.py:68 webpay/pin/views.py:185
 #: public/js/views/create-pin.js:36
 msgid "Confirm PIN"
-msgstr ""
+msgstr "Bekräfta PIN-kod"
 
 #: webpay/pin/views.py:131 webpay/pin/views.py:157
 #: webpay/pin/templates/pin/pin_was_locked.html:13
 #: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
 #: templates/was-locked.html:11 public/js/views/force-auth.js:89
 msgid "Reset PIN"
-msgstr ""
+msgstr "Återställ PIN-kod"
 
 #. This is the same as the standard forgot
 #. password that most sites have.
 #: templates/pin-form.html:18 templates/reset-start.html:6
 msgid "Forgot your PIN?"
-msgstr ""
+msgstr "Glömt din PIN-kod?"
 
 #: public/js/views/locked.js:24 public/js/views/locked.js:22
 msgid ""
 "You entered the wrong PIN too many times. Your account is locked. Please try "
 "your purchase again in 5 minutes."
 msgstr ""
+"Du angav fel PIN-kod för många gånger. Ditt konto är låst. Försök igen om 5 "
+"minuter med ditt inköp."
 
 #: templates/was-locked.html:6
 msgid "Your PIN was locked"
-msgstr ""
+msgstr "Din PIN-kod var låst"
 
 #: templates/was-locked.html:7
 msgid ""
 "Your PIN was locked because you entered it incorrectly too many times. You "
 "can continue and try entering your PIN again or reset your PIN."
 msgstr ""
+"Din PIN-kod var låst eftersom du skrev det felaktigt för många gånger. Du "
+"kan fortsätta och försöka skriva in din PIN-kod på nytt eller återställa din "
+"PIN-kod."
 
 #: templates/reset-start.html:7
 msgid ""
 "Are you sure you want to reset your PIN? You must sign in to Persona to "
 "reset your PIN."
 msgstr ""
+"Är du säker på att du vill återställa din PIN-kod? Du måste logga in på "
+"Persona för att återställa din PIN-kod."
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6
 #: webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"
-msgstr ""
+msgstr "Verifierar betalning"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30 public/js/lib/auth.js:25
 #: public/js/lib/auth.js:39
 msgid "Retrying"
-msgstr ""
+msgstr "Försöker igen"
 
 #: public/js/lib/auth.js:64
 msgid "That took longer than expected. Retry?"
-msgstr ""
+msgstr "Detta tog längre tid än väntat. Försöka igen?"
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11
 msgid "Back"
-msgstr ""
+msgstr "Tillbaka"
 
 #: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95
 #: public/js/views/enter-pin.js:96
 msgid "Submit"
-msgstr ""
+msgstr "Skicka in"
 
 #: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60
 #: public/js/views/reset-pin.js:28 public/js/lib/wait.js:171
@@ -179,155 +188,161 @@ msgstr ""
 #: public/js/views/force-auth.js:53 public/js/views/reset-pin.js:29
 #: public/js/views/reset-start.js:107
 msgid "Retry?"
-msgstr ""
+msgstr "Försöka igen?"
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
 #: public/js/views/create-pin.js:113 public/js/views/create-pin.js:115
 msgid "Create PIN"
-msgstr ""
+msgstr "Skapa PIN-kod"
 
 #: public/js/views/error.js:45
 msgid "Something went wrong."
-msgstr ""
+msgstr "Något gick fel."
 
 #: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118
 msgid "Reset your PIN?"
-msgstr ""
+msgstr "Återställ din PIN-kod?"
 
 #: public/js/views/was-locked.js:13 public/js/views/was-locked.js:38
 msgid "Was Locked"
-msgstr ""
+msgstr "Var låst"
 
 #: public/js/views/wait-for-tx.js:10 public/js/views/wait-to-start.js:13
 msgid "Setting up payment"
-msgstr ""
+msgstr "Konfigurerar betalning"
 
 #: public/js/error-codes.js:12
 msgid "An internal web request timed out."
-msgstr ""
+msgstr "En intern webbegäran gjorde timeout."
 
 #: public/js/error-codes.js:13
 msgid "The system timed out while trying to log in."
-msgstr ""
+msgstr "Systemet gjorde timeout när du försökte logga in."
 
 #: public/js/error-codes.js:14
 msgid "An error occurred whilst trying to log out."
-msgstr ""
+msgstr "Ett fel uppstod samtidigt som du försökte logga ut."
 
 #: public/js/error-codes.js:15
 msgid "The system timed out while trying to log out."
-msgstr ""
+msgstr "Systemet gjorde timeout vid försök att logga ut."
 
 #: public/js/error-codes.js:16
 msgid "Payments are temporarily disabled."
-msgstr ""
+msgstr "Betalningarna är tillfälligt inaktiverade."
 
 #: public/js/error-codes.js:17
 msgid "An unexpected error occurred when creating your PIN."
-msgstr ""
+msgstr "Ett oväntat fel inträffade när din PIN-kod skapades."
 
 #: public/js/error-codes.js:18 public/js/error-codes.js:27
 msgid "The PIN data submitted was invalid."
-msgstr ""
+msgstr "PIN-kodsdata som skickats in var ogiltig."
 
 #: public/js/error-codes.js:19
 msgid "No valid user found whilst attempting to create your PIN"
 msgstr ""
+"Ingen giltig användare hittades samtidigt som din PIN-kod försöker skapas"
 
 #: public/js/error-codes.js:20
 msgid "Permission denied attempting to create your PIN."
-msgstr ""
+msgstr "Tillstånd nekas att försöka skapa din PIN-kod."
 
 #: public/js/error-codes.js:21
 msgid "The request timed out whilst attempting to create your PIN."
-msgstr ""
+msgstr "Begäran gjorde timeout samtidigt som din PIN-kod försöker skapas."
 
 #: public/js/error-codes.js:22
 msgid "An unexpected error occurred whilst checking your PIN."
-msgstr ""
+msgstr "Ett oväntat fel inträffade samtidigt som din PIN-kod kontrollerades."
 
 #: public/js/error-codes.js:23
 msgid "No valid user found whilst checking your PIN"
 msgstr ""
+"Ingen giltig användare hittades samtidigt som din PIN-kod kontrollerades"
 
 #: public/js/error-codes.js:24
 msgid "Permission denied attempting to check your PIN"
-msgstr ""
+msgstr "Tillstånd nekas att försöka kontrollera din PIN-kod"
 
 #: public/js/error-codes.js:25
 msgid "The request timed out whilst trying to check your PIN"
-msgstr ""
+msgstr "Begäran gjorde timeout samtidigt som din PIN-kod kontrollerades"
 
 #: public/js/error-codes.js:26
 msgid "An unexpected error occurred when resetting your PIN."
-msgstr ""
+msgstr "Ett oväntat fel inträffade vid återställning av din PIN-kod."
 
 #: public/js/error-codes.js:28
 msgid "No valid user found whilst attempting to reset your PIN"
 msgstr ""
+"Ingen giltig användare hittades samtidigt som din PIN-kod försöker "
+"återställas"
 
 #: public/js/error-codes.js:29
 msgid "Permission denied attempting to reset your PIN."
-msgstr ""
+msgstr "Tillstånd nekas att försöka återställa din PIN-kod."
 
 #: public/js/error-codes.js:30
 msgid "The request timed out whilst attempting to reset your PIN."
-msgstr ""
+msgstr "Begäran gjorde timeout samtidigt som din PIN-kod försöker återställas."
 
 #: public/js/error-codes.js:31
 msgid "The transaction failed. You have not been charged for this purchase."
-msgstr ""
+msgstr "Transaktionen misslyckades. Du har inte debiterats för detta köp."
 
 #: public/js/error-codes.js:32
 msgid ""
 "The payment method or price point is not supported for this region or "
 "operator."
 msgstr ""
+"Betalningsmetoden eller prisnivån stöds inte för denna region eller "
+"operatör."
 
 #: public/js/lib/auth.js:214
 msgid "Waiting for login"
-msgstr ""
+msgstr "Väntar på inloggning"
 
 #: public/js/lib/wait.js:56
 msgid "Retrieving Transaction"
-msgstr ""
+msgstr "Hämtar transaktion"
 
 #: public/js/views/error.js:55
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "Ett oväntat fel inträffade."
 
 #: public/js/views/force-auth.js:87
 msgid "Sign-in to reset PIN"
-msgstr ""
+msgstr "Logga in för att återställa PIN-kod"
 
 #: public/js/views/force-auth.js:90
 msgid "Please sign in to reset your PIN."
-msgstr ""
+msgstr "Logga in för att återställa din PIN-kod."
 
 #: public/js/views/init.js:12
 msgid "Initializing"
-msgstr ""
+msgstr "Initierar"
 
 #: public/js/views/locked.js:21
 msgid "PIN Locked"
-msgstr ""
+msgstr "PIN-kod låst"
 
 #: public/js/views/payment-success.js:15 public/js/views/wait-to-finish.js:14
 msgid "Completing payment"
-msgstr ""
+msgstr "Slutför betalning"
 
 #: public/js/views/simulate.js:23
 msgid "Processing"
-msgstr ""
+msgstr "Behandlar"
 
 #: public/js/views/simulate.js:51
 msgid "Simulate Payment"
-msgstr ""
+msgstr "Simulera betalning"
 
 #: public/js/views/simulate.js:55
 msgid "You will not be charged."
-msgstr ""
+msgstr "Du kommer inte att debiteras."
 
 #: templates/reset-start.html:12
 msgid "Reset"
-msgstr ""
+msgstr "Återställ"

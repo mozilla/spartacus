@@ -73,7 +73,7 @@ define([
       // Check user-agent string to find out if we're on a FxOS device with
       // native FxA support.
       nav = nav || navigator;
-      return nav.mozId && nav.userAgent.match(/rv:(\d{2})/)[1] >= 34;
+      return this.bodyData.fxaUrl && nav.mozId && nav.userAgent.match(/rv:(\d{2})/)[1] >= 34;
     },
     useOAuthFxA: function() {
       return this.bodyData.fxaUrl && !this.supportsNativeFxA();

@@ -59,13 +59,14 @@ define(['utils'], function(utils) {
     });
 
     test('test native-FxA UA detection', function() {
+      utils.bodyData.fxaUrl = 'yes';
       assert.notOk(utils.supportsNativeFxA(
         {userAgent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'}));
       assert.notOk(utils.supportsNativeFxA({
         mozId: {},
         userAgent: 'Mozilla/5.0 (Mobile; rv:26.0) Gecko/26.0 Firefox/26.0'}));
 
-      assert.ok(utils.supportsNativeFxA({
+      assert.notOk(utils.supportsNativeFxA({
         mozId: {},
         userAgent: 'Mozilla/5.0 (Mobile; rv:32.0) Gecko/26.0 Firefox/32.0'}));
 

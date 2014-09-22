@@ -78,7 +78,7 @@ define([
     },
     supportsNativeFxA: function(nav) {
       nav = nav || navigator;
-      return nav.mozId && nav.userAgent.match(/rv:(\d{2})/)[1] >= 32;
+      return nav.mozId && nav.userAgent.match(/rv:(\d{2})/)[1] >= 34;
     }
   };
 });

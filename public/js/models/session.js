@@ -102,6 +102,7 @@ define([
 
       if (utils.supportsNativeFxA()) {
         // On Firefox OS 2.0 and later, request Firefox Accounts login.
+        console.log('Native FxA support detected.');
         defaults.wantIssuer = 'firefox-accounts';
       }
       console.log('Running navigator.id.watch');

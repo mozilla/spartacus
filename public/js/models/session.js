@@ -29,6 +29,7 @@ define([
     },
 
     getRequestConfig: function(options) {
+      options = options || {};
       var defaults = {
         experimental_allowUnverified: true,
         experimental_forceIssuer: utils.bodyData.unverifiedIssuer,
@@ -54,7 +55,7 @@ define([
         // See https://developer.mozilla.org/en-US/docs/Firefox-Accounts-on-FirefoxOS
         options.refreshAuthentication = 0;
       }
-      return $.extend({}, defaults, options || {});
+      return $.extend({}, defaults, options);
     },
 
     login: function(options) {

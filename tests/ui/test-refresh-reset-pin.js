@@ -42,6 +42,9 @@ casper.test.begin('Refresh from reset-pin page.', {
       casper.then(function() {
         casper.waitForUrl(helpers.url('enter-pin'), function() {
           test.assertUrlMatch(/\/mozpay\/spa\/enter-pin/, 'Check we reload into enter-pin');
+        });
+
+        casper.waitForSelector('.pinbox', function() {
           test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
         });
       });

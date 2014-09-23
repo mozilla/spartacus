@@ -4,10 +4,13 @@ helpers.startCasper({
   useFxA: true,
   setUp: function(){
     helpers.fakeFxA({statusCode: 403, data: ''});
-    casper.on('url.changed', function (loc) {
+    casper.on('url.changed', function () {
       // Signal that the server rejected the FxA login token.
       helpers.fakeFxA({statusCode: 403, data: ''});
     });
+  },
+  tearDown: function() {
+    casper.removeAllListeners('url.changed');
   }
 });
 

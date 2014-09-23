@@ -10,6 +10,9 @@ helpers.startCasper({
       helpers.fakePinData({data: {pin: true}});
     });
   },
+  tearDown: function() {
+    casper.removeAllListeners('url.changed');
+  }
 });
 
 casper.test.begin('Reset pin returns 204, then onto wait for tx.', {

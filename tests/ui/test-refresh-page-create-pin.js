@@ -15,14 +15,14 @@ casper.test.begin('Refresh from pin creation page.', {
 
     casper.waitForUrl(helpers.url('create-pin'), function() {
 
-      this.reload(function() {
-        // New page means we need to set Sinon back up.
+      // re-load sinon when load.finished fires.
+      casper.once('load.finished', function() {
         helpers.injectSinon();
         helpers.fakeVerification();
         helpers.fakePinData({data: {pin: false}});
       });
 
-      casper.then(function() {
+      casper.reload(function() {
         casper.waitForUrl(helpers.url('create-pin'), function() {
           test.assertUrlMatch(/\/mozpay\/spa\/create-pin/, 'Check we reload into create-pin');
         });

@@ -20,7 +20,7 @@ module.exports = {
   },
   // Unittests.
   test: {
-    port: 7778,
+    port: 2599,
   },
 
   showClientConsole: false,

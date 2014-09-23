@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/mozilla/spartacus.svg?branch=master)](https://travis-ci.org/mozilla/spartacus)
+[![devDependency Status](https://david-dm.org/mozilla/spartacus/dev-status.svg)](https://david-dm.org/mozilla/spartacus#info=devDependencies)
 
 ![SPARTACUS](https://raw.github.com/mozilla/spartacus/master/spartacus.png)
 

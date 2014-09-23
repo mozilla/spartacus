@@ -10,6 +10,9 @@ helpers.startCasper({
       helpers.fakePinData({data: {pin: true}});
     });
   },
+  tearDown: function() {
+    casper.removeAllListeners('url.changed');
+  }
 });
 
 casper.test.begin('Reverification fails with 500 then retry success.', {

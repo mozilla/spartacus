@@ -3,7 +3,7 @@ var helpers = require('../helpers');
 
 helpers.startCasper({
   useFxA: true,
-  setUp: function(){
+  setUp: function() {
     helpers.fakeFxA();
     helpers.fakeStartTransaction();
     casper.on('url.changed', function () {
@@ -11,6 +11,9 @@ helpers.startCasper({
       helpers.fakePinData({data: {pin: false}});
     });
   },
+  tearDown: function() {
+    casper.removeAllListeners('url.changed');
+  }
 });
 
 casper.test.begin('Login test no pin', {

@@ -17,14 +17,14 @@ casper.test.begin('Refresh from locked page.', {
 
       helpers.assertErrorCode('PIN_LOCKED');
 
-      this.reload(function() {
-        // New page means we need to set Sinon back up.
+      // re-load sinon when load.finished fires.
+      casper.once('load.finished', function() {
         helpers.injectSinon();
         helpers.fakeVerification();
         helpers.fakePinData({data: {pin: true, pin_is_locked_out: true}});
       });
 
-      casper.then(function() {
+      casper.reload(function() {
         casper.waitForUrl(helpers.url('locked'), function() {
           test.assertUrlMatch(/\/mozpay\/spa\/locked/, 'Check we reload into the locked page');
           helpers.assertErrorCode('PIN_LOCKED');

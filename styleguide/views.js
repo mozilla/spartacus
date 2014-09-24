@@ -32,6 +32,15 @@ module.exports = {
     });
   },
 
+  iframeoverlay: function(req, res) {
+    res.render('pages/iframe-overlay.html', {
+      code: utils.prettyTemplateRender('iframe-overlay.html', req, context.iframeoverlay),
+      iframe: 'iframe-overlay',
+      active_page: 'iframe-overlay',
+      tui_only: true
+    });
+  },
+
   throbber: function(req, res) {
     res.render('pages/throbber.html', {
       code: utils.prettyTemplateRender('throbber.html', req),

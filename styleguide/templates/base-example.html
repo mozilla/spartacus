@@ -13,22 +13,22 @@
           <span class="glyphicon glyphicon-lock"></span> Trusted UI
         </button>
 
-        <button type="button" class="btn btn-default btn-xs android-ui-size">
+        <button type="button" class="btn btn-default btn-xs android-ui-size hide-tui-only">
           <span class="glyphicon glyphicon-phone"></span> Android Phone
         </button>
 
-        <button type="button" class="btn btn-default btn-xs android-tablet-size">
+        <button type="button" class="btn btn-default btn-xs android-tablet-size hide-tui-only">
           <span class="glyphicon glyphicon-phone lg"></span> Android Tablet
         </button>
 
-        <button type="button" class="btn btn-default btn-xs full-screen">
+        <button type="button" class="btn btn-default btn-xs full-screen hide-tui-only">
           <span class="glyphicon glyphicon-fullscreen"></span> Full Screen
         </button>
       </div>
 
     </div>
     <div class="panel-body">
-      <div class="trusted-ui resizable ">
+      <div class="trusted-ui {% if not tui_only %}resizable{% endif %}">
         <iframe src="/if/{{ iframe }}"></iframe>
       </div>
     </div>

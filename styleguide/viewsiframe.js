@@ -14,6 +14,10 @@ module.exports = {
     res.render('iframed/error.html', context.error);
   },
 
+  iframeoverlay: function(req, res) {
+    res.render('iframed/iframe-overlay.html', context.iframeoverlay);
+  },
+
   throbber: function(req, res) {
     res.render('iframed/throbber.html');
   },

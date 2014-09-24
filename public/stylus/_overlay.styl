@@ -1,0 +1,46 @@
+.iframe-overlay {
+    background: rgba(244, 244, 244, 0.9);
+    bottom: 0;
+    grain();
+    left: 0;
+    max-width: 100%;
+    padding: 0 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 15;
+
+    .page {
+        width: 100%;
+    }
+
+    .inner {
+        padding: 0;
+    }
+
+    // Make vertically centered.
+    display-flex();
+    align-items(center);
+
+    .content {
+        position: relative;
+    }
+
+    iframe {
+        border: 0;
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    .buttons {
+        background: none;
+        border-top: 1px solid $light-gray;
+        margin: 0;
+        padding: 10px 10px;
+    }
+}

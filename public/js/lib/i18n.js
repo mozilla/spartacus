@@ -3,13 +3,12 @@ define([
   'jquery',
   'log',
   'settings',
-  'utils',
   'query-string'
-], function(i18nUtils, $, log, settings, utils) {
+], function(i18nUtils, $, log, settings) {
 
   'use strict';
 
-  var $html = utils.$html;
+  var $html = $('html');
   var DEBUG_LANG = settings.DEBUG_LANG;
   var DEBUG_LOCALE = settings.DEBUG_LOCALE;
   var BIDI_RTL_LANGS = settings.BIDI_RTL_LANGS;

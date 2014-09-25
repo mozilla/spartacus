@@ -15,11 +15,10 @@
       <span></span>
     </div>
     {% if showFxATerms -%}
-      <p class="terms">{{ format(gettext('By proceeding you agree to
-        our <a class="tos" href="%(terms)s">terms</a>
-        and <a class="pp" href="%(privacy)s">Privacy Policy</a>'), {
-          'terms': 'https://marketplace.firefox.com/terms-of-use',
-          'privacy': 'https://marketplace.firefox.com/privacy-policy'
+      <p class="terms">{{ format(gettext('By proceeding you agree to ' +
+        'our <a %(terms)s>terms</a> and <a %(privacy)s>Privacy Policy</a>'), {
+          'terms': 'class="tos" href="https://marketplace.firefox.com/terms-of-use"',
+          'privacy': 'class="pp" href="https://marketplace.firefox.com/privacy-policy"'
         }, true)|safe }}</p>
     {%- endif %}
     {% if showForgotPin -%}

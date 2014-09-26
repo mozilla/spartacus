@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-01 10:55+0000\n"
+"POT-Creation-Date: 2014-09-25 11:27+0000\n"
 "PO-Revision-Date: 2014-08-21 13:31+0200\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: none\n"
@@ -19,10 +19,12 @@ msgstr "Pagesa u anulua."
 #: public/js/views/create-pin.js:105 templates/error.html:20
 #: templates/pin-form.html:26 public/js/views/create-pin.js:104
 #: public/js/views/error.js:51 templates/simulate.html:17
+#: public/js/views/create-pin.js:140 templates/pin-form.html:37
 msgid "Cancel"
 msgstr "Anuloje"
 
 #: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64
+#: public/js/lib/pin-widget.js:68
 msgid "PIN can only contain digits."
 msgstr "PIN-i mund të përmbajë vetëm shifra."
 
@@ -62,6 +64,7 @@ msgstr "Diç shkoi ters. Të riprovohet?"
 
 #: templates/error.html:27 public/js/views/error.js:52
 #: public/js/views/error.js:87 public/js/views/locked.js:24
+#: templates/iframe-overlay.html:14
 msgid "OK"
 msgstr "OK"
 
@@ -72,17 +75,19 @@ msgstr "Gabim"
 
 #: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100
 #: public/js/views/enter-pin.js:97 public/js/views/enter-pin.js:101
+#: public/js/views/enter-pin.js:105
 msgid "Enter PIN"
 msgstr "Jepni PIN-in"
 
 #: public/js/views/login.js:25 templates/login.html:5
 #: public/js/views/fxa-login.js:25 public/js/views/fxa-login.js:27
 #: public/js/views/login.js:24 public/js/views/login.js:26
+#: public/js/views/fxa-login.js:26 public/js/views/fxa-login.js:28
 msgid "Sign In"
 msgstr "Hyni"
 
 #: templates/login.html:6 public/js/views/fxa-login.js:28
-#: public/js/views/login.js:27
+#: public/js/views/login.js:27 public/js/views/fxa-login.js:29
 msgid "Sign in to continue with the payment"
 msgstr "Bëni hyrjen që të vazhdohet me pagesën"
 
@@ -94,14 +99,16 @@ msgstr "Hyni"
 #: public/js/views/reset-pin.js:64 templates/reset-start.html:12
 #: templates/was-locked.html:12 public/js/views/create-pin.js:105
 #: public/js/views/create-pin.js:112 templates/simulate.html:18
+#: public/js/views/create-pin.js:141 public/js/views/create-pin.js:148
 msgid "Continue"
 msgstr "Vazhdo"
 
 #: public/js/views/enter-pin.js:73 public/js/views/enter-pin.js:74
+#: public/js/views/enter-pin.js:78
 msgid "Wrong PIN"
 msgstr "PIN i gabuar"
 
-#: public/js/views/create-pin.js:48
+#: public/js/views/create-pin.js:48 public/js/views/create-pin.js:84
 msgid "PINs do not match."
 msgstr "PIN-et nuk përputhen."
 
@@ -110,7 +117,7 @@ msgid "Create a PIN"
 msgstr "Krijoni një PIN"
 
 #: webpay/pin/views.py:68 webpay/pin/views.py:185
-#: public/js/views/create-pin.js:36
+#: public/js/views/create-pin.js:36 public/js/views/create-pin.js:71
 msgid "Confirm PIN"
 msgstr "Konfirmoni PIN-in"
 
@@ -124,6 +131,7 @@ msgstr "Ricaktoni PIN-in"
 #. This is the same as the standard forgot
 #. password that most sites have.
 #: templates/pin-form.html:18 templates/reset-start.html:6
+#: templates/pin-form.html:29
 msgid "Forgot your PIN?"
 msgstr "Harruat PIN-in tuaj?"
 
@@ -170,11 +178,13 @@ msgid "That took longer than expected. Retry?"
 msgstr "Zgjati më shumë se sa pritej. Të riprovohet?"
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11
+#: public/js/views/create-pin.js:72
 msgid "Back"
 msgstr "Mbrapsht"
 
 #: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95
-#: public/js/views/enter-pin.js:96
+#: public/js/views/enter-pin.js:96 public/js/views/create-pin.js:73
+#: public/js/views/enter-pin.js:100
 msgid "Submit"
 msgstr "Parashtroje"
 
@@ -182,12 +192,14 @@ msgstr "Parashtroje"
 #: public/js/views/reset-pin.js:28 public/js/lib/wait.js:171
 #: public/js/views/create-pin.js:65 public/js/views/enter-pin.js:61
 #: public/js/views/force-auth.js:53 public/js/views/reset-pin.js:29
-#: public/js/views/reset-start.js:107
+#: public/js/views/reset-start.js:107 public/js/views/create-pin.js:101
+#: public/js/views/enter-pin.js:65 public/js/views/reset-start.js:108
 msgid "Retry?"
 msgstr "Të riprovohet?"
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
 #: public/js/views/create-pin.js:113 public/js/views/create-pin.js:115
+#: public/js/views/create-pin.js:149 public/js/views/create-pin.js:152
 msgid "Create PIN"
 msgstr "Krijoni një PIN"
 
@@ -196,6 +208,7 @@ msgid "Something went wrong."
 msgstr "Diçka shkoi ters."
 
 #: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118
+#: public/js/views/reset-start.js:119
 msgid "Reset your PIN?"
 msgstr "Të ricaktohet PIN-i juaj?"
 
@@ -339,3 +352,9 @@ msgstr ""
 #, fuzzy
 msgid "Reset"
 msgstr "Ricaktoni PIN-in"
+
+#: templates/pin-form.html:22
+msgid ""
+"By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)"
+"s>Privacy Policy</a>"
+msgstr ""

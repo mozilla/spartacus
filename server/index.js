@@ -4,6 +4,7 @@ var crypto = require('crypto');
 var express = require('express');
 var i18n = require('i18n-abide');
 var nunjucks = require('nunjucks');
+var path = require('path');
 var rewriteModule = require('http-rewrite-middleware');
 
 // Node only config.
@@ -39,7 +40,7 @@ spa.use(i18n.abide({
   supported_languages: settings.supportedLanguages,
   debug_lang: 'db-LB',
   default_lang: 'en-US',
-  translation_directory: 'public/i18n'
+  translation_directory: path.join(__dirname, 'public/i18n')
 }));
 
 spa.use(rewriteModule.getMiddleware([

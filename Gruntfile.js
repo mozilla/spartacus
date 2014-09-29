@@ -265,28 +265,22 @@ module.exports = function(grunt) {
   // Always show stack traces when Grunt prints out an uncaught exception.
   grunt.option('stack', true);
 
-  // Workaround having node_modules in parent dir for Docker.
-  var cwd;
   if (process.env.IS_DOCKER) {
-    cwd = process.cwd();
-    process.chdir(__dirname);
-  }
-
-  grunt.loadNpmTasks('grunt-bower-task');
-  grunt.loadNpmTasks('grunt-casper');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-requirejs');
-  grunt.loadNpmTasks('grunt-contrib-stylus');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-env');
-  grunt.loadNpmTasks('grunt-nunjucks');
-  grunt.loadNpmTasks('grunt-shell');
-  grunt.loadNpmTasks('grunt-i18n-abide');
-  grunt.loadNpmTasks('grunt-express-server');
-
-  if (cwd && process.env.IS_DOCKER) {
-    process.chdir(cwd);
+    // Workaround having node_modules in parent dir for Docker.
+    grunt.file.expand('../node_modules/grunt-*/tasks').forEach(grunt.loadTasks);
+  } else {
+    grunt.loadNpmTasks('grunt-bower-task');
+    grunt.loadNpmTasks('grunt-casper');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-requirejs');
+    grunt.loadNpmTasks('grunt-contrib-stylus');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-env');
+    grunt.loadNpmTasks('grunt-nunjucks');
+    grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks('grunt-i18n-abide');
+    grunt.loadNpmTasks('grunt-express-server');
   }
 
   grunt.registerTask('default', 'Does the same thing as grunt start', ['start']);

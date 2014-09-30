@@ -3,13 +3,14 @@ define([
   'jquery',
   'settings',
   'tracking',
-  'underscore'
-], function(i18n, $, settings, tracking, _) {
+  'underscore',
+  'log'
+], function(i18n, $, settings, tracking, _, log) {
 
   'use strict';
 
+  var logger = log('utils');
   var uaTrackingCategory = settings.ua_tracking_category;
-
   var $body = $('body');
 
   return {
@@ -25,11 +26,11 @@ define([
     },
     mozPaymentProvider: window.mozPaymentProvider || {
       paymentSuccess: window.paymentSuccess || function() {
-        console.error('No paymentSuccess function');
+        logger.error('No paymentSuccess function');
         return app.error.render({errorCode: 'NO_PAY_SUCCESS_FUNC'});
       },
       paymentFailed: window.paymentFailed || function() {
-        console.error('No paymentFailed function');
+        logger.error('No paymentFailed function');
         return app.error.render({errorCode: 'NO_PAY_FAILED_FUNC'});
       },
     },
@@ -65,7 +66,12 @@ define([
       if (url && _.isArray(validRedirSites)) {
         var a = document.createElement('a');
         a.href = url;
-        return validRedirSites.indexOf(a.protocol + '//' + a.hostname) > -1;
+        var testUrl = a.protocol + '//' + a.hostname;
+        var isValid = validRedirSites.indexOf(testUrl) > -1;
+        if (!isValid) {
+          logger.log('URL', testUrl, 'not in redirect whitelist', validRedirSites);
+        }
+        return isValid;
       }
       return false;
     },

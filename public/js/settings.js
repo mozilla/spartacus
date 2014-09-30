@@ -105,7 +105,9 @@ var settings = {
   validRedirSites: [
     'http://mozilla.bango.net',
     'https://mozilla.bango.net',
-    'https://buy.boku.com'
+    'https://buy.boku.com',
+    'https://zippy-dev.allizom.org',
+    'https://zippy.paas.allizom.org'
   ],
 };
 

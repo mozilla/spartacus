@@ -9,6 +9,9 @@ Spartacus is a single page app front-end for [Webpay](https://github.com/mozilla
 ## Running Spartacus
 
  * Checkout the build
+ * Install [PhantomJS](http://phantomjs.org/)
+   * on Mac OS X with [homebrew](http://brew.sh/): `brew install phantomjs`
+   * on Ubuntu: `sudo apt-get install phantomjs`
  * Run `npm install`
  * Run `npm install -g grunt-cli` (This is the recommended approach for
    installing the cli - the runner is local to the project see

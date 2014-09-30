@@ -102,6 +102,7 @@ var settings = {
   DEBUG_LOCALE: 'db_LB',
   DEBUG_LANG: 'db-LB',
   BIDI_RTL_LANGS: ['ar', 'db-LB', 'fa', 'he'],
+  // NOTE: these values are typically overidden by Webpay's SPA_SETTINGS.
   validRedirSites: [
     'http://mozilla.bango.net',
     'https://mozilla.bango.net',

@@ -3,15 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-25 11:27+0000\n"
-"PO-Revision-Date: 2013-01-08 08:50-0700\n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2014-10-02 12:32+0000\n"
+"Last-Translator: Joseph <sirios2222@yahoo.gr>\n"
 "Language-Team: none\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.9.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1412253147.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
 msgid "Payment cancelled."
@@ -32,6 +33,8 @@ msgstr "Το PIN μπορεί να περιέχει μόνο ψηφία."
 #: webpay/base/templates/base.html:30
 msgid "You logged in as a different user, you must start the payment again."
 msgstr ""
+"Έχετε συνδεθεί ως διαφορετικός χρήστης, πρέπει να αρχίσετε ξανά τη "
+"διαδικασία πληρωμής."
 
 #: public/js/views/throbber.js:15 public/js/views/throbber.js:16
 #: templates/throbber.html:7
@@ -61,7 +64,7 @@ msgstr "Αυτό διαρκεί περισσότερο από το αναμεν�
 
 #: public/js/lib/auth.js:19
 msgid "Something went wrong. Try again?"
-msgstr ""
+msgstr "Κάτι πήγε στραβά. Δοκιμάζετε ξανά;"
 
 #: templates/error.html:27 public/js/views/error.js:52
 #: public/js/views/error.js:87 public/js/views/locked.js:24
@@ -167,28 +170,27 @@ msgstr ""
 #: webpay/provider/templates/provider/wait-to-finish.html:6
 #: webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"
-msgstr ""
+msgstr "Επιβεβαίωση πληρωμής"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30 public/js/lib/auth.js:25
 #: public/js/lib/auth.js:39
 msgid "Retrying"
-msgstr ""
+msgstr "Εκ νέου προσπάθεια"
 
 #: public/js/lib/auth.js:64
-#, fuzzy
 msgid "That took longer than expected. Retry?"
 msgstr "Αυτό διαρκεί περισσότερο από το αναμενόμενο. Δοκιμάζετε ξανά;"
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11
 #: public/js/views/create-pin.js:72
 msgid "Back"
-msgstr ""
+msgstr "Πίσω"
 
 #: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95
 #: public/js/views/enter-pin.js:96 public/js/views/create-pin.js:73
 #: public/js/views/enter-pin.js:100
 msgid "Submit"
-msgstr ""
+msgstr "Υποβολή"
 
 #: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60
 #: public/js/views/reset-pin.js:28 public/js/lib/wait.js:171
@@ -196,8 +198,9 @@ msgstr ""
 #: public/js/views/force-auth.js:53 public/js/views/reset-pin.js:29
 #: public/js/views/reset-start.js:107 public/js/views/create-pin.js:101
 #: public/js/views/enter-pin.js:65 public/js/views/reset-start.js:108
+#, fuzzy
 msgid "Retry?"
-msgstr ""
+msgstr "Προσπάθεια ξανά;"
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
 #: public/js/views/create-pin.js:113 public/js/views/create-pin.js:115
@@ -207,154 +210,155 @@ msgid "Create PIN"
 msgstr "Δημιουργήστε ένα PIN"
 
 #: public/js/views/error.js:45
-#, fuzzy
 msgid "Something went wrong."
-msgstr "Συνέβη κάποιο σφάλμα!"
+msgstr "Κάτι πήγε στραβά. "
 
 #: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118
 #: public/js/views/reset-start.js:119
-#, fuzzy
 msgid "Reset your PIN?"
-msgstr "Επαναφορά PIN"
+msgstr "Επαναφορά PIN;"
 
 #: public/js/views/was-locked.js:13 public/js/views/was-locked.js:38
 msgid "Was Locked"
-msgstr ""
+msgstr "Κλειδώθηκε"
 
 #: public/js/views/wait-for-tx.js:10 public/js/views/wait-to-start.js:13
 msgid "Setting up payment"
-msgstr ""
+msgstr "Ρύθμιση πληρωμής"
 
 #: public/js/error-codes.js:12
 msgid "An internal web request timed out."
-msgstr ""
+msgstr "Υπέρβαση χρονικού ορίου αιτήματος. "
 
 #: public/js/error-codes.js:13
 msgid "The system timed out while trying to log in."
-msgstr ""
+msgstr "Υπέρβαση χρονικού ορίου σύνδεσης κατά την είσοδο."
 
 #: public/js/error-codes.js:14
 msgid "An error occurred whilst trying to log out."
-msgstr ""
+msgstr "Προέκυψε σφάλμα κατά την προσπάθεια αποσύνδεσης."
 
 #: public/js/error-codes.js:15
 msgid "The system timed out while trying to log out."
-msgstr ""
+msgstr "Υπέρβαση χρονικού ορίου σύνδεσης κατά την έξοδο."
 
 #: public/js/error-codes.js:16
 msgid "Payments are temporarily disabled."
-msgstr ""
+msgstr "Οι πληρωμές έχουν απενεργοποιηθεί προσωρινά."
 
 #: public/js/error-codes.js:17
 msgid "An unexpected error occurred when creating your PIN."
-msgstr ""
+msgstr "Προέκυψε απρόσμενο σφάλμα κατά τη δημιουργία του PIN σας."
 
 #: public/js/error-codes.js:18 public/js/error-codes.js:27
+#, fuzzy
 msgid "The PIN data submitted was invalid."
-msgstr ""
+msgstr "Το PIN που υποβλήθηκε δεν ήταν έγκυρο."
 
 #: public/js/error-codes.js:19
 msgid "No valid user found whilst attempting to create your PIN"
-msgstr ""
+msgstr "Δε βρέθηκε έγκυρος χρήστης κατά την προσπάθεια δημιουργίας του PIN σας."
 
 #: public/js/error-codes.js:20
+#, fuzzy
 msgid "Permission denied attempting to create your PIN."
-msgstr ""
+msgstr "Άρνηση πρόσβασης κατά την προσπάθεια δημιουργίας του PIN σας."
 
 #: public/js/error-codes.js:21
 msgid "The request timed out whilst attempting to create your PIN."
 msgstr ""
+"Υπέρβαση χρονικού ορίου σύνδεσης κατά την προσπάθεια δημιουργίας του PIN "
+"σας."
 
 #: public/js/error-codes.js:22
 msgid "An unexpected error occurred whilst checking your PIN."
-msgstr ""
+msgstr "Προέκυψε απρόσμενο σφάλμα κατά τον ελέγχο του PIN σας."
 
 #: public/js/error-codes.js:23
 msgid "No valid user found whilst checking your PIN"
-msgstr ""
+msgstr "Δε βρέθηκε έγκυρος χρήστης κατά τον έλεγχο του PIN σας"
 
 #: public/js/error-codes.js:24
 msgid "Permission denied attempting to check your PIN"
-msgstr ""
+msgstr "Άρνηση πρόσβασης κατά τον έλεγχο του PIN σας."
 
 #: public/js/error-codes.js:25
 msgid "The request timed out whilst trying to check your PIN"
-msgstr ""
+msgstr "Υπέρβαση χρονικού ορίου σύνδεσης κατά τον έλεγχο του PIN σας"
 
 #: public/js/error-codes.js:26
 msgid "An unexpected error occurred when resetting your PIN."
-msgstr ""
+msgstr "Προέκυψε απρόσμενο σφάλμα κατά την επαναφορά του PIN σας."
 
 #: public/js/error-codes.js:28
 msgid "No valid user found whilst attempting to reset your PIN"
-msgstr ""
+msgstr "Δε βρέθηκε έγκυρος χρήστης κατά την επαναφορά του PIN σας"
 
 #: public/js/error-codes.js:29
 msgid "Permission denied attempting to reset your PIN."
-msgstr ""
+msgstr "Άρνηση πρόσβασης κατά την επαναφορά του PIN σας."
 
 #: public/js/error-codes.js:30
 msgid "The request timed out whilst attempting to reset your PIN."
-msgstr ""
+msgstr "Υπέρβαση χρονικού ορίου σύνδεσης κατά την επαναφορά του PIN σας."
 
 #: public/js/error-codes.js:31
 msgid "The transaction failed. You have not been charged for this purchase."
-msgstr ""
+msgstr "Η συναλλαγή απέτυχε. Δεν έχετε χρεωθεί για αυτή την αγορά."
 
 #: public/js/error-codes.js:32
 msgid ""
 "The payment method or price point is not supported for this region or "
 "operator."
 msgstr ""
+"Η μέθοδος πληρωμής ή το σημείο πληρωμής δεν υποστηρίζονται για αυτή τη χώρα "
+"ή τον πάροχο."
 
 #: public/js/lib/auth.js:214
 msgid "Waiting for login"
-msgstr ""
+msgstr "Αναμονή για είσοδο"
 
 #: public/js/lib/wait.js:56
 msgid "Retrieving Transaction"
-msgstr ""
+msgstr "Ανάκτηση συναλλαγής"
 
 #: public/js/views/error.js:55
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "Προέκυψε απρόσμενο σφάλμα."
 
 #: public/js/views/force-auth.js:87
 msgid "Sign-in to reset PIN"
-msgstr ""
+msgstr "Συνδεθείτε για επαναφορά του PIN"
 
 #: public/js/views/force-auth.js:90
 msgid "Please sign in to reset your PIN."
-msgstr ""
+msgstr "Παρακαλούμε συνδεθείτε για να επαναφέρετε το PIN σας."
 
 #: public/js/views/init.js:12
 msgid "Initializing"
-msgstr ""
+msgstr "Προετοιμασία"
 
 #: public/js/views/locked.js:21
-#, fuzzy
 msgid "PIN Locked"
 msgstr "Το PIN σας κλειδώθηκε"
 
 #: public/js/views/payment-success.js:15 public/js/views/wait-to-finish.js:14
-#, fuzzy
 msgid "Completing payment"
-msgstr "Εκκίνηση πληρωμής"
+msgstr "Ολοκλήρωση πληρωμής"
 
 #: public/js/views/simulate.js:23
 msgid "Processing"
-msgstr ""
+msgstr "Γίνεται επεξεργασία"
 
 #: public/js/views/simulate.js:51
 msgid "Simulate Payment"
-msgstr ""
+msgstr "Προσομοίωση πληρωμής"
 
 #: public/js/views/simulate.js:55
 msgid "You will not be charged."
-msgstr ""
+msgstr "Δε θα χρεωθείτε."
 
 #: templates/reset-start.html:12
-#, fuzzy
 msgid "Reset"
 msgstr "Επαναφορά PIN"
 
@@ -363,3 +367,5 @@ msgid ""
 "By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)"
 "s>Privacy Policy</a>"
 msgstr ""
+"Πριν συνεχίσω, δηλώνω ότι συμφωνώ με τους <a %(terms)s>όρους χρήσης</a> και "
+"την <a %(privacy)s>Πολιτική Απορρήτου</a>"

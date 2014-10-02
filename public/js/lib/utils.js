@@ -48,6 +48,15 @@ define([
       }
       return (this.bodyData.baseApiURL || '/mozpay/v1/api') + path;
     },
+    errorCodeFromXhr: function(jqXHR, fallbackErrorCode) {
+      var errorCode = fallbackErrorCode || 'UNEXPECTED_ERROR';
+      if (jqXHR.responseJSON && jqXHR.responseJSON.error_code) {
+        errorCode = jqXHR.responseJSON.error_code;
+      } else {
+        logger.log('could not find error_code in response:', jqXHR.responseText);
+      }
+      return errorCode;
+    },
     format: (function() {
       var re = /\{([^}]+)\}/g;
       return function(s, args) {

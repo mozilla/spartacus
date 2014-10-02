@@ -334,20 +334,20 @@ function fakeStartTransaction(options) {
   options = options || {};
   options.simulate = options.simulate || false;
   options.timeout = options.timeout || false;
+  options.response = options.response || {simulation: options.simulate,
+                                          status: 'ok'};
+  var response = JSON.stringify(options.response);
 
   if (options.timeout) {
     casper.echo('Setting up an XHR timeout for start of transaction', 'INFO');
     clientTimeoutResponse('POST', url);
   } else {
     casper.echo('Setting up successful transaction start response', 'INFO');
-    casper.evaluate(function(statusCode, url, simulate) {
+    casper.evaluate(function(statusCode, url, response) {
       window.server.respondWith('POST', url,
-                                [statusCode,
-                                 {'Content-Type': 'application/json'},
-                                  JSON.stringify({simulation: simulate,
-                                                  status: 'ok'})]);
-
-    }, options.statusCode || 200, url, options.simulate);
+                                [statusCode, {'Content-Type': 'application/json'},
+                                 response]);
+    }, options.statusCode || 200, url, response);
   }
 }
 
@@ -503,7 +503,9 @@ function startCasper(options) {
 
 
 function assertErrorCode(errorCode) {
-  casper.test.assertSelectorHasText('.error-code', errorCode, '.error-code should contain: ' + errorCode);
+  casper.test.assertSelectorHasText(
+    '.error-code', errorCode,
+    '.error-code should contain: ' + errorCode);
 }
 
 

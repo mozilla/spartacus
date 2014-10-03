@@ -8,7 +8,7 @@ define([
 
   'use strict';
 
-  var console = log('view', 'iframe-overlay');
+  var logger = log('views', 'iframe-overlay');
 
   var IframeOverlayView = BaseView.extend({
 
@@ -35,7 +35,7 @@ define([
       };
 
       // Make it so!
-      console.log('Rendering Iframe Overlay template');
+      logger.log('Rendering Iframe Overlay template');
       this.renderTemplate('iframe-overlay.html', context);
     }
 

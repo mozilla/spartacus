@@ -9,7 +9,7 @@ define([
 
   'use strict';
 
-  var console = log('view', 'error');
+  var logger = log('views', 'error');
 
   var ErrorView = BaseView.extend({
 
@@ -60,7 +60,7 @@ define([
         showCta: options.showCta || false,
       };
 
-      console.log(JSON.stringify(context));
+      logger.log(JSON.stringify(context));
 
       this.setTitle(context.heading);
 
@@ -90,7 +90,7 @@ define([
       }
 
       // Make it so!
-      console.log('Rendering Error template');
+      logger.log('Rendering Error template');
       this.renderTemplate(template, context);
     }
 

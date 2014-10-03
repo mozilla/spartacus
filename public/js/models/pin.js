@@ -8,13 +8,13 @@ define([
 
   'use strict';
 
-  var console = log('model', 'pin');
+  var logger = log('models', 'pin');
   var baseApiURL = utils.apiUrl('pin');
 
   var PinModel = BaseModel.extend({
 
     initialize: function(){
-      console.log('Initing PinModel');
+      logger.log('Initing PinModel');
     },
 
     defaults: {

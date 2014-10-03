@@ -14,14 +14,14 @@ define([
   var BIDI_RTL_LANGS = settings.BIDI_RTL_LANGS;
   var noopLocales = ['en_US', DEBUG_LOCALE];
 
-  var console = log('i18n');
+  var logger = log('lib', 'i18n');
 
   function getLangFromLangAttr() {
     var lang = $html.attr('lang') || 'en-US';
     if (settings.supportedLanguages.indexOf(lang) > -1)  {
       return lang;
     } else {
-      console.log('Unsupported lang: ' + lang);
+      logger.log('Unsupported lang: ' + lang);
       return 'en-US';
     }
   }
@@ -31,7 +31,7 @@ define([
     if (settings.supportedLanguages.indexOf(lang) > -1)  {
       return i18nUtils.localeFromLang(lang);
     } else {
-      console.log('Unsupported lang: ' + lang);
+      logger.log('Unsupported lang: ' + lang);
       return 'en_US';
     }
   }
@@ -51,10 +51,10 @@ define([
         if (settings.supportedLanguages.indexOf(lang) > -1)  {
           locale = i18nUtils.localeFromLang(lang);
           var dir = BIDI_RTL_LANGS.indexOf(lang) > -1 ? 'rtl' : 'ltr';
-          console.log('Direction: ' + dir);
+          logger.log('Direction: ' + dir);
           $html.attr('dir', dir);
         } else {
-          console.log('Unsupported lang: ' + lang);
+          logger.log('Unsupported lang: ' + lang);
         }
       }
 
@@ -62,9 +62,9 @@ define([
         locale = getLocaleFromLangAttr();
       }
 
-      console.log('Setting locale to: ' + locale);
+      logger.log('Setting locale to: ' + locale);
       if (locale && noopLocales.indexOf(locale) === -1) {
-        console.log('Requiring locale for locale: ' + locale);
+        logger.log('Requiring locale for locale: ' + locale);
         require([i18nUtils.format('../i18n/%s/messages', [locale])], cb);
       } else {
         if (locale === DEBUG_LOCALE){

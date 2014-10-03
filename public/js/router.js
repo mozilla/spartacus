@@ -1,5 +1,6 @@
 define([
   'backbone',
+  'log',
   'underscore',
   'utils',
   'views/create-pin',
@@ -20,6 +21,7 @@ define([
   'views/was-locked'
 ], function(
   Backbone,
+  log,
   _,
   utils,
   CreatePinView,
@@ -42,6 +44,7 @@ define([
 
   'use strict';
 
+  var logger = log('router');
   var AppRouter = Backbone.Router.extend({
 
     root: '/mozpay',
@@ -73,7 +76,7 @@ define([
         // Bind 'this' to the router.
         return _.bind(this[mapping[key]], this);
       } else {
-        console.error('No route mapped for key: ' + key);
+        logger.error('No route mapped for key: ' + key);
         throw new Error('NO_MAPPED_ROUTE');
       }
     },

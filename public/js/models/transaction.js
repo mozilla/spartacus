@@ -6,7 +6,7 @@ define([
   'query-string' // must be last.
 ], function(Backbone, log, _, utils){
 
-  var console = log('model', 'transaction');
+  var logger = log('models', 'transaction');
   var netCodeRX = /^[0-9]{2,3}$/;
 
   var TransactionModel = Backbone.Model.extend({
@@ -19,7 +19,7 @@ define([
     },
 
     initialize: function() {
-      console.log('Transaction model inited');
+      logger.log('Transaction model inited');
     },
 
     startTransaction: function(jwt) {
@@ -52,12 +52,12 @@ define([
       // Pre 1.4
       if (mpp.mcc && mpp.mnc) {
         mcc = mpp.mcc[0];
-        console.log('mcc: ' + mpp.mcc);
+        logger.log('mcc: ' + mpp.mcc);
         mnc = mpp.mnc[0];
-        console.log('mnc: ' + mpp.mnc);
+        logger.log('mnc: ' + mpp.mnc);
       // 1.4+ multi-sim support
       } else if (mpp.iccInfo) {
-        console.log('Using B2G 1.4+ mcc/mnc lookup');
+        logger.log('Using B2G 1.4+ mcc/mnc lookup');
         var values = _.values(mpp.iccInfo);
         for (var i=0, j=values.length; i<j; i++) {
           if (values[i].dataPrimary === true) {
@@ -66,7 +66,7 @@ define([
           }
         }
       } else {
-        console.log('mnc/mcc not available');
+        logger.log('mnc/mcc not available');
       }
 
       if (netCodeRX.test(mcc) && netCodeRX.test(mnc)) {

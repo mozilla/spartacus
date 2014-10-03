@@ -6,7 +6,7 @@ define([
 
   'use strict';
 
-  var console = log('cancel');
+  var logger = log('lib', 'cancel');
 
   function callPayFailure(e, errorCode) {
     if (e) {
@@ -15,7 +15,7 @@ define([
     app.error.close();
     app.throbber.render(i18n.gettext('Payment cancelled.'));
     errorCode = errorCode || 'USER_CANCELLED';
-    console.log('Running paymentFailed with errorCode: ' + errorCode);
+    logger.log('Running paymentFailed with errorCode: ' + errorCode);
     utils.mozPaymentProvider.paymentFailed(errorCode);
   }
 

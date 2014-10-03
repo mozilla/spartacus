@@ -8,7 +8,7 @@ define([
 
   'use strict';
 
-  var console = log('auth');
+  var logger = log('lib', 'auth');
   var gettext = i18n.gettext;
 
   function showRetryError(options) {
@@ -54,13 +54,13 @@ define([
     var req = $.ajax({url: url, type: 'POST', data: data});
 
     req.done(function(data) {
-      console.log('FxA login success');
+      logger.log('FxA login success');
       utils.trackEvent({'action': 'FxA login',
                         'label': 'Success'});
       app.session.set('user_hash', data.user_hash);
       app.session.set('logged_in', true);
       if (reverify === true) {
-        console.log("Reverifying FxA login");
+        logger.log("Reverifying FxA login");
         // Set logged_in and manually direct to reset-pin which is
         // implied having successfully carried out a re-auth.
         app.session.set('logged_in', true, {silent: true});
@@ -73,10 +73,10 @@ define([
     });
 
     req.fail(function($xhr, textStatus) {
-      console.log(textStatus);
-      console.log($xhr.status);
+      logger.log(textStatus);
+      logger.log($xhr.status);
       if (textStatus === 'timeout') {
-        console.log('login timed out');
+        logger.log('login timed out');
         utils.trackEvent({'action': 'FxA login',
                           'label': 'Timed Out'});
         return showFxARetryError({
@@ -85,12 +85,12 @@ define([
           reverify: reverify
         });
       } else if ($xhr.status === 403) {
-        console.log('permission denied after auth');
+        logger.log('permission denied after auth');
         utils.trackEvent({'action': 'FxA login',
                           'label': 'Permission Denied'});
         return app.error.render({errorCode: 'FXA_DENIED'});
       } else {
-        console.log('login error');
+        logger.log('login error');
         utils.trackEvent({'action': 'FxA login',
                           'label': 'Failed'});
         return showFxARetryError({
@@ -112,11 +112,11 @@ define([
     var prefixUC = prefix.toUpperCase();
 
     if (!url) {
-      console.log('Error: No url. Please set one. Bailing out!');
+      logger.log('Error: No url. Please set one. Bailing out!');
       return app.error.render({errorCode: prefixUC + '_MISSING_URL'});
     }
 
-    console.log(prefix + 'ing assertion');
+    logger.log(prefix + 'ing assertion');
 
     var reqConfig = {
       type: 'POST',
@@ -124,11 +124,11 @@ define([
       data: {assertion: assertion}
     };
 
-    console.log(reqConfig.url);
+    logger.log(reqConfig.url);
 
     var req = $.ajax(reqConfig);
     req.done(function(data) {
-      console.log(prefix + ' success');
+      logger.log(prefix + ' success');
       utils.trackEvent({'action': 'persona login',
                         'label': prefix + ' Success'});
       app.session.set('user_hash', data.user_hash);
@@ -143,10 +143,10 @@ define([
         app.session.set('logged_in', true);
       }
     }).fail(function($xhr, textStatus) {
-      console.log(textStatus);
-      console.log($xhr.status);
+      logger.log(textStatus);
+      logger.log($xhr.status);
       if (textStatus === 'timeout') {
-        console.log('login timed out');
+        logger.log('login timed out');
         utils.trackEvent({'action': 'persona login',
                           'label': prefix + ' Timed Out'});
         return showRetryError({
@@ -156,12 +156,12 @@ define([
           reverify: reverify,
         });
       } else if ($xhr.status === 403) {
-        console.log('permission denied after auth');
+        logger.log('permission denied after auth');
         utils.trackEvent({'action': 'persona login',
                           'label': prefix + ' Permission Denied'});
         return app.error.render({errorCode: prefixUC + '_DENIED'});
       } else {
-        console.log('login error');
+        logger.log('login error');
         utils.trackEvent({'action': 'persona login',
                           'label': prefix + ' Failed'});
         return showRetryError({
@@ -176,7 +176,7 @@ define([
   }
 
   function resetUser() {
-    console.log('Begin webpay user reset');
+    logger.log('Begin webpay user reset');
 
     var reqConfig = {
       type: 'POST',
@@ -185,11 +185,11 @@ define([
 
     var req = $.ajax(reqConfig);
     req.done(function _resetSuccess() {
-      console.log('reset webpay user');
+      logger.log('reset webpay user');
       utils.trackEvent({'action': 'webpay user reset',
                         'label': 'Reset User Success'});
     }).fail(function _resetFail($xhr, textStatus, errorThrown) {
-      console.log('error resetting user:', textStatus, errorThrown);
+      logger.log('error resetting user:', textStatus, errorThrown);
       utils.trackEvent({'action': 'webpay user reset',
                         'label': 'Reset User Error'});
     });

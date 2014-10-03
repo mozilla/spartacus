@@ -2,7 +2,7 @@ define(['jquery', 'log', 'underscore', 'utils'], function($, log, _, utils) {
 
   'use strict';
 
-  var console = log('provider');
+  var logger = log('lib', 'provider');
 
   // Base Provider
   function Provider(options){
@@ -34,27 +34,27 @@ define(['jquery', 'log', 'underscore', 'utils'], function($, log, _, utils) {
         if (utils.mozPaymentProvider.iccInfo[paymentServiceId]) {
           iccKey = utils.mozPaymentProvider.iccInfo[paymentServiceId].iccId;
         }
-        console.log('got iccKey from iccInfo', iccKey);
+        logger.log('got iccKey from iccInfo', iccKey);
       } else if (utils.mozPaymentProvider.iccIds) {
         // Firefox OS version < 1.4
         iccKey = utils.mozPaymentProvider.iccIds.join(';');
-        console.log('got iccKey from iccIds', iccKey);
+        logger.log('got iccKey from iccIds', iccKey);
       }
 
       if (iccKey) {
         lastIcc = this.storage.getItem('spa-last-icc');
         this.storage.setItem('spa-last-icc', iccKey);
-        console.log('new icc', iccKey, 'saved icc', lastIcc);
+        logger.log('new icc', iccKey, 'saved icc', lastIcc);
         if (lastIcc && lastIcc !== iccKey) {
           changed = true;
-          console.log('sim changed');
+          logger.log('sim changed');
           utils.trackEvent({'action': 'sim change detection',
                             'label': 'Sim Changed'});
         } else {
-          console.log('sim did not change');
+          logger.log('sim did not change');
         }
       } else {
-        console.log('iccKey unavailable');
+        logger.log('iccKey unavailable');
       }
 
       return changed;
@@ -73,29 +73,29 @@ define(['jquery', 'log', 'underscore', 'utils'], function($, log, _, utils) {
     prepareAll: function(userHash) {
 
       if (!userHash) {
-        console.log('userHash not set. Rejecting deferred');
+        logger.log('userHash not set. Rejecting deferred');
         return $.Deferred().reject();
       }
 
       var existingUser = this.storage.getItem('spa-user-hash');
       this.storage.setItem('spa-user-hash', userHash);
 
-      console.log('new user hash =', userHash,
+      logger.log('new user hash =', userHash,
                   'existing user hash =', existingUser);
 
       if (existingUser && existingUser !== userHash) {
-        console.log('User has changed: do logout');
+        logger.log('User has changed: do logout');
         utils.trackEvent({'action': 'user change detection',
                           'label': 'User Changed'});
         return this.logout();
       } else {
-        console.log('User unchanged based on stored hash');
+        logger.log('User unchanged based on stored hash');
         return this.prepareSim();
       }
     },
 
     logout: function() {
-      console.log('logout called (no-op)');
+      logger.log('logout called (no-op)');
       return $.Deferred().resolve();
     },
   };
@@ -111,18 +111,18 @@ define(['jquery', 'log', 'underscore', 'utils'], function($, log, _, utils) {
 
     // Log out of Bango so that cookies are cleared.
     var url = utils.bodyData.bangoLogoutUrl;
-    console.log('Logging out of Bango at', url);
+    logger.log('Logging out of Bango at', url);
     if (url) {
       var req = $.ajax({url: url, dataType: 'script'});
 
       req.done(function(data, textStatus, $xhr) {
-        console.log('Bango logout responded: ' + $xhr.status);
+        logger.log('Bango logout responded: ' + $xhr.status);
         utils.trackEvent({'action': 'provider logout',
                           'label': 'Bango Logout Success'});
       });
 
       req.fail(function($xhr, textStatus, errorThrown) {
-        console.error('Bango logout failed with status=' + $xhr.status +
+        logger.error('Bango logout failed with status=' + $xhr.status +
                       ' ; resp=' + textStatus + '; error=' + errorThrown);
         utils.trackEvent({'action': 'provider logout',
                           'label': 'Bango Logout Failure'});
@@ -130,7 +130,7 @@ define(['jquery', 'log', 'underscore', 'utils'], function($, log, _, utils) {
 
       return req;
     } else {
-      console.error('Bango logout url missing');
+      logger.error('Bango logout url missing');
       app.error.render({errorCode: 'LOGOUT_URL_MISSING'});
       return $.Deferred().reject();
     }

@@ -7,7 +7,7 @@ define([
 
   'use strict';
 
-  var console = log('view', 'was-locked');
+  var logger = log('views', 'was-locked');
   var WasLockedView = PageView.extend({
 
     events: {
@@ -34,7 +34,7 @@ define([
 
     render: function(){
       app.throbber.close();
-      console.log('rendering view');
+      logger.log('rendering view');
       this.setTitle(this.gettext('Was Locked'));
       this.renderTemplate('was-locked.html');
       return this;

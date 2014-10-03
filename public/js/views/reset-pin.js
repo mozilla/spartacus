@@ -8,6 +8,7 @@ define([
 
   'use strict';
 
+  var logger = log('views', 'reset-pin');
   // Reset is basically the same as create pin except
   // where the data goes is different and so are the titles.
   var ResetPinView = CreatePinView.extend({
@@ -18,11 +19,11 @@ define([
       var req = app.pin.sync('update', app.pin, {'data': {'pin': pinData}});
 
       req.done(function() {
-        console.log('pin reset successfully');
+        logger.log('pin reset successfully');
         app.router.showWaitToStart();
       }).fail(function($xhr, textStatus) {
         if (textStatus === 'timeout') {
-          console.log('Request timed out');
+          logger.log('Request timed out');
           utils.trackEvent({'action': pinResetAction,
                             'label': 'Pin Reset API Call Timed Out'});
           return app.error.render({
@@ -34,22 +35,22 @@ define([
             }
           });
         } else if ($xhr.status === 400) {
-          console.log('Pin data invalid');
+          logger.log('Pin data invalid');
           utils.trackEvent({'action': pinResetAction,
                             'label': 'Pin Reset API Call Invalid Form Data'});
           return app.error.render({errorCode: 'PIN_RESET_INVALID'});
         } else if ($xhr.status === 403) {
-          console.log('User not authenticated');
+          logger.log('User not authenticated');
           utils.trackEvent({'action': pinResetAction,
                             'label': 'Pin Reset API Call Permission Denied'});
           return app.error.render({errorCode: 'PIN_RESET_PERM_DENIED'});
         } else if ($xhr.status === 404) {
-          console.log('User not authenticated');
+          logger.log('User not authenticated');
           utils.trackEvent({'action': pinResetAction,
                             'label': "Pin Reset API Call User doesn't exist"});
           return app.error.render({errorCode: 'PIN_RESET_NO_USER'});
         } else {
-          console.log("Unhandled error");
+          logger.log("Unhandled error");
           utils.trackEvent({'action': pinResetAction,
                             'label': "Pin Reset API Call Unhandled error"});
           return app.error.render({errorCode: 'PIN_RESET_ERROR'});

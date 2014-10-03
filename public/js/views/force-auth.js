@@ -11,7 +11,7 @@ define([
 
   'use strict';
 
-  var console = log('view', 'force-auth');
+  var logger = log('views', 'force-auth');
   var ForceAuthView = PageView.extend({
 
     forceAuthTimer: null,
@@ -22,7 +22,7 @@ define([
 
     handlePersonaLogin: function(assertion) {
       // Override handlePersonaLogin for re-verification.
-      console.log('re-auth login happened. moving to re-verify');
+      logger.log('re-auth login happened. moving to re-verify');
       // Render a generic loading throbber to cover us until the
       // verification moves us to reset.
       app.throbber.render();
@@ -41,11 +41,11 @@ define([
 
     onForceAuthTimeout: function() {
       var that = this;
-      console.log('force auth timed-out');
+      logger.log('force auth timed-out');
       utils.trackEvent({'action': 'reset force auth',
                         'label': 'Log-in Timeout'});
       if (this.forceAuthTimer) {
-        console.log('Clearing Reset login timer');
+        logger.log('Clearing Reset login timer');
         window.clearTimeout(this.forceAuthTimer);
       }
 
@@ -75,7 +75,7 @@ define([
     },
 
     forceReAuthentication: function() {
-      console.log('Starting forceAuthTimer');
+      logger.log('Starting forceAuthTimer');
       this.forceAuthTimer = window.setTimeout(_.bind(this.onForceAuthTimeout, this), settings.login_timeout);
       app.error.close();
       app.throbber.render(this.gettext('Connecting to Persona'));
@@ -83,7 +83,7 @@ define([
     },
 
     render: function(){
-      console.log('rendering login view');
+      logger.log('rendering login view');
       this.setTitle(this.gettext('Sign-in to reset PIN'));
       this.renderTemplate('login.html', {
         heading: this.gettext('Reset PIN'),

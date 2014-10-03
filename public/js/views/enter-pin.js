@@ -10,7 +10,7 @@ define([
 
   'use strict';
 
-  var console = log('view', 'enter-pin');
+  var logger = log('views', 'enter-pin');
 
   var EnterPinView = PageView.extend({
 
@@ -47,7 +47,7 @@ define([
         try {
           data = JSON.parse($xhr.responseText);
         } catch(e) {
-          console.log('Invalid JSON');
+          logger.log('Invalid JSON');
         }
         if (data) {
           data = _.pick(data, _.keys(app.pin.defaults));
@@ -58,7 +58,7 @@ define([
         }
 
         if (textStatus === 'timeout') {
-          console.log('Request timed out');
+          logger.log('Request timed out');
           utils.trackEvent({action: pinCheckAction,
                             label: 'Pin Check API Call Timed Out'});
           return app.error.render({
@@ -71,23 +71,23 @@ define([
           });
 
         } else if ($xhr.status === 400) {
-          console.log('Wrong pin');
+          logger.log('Wrong pin');
           utils.trackEvent({action: pinCheckAction,
                             label: 'Pin Check API Call Invalid Form Data'});
           pin.resetPinUI();
           pin.showError(that.gettext('Wrong PIN'));
         } else if ($xhr.status === 403) {
-          console.log('User not authenticated');
+          logger.log('User not authenticated');
           utils.trackEvent({action: pinCheckAction,
                             label: 'Pin Check API Call Permission Denied'});
           return app.error.render({errorCode: 'PIN_ENTER_PERM_DENIED'});
         } else if ($xhr.status === 404) {
-          console.log("User doesn't exist");
+          logger.log("User doesn't exist");
           utils.trackEvent({action: pinCheckAction,
                             label: "Pin Check API Call User Doesn't exist"});
           return app.error.render({errorCode: 'PIN_ENTER_NO_USER'});
         } else {
-          console.log("Unhandled error");
+          logger.log("Unhandled error");
           utils.trackEvent({action: pinCheckAction,
                             label: 'Pin Check API Call Unhandled error'});
           return app.error.render({errorCode: 'PIN_ENTER_ERROR'});

@@ -6,7 +6,7 @@ define([
 
   'use strict';
 
-  var console = log('pin');
+  var logger = log('lib', 'pin-widget');
   var pinMaxLength = 4;
   var pinBuffer = '';
 
@@ -29,16 +29,16 @@ define([
     // In the trusted UI we need to ensure it has
     // focus otherwise programmatic focus doesn't work.
     if (window.focus) {
-      console.log('Focusing window');
+      logger.log('Focusing window');
       window.focus();
     }
     updatePinUI();
-    console.log('Focusing pin');
+    logger.log('Focusing pin');
     $pinInput.focus();
   }
 
   function updatePinUI() {
-    console.log('Updating pin UI');
+    logger.log('Updating pin UI');
     var numFilled = pinBuffer.length;
     if (numFilled >= 1) {
       $terms.addClass('hidden');
@@ -75,7 +75,7 @@ define([
   }
 
   function showError(errorMessage) {
-    console.log('Show error message: ' + errorMessage);
+    logger.log('Show error message: ' + errorMessage);
     $errorMessage.text(errorMessage);
     $errorMessage.removeClass('hidden');
     $forgotPin.addClass('hidden');
@@ -84,13 +84,13 @@ define([
   }
 
   function hideError() {
-    console.log('hiding error messages.');
+    logger.log('hiding error messages.');
     $errorMessage.addClass('hidden');
     $forgotPin.removeClass('hidden');
   }
 
   function init() {
-    console.log('Initing pin widget');
+    logger.log('Initing pin widget');
     $pseudoInputs = $('.pinbox span');
     $pinInput = $('#pin');
     $submitButton = $('.cta[type=submit]');
@@ -114,7 +114,7 @@ define([
   }
 
   function resetPinUI() {
-    console.log('Reset pin UI');
+    logger.log('Reset pin UI');
     pinBuffer = '';
     hideError();
     updatePinUI();

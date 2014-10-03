@@ -1,11 +1,13 @@
 define([
+  'log',
   'utils',
   'views/page',
   'query-string'
-], function(utils, PageView){
+], function(log, utils, PageView){
 
   'use strict';
 
+  var logger = log('views', 'init');
   var InitView = PageView.extend({
 
     render: function() {
@@ -16,9 +18,9 @@ define([
       }
       this.extractJWT();
       if (utils.useOAuthFxA()) {
-        console.log("FxA enabled, checking login");
+        logger.log("FxA enabled, checking login");
         if (!app.session.get('logged_in')) {
-          console.log("showing FxA login");
+          logger.log("showing FxA login");
           app.router.showLogin();
         }
       } else {
@@ -27,11 +29,11 @@ define([
     },
 
     extractJWT: function() {
-      console.log('Checking for JWT');
+      logger.log('Checking for JWT');
       var qs = window.queryString.parse(location.search) || {};
       var jwt = qs.req;
       if (jwt) {
-        console.log('Setting JWT on transaction model');
+        logger.log('Setting JWT on transaction model');
         app.transaction.set('jwt', jwt);
       }
     }

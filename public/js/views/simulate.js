@@ -8,7 +8,7 @@ define([
 
   'use strict';
 
-  var console = log('view', 'simulate');
+  var logger = log('views', 'simulate');
   var SimulateView = PageView.extend({
 
     events: {
@@ -21,16 +21,16 @@ define([
         e.preventDefault();
       }
       app.throbber.render(this.gettext('Processing'));
-      console.log('starting simulation');
+      logger.log('starting simulation');
       app.simulate.begin().done(function() {
         utils.trackEvent({action: 'simulate-success',
                           label: 'Successful simulated payment'});
-        console.log('start simulation succeeded');
+        logger.log('start simulation succeeded');
         utils.mozPaymentProvider.paymentSuccess();
       }).fail(function($xhr, textStatus) {
-        console.error('simulated payment failed');
-        console.error('XHR status', $xhr.status);
-        console.error('response status', textStatus);
+        logger.error('simulated payment failed');
+        logger.error('XHR status', $xhr.status);
+        logger.error('response status', textStatus);
 
         var errorCode;
         if (textStatus === 'timeout') {

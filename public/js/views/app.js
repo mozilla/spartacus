@@ -21,7 +21,7 @@ define([
 
   'use strict';
 
-  var console = log('view', 'app');
+  var logger = log('views', 'app');
 
   // This object manages pageView transitions.
   var ViewManager = function(){
@@ -30,7 +30,7 @@ define([
     this.renderView = function(ViewClass, options) {
       options = options || {};
       if (this.currentView){
-        console.log('Killing previous view instance.');
+        logger.log('Killing previous view instance.');
         this.currentView.close();
       }
       var view = new ViewClass(options);
@@ -46,8 +46,8 @@ define([
     startView: null,
 
     initialize: function() {
-      console.log('I AM SPARTACUS!');
-      console.log('Initing app view');
+      logger.log('I AM SPARTACUS!');
+      logger.log('Initing app view');
 
       // Create Model Instances.
       this.session = new SessionModel();
@@ -73,7 +73,7 @@ define([
     start: function() {
       i18n.initLocale(_.bind(function(){
         // Start history with silent=true to not render an initial view as we're going to take care of that.
-        console.log('Starting Backbone.history');
+        logger.log('Starting Backbone.history');
         Backbone.history.start({pushState: true, root: this.router.root, silent: true});
         this.router.showInit();
       }, this));

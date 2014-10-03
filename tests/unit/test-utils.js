@@ -74,5 +74,25 @@ define(['utils'], function(utils) {
         mozId: {},
         userAgent: 'Mozilla/5.0 (Mobile; rv:34.0) Gecko/26.0 Firefox/34.0'}));
     });
+
+    test('test errorCodeFromXhr falls back when no JSON', function() {
+      assert.equal(utils.errorCodeFromXhr({}, 'FALLBACK'), 'FALLBACK');
+    });
+
+    test('test errorCodeFromXhr falls back when no error_code', function() {
+      assert.equal(
+        utils.errorCodeFromXhr({responseJSON: {something: "else"}}, 'FALLBACK'),
+        'FALLBACK');
+    });
+
+    test('test errorCodeFromXhr returns error_code', function() {
+      assert.equal(
+        utils.errorCodeFromXhr({responseJSON: {error_code: "THE_ERROR"}}, 'FALLBACK'),
+        'THE_ERROR');
+    });
+
+    test('test errorCodeFromXhr uses a default fallback', function() {
+      assert.equal(utils.errorCodeFromXhr({}), 'UNEXPECTED_ERROR');
+    });
   });
 });

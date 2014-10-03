@@ -165,7 +165,8 @@ define([
           } else {
             utils.trackEvent({action: 'start-transaction',
                               label: 'Transaction failed to start'});
-            return app.error.render({errorCode: 'TRANS_CONFIG_FAILED'});
+            return app.error.render(
+              {errorCode: utils.errorCodeFromXhr($xhr, 'TRANS_CONFIG_FAILED')});
           }
         });
 

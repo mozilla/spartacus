@@ -40,7 +40,7 @@ spa.use(i18n.abide({
   supported_languages: settings.supportedLanguages,
   debug_lang: 'db-LB',
   default_lang: 'en-US',
-  translation_directory: path.join(__dirname, 'public/i18n')
+  translation_directory: path.join(__dirname, '../public/i18n')
 }));
 
 spa.use(rewriteModule.getMiddleware([

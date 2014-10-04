@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: webpay\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-25 11:27+0000\n"
-"PO-Revision-Date: 2014-04-14 08:27+0000\n"
+"PO-Revision-Date: 2014-10-04 12:08+0000\n"
 "Last-Translator: Benoit <benoit.leseul@gmail.com>\n"
 "Language-Team: français <>\n"
 "Language: fr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1397464073.0\n"
+"X-POOTLE-MTIME: 1412424536.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
 msgid "Payment cancelled."
@@ -174,28 +174,27 @@ msgstr ""
 #: webpay/provider/templates/provider/wait-to-finish.html:6
 #: webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"
-msgstr ""
+msgstr "Vérification du paiement"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30 public/js/lib/auth.js:25
 #: public/js/lib/auth.js:39
 msgid "Retrying"
-msgstr ""
+msgstr "Nouvel essai"
 
 #: public/js/lib/auth.js:64
-#, fuzzy
 msgid "That took longer than expected. Retry?"
-msgstr "Cela prends plus de temps qu'attendu. Réessayer ?"
+msgstr "Cela a pris plus longtemps que prévu. Réessayer ?"
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11
 #: public/js/views/create-pin.js:72
 msgid "Back"
-msgstr ""
+msgstr "Retour"
 
 #: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95
 #: public/js/views/enter-pin.js:96 public/js/views/create-pin.js:73
 #: public/js/views/enter-pin.js:100
 msgid "Submit"
-msgstr ""
+msgstr "Envoyer"
 
 #: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60
 #: public/js/views/reset-pin.js:28 public/js/lib/wait.js:171
@@ -204,29 +203,26 @@ msgstr ""
 #: public/js/views/reset-start.js:107 public/js/views/create-pin.js:101
 #: public/js/views/enter-pin.js:65 public/js/views/reset-start.js:108
 msgid "Retry?"
-msgstr ""
+msgstr "Réessayer ?"
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
 #: public/js/views/create-pin.js:113 public/js/views/create-pin.js:115
 #: public/js/views/create-pin.js:149 public/js/views/create-pin.js:152
-#, fuzzy
 msgid "Create PIN"
 msgstr "Créer un code PIN"
 
 #: public/js/views/error.js:45
-#, fuzzy
 msgid "Something went wrong."
-msgstr "Quelque chose ne va pas !"
+msgstr "Quelque chose s'est mal passé."
 
 #: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118
 #: public/js/views/reset-start.js:119
-#, fuzzy
 msgid "Reset your PIN?"
-msgstr "Remise à zéro du code PIN"
+msgstr "Réinitialiser votre code PIN ?"
 
 #: public/js/views/was-locked.js:13 public/js/views/was-locked.js:38
 msgid "Was Locked"
-msgstr ""
+msgstr "A été verrouillé(e)"
 
 #: public/js/views/wait-for-tx.js:10 public/js/views/wait-to-start.js:13
 msgid "Setting up payment"
@@ -234,35 +230,38 @@ msgstr "Configuration du paiement "
 
 #: public/js/error-codes.js:12
 msgid "An internal web request timed out."
-msgstr ""
+msgstr "Une requête web interne a expiré."
 
 #: public/js/error-codes.js:13
 msgid "The system timed out while trying to log in."
 msgstr ""
+"Un délai d'attente du système a été dépassé lors de la tentative de "
+"connexion."
 
 #: public/js/error-codes.js:14
 msgid "An error occurred whilst trying to log out."
-msgstr ""
+msgstr "Une erreur s'est produite lors de votre déconnexion."
 
 #: public/js/error-codes.js:15
 msgid "The system timed out while trying to log out."
-msgstr ""
+msgstr "Un délai d'attente du système a expiré lors de votre déconnexion."
 
 #: public/js/error-codes.js:16
 msgid "Payments are temporarily disabled."
-msgstr ""
+msgstr "Les paiements sont temporairement désactivées."
 
 #: public/js/error-codes.js:17
 msgid "An unexpected error occurred when creating your PIN."
 msgstr ""
+"Une erreur inattendue s'est produite lors de la création de votre code PIN."
 
 #: public/js/error-codes.js:18 public/js/error-codes.js:27
 msgid "The PIN data submitted was invalid."
-msgstr ""
+msgstr "Les données PIN envoyées ne sont pas valides."
 
 #: public/js/error-codes.js:19
 msgid "No valid user found whilst attempting to create your PIN"
-msgstr ""
+msgstr "Aucun utilisateur valide trouvé lors de la création de votre PIN"
 
 #: public/js/error-codes.js:20
 msgid "Permission denied attempting to create your PIN."
@@ -303,70 +302,73 @@ msgstr ""
 #: public/js/error-codes.js:30
 msgid "The request timed out whilst attempting to reset your PIN."
 msgstr ""
+"Le délai d'attente de la requête est dépassé pour la réinitialisation de "
+"votre code PIN."
 
 #: public/js/error-codes.js:31
 msgid "The transaction failed. You have not been charged for this purchase."
-msgstr ""
+msgstr "La transaction a échoué. Vous n'avez pas été facturé pour cet achat."
 
 #: public/js/error-codes.js:32
 msgid ""
 "The payment method or price point is not supported for this region or "
 "operator."
 msgstr ""
+"La méthode de paiement ou le prix de référence ne sont pas pris en charge "
+"pour cette région ou pour cet opérateur."
 
 #: public/js/lib/auth.js:214
 msgid "Waiting for login"
-msgstr ""
+msgstr "En attente de connexion"
 
 #: public/js/lib/wait.js:56
 msgid "Retrieving Transaction"
-msgstr ""
+msgstr "Récupération de la transaction…"
 
 #: public/js/views/error.js:55
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "Une erreur inattendue s'est produite."
 
 #: public/js/views/force-auth.js:87
 msgid "Sign-in to reset PIN"
-msgstr ""
+msgstr "Connectez-vous pour réinitialiser votre code PIN"
 
 #: public/js/views/force-auth.js:90
 msgid "Please sign in to reset your PIN."
-msgstr ""
+msgstr "Veuillez vous connecter pour réinitialiser votre code PIN."
 
 #: public/js/views/init.js:12
 msgid "Initializing"
-msgstr ""
+msgstr "Initialisation"
 
 #: public/js/views/locked.js:21
-#, fuzzy
 msgid "PIN Locked"
-msgstr "Votre code PIN était verrouillé"
+msgstr "Code PIN verrouillé"
 
 #: public/js/views/payment-success.js:15 public/js/views/wait-to-finish.js:14
-#, fuzzy
 msgid "Completing payment"
-msgstr "Configuration du paiement "
+msgstr "Finalisation du paiement "
 
 #: public/js/views/simulate.js:23
 msgid "Processing"
-msgstr ""
+msgstr "Traitement…"
 
 #: public/js/views/simulate.js:51
 msgid "Simulate Payment"
-msgstr ""
+msgstr "Simuler un paiement"
 
 #: public/js/views/simulate.js:55
 msgid "You will not be charged."
-msgstr ""
+msgstr "Vous ne serez pas facturé."
 
 #: templates/reset-start.html:12
-#, fuzzy
 msgid "Reset"
-msgstr "Remise à zéro du code PIN"
+msgstr "Réinitialiser"
 
 #: templates/pin-form.html:22
 msgid ""
 "By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)"
 "s>Privacy Policy</a>"
 msgstr ""
+"En continuant, vous acceptez nos <a %(terms)s>conditions</a> et notre <a %"
+"(privacy)s>politique de confidentialité</a>."

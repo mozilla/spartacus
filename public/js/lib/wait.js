@@ -9,7 +9,7 @@ define([
 
   "use strict";
 
-  var console = log('wait');
+  var logger = log('lib', 'wait');
   var gettext = i18n.gettext;
   var pollTimeout;
   var request;
@@ -19,7 +19,7 @@ define([
 
   function clearPoll() {
     if (pollTimeout) {
-      console.log('Clearing poll timer.');
+      logger.log('Clearing poll timer.');
       window.clearTimeout(pollTimeout);
       pollTimeout = null;
     }
@@ -27,14 +27,14 @@ define([
 
   function clearTransactionTimeout() {
     if (transactionTimeout) {
-      console.log('Clearing global transaction timer.');
+      logger.log('Clearing global transaction timer.');
       window.clearTimeout(transactionTimeout);
       transactionTimeout = null;
     }
   }
 
   function startGlobalTimer() {
-    console.log('Starting global transaction timer.');
+    logger.log('Starting global transaction timer.');
     clearTransactionTimeout();
     transactionTimeout = window.setTimeout(function() {
       if (request) {
@@ -43,7 +43,7 @@ define([
       clearPoll();
       // needed to reset transactionTimeout var.
       clearTransactionTimeout();
-      console.log('transaction failed to be found.');
+      logger.log('transaction failed to be found.');
       utils.trackEvent({'action': 'payment',
                         'label': 'Transaction Failed to be found'});
       app.throbber.close();
@@ -61,7 +61,7 @@ define([
   }
 
   function poll(expectedStatus) {
-    console.log('polling ' + startUrl + ' until status ' + expectedStatus);
+    logger.log('polling ' + startUrl + ' until status ' + expectedStatus);
 
     function clear() {
       clearPoll();
@@ -94,9 +94,9 @@ define([
             utils.trackEvent({'action': 'payment',
                               'label': 'Redirect To Pay Flow'});
 
-            console.log('about to prepare provider', data.provider);
+            logger.log('about to prepare provider', data.provider);
             if (!data.provider) {
-              console.error('The API response returned a falsey provider:',
+              logger.error('The API response returned a falsey provider:',
                             data.provider);
               return app.error.render({errorCode: 'MISSING_PROVIDER'});
             }
@@ -116,43 +116,43 @@ define([
             }
 
             preparation.done(function() {
-              console.log('Successfully prepared payment provider', data.provider);
-              console.log('transaction completed; redirect to ' + data.url);
+              logger.log('Successfully prepared payment provider', data.provider);
+              logger.log('transaction completed; redirect to ' + data.url);
               window.location = data.url;
             });
 
             preparation.fail(function() {
-              console.error('Failed to log out of payment provider', data.provider);
+              logger.error('Failed to log out of payment provider', data.provider);
               return app.error.render({errorCode: 'PROVIDER_LOGOUT_FAIL'});
             });
 
           } else {
             utils.trackEvent({'action': 'payment',
                               'label': 'Invalid Redirect URL'});
-            console.log('Redirect url supplied but was invalid ' + data.url);
+            logger.log('Redirect url supplied but was invalid ' + data.url);
             return app.error.render({errorCode: 'INVALID_REDIR_URL'});
           }
         } else {
-          console.log('transaction completed; closing pay flow');
+          logger.log('transaction completed; closing pay flow');
           trackClosePayFlow();
           utils.mozPaymentProvider.paymentSuccess();
         }
       } else if (data.status === utils.bodyData.transStatusFailed) {
         clear();
         app.throbber.close();
-        console.log('transaction failed');
+        logger.log('transaction failed');
         return app.error.render({errorCode: 'TRANS_FAILED'});
 
       } else if (data.status === utils.bodyData.transStatusCancelled) {
         clear();
-        console.log('[wait] payment cancelled by user; closing pay flow');
+        logger.log('[wait] payment cancelled by user; closing pay flow');
         trackClosePayFlow();
         // This string is used to determine the message on Marketplace;
         // change it at your peril.
         utils.mozPaymentProvider.paymentFailed('USER_CANCELLED');
       } else {
         // The transaction is in some kind of incomplete state.
-        console.log('[wait] transaction status: ' + data.status +'; expecting: ' + expectedStatus);
+        logger.log('[wait] transaction status: ' + data.status +'; expecting: ' + expectedStatus);
         pollTimeout = window.setTimeout(function() {
           poll(expectedStatus);
         }, settings.poll_interval);
@@ -163,7 +163,7 @@ define([
 
       if (textStatus === 'timeout') {
         clear();
-        console.log('transaction request timed out');
+        logger.log('transaction request timed out');
         utils.trackEvent({'action': 'payment',
                           'label': 'Transaction Request Timed Out'});
         app.throbber.close();
@@ -177,7 +177,7 @@ define([
         });
 
       } else {
-        console.log('error checking transaction');
+        logger.log('error checking transaction');
         utils.trackEvent({'action': 'payment',
                           'label': 'Error Checking Transaction'});
         pollTimeout = window.setTimeout(function() {

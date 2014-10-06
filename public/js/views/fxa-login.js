@@ -8,7 +8,7 @@ define([
 
   'use strict';
 
-  var console = log('view', 'fxa-login');
+  var logger = log('views', 'fxa-login');
   var LoginView = PageView.extend({
 
     events: {
@@ -16,13 +16,13 @@ define([
     },
 
     handleSignIn: function(e) {
-      console.log("FxA login clicked, redirecting to " + utils.bodyData.fxaUrl);
+      logger.log("FxA login clicked, redirecting to " + utils.bodyData.fxaUrl);
       e.preventDefault();
       window.location.href = utils.bodyData.fxaUrl;
     },
 
     render: function(){
-      console.log('rendering login view');
+      logger.log('rendering login view');
       this.setTitle(this.gettext('Sign In'));
       this.renderTemplate('login.html', {
         heading: this.gettext('Sign In'),

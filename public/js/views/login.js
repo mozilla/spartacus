@@ -6,7 +6,7 @@ define([
 
   'use strict';
 
-  var console = log('view', 'login');
+  var logger = log('views', 'login');
   var LoginView = PageView.extend({
 
     events: {
@@ -20,7 +20,7 @@ define([
     },
 
     render: function(){
-      console.log('rendering login view');
+      logger.log('rendering login view');
       this.setTitle(this.gettext('Sign In'));
       this.renderTemplate('login.html', {
         heading: this.gettext('Sign In'),

@@ -8,12 +8,12 @@ define([
 
   'use strict';
 
-  var console = log('view', 'locked');
+  var logger = log('views', 'locked');
 
   var LockedView = PageView.extend({
 
     render: function(){
-      console.log('Locked! Buy your way out with a crystal.');
+      logger.log('Locked! Buy your way out with a crystal.');
 
       // The locked view is just a specialized error message.
       app.error.render({

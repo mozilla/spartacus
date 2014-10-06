@@ -1,7 +1,7 @@
 define(['caps', 'log', 'settings'], function(caps, log, settings) {
 
   var clientID;
-  var console = log('tracking');
+  var logger = log('lib', 'tracking');
   var enabled = settings.ua_tracking_enabled;
   var actionsEnabled = settings.ua_action_tracking_enabled;
 
@@ -10,7 +10,7 @@ define(['caps', 'log', 'settings'], function(caps, log, settings) {
   if (enabled && !settings.ua_dnt_override &&
     (navigator.doNotTrack in shouldNotTrack ||
      navigator.msDoNotTrack in shouldNotTrack)) {
-    console.log('[tracking] DNT enabled; disabling tracking');
+    logger.log('[tracking] DNT enabled; disabling tracking');
     enabled = false;
   }
 
@@ -23,7 +23,7 @@ define(['caps', 'log', 'settings'], function(caps, log, settings) {
   }
 
   if (!enabled) {
-    console.log('[tracking] Tracking disabled, aborting init');
+    logger.log('[tracking] Tracking disabled, aborting init');
     return {
       enabled: false,
       actionsEnabled: false,
@@ -75,11 +75,11 @@ define(['caps', 'log', 'settings'], function(caps, log, settings) {
   }
 
   if (settings.ua_tracking_id) {
-    console.log('[tracking] Setting up GA tracking');
+    logger.log('[tracking] Setting up GA tracking');
     setupUATracking(settings.ua_tracking_id, getURL());
   }
 
-  console.log('Tracking initialized');
+  logger.log('Tracking initialized');
 
   return {
     enabled: true,

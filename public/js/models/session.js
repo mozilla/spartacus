@@ -7,7 +7,7 @@ define([
   'utils'
 ], function(Backbone, cancel, i18n, $, log, utils){
 
-  var console = log('model', 'session');
+  var logger = log('models', 'session');
 
   var SessionModel = Backbone.Model.extend({
 
@@ -21,7 +21,7 @@ define([
     },
 
     initialize: function() {
-      console.log('session model inited');
+      logger.log('session model inited');
     },
 
     runWatch: function(params) {
@@ -58,7 +58,7 @@ define([
     login: function(options) {
       this.calledBack = false;
       var config = this.getRequestConfig(options);
-      console.log('Running navigator.id.request');
+      logger.log('Running navigator.id.request');
       navigator.id.request(config);
     },
 
@@ -66,32 +66,32 @@ define([
       var that = this;
       this.calledBack = false;
       var user = this.get('logged_in_user');
-      console.log('loggedInUser', typeof user, user);
+      logger.log('loggedInUser', typeof user, user);
 
       var defaults = {
         loggedInUser: user || undefined,
         onlogin: function(assertion){
           that.calledBack = true;
-          console.log('Firing onLogin');
+          logger.log('Firing onLogin');
           that.trigger('onLogin', assertion);
         },
         onlogout: function() {
           that.calledBack = true;
-          console.log('Firing onLogout');
+          logger.log('Firing onLogout');
           that.trigger('onLogout');
           // Unset the loggedInUser hint.
           that.set('logged_in_user', '');
         },
         onready: function() {
-          console.log('Firing onReady');
+          logger.log('Firing onReady');
           that.trigger('onReady');
           if (that.calledBack === false && user) {
-            console.log('Firing onImpliedLogin');
+            logger.log('Firing onImpliedLogin');
             that.trigger('onImpliedLogin');
           } else if (that.calledBack === false) {
             // Run logout if loggedInUser is not set
             // and only `onready` was called by Persona.
-            console.log('Firing implied onLogout');
+            logger.log('Firing implied onLogout');
             that.trigger('onLogout');
           }
         }
@@ -100,10 +100,10 @@ define([
 
       if (utils.supportsNativeFxA()) {
         // On Firefox OS 2.0 and later, request Firefox Accounts login.
-        console.log('Native FxA support detected.');
+        logger.log('Native FxA support detected.');
         defaults.wantIssuer = 'firefox-accounts';
       }
-      console.log('Running navigator.id.watch');
+      logger.log('Running navigator.id.watch');
       this.runWatch(params);
     },
 

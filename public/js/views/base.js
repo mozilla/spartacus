@@ -10,7 +10,7 @@ define([
 
   'use strict';
 
-  var console = log('view', 'base');
+  var logger = log('views', 'base');
   var prefix = 'Webpay | ';
 
   var BaseView = Backbone.View.extend({
@@ -49,10 +49,10 @@ define([
       this.$el.html(this.template(template, data));
       // Needed in casper.
       if (window._phantom) {
-        console.log('Forcing a repaint for casper');
+        logger.log('Forcing a repaint for casper');
         this.$el.parent().toggleClass('repaint');
       }
-      console.log('Replacing $el with rendered content');
+      logger.log('Replacing $el with rendered content');
       return this;
     },
 

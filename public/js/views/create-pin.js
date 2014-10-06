@@ -11,7 +11,7 @@ define([
 
   'use strict';
 
-  var console = log('view', 'create-pin');
+  var logger = log('views', 'create-pin');
 
   var CreatePinView = PageView.extend({
 
@@ -40,8 +40,8 @@ define([
       // otherwise, we open a window and use a standard link.
       // The iframed URL directly links to the CDN terms/privacy content
       // to minimise what's shown as part of the UI.
-      console.log('Iframe URL: ', iframeURL);
-      console.log('Non-iframe URL: ', nonIframeURL);
+      logger.log('Iframe URL: ', iframeURL);
+      logger.log('Non-iframe URL: ', nonIframeURL);
 
       if (window.open) {
         // Based on https://github.com/mozilla/persona/blob/dev/resources/static/dialog/js/modules/inline_tospp.js
@@ -50,7 +50,7 @@ define([
         // TOS/PP should be shown in an iframe.
         var winRef = window.open(nonIframeURL);
         if (winRef) {
-          console.log('window.open ok - so returning');
+          logger.log('window.open ok - so returning');
           return;
         }
       }
@@ -86,7 +86,7 @@ define([
     },
 
     submitData: function(pinData) {
-      console.log('Sending pin for creation');
+      logger.log('Sending pin for creation');
       var pinCreateAction = 'create-pin';
       var req = app.pin.sync('create', app.pin, {'data': {'pin': pinData}});
       var that = this;
@@ -94,7 +94,7 @@ define([
         app.router.showWaitToStart();
       }).fail(function($xhr, textStatus) {
         if (textStatus === 'timeout') {
-          console.log('Request timed out');
+          logger.log('Request timed out');
           utils.trackEvent({'action': pinCreateAction,
                             'label': 'Pin Create API Call Timed Out'});
           return app.error.render({
@@ -107,22 +107,22 @@ define([
           });
 
         } else if ($xhr.status === 400) {
-          console.log('Pin data invalid');
+          logger.log('Pin data invalid');
           utils.trackEvent({'action': pinCreateAction,
                             'label': 'Pin Create API Call Invalid Form Data'});
           return app.error.render({errorCode: 'PIN_CREATE_INVALID'});
         } else if ($xhr.status === 403) {
-          console.log('User not authenticated');
+          logger.log('User not authenticated');
           utils.trackEvent({'action': pinCreateAction,
                             'label': 'Pin Create API Call Permission Denied'});
           return app.error.render({errorCode: 'PIN_CREATE_PERM_DENIED'});
         } else if ($xhr.status === 404) {
-          console.log("User doesn't exist");
+          logger.log("User doesn't exist");
           utils.trackEvent({'action': pinCreateAction,
                             'label': "Pin Create API Call User Doesn't exist"});
           return app.error.render({errorCode: 'PIN_CREATE_NO_USER'});
         } else {
-          console.log("Unhandled error");
+          logger.log("Unhandled error");
           utils.trackEvent({'action': pinCreateAction,
                             'label': "Pin Create API Call Unhandled error"});
           return app.error.render({errorCode: 'PIN_CREATE_ERROR'});

@@ -6,11 +6,11 @@ define([
 
   'use strict';
 
-  var console = log('view', 'fxa-login');
+  var logger = log('views', 'fxa-authorize');
   var FxAAuthView = PageView.extend({
 
     render: function(){
-      console.log('authorizing FxA login');
+      logger.log('authorizing FxA login');
       auth.startFxA(false);
       return;
     }

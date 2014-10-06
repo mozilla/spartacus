@@ -5,13 +5,13 @@ define([
 
   'use strict';
 
-  var console = log('view', 'throbber');
+  var logger = log('views', 'throbber');
   var ThrobberView = BaseView.extend({
 
     el: '#progress',
 
     render: function(msg){
-      console.log('rendering throbber: ' + msg);
+      logger.log('rendering throbber: ' + msg);
       this.setTitle(msg || this.gettext('Loading'));
       this.renderTemplate('throbber.html', {msg: msg || this.gettext('Loading')});
       return this;

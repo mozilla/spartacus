@@ -119,7 +119,7 @@ define([
 
     showLogin: function() {
       // Doesn't have a URL so no calls to navigate.
-      if (utils.bodyData.fxaUrl) {
+      if (utils.useOAuthFxA()) {
         this.viewManager.renderView(FxALoginView);
       } else {
         this.viewManager.renderView(LoginView);

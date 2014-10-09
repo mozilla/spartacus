@@ -213,7 +213,7 @@ function fakeFxA(options) {
   var timeout = options.timeout || false;
   if (timeout) {
     casper.echo('Setting up a fake XHR timeout for FxA', 'INFO');
-    clientTimeoutResponse('POST', '/fake-fxa');
+    clientTimeoutResponse('POST', '/fake-fxa-callback');
   } else {
     // clientScripts doesn't seem to apply to requests caused by redirects, so
     // we reinstall sinon here.
@@ -221,7 +221,7 @@ function fakeFxA(options) {
     injectSinon();
     casper.evaluate(function (data, statusCode) {
       window.server.respondWith(
-          'POST', /\/fake-fxa/,
+          'POST', /\/fake-fxa-callback/,
           [statusCode, {"Content-Type": "application/json"}, data]);
       console.log("Stubs installed");
     }, data, statusCode);
@@ -418,8 +418,8 @@ function doLogout() {
 function setUpFxA() {
   casper.evaluate(function() {
     console.log('injecting FxA test config');
-    document.body.setAttribute('data-fxa-auth-url', '/fake-fxa');
-    document.body.setAttribute('data-fxa-url', '/fake-fxa-login');
+    document.body.setAttribute('data-fxa-auth-url', '/fake-fxa-oauth');
+    document.body.setAttribute('data-fxa-callback-url', '/fake-fxa-callback');
     document.body.setAttribute('data-fxa-state', 'fake-fxa-state');
   });
 }
@@ -428,7 +428,7 @@ function setUpFxA() {
 function tearDownFxA() {
   casper.evaluate(function() {
     document.body.removeAttribute('data-fxa-auth-url');
-    document.body.removeAttribute('data-fxa-url');
+    document.body.removeAttribute('data-fxa-callback-url');
     document.body.removeAttribute('data-fxa-state');
   });
 }

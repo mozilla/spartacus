@@ -16,9 +16,9 @@ define([
     },
 
     handleSignIn: function(e) {
-      logger.log("FxA login clicked, redirecting to " + utils.bodyData.fxaUrl);
+      console.log("FxA login clicked, redirecting to " + utils.bodyData.fxaAuthUrl);
       e.preventDefault();
-      window.location.href = utils.bodyData.fxaUrl;
+      window.location.href = utils.bodyData.fxaAuthUrl;
     },
 
     render: function(){

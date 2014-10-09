@@ -88,10 +88,10 @@ define([
       // Check user-agent string to find out if we're on a FxOS device with
       // native FxA support.
       nav = nav || navigator;
-      return this.bodyData.fxaUrl && nav.mozId && nav.userAgent.match(/rv:(\d{2})/)[1] >= 34;
+      return this.bodyData.fxaAuthUrl && nav.mozId && nav.userAgent.match(/rv:(\d{2})/)[1] >= 34;
     },
     useOAuthFxA: function() {
-      return this.bodyData.fxaUrl && !this.supportsNativeFxA();
+      return this.bodyData.fxaAuthUrl && !this.supportsNativeFxA();
     },
     getL10nLinkBase: function() {
       var docLangs = ['cs', 'de', 'el', 'en-US', 'es', 'hr', 'hu', 'it', 'pl', 'pt-BR', 'sr', 'zh-CN'];

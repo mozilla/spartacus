@@ -45,7 +45,7 @@ define([
   function verifyFxAUser(code, options) {
     options = options || {};
     var reverify = options.reverify || false;
-    var url = utils.bodyData.fxaAuthUrl;
+    var url = utils.bodyData.fxaCallbackUrl;
     var data = {
       auth_response: code,
       state: utils.bodyData.fxaState

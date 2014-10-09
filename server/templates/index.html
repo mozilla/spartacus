@@ -31,8 +31,8 @@
     data-start-view="{{ startView }}"
     data-error-code="{{ errorCode }}"
     {% if useFxA -%}
-      data-fxa-auth-url="/fake-fxa"
-      data-fxa-url="/fake-fxa-login"
+      data-fxa-auth-url="/fake-fxa-oauth"
+      data-fxa-callback-url="/fake-fxa-callback"
       data-fxa-state="fake-fxa-state"
     {%- endif -%}
     >

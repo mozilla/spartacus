@@ -90,7 +90,7 @@ spa.get('/mozpay/', function (req, res) {
 // Serve test assets.
 spa.get(/\/testlib\/?.*/, express.static(__dirname + '/../tests/static'));
 spa.get(/\/unit\/?.*/, express.static(__dirname + '/../tests/'));
-spa.get(/\/fake-fxa-login/, function(req, res) {
+spa.get(/\/fake-fxa-oauth/, function(req, res) {
   console.log('Redirecting for FxA validation');
   res.redirect('/mozpay/spa/fxa-auth?fxa_data=fake');
 });

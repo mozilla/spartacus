@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-25 11:27+0000\n"
-"PO-Revision-Date: 2014-06-28 21:23+0000\n"
+"PO-Revision-Date: 2014-10-12 14:34+0000\n"
 "Last-Translator: Aman <amanpreet.alam@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pa\n"
@@ -11,8 +11,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1) ;\n"
-"X-Generator: Translate Toolkit 1.9.0\n"
-"X-POOTLE-MTIME: 1403990583.0\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1413124449.0\n"
 
 #: public/js/lib/cancel.js:33
 #: public/js/lib/cancel.js:16
@@ -282,141 +282,140 @@ msgstr "ਭੁਗਤਾਨ ਸੈਟ ਕਰ ਰਿਹਾ"
 
 #: public/js/error-codes.js:12
 msgid "An internal web request timed out."
-msgstr ""
+msgstr "ਅੰਦਰੂਨੀ ਵੈੱਬ ਬੇਨਤੀ ਲਈ ਸਮਾਂ ਸਮਾਪਤ ਹੋਇਆ।"
 
 #: public/js/error-codes.js:13
 msgid "The system timed out while trying to log in."
-msgstr ""
+msgstr "ਸਿਸਟਮ ਸਮਾਂ-ਸਮਾਪਤ ਹੋਇਆ, ਜਦੋਂ ਕਿ ਲਾਗਇਨ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕੀਤੀ।"
 
 #: public/js/error-codes.js:14
 msgid "An error occurred whilst trying to log out."
-msgstr ""
+msgstr "ਲਾਗਆਉਟ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਦੇ ਦੌਰਾਨ ਗਲਤੀ ਆਈ।"
 
 #: public/js/error-codes.js:15
 msgid "The system timed out while trying to log out."
-msgstr ""
+msgstr "ਲਾਗ ਆਉਟ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਦੇ ਦੌਰਾਨ ਸਿਸਟਮ ਸਮਾਂ-ਸਮਾਪਤ ਹੋਇਆ।"
 
 #: public/js/error-codes.js:16
 msgid "Payments are temporarily disabled."
-msgstr ""
+msgstr "ਭੁਗਤਾਨ ਆਰਜ਼ੀ ਤੌਰ ਉੱਤੇ ਅਸਮਰੱਥ ਹੈ।"
 
 #: public/js/error-codes.js:17
 msgid "An unexpected error occurred when creating your PIN."
-msgstr ""
+msgstr "ਤੁਹਾਡਾ ਪਿੰਨ ਬਣਾਉਣ ਦੌਰਾਨ ਅਚਾਨਕ ਗਲਤੀ ਆਈ ਹੈ।"
 
 #: public/js/error-codes.js:18
 #: public/js/error-codes.js:27
 msgid "The PIN data submitted was invalid."
-msgstr ""
+msgstr "ਦਿੱਤਾ ਗਿਆ ਪਿੰਨ ਡਾਟਾ ਗਲਤ ਹੈ।"
 
 #: public/js/error-codes.js:19
 msgid "No valid user found whilst attempting to create your PIN"
-msgstr ""
+msgstr "ਤੁਹਾਡਾ ਪਿੰਨ ਬਣਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਦੇ ਦੌਰਾਨ ਕੋਈ ਜ਼ਾਇਜ਼ ਯੂਜ਼ਰ ਨਹੀਂ ਲੱਭਿਆ"
 
 #: public/js/error-codes.js:20
 msgid "Permission denied attempting to create your PIN."
-msgstr ""
+msgstr "ਤੁਹਾਡਾ ਪਿੰਨ ਬਣਾਉਣ ਦੇ ਦੌਰਾਨ ਅਧਿਕਾਰ ਪਾਬੰਦੀ ਹੈ।"
 
 #: public/js/error-codes.js:21
 msgid "The request timed out whilst attempting to create your PIN."
-msgstr ""
+msgstr "ਤੁਹਾਡਾ ਪਿੰਨ ਬਣਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਦੌਰਾਨ ਸਮਾਂ ਬੇਨਤੀ ਸਮਾਪਤ ਹੋਈ।"
 
 #: public/js/error-codes.js:22
 msgid "An unexpected error occurred whilst checking your PIN."
-msgstr ""
+msgstr "ਤੁਹਾਡੇ ਪਿੰਨ ਨੂੰ ਚੈੱਕ ਕਰਨ ਦੇ ਦੌਰਾਨ ਅਚਾਨਕ ਗਲਤੀ ਆਈ।"
 
 #: public/js/error-codes.js:23
 msgid "No valid user found whilst checking your PIN"
-msgstr ""
+msgstr "ਤੁਹਾਡਾ ਪਿੰਨ ਚੈੱਕ ਕਰਨ ਦੇ ਦੌਰਾਨ ਕੋਈ ਜਾਇਜ਼ ਯੂਜ਼ਰ ਨਹੀਂ ਲੱਭਿਆ"
 
 #: public/js/error-codes.js:24
 msgid "Permission denied attempting to check your PIN"
-msgstr ""
+msgstr "ਤੁਹਾਡਾ ਪੈਨ ਚੈੱਕ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਦੌਰਾਨ ਅਧਿਕਾਰ ਪਾਬੰਦੀ"
 
 #: public/js/error-codes.js:25
 msgid "The request timed out whilst trying to check your PIN"
-msgstr ""
+msgstr "ਤੁਹਾਡੇ ਪਿੰਨ ਨੂੰ ਚੈੱਕ ਕਰਨ ਦੇ ਦੌਰਾਨ ਬੇਨਤੀ ਲਈ ਸਮਾਂ-ਸਮਾਪਤ"
 
 #: public/js/error-codes.js:26
 msgid "An unexpected error occurred when resetting your PIN."
-msgstr ""
+msgstr "ਤੁਹਾਡੇ ਪਿੰਨ ਨੂੰ ਮੁੜ-ਸੈੱਟ ਕਰਨ ਦੇ ਦੌਰਾਨ ਅਚਾਨਕ ਗਲਤੀ ਆਈ।"
 
 #: public/js/error-codes.js:28
 msgid "No valid user found whilst attempting to reset your PIN"
-msgstr ""
+msgstr "ਤੁਹਾਡੇ ਪਿੰਨ ਨੂੰ ਮੁੜ-ਸੈੱਟ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਦੌਰਾਨ ਕੋਈ ਜਾਇਜ਼ ਯੂਜ਼ਰ ਨਹੀਂ ਲੱਭਿਆ"
 
 #: public/js/error-codes.js:29
 msgid "Permission denied attempting to reset your PIN."
-msgstr ""
+msgstr "ਤੁਹਾਡੇ ਪਿੰਨ ਨੂੰ ਮੁੜ-ਸੈੱਟ ਕਰਨ ਦੇ ਦੌਰਾਨ ਅਧਿਕਾਰ ਪਾਬੰਦੀ ਹੈ।"
 
 #: public/js/error-codes.js:30
 msgid "The request timed out whilst attempting to reset your PIN."
-msgstr ""
+msgstr "ਤੁਹਾਡੇ ਪਿੰਨ ਨੂੰ ਮੁੜ-ਸੈੱਟ ਕਰਨ ਦੇ ਦੌਰਾਨ ਬੇਨਤੀ ਲਈ ਸਮਾਂ-ਸਮਾਪਤ ਹੋਇਆ।"
 
 #: public/js/error-codes.js:31
 msgid "The transaction failed. You have not been charged for this purchase."
-msgstr ""
+msgstr "ਲੈਣ-ਦੇਣ ਫੇਲ੍ਹ ਹੋਇਆ। ਤੁਹਾਨੂੰ ਇਹ ਖਰੀਦਦਾਰੀ ਲਈ ਕੋਈ ਖ਼ਰਚਾ ਨਹੀਂ ਲੱਗੇਗਾ।"
 
 #: public/js/error-codes.js:32
 msgid ""
 "The payment method or price point is not supported for this region or "
 "operator."
-msgstr ""
+msgstr "ਇਹ ਖੇਤਰ ਜਾਂ ਓਪਰੇਟਰ ਲਈ ਭੁਗਤਾਨ ਢੰਗ ਜਾਂ ਕੀਮਤ ਸਹਾਇਕ ਨਹੀਂ ਹੈ।"
 
 #: public/js/lib/auth.js:214
 msgid "Waiting for login"
-msgstr ""
+msgstr "ਲਾਗਇਨ ਲਈ ਉਡੀਕ ਜਾਰੀ ਹੈ"
 
 #: public/js/lib/wait.js:56
 msgid "Retrieving Transaction"
-msgstr ""
+msgstr "ਲੈਣ-ਦੇਣ ਪ੍ਰਾਪਤ ਕੀਤਾ ਜਾਂਦਾ ਹੈ"
 
 #: public/js/views/error.js:55
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "ਅਚਾਨਕ ਗਲਤੀ ਆਈ ਹੈ।"
 
 #: public/js/views/force-auth.js:87
 msgid "Sign-in to reset PIN"
-msgstr ""
+msgstr "ਪਿੰਨ ਮੁੜ-ਸੈੱਟ ਕਰਨ ਲਈ ਸਾਇਨ ਇਨ ਕਰੋ"
 
 #: public/js/views/force-auth.js:90
 msgid "Please sign in to reset your PIN."
-msgstr ""
+msgstr "ਆਪਣਾ ਪਿੰਨ ਮੁੜ-ਸੈੱਟ ਕਰਨ ਲਈ ਸਾਇਨ ਇਨ ਕਰੋ ਜੀ।"
 
 #: public/js/views/init.js:12
 msgid "Initializing"
-msgstr ""
+msgstr "ਸ਼ੁਰੂ ਕੀਤਾ ਜਾਂਦਾ ਹੈ"
 
 #: public/js/views/locked.js:21
-#, fuzzy
 msgid "PIN Locked"
-msgstr "ਲਾਕ ਸੀ"
+msgstr "ਪਿੰਨ ਲਾਕ ਸੀ"
 
 #: public/js/views/payment-success.js:15
 #: public/js/views/wait-to-finish.js:14
-#, fuzzy
 msgid "Completing payment"
-msgstr "ਭੁਗਤਾਨ ਸੈਟ ਕਰ ਰਿਹਾ"
+msgstr "ਭੁਗਤਾਨ ਪੂਰਾ ਕੀਤਾ ਜਾਂਦਾ ਹੈ"
 
 #: public/js/views/simulate.js:23
 msgid "Processing"
-msgstr ""
+msgstr "ਕਾਰਵਾਈ ਜਾਰੀ ਹੈ"
 
 #: public/js/views/simulate.js:51
 msgid "Simulate Payment"
-msgstr ""
+msgstr "ਭੁਗਤਾਨ ਦੀ ਨਕਲ ਕਰੋ"
 
 #: public/js/views/simulate.js:55
 msgid "You will not be charged."
-msgstr ""
+msgstr "ਤੁਹਾਡੇ ਕੋਲੋ ਖ਼ਰਚਾ ਨਹੀਂ ਲਿਆ ਜਾਵੇਗਾ।"
 
 #: templates/reset-start.html:12
-#, fuzzy
 msgid "Reset"
-msgstr "ਰਿਸੇਟ ਪਿੰਨ"
+msgstr "ਮੁੜ-ਸੈੱਟ"
 
 #: templates/pin-form.html:22
 msgid ""
 "By proceeding you agree to our <a %(terms)s>terms</a> and <a "
 "%(privacy)s>Privacy Policy</a>"
 msgstr ""
+"ਜਾਰੀ ਰੱਖਣ ਨਾਲ ਤੁਸੀਂ ਸਾਡੀਆਂ <a %(terms)s>ਸ਼ਰਤਾਂ</a> ਤੇ <a %(privacy)s>ਪਰਦੇਦਾਰੀ "
+"ਨੀਤੀ</a> ਨਾਲ ਸਹਿਮਤ ਹੁੰਦੇ ਹੋ"

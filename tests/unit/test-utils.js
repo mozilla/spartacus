@@ -50,29 +50,32 @@ define(['utils'], function(utils) {
       assert.equal(utils.isValidRedirURL('//google.com/whatevs.html'), false);
     });
 
-    test('test isValidRedirURL function with local url (allowed by overriden settings)', function() {
+    test('test isValidRedirURL function with local url (allowed by overridden settings)', function() {
       assert.equal(utils.isValidRedirURL('/foo', {validRedirSites: ['http://' + window.location.hostname]}), true);
     });
 
-    test('test isValidRedirURL function with other domain (allowed by override settings)', function() {
+    test('test isValidRedirURL function with other domain (allowed by overridden settings)', function() {
       assert.equal(utils.isValidRedirURL('http://whatever.com/foo/bar/baz', {validRedirSites: ['http://whatever.com']}), true);
     });
 
     test('test native-FxA UA detection', function() {
-      utils.bodyData.fxaUrl = 'yes';
+      utils.bodyData.fxaAuthUrl = 'yes';
       assert.notOk(utils.supportsNativeFxA(
         {userAgent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'}));
       assert.notOk(utils.supportsNativeFxA({
         mozId: {},
-        userAgent: 'Mozilla/5.0 (Mobile; rv:26.0) Gecko/26.0 Firefox/26.0'}));
+        userAgent: 'Mozilla/5.0 (Mobile; rv:26.0) Gecko/26.0 Firefox/26.0'
+      }));
 
       assert.notOk(utils.supportsNativeFxA({
         mozId: {},
-        userAgent: 'Mozilla/5.0 (Mobile; rv:32.0) Gecko/26.0 Firefox/32.0'}));
+        userAgent: 'Mozilla/5.0 (Mobile; rv:32.0) Gecko/26.0 Firefox/32.0'
+      }));
 
       assert.ok(utils.supportsNativeFxA({
         mozId: {},
-        userAgent: 'Mozilla/5.0 (Mobile; rv:34.0) Gecko/26.0 Firefox/34.0'}));
+        userAgent: 'Mozilla/5.0 (Mobile; rv:34.0) Gecko/26.0 Firefox/34.0'
+      }));
     });
 
     test('test errorCodeFromXhr falls back when no JSON', function() {

@@ -1,9 +1,10 @@
 define([
   'log',
   'utils',
+  'auth',
   'views/page',
   'query-string'
-], function(log, utils, PageView){
+], function(log, utils, auth, PageView){
 
   'use strict';
 
@@ -17,6 +18,10 @@ define([
         return;
       }
       this.extractJWT();
+      if (localStorage["0::user"]) {
+        logger.log("Verifying Fireplace shared-secret auth");
+        utils.verifySharedSecret(localStorage["0::user"]);
+      }
       if (utils.useOAuthFxA()) {
         logger.log("FxA enabled, checking login");
         if (!app.session.get('logged_in')) {

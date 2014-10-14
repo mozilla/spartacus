@@ -200,11 +200,25 @@ define([
     verifyFxAUser(window.location.href, {reverify: reverify});
   }
 
+  function verifySharedSecret(secret) {
+    return $.ajax({
+      type: 'POST',
+      url: utils.bodyData.verifySharedSecretUrl,
+      data: {"mkt-shared-secret": secret}}).done(
+        function(result) {
+          app.session.set("logged_in_user", result["email"])
+          app.session.set("logged_in", true)
+        }).fail(function(result) {
+          app.session.set("logged_in_user", '');
+          app.session.set("logged_in", false);
+        });
+  }
   return {
     resetUser: resetUser,
     showRetryError: showRetryError,
     startFxA: startFxA,
     verifyUser: verifyUser,
+    verifySharedSecret: verifySharedSecret,
   };
 
 });

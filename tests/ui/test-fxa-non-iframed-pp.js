@@ -12,9 +12,6 @@ helpers.startCasper({
   },
   tearDown: function() {
     casper.removeAllListeners('url.changed');
-    casper.evaluate(function() {
-      window.open = window._oldOpen;
-    });
   }
 });
 
@@ -28,20 +25,21 @@ casper.test.begin('Check FxA privacy policy link', {
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
       test.assertVisible('.terms', 'Terms and privacy policy urls should be present.');
       casper.click('.pp');
+      test.assertDoesntExist('.iframe-overlay', "Check iframe isn't created");
     });
 
-    casper.waitForPopup('https://marketplace.firefox.com/privacy-policy', function() {
-      casper.echo('Privacy policy opened via window.open');
-    });
-
-    casper.withPopup('https://marketplace.firefox.com/privacy-policy', function() {
-      this.waitForSelector('.site-privacy-policy', function() {
-        this.test.assertExists('.site-privacy-policy', 'Check privacy page exists');
-        this.evaluate(function() {
-          window.close();
-        });
-      });
-    });
+//    casper.waitForPopup('https://marketplace.firefox.com/privacy-policy', function() {
+//      casper.echo('Privacy policy opened via window.open');
+//    });
+//
+//    casper.withPopup('https://marketplace.firefox.com/privacy-policy', function() {
+//      this.waitForSelector('.site-privacy-policy', function() {
+//        this.test.assertExists('.site-privacy-policy', 'Check privacy page exists');
+//        this.evaluate(function() {
+//          window.close();
+//        });
+//      });
+//    });
 
     casper.run(function() {
       test.done();

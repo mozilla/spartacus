@@ -18,10 +18,6 @@ define([
         return;
       }
       this.extractJWT();
-      if (localStorage["0::user"]) {
-        logger.log("Verifying Fireplace shared-secret auth");
-        utils.verifySharedSecret(localStorage["0::user"]);
-      }
       if (utils.useOAuthFxA()) {
         logger.log("FxA enabled, checking login");
         if (!app.session.get('logged_in')) {
@@ -36,8 +32,18 @@ define([
     extractJWT: function() {
       logger.log('Checking for JWT');
       var qs = window.queryString.parse(location.search) || {};
-      var jwt = qs.req;
-      if (jwt) {
+      if (qs.req) {
+        if  (qs.req.contains('|')) {
+          var parts = qs.req.split('|', 1);
+          var usertoken = parts[0];
+          var jwt = parts[1];
+        } else {
+          var jwt = qs.req;
+        }
+        if (usertoken) {
+          logger.log("Verifying Fireplace shared-secret auth token:" + usertoken);
+          utils.verifySharedSecret(usertoken);
+        }
         logger.log('Setting JWT on transaction model');
         app.transaction.set('jwt', jwt);
       }

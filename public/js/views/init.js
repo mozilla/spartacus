@@ -33,7 +33,7 @@ define([
       logger.log('Checking for JWT');
       var qs = window.queryString.parse(location.search) || {};
       if (qs.req) {
-        if  (qs.req.contains('|')) {
+        if (qs.req.contains('|')) {
           var parts = qs.req.split('|', 1);
           var usertoken = parts[0];
           var jwt = parts[1];
@@ -41,6 +41,7 @@ define([
           var jwt = qs.req;
         }
         if (usertoken) {
+          usertoken = atob(usertoken);
           logger.log("Verifying Fireplace shared-secret auth token:" + usertoken);
           utils.verifySharedSecret(usertoken);
         }

@@ -1,4 +1,4 @@
-define(['utils'], function(utils) {
+define(['utils', 'settings'], function(utils, settings) {
 
   var assert = chai.assert;
   suite('Utils Tests', function(){
@@ -58,25 +58,6 @@ define(['utils'], function(utils) {
       assert.equal(utils.isValidRedirURL('http://whatever.com/foo/bar/baz', {validRedirSites: ['http://whatever.com']}), true);
     });
 
-    test('test native-FxA UA detection', function() {
-      utils.bodyData.fxaAuthUrl = 'yes';
-      assert.notOk(utils.supportsNativeFxA(
-        {userAgent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'}));
-      assert.notOk(utils.supportsNativeFxA({
-        mozId: {},
-        userAgent: 'Mozilla/5.0 (Mobile; rv:26.0) Gecko/26.0 Firefox/26.0'
-      }));
-
-      assert.notOk(utils.supportsNativeFxA({
-        mozId: {},
-        userAgent: 'Mozilla/5.0 (Mobile; rv:32.0) Gecko/26.0 Firefox/32.0'
-      }));
-
-      assert.ok(utils.supportsNativeFxA({
-        mozId: {},
-        userAgent: 'Mozilla/5.0 (Mobile; rv:34.0) Gecko/26.0 Firefox/34.0'
-      }));
-    });
 
     test('test errorCodeFromXhr falls back when no JSON', function() {
       assert.equal(utils.errorCodeFromXhr({}, 'FALLBACK'), 'FALLBACK');
@@ -96,6 +77,58 @@ define(['utils'], function(utils) {
 
     test('test errorCodeFromXhr uses a default fallback', function() {
       assert.equal(utils.errorCodeFromXhr({}), 'UNEXPECTED_ERROR');
+    });
+  });
+
+  suite('Utils FxA tests', function(){
+
+    setup(function(){
+      this.oldFxaAuthUrl = utils.bodyData.fxaAuthUrl;
+      this.oldEnableNativeFxA = settings.enableNativeFxA;
+      utils.bodyData.fxaAuthUrl = 'yes';
+      settings.enableNativeFxA = true;
+    });
+
+    teardown(function(){
+      utils.bodyData.fxaAuthUrl = this.oldFxaAuthUrl;
+      settings.enableNativeFxA = this.oldEnableNativeFxA;
+    });
+
+    test('test native-FxA UA detection', function() {
+      assert.notOk(utils.supportsNativeFxA(
+        {userAgent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'}));
+
+      assert.notOk(utils.supportsNativeFxA({
+        mozId: {},
+        userAgent: 'Mozilla/5.0 (Mobile; rv:26.0) Gecko/26.0 Firefox/26.0'
+      }));
+
+      assert.notOk(utils.supportsNativeFxA({
+        mozId: {},
+        userAgent: 'Mozilla/5.0 (Mobile; rv:32.0) Gecko/26.0 Firefox/32.0'
+      }));
+
+      assert.ok(utils.supportsNativeFxA({
+        mozId: {},
+        userAgent: 'Mozilla/5.0 (Mobile; rv:34.0) Gecko/26.0 Firefox/34.0'
+      }));
+    });
+
+    test('test native-FxA UA detection when enableNativeFxA is false', function() {
+      settings.enableNativeFxA = false;
+
+      assert.notOk(utils.supportsNativeFxA(
+        {userAgent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'}));
+
+      assert.notOk(utils.supportsNativeFxA({
+        mozId: {},
+        userAgent: 'Mozilla/5.0 (Mobile; rv:34.0) Gecko/26.0 Firefox/34.0'
+      }));
+
+      assert.notOk(utils.supportsNativeFxA({
+        mozId: {},
+        userAgent: 'Mozilla/5.0 (Mobile; rv:32.0) Gecko/26.0 Firefox/32.0'
+      }));
     });
   });
 });

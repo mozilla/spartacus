@@ -185,3 +185,18 @@ html[dir="rtl"] .button {
         margin: 0;
     }
 }
+
+.terms a {
+    position: relative;
+    z-index: 2;
+
+    &:after {
+        // Increases clickable area of terms and pp links.
+        content: '';
+        position: absolute;
+        top: -.5em;
+        bottom: -.5em;
+        left: -.5em;
+        right: -.5em;
+    }
+}

@@ -37,6 +37,8 @@ define([
       // Make it so!
       logger.log('Rendering Iframe Overlay template');
       this.renderTemplate('iframe-overlay.html', context);
+      logger.log('Toggling redraw class');
+      this.$el.toggleClass('redraw');
     }
 
   });

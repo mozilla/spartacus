@@ -32,11 +32,13 @@ define([
     extractJWT: function() {
       logger.log('Checking for JWT');
       var qs = window.queryString.parse(location.search) || {};
+      logger.log("qs is " + qs.req);
       if (qs.req) {
         if (qs.req.contains('|')) {
           var parts = qs.req.split('|', 1);
           var usertoken = parts[0];
           var jwt = parts[1];
+          logger.log("usertoken bits " + usertoken);
         } else {
           var jwt = qs.req;
         }

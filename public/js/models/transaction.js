@@ -45,7 +45,10 @@ define([
 
     saveJWT: function() {
       try {
-        sessionStorage.setItem('spa-jwt', this.get('jwt'));
+        if (this.get('jwt')) {
+          logger.log('Saving JWT to sessionStorage');
+          sessionStorage.setItem('spa-jwt', this.get('jwt'));
+        }
       } catch (e) {
         logger.error('Could not save JWT to sessionStorage', e);
       }
@@ -53,6 +56,7 @@ define([
 
     savedJWT: function() {
       try {
+        logger.log('Retrieving JWT from sessionStorage');
         return sessionStorage.getItem('spa-jwt');
       } catch (e) {
         logger.error('Could not retrieve JWT from sessionStorage', e);
@@ -61,6 +65,7 @@ define([
 
     clearSavedJWT: function() {
       try {
+        logger.log('Removing JWT from sessionStorage');
         return sessionStorage.removeItem('spa-jwt');
       } catch (e) {
         logger.error('Could not remove JWT from sessionStorage', e);

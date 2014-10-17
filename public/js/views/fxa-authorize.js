@@ -25,7 +25,7 @@ define([
           localStorage.removeItem('spa-jwt');
         }
       } catch (e) {
-          logger.error('Cannot retrieve JWT from localStorage');
+        logger.error('Cannot retrieve JWT from localStorage');
       }
     }
   });

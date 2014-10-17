@@ -11,8 +11,22 @@ define([
 
     render: function(){
       logger.log('authorizing FxA login');
+      this.extractJWT();
       auth.startFxA(false);
       return;
+    },
+
+    extractJWT: function() {
+      try {
+        var jwt = localStorage.getItem('spa-jwt');
+        if (jwt) {
+          logger.log('Setting JWT on transaction model from localStorage');
+          app.transaction.set('jwt', jwt);
+          localStorage.removeItem('spa-jwt');
+        }
+      } catch (e) {
+          logger.error('Cannot retrieve JWT from localStorage');
+      }
     }
   });
 

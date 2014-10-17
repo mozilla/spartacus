@@ -42,6 +42,14 @@ define([
       return this.sync('create', this,  options);
     },
 
+    saveJWT: function() {
+      try {
+        localStorage.setItem('spa-jwt', this.get('jwt'));
+      } catch (e) {
+        logger.error('Could not save JWT to localStorage', e);
+      }
+    },
+
     getNetworkCodes: function() {
       // Returns mcc/mnc if available.
       var mpp = utils.mozPaymentProvider;

@@ -36,7 +36,10 @@ casper.test.begin('Enter Pin API call returns 200', {
       var configured = false;
       requests.forEach(function(request) {
         if (request.url === '/mozpay/v1/api/pay/') {
-          configured = true;
+          casper.test.assertEqual(request.requestBody,
+                                  '{"req":"foo"}',
+                                  'invalid jwt sent');
+        configured = true;
         }
       });
       casper.test.assert(configured, "transaction not configured");

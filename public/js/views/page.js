@@ -132,10 +132,9 @@ define([
 
     setUpPayment: function() {
       var that = this;
-      var jwt = app.transaction.get('jwt');
 
-      if (jwt) {
-        var req = app.transaction.startTransaction(jwt);
+      if (app.transaction.jwt()) {
+        var req = app.transaction.startTransaction();
         var getTransaction = $.Deferred();
 
         req.done(function(result) {

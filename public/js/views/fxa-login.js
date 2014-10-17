@@ -18,6 +18,7 @@ define([
     handleSignIn: function(e) {
       console.log("FxA login clicked, redirecting to " + utils.bodyData.fxaAuthUrl);
       e.preventDefault();
+      app.transaction.saveJWT();
       window.location.href = utils.bodyData.fxaAuthUrl;
     },
 

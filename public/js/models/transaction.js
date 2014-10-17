@@ -22,12 +22,12 @@ define([
       logger.log('Transaction model inited');
     },
 
-    startTransaction: function(jwt) {
+    startTransaction: function() {
       var options = {};
       var networkCodes = this.getNetworkCodes();
 
       options.data = {
-        req: jwt,
+        req: this.jwt(),
       };
 
       if (networkCodes.mcc && networkCodes.mnc) {
@@ -39,7 +39,42 @@ define([
       options.contentType = 'application/json';
       options.dataType = 'json';
 
+
       return this.sync('create', this,  options);
+    },
+
+    saveJWT: function() {
+      try {
+        sessionStorage.setItem('spa-jwt', this.get('jwt'));
+      } catch (e) {
+        logger.error('Could not save JWT to sessionStorage', e);
+      }
+    },
+
+    savedJWT: function() {
+      try {
+        return sessionStorage.getItem('spa-jwt');
+      } catch (e) {
+        logger.error('Could not retrieve JWT from sessionStorage', e);
+      }
+    },
+
+    clearSavedJWT: function() {
+      try {
+        return sessionStorage.removeItem('spa-jwt');
+      } catch (e) {
+        logger.error('Could not remove JWT from sessionStorage', e);
+      }
+    },
+
+    jwt: function() {
+      if (this.savedJWT()) {
+        if (!this.get('jwt')) {
+          this.set('jwt', this.savedJWT());
+        }
+        this.clearSavedJWT();
+      }
+      return this.get('jwt');
     },
 
     getNetworkCodes: function() {

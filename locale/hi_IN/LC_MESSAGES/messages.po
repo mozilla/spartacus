@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-25 11:27+0000\n"
-"PO-Revision-Date: 2014-05-12 19:37+0000\n"
+"PO-Revision-Date: 2014-10-18 19:04+0000\n"
 "Last-Translator: Umesh <umesh.agarwal1@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: hi_IN\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1399923479.0\n"
+"X-POOTLE-MTIME: 1413659079.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
 msgid "Payment cancelled."
@@ -28,7 +28,7 @@ msgstr "रद्द करें"
 #: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64
 #: public/js/lib/pin-widget.js:68
 msgid "PIN can only contain digits."
-msgstr "पिन केवल अंक हो सकते हैं."
+msgstr "PIN केवल अंक हो सकते हैं."
 
 #: webpay/base/templates/base.html:30
 msgid "You logged in as a different user, you must start the payment again."
@@ -79,7 +79,7 @@ msgstr "त्रुटि"
 #: public/js/views/enter-pin.js:97 public/js/views/enter-pin.js:101
 #: public/js/views/enter-pin.js:105
 msgid "Enter PIN"
-msgstr "पिन दर्ज करें"
+msgstr "PIN दर्ज करें"
 
 #: public/js/views/login.js:25 templates/login.html:5
 #: public/js/views/fxa-login.js:25 public/js/views/fxa-login.js:27
@@ -108,7 +108,7 @@ msgstr "जारी रखने"
 #: public/js/views/enter-pin.js:73 public/js/views/enter-pin.js:74
 #: public/js/views/enter-pin.js:78
 msgid "Wrong PIN"
-msgstr "गलत पिन"
+msgstr "गलत PIN"
 
 #: public/js/views/create-pin.js:48 public/js/views/create-pin.js:84
 msgid "PINs do not match."
@@ -116,54 +116,54 @@ msgstr "पिन मेल नहीं खाते."
 
 #: webpay/pin/views.py:46 webpay/testing/views.py:25
 msgid "Create a PIN"
-msgstr "एक पिन बनाएं"
+msgstr "एक PIN बनाएं"
 
 #: webpay/pin/views.py:68 webpay/pin/views.py:185
 #: public/js/views/create-pin.js:36 public/js/views/create-pin.js:71
 msgid "Confirm PIN"
-msgstr "पिन की पुष्टि करें"
+msgstr "PIN की पुष्टि करें"
 
 #: webpay/pin/views.py:131 webpay/pin/views.py:157
 #: webpay/pin/templates/pin/pin_was_locked.html:13
 #: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
 #: templates/was-locked.html:11 public/js/views/force-auth.js:89
 msgid "Reset PIN"
-msgstr "पिन रीसेट करें"
+msgstr "PIN रीसेट करें"
 
 #. This is the same as the standard forgot
 #. password that most sites have.
 #: templates/pin-form.html:18 templates/reset-start.html:6
 #: templates/pin-form.html:29
 msgid "Forgot your PIN?"
-msgstr "अपना पिन भूल गए?"
+msgstr "अपना PIN भूल गए?"
 
 #: public/js/views/locked.js:24 public/js/views/locked.js:22
 msgid ""
 "You entered the wrong PIN too many times. Your account is locked. Please try "
 "your purchase again in 5 minutes."
 msgstr ""
-"आपने गलत पिन कई बार दर्ज किया. आपका खाता बंद कर दिया है. 5 मिनट में फिर से अपनी "
-"खरीद के प्रयास करें."
+"आपने गलत PIN कई बार दर्ज किया. आपका खाता बंद कर दिया है. 5 मिनट में फिर से "
+"अपनी खरीद के प्रयास करें."
 
 #: templates/was-locked.html:6
 msgid "Your PIN was locked"
-msgstr "अपना पिन बंद किया गया था"
+msgstr "अपना PIN बंद किया गया था"
 
 #: templates/was-locked.html:7
 msgid ""
 "Your PIN was locked because you entered it incorrectly too many times. You "
 "can continue and try entering your PIN again or reset your PIN."
 msgstr ""
-"आपका पिन बंद किया गया था क्योंकि आपने इसे कई बार दर्ज किया था. अपना पिन रीसेट करे या "
-"जारी रखें और फिर अपना पिन दर्ज करने का प्रयास करे."
+"आपका PIN बंद किया गया था क्योंकि आपने इसे कई बार दर्ज किया था. अपना PIN "
+"रीसेट करे या जारी रखें और फिर अपना PIN दर्ज करने का प्रयास करे."
 
 #: templates/reset-start.html:7
 msgid ""
 "Are you sure you want to reset your PIN? You must sign in to Persona to "
 "reset your PIN."
 msgstr ""
-"क्या आप अपना पिन रीसेट करना चाहते हैं? अपना पिन रीसेट करने के लिए परसोना में साइन इन "
-"करना होगा."
+"क्या आप अपना PIN रीसेट करना चाहते हैं? अपना PIN रीसेट करने के लिए परसोना में "
+"साइन इन करना होगा."
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6
 #: webpay/provider/templates/provider/wait-to-finish.html:12
@@ -173,23 +173,22 @@ msgstr "भुगतान&hellip को परखना जा रहा है
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30 public/js/lib/auth.js:25
 #: public/js/lib/auth.js:39
 msgid "Retrying"
-msgstr ""
+msgstr "पुनर्प्रयास"
 
 #: public/js/lib/auth.js:64
-#, fuzzy
 msgid "That took longer than expected. Retry?"
 msgstr "यह अपेक्षा से अधिक समय ले रही है. फिर प्रयास करें?"
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11
 #: public/js/views/create-pin.js:72
 msgid "Back"
-msgstr ""
+msgstr "पीछे"
 
 #: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95
 #: public/js/views/enter-pin.js:96 public/js/views/create-pin.js:73
 #: public/js/views/enter-pin.js:100
 msgid "Submit"
-msgstr ""
+msgstr "जमा करें"
 
 #: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60
 #: public/js/views/reset-pin.js:28 public/js/lib/wait.js:171
@@ -198,29 +197,26 @@ msgstr ""
 #: public/js/views/reset-start.js:107 public/js/views/create-pin.js:101
 #: public/js/views/enter-pin.js:65 public/js/views/reset-start.js:108
 msgid "Retry?"
-msgstr ""
+msgstr "पुन: प्रयास करें?"
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
 #: public/js/views/create-pin.js:113 public/js/views/create-pin.js:115
 #: public/js/views/create-pin.js:149 public/js/views/create-pin.js:152
-#, fuzzy
 msgid "Create PIN"
-msgstr "एक पिन बनाएं"
+msgstr "एक PIN बनाएं"
 
 #: public/js/views/error.js:45
-#, fuzzy
 msgid "Something went wrong."
-msgstr "कुछ गलत हो गया!"
+msgstr "कुछ गलत हो गया."
 
 #: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118
 #: public/js/views/reset-start.js:119
-#, fuzzy
 msgid "Reset your PIN?"
-msgstr "पिन रीसेट करें"
+msgstr "PIN रीसेट करें?"
 
 #: public/js/views/was-locked.js:13 public/js/views/was-locked.js:38
 msgid "Was Locked"
-msgstr ""
+msgstr "बंद कर दिया था"
 
 #: public/js/views/wait-for-tx.js:10 public/js/views/wait-to-start.js:13
 msgid "Setting up payment"
@@ -228,139 +224,138 @@ msgstr "भुगतान&hellip की स्थापना;"
 
 #: public/js/error-codes.js:12
 msgid "An internal web request timed out."
-msgstr ""
+msgstr "कोई आंतरिक वेब अनुरोध समय समाप्त हुआ."
 
 #: public/js/error-codes.js:13
 msgid "The system timed out while trying to log in."
-msgstr ""
+msgstr "लॉग इन करने की कोशिश में जबकि प्रणाली का समय समाप्त हुआ."
 
 #: public/js/error-codes.js:14
 msgid "An error occurred whilst trying to log out."
-msgstr ""
+msgstr "लॉग आउट प्रयास करते समय एक त्रुटि हुई."
 
 #: public/js/error-codes.js:15
 msgid "The system timed out while trying to log out."
-msgstr ""
+msgstr "लॉग आउट प्रयास करते समय सिस्टम का समय समाप्त हुआ."
 
 #: public/js/error-codes.js:16
 msgid "Payments are temporarily disabled."
-msgstr ""
+msgstr "भुगतान अस्थायी रूप से निष्क्रिय है."
 
 #: public/js/error-codes.js:17
 msgid "An unexpected error occurred when creating your PIN."
-msgstr ""
+msgstr "आपके PIN बनाते समय एक अनपेक्षित त्रुटि हुई."
 
 #: public/js/error-codes.js:18 public/js/error-codes.js:27
 msgid "The PIN data submitted was invalid."
-msgstr ""
+msgstr "प्रस्तुत किया PIN डेटा अमान्य था."
 
 #: public/js/error-codes.js:19
 msgid "No valid user found whilst attempting to create your PIN"
-msgstr ""
+msgstr "आपके PIN बनाने समय कोई वैध उपयोगकर्ता पाया नही गया"
 
 #: public/js/error-codes.js:20
 msgid "Permission denied attempting to create your PIN."
-msgstr ""
+msgstr "आपके PIN बनाने के प्रयास पर अनुमति नही."
 
 #: public/js/error-codes.js:21
 msgid "The request timed out whilst attempting to create your PIN."
-msgstr ""
+msgstr "अपपका PIN बनाने के प्रयास में अनुरोध का समय समाप्त होगया."
 
 #: public/js/error-codes.js:22
 msgid "An unexpected error occurred whilst checking your PIN."
-msgstr ""
+msgstr "आपकि PIN की जाँच के दौरान एक अप्रत्याशित त्रुटि हुई."
 
 #: public/js/error-codes.js:23
 msgid "No valid user found whilst checking your PIN"
-msgstr ""
+msgstr "आपकी पिन की जाँच के दौरान कोई मान्य उपयोगकर्ता पाया नही गया"
 
 #: public/js/error-codes.js:24
 msgid "Permission denied attempting to check your PIN"
-msgstr ""
+msgstr "आपकी PINन जांच करने की अनुमति नहीं मिली"
 
 #: public/js/error-codes.js:25
 msgid "The request timed out whilst trying to check your PIN"
-msgstr ""
+msgstr "अपपका PIN जाँच के प्रयास में अनुरोध का समय समाप्त होगया"
 
 #: public/js/error-codes.js:26
 msgid "An unexpected error occurred when resetting your PIN."
-msgstr ""
+msgstr "आपकि PIN रीसेट करने के दौरान एक अप्रत्याशित त्रुटि हुई."
 
 #: public/js/error-codes.js:28
 msgid "No valid user found whilst attempting to reset your PIN"
-msgstr ""
+msgstr "आपकी PIN रीसेट करने के दौरान कोई मान्य उपयोगकर्ता पाया नही गया"
 
 #: public/js/error-codes.js:29
 msgid "Permission denied attempting to reset your PIN."
-msgstr ""
+msgstr "आपकी PIN रीसेट करने करने की अनुमति नहीं मिली."
 
 #: public/js/error-codes.js:30
 msgid "The request timed out whilst attempting to reset your PIN."
-msgstr ""
+msgstr "अपपका PIN रीसेट करने के प्रयास में अनुरोध का समय समाप्त होगया."
 
 #: public/js/error-codes.js:31
 msgid "The transaction failed. You have not been charged for this purchase."
-msgstr ""
+msgstr "लेनदेन में विफल . आपसे इस खरीद के लिए शुल्क नहीं लिया गया है."
 
 #: public/js/error-codes.js:32
 msgid ""
 "The payment method or price point is not supported for this region or "
 "operator."
-msgstr ""
+msgstr "भुगतान विधि या कीमत जग्हा इस क्षेत्र या ऑपरेटर के लिए समर्थित नहीं है."
 
 #: public/js/lib/auth.js:214
 msgid "Waiting for login"
-msgstr ""
+msgstr "प्रवेश प्रतीक्षा"
 
 #: public/js/lib/wait.js:56
 msgid "Retrieving Transaction"
-msgstr ""
+msgstr "ट्रांजैक्शन पुन: प्राप्त"
 
 #: public/js/views/error.js:55
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "एक अनपेक्षित त्रुटि हुई."
 
 #: public/js/views/force-auth.js:87
 msgid "Sign-in to reset PIN"
-msgstr ""
+msgstr "PIN रीसेट करने के लिए साइन इन करें"
 
 #: public/js/views/force-auth.js:90
 msgid "Please sign in to reset your PIN."
-msgstr ""
+msgstr "PIN रीसेट करने के लिए कृपया साइन इन करें."
 
 #: public/js/views/init.js:12
 msgid "Initializing"
-msgstr ""
+msgstr "आरंभ हों रहा है"
 
 #: public/js/views/locked.js:21
-#, fuzzy
 msgid "PIN Locked"
-msgstr "अपना पिन बंद किया गया था"
+msgstr "PIN बंद"
 
 #: public/js/views/payment-success.js:15 public/js/views/wait-to-finish.js:14
-#, fuzzy
 msgid "Completing payment"
-msgstr "भुगतान&hellip की स्थापना;"
+msgstr "भुगतान पूर्ण हो रहा हैं"
 
 #: public/js/views/simulate.js:23
 msgid "Processing"
-msgstr ""
+msgstr "प्रसंस्करण"
 
 #: public/js/views/simulate.js:51
 msgid "Simulate Payment"
-msgstr ""
+msgstr "भुगतान अनुरूपित करें"
 
 #: public/js/views/simulate.js:55
 msgid "You will not be charged."
-msgstr ""
+msgstr "आपसे शुल्क नहीं लिया जाएगा."
 
 #: templates/reset-start.html:12
-#, fuzzy
 msgid "Reset"
-msgstr "पिन रीसेट करें"
+msgstr "रीसेट"
 
 #: templates/pin-form.html:22
 msgid ""
 "By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)"
 "s>Privacy Policy</a>"
 msgstr ""
+"आगे बढ़ने से आप हमसे सहमत हैं <a %(terms)s>terms</a> और <a %"
+"(privacy)s>गोपनीयता नीति</a>"

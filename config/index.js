@@ -1,4 +1,3 @@
-var fs = require('fs');
 var _ = require('underscore');
 
 
@@ -25,10 +24,6 @@ if (getNodeEnv() !== 'test') {
     if (err.code !== 'MODULE_NOT_FOUND') {
       throw err;
     }
-    var dest = __dirname + '/local.js';
-    fs.writeFileSync(dest, fs.readFileSync(__dirname + '/local-dist.js'));
-    console.warn('Created a local config file at ', dest,
-                 '; update it with real values.');
   }
 } else {
   var testConf = require('./test');

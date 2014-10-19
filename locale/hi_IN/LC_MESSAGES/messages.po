@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-25 11:27+0000\n"
-"PO-Revision-Date: 2014-10-18 19:05+0000\n"
+"PO-Revision-Date: 2014-10-19 05:20+0000\n"
 "Last-Translator: Umesh <umesh.agarwal1@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: hi_IN\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1413659153.0\n"
+"X-POOTLE-MTIME: 1413696034.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
 msgid "Payment cancelled."
@@ -288,7 +288,7 @@ msgstr "आपकी PIN रीसेट करने के दौरान क
 
 #: public/js/error-codes.js:29
 msgid "Permission denied attempting to reset your PIN."
-msgstr "आपकी PIN रीसेट करने करने की अनुमति नहीं मिली."
+msgstr "आपकी PIN रीसेट करने की अनुमति नहीं मिली."
 
 #: public/js/error-codes.js:30
 msgid "The request timed out whilst attempting to reset your PIN."

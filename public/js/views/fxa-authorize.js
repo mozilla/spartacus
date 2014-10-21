@@ -11,7 +11,8 @@ define([
 
     render: function(){
       logger.log('authorizing FxA login');
-      auth.startFxA(false);
+      var reverify = sessionStorage.getItem('fxa-reverification') === 'true';
+      auth.startFxA(reverify);
       return;
     }
   });

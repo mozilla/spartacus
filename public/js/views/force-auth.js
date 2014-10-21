@@ -36,7 +36,15 @@ define([
 
     handleSignInClick: function(e) {
       e.preventDefault();
-      this.forceReAuthentication();
+
+      if (utils.useOAuthFxA()) {
+        app.transaction.saveJWT();
+        sessionStorage.setItem('fxa-reverification', 'true');
+        window.location.href = utils.bodyData.fxaAuthUrl +
+          '&email=' + app.session.get('logged_in_user');
+      } else {
+        this.forceReAuthentication();
+      }
     },
 
     onForceAuthTimeout: function() {

@@ -11,7 +11,10 @@ define([
 
     render: function(){
       logger.log('authorizing FxA login');
-      auth.startFxA(false);
+      var reverify = sessionStorage.getItem('fxa-reverification') === 'true';
+      // Remove this so a future auth will be a regular login.
+      sessionStorage.removeItem('fxa-reverification');
+      auth.startFxA(reverify);
       return;
     }
   });

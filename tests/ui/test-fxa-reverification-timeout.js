@@ -2,10 +2,12 @@ var helpers = require('../helpers');
 
 helpers.startCasper({
   useFxA: true,
+  fakeFxaSession: true,
   setUp: function(){
-    helpers.fakeFxA();
+    helpers.fakeStartTransaction();
+    helpers.fakePinData({data: {pin: true}});
     casper.on('url.changed', function () {
-      helpers.fakeFxA();
+      helpers.fakeFxA({timeout: true});
       helpers.fakeStartTransaction();
       helpers.fakePinData({data: {pin: true}});
     });
@@ -17,9 +19,6 @@ helpers.startCasper({
 
 casper.test.begin('Reverification fails with timeout then retry success.', {
   test: function(test) {
-
-    // Initial auth
-    helpers.doLogin();
 
     // On enter pin page click forgot pin link.
     casper.waitForUrl(helpers.url('enter-pin'), function() {
@@ -34,7 +33,6 @@ casper.test.begin('Reverification fails with timeout then retry success.', {
 
     // Click for re-auth...
     casper.waitForSelector('#signin', function() {
-      helpers.fakeFxA({timeout: true});
       this.click('#signin');
     });
 

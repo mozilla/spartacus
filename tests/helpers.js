@@ -415,13 +415,18 @@ function doLogout() {
 }
 
 
-function setUpFxA() {
-  casper.evaluate(function() {
+function setUpFxA(options) {
+  options = options || {};
+  casper.evaluate(function(fakeFxaSession) {
     console.log('injecting FxA test config');
+    if (fakeFxaSession === true) {
+      console.log('Faking a logged-in user');
+      document.body.setAttribute('data-logged-in-user', 'foo@bar.com');
+    }
     document.body.setAttribute('data-fxa-auth-url', '/fake-fxa-oauth');
     document.body.setAttribute('data-fxa-callback-url', '/fake-fxa-callback');
     document.body.setAttribute('data-fxa-state', 'fake-fxa-state');
-  });
+  }, options.fakeFxaSession);
 }
 
 
@@ -447,6 +452,7 @@ function startCasper(options) {
   var url = baseTestUrl + path;
   var sinonOptions = options.sinon || {};
   var useFxA = options.useFxA;
+  var fakeFxaSession = options.fakeFxaSession;
   var callback = options.callback || function() {
     injectSinon(sinonOptions);
     if (typeof setUp === 'function') {
@@ -461,7 +467,7 @@ function startCasper(options) {
   // place before JS execution.
   casper.once('load.finished', function() {
     if (useFxA) {
-      setUpFxA();
+      setUpFxA({'fakeFxaSession': fakeFxaSession});
     } else if (typeof onLoadFinished === 'function') {
       onLoadFinished();
     }

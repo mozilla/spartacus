@@ -2,10 +2,8 @@ var helpers = require('../helpers');
 
 helpers.startCasper({
   useFxA: true,
+  fakeFxaSession: true,
   setUp: function() {
-    casper.evaluate(function(){
-      $('body').data('loggedInUser', 'foo@bar.com');
-    });
     helpers.fakeStartTransaction();
     helpers.fakePinData({data: {pin: false}});
   }

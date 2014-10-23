@@ -211,14 +211,14 @@ function fakeFxA(options) {
   var data = options.data || JSON.stringify({user_hash: 'test-hash'});
   var statusCode = options.statusCode || 200;
   var timeout = options.timeout || false;
+  // clientScripts doesn't seem to apply to requests caused by redirects, so
+  // we reinstall sinon here.
+  casper.page.injectJs('public/lib/js/sinon/index.js');
+  injectSinon();
   if (timeout) {
     casper.echo('Setting up a fake XHR timeout for FxA', 'INFO');
     clientTimeoutResponse('POST', '/fake-fxa-callback');
   } else {
-    // clientScripts doesn't seem to apply to requests caused by redirects, so
-    // we reinstall sinon here.
-    casper.page.injectJs('public/lib/js/sinon/index.js');
-    injectSinon();
     casper.evaluate(function (data, statusCode) {
       window.server.respondWith(
           'POST', /\/fake-fxa-callback/,

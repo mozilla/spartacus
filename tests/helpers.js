@@ -453,13 +453,6 @@ function startCasper(options) {
   var sinonOptions = options.sinon || {};
   var useFxA = options.useFxA;
   var fakeFxaSession = options.fakeFxaSession;
-  var callback = options.callback || function() {
-    injectSinon(sinonOptions);
-    if (typeof setUp === 'function') {
-      casper.echo('Running test setUp func');
-      setUp();
-    }
-  };
 
   casper.echo('Starting with url: ' + url);
 
@@ -470,6 +463,12 @@ function startCasper(options) {
       setUpFxA({'fakeFxaSession': fakeFxaSession});
     } else if (typeof onLoadFinished === 'function') {
       onLoadFinished();
+    }
+
+    injectSinon(sinonOptions);
+    if (typeof setUp === 'function') {
+      casper.echo('Running test setUp func');
+      setUp();
     }
   });
 
@@ -497,13 +496,11 @@ function startCasper(options) {
   });
 
   if (!headers) {
-    casper.start(url, callback);
+    casper.start(url);
   } else {
     casper.start();
     casper.echo(JSON.stringify(headers));
-    casper.open(url, {headers: headers}).then(function() {
-      callback.call(this);
-    });
+    casper.open(url, {headers: headers});
   }
 }
 

@@ -25,6 +25,7 @@ define([
         } else {
           logger.log('Implied login for FxA');
           app.session.set('logged_in', true);
+          app.session.set('user_hash', false);
         }
       } else {
         app.session.watchIdentity();

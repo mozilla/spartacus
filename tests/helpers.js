@@ -514,6 +514,9 @@ function assertErrorCode(errorCode) {
     '.error-code should contain: ' + errorCode);
 }
 
+function assertNoError() {
+  casper.test.assertDoesntExist('.full-error');
+}
 
 function url(path) {
   path = path.replace(/^\//, '');
@@ -523,6 +526,7 @@ function url(path) {
 
 module.exports = {
   assertErrorCode: assertErrorCode,
+  assertNoError: assertNoError,
   doLogin: doLogin,
   doLogout: doLogout,
   basePath: basePath,

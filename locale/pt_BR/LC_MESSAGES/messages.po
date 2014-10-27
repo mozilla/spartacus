@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: marketplace-webpay\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-25 11:27+0000\n"
-"PO-Revision-Date: 2014-06-28 18:07+0000\n"
+"PO-Revision-Date: 2014-10-27 11:08+0000\n"
 "Last-Translator: Marco Aurélio <ouesten@me.com>\n"
 "Language-Team: Português (Brasil) <dev-l10n-pt-br@lists.mozilla.org>\n"
 "Language: pt_BR\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1403978834.0\n"
+"X-POOTLE-MTIME: 1414408082.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
 msgid "Payment cancelled."
@@ -229,139 +229,144 @@ msgstr "Configurando payment"
 
 #: public/js/error-codes.js:12
 msgid "An internal web request timed out."
-msgstr ""
+msgstr "Uma solicitação interna da web expirou."
 
 #: public/js/error-codes.js:13
 msgid "The system timed out while trying to log in."
-msgstr ""
+msgstr "O sistema expirou enquanto tentava entrar."
 
 #: public/js/error-codes.js:14
 msgid "An error occurred whilst trying to log out."
-msgstr ""
+msgstr "Ocorreu um erro enquanto tentava sair."
 
 #: public/js/error-codes.js:15
 msgid "The system timed out while trying to log out."
-msgstr ""
+msgstr "O sistema expirou durante a tentativa de sair."
 
 #: public/js/error-codes.js:16
 msgid "Payments are temporarily disabled."
-msgstr ""
+msgstr "Os pagamentos estão temporariamente desativados."
 
 #: public/js/error-codes.js:17
 msgid "An unexpected error occurred when creating your PIN."
-msgstr ""
+msgstr "Ocorreu um erro inesperado ao criar o seu PIN."
 
 #: public/js/error-codes.js:18 public/js/error-codes.js:27
 msgid "The PIN data submitted was invalid."
-msgstr ""
+msgstr "Os dados do PIN enviados são inválidos."
 
 #: public/js/error-codes.js:19
 msgid "No valid user found whilst attempting to create your PIN"
 msgstr ""
+"Não foi encontrado um usuário válido durante a tentativa de criação do seu "
+"PIN"
 
 #: public/js/error-codes.js:20
 msgid "Permission denied attempting to create your PIN."
-msgstr ""
+msgstr "Permissão negada na tentativa de criação do seu PIN."
 
 #: public/js/error-codes.js:21
 msgid "The request timed out whilst attempting to create your PIN."
-msgstr ""
+msgstr "O pedido expirou durante a tentativa de criação do seu PIN."
 
 #: public/js/error-codes.js:22
 msgid "An unexpected error occurred whilst checking your PIN."
-msgstr ""
+msgstr "Ocorreu um erro inesperado na tentativa de verificação do seu PIN."
 
 #: public/js/error-codes.js:23
 msgid "No valid user found whilst checking your PIN"
 msgstr ""
+"Não foi encontrado um usuário válido durante a tentativa de validação do PIN"
 
 #: public/js/error-codes.js:24
 msgid "Permission denied attempting to check your PIN"
-msgstr ""
+msgstr "Permissão negada na tentativa de verificação do seu PIN"
 
 #: public/js/error-codes.js:25
 msgid "The request timed out whilst trying to check your PIN"
-msgstr ""
+msgstr "O pedido expirou na tentativa de verificação do seu PIN"
 
 #: public/js/error-codes.js:26
 msgid "An unexpected error occurred when resetting your PIN."
-msgstr ""
+msgstr "Ocorreu um erro inesperado na tentativa de reposição do seu PIN."
 
 #: public/js/error-codes.js:28
 msgid "No valid user found whilst attempting to reset your PIN"
 msgstr ""
+"Não foi encontrado um usuário válido na tentativa de reposição do seu PIN"
 
 #: public/js/error-codes.js:29
 msgid "Permission denied attempting to reset your PIN."
-msgstr ""
+msgstr "Permissão negada na tentativa de reposição do seu PIN."
 
 #: public/js/error-codes.js:30
 msgid "The request timed out whilst attempting to reset your PIN."
-msgstr ""
+msgstr "O pedido expirou na tentativa de reposição do seu PIN."
 
 #: public/js/error-codes.js:31
 msgid "The transaction failed. You have not been charged for this purchase."
-msgstr ""
+msgstr "A transação falhou. Não foi cobrado nenhum valor nesta compra."
 
 #: public/js/error-codes.js:32
 msgid ""
 "The payment method or price point is not supported for this region or "
 "operator."
 msgstr ""
+"O método de pagamento ou o preço de referência não são suportados por esta "
+"região ou operadora."
 
 #: public/js/lib/auth.js:214
 msgid "Waiting for login"
-msgstr ""
+msgstr "Aguardando autenticação"
 
 #: public/js/lib/wait.js:56
 msgid "Retrieving Transaction"
-msgstr ""
+msgstr "Recuperando transação"
 
 #: public/js/views/error.js:55
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "Ocorreu um erro inesperado."
 
 #: public/js/views/force-auth.js:87
 msgid "Sign-in to reset PIN"
-msgstr ""
+msgstr "Entre para repor o PIN"
 
 #: public/js/views/force-auth.js:90
 msgid "Please sign in to reset your PIN."
-msgstr ""
+msgstr "Por favor, entre para repor o seu PIN."
 
 #: public/js/views/init.js:12
 msgid "Initializing"
-msgstr ""
+msgstr "Inicializando"
 
 #: public/js/views/locked.js:21
-#, fuzzy
 msgid "PIN Locked"
-msgstr "Foi bloqueado"
+msgstr "PIN bloqueado"
 
 #: public/js/views/payment-success.js:15 public/js/views/wait-to-finish.js:14
-#, fuzzy
 msgid "Completing payment"
-msgstr "Configurando payment"
+msgstr "Concluído o pagamento"
 
 #: public/js/views/simulate.js:23
 msgid "Processing"
-msgstr ""
+msgstr "Processando"
 
 #: public/js/views/simulate.js:51
 msgid "Simulate Payment"
-msgstr ""
+msgstr "Simular pagamento"
 
 #: public/js/views/simulate.js:55
 msgid "You will not be charged."
-msgstr ""
+msgstr "Você não será cobrado."
 
 #: templates/reset-start.html:12
-#, fuzzy
 msgid "Reset"
-msgstr "Redefinir PIN"
+msgstr "Redefinir"
 
 #: templates/pin-form.html:22
 msgid ""
 "By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)"
 "s>Privacy Policy</a>"
 msgstr ""
+"Ao prosseguir, você concorda com os nossos <a %(terms)s>termos</a> e com a "
+"<a %(privacy)s>Política de Privacidade</a>"

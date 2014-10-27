@@ -86,7 +86,12 @@ define([
       logger.log('Starting forceAuthTimer');
       this.forceAuthTimer = window.setTimeout(_.bind(this.onForceAuthTimeout, this), settings.login_timeout);
       app.error.close();
-      app.throbber.render(this.gettext('Connecting to Persona'));
+
+      if (utils.useOAuthFxA()) {
+        app.throbber.render(this.gettext('Connecting to Firefox Accounts'));
+      } else {
+        app.throbber.render(this.gettext('Connecting to Persona'));
+      }
       this.forceAuthRequest();
     },
 

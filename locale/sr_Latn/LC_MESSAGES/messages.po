@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-25 11:27+0000\n"
+"POT-Creation-Date: 2014-10-27 16:01+0000\n"
 "PO-Revision-Date: 2014-10-02 04:47+0000\n"
 "Last-Translator: Vanja <tumbas93@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,8 +10,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.5.0\n"
 "X-POOTLE-MTIME: 1412225247.0\n"
 
@@ -46,6 +46,7 @@ msgstr "Započinjanje uplate"
 
 #: public/js/views/login.js:19 public/js/views/force-auth.js:81
 #: public/js/views/login.js:18 public/js/views/reset-start.js:67
+#: public/js/views/force-auth.js:93 public/js/views/reset-start.js:70
 msgid "Connecting to Persona"
 msgstr "Povezivanje sa Persona servisom"
 
@@ -86,11 +87,13 @@ msgstr "Unesi PIN"
 #: public/js/views/fxa-login.js:25 public/js/views/fxa-login.js:27
 #: public/js/views/login.js:24 public/js/views/login.js:26
 #: public/js/views/fxa-login.js:26 public/js/views/fxa-login.js:28
+#: public/js/views/fxa-login.js:29
 msgid "Sign In"
 msgstr "Prijavi se"
 
 #: templates/login.html:6 public/js/views/fxa-login.js:28
 #: public/js/views/login.js:27 public/js/views/fxa-login.js:29
+#: public/js/views/fxa-login.js:30
 msgid "Sign in to continue with the payment"
 msgstr "Prijavite se da biste nastavili sa uplatom"
 
@@ -103,6 +106,7 @@ msgstr "Prijavi se"
 #: templates/was-locked.html:12 public/js/views/create-pin.js:105
 #: public/js/views/create-pin.js:112 templates/simulate.html:18
 #: public/js/views/create-pin.js:141 public/js/views/create-pin.js:148
+#: public/js/views/reset-pin.js:65
 msgid "Continue"
 msgstr "Nastavi"
 
@@ -128,6 +132,8 @@ msgstr "Potvrdi PIN"
 #: webpay/pin/templates/pin/pin_was_locked.html:13
 #: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
 #: templates/was-locked.html:11 public/js/views/force-auth.js:89
+#: public/js/views/force-auth.js:102 public/js/views/reset-pin.js:66
+#: public/js/views/reset-pin.js:69
 msgid "Reset PIN"
 msgstr "Resetuj PIN"
 
@@ -197,6 +203,8 @@ msgstr "Pošalji"
 #: public/js/views/force-auth.js:53 public/js/views/reset-pin.js:29
 #: public/js/views/reset-start.js:107 public/js/views/create-pin.js:101
 #: public/js/views/enter-pin.js:65 public/js/views/reset-start.js:108
+#: public/js/views/force-auth.js:61 public/js/views/reset-pin.js:30
+#: public/js/views/reset-start.js:112
 msgid "Retry?"
 msgstr "Ponoviti?"
 
@@ -211,7 +219,7 @@ msgid "Something went wrong."
 msgstr "Došlo je do greške."
 
 #: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118
-#: public/js/views/reset-start.js:119
+#: public/js/views/reset-start.js:119 public/js/views/reset-start.js:123
 msgid "Reset your PIN?"
 msgstr "Resetuj PIN?"
 
@@ -319,11 +327,11 @@ msgstr "Preuzimam transakciju"
 msgid "An unexpected error occurred."
 msgstr "Desila se neočekivana greška."
 
-#: public/js/views/force-auth.js:87
+#: public/js/views/force-auth.js:87 public/js/views/force-auth.js:100
 msgid "Sign-in to reset PIN"
 msgstr "Prijavite se da biste resetovali PIN"
 
-#: public/js/views/force-auth.js:90
+#: public/js/views/force-auth.js:90 public/js/views/force-auth.js:103
 msgid "Please sign in to reset your PIN."
 msgstr "Molimo da se prijavite da biste resetovali Vaš PIN."
 
@@ -360,5 +368,10 @@ msgid ""
 "By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)"
 "s>Privacy Policy</a>"
 msgstr ""
-"Ako nastavite slažete se sa našim <a %(terms)s>uslovima</a> i <a %"
-"(privacy)s>polisom privatnosti</a>"
+"Ako nastavite slažete se sa našim <a %(terms)s>uslovima</a> i <a %(privacy)"
+"s>polisom privatnosti</a>"
+
+#: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68
+#, fuzzy
+msgid "Connecting to Firefox Accounts"
+msgstr "Povezivanje sa Persona servisom"

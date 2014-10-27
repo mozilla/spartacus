@@ -29,6 +29,17 @@ function makeToken() {
   return Math.random().toString(36).slice(2);
 }
 
+casper.on('page.error', function(error, trace) {
+    if (error.indexOf('INVALID_STATE_ERR') !== -1) {
+      casper.echo(error, 'WARNING');
+    } else {
+      var lines = [error];
+      trace.forEach(function(line) {
+          lines.push([line.file, 'line', line.line].join(' '));
+      });
+      casper.echo(lines.join('\n'), 'ERROR');
+    }
+});
 
 casper.on('page.initialized', function(page) {
   if (!_testInited[_currTestId]) {
@@ -476,6 +487,7 @@ function startCasper(options) {
     casper.echo('Starting tearDown');
     casper.echo('Tearing down Sinon', 'INFO');
     casper.evaluate(function(consumeStack) {
+      if (!window.server) return;
       if (consumeStack && window.server._oldProcessRequest) {
         console.log('restoring server.processRequest');
         window.server.processRequest = window.server._oldProcessRequest;

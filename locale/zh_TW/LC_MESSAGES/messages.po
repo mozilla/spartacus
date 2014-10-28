@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-25 11:27+0000\n"
+"POT-Creation-Date: 2014-10-27 16:01+0000\n"
 "PO-Revision-Date: 2014-09-30 06:55+0000\n"
 "Last-Translator: Peter <petercpg@mail.moztw.org>\n"
 "Language-Team: MozTW <petercpg@mail.moztw.org>\n"
@@ -45,6 +45,7 @@ msgstr "正在開始付款"
 
 #: public/js/views/login.js:19 public/js/views/force-auth.js:81
 #: public/js/views/login.js:18 public/js/views/reset-start.js:67
+#: public/js/views/force-auth.js:93 public/js/views/reset-start.js:70
 msgid "Connecting to Persona"
 msgstr "正在連線至 Persona"
 
@@ -85,11 +86,13 @@ msgstr "輸入 PIN 碼"
 #: public/js/views/fxa-login.js:25 public/js/views/fxa-login.js:27
 #: public/js/views/login.js:24 public/js/views/login.js:26
 #: public/js/views/fxa-login.js:26 public/js/views/fxa-login.js:28
+#: public/js/views/fxa-login.js:29
 msgid "Sign In"
 msgstr "登入"
 
 #: templates/login.html:6 public/js/views/fxa-login.js:28
 #: public/js/views/login.js:27 public/js/views/fxa-login.js:29
+#: public/js/views/fxa-login.js:30
 msgid "Sign in to continue with the payment"
 msgstr "登入以繼續付款"
 
@@ -102,6 +105,7 @@ msgstr "登入"
 #: templates/was-locked.html:12 public/js/views/create-pin.js:105
 #: public/js/views/create-pin.js:112 templates/simulate.html:18
 #: public/js/views/create-pin.js:141 public/js/views/create-pin.js:148
+#: public/js/views/reset-pin.js:65
 msgid "Continue"
 msgstr "繼續"
 
@@ -127,6 +131,8 @@ msgstr "確認 PIN 碼"
 #: webpay/pin/templates/pin/pin_was_locked.html:13
 #: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
 #: templates/was-locked.html:11 public/js/views/force-auth.js:89
+#: public/js/views/force-auth.js:102 public/js/views/reset-pin.js:66
+#: public/js/views/reset-pin.js:69
 msgid "Reset PIN"
 msgstr "重設 PIN 碼"
 
@@ -190,6 +196,8 @@ msgstr "送出"
 #: public/js/views/force-auth.js:53 public/js/views/reset-pin.js:29
 #: public/js/views/reset-start.js:107 public/js/views/create-pin.js:101
 #: public/js/views/enter-pin.js:65 public/js/views/reset-start.js:108
+#: public/js/views/force-auth.js:61 public/js/views/reset-pin.js:30
+#: public/js/views/reset-start.js:112
 msgid "Retry?"
 msgstr "重試？"
 
@@ -204,7 +212,7 @@ msgid "Something went wrong."
 msgstr "有些東西不對勁。"
 
 #: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118
-#: public/js/views/reset-start.js:119
+#: public/js/views/reset-start.js:119 public/js/views/reset-start.js:123
 msgid "Reset your PIN?"
 msgstr "重設您的 PIN 碼？"
 
@@ -310,11 +318,11 @@ msgstr "正在取回交易資訊"
 msgid "An unexpected error occurred."
 msgstr "發生未逾期的錯誤。"
 
-#: public/js/views/force-auth.js:87
+#: public/js/views/force-auth.js:87 public/js/views/force-auth.js:100
 msgid "Sign-in to reset PIN"
 msgstr "登入以重設 PIN 碼"
 
-#: public/js/views/force-auth.js:90
+#: public/js/views/force-auth.js:90 public/js/views/force-auth.js:103
 msgid "Please sign in to reset your PIN."
 msgstr "請登入以重設您的 PIN 碼。"
 
@@ -350,4 +358,11 @@ msgstr "重設"
 msgid ""
 "By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)"
 "s>Privacy Policy</a>"
-msgstr "繼續使用，代表您同意我們的 <a %(terms)s>使用條款</a> 及 <a %(privacy)s>隱私權保護政策</a>"
+msgstr ""
+"繼續使用，代表您同意我們的 <a %(terms)s>使用條款</a> 及 <a %(privacy)s>隱私權"
+"保護政策</a>"
+
+#: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68
+#, fuzzy
+msgid "Connecting to Firefox Accounts"
+msgstr "正在連線至 Persona"

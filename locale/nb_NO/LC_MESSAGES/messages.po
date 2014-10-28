@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-25 11:27+0000\n"
+"POT-Creation-Date: 2014-10-27 16:01+0000\n"
 "PO-Revision-Date: 2014-07-02 09:26+0000\n"
 "Last-Translator: Håvar <havar@firefox.no>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,6 +45,7 @@ msgstr "Begynner betaling "
 
 #: public/js/views/login.js:19 public/js/views/force-auth.js:81
 #: public/js/views/login.js:18 public/js/views/reset-start.js:67
+#: public/js/views/force-auth.js:93 public/js/views/reset-start.js:70
 msgid "Connecting to Persona"
 msgstr "Kobler til Persona"
 
@@ -85,11 +86,13 @@ msgstr "Oppgi sikkerhetskode"
 #: public/js/views/fxa-login.js:25 public/js/views/fxa-login.js:27
 #: public/js/views/login.js:24 public/js/views/login.js:26
 #: public/js/views/fxa-login.js:26 public/js/views/fxa-login.js:28
+#: public/js/views/fxa-login.js:29
 msgid "Sign In"
 msgstr "Logg inn"
 
 #: templates/login.html:6 public/js/views/fxa-login.js:28
 #: public/js/views/login.js:27 public/js/views/fxa-login.js:29
+#: public/js/views/fxa-login.js:30
 msgid "Sign in to continue with the payment"
 msgstr "Logg inn for å fortsette med betalingen"
 
@@ -102,6 +105,7 @@ msgstr "Logg inn"
 #: templates/was-locked.html:12 public/js/views/create-pin.js:105
 #: public/js/views/create-pin.js:112 templates/simulate.html:18
 #: public/js/views/create-pin.js:141 public/js/views/create-pin.js:148
+#: public/js/views/reset-pin.js:65
 msgid "Continue"
 msgstr "Fortsett"
 
@@ -127,6 +131,8 @@ msgstr "Bekreft sikkerhetskode"
 #: webpay/pin/templates/pin/pin_was_locked.html:13
 #: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
 #: templates/was-locked.html:11 public/js/views/force-auth.js:89
+#: public/js/views/force-auth.js:102 public/js/views/reset-pin.js:66
+#: public/js/views/reset-pin.js:69
 msgid "Reset PIN"
 msgstr "Nullstill sikkerhetskode"
 
@@ -197,6 +203,8 @@ msgstr "Send inn"
 #: public/js/views/force-auth.js:53 public/js/views/reset-pin.js:29
 #: public/js/views/reset-start.js:107 public/js/views/create-pin.js:101
 #: public/js/views/enter-pin.js:65 public/js/views/reset-start.js:108
+#: public/js/views/force-auth.js:61 public/js/views/reset-pin.js:30
+#: public/js/views/reset-start.js:112
 msgid "Retry?"
 msgstr "Prøv igjen?"
 
@@ -211,7 +219,7 @@ msgid "Something went wrong."
 msgstr "Noe gikk galt."
 
 #: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118
-#: public/js/views/reset-start.js:119
+#: public/js/views/reset-start.js:119 public/js/views/reset-start.js:123
 msgid "Reset your PIN?"
 msgstr "Nullstill din PIN-kode?"
 
@@ -317,11 +325,11 @@ msgstr ""
 msgid "An unexpected error occurred."
 msgstr ""
 
-#: public/js/views/force-auth.js:87
+#: public/js/views/force-auth.js:87 public/js/views/force-auth.js:100
 msgid "Sign-in to reset PIN"
 msgstr ""
 
-#: public/js/views/force-auth.js:90
+#: public/js/views/force-auth.js:90 public/js/views/force-auth.js:103
 msgid "Please sign in to reset your PIN."
 msgstr ""
 
@@ -361,3 +369,8 @@ msgid ""
 "By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)"
 "s>Privacy Policy</a>"
 msgstr ""
+
+#: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68
+#, fuzzy
+msgid "Connecting to Firefox Accounts"
+msgstr "Kobler til Persona"

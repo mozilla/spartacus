@@ -40,9 +40,6 @@ define([
   function updatePinUI() {
     logger.log('Updating pin UI');
     var numFilled = pinBuffer.length;
-    if (numFilled >= 1) {
-      $terms.addClass('hidden');
-    }
     $pseudoInputs.each(function(index, elm) {
       var $elm = $(elm);
       if (index + 1 <= numFilled) {
@@ -78,7 +75,9 @@ define([
     logger.log('Show error message: ' + errorMessage);
     $errorMessage.text(errorMessage);
     $errorMessage.removeClass('hidden');
+    // Forgot PIN is only on the Enter PIN page.
     $forgotPin.addClass('hidden');
+    // Terms are only used on the Create PIN page.
     $terms.addClass('hidden');
     focusPin();
   }
@@ -86,7 +85,10 @@ define([
   function hideError() {
     logger.log('hiding error messages.');
     $errorMessage.addClass('hidden');
+    // Forgot PIN is only on the Enter PIN page.
     $forgotPin.removeClass('hidden');
+    // Terms are only used on the Create PIN page.
+    $terms.removeClass('hidden');
   }
 
   function init() {

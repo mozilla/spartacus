@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: AMO Webpay\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-27 16:01+0000\n"
-"PO-Revision-Date: 2014-09-27 07:49+0000\n"
+"PO-Revision-Date: 2014-10-28 20:32+0000\n"
 "Last-Translator: Michael <michael.koehler1@gmx.de>\n"
 "Language-Team: German (de) <coce@nufuerspam.de>\n"
 "Language: de\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1411804193.0\n"
+"X-POOTLE-MTIME: 1414528320.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
 msgid "Payment cancelled."
@@ -383,6 +383,5 @@ msgstr ""
 "a> und unserer <a %(privacy)s>Datenschutzerklärung</a> zu."
 
 #: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68
-#, fuzzy
 msgid "Connecting to Firefox Accounts"
-msgstr "Verbindung zu Persona wird hergestellt"
+msgstr "Verbindung zu Firefox Accounts wird hergestellt"

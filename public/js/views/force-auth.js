@@ -36,7 +36,6 @@ define([
 
     handleSignInClick: function(e) {
       e.preventDefault();
-
       if (utils.useOAuthFxA()) {
         app.transaction.saveJWT();
         sessionStorage.setItem('fxa-reverification', 'true');

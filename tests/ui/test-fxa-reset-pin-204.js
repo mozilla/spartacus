@@ -18,8 +18,6 @@ helpers.startCasper({
 casper.test.begin('Reset pin returns 204, then onto wait for tx.', {
   test: function(test) {
 
-    // Initial auth
-    helpers.doLogin();
     // On enter pin page click forgot pin link.
     casper.waitForUrl(helpers.url('enter-pin'), function() {
       test.assertDoesntExist('.terms', 'Terms are not visible on enter-pin');
@@ -30,11 +28,6 @@ casper.test.begin('Reset pin returns 204, then onto wait for tx.', {
     casper.waitForUrl(helpers.url('reset-start'), function() {
       helpers.fakeLogout();
       this.click('.button.cta');
-    });
-
-    // Click for re-auth...
-    casper.waitForSelector('#signin', function() {
-      this.click('#signin');
     });
 
     casper.waitForUrl(helpers.url('reset-pin'), function() {

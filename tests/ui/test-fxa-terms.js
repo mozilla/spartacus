@@ -19,8 +19,6 @@ casper.test.begin('Check FxA terms links', {
 
   test: function(test) {
 
-    helpers.doLogin();
-
     casper.waitForUrl(helpers.url('create-pin'), function() {
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
       test.assertDoesntExist('.forgot-pin', 'No forgot-pin should be present for pin creation');

@@ -107,24 +107,6 @@ function setLoginFilter(emailAddress) {
 }
 
 
-function logInAsNewUser() {
-  // Sets the filter so we always login as a new user.
-  var email = "tester+" + makeToken() + "@fakepersona.mozilla.org";
-  setLoginFilter(email);
-
-  casper.waitFor(function check() {
-    return this.visible('#signin');
-  }, function then() {
-    casper.test.assertVisible('#signin', 'Check signin element is present.');
-    this.click('#signin');
-  }, function timeout() {
-    casper.test.fail('#signin was not visible');
-  });
-
-  return email;
-}
-
-
 function injectSinon(options) {
   options = options || {};
   var autoRespond = (typeof options.autoRespond === 'undefined') ? true : options.autoRespond;
@@ -415,7 +397,18 @@ function fakePinData(options) {
 
 
 function doLogin() {
-  logInAsNewUser();
+  // Sets the filter so we always login as a new user.
+  var email = "tester+" + makeToken() + "@fakepersona.mozilla.org";
+  setLoginFilter(email);
+  casper.waitFor(function check() {
+    return this.visible('#signin');
+  }, function then() {
+    casper.test.assertVisible('#signin', 'Check signin element is present.');
+    this.click('#signin');
+  }, function timeout() {
+    casper.test.fail('#signin was not visible');
+  });
+  return email;
 }
 
 

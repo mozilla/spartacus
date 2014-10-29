@@ -7,7 +7,6 @@ define([
   'views/enter-pin',
   'views/force-auth',
   'views/fxa-authorize',
-  'views/fxa-login',
   'views/init',
   'views/locked',
   'views/login',
@@ -28,7 +27,6 @@ define([
   EnterPinView,
   ForceAuthView,
   FxAAuthView,
-  FxALoginView,
   InitView,
   LockedView,
   LoginView,
@@ -117,13 +115,10 @@ define([
       this.viewManager.renderView(LockedView);
     },
 
+    // TODO: Persona only - remove after move to FxA.
     showLogin: function() {
       // Doesn't have a URL so no calls to navigate.
-      if (utils.useOAuthFxA()) {
-        this.viewManager.renderView(FxALoginView);
-      } else {
-        this.viewManager.renderView(LoginView);
-      }
+      this.viewManager.renderView(LoginView);
     },
 
     showPaymentFailed: function() {

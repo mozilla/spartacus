@@ -13,7 +13,6 @@ helpers.startCasper({
 
 casper.test.begin('Check we get to enter-pin without login if session exists.', {
 
-
   test: function(test) {
 
     casper.waitForUrl(helpers.url('enter-pin'), function() {

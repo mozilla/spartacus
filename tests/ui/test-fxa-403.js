@@ -18,8 +18,6 @@ casper.test.begin('Denied verification should only have cancel option.', {
 
   test: function(test) {
 
-    helpers.doLogin();
-
     casper.waitForSelector('.full-error', function() {
       helpers.assertErrorCode('FXA_DENIED');
       test.assertElementCount('.full-error .button', 1, 'Should only be one button for cancelling the flow');

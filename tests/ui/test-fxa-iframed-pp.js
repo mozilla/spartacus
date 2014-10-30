@@ -22,8 +22,6 @@ casper.test.begin('Check iframed FxA privacy link', {
 
   test: function(test) {
 
-    helpers.doLogin();
-
     casper.waitForUrl(helpers.url('create-pin'), function() {
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
       test.assertVisible('.terms', 'Terms and privacy policy urls should be present.');

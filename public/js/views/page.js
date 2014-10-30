@@ -63,8 +63,14 @@ define([
     handleLoginStateChange: function(model, value) {
       logger.log('logged_in state changed to ' + value);
       if (value === false) {
-        logger.log('Displaying login view.');
-        app.router.showLogin();
+        if (utils.useOAuthFxA()) {
+          // FxA
+          utils.fxaLogin();
+        } else {
+          // Persona
+          logger.log('Displaying login view.');
+          app.router.showLogin();
+        }
       } else if (value === true) {
         if (app.startView) {
           // app.startView is set by an data attr data-start-view.

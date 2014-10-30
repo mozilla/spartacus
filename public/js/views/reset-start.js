@@ -97,9 +97,19 @@ define([
           logger.log('Forgot-pin logout done');
           utils.trackEvent({'action': 'forgot pin',
                             'label': 'Logout Success'});
-          // Call directly rather than change the URL to workaround bug 1063575.
-          app.router.showForceAuth();
+
+          if (utils.useOAuthFxA()) {
+            app.transaction.saveJWT();
+            sessionStorage.setItem('fxa-reverification', 'true');
+            window.location.href = utils.bodyData.fxaAuthUrl +
+              '&email=' + encodeURIComponent(app.session.get('logged_in_user'));
+          } else {
+            // Call directly rather than change the URL to workaround bug 1063575.
+            app.router.showForceAuth();
+          }
+
         })
+
         .fail(function _failedLogout() {
           // Called when we manually abort everything
           // or if something fails.

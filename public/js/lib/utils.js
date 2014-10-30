@@ -115,5 +115,10 @@ define([
       var baseLink = this.getL10nLinkBase();
       return this.format(baseLink, {type: 'privacy'});
     },
+    fxaLogin: function() {
+      logger.log("FxA login - redirecting to " + this.bodyData.fxaAuthUrl);
+      app.transaction.saveJWT();
+      window.location.href = this.bodyData.fxaAuthUrl;
+    }
   };
 });

@@ -19,8 +19,6 @@ helpers.startCasper({
 casper.test.begin('Enter Pin API call returns 200', {
   test: function(test) {
 
-    helpers.doLogin();
-
     casper.waitForUrl(helpers.url('enter-pin'), function() {
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
       this.sendKeys('.pinbox', '1234');

@@ -20,8 +20,7 @@ define([
       if (utils.useOAuthFxA()) {
         logger.log("FxA enabled, checking login");
         if (!app.session.get('logged_in_user')) {
-          logger.log("showing FxA login");
-          app.router.showLogin();
+          utils.fxaLogin();
         } else {
           logger.log('Implied login for FxA');
           app.session.set('logged_in', true);

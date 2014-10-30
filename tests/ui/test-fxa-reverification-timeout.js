@@ -31,11 +31,6 @@ casper.test.begin('Reverification fails with timeout then retry success.', {
       this.click('.button.cta');
     });
 
-    // Click for re-auth...
-    casper.waitForSelector('#signin', function() {
-      this.click('#signin');
-    });
-
     casper.waitForSelector('.full-error', function() {
       test.assertVisible('.full-error', 'Error page should be shown');
       helpers.assertErrorCode('FXA_TIMEOUT');

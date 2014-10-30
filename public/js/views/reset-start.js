@@ -131,7 +131,7 @@ define([
     render: function(){
       logger.log('rendering reset-start view');
       this.setTitle(this.gettext('Reset your PIN?'));
-      this.renderTemplate('reset-start.html');
+      this.renderTemplate('reset-start.html', {useFxA: utils.useOAuthFxA()});
       app.throbber.close();
       return this;
     },

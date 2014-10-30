@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-27 16:01+0000\n"
+"POT-Creation-Date: 2014-10-30 12:29+0000\n"
 "PO-Revision-Date: 2014-07-02 09:26+0000\n"
 "Last-Translator: Håvar <havar@firefox.no>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgid "Cancel"
 msgstr "Avbryt"
 
 #: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64
-#: public/js/lib/pin-widget.js:68
+#: public/js/lib/pin-widget.js:68 public/js/lib/pin-widget.js:65
 msgid "PIN can only contain digits."
 msgstr "Sikkerhetskoden kan kun inneholde siffer."
 
@@ -46,6 +46,7 @@ msgstr "Begynner betaling "
 #: public/js/views/login.js:19 public/js/views/force-auth.js:81
 #: public/js/views/login.js:18 public/js/views/reset-start.js:67
 #: public/js/views/force-auth.js:93 public/js/views/reset-start.js:70
+#: public/js/views/force-auth.js:92
 msgid "Connecting to Persona"
 msgstr "Kobler til Persona"
 
@@ -132,7 +133,7 @@ msgstr "Bekreft sikkerhetskode"
 #: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
 #: templates/was-locked.html:11 public/js/views/force-auth.js:89
 #: public/js/views/force-auth.js:102 public/js/views/reset-pin.js:66
-#: public/js/views/reset-pin.js:69
+#: public/js/views/reset-pin.js:69 public/js/views/force-auth.js:101
 msgid "Reset PIN"
 msgstr "Nullstill sikkerhetskode"
 
@@ -164,7 +165,7 @@ msgstr ""
 "fortsette og prøve å skrive inn sikkerhetskoden igjen, eller tilbakestille "
 "sikkerhetskoden."
 
-#: templates/reset-start.html:7
+#: templates/reset-start.html:7 templates/reset-start.html:10
 msgid ""
 "Are you sure you want to reset your PIN? You must sign in to Persona to "
 "reset your PIN."
@@ -187,7 +188,7 @@ msgid "That took longer than expected. Retry?"
 msgstr "Dette tok lengre tid enn forventet. Prøv igjen?"
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11
-#: public/js/views/create-pin.js:72
+#: public/js/views/create-pin.js:72 templates/reset-start.html:15
 msgid "Back"
 msgstr "Tilbake"
 
@@ -204,7 +205,8 @@ msgstr "Send inn"
 #: public/js/views/reset-start.js:107 public/js/views/create-pin.js:101
 #: public/js/views/enter-pin.js:65 public/js/views/reset-start.js:108
 #: public/js/views/force-auth.js:61 public/js/views/reset-pin.js:30
-#: public/js/views/reset-start.js:112
+#: public/js/views/reset-start.js:112 public/js/views/force-auth.js:60
+#: public/js/views/reset-start.js:122
 msgid "Retry?"
 msgstr "Prøv igjen?"
 
@@ -220,6 +222,7 @@ msgstr "Noe gikk galt."
 
 #: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118
 #: public/js/views/reset-start.js:119 public/js/views/reset-start.js:123
+#: public/js/views/reset-start.js:133
 msgid "Reset your PIN?"
 msgstr "Nullstill din PIN-kode?"
 
@@ -326,10 +329,12 @@ msgid "An unexpected error occurred."
 msgstr ""
 
 #: public/js/views/force-auth.js:87 public/js/views/force-auth.js:100
+#: public/js/views/force-auth.js:99
 msgid "Sign-in to reset PIN"
 msgstr ""
 
 #: public/js/views/force-auth.js:90 public/js/views/force-auth.js:103
+#: public/js/views/force-auth.js:102
 msgid "Please sign in to reset your PIN."
 msgstr ""
 
@@ -359,7 +364,7 @@ msgstr ""
 msgid "You will not be charged."
 msgstr ""
 
-#: templates/reset-start.html:12
+#: templates/reset-start.html:12 templates/reset-start.html:16
 #, fuzzy
 msgid "Reset"
 msgstr "Nullstill sikkerhetskode"
@@ -371,6 +376,16 @@ msgid ""
 msgstr ""
 
 #: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68
+#: public/js/views/force-auth.js:90
 #, fuzzy
 msgid "Connecting to Firefox Accounts"
 msgstr "Kobler til Persona"
+
+#: templates/reset-start.html:8
+#, fuzzy
+msgid ""
+"Are you sure you want to reset your PIN? You must sign in to Firefox "
+"Accounts to reset your PIN."
+msgstr ""
+"Er du sikker på at du vil tilbakestille din sikkerhetskode? Du må logge deg "
+"på Persona for å tilbakestille sikkerhetskoden."

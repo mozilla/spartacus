@@ -4,7 +4,11 @@
 {% block page %}
   <section class="content reset-start">
     <h1>{{ gettext('Forgot your PIN?') }}</h1>
-    <p>{{ gettext('Are you sure you want to reset your PIN? You must sign in to Persona to reset your PIN.') }}</p>
+    {% if useFxA %}
+      <p>{{ gettext('Are you sure you want to reset your PIN? You must sign in to Firefox Accounts to reset your PIN.') }}</p>
+    {% else %}
+      <p>{{ gettext('Are you sure you want to reset your PIN? You must sign in to Persona to reset your PIN.') }}</p>
+    {% endif %}
   </section>
 
   <menu class="buttons" type="toolbar">

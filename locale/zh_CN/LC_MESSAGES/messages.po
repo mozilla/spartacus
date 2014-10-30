@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Webpay\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-27 16:01+0000\n"
+"POT-Creation-Date: 2014-10-30 12:29+0000\n"
 "PO-Revision-Date: 2014-10-01 23:39+0000\n"
 "Last-Translator: yfdyh000 <yfdyh000@gmail.com>\n"
 "Language-Team: Chinese Simplified, China <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgid "Cancel"
 msgstr "取消"
 
 #: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64
-#: public/js/lib/pin-widget.js:68
+#: public/js/lib/pin-widget.js:68 public/js/lib/pin-widget.js:65
 msgid "PIN can only contain digits."
 msgstr "PIN 码只能为数字。"
 
@@ -46,6 +46,7 @@ msgstr "正在开始付款"
 #: public/js/views/login.js:19 public/js/views/force-auth.js:81
 #: public/js/views/login.js:18 public/js/views/reset-start.js:67
 #: public/js/views/force-auth.js:93 public/js/views/reset-start.js:70
+#: public/js/views/force-auth.js:92
 msgid "Connecting to Persona"
 msgstr "正在连接至 Persona"
 
@@ -132,7 +133,7 @@ msgstr "确认 PIN 码"
 #: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
 #: templates/was-locked.html:11 public/js/views/force-auth.js:89
 #: public/js/views/force-auth.js:102 public/js/views/reset-pin.js:66
-#: public/js/views/reset-pin.js:69
+#: public/js/views/reset-pin.js:69 public/js/views/force-auth.js:101
 msgid "Reset PIN"
 msgstr "重置 PIN 码"
 
@@ -160,7 +161,7 @@ msgid ""
 msgstr ""
 "您输错太多次 PIN 码，已被锁定。您可以继续尝试输入，或者重置您的 PIN 码。"
 
-#: templates/reset-start.html:7
+#: templates/reset-start.html:7 templates/reset-start.html:10
 msgid ""
 "Are you sure you want to reset your PIN? You must sign in to Persona to "
 "reset your PIN."
@@ -181,7 +182,7 @@ msgid "That took longer than expected. Retry?"
 msgstr "花的时间比预期的要久，重试一次？"
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11
-#: public/js/views/create-pin.js:72
+#: public/js/views/create-pin.js:72 templates/reset-start.html:15
 msgid "Back"
 msgstr "返回"
 
@@ -198,7 +199,8 @@ msgstr "提交"
 #: public/js/views/reset-start.js:107 public/js/views/create-pin.js:101
 #: public/js/views/enter-pin.js:65 public/js/views/reset-start.js:108
 #: public/js/views/force-auth.js:61 public/js/views/reset-pin.js:30
-#: public/js/views/reset-start.js:112
+#: public/js/views/reset-start.js:112 public/js/views/force-auth.js:60
+#: public/js/views/reset-start.js:122
 msgid "Retry?"
 msgstr "重试？"
 
@@ -214,6 +216,7 @@ msgstr "出问题了。"
 
 #: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118
 #: public/js/views/reset-start.js:119 public/js/views/reset-start.js:123
+#: public/js/views/reset-start.js:133
 msgid "Reset your PIN?"
 msgstr "重置 PIN 码？"
 
@@ -320,10 +323,12 @@ msgid "An unexpected error occurred."
 msgstr "发生意外错误。"
 
 #: public/js/views/force-auth.js:87 public/js/views/force-auth.js:100
+#: public/js/views/force-auth.js:99
 msgid "Sign-in to reset PIN"
 msgstr "登录以重置 PIN"
 
 #: public/js/views/force-auth.js:90 public/js/views/force-auth.js:103
+#: public/js/views/force-auth.js:102
 msgid "Please sign in to reset your PIN."
 msgstr "请登录以重置您的 PIN。"
 
@@ -351,7 +356,7 @@ msgstr "模拟支付"
 msgid "You will not be charged."
 msgstr "您将不会被收费。"
 
-#: templates/reset-start.html:12
+#: templates/reset-start.html:12 templates/reset-start.html:16
 msgid "Reset"
 msgstr "重置"
 
@@ -364,6 +369,14 @@ msgstr ""
 "a>"
 
 #: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68
+#: public/js/views/force-auth.js:90
 #, fuzzy
 msgid "Connecting to Firefox Accounts"
 msgstr "正在连接至 Persona"
+
+#: templates/reset-start.html:8
+#, fuzzy
+msgid ""
+"Are you sure you want to reset your PIN? You must sign in to Firefox "
+"Accounts to reset your PIN."
+msgstr "您确定要重置 PIN 码吗？必须登录 Persona 才能重置您的 PIN 码。"

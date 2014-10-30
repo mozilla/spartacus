@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-27 16:01+0000\n"
+"POT-Creation-Date: 2014-10-30 12:29+0000\n"
 "PO-Revision-Date: 2014-10-02 04:47+0000\n"
 "Last-Translator: Vanja <tumbas93@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgid "Cancel"
 msgstr "Otkaži"
 
 #: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64
-#: public/js/lib/pin-widget.js:68
+#: public/js/lib/pin-widget.js:68 public/js/lib/pin-widget.js:65
 msgid "PIN can only contain digits."
 msgstr "PIN može imati samo brojeve."
 
@@ -47,6 +47,7 @@ msgstr "Započinjanje uplate"
 #: public/js/views/login.js:19 public/js/views/force-auth.js:81
 #: public/js/views/login.js:18 public/js/views/reset-start.js:67
 #: public/js/views/force-auth.js:93 public/js/views/reset-start.js:70
+#: public/js/views/force-auth.js:92
 msgid "Connecting to Persona"
 msgstr "Povezivanje sa Persona servisom"
 
@@ -133,7 +134,7 @@ msgstr "Potvrdi PIN"
 #: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
 #: templates/was-locked.html:11 public/js/views/force-auth.js:89
 #: public/js/views/force-auth.js:102 public/js/views/reset-pin.js:66
-#: public/js/views/reset-pin.js:69
+#: public/js/views/reset-pin.js:69 public/js/views/force-auth.js:101
 msgid "Reset PIN"
 msgstr "Resetuj PIN"
 
@@ -164,7 +165,7 @@ msgstr ""
 "Vaš PIN je bio zaključan jer ste ga uneli pogrešno previše puta. Možete "
 "nastaviti i ponovo uneti svoj PIN ili ga možete resetovati."
 
-#: templates/reset-start.html:7
+#: templates/reset-start.html:7 templates/reset-start.html:10
 msgid ""
 "Are you sure you want to reset your PIN? You must sign in to Persona to "
 "reset your PIN."
@@ -187,7 +188,7 @@ msgid "That took longer than expected. Retry?"
 msgstr "Ovo traje duže nego što se očekivalo. Pokušati ponovo?"
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11
-#: public/js/views/create-pin.js:72
+#: public/js/views/create-pin.js:72 templates/reset-start.html:15
 msgid "Back"
 msgstr "Nazad"
 
@@ -204,7 +205,8 @@ msgstr "Pošalji"
 #: public/js/views/reset-start.js:107 public/js/views/create-pin.js:101
 #: public/js/views/enter-pin.js:65 public/js/views/reset-start.js:108
 #: public/js/views/force-auth.js:61 public/js/views/reset-pin.js:30
-#: public/js/views/reset-start.js:112
+#: public/js/views/reset-start.js:112 public/js/views/force-auth.js:60
+#: public/js/views/reset-start.js:122
 msgid "Retry?"
 msgstr "Ponoviti?"
 
@@ -220,6 +222,7 @@ msgstr "Došlo je do greške."
 
 #: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118
 #: public/js/views/reset-start.js:119 public/js/views/reset-start.js:123
+#: public/js/views/reset-start.js:133
 msgid "Reset your PIN?"
 msgstr "Resetuj PIN?"
 
@@ -328,10 +331,12 @@ msgid "An unexpected error occurred."
 msgstr "Desila se neočekivana greška."
 
 #: public/js/views/force-auth.js:87 public/js/views/force-auth.js:100
+#: public/js/views/force-auth.js:99
 msgid "Sign-in to reset PIN"
 msgstr "Prijavite se da biste resetovali PIN"
 
 #: public/js/views/force-auth.js:90 public/js/views/force-auth.js:103
+#: public/js/views/force-auth.js:102
 msgid "Please sign in to reset your PIN."
 msgstr "Molimo da se prijavite da biste resetovali Vaš PIN."
 
@@ -359,7 +364,7 @@ msgstr "Simuliraj uplatu"
 msgid "You will not be charged."
 msgstr "Neće Vam biti naplaćeno."
 
-#: templates/reset-start.html:12
+#: templates/reset-start.html:12 templates/reset-start.html:16
 msgid "Reset"
 msgstr "Resetuj"
 
@@ -372,6 +377,16 @@ msgstr ""
 "s>polisom privatnosti</a>"
 
 #: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68
+#: public/js/views/force-auth.js:90
 #, fuzzy
 msgid "Connecting to Firefox Accounts"
 msgstr "Povezivanje sa Persona servisom"
+
+#: templates/reset-start.html:8
+#, fuzzy
+msgid ""
+"Are you sure you want to reset your PIN? You must sign in to Firefox "
+"Accounts to reset your PIN."
+msgstr ""
+"Da li ste sigurni da želite da obnovite svoj PIN? Morate se prijaviti na "
+"Persona nalog da biste resetovali svoj PIN."

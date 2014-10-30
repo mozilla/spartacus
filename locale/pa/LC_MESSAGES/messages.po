@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-27 16:01+0000\n"
+"POT-Creation-Date: 2014-10-30 12:29+0000\n"
 "PO-Revision-Date: 2014-10-12 14:34+0000\n"
 "Last-Translator: Aman <amanpreet.alam@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgid "Cancel"
 msgstr "ਰੱਦ"
 
 #: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64
-#: public/js/lib/pin-widget.js:68
+#: public/js/lib/pin-widget.js:68 public/js/lib/pin-widget.js:65
 msgid "PIN can only contain digits."
 msgstr "PIN ਅੰਕ ਹੀ ਹੋ ਸਕਦਾ ਹੈ।"
 
@@ -46,6 +46,7 @@ msgstr "ਭੁਗਤਾਨ ਸ਼ੁਰੂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹ�
 #: public/js/views/login.js:19 public/js/views/force-auth.js:81
 #: public/js/views/login.js:18 public/js/views/reset-start.js:67
 #: public/js/views/force-auth.js:93 public/js/views/reset-start.js:70
+#: public/js/views/force-auth.js:92
 msgid "Connecting to Persona"
 msgstr "Persona ਨੂੰ ਕੁਨੈਕਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
@@ -132,7 +133,7 @@ msgstr "ਪਿੰਨ ਦੀ ਪੁਸ਼ਟੀ"
 #: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
 #: templates/was-locked.html:11 public/js/views/force-auth.js:89
 #: public/js/views/force-auth.js:102 public/js/views/reset-pin.js:66
-#: public/js/views/reset-pin.js:69
+#: public/js/views/reset-pin.js:69 public/js/views/force-auth.js:101
 msgid "Reset PIN"
 msgstr "ਰਿਸੇਟ ਪਿੰਨ"
 
@@ -163,7 +164,7 @@ msgstr ""
 "ਤੁਹਾਡੇ ਪਿੰਨ ਲਾਕ ਹੋ ਗਿਆ ਹੈ ਕਿਉਕਿ ਤੁਸੀ ਇਸਨੂੰ ਕਈ ਵਾਰ ਗਲਤ ਭਰਿਆ ਹੈ। ਤੁਸੀ ਜਾਰੀ ਰੱਖ ਸਕਦੇ ਹੋ ਅਤੇ "
 "ਤੁਹਾਡੇ ਪਿੰਨ ਦੇ ਕੇ ਕੋਸਿਸ ਕਰੋ ਜਾ ਪਿੰਨ ਫਿਰ ਤੋ ਰੀਸੈਟ ਕਰ ਕੇ।"
 
-#: templates/reset-start.html:7
+#: templates/reset-start.html:7 templates/reset-start.html:10
 msgid ""
 "Are you sure you want to reset your PIN? You must sign in to Persona to "
 "reset your PIN."
@@ -186,7 +187,7 @@ msgid "That took longer than expected. Retry?"
 msgstr "ਉਸ ਨੂੰ ਉਮੀਦ ਤੋਂ ਵੱਧ ਸਮਾਂ ਲੱਗਾ। ਮੁੜ-ਕੋਸ਼ਿਸ਼ ਕਰਨੀ ਹੈ?"
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11
-#: public/js/views/create-pin.js:72
+#: public/js/views/create-pin.js:72 templates/reset-start.html:15
 msgid "Back"
 msgstr "ਪਿੱਛੇ"
 
@@ -203,7 +204,8 @@ msgstr "ਭੇਜੋ"
 #: public/js/views/reset-start.js:107 public/js/views/create-pin.js:101
 #: public/js/views/enter-pin.js:65 public/js/views/reset-start.js:108
 #: public/js/views/force-auth.js:61 public/js/views/reset-pin.js:30
-#: public/js/views/reset-start.js:112
+#: public/js/views/reset-start.js:112 public/js/views/force-auth.js:60
+#: public/js/views/reset-start.js:122
 msgid "Retry?"
 msgstr "ਮੁੜ-ਕੋਸ਼ਿਸ਼?"
 
@@ -219,6 +221,7 @@ msgstr "ਕੁਝ ਗਲਤ ਹੋਇਆ।"
 
 #: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118
 #: public/js/views/reset-start.js:119 public/js/views/reset-start.js:123
+#: public/js/views/reset-start.js:133
 msgid "Reset your PIN?"
 msgstr "ਆਪਣਾ ਪਿੰਨ ਮੁੜ-ਸੈੱਟ ਕਰਨਾ ਹੈ?"
 
@@ -325,10 +328,12 @@ msgid "An unexpected error occurred."
 msgstr "ਅਚਾਨਕ ਗਲਤੀ ਆਈ ਹੈ।"
 
 #: public/js/views/force-auth.js:87 public/js/views/force-auth.js:100
+#: public/js/views/force-auth.js:99
 msgid "Sign-in to reset PIN"
 msgstr "ਪਿੰਨ ਮੁੜ-ਸੈੱਟ ਕਰਨ ਲਈ ਸਾਇਨ ਇਨ ਕਰੋ"
 
 #: public/js/views/force-auth.js:90 public/js/views/force-auth.js:103
+#: public/js/views/force-auth.js:102
 msgid "Please sign in to reset your PIN."
 msgstr "ਆਪਣਾ ਪਿੰਨ ਮੁੜ-ਸੈੱਟ ਕਰਨ ਲਈ ਸਾਇਨ ਇਨ ਕਰੋ ਜੀ।"
 
@@ -356,7 +361,7 @@ msgstr "ਭੁਗਤਾਨ ਦੀ ਨਕਲ ਕਰੋ"
 msgid "You will not be charged."
 msgstr "ਤੁਹਾਡੇ ਕੋਲੋ ਖ਼ਰਚਾ ਨਹੀਂ ਲਿਆ ਜਾਵੇਗਾ।"
 
-#: templates/reset-start.html:12
+#: templates/reset-start.html:12 templates/reset-start.html:16
 msgid "Reset"
 msgstr "ਮੁੜ-ਸੈੱਟ"
 
@@ -369,6 +374,16 @@ msgstr ""
 "a> ਨਾਲ ਸਹਿਮਤ ਹੁੰਦੇ ਹੋ"
 
 #: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68
+#: public/js/views/force-auth.js:90
 #, fuzzy
 msgid "Connecting to Firefox Accounts"
 msgstr "Persona ਨੂੰ ਕੁਨੈਕਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
+
+#: templates/reset-start.html:8
+#, fuzzy
+msgid ""
+"Are you sure you want to reset your PIN? You must sign in to Firefox "
+"Accounts to reset your PIN."
+msgstr ""
+"ਤੁਹਾਨੂੰ ਯਕੀਨ ਹੈ ਕਿ ਤੁਸੀ ਪਿੰਨ ਰਿਸੈੱਟ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ? ਤੁਹਾਨੂੰ ਆਪਣੇ ਪਿੰਨ ਰੀਸੈੱਟ ਕਰਨ ਲਈ Persona ਨੂੰ "
+"ਵਿੱਚ ਲਾਗਿਨ ਕਰਨਾ ਲਾਜ਼ਮੀ ਹੈ।"

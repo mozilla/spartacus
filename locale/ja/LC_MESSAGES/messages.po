@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-30 12:29+0000\n"
-"PO-Revision-Date: 2014-10-01 21:36-0400\n"
+"PO-Revision-Date: 2014-11-03 19:47-0400\n"
 "Last-Translator: Kohei Yoshino <kohei.yoshino@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -376,15 +376,13 @@ msgstr ""
 
 #: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68
 #: public/js/views/force-auth.js:90
-#, fuzzy
 msgid "Connecting to Firefox Accounts"
-msgstr "Persona に接続しています"
+msgstr "Firefox Accounts に接続しています"
 
 #: templates/reset-start.html:8
-#, fuzzy
 msgid ""
 "Are you sure you want to reset your PIN? You must sign in to Firefox "
 "Accounts to reset your PIN."
 msgstr ""
-"本当に暗証番号をリセットしますか？ 続けるには Persona でログインする必要があ"
-"ります。"
+"本当に暗証番号をリセットしますか？ 続けるには Firefox Accounts でログインする"
+"必要があります。"

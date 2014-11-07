@@ -12,6 +12,8 @@ define([
     if (e) {
       e.preventDefault();
     }
+    utils.trackEvent({'action': 'cancel',
+                      'label': 'Payment Cancelled'});
     app.error.close();
     app.throbber.render(i18n.gettext('Payment cancelled.'));
     errorCode = errorCode || 'USER_CANCELLED';

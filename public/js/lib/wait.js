@@ -54,10 +54,10 @@ define([
   function startWaiting(expectedStatus) {
     app.error.close();
     app.throbber.render(gettext('Retrieving Transaction'));
+    utils.trackEvent({'action': 'payment',
+                      'label': 'Start Waiting For Provider'});
     startGlobalTimer();
     poll(expectedStatus);
-    utils.trackEvent({'action': 'payment',
-                      'label': 'Start waiting for provider'});
   }
 
   function poll(expectedStatus) {
@@ -98,6 +98,8 @@ define([
             if (!data.provider) {
               logger.error('The API response returned a falsey provider:',
                             data.provider);
+              utils.trackEvent({'action': 'payment',
+                                'label': 'Missing Provider'});
               return app.error.render({errorCode: 'MISSING_PROVIDER'});
             }
             var preparation;
@@ -122,7 +124,9 @@ define([
             });
 
             preparation.fail(function() {
-              logger.error('Failed to log out of payment provider', data.provider);
+              logger.error('Failed to prepare payment provider', data.provider);
+              utils.trackEvent({'action': 'payment',
+                                'label': 'Provider Preparation Failed'});
               return app.error.render({errorCode: 'PROVIDER_LOGOUT_FAIL'});
             });
 
@@ -141,11 +145,16 @@ define([
         clear();
         app.throbber.close();
         logger.log('transaction failed');
+        utils.trackEvent({'action': 'payment',
+                          'label': 'Transaction Failed'});
         return app.error.render({errorCode: 'TRANS_FAILED'});
 
       } else if (data.status === utils.bodyData.transStatusCancelled) {
         clear();
         logger.log('[wait] payment cancelled by user; closing pay flow');
+        utils.trackEvent({'action': 'payment',
+                          'label': 'Transaction Cancelled By User'});
+
         trackClosePayFlow();
         // This string is used to determine the message on Marketplace;
         // change it at your peril.

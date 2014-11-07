@@ -4,8 +4,9 @@ define([
   'cancel',
   'error-codes',
   'log',
+  'utils',
   'views/base'
-], function(cancel, errorCodes, log, BaseView){
+], function(cancel, errorCodes, log, utils, BaseView){
 
   'use strict';
 
@@ -21,6 +22,8 @@ define([
 
     defaultCancel: function(e) {
       e.preventDefault();
+      utils.trackEvent({'action': 'error',
+                        'label': 'Default Cancel Clicked'});
       this.close();
       cancel.callPayFailure(e, this.errorCode);
     },

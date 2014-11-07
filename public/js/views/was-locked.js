@@ -19,6 +19,8 @@ define([
       e.preventDefault();
       // Expectation is the user has a pin to go to enter pin.
       if (app.pin.get('pin') === true) {
+        utils.trackEvent({'action': 'was-locked',
+                          'label': 'User Clicked Continue'});
         app.router.showEnterPin();
       } else {
         utils.trackEvent({action: 'was-locked',
@@ -29,6 +31,8 @@ define([
 
     handleResetStart: function(e) {
       e.preventDefault();
+      utils.trackEvent({'action': 'was-locked',
+                        'label': 'User Clicked Reset PIN'});
       app.router.showResetStart();
     },
 

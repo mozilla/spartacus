@@ -35,6 +35,8 @@ define([
 
     handleBack: function(e) {
       e.preventDefault();
+      utils.trackEvent({'action': 'forgot pin',
+                        'label': 'User Clicked Back'});
       app.router.showEnterPin();
     },
 

@@ -81,6 +81,8 @@ define([
         this.submitData(this.curPin);
       } else {
         this.clearPin();
+        utils.trackEvent({'action': 'pin form',
+                          'label': 'Pins Do Not Match'});
         pin.showError(this.gettext('PINs do not match.'));
       }
     },
@@ -91,6 +93,8 @@ define([
       var req = app.pin.sync('create', app.pin, {'data': {'pin': pinData}});
       var that = this;
       req.done(function() {
+        utils.trackEvent({'action': pinCreateAction,
+                          'label': 'Pin Created Successfully'});
         app.router.showWaitToStart();
       }).fail(function($xhr, textStatus) {
         if (textStatus === 'timeout') {

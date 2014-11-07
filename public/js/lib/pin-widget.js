@@ -1,8 +1,9 @@
 define([
   'i18n-abide-utils',
   'jquery',
-  'log'
-], function(i18n, $, log) {
+  'log',
+  'utils'
+], function(i18n, $, log, utils) {
 
   'use strict';
 
@@ -62,6 +63,8 @@ define([
     // If not a number or backspace and we still don't have the whole pin
     // show a message to indicate to the user that the input is incorrect.
     } else if (pinBuffer.length !== pinMaxLength) {
+      utils.trackEvent({'action': 'pin form',
+                        'label': 'Pin Error Displayed'});
       showError(i18n.gettext('PIN can only contain digits.'));
       return false;
     }

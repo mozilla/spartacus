@@ -11,6 +11,7 @@ define([
   'use strict';
 
   var logger = log('views', 'enter-pin');
+  var pinCheckAction = 'check-pin';
 
   var EnterPinView = PageView.extend({
 
@@ -22,6 +23,8 @@ define([
 
     handleForgotPin: function(e) {
       e.preventDefault();
+      utils.trackEvent({'action': pinCheckAction,
+                        'label': 'Forgot PIN Clicked'});
       app.router.showResetStart();
     },
 
@@ -34,11 +37,12 @@ define([
       var that = this;
       var req = app.pin.sync('check', app.pin, {data: {pin: pin.getPin()}});
 
-      var pinCheckAction = 'check-pin';
       app.throbber.render();
 
       req.done(function() {
         app.router.showWaitToStart();
+        utils.trackEvent({action: pinCheckAction,
+                          label: 'PIN Check Success'});
       }).fail(function($xhr, textStatus) {
 
         app.throbber.close();
@@ -75,6 +79,8 @@ define([
           utils.trackEvent({action: pinCheckAction,
                             label: 'Pin Check API Call Invalid Form Data'});
           pin.resetPinUI();
+          utils.trackEvent({'action': 'pin form',
+                            'label': 'Wrong PIN'});
           pin.showError(that.gettext('Wrong PIN'));
         } else if ($xhr.status === 403) {
           logger.log('User not authenticated');

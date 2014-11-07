@@ -12,6 +12,9 @@ define([
 
     render: function(){
       app.throbber.render(this.gettext('Completing payment'));
+      utils.trackEvent({'action': 'wait-to-finish',
+                        'label': 'Completing Payment'});
+
       var statusCompleted = utils.bodyData.transStatusCompleted;
       if (typeof statusCompleted !== 'undefined') {
         wait.startWaiting(statusCompleted);

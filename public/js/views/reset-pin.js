@@ -20,6 +20,9 @@ define([
 
       req.done(function() {
         logger.log('pin reset successfully');
+        utils.trackEvent({'action': pinResetAction,
+                          'label': 'Pin Reset Success'});
+
         app.router.showWaitToStart();
       }).fail(function($xhr, textStatus) {
         if (textStatus === 'timeout') {

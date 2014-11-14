@@ -7,10 +7,10 @@ define([
 
   'use strict';
 
+  var backspace = 8;
   var logger = log('lib', 'pin-widget');
   var pinMaxLength = 4;
   var pinBuffer = '';
-
   var numericRx = /^\d$/;
 
   // Placeholders for jQuery elements.
@@ -21,6 +21,8 @@ define([
   var $content;
   var $forgotPin;
   var $terms;
+  var $pinBox;
+
 
   function getPin() {
     return pinBuffer;
@@ -52,17 +54,30 @@ define([
     $submitButton.prop('disabled', (pinBuffer.length !== pinMaxLength));
   }
 
+  function isModifierKey(e) {
+    return e.altKey || e.metaKey || e.ctrlKey;
+  }
+
   function handleKeyPress(e) {
     var key = String.fromCharCode(e.charCode);
+    var keyCode = e.keyCode;
+
+    // Don't prevent non-char keys save for backspace which we handle
+    // specially.
+    // This allows things like cmd+r / tab / shift + tab etc.
+    // It also allows enter to submit the PIN.
+    if (isModifierKey(e) || (e.charCode === 0 && keyCode !== backspace)) {
+      return true;
+    }
     // Check if [0-9]
     if (numericRx.test(key) && pinBuffer.length !== pinMaxLength) {
       pinBuffer += key;
     // OR if this is a backspace.
-    } else if (e.keyCode === 8 && pinBuffer.length > 0) {
+    } else if (keyCode === backspace && pinBuffer.length > 0) {
       pinBuffer = pinBuffer.slice(0, -1);
     // If not a number or backspace and we still don't have the whole pin
     // show a message to indicate to the user that the input is incorrect.
-    } else if (pinBuffer.length !== pinMaxLength) {
+    } else if (pinBuffer.length !== pinMaxLength && keyCode !== backspace) {
       utils.trackEvent({'action': 'pin form',
                         'label': 'Pin Error Displayed'});
       showError(i18n.gettext('PIN can only contain digits.'));
@@ -101,11 +116,21 @@ define([
     logger.log('Initing pin widget');
     $pseudoInputs = $('.pinbox span');
     $pinInput = $('#pin');
+    $pinBox = $('.pinbox');
     $submitButton = $('.cta[type=submit]');
     $errorMessage = $('.err-msg');
     $forgotPin = $('.forgot-pin');
     $terms = $('.terms');
     $content = $('.content');
+
+    $pinInput.on('focus', function() {
+      $pinBox.addClass('focused');
+    });
+
+    $pinInput.on('blur', function() {
+      $pinBox.removeClass('focused');
+    });
+
     $content.on('click', function(e) {
       var targetNodeName;
       if (e.target) {

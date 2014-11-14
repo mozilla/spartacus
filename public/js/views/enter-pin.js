@@ -10,6 +10,7 @@ define([
 
   'use strict';
 
+  var enterKeyCode = 13;
   var logger = log('views', 'enter-pin');
   var pinCheckAction = 'check-pin';
 
@@ -18,6 +19,11 @@ define([
     events: {
       'click .cancel': cancel.callPayFailure,
       'click .cta:enabled': 'handleSubmit',
+      'keypress': function(e) {
+        if ($('.cta:enabled').length && e.keyCode === enterKeyCode) {
+          this.handleSubmit(e);
+        }
+      },
       'click .forgot-pin a': 'handleForgotPin',
     },
 

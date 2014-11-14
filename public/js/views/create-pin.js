@@ -11,6 +11,7 @@ define([
 
   'use strict';
 
+  var enterKeyCode = 13;
   var logger = log('views', 'create-pin');
 
   var CreatePinView = PageView.extend({
@@ -20,6 +21,11 @@ define([
     events: {
       'click .cancel': cancel.callPayFailure,
       'click .cta:enabled': 'handleContinue',
+      'keypress': function(e) {
+        if ($('.cta:enabled').length && e.keyCode === enterKeyCode) {
+          this.handleContinue(e);
+        }
+      },
       'click .tos': function(e) {
         e.preventDefault();
         this.openExtUrl(utils.getTermsLink(), utils.bodyData.termsOfService);
@@ -65,6 +71,11 @@ define([
       this.delegateEvents({
         'click .cancel': 'handleBack',
         'click .cta:enabled': 'handleSubmit',
+        'keypress': function(e) {
+          if ($('.cta:enabled').length && e.keyCode === enterKeyCode) {
+            this.handleSubmit(e);
+          }
+        }
       });
       this.curPin = pin.getPin();
       this._origHeading = this.getSelectorText('h1');

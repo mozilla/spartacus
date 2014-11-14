@@ -525,6 +525,15 @@ function url(path) {
   return basePath + '/' + path;
 }
 
+function sendEnterKey(selector) {
+  casper.evaluate(function(selector) {
+    /*global $ */
+    var e = $.Event('keypress');
+    e.which = 13;
+    e.keyCode = 13;
+    $(selector).trigger(e);
+  }, selector || 'body');
+}
 
 module.exports = {
   assertErrorCode: assertErrorCode,
@@ -543,6 +552,7 @@ module.exports = {
   fakeWaitPoll: fakeWaitPoll,
   injectSinon: injectSinon,
   setLoginFilter: setLoginFilter,
+  sendEnterKey: sendEnterKey,
   startCasper: startCasper,
   url: url,
 };

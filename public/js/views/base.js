@@ -30,7 +30,7 @@ define([
 
     setTitle: function setTitle(title) {
       // Update the title element in the page.
-      $('title').text(title + suffix);
+      $('title').text((title || 'Payments')  + suffix);
     },
 
     template: function(template, data){

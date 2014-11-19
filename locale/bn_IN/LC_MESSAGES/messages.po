@@ -1,194 +1,197 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-30 12:29+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-09-25 11:27+0000\n"
+"PO-Revision-Date: 2014-11-19 07:48+0000\n"
+"Last-Translator: SreeMegha21 <s.guha21@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: bn_IN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.6.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1416383297.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
 msgid "Payment cancelled."
-msgstr ""
+msgstr "পেমেন্ট বাতিল হয়ে গেছে।"
 
 #: public/js/views/create-pin.js:105 templates/error.html:20
 #: templates/pin-form.html:26 public/js/views/create-pin.js:104
 #: public/js/views/error.js:51 templates/simulate.html:17
 #: public/js/views/create-pin.js:140 templates/pin-form.html:37
 msgid "Cancel"
-msgstr ""
+msgstr "বাতিল করুন"
 
 #: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64
-#: public/js/lib/pin-widget.js:68 public/js/lib/pin-widget.js:65
+#: public/js/lib/pin-widget.js:68
 msgid "PIN can only contain digits."
-msgstr ""
+msgstr "পিন শুধুমাত্র সংখ্যা হতে পারে।"
 
 #: webpay/base/templates/base.html:30
 msgid "You logged in as a different user, you must start the payment again."
 msgstr ""
+"অাপনি ভিন্ন ব্যবহারকারী হিসাবে লগ ইন করেছেন, অাপনাকে পুনরায় পেমেন্ট শুরু "
+"করতে হবে।"
 
 #: public/js/views/throbber.js:15 public/js/views/throbber.js:16
 #: templates/throbber.html:7
 msgid "Loading"
-msgstr ""
+msgstr "লোড হচ্ছে"
 
 #: webpay/base/templates/base.html:32
 msgid "Beginning payment"
-msgstr ""
+msgstr "পেমেন্ট শুরু করা হচ্ছে"
 
 #: public/js/views/login.js:19 public/js/views/force-auth.js:81
 #: public/js/views/login.js:18 public/js/views/reset-start.js:67
-#: public/js/views/force-auth.js:93 public/js/views/reset-start.js:70
-#: public/js/views/force-auth.js:92
 msgid "Connecting to Persona"
-msgstr ""
+msgstr "Persona সংযোগ স্থাপন করা হচ্ছে"
 
 #: webpay/base/templates/base.html:34
 msgid "Payment complete"
-msgstr ""
+msgstr "পেমেন্ট সম্পূ্র্ণ"
 
 #: public/js/lib/auth.js:22 public/js/lib/auth.js:20
 msgid "Oops"
-msgstr ""
+msgstr "ওহো"
 
 #: public/js/lib/auth.js:65 public/js/lib/auth.js:84 public/js/lib/auth.js:155
 msgid "This is taking longer than expected. Try again?"
-msgstr ""
+msgstr "প্রত্যাশিত সময়ের চেয়ে বেশি সময় নিচ্ছে। পুনরায় চেষ্টা করবেন?"
 
 #: public/js/lib/auth.js:19
 msgid "Something went wrong. Try again?"
-msgstr ""
+msgstr "কিছু ভুল আছে। পুনরায় চেষ্টা করবেন?"
 
 #: templates/error.html:27 public/js/views/error.js:52
 #: public/js/views/error.js:87 public/js/views/locked.js:24
 #: templates/iframe-overlay.html:14
 msgid "OK"
-msgstr ""
+msgstr "ঠিক অাছে"
 
 #: public/js/views/error.js:44 public/js/views/locked.js:23
 #: public/js/views/error.js:54
 msgid "Error"
-msgstr ""
+msgstr "ত্রুটি"
 
 #: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100
 #: public/js/views/enter-pin.js:97 public/js/views/enter-pin.js:101
 #: public/js/views/enter-pin.js:105
 msgid "Enter PIN"
-msgstr ""
+msgstr "পিন প্রবেশ করান"
 
 #: public/js/views/login.js:25 templates/login.html:5
 #: public/js/views/fxa-login.js:25 public/js/views/fxa-login.js:27
 #: public/js/views/login.js:24 public/js/views/login.js:26
 #: public/js/views/fxa-login.js:26 public/js/views/fxa-login.js:28
-#: public/js/views/fxa-login.js:29
 msgid "Sign In"
-msgstr ""
+msgstr "সাইন ইন"
 
 #: templates/login.html:6 public/js/views/fxa-login.js:28
 #: public/js/views/login.js:27 public/js/views/fxa-login.js:29
-#: public/js/views/fxa-login.js:30
 msgid "Sign in to continue with the payment"
-msgstr ""
+msgstr "পেমেন্ট নিয়ে অগ্রসর হতে চাইলে সাইন ইন করুন"
 
 #: templates/login.html:7 templates/login.html:9
 msgid "Sign in"
-msgstr ""
+msgstr "সাইন ইন"
 
 #: public/js/views/create-pin.js:106 public/js/views/create-pin.js:113
 #: public/js/views/reset-pin.js:64 templates/reset-start.html:12
 #: templates/was-locked.html:12 public/js/views/create-pin.js:105
 #: public/js/views/create-pin.js:112 templates/simulate.html:18
 #: public/js/views/create-pin.js:141 public/js/views/create-pin.js:148
-#: public/js/views/reset-pin.js:65
 msgid "Continue"
-msgstr ""
+msgstr "পরবর্তী"
 
 #: public/js/views/enter-pin.js:73 public/js/views/enter-pin.js:74
 #: public/js/views/enter-pin.js:78
 msgid "Wrong PIN"
-msgstr ""
+msgstr "ভুল PIN"
 
 #: public/js/views/create-pin.js:48 public/js/views/create-pin.js:84
 msgid "PINs do not match."
-msgstr ""
+msgstr "PIN গুলি মিলছে না।"
 
 #: webpay/pin/views.py:46 webpay/testing/views.py:25
 msgid "Create a PIN"
-msgstr ""
+msgstr "একটা PIN তৈরি করুন"
 
 #: webpay/pin/views.py:68 webpay/pin/views.py:185
 #: public/js/views/create-pin.js:36 public/js/views/create-pin.js:71
 msgid "Confirm PIN"
-msgstr ""
+msgstr "PIN নিশ্চিত করুন"
 
 #: webpay/pin/views.py:131 webpay/pin/views.py:157
 #: webpay/pin/templates/pin/pin_was_locked.html:13
 #: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
 #: templates/was-locked.html:11 public/js/views/force-auth.js:89
-#: public/js/views/force-auth.js:102 public/js/views/reset-pin.js:66
-#: public/js/views/reset-pin.js:69 public/js/views/force-auth.js:101
 msgid "Reset PIN"
-msgstr ""
+msgstr "PIN পুনরায় নির্ধারণ করুন"
 
 #. This is the same as the standard forgot
 #. password that most sites have.
 #: templates/pin-form.html:18 templates/reset-start.html:6
 #: templates/pin-form.html:29
 msgid "Forgot your PIN?"
-msgstr ""
+msgstr "আপনার PIN ভুলে গেছেন?"
 
 #: public/js/views/locked.js:24 public/js/views/locked.js:22
 msgid ""
 "You entered the wrong PIN too many times. Your account is locked. Please try "
 "your purchase again in 5 minutes."
 msgstr ""
+"অাপনি ভুল PIN অনেকবার প্রবেশ করিয়েছেন। অাপনার অ্যাকাউন্ট লক করা অাছে। "
+"অনুগ্রহ করে ৫ মিনিটের মধ্যে পুনরায় ক্রয় করার চেষ্টা করুন।"
 
 #: templates/was-locked.html:6
 msgid "Your PIN was locked"
-msgstr ""
+msgstr "আপনার PIN লক করা অাছে"
 
 #: templates/was-locked.html:7
 msgid ""
 "Your PIN was locked because you entered it incorrectly too many times. You "
 "can continue and try entering your PIN again or reset your PIN."
 msgstr ""
+"অাপনার PIN লক হয়ে গেছে কারণ আপনি ভুল PIN অনেকবার প্রবেশ করিয়েছেন। অাপনি "
+"অগ্রসর হতে পারেন এবং আপনার PIN অাবার প্রবেশ করিয়ে চেষ্টা করুন অথবা আপনার PIN "
+"পুনরায় নির্ধারণ করুন।"
 
-#: templates/reset-start.html:7 templates/reset-start.html:10
+#: templates/reset-start.html:7
 msgid ""
 "Are you sure you want to reset your PIN? You must sign in to Persona to "
 "reset your PIN."
 msgstr ""
+"আপনি কি নিশ্চিতরূপে অাপনার PIN পুনরায় নির্ধারণ করতে চান? অাপনাকে Persona "
+"সাইন ইন করতে হবে PIN পুনরায় নির্ধারণ করতে।"
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6
 #: webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"
-msgstr ""
+msgstr "পেমেন্ট যাচাই করা হচ্ছে"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30 public/js/lib/auth.js:25
 #: public/js/lib/auth.js:39
 msgid "Retrying"
-msgstr ""
+msgstr "পুনরায় চেষ্টা করা হচ্ছে"
 
 #: public/js/lib/auth.js:64
 msgid "That took longer than expected. Retry?"
-msgstr ""
+msgstr "প্রত্যাশিত সময়ের চেয়ে বেশি সময় নিচ্ছে। পুনরায় চেষ্টা করবেন?"
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11
-#: public/js/views/create-pin.js:72 templates/reset-start.html:15
+#: public/js/views/create-pin.js:72
 msgid "Back"
-msgstr ""
+msgstr "পূর্ববর্তী"
 
 #: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95
 #: public/js/views/enter-pin.js:96 public/js/views/create-pin.js:73
 #: public/js/views/enter-pin.js:100
 msgid "Submit"
-msgstr ""
+msgstr "জমা করুন"
 
 #: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60
 #: public/js/views/reset-pin.js:28 public/js/lib/wait.js:171
@@ -196,63 +199,59 @@ msgstr ""
 #: public/js/views/force-auth.js:53 public/js/views/reset-pin.js:29
 #: public/js/views/reset-start.js:107 public/js/views/create-pin.js:101
 #: public/js/views/enter-pin.js:65 public/js/views/reset-start.js:108
-#: public/js/views/force-auth.js:61 public/js/views/reset-pin.js:30
-#: public/js/views/reset-start.js:112 public/js/views/force-auth.js:60
-#: public/js/views/reset-start.js:122
 msgid "Retry?"
-msgstr ""
+msgstr "পুনরায় চেষ্টা করবেন?"
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
 #: public/js/views/create-pin.js:113 public/js/views/create-pin.js:115
 #: public/js/views/create-pin.js:149 public/js/views/create-pin.js:152
 msgid "Create PIN"
-msgstr ""
+msgstr "PIN তৈরি করুন"
 
 #: public/js/views/error.js:45
 msgid "Something went wrong."
-msgstr ""
+msgstr "কিছু ভুল আছে।"
 
 #: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118
-#: public/js/views/reset-start.js:119 public/js/views/reset-start.js:123
-#: public/js/views/reset-start.js:133
+#: public/js/views/reset-start.js:119
 msgid "Reset your PIN?"
-msgstr ""
+msgstr "PIN পুনরায় নির্ধারণ করবেন?"
 
 #: public/js/views/was-locked.js:13 public/js/views/was-locked.js:38
 msgid "Was Locked"
-msgstr ""
+msgstr "লক করা ছিলো"
 
 #: public/js/views/wait-for-tx.js:10 public/js/views/wait-to-start.js:13
 msgid "Setting up payment"
-msgstr ""
+msgstr "পেমেন্ট সেট আপ করা চলছে"
 
 #: public/js/error-codes.js:12
 msgid "An internal web request timed out."
-msgstr ""
+msgstr "একটি অভ্যন্তরীণ ওয়েব অনুরোধের সময়সীমা শেষ হয়েছে।"
 
 #: public/js/error-codes.js:13
 msgid "The system timed out while trying to log in."
-msgstr ""
+msgstr "লগ ইন করার সময় সিস্টেমের সময়সীমা শেষ হয়েছে।"
 
 #: public/js/error-codes.js:14
 msgid "An error occurred whilst trying to log out."
-msgstr ""
+msgstr "লগ আউট করার সময় একটি ত্রুটি ধরা পরেছে।"
 
 #: public/js/error-codes.js:15
 msgid "The system timed out while trying to log out."
-msgstr ""
+msgstr "লগ আউট করার সময় সিস্টেমের সময়সীমা শেষ হয়েছে।"
 
 #: public/js/error-codes.js:16
 msgid "Payments are temporarily disabled."
-msgstr ""
+msgstr "পেমেণ্ট অস্থায়ীভাবে নিষ্ক্রিয় করা হয়েছে।"
 
 #: public/js/error-codes.js:17
 msgid "An unexpected error occurred when creating your PIN."
-msgstr ""
+msgstr "একটি অপ্রত্যাশিত ত্রুটি ঘটেছে আপনার পিন তৈরি করার সময়।"
 
 #: public/js/error-codes.js:18 public/js/error-codes.js:27
 msgid "The PIN data submitted was invalid."
-msgstr ""
+msgstr "জমা করা পিন তথ্য অবৈধ।"
 
 #: public/js/error-codes.js:19
 msgid "No valid user found whilst attempting to create your PIN"
@@ -300,39 +299,37 @@ msgstr ""
 
 #: public/js/error-codes.js:31
 msgid "The transaction failed. You have not been charged for this purchase."
-msgstr ""
+msgstr "লেনদেন ব্যর্থ হয়েছে। এর জন্য আপনাকে অভিযুক্ত করা হয়েনি।"
 
 #: public/js/error-codes.js:32
 msgid ""
 "The payment method or price point is not supported for this region or "
 "operator."
-msgstr ""
+msgstr "এই অঞ্ছল বা অপারেটর এই পেমেণ্ট পদ্ধতি বা দাম বিন্দু সমর্থন করে না।"
 
 #: public/js/lib/auth.js:214
 msgid "Waiting for login"
-msgstr ""
+msgstr "লগ ইন এর জন্য অপেক্ষা করুন"
 
 #: public/js/lib/wait.js:56
 msgid "Retrieving Transaction"
-msgstr ""
+msgstr "লেনদেন পুনরুদ্ধার করা"
 
 #: public/js/views/error.js:55
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "একটি অপ্রত্যাশিত ত্রুটি ঘটেছে।"
 
-#: public/js/views/force-auth.js:87 public/js/views/force-auth.js:100
-#: public/js/views/force-auth.js:99
+#: public/js/views/force-auth.js:87
 msgid "Sign-in to reset PIN"
-msgstr ""
+msgstr "সাইন ইন করুন পিন রিসেট করতে"
 
-#: public/js/views/force-auth.js:90 public/js/views/force-auth.js:103
-#: public/js/views/force-auth.js:102
+#: public/js/views/force-auth.js:90
 msgid "Please sign in to reset your PIN."
-msgstr ""
+msgstr "আপনার পিন রিসেট করতে সাইন ইন করুন।"
 
 #: public/js/views/init.js:12
 msgid "Initializing"
-msgstr ""
+msgstr "আরম্ভ"
 
 #: public/js/views/locked.js:21
 msgid "PIN Locked"
@@ -340,37 +337,28 @@ msgstr ""
 
 #: public/js/views/payment-success.js:15 public/js/views/wait-to-finish.js:14
 msgid "Completing payment"
-msgstr ""
+msgstr "পেমেন্ট পূরণ করা"
 
 #: public/js/views/simulate.js:23
 msgid "Processing"
-msgstr ""
+msgstr "প্রসেসিং"
 
 #: public/js/views/simulate.js:51
 msgid "Simulate Payment"
-msgstr ""
+msgstr "পেমেন্ট নকল করা"
 
 #: public/js/views/simulate.js:55
 msgid "You will not be charged."
-msgstr ""
+msgstr "আপনি চার্জদিতে হবে না।"
 
-#: templates/reset-start.html:12 templates/reset-start.html:16
+#: templates/reset-start.html:12
 msgid "Reset"
-msgstr ""
+msgstr "রিসেট করুন"
 
 #: templates/pin-form.html:22
 msgid ""
 "By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)"
 "s>Privacy Policy</a>"
 msgstr ""
-
-#: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68
-#: public/js/views/force-auth.js:90
-msgid "Connecting to Firefox Accounts"
-msgstr ""
-
-#: templates/reset-start.html:8
-msgid ""
-"Are you sure you want to reset your PIN? You must sign in to Firefox "
-"Accounts to reset your PIN."
-msgstr ""
+"অগ্রসর হতে আপনি সম্মত হন আমাদের <a %(terms)s>শর্তাবলী</a> এবং <a %"
+"(privacy)s>গোপনীয়তা নীতির</a> সাথে"

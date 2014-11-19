@@ -11,7 +11,7 @@ define([
   'use strict';
 
   var logger = log('views', 'base');
-  var prefix = 'Webpay | ';
+  var suffix = ' | Firefox Marketplace';
 
   var BaseView = Backbone.View.extend({
 
@@ -30,7 +30,7 @@ define([
 
     setTitle: function setTitle(title) {
       // Update the title element in the page.
-      $('title').text(prefix + title);
+      $('title').text(title + suffix);
     },
 
     template: function(template, data){

@@ -23,6 +23,7 @@ casper.test.begin('Enter Pin API call returns 400', {
 
     casper.waitUntilVisible('.err-msg', function() {
       test.assertVisible('.err-msg', 'Error message should be shown as pin is invalid.');
+      test.assertVisible('.forgot-pin', 'Forgot PIN link should be available.');
     });
 
     casper.run(function() {

@@ -81,7 +81,7 @@ define([
           pin.resetPinUI();
           utils.trackEvent({'action': 'pin form',
                             'label': 'Wrong PIN'});
-          pin.showError(that.gettext('Wrong PIN'));
+          pin.showError(that.gettext('Wrong PIN'), {showForgotPin: true});
         } else if ($xhr.status === 403) {
           logger.log('User not authenticated');
           utils.trackEvent({action: pinCheckAction,

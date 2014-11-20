@@ -74,12 +74,15 @@ define([
     return false;
   }
 
-  function showError(errorMessage) {
+  function showError(errorMessage, options) {
+    options = options || {showForgotPin: false};
     logger.log('Show error message: ' + errorMessage);
     $errorMessage.text(errorMessage);
     $errorMessage.removeClass('hidden');
-    // Forgot PIN is only on the Enter PIN page.
-    $forgotPin.addClass('hidden');
+    if (!options.showForgotPin) {
+      // Forgot PIN is only shown on the Enter PIN page.
+      $forgotPin.addClass('hidden');
+    }
     // Terms are only used on the Create PIN page.
     $terms.addClass('hidden');
     focusPin();
@@ -88,7 +91,7 @@ define([
   function hideError() {
     logger.log('hiding error messages.');
     $errorMessage.addClass('hidden');
-    // Forgot PIN is only on the Enter PIN page.
+    // Forgot PIN is only shown on the Enter PIN page.
     $forgotPin.removeClass('hidden');
     // Terms are only used on the Create PIN page.
     $terms.removeClass('hidden');

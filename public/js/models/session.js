@@ -69,6 +69,7 @@ define([
       logger.log('loggedInUser', typeof user, user);
 
       var defaults = {
+        wantIssuer: 'firefox-accounts',
         loggedInUser: user || undefined,
         onlogin: function(assertion){
           that.calledBack = true;
@@ -97,12 +98,6 @@ define([
         }
       };
       var params = $.extend({}, defaults, options || {});
-
-      if (utils.supportsNativeFxA()) {
-        // On Firefox OS 2.0 and later, request Firefox Accounts login.
-        logger.log('Native FxA support detected.');
-        defaults.wantIssuer = 'firefox-accounts';
-      }
       logger.log('Running navigator.id.watch');
       this.runWatch(params);
     },

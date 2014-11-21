@@ -99,8 +99,8 @@
   var log = function(msg) {
     if (window.console && window.console.log)
       window.console.log("STUBBYID: " + msg);
-    if (navigator.id.stubby.onlog)
-      navigator.id.stubby.onlog(msg);
+    if (navigator.mozId.stubby.onlog)
+      navigator.mozId.stubby.onlog(msg);
   };
   var watchOptions = {
     _onlogin: null,
@@ -126,7 +126,7 @@
     }
   };
 
-  window.navigator.id = {
+  window.navigator.mozId = {
     stubby: {
       reset: function() {
         watchOptions._onlogin = null;
@@ -139,7 +139,7 @@
       getPersonaState: getLoginState,
       widgetElement: widget.el
     },
-    // https://developer.mozilla.org/en-US/docs/DOM/navigator.id.watch
+    // https://developer.mozilla.org/en-US/docs/DOM/navigator.mozId.watch
     watch: function navigator_id_watch(options) {
       if (!(typeof(options.loggedInUser) === "undefined" ||
             typeof(options.loggedInUser) === "string" ||
@@ -223,7 +223,7 @@
     }
   };
 
-  window.navigator.id.getVerifiedEmail = window.navigator.id.get;
+  window.navigator.mozId.getVerifiedEmail = window.navigator.mozId.get;
 
   if (document.readyState === "complete")
     widget.init();

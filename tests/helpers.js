@@ -414,7 +414,7 @@ function doLogin() {
 
 function doLogout() {
   casper.evaluate(function() {
-    navigator.id.logout();
+    navigator.mozId.logout();
   });
 }
 

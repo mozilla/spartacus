@@ -25,7 +25,7 @@ define([
     },
 
     runWatch: function(params) {
-      navigator.id.watch(params);
+      navigator.mozId.watch(params);
     },
 
     getRequestConfig: function(options) {
@@ -58,8 +58,8 @@ define([
     login: function(options) {
       this.calledBack = false;
       var config = this.getRequestConfig(options);
-      logger.log('Running navigator.id.request');
-      navigator.id.request(config);
+      logger.log('Running navigator.mozId.request');
+      navigator.mozId.request(config);
     },
 
     watchIdentity: function(options) {
@@ -98,7 +98,7 @@ define([
         }
       };
       var params = $.extend({}, defaults, options || {});
-      logger.log('Running navigator.id.watch');
+      logger.log('Running navigator.mozId.watch');
       this.runWatch(params);
     },
 

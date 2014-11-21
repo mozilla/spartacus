@@ -4,7 +4,7 @@
  *  - User clicks reset to start the reset pin process
  *  - User is logged out (Persona/Provider/Webpay) and the default logout handler is overriden.
  *  - Assuming a succesful logout the user is then prompted to login.
- *  - The login happens via a customised navigator.id.request.
+ *  - The login happens via a customised navigator.mozId.request.
  *  - The login handler (added via a one-off listener) does a reVerification request.
  *  - Assuming that's successful the user should then be directed to reset-pin.
  */
@@ -50,7 +50,7 @@ define([
       this.deferredLogout = $.Deferred();
       if (app.session.get('logged_in') === true) {
         logger.log('Logging out of Persona');
-        navigator.id.logout();
+        navigator.mozId.logout();
       } else {
         logger.log('Already logged out of Persona resolving the deferred.');
         this.deferredLogout.resolve();

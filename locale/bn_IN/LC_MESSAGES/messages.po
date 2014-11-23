@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-25 11:27+0000\n"
-"PO-Revision-Date: 2014-11-19 07:48+0000\n"
+"PO-Revision-Date: 2014-11-19 14:43+0000\n"
 "Last-Translator: SreeMegha21 <s.guha21@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: bn_IN\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1416383297.0\n"
+"X-POOTLE-MTIME: 1416408202.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
 msgid "Payment cancelled."
@@ -255,47 +255,47 @@ msgstr "জমা করা পিন তথ্য অবৈধ।"
 
 #: public/js/error-codes.js:19
 msgid "No valid user found whilst attempting to create your PIN"
-msgstr ""
+msgstr "কোন বৈধ ব্যবহারকারী পাওয়া যায়েনি আপনার পিন তৈরি করার সময়"
 
 #: public/js/error-codes.js:20
 msgid "Permission denied attempting to create your PIN."
-msgstr ""
+msgstr "আপনার পিন তৈরি করার সময় অনুমতি অস্বীকৃত।"
 
 #: public/js/error-codes.js:21
 msgid "The request timed out whilst attempting to create your PIN."
-msgstr ""
+msgstr "অনুমতির সময়সীমা সমাপ্ত হয়েছে আপানার পিন তৈরি করতে গিয়ে।"
 
 #: public/js/error-codes.js:22
 msgid "An unexpected error occurred whilst checking your PIN."
-msgstr ""
+msgstr "একটি অপ্রত্যাশিত ত্রুটি ঘটেছে আপনার পিন চেক করার সময়।"
 
 #: public/js/error-codes.js:23
 msgid "No valid user found whilst checking your PIN"
-msgstr ""
+msgstr "কোন বৈধ ব্যবহারকারী পাওয়া যায়েনি আপনার পিন চেক করার সময়"
 
 #: public/js/error-codes.js:24
 msgid "Permission denied attempting to check your PIN"
-msgstr ""
+msgstr "আপনার পিন চেক করার সময় অনুমতি অস্বীকৃত"
 
 #: public/js/error-codes.js:25
 msgid "The request timed out whilst trying to check your PIN"
-msgstr ""
+msgstr "অনুমতির সময়সীমা সমাপ্ত হয়েছে আমার পিন চেক করতে গিয়ে"
 
 #: public/js/error-codes.js:26
 msgid "An unexpected error occurred when resetting your PIN."
-msgstr ""
+msgstr "একটি অপ্রত্যাশিত ত্রুটি ঘটেছে আপনার পিন রিসেট করতে গিয়ে।"
 
 #: public/js/error-codes.js:28
 msgid "No valid user found whilst attempting to reset your PIN"
-msgstr ""
+msgstr "আপানার পিন রিসেট করতে গিয়ে কোন বৈধ ব্যবহারকারী পাওয়া যায়েনি"
 
 #: public/js/error-codes.js:29
 msgid "Permission denied attempting to reset your PIN."
-msgstr ""
+msgstr "অনুমতি অস্বীকৃত আপনার পিন রিসেট করতে গিয়ে।"
 
 #: public/js/error-codes.js:30
 msgid "The request timed out whilst attempting to reset your PIN."
-msgstr ""
+msgstr "আপানার পিন রিসেট করতে গিয়ে অনুরোধের সময়সীমা সমাপ্ত হয়েছে।"
 
 #: public/js/error-codes.js:31
 msgid "The transaction failed. You have not been charged for this purchase."
@@ -333,7 +333,7 @@ msgstr "আরম্ভ"
 
 #: public/js/views/locked.js:21
 msgid "PIN Locked"
-msgstr ""
+msgstr "পিন বন্ধ"
 
 #: public/js/views/payment-success.js:15 public/js/views/wait-to-finish.js:14
 msgid "Completing payment"

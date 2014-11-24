@@ -14,7 +14,8 @@ require(['/js/require-config.js'], function() {
     '/unit/test-session-callbacks.js',
     '/unit/test-session-watch.js',
     '/unit/test-settings.js',
-    '/unit/test-utils.js'
+    '/unit/test-utils.js',
+    '/unit/test-capabilities.js'
   ], function() {
     if (window.mochaPhantomJS) {
       window.mochaPhantomJS.run();

@@ -25,7 +25,7 @@ define([
     },
 
     runWatch: function(params) {
-      navigator.id.watch(params);
+      navigator.mozId.watch(params);
     },
 
     getRequestConfig: function(options) {
@@ -58,8 +58,8 @@ define([
     login: function(options) {
       this.calledBack = false;
       var config = this.getRequestConfig(options);
-      logger.log('Running navigator.id.request');
-      navigator.id.request(config);
+      logger.log('Running navigator.mozId.request');
+      navigator.mozId.request(config);
     },
 
     watchIdentity: function(options) {
@@ -69,6 +69,7 @@ define([
       logger.log('loggedInUser', typeof user, user);
 
       var defaults = {
+        wantIssuer: 'firefox-accounts',
         loggedInUser: user || undefined,
         onlogin: function(assertion){
           that.calledBack = true;
@@ -97,13 +98,7 @@ define([
         }
       };
       var params = $.extend({}, defaults, options || {});
-
-      if (utils.supportsNativeFxA()) {
-        // On Firefox OS 2.0 and later, request Firefox Accounts login.
-        logger.log('Native FxA support detected.');
-        defaults.wantIssuer = 'firefox-accounts';
-      }
-      logger.log('Running navigator.id.watch');
+      logger.log('Running navigator.mozId.watch');
       this.runWatch(params);
     },
 

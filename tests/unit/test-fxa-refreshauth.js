@@ -11,16 +11,16 @@ define([
     setup(function(){
       app = new AppView();
       this.stub = sinon.stub();
-      this.oldid = navigator.id;
-      if (navigator.id === undefined) {
-        navigator.id = {request: this.stub};
+      this.oldid = navigator.mozId;
+      if (navigator.mozId === undefined) {
+        navigator.mozId = {request: this.stub};
       };
       this.view = new ForceAuthView();
       this.fxaFlag = sinon.stub(utils, 'supportsNativeFxA', function() {return true;});
     });
 
     teardown(function(){
-      navigator.id = this.oldid;
+      navigator.mozId = this.oldid;
       this.fxaFlag.restore();
     });
 

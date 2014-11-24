@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-25 11:27+0000\n"
-"PO-Revision-Date: 2014-11-19 14:43+0000\n"
-"Last-Translator: SreeMegha21 <s.guha21@gmail.com>\n"
+"PO-Revision-Date: 2014-11-24 16:40+0000\n"
+"Last-Translator: Biraj <brnet00@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: bn_IN\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1416408202.0\n"
+"X-POOTLE-MTIME: 1416847248.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
 msgid "Payment cancelled."
@@ -23,7 +23,7 @@ msgstr "পেমেন্ট বাতিল হয়ে গেছে।"
 #: public/js/views/error.js:51 templates/simulate.html:17
 #: public/js/views/create-pin.js:140 templates/pin-form.html:37
 msgid "Cancel"
-msgstr "বাতিল করুন"
+msgstr "বাতিল"
 
 #: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64
 #: public/js/lib/pin-widget.js:68

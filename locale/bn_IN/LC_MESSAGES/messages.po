@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-25 11:27+0000\n"
-"PO-Revision-Date: 2014-11-24 16:40+0000\n"
+"PO-Revision-Date: 2014-11-24 16:41+0000\n"
 "Last-Translator: Biraj <brnet00@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: bn_IN\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1416847248.0\n"
+"X-POOTLE-MTIME: 1416847313.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
 msgid "Payment cancelled."
@@ -28,7 +28,7 @@ msgstr "বাতিল"
 #: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64
 #: public/js/lib/pin-widget.js:68
 msgid "PIN can only contain digits."
-msgstr "পিন শুধুমাত্র সংখ্যা হতে পারে।"
+msgstr "PIN শুধুমাত্র সংখ্যা হতে পারে।"
 
 #: webpay/base/templates/base.html:30
 msgid "You logged in as a different user, you must start the payment again."

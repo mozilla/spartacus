@@ -86,15 +86,14 @@ define([
     },
     supportsNativeFxA: function(nav) {
       // Until Native FxA is ready, let's not check this.
-      logger.log('settings.enableNativeFxA: ' + settings.enableNativeFxA);
       if (!settings.enableNativeFxA) {
         return false;
       } else {
         // Check user-agent string to find out if we're on a FxOS device with
         // native FxA support.
         nav = nav || navigator;
-        var hasNativeFxA = this.bodyData.fxaAuthUrl && nav.mozId && nav.userAgent.match(/rv:(\d{2})/)[1] >= 34;
-        logger.log('supportsNativeFxA: ' + hasNativeFxA);
+        var uaMatch = nav.userAgent.match(/rv:(\d{2})/);
+        var hasNativeFxA = this.bodyData.fxaAuthUrl && nav.mozId && uaMatch && uaMatch[1] >= 34;
         return hasNativeFxA;
       }
     },

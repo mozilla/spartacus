@@ -117,7 +117,7 @@ function genFakeResp(pin, status) {
       result.pin = true;
     }
 
-    res.send(status, result);
+    res.status(status).send(result);
   };
 }
 
@@ -188,6 +188,6 @@ spa.get('/unittests', function (req, res) {
 
 console.log('Starting DEV Server');
 var port = process.env.PORT || config.port;
-http.createServer(spa).listen(port, function() {
+spa.listen(port, function() {
   console.log('listening on port: ' + port);
 });

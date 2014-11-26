@@ -73,4 +73,11 @@ module.exports = {
     });
   },
 
+  signout: function(req, res) {
+    res.render('pages/signout.html', {
+      code: utils.prettyTemplateRender('signout.html', req, context.signout),
+      iframe: 'signout',
+      active_page: 'signout'
+    });
+  },
 };

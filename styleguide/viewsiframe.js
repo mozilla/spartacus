@@ -34,4 +34,7 @@ module.exports = {
     res.render('iframed/locked.html', context.locked);
   },
 
+  signout: function(req, res) {
+    res.render('iframed/signout.html', context.signout);
+  },
 };

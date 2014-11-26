@@ -201,3 +201,32 @@ html[dir="rtl"] .button {
         right: -.5em;
     }
 }
+
+.signout {
+    p {
+        font-weight: 400;
+        text-align: center;
+    }
+    .email {
+        display: block;
+        font-weight: 300;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+.user-logo {
+    background: transparent url('../images/profile.svg') no-repeat 50% 50%;
+    height: 120px;
+    margin: 20px auto 0;
+    width: 120px;
+}
+
+
+@media $small-min-width {
+    // Centre buttons for tablet widths.
+    .signout .buttons {
+        text-align: center;
+    }
+}

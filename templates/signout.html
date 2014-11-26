@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macro %}
+
+{% block pageclass %}signout{% endblock %}
+
+{% block page %}
+  <section class="content">
+    <div class="user-logo"></div>
+    <p>{{ gettext('You are signed in as:') }}
+      <span class="email">{{ email }}</span></p>
+    <p><a href="#" class="logout">{{ gettext('Not you?') }}</a></p>
+  </section>
+  <menu class="buttons" type="toolbar">
+    {{ macro.button(gettext('Continue'), modifier='cta fxa') }}
+  </menu>
+{% endblock %}

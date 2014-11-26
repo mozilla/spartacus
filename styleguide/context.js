@@ -16,7 +16,8 @@ module.exports = {
   },
   pinForm: {
     pinTitle: "Create PIN",
-    ctaText: "Continue"
+    ctaText: "Continue",
+    showForgotPin: true,
   },
   locked: {
     pageclass: 'full-error locked',
@@ -29,6 +30,8 @@ module.exports = {
   iframeoverlay: {
     iframeSrc: "https://marketplace-dev-cdn.allizom.org/media/docs/terms/es.html?20140717",
     ctaText: 'OK'
+  },
+  signout: {
+    email: 'foobarbaz-whatever@floccinoccinihilipilification.com'
   }
-
 };

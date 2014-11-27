@@ -55,6 +55,13 @@ define([
       return $.extend({}, defaults, options);
     },
 
+    logout: function() {
+      logger.log('Firing onLogout');
+      this.trigger('onLogout');
+      // un-set the logged_in_user hint.
+      this.set('logged_in_user', '');
+    },
+
     login: function(options) {
       this.calledBack = false;
       var config = this.getRequestConfig(options);
@@ -78,10 +85,7 @@ define([
         },
         onlogout: function() {
           that.calledBack = true;
-          logger.log('Firing onLogout');
-          that.trigger('onLogout');
-          // Unset the loggedInUser hint.
-          that.set('logged_in_user', '');
+          that.logout();
         },
         onready: function() {
           logger.log('Firing onReady');

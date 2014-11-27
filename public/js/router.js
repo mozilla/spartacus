@@ -9,6 +9,7 @@ define([
   'views/fxa-authorize',
   'views/init',
   'views/locked',
+  'views/logged-in-state',
   'views/login',
   'views/payment-failed',
   'views/payment-success',
@@ -29,6 +30,7 @@ define([
   FxAAuthView,
   InitView,
   LockedView,
+  LoggedInStateView,
   LoginView,
   PaymentFailedView,
   PaymentSuccessView,
@@ -113,6 +115,11 @@ define([
     showLocked: function() {
       this.navigate('spa/locked');
       this.viewManager.renderView(LockedView);
+    },
+
+    showLoggedInState: function() {
+      // Doesn't have a URL so no calls to navigate.
+      this.viewManager.renderView(LoggedInStateView);
     },
 
     // TODO: Persona only - remove after move to FxA.

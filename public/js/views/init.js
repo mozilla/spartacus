@@ -22,9 +22,17 @@ define([
         if (!app.session.get('logged_in_user')) {
           utils.fxaLogin();
         } else {
-          logger.log('Implied login for FxA');
-          app.session.set('logged_in', true);
-          app.session.set('user_hash', false);
+          if (utils.bodyData.mktUser === false) {
+            // A user is already logged-in but we want to provide
+            // the option to logout if required.
+            logger.log('Show logged-in-state view');
+            app.router.showLoggedInState();
+            return;
+          } else {
+            logger.log('Implied login for FxA');
+            app.session.set('logged_in', true);
+            app.session.set('user_hash', false);
+          }
         }
       } else {
         app.session.watchIdentity();

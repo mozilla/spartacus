@@ -421,16 +421,23 @@ function doLogout() {
 
 function setUpFxA(options) {
   options = options || {};
-  casper.evaluate(function(fakeFxaSession) {
+  casper.evaluate(function(fakeFxaSession, fakeNonMktUser, fakeFxaEmail) {
     console.log('injecting FxA test config');
     if (fakeFxaSession === true) {
       console.log('Faking a logged-in user');
-      document.body.setAttribute('data-logged-in-user', 'foo@bar.com');
+      document.body.setAttribute('data-logged-in-user', fakeFxaEmail || 'foo@bar.com');
+      if (fakeNonMktUser === true) {
+        console.log('Faking a non-mkt user');
+        document.body.setAttribute('data-mkt-user', 'false');
+      } else {
+        console.log('Faking a mkt user');
+        document.body.setAttribute('data-mkt-user', 'true');
+      }
     }
     document.body.setAttribute('data-fxa-auth-url', '/fake-fxa-oauth');
     document.body.setAttribute('data-fxa-callback-url', '/fake-fxa-callback');
     document.body.setAttribute('data-fxa-state', 'fake-fxa-state');
-  }, options.fakeFxaSession);
+  }, options.fakeFxaSession, options.fakeNonMktUser, options.fakeFxaEmail);
 }
 
 
@@ -456,7 +463,6 @@ function startCasper(options) {
   var url = baseTestUrl + path;
   var sinonOptions = options.sinon || {};
   var useFxA = options.useFxA;
-  var fakeFxaSession = options.fakeFxaSession;
 
   casper.echo('Starting with url: ' + url);
 
@@ -464,7 +470,11 @@ function startCasper(options) {
   // place before JS execution.
   casper.once('load.finished', function() {
     if (useFxA) {
-      setUpFxA({'fakeFxaSession': fakeFxaSession});
+      setUpFxA({
+        fakeFxaSession: options.fakeFxaSession,
+        fakeNonMktUser: options.fakeNonMktUser,
+        fakeFxaEmail: options.fakeFxaEmail
+      });
     } else if (typeof onLoadFinished === 'function') {
       onLoadFinished();
     }

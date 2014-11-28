@@ -34,7 +34,6 @@ define([
       app.throbber.render(this.gettext('Logging out'));
       auth.resetUser().done(function() {
         // This will result in the login screen appearing.
-        app.throbber.close();
         app.session.set('logged_in', false);
       }).fail(function() {
         app.throbber.close();

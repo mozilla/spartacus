@@ -3,6 +3,7 @@ var helpers = require('../helpers');
 helpers.startCasper({
   path: '/mozpay/provider/reference/success',
   setUp: function(){
+    helpers.fakeLogout();
     helpers.fakeVerification();
   },
 });

@@ -5,6 +5,7 @@ helpers.startCasper({
     'Accept-Language': 'fr,fr-fr;q=0.8,en-us;q=0.5,en;q=0.3'
   },
   setUp: function(){
+    helpers.fakeLogout();
     helpers.fakeVerification();
     helpers.fakeStartTransaction();
     helpers.fakePinData({data: {pin: true}});

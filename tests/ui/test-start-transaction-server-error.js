@@ -3,6 +3,7 @@ var errorCode = 'SIM_ONLY_KEY';  // some server error
 
 helpers.startCasper({
   setUp: function(){
+    helpers.fakeLogout();
     helpers.fakeVerification();
     helpers.fakeStartTransaction(
       {statusCode: 500, response: {error_code: errorCode,

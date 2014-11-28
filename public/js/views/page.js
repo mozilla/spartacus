@@ -29,11 +29,26 @@ define([
 
     // Persona has told use we should be logged out.
     handlePersonaLogout: function() {
+      var that = this;
       logger.log('Responding to onlogout event');
-      // TODO: Nothing is tied to the resetUser success or failure. Is this ok?
-      auth.resetUser();
-      // This will result in the login screen appearing.
-      app.session.set('logged_in', false);
+      app.throbber.render(this.gettext('Logging out'));
+      auth.resetUser().done(function() {
+        // This will result in the login screen appearing.
+        app.throbber.close();
+        app.session.set('logged_in', false);
+      }).fail(function() {
+        app.throbber.close();
+        app.error.render({
+          heading: that.gettext('Oops'),
+          errorCode: 'LOGOUT_FAILED',
+          ctaText: that.gettext('Retry?'),
+          ctaCallback: function(e){
+            e.preventDefault();
+            app.error.close();
+            that.handlePersonaLogout();
+          }
+        });
+      });
     },
 
     // Persona has told us we should be logged-in.

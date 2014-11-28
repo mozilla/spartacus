@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-30 12:29+0000\n"
+"POT-Creation-Date: 2014-11-28 17:19+0000\n"
 "PO-Revision-Date: 2014-08-18 09:26+0000\n"
 "Last-Translator: Hossain <hossainalikram@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,6 +15,7 @@ msgstr ""
 "X-POOTLE-MTIME: 1408353971.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
+#: public/js/lib/cancel.js:18
 msgid "Payment cancelled."
 msgstr "মূল্য পরিশোধ বাতিল হয়েছে।"
 
@@ -22,11 +23,13 @@ msgstr "মূল্য পরিশোধ বাতিল হয়েছে।"
 #: templates/pin-form.html:26 public/js/views/create-pin.js:104
 #: public/js/views/error.js:51 templates/simulate.html:17
 #: public/js/views/create-pin.js:140 templates/pin-form.html:37
+#: public/js/views/create-pin.js:155 public/js/views/error.js:54
 msgid "Cancel"
 msgstr "বাতিল"
 
 #: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64
 #: public/js/lib/pin-widget.js:68 public/js/lib/pin-widget.js:65
+#: public/js/lib/pin-widget.js:83
 msgid "PIN can only contain digits."
 msgstr "PIN এ শুধু সংখ্যা থাকতে পারবে।"
 
@@ -47,7 +50,7 @@ msgstr "পেমেন্ট শুরু হচ্ছে"
 #: public/js/views/login.js:19 public/js/views/force-auth.js:81
 #: public/js/views/login.js:18 public/js/views/reset-start.js:67
 #: public/js/views/force-auth.js:93 public/js/views/reset-start.js:70
-#: public/js/views/force-auth.js:92
+#: public/js/views/force-auth.js:92 public/js/views/reset-start.js:72
 msgid "Connecting to Persona"
 msgstr "পার্সোনায় সংযুক্ত হচ্ছে"
 
@@ -56,10 +59,12 @@ msgid "Payment complete"
 msgstr "পেমেন্ট সম্পন্ন হয়েছে"
 
 #: public/js/lib/auth.js:22 public/js/lib/auth.js:20
+#: public/js/views/page.js:41
 msgid "Oops"
 msgstr "ওপস্‌"
 
 #: public/js/lib/auth.js:65 public/js/lib/auth.js:84 public/js/lib/auth.js:155
+#: public/js/lib/auth.js:86 public/js/lib/auth.js:157
 msgid "This is taking longer than expected. Try again?"
 msgstr "প্রয়োজনের চেয়ে বেশি সময় নিচ্ছে। পুনরায় চেষ্টা করবেন?"
 
@@ -69,18 +74,20 @@ msgstr "কোন কিছু ভুল হয়েছে। পুনরায় �
 
 #: templates/error.html:27 public/js/views/error.js:52
 #: public/js/views/error.js:87 public/js/views/locked.js:24
-#: templates/iframe-overlay.html:14
+#: templates/iframe-overlay.html:14 public/js/views/error.js:55
+#: public/js/views/error.js:90
 msgid "OK"
 msgstr "ঠিক আছে"
 
 #: public/js/views/error.js:44 public/js/views/locked.js:23
-#: public/js/views/error.js:54
+#: public/js/views/error.js:54 public/js/views/error.js:57
 msgid "Error"
 msgstr "ত্রুটি"
 
 #: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100
 #: public/js/views/enter-pin.js:97 public/js/views/enter-pin.js:101
-#: public/js/views/enter-pin.js:105
+#: public/js/views/enter-pin.js:105 public/js/views/enter-pin.js:113
+#: public/js/views/enter-pin.js:117
 msgid "Enter PIN"
 msgstr "PIN দিন"
 
@@ -107,16 +114,19 @@ msgstr "সাইন ইন"
 #: templates/was-locked.html:12 public/js/views/create-pin.js:105
 #: public/js/views/create-pin.js:112 templates/simulate.html:18
 #: public/js/views/create-pin.js:141 public/js/views/create-pin.js:148
-#: public/js/views/reset-pin.js:65
+#: public/js/views/reset-pin.js:65 public/js/views/create-pin.js:156
+#: public/js/views/create-pin.js:163 public/js/views/reset-pin.js:68
+#: templates/signout.html:14
 msgid "Continue"
 msgstr "চালিয়ে যান"
 
 #: public/js/views/enter-pin.js:73 public/js/views/enter-pin.js:74
-#: public/js/views/enter-pin.js:78
+#: public/js/views/enter-pin.js:78 public/js/views/enter-pin.js:90
 msgid "Wrong PIN"
 msgstr "ভুল PIN"
 
 #: public/js/views/create-pin.js:48 public/js/views/create-pin.js:84
+#: public/js/views/create-pin.js:97
 msgid "PINs do not match."
 msgstr "PIN মিলছে না।"
 
@@ -126,6 +136,7 @@ msgstr "একটি PIN তৈরি করুন"
 
 #: webpay/pin/views.py:68 webpay/pin/views.py:185
 #: public/js/views/create-pin.js:36 public/js/views/create-pin.js:71
+#: public/js/views/create-pin.js:82
 msgid "Confirm PIN"
 msgstr "PIN নিশ্চিত করুন"
 
@@ -135,13 +146,14 @@ msgstr "PIN নিশ্চিত করুন"
 #: templates/was-locked.html:11 public/js/views/force-auth.js:89
 #: public/js/views/force-auth.js:102 public/js/views/reset-pin.js:66
 #: public/js/views/reset-pin.js:69 public/js/views/force-auth.js:101
+#: public/js/views/reset-pin.js:72
 msgid "Reset PIN"
 msgstr "PIN রিসেট করুন"
 
 #. This is the same as the standard forgot
 #. password that most sites have.
 #: templates/pin-form.html:18 templates/reset-start.html:6
-#: templates/pin-form.html:29
+#: templates/pin-form.html:29 templates/pin-form.html:30
 msgid "Forgot your PIN?"
 msgstr "PIN ভুলে গেছেন?"
 
@@ -179,7 +191,7 @@ msgid "Verifying payment"
 msgstr "পেমেন্ট যাচাই করা হচ্ছে"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30 public/js/lib/auth.js:25
-#: public/js/lib/auth.js:39
+#: public/js/lib/auth.js:39 public/js/lib/auth.js:26 public/js/lib/auth.js:41
 msgid "Retrying"
 msgstr "পুনরায় চেষ্টা করা হচ্ছে"
 
@@ -189,12 +201,14 @@ msgstr "প্রয়োজনের চেয়ে বেশি সময় নি�
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11
 #: public/js/views/create-pin.js:72 templates/reset-start.html:15
+#: public/js/views/create-pin.js:83
 msgid "Back"
 msgstr "পূর্ববর্তী"
 
 #: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95
 #: public/js/views/enter-pin.js:96 public/js/views/create-pin.js:73
-#: public/js/views/enter-pin.js:100
+#: public/js/views/enter-pin.js:100 public/js/views/create-pin.js:84
+#: public/js/views/enter-pin.js:112
 msgid "Submit"
 msgstr "জমা দিন"
 
@@ -206,13 +220,18 @@ msgstr "জমা দিন"
 #: public/js/views/enter-pin.js:65 public/js/views/reset-start.js:108
 #: public/js/views/force-auth.js:61 public/js/views/reset-pin.js:30
 #: public/js/views/reset-start.js:112 public/js/views/force-auth.js:60
-#: public/js/views/reset-start.js:122
+#: public/js/views/reset-start.js:122 public/js/lib/auth.js:22
+#: public/js/lib/auth.js:36 public/js/lib/wait.js:180
+#: public/js/views/create-pin.js:116 public/js/views/enter-pin.js:75
+#: public/js/views/page.js:43 public/js/views/reset-pin.js:33
+#: public/js/views/reset-start.js:124
 msgid "Retry?"
 msgstr "পুনরায় চেষ্টা করব?"
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
 #: public/js/views/create-pin.js:113 public/js/views/create-pin.js:115
 #: public/js/views/create-pin.js:149 public/js/views/create-pin.js:152
+#: public/js/views/create-pin.js:164 public/js/views/create-pin.js:167
 msgid "Create PIN"
 msgstr "PIN তৈরি"
 
@@ -222,11 +241,12 @@ msgstr "কোন ভুল হয়েছে।"
 
 #: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118
 #: public/js/views/reset-start.js:119 public/js/views/reset-start.js:123
-#: public/js/views/reset-start.js:133
+#: public/js/views/reset-start.js:133 public/js/views/reset-start.js:135
 msgid "Reset your PIN?"
 msgstr "PIN রিসেট করব?"
 
 #: public/js/views/was-locked.js:13 public/js/views/was-locked.js:38
+#: public/js/views/was-locked.js:42
 msgid "Was Locked"
 msgstr "লক ছিলো"
 
@@ -324,7 +344,7 @@ msgstr ""
 msgid "Retrieving Transaction"
 msgstr ""
 
-#: public/js/views/error.js:55
+#: public/js/views/error.js:55 public/js/views/error.js:58
 msgid "An unexpected error occurred."
 msgstr ""
 
@@ -371,12 +391,12 @@ msgstr "PIN রিসেট করুন"
 
 #: templates/pin-form.html:22
 msgid ""
-"By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)"
-"s>Privacy Policy</a>"
+"By proceeding you agree to our <a %(terms)s>terms</a> and <a "
+"%(privacy)s>Privacy Policy</a>"
 msgstr ""
 
 #: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68
-#: public/js/views/force-auth.js:90
+#: public/js/views/force-auth.js:90 public/js/views/reset-start.js:70
 #, fuzzy
 msgid "Connecting to Firefox Accounts"
 msgstr "পার্সোনায় সংযুক্ত হচ্ছে"
@@ -389,3 +409,15 @@ msgid ""
 msgstr ""
 "আপনি নিশ্চিত আপনি PIN রিসেট করতে চান? PIN রিসেট করতে পার্সোনায় সাইন ইন করতে "
 "হবে।"
+
+#: public/js/views/page.js:34
+msgid "Logging out"
+msgstr ""
+
+#: templates/signout.html:9
+msgid "You are signed in as:"
+msgstr ""
+
+#: templates/signout.html:11
+msgid "Not you?"
+msgstr ""

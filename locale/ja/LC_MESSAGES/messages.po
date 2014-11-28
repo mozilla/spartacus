@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-30 12:29+0000\n"
+"POT-Creation-Date: 2014-11-28 17:19+0000\n"
 "PO-Revision-Date: 2014-11-05 23:23-0500\n"
 "Last-Translator: Kohei Yoshino <kohei.yoshino@gmail.com>\n"
 "Language-Team: Japanese\n"
@@ -14,6 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
+#: public/js/lib/cancel.js:18
 msgid "Payment cancelled."
 msgstr "決済はキャンセルされました。"
 
@@ -21,11 +22,13 @@ msgstr "決済はキャンセルされました。"
 #: templates/pin-form.html:26 public/js/views/create-pin.js:104
 #: public/js/views/error.js:51 templates/simulate.html:17
 #: public/js/views/create-pin.js:140 templates/pin-form.html:37
+#: public/js/views/create-pin.js:155 public/js/views/error.js:54
 msgid "Cancel"
 msgstr "キャンセル"
 
 #: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64
 #: public/js/lib/pin-widget.js:68 public/js/lib/pin-widget.js:65
+#: public/js/lib/pin-widget.js:83
 msgid "PIN can only contain digits."
 msgstr "暗証番号に数字以外の文字を含めることはできません。"
 
@@ -46,7 +49,7 @@ msgstr "決済を開始しています"
 #: public/js/views/login.js:19 public/js/views/force-auth.js:81
 #: public/js/views/login.js:18 public/js/views/reset-start.js:67
 #: public/js/views/force-auth.js:93 public/js/views/reset-start.js:70
-#: public/js/views/force-auth.js:92
+#: public/js/views/force-auth.js:92 public/js/views/reset-start.js:72
 msgid "Connecting to Persona"
 msgstr "Persona に接続しています"
 
@@ -55,10 +58,12 @@ msgid "Payment complete"
 msgstr "決済が完了しました"
 
 #: public/js/lib/auth.js:22 public/js/lib/auth.js:20
+#: public/js/views/page.js:41
 msgid "Oops"
 msgstr "おっと"
 
 #: public/js/lib/auth.js:65 public/js/lib/auth.js:84 public/js/lib/auth.js:155
+#: public/js/lib/auth.js:86 public/js/lib/auth.js:157
 msgid "This is taking longer than expected. Try again?"
 msgstr "通常よりもこの処理に時間が掛かっています。再度試しますか？"
 
@@ -68,18 +73,20 @@ msgstr "何か問題が発生しました。再度試しますか？"
 
 #: templates/error.html:27 public/js/views/error.js:52
 #: public/js/views/error.js:87 public/js/views/locked.js:24
-#: templates/iframe-overlay.html:14
+#: templates/iframe-overlay.html:14 public/js/views/error.js:55
+#: public/js/views/error.js:90
 msgid "OK"
 msgstr "OK"
 
 #: public/js/views/error.js:44 public/js/views/locked.js:23
-#: public/js/views/error.js:54
+#: public/js/views/error.js:54 public/js/views/error.js:57
 msgid "Error"
 msgstr "エラー"
 
 #: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100
 #: public/js/views/enter-pin.js:97 public/js/views/enter-pin.js:101
-#: public/js/views/enter-pin.js:105
+#: public/js/views/enter-pin.js:105 public/js/views/enter-pin.js:113
+#: public/js/views/enter-pin.js:117
 msgid "Enter PIN"
 msgstr "暗証番号を入力"
 
@@ -106,16 +113,19 @@ msgstr "ログイン"
 #: templates/was-locked.html:12 public/js/views/create-pin.js:105
 #: public/js/views/create-pin.js:112 templates/simulate.html:18
 #: public/js/views/create-pin.js:141 public/js/views/create-pin.js:148
-#: public/js/views/reset-pin.js:65
+#: public/js/views/reset-pin.js:65 public/js/views/create-pin.js:156
+#: public/js/views/create-pin.js:163 public/js/views/reset-pin.js:68
+#: templates/signout.html:14
 msgid "Continue"
 msgstr "続ける"
 
 #: public/js/views/enter-pin.js:73 public/js/views/enter-pin.js:74
-#: public/js/views/enter-pin.js:78
+#: public/js/views/enter-pin.js:78 public/js/views/enter-pin.js:90
 msgid "Wrong PIN"
 msgstr "暗証番号が違います"
 
 #: public/js/views/create-pin.js:48 public/js/views/create-pin.js:84
+#: public/js/views/create-pin.js:97
 msgid "PINs do not match."
 msgstr "暗証番号が一致しません。"
 
@@ -125,6 +135,7 @@ msgstr "暗証番号を登録"
 
 #: webpay/pin/views.py:68 webpay/pin/views.py:185
 #: public/js/views/create-pin.js:36 public/js/views/create-pin.js:71
+#: public/js/views/create-pin.js:82
 msgid "Confirm PIN"
 msgstr "暗証番号を確認"
 
@@ -134,13 +145,14 @@ msgstr "暗証番号を確認"
 #: templates/was-locked.html:11 public/js/views/force-auth.js:89
 #: public/js/views/force-auth.js:102 public/js/views/reset-pin.js:66
 #: public/js/views/reset-pin.js:69 public/js/views/force-auth.js:101
+#: public/js/views/reset-pin.js:72
 msgid "Reset PIN"
 msgstr "暗証番号をリセット"
 
 #. This is the same as the standard forgot
 #. password that most sites have.
 #: templates/pin-form.html:18 templates/reset-start.html:6
-#: templates/pin-form.html:29
+#: templates/pin-form.html:29 templates/pin-form.html:30
 msgid "Forgot your PIN?"
 msgstr "暗証番号を忘れた場合"
 
@@ -178,7 +190,7 @@ msgid "Verifying payment"
 msgstr "決済を検証しています"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30 public/js/lib/auth.js:25
-#: public/js/lib/auth.js:39
+#: public/js/lib/auth.js:39 public/js/lib/auth.js:26 public/js/lib/auth.js:41
 msgid "Retrying"
 msgstr "再試行中"
 
@@ -188,12 +200,14 @@ msgstr "通常よりもこの処理に時間が掛かっています。再度試
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11
 #: public/js/views/create-pin.js:72 templates/reset-start.html:15
+#: public/js/views/create-pin.js:83
 msgid "Back"
 msgstr "戻る"
 
 #: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95
 #: public/js/views/enter-pin.js:96 public/js/views/create-pin.js:73
-#: public/js/views/enter-pin.js:100
+#: public/js/views/enter-pin.js:100 public/js/views/create-pin.js:84
+#: public/js/views/enter-pin.js:112
 msgid "Submit"
 msgstr "送信"
 
@@ -205,13 +219,18 @@ msgstr "送信"
 #: public/js/views/enter-pin.js:65 public/js/views/reset-start.js:108
 #: public/js/views/force-auth.js:61 public/js/views/reset-pin.js:30
 #: public/js/views/reset-start.js:112 public/js/views/force-auth.js:60
-#: public/js/views/reset-start.js:122
+#: public/js/views/reset-start.js:122 public/js/lib/auth.js:22
+#: public/js/lib/auth.js:36 public/js/lib/wait.js:180
+#: public/js/views/create-pin.js:116 public/js/views/enter-pin.js:75
+#: public/js/views/page.js:43 public/js/views/reset-pin.js:33
+#: public/js/views/reset-start.js:124
 msgid "Retry?"
 msgstr "再度試しますか？"
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
 #: public/js/views/create-pin.js:113 public/js/views/create-pin.js:115
 #: public/js/views/create-pin.js:149 public/js/views/create-pin.js:152
+#: public/js/views/create-pin.js:164 public/js/views/create-pin.js:167
 msgid "Create PIN"
 msgstr "暗証番号を登録"
 
@@ -221,11 +240,12 @@ msgstr "何か問題が発生しました。"
 
 #: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118
 #: public/js/views/reset-start.js:119 public/js/views/reset-start.js:123
-#: public/js/views/reset-start.js:133
+#: public/js/views/reset-start.js:133 public/js/views/reset-start.js:135
 msgid "Reset your PIN?"
 msgstr "暗証番号をリセットしますか？"
 
 #: public/js/views/was-locked.js:13 public/js/views/was-locked.js:38
+#: public/js/views/was-locked.js:42
 msgid "Was Locked"
 msgstr "ロックされました"
 
@@ -324,7 +344,7 @@ msgstr "ログイン待機中"
 msgid "Retrieving Transaction"
 msgstr "トランザクション取得中"
 
-#: public/js/views/error.js:55
+#: public/js/views/error.js:55 public/js/views/error.js:58
 msgid "An unexpected error occurred."
 msgstr "予期せぬ問題が発生しました。"
 
@@ -368,14 +388,14 @@ msgstr "リセット"
 
 #: templates/pin-form.html:22
 msgid ""
-"By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)"
-"s>Privacy Policy</a>"
+"By proceeding you agree to our <a %(terms)s>terms</a> and <a "
+"%(privacy)s>Privacy Policy</a>"
 msgstr ""
 "続けることで、<a %(terms)s>利用規約</a> と <a %(privacy)s>プライバシーポリ"
 "シー</a> に同意したことになります。"
 
 #: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68
-#: public/js/views/force-auth.js:90
+#: public/js/views/force-auth.js:90 public/js/views/reset-start.js:70
 msgid "Connecting to Firefox Accounts"
 msgstr "Firefox アカウントに接続しています"
 
@@ -384,5 +404,17 @@ msgid ""
 "Are you sure you want to reset your PIN? You must sign in to Firefox "
 "Accounts to reset your PIN."
 msgstr ""
-"本当に暗証番号をリセットしますか？ 続けるには Firefox アカウントでログインする"
-"必要があります。"
+"本当に暗証番号をリセットしますか？ 続けるには Firefox アカウントでログインす"
+"る必要があります。"
+
+#: public/js/views/page.js:34
+msgid "Logging out"
+msgstr ""
+
+#: templates/signout.html:9
+msgid "You are signed in as:"
+msgstr ""
+
+#: templates/signout.html:11
+msgid "Not you?"
+msgstr ""

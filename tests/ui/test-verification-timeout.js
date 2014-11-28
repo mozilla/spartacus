@@ -2,6 +2,7 @@ var helpers = require('../helpers');
 
 helpers.startCasper({
   setUp: function(){
+    helpers.fakeLogout();
     helpers.fakeVerification({timeout: true});
     helpers.fakeStartTransaction();
   }

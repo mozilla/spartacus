@@ -19,6 +19,7 @@ define([
     app.error.render({
       heading: gettext('Oops'),
       errorCode: errCode,
+      ctaText: gettext('Retry?'),
       ctaCallback: function(e){
         e.preventDefault();
         app.error.close();
@@ -32,6 +33,7 @@ define([
     options = options || {};
     var reverify = options.reverify || false;
     app.error.render({
+      ctaText: gettext('Retry?'),
       errorCode: options.errCode,
       ctaCallback: function(e){
         e.preventDefault();
@@ -177,13 +179,13 @@ define([
 
   function resetUser() {
     logger.log('Begin webpay user reset');
-
     var reqConfig = {
       type: 'POST',
       url: utils.bodyData.resetUserUrl
     };
 
     var req = $.ajax(reqConfig);
+
     req.done(function _resetSuccess() {
       logger.log('reset webpay user');
       utils.trackEvent({'action': 'webpay user reset',

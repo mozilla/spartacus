@@ -2,6 +2,7 @@ var helpers = require('../helpers');
 
 helpers.startCasper({
   setUp: function(){
+    helpers.fakeLogout();
     helpers.fakeVerification();
     helpers.fakeStartTransaction({statusCode: 500});
   },

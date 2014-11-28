@@ -19,7 +19,7 @@ helpers.startCasper({
   }
 });
 
-casper.test.begin('Login, then logout and wait for #signin.', {
+casper.test.begin('Login, then logout (which will fail) and retry', {
   test: function(test) {
 
     helpers.doLogin();
@@ -27,7 +27,14 @@ casper.test.begin('Login, then logout and wait for #signin.', {
     casper.waitForUrl(helpers.url('enter-pin'), function() {
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
       test.assertExists('.forgot-pin', 'Forgot-pin should be shown for when you enter your pin.');
+      helpers.fakeLogout({statusCode: 500});
       helpers.doLogout();
+    });
+
+    casper.waitForSelector('.full-error', function() {
+      helpers.assertErrorCode('LOGOUT_FAILED');
+      helpers.fakeLogout();
+      casper.click('.full-error .cta');
     });
 
     casper.waitForSelector('#signin', function() {

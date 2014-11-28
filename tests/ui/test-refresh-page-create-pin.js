@@ -2,6 +2,7 @@ var helpers = require('../helpers');
 
 helpers.startCasper({
   setUp: function(){
+    helpers.fakeLogout();
     helpers.fakeVerification();
     helpers.fakeStartTransaction();
     helpers.fakePinData({data: {pin: false}});
@@ -18,6 +19,7 @@ casper.test.begin('Refresh from pin creation page.', {
       // re-load sinon when load.finished fires.
       casper.once('load.finished', function() {
         helpers.injectSinon();
+        helpers.fakeLogout();
         helpers.fakeVerification();
         helpers.fakePinData({data: {pin: false}});
       });

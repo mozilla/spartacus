@@ -71,6 +71,7 @@ define(['jquery', 'log', 'underscore', 'utils'], function($, log, _, utils) {
     },
 
     prepareAll: function() {
+      var needsLogout = JSON.parse(this.storage.getItem('needs-provider-logout') || 'false');
       var currentUser = app.session.get('logged_in_user');
       var existingUser = this.storage.getItem('spa-user');
 
@@ -84,7 +85,12 @@ define(['jquery', 'log', 'underscore', 'utils'], function($, log, _, utils) {
 
       this.storage.setItem('spa-user', currentUser);
 
-      if (existingUser && existingUser !== currentUser) {
+      if (needsLogout) {
+        logger.log('Provider logout requested: do logout');
+        utils.trackEvent({'action': 'provider logout requested',
+                          'label': 'Provider Logout Required'});
+        return this.logout();
+      } else if (existingUser && existingUser !== currentUser) {
         logger.log('User has changed: do logout');
         utils.trackEvent({'action': 'user change detection',
                           'label': 'User Changed'});

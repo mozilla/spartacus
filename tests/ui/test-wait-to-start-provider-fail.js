@@ -7,7 +7,7 @@ helpers.startCasper({
   },
   setUp: function(){
     helpers.fakeLogout();
-    helpers.fakeVerification({userHash: 'new-user'});
+    helpers.fakeVerification();
     helpers.fakeStartTransaction();
     helpers.fakePinData({data: {pin: true}});
     helpers.fakePinData({data: {pin: true},

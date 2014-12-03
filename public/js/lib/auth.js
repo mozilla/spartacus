@@ -191,9 +191,8 @@ define([
                         'label': 'Reset User Success'});
       // Set the user to a new string to force provider
       // logout at preparation stage.
-      var logoutString = 'logout-' + Date.now();
-      logger.log('Setting spa-user in localStorage to:', logoutString);
-      window.localStorage.setItem('spa-user', logoutString);
+      logger.log('Setting needs-provider-logout in localStorage to true');
+      window.localStorage.setItem('needs-provider-logout', true);
     }).fail(function _resetFail($xhr, textStatus, errorThrown) {
       logger.log('error resetting user:', textStatus, errorThrown);
       utils.trackEvent({'action': 'webpay user reset',

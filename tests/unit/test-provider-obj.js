@@ -77,7 +77,7 @@ define([
       });
     });
 
-    test('Check Bango provider user changes', function(done){
+    test("Check spa-user doesn't change", function(done){
       this.mockStorage.setItem('spa-user', 'foo@bar.com');
       var prov = provider.providerFactory('bango', {storage: this.mockStorage});
       var stub = sinon.stub(prov, 'logout', function() {
@@ -89,6 +89,18 @@ define([
       });
     });
 
+    test("Check spa-user doesn't change but logout required", function(done){
+      this.mockStorage.setItem('spa-user', 'foo@bar.com');
+      this.mockStorage.setItem('needs-provider-logout', true);
+      var prov = provider.providerFactory('bango', {storage: this.mockStorage});
+      var stub = sinon.stub(prov, 'logout', function() {
+        return $.Deferred().resolve();
+      });
+      prov.prepareAll().always(function() {
+        assert.equal(stub.callCount, 1);
+        done();
+      });
+    });
 
     test('Check iccKey hash no changes 1.4+', function(done){
       utils.mozPaymentProvider = {

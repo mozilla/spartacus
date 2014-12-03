@@ -98,7 +98,12 @@ define([
       });
       prov.prepareAll().always(function() {
         assert.equal(stub.callCount, 1);
-        done();
+        // Now check on the second time we prepare with the same user
+        // we don't call the provider logout - e.g. it stays as 1.
+        prov.prepareAll().always(function() {
+          assert.equal(stub.callCount, 1);
+          done();
+        });
       });
     });
 

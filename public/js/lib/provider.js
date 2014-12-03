@@ -89,7 +89,10 @@ define(['jquery', 'log', 'underscore', 'utils'], function($, log, _, utils) {
         logger.log('Provider logout requested: do logout');
         utils.trackEvent({'action': 'provider logout requested',
                           'label': 'Provider Logout Required'});
-        return this.logout();
+        var that = this;
+        return this.logout().done(function() {
+          that.storage.setItem('needs-provider-logout', 'false');
+        });
       } else if (existingUser && existingUser !== currentUser) {
         logger.log('User has changed: do logout');
         utils.trackEvent({'action': 'user change detection',

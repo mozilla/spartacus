@@ -65,12 +65,6 @@ define([
       logger.log('Probably logged in, Persona never called back');
       logger.log('Updating app.session: logged_in -> true');
       app.session.set('logged_in', true);
-      if (app.session.get('user_hash') === null) {
-        // Set user_hash to false so we know it
-        // was not set with an assertion.
-        logger.log('Updating app.session: user_hash -> false');
-        app.session.set('user_hash', false);
-      }
     },
 
     // Deal with the logged-in attribute state change.
@@ -132,7 +126,6 @@ define([
         return app.router.showCreatePin();
       }
     },
-
 
     getState: function() {
       var that = this;

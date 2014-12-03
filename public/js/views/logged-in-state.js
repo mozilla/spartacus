@@ -29,7 +29,6 @@ define([
       e.preventDefault();
       logger.log('Continuing with implied login');
       app.session.set('logged_in', true);
-      app.session.set('user_hash', false);
     },
 
     render: function(){

@@ -17,6 +17,7 @@ helpers.startCasper({
     // Polling leading up to success.
     helpers.fakeWaitPoll({type: 'start', statusData: 3});
     helpers.fakeWaitPoll({type: 'start'});
+    helpers.fakeProviderLogout();
   },
 });
 

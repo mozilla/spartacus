@@ -13,6 +13,7 @@ helpers.startCasper({
     helpers.fakePinData({data: {pin: true}, method: 'POST', statusCode: 200, url:'/mozpay/v1/api/pin/check/'});
     helpers.fakeWaitPoll({type: 'start', statusData: 3});
     helpers.fakeWaitPoll({type: 'start'});
+    helpers.fakeProviderLogout();
   },
 });
 

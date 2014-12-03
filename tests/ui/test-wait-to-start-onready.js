@@ -13,6 +13,7 @@ helpers.startCasper({
     helpers.fakePinData({data: {pin: true}, method: 'POST', statusCode: 200, url:'/mozpay/v1/api/pin/check/'});
     helpers.fakeWaitPoll({type: 'start', statusData: 3});
     helpers.fakeWaitPoll({type: 'start'});
+    helpers.fakeProviderLogout();
   },
 });
 
@@ -25,12 +26,6 @@ casper.test.begin('Test wait to start polling', {
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
       this.sendKeys('.pinbox', '1234');
       test.assertExists('.cta:enabled', 'Submit button is enabled');
-
-      casper.evaluate(function() {
-        // Simulate onready callback instead of typical verification.
-        app.session.set('user_hash', false);
-      });
-
       this.click('.cta');
     });
 

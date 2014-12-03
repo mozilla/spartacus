@@ -7,7 +7,7 @@ helpers.startCasper({
   },
   setUp: function(){
     helpers.fakeLogout();
-    helpers.fakeVerification({userHash: 'new-user'});
+    helpers.fakeVerification();
     helpers.fakeStartTransaction();
     helpers.fakePinData({data: {pin: true}});
     helpers.fakePinData({data: {pin: true},
@@ -32,7 +32,7 @@ casper.test.begin('Test wait to start polling', {
       casper.evaluate(function() {
         // Simulate how an old user would already be logged in.
         // This forces a provider logout.
-        localStorage.setItem('spa-user-hash', 'old-user');
+        localStorage.setItem('spa-user', 'old-user');
       });
 
       this.click('.cta');

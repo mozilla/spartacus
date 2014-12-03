@@ -1,5 +1,4 @@
 var _ = require('underscore');
-
 var config = require('../config');
 
 var _currTestId;
@@ -201,7 +200,9 @@ function clientTimeoutResponse(method, url) {
 function fakeFxA(options) {
   options = options || {};
   console.log("Installing stubs for FxA login");
-  var data = options.data || JSON.stringify({user_hash: 'test-hash'});
+  var email = genEmail();
+  _currentEmail = email;
+  var data = options.data || JSON.stringify({user_email: email});
   var statusCode = options.statusCode || 200;
   var timeout = options.timeout || false;
   // clientScripts doesn't seem to apply to requests caused by redirects, so
@@ -224,7 +225,6 @@ function fakeFxA(options) {
 
 function fakeVerification(options) {
   options = options || {};
-  options.userHash = options.userHash || 'test-hash';
   var url = options.reverify === true ? '/fake-reverify' : '/fake-verify';
   // This doesn't reflect the real response but allows us to
   // know if the response represents a verification or reverification.
@@ -236,16 +236,16 @@ function fakeVerification(options) {
     clientTimeoutResponse('POST', url);
   } else {
     casper.echo('Setting up a fake verification success', 'INFO');
-    casper.evaluate(function(statusCode, statusData, url, userHash) {
+    casper.evaluate(function(statusCode, statusData, url, currentEmail) {
       window.server.respondWith('POST', url,
         [statusCode, {'Content-Type': 'application/json'}, JSON.stringify({
           'status': statusData,
           'audience': 'http://localhost',
           'expires': Date.now(),
           'issuer': 'fake-persona',
-          'user_hash': userHash
+          'user_email': currentEmail,
         })]);
-    }, statusCode, statusData, url, options.userHash);
+    }, statusCode, statusData, url, _currentEmail);
   }
 }
 
@@ -395,10 +395,13 @@ function fakePinData(options) {
   }
 }
 
+function genEmail() {
+  return "tester+" + makeToken() + "@fakepersona.mozilla.org";
+}
 
 function doLogin() {
   // Sets the filter so we always login as a new user.
-  var email = "tester+" + makeToken() + "@fakepersona.mozilla.org";
+  var email = genEmail();
   setLoginFilter(email);
   casper.waitFor(function check() {
     return this.visible('#signin');

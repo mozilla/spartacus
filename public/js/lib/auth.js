@@ -59,7 +59,6 @@ define([
       logger.log('FxA login success');
       utils.trackEvent({'action': 'FxA login',
                         'label': 'Success'});
-      app.session.set('user_hash', data.user_hash);
       app.session.set('logged_in_user', data.user_email);
       if (reverify === true) {
         logger.log("Reverifying FxA login");
@@ -133,7 +132,7 @@ define([
       logger.log(prefix + ' success');
       utils.trackEvent({'action': 'persona login',
                         'label': prefix + ' Success'});
-      app.session.set('user_hash', data.user_hash);
+      app.session.set('logged_in_user', data.user_email);
       if (reverify === true) {
         // Set logged_in and manually direct to reset-pin which is
         // implied having successfully carried out a re-auth.
@@ -190,6 +189,11 @@ define([
       logger.log('reset webpay user');
       utils.trackEvent({'action': 'webpay user reset',
                         'label': 'Reset User Success'});
+      // Set the user to a new string to force provider
+      // logout at preparation stage.
+      var logoutString = 'logout-' + Date.now();
+      logger.log('Setting spa-user in localStorage to:', logoutString);
+      window.localStorage.setItem('spa-user', logoutString);
     }).fail(function _resetFail($xhr, textStatus, errorThrown) {
       logger.log('error resetting user:', textStatus, errorThrown);
       utils.trackEvent({'action': 'webpay user reset',

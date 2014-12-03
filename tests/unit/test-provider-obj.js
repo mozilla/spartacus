@@ -1,10 +1,19 @@
-define(['jquery', 'provider', 'utils'], function($, provider, utils) {
+define([
+  'jquery',
+  'models/session',
+  'provider',
+  'utils'
+], function($, SessionModel, provider, utils) {
 
   var assert = chai.assert;
 
   suite('Provider object tests', function(){
 
     setup(function() {
+      window.app = {};
+      window.app.session = new SessionModel();
+      window.app.session.set('logged_in_user', 'foo@bar.com');
+
       var mockStorage = function() {
         this.store = {};
         this.getItem = function(key) {
@@ -46,27 +55,40 @@ define(['jquery', 'provider', 'utils'], function($, provider, utils) {
       assert.equal(bangoProvider.storage, 'whatever-bango');
     });
 
-    test('Check generic provider user hash changes', function(done){
-      this.mockStorage.setItem('spa-user-hash', 'whatever');
+    test('Check generic provider user changes', function(done){
+      this.mockStorage.setItem('spa-user', 'whatever');
       var prov = provider.providerFactory('', {storage: this.mockStorage});
       var spy = sinon.spy(prov, 'logout');
-      prov.prepareAll('mc-hammer').always(function() {
+      prov.prepareAll().always(function() {
         assert.ok(spy.calledOnce);
         done();
       });
     });
 
-    test('Check Bango provider user hash changes', function(done){
-      this.mockStorage.setItem('spa-user-hash', 'whatever-bango');
+    test('Check Bango provider user changes', function(done){
+      this.mockStorage.setItem('spa-user', 'whatever-bango');
       var prov = provider.providerFactory('bango', {storage: this.mockStorage});
       var stub = sinon.stub(prov, 'logout', function() {
         return $.Deferred().resolve();
       });
-      prov.prepareAll('mc-hammer-bango').always(function() {
+      prov.prepareAll().always(function() {
         assert.ok(stub.calledOnce);
         done();
       });
     });
+
+    test('Check Bango provider user changes', function(done){
+      this.mockStorage.setItem('spa-user', 'foo@bar.com');
+      var prov = provider.providerFactory('bango', {storage: this.mockStorage});
+      var stub = sinon.stub(prov, 'logout', function() {
+        return $.Deferred().resolve();
+      });
+      prov.prepareAll().always(function() {
+        assert.equal(stub.callCount, 0);
+        done();
+      });
+    });
+
 
     test('Check iccKey hash no changes 1.4+', function(done){
       utils.mozPaymentProvider = {
@@ -85,11 +107,11 @@ define(['jquery', 'provider', 'utils'], function($, provider, utils) {
           }
         }
       };
-      this.mockStorage.setItem('spa-user-hash', 'humpty-dumpty');
+      this.mockStorage.setItem('spa-user', 'foo@bar.com');
       this.mockStorage.setItem('spa-last-icc', '1234');
       var prov = provider.providerFactory('', {storage: this.mockStorage});
       var spy = sinon.spy(prov, 'logout');
-      prov.prepareAll('humpty-dumpty').always(function() {
+      prov.prepareAll().always(function() {
         assert.equal(spy.callCount, 0);
         done();
       });
@@ -112,11 +134,11 @@ define(['jquery', 'provider', 'utils'], function($, provider, utils) {
           }
         }
       };
-      this.mockStorage.setItem('spa-user-hash', 'humpty-dumpty');
+      this.mockStorage.setItem('spa-user', 'foo@bar.com');
       this.mockStorage.setItem('spa-last-icc', '432764');
       var prov = provider.providerFactory('', {storage: this.mockStorage});
       var spy = sinon.spy(prov, 'logout');
-      prov.prepareAll('humpty-dumpty').always(function() {
+      prov.prepareAll().always(function() {
         assert.ok(spy.calledOnce);
         done();
       });
@@ -124,11 +146,11 @@ define(['jquery', 'provider', 'utils'], function($, provider, utils) {
 
     test('Check iccKey hash no changes < 1.4', function(done){
       utils.mozPaymentProvider.iccIds = ['1234','4562'];
-      this.mockStorage.setItem('spa-user-hash', 'humpty-dumpty');
+      this.mockStorage.setItem('spa-user', 'foo@bar.com');
       this.mockStorage.setItem('spa-last-icc', '1234;4562');
       var prov = provider.providerFactory('', {storage: this.mockStorage});
       var spy = sinon.spy(prov, 'logout');
-      prov.prepareAll('humpty-dumpty').always(function() {
+      prov.prepareAll().always(function() {
         assert.equal(spy.callCount, 0);
         done();
       });
@@ -136,11 +158,11 @@ define(['jquery', 'provider', 'utils'], function($, provider, utils) {
 
     test('Check iccKey hash changes < 1.4', function(done){
       utils.mozPaymentProvider.iccIds = ['1234','4562'];
-      this.mockStorage.setItem('spa-user-hash', 'humpty-dumpty');
+      this.mockStorage.setItem('spa-user', 'foo@bar.com');
       this.mockStorage.setItem('spa-last-icc', '432;764');
       var prov = provider.providerFactory('', {storage: this.mockStorage});
       var spy = sinon.spy(prov, 'logout');
-      prov.prepareAll('humpty-dumpty').always(function() {
+      prov.prepareAll().always(function() {
         assert.ok(spy.calledOnce);
         done();
       });

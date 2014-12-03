@@ -138,8 +138,7 @@ if (env !== 'test') {
       'status': 'okay',
       'audience': 'http://localhost:' + config.test.port,
       'expires': Date.now(),
-      'issuer': 'fake-persona',
-      'user_hash': crypto.createHmac('sha256', 'noddy-key-dev-only').update(assertion).digest('hex')
+      'issuer': 'fake-persona'
     };
     success.email = assertion;
     res.send(success);

@@ -7,7 +7,7 @@ helpers.startCasper({
   },
   setUp: function(){
     helpers.fakeLogout();
-    helpers.fakeVerification({userHash: 'new-user'});
+    helpers.fakeVerification();
     helpers.fakeStartTransaction();
     helpers.fakePinData({data: {pin: true}});
     helpers.fakePinData({data: {pin: true},
@@ -29,13 +29,6 @@ casper.test.begin('Test wait to start polling failed status.', {
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
       this.sendKeys('.pinbox', '1234');
       test.assertExists('.cta:enabled', 'Submit button is enabled');
-
-      casper.evaluate(function() {
-        // Simulate how an old user would already be logged in.
-        // This forces a provider logout.
-        localStorage.setItem('spa-user-hash', 'old-user');
-      });
-
       this.click('.cta');
     });
 

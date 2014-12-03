@@ -104,18 +104,8 @@ define([
             }
             var preparation;
             var Provider = provider.providerFactory(data.provider);
-            var userHash = app.session.get('user_hash');
 
-            if (userHash === false) {
-              // userHash was set by onready callback (no assertion) - the default is null.
-              preparation = Provider.prepareSim();
-            } else if (userHash) {
-              // If it's set use prepareAll.
-              preparation = Provider.prepareAll(app.session.get('user_hash'));
-            } else {
-              // Othewise all bets are off and this is unexpected.
-              return app.error.render({errorCode: 'USER_HASH_UNSET'});
-            }
+            preparation = Provider.prepareAll();
 
             preparation.done(function() {
               logger.log('Successfully prepared payment provider', data.provider);

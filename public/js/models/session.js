@@ -16,7 +16,6 @@ define([
     defaults: {
       logged_in_user: utils.bodyData.loggedInUser,
       logged_in: null,
-      user_hash: null,
       simulate_result: null
     },
 

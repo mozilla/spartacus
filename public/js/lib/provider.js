@@ -70,20 +70,21 @@ define(['jquery', 'log', 'underscore', 'utils'], function($, log, _, utils) {
       }
     },
 
-    prepareAll: function(userHash) {
+    prepareAll: function() {
+      var currentUser = app.session.get('logged_in_user');
+      var existingUser = this.storage.getItem('spa-user');
 
-      if (!userHash) {
-        logger.log('userHash not set. Rejecting deferred');
+      logger.log('new user:', '"' + currentUser + '"',
+                 'existing user:', '"' + existingUser + '"');
+
+      if (!currentUser) {
+        logger.log('user not set. Rejecting deferred');
         return $.Deferred().reject();
       }
 
-      var existingUser = this.storage.getItem('spa-user-hash');
-      this.storage.setItem('spa-user-hash', userHash);
+      this.storage.setItem('spa-user', currentUser);
 
-      logger.log('new user hash =', userHash,
-                  'existing user hash =', existingUser);
-
-      if (existingUser && existingUser !== userHash) {
+      if (existingUser && existingUser !== currentUser) {
         logger.log('User has changed: do logout');
         utils.trackEvent({'action': 'user change detection',
                           'label': 'User Changed'});

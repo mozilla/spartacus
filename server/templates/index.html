@@ -10,6 +10,7 @@
   <body
     class="dev-server"
     data-base-api-url="{{ settings.baseApiUrl }}"
+    data-mkt-user="{% if mkt_user %}true{% else %}false{% endif %}"
     data-privacy-policy="https://marketplace.firefox.com/privacy-policy"
     data-reset-user-url="{{ settings.resetUserURL }}"
     data-terms-of-service="https://marketplace.firefox.com/terms-of-use"

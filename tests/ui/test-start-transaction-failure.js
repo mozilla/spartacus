@@ -15,7 +15,7 @@ casper.test.begin('Transaction failure should only have cancel option.', {
     helpers.doLogin();
 
     casper.waitForSelector('.full-error', function() {
-      helpers.assertErrorCode('TRANS_CONFIG_FAILED');
+      helpers.assertErrorCode('TRANS_REQUEST_FAILED');
       test.assertVisible('.full-error .button', 'Cancel button should be visible');
       test.assertElementCount('.full-error .button', 1, 'Should only be one button for cancelling the flow');
       casper.click('.full-error .button');

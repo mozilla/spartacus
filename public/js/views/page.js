@@ -84,7 +84,6 @@ define([
           // app.startView is set by an data attr data-start-view.
           // if defined we will use that as the starting view instead
           // of assuming the need to set up a Payment.
-          // This will be a no-op function if the route doesn't exist.
           try {
             app.router.getMappedRouteFunc(app.startView)();
           } catch(e) {

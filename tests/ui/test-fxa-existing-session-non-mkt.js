@@ -1,9 +1,10 @@
 var helpers = require('../helpers');
 
 helpers.startCasper({
+  path: '/mozpay/?req=foo&mktuser=false',
   useFxA: true,
   fakeFxaSession: true,
-  fakeNonMktUser: true,
+  mktUser: false,
   fakeFxaEmail: 'foo@<bar>.com',
   setUp: function() {
     helpers.fakeStartTransaction();

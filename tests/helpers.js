@@ -424,23 +424,25 @@ function doLogout() {
 
 function setUpFxA(options) {
   options = options || {};
-  casper.evaluate(function(fakeFxaSession, fakeNonMktUser, fakeFxaEmail) {
+  casper.evaluate(function(fakeFxaSession, mktUser, fakeFxaEmail) {
+
+    if (typeof mktUser === 'undefined') {
+      mktUser = true;
+    }
+
     console.log('injecting FxA test config');
     if (fakeFxaSession === true) {
       console.log('Faking a logged-in user');
       document.body.setAttribute('data-logged-in-user', fakeFxaEmail || 'foo@bar.com');
-      if (fakeNonMktUser === true) {
-        console.log('Faking a non-mkt user');
-        document.body.setAttribute('data-mkt-user', 'false');
-      } else {
-        console.log('Faking a mkt user');
-        document.body.setAttribute('data-mkt-user', 'true');
-      }
+      console.log('Faking a non-mkt user');
+      mktUser = (mktUser === false) ? 'false' : (mktUser ? 'true': '');
+      console.log('mktUser:', mktUser);
+      document.body.setAttribute('data-mkt-user', mktUser);
     }
     document.body.setAttribute('data-fxa-auth-url', '/fake-fxa-oauth');
     document.body.setAttribute('data-fxa-callback-url', '/fake-fxa-callback');
     document.body.setAttribute('data-fxa-state', 'fake-fxa-state');
-  }, options.fakeFxaSession, options.fakeNonMktUser, options.fakeFxaEmail);
+  }, options.fakeFxaSession, options.mktUser, options.fakeFxaEmail);
 }
 
 
@@ -475,7 +477,7 @@ function startCasper(options) {
     if (useFxA) {
       setUpFxA({
         fakeFxaSession: options.fakeFxaSession,
-        fakeNonMktUser: options.fakeNonMktUser,
+        mktUser: options.mktUser,
         fakeFxaEmail: options.fakeFxaEmail
       });
     } else if (typeof onLoadFinished === 'function') {

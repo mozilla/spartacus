@@ -3,7 +3,7 @@ var helpers = require('../helpers');
 helpers.startCasper({
   useFxA: true,
   fakeFxaSession: true,
-  fakeNonMktUser: true,
+  mktUser: false,
   setUp: function() {
     casper.on('url.changed', function () {
       helpers.fakeFxA();

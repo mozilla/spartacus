@@ -1,9 +1,10 @@
 define([
+  'caps',
   'i18n-abide-utils',
   'jquery',
   'log',
   'utils'
-], function(i18n, $, log, utils) {
+], function(caps, i18n, $, log, utils) {
 
   'use strict';
 
@@ -31,7 +32,7 @@ define([
   function focusPin() {
     // In the trusted UI we need to ensure it has
     // focus otherwise programmatic focus doesn't work.
-    if (window.focus) {
+    if (window.focus && !caps.isFirefoxAndroid()) {
       logger.log('Focusing window');
       window.focus();
     }

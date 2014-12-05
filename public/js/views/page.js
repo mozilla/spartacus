@@ -80,7 +80,7 @@ define([
           app.router.showLogin();
         }
       } else if (value === true) {
-        if (app.startView) {
+        if (app.startView && app.startView !== 'index') {
           // app.startView is set by an data attr data-start-view.
           // if defined we will use that as the starting view instead
           // of assuming the need to set up a Payment.

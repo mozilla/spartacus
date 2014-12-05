@@ -62,7 +62,11 @@ spa.get(/\/(?:css|fonts|i18n|images|js|lib)\/?.*/, express.static(__dirname + '/
 
 spa.get('/mozpay/', function (req, res) {
   var context = {settings: config, useFxA: false};
-  if (req.originalUrl === '/mozpay/provider/boku/wait-to-finish') {
+
+  console.log(req.originalUrl);
+  if (req.originalUrl === '/mozpay/?req=foo') {
+    context.startView = 'index';
+  } else if (req.originalUrl === '/mozpay/provider/boku/wait-to-finish') {
     // This is emulating the url used by webpay for wait-to-finish.
     context.transaction_status_url = '/poll-wait-to-finish';
     context.startView = 'wait-to-finish';
@@ -160,13 +164,13 @@ if (env !== 'test') {
   // Fake wait-to-start
   spa.get('/poll-wait-to-start', function (req, res) {
     // O is STATUS_PENDING.
-    res.send({'url': '/fake-provider', 'status': 0});
+    res.send({'url': '/fake-provider', 'status': 0, 'startView': 'wait-to-start'});
   });
 
   // Fake wait-to-finish
   spa.get('/poll-wait-to-finish', function(req, res) {
     // 1 is STATUS_COMPLETED
-    res.send({'status': 1, 'url': null});
+    res.send({'status': 1, 'url': null, 'startView': 'wait-to-finish'});
   });
 
 }

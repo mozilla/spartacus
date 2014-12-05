@@ -22,10 +22,9 @@ define([
         if (!app.session.get('logged_in_user')) {
           utils.fxaLogin();
         } else {
-          if (utils.bodyData.mktUser === false && !utils.bodyData.startView) {
+          if (utils.bodyData.mktUser === false && utils.bodyData.startView === 'index') {
             // A user is already logged-in but we want to provide
-            // the option to logout if required but not on views with an
-            // explicit startView.
+            // the option to logout if required but only on the index page.
             logger.log('Show logged-in-state view');
             app.router.showLoggedInState();
             return;

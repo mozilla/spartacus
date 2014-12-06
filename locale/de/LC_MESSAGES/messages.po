@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: AMO Webpay\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-28 17:19+0000\n"
-"PO-Revision-Date: 2014-10-30 21:02+0000\n"
+"PO-Revision-Date: 2014-12-06 15:11+0000\n"
 "Last-Translator: Michael <michael.koehler1@gmx.de>\n"
 "Language-Team: German (de) <coce@nufuerspam.de>\n"
 "Language: de\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1414702937.0\n"
+"X-POOTLE-MTIME: 1417878719.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
 #: public/js/lib/cancel.js:18
@@ -422,12 +422,12 @@ msgstr ""
 
 #: public/js/views/page.js:34
 msgid "Logging out"
-msgstr ""
+msgstr "Sie werden abgemeldet…"
 
 #: templates/signout.html:9
 msgid "You are signed in as:"
-msgstr ""
+msgstr "Sie sind angemeldet als:"
 
 #: templates/signout.html:11
 msgid "Not you?"
-msgstr ""
+msgstr "Sind Sie das nicht?"

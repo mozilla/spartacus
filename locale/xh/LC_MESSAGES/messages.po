@@ -2,406 +2,428 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-28 17:19+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-09-25 11:27+0000\n"
+"PO-Revision-Date: 2014-11-04 13:56+0000\n"
+"Last-Translator: xh-ZA19_Pumlani <pmsibula@sun.ac.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: xh\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.9.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1415109385.0\n"
 
-#: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
-#: public/js/lib/cancel.js:18
+#: public/js/lib/cancel.js:33
+#: public/js/lib/cancel.js:16
 msgid "Payment cancelled."
-msgstr ""
+msgstr "Intlawulo irhoxisiwe"
 
-#: public/js/views/create-pin.js:105 templates/error.html:20
-#: templates/pin-form.html:26 public/js/views/create-pin.js:104
-#: public/js/views/error.js:51 templates/simulate.html:17
-#: public/js/views/create-pin.js:140 templates/pin-form.html:37
-#: public/js/views/create-pin.js:155 public/js/views/error.js:54
+#: public/js/views/create-pin.js:105
+#: templates/error.html:20
+#: templates/pin-form.html:26
+#: public/js/views/create-pin.js:104
+#: public/js/views/error.js:51
+#: templates/simulate.html:17
+#: public/js/views/create-pin.js:140
+#: templates/pin-form.html:37
 msgid "Cancel"
-msgstr ""
+msgstr "Rhoxisa"
 
-#: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64
-#: public/js/lib/pin-widget.js:68 public/js/lib/pin-widget.js:65
-#: public/js/lib/pin-widget.js:83
+#: public/js/lib/pin-widget.js:58
+#: public/js/lib/pin-widget.js:64
+#: public/js/lib/pin-widget.js:68
 msgid "PIN can only contain digits."
-msgstr ""
+msgstr "I-PIN inokuqulatha amanani kuphela."
 
 #: webpay/base/templates/base.html:30
 msgid "You logged in as a different user, you must start the payment again."
 msgstr ""
+"Usayine wangena njengomsebenzisi owahlukileyo, kufuneka uqalise intlawulo "
+"kwakhona."
 
-#: public/js/views/throbber.js:15 public/js/views/throbber.js:16
+#: public/js/views/throbber.js:15
+#: public/js/views/throbber.js:16
 #: templates/throbber.html:7
 msgid "Loading"
-msgstr ""
+msgstr "Iyalayisha"
 
 #: webpay/base/templates/base.html:32
 msgid "Beginning payment"
-msgstr ""
+msgstr "Ukuqalisa intlawulo"
 
-#: public/js/views/login.js:19 public/js/views/force-auth.js:81
-#: public/js/views/login.js:18 public/js/views/reset-start.js:67
-#: public/js/views/force-auth.js:93 public/js/views/reset-start.js:70
-#: public/js/views/force-auth.js:92 public/js/views/reset-start.js:72
+#: public/js/views/login.js:19
+#: public/js/views/force-auth.js:81
+#: public/js/views/login.js:18
+#: public/js/views/reset-start.js:67
 msgid "Connecting to Persona"
-msgstr ""
+msgstr "Inxibelelana noMntu"
 
 #: webpay/base/templates/base.html:34
 msgid "Payment complete"
-msgstr ""
+msgstr "Intlawulo igqityiwe"
 
-#: public/js/lib/auth.js:22 public/js/lib/auth.js:20
-#: public/js/views/page.js:41
+#: public/js/lib/auth.js:22
+#: public/js/lib/auth.js:20
 msgid "Oops"
-msgstr ""
+msgstr "Gxebe"
 
-#: public/js/lib/auth.js:65 public/js/lib/auth.js:84 public/js/lib/auth.js:155
-#: public/js/lib/auth.js:86 public/js/lib/auth.js:157
+#: public/js/lib/auth.js:65
+#: public/js/lib/auth.js:84
+#: public/js/lib/auth.js:155
 msgid "This is taking longer than expected. Try again?"
-msgstr ""
+msgstr "Oku kuthabatha ixesha elide kunelilindelekileyo. Zama kwakhona?"
 
 #: public/js/lib/auth.js:19
 msgid "Something went wrong. Try again?"
-msgstr ""
+msgstr "Ikhona into engahambanga kakuhle. Zama kwakhona?"
 
-#: templates/error.html:27 public/js/views/error.js:52
-#: public/js/views/error.js:87 public/js/views/locked.js:24
-#: templates/iframe-overlay.html:14 public/js/views/error.js:55
-#: public/js/views/error.js:90
+#: templates/error.html:27
+#: public/js/views/error.js:52
+#: public/js/views/error.js:87
+#: public/js/views/locked.js:24
+#: templates/iframe-overlay.html:14
 msgid "OK"
-msgstr ""
+msgstr "KULUNGILE"
 
-#: public/js/views/error.js:44 public/js/views/locked.js:23
-#: public/js/views/error.js:54 public/js/views/error.js:57
+#: public/js/views/error.js:44
+#: public/js/views/locked.js:23
+#: public/js/views/error.js:54
 msgid "Error"
-msgstr ""
+msgstr "Imposiso"
 
-#: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100
-#: public/js/views/enter-pin.js:97 public/js/views/enter-pin.js:101
-#: public/js/views/enter-pin.js:105 public/js/views/enter-pin.js:113
-#: public/js/views/enter-pin.js:117
+#: public/js/views/enter-pin.js:96
+#: public/js/views/enter-pin.js:100
+#: public/js/views/enter-pin.js:97
+#: public/js/views/enter-pin.js:101
+#: public/js/views/enter-pin.js:105
 msgid "Enter PIN"
-msgstr ""
+msgstr "Ngenisa i-PIN"
 
-#: public/js/views/login.js:25 templates/login.html:5
-#: public/js/views/fxa-login.js:25 public/js/views/fxa-login.js:27
-#: public/js/views/login.js:24 public/js/views/login.js:26
-#: public/js/views/fxa-login.js:26 public/js/views/fxa-login.js:28
-#: public/js/views/fxa-login.js:29
+#: public/js/views/login.js:25
+#: templates/login.html:5
+#: public/js/views/fxa-login.js:25
+#: public/js/views/fxa-login.js:27
+#: public/js/views/login.js:24
+#: public/js/views/login.js:26
+#: public/js/views/fxa-login.js:26
+#: public/js/views/fxa-login.js:28
 msgid "Sign In"
-msgstr ""
+msgstr "Sayina ungene"
 
-#: templates/login.html:6 public/js/views/fxa-login.js:28
-#: public/js/views/login.js:27 public/js/views/fxa-login.js:29
-#: public/js/views/fxa-login.js:30
+#: templates/login.html:6
+#: public/js/views/fxa-login.js:28
+#: public/js/views/login.js:27
+#: public/js/views/fxa-login.js:29
 msgid "Sign in to continue with the payment"
-msgstr ""
+msgstr "Sayina ungene ukuqhubeka nentlawulo"
 
-#: templates/login.html:7 templates/login.html:9
+#: templates/login.html:7
+#: templates/login.html:9
 msgid "Sign in"
-msgstr ""
+msgstr "Sayina ungene"
 
-#: public/js/views/create-pin.js:106 public/js/views/create-pin.js:113
-#: public/js/views/reset-pin.js:64 templates/reset-start.html:12
-#: templates/was-locked.html:12 public/js/views/create-pin.js:105
-#: public/js/views/create-pin.js:112 templates/simulate.html:18
-#: public/js/views/create-pin.js:141 public/js/views/create-pin.js:148
-#: public/js/views/reset-pin.js:65 public/js/views/create-pin.js:156
-#: public/js/views/create-pin.js:163 public/js/views/reset-pin.js:68
-#: templates/signout.html:14
+#: public/js/views/create-pin.js:106
+#: public/js/views/create-pin.js:113
+#: public/js/views/reset-pin.js:64
+#: templates/reset-start.html:12
+#: templates/was-locked.html:12
+#: public/js/views/create-pin.js:105
+#: public/js/views/create-pin.js:112
+#: templates/simulate.html:18
+#: public/js/views/create-pin.js:141
+#: public/js/views/create-pin.js:148
 msgid "Continue"
-msgstr ""
+msgstr "Qhubeka "
 
-#: public/js/views/enter-pin.js:73 public/js/views/enter-pin.js:74
-#: public/js/views/enter-pin.js:78 public/js/views/enter-pin.js:90
+#: public/js/views/enter-pin.js:73
+#: public/js/views/enter-pin.js:74
+#: public/js/views/enter-pin.js:78
 msgid "Wrong PIN"
-msgstr ""
+msgstr "I-PIN engachanekanga"
 
-#: public/js/views/create-pin.js:48 public/js/views/create-pin.js:84
-#: public/js/views/create-pin.js:97
+#: public/js/views/create-pin.js:48
+#: public/js/views/create-pin.js:84
 msgid "PINs do not match."
-msgstr ""
+msgstr "Ii-PIN azingqinelani"
 
-#: webpay/pin/views.py:46 webpay/testing/views.py:25
+#: webpay/pin/views.py:46
+#: webpay/testing/views.py:25
 msgid "Create a PIN"
-msgstr ""
+msgstr "Yila i-PIN"
 
-#: webpay/pin/views.py:68 webpay/pin/views.py:185
-#: public/js/views/create-pin.js:36 public/js/views/create-pin.js:71
-#: public/js/views/create-pin.js:82
+#: webpay/pin/views.py:68
+#: webpay/pin/views.py:185
+#: public/js/views/create-pin.js:36
+#: public/js/views/create-pin.js:71
 msgid "Confirm PIN"
-msgstr ""
+msgstr "Qinisekisa i-PIN"
 
-#: webpay/pin/views.py:131 webpay/pin/views.py:157
+#: webpay/pin/views.py:131
+#: webpay/pin/views.py:157
 #: webpay/pin/templates/pin/pin_was_locked.html:13
-#: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
-#: templates/was-locked.html:11 public/js/views/force-auth.js:89
-#: public/js/views/force-auth.js:102 public/js/views/reset-pin.js:66
-#: public/js/views/reset-pin.js:69 public/js/views/force-auth.js:101
-#: public/js/views/reset-pin.js:72
+#: public/js/views/reset-pin.js:65
+#: public/js/views/reset-pin.js:68
+#: templates/was-locked.html:11
+#: public/js/views/force-auth.js:89
 msgid "Reset PIN"
-msgstr ""
+msgstr "Seta ngokutsha i-PIN"
 
 #. This is the same as the standard forgot
 #. password that most sites have.
-#: templates/pin-form.html:18 templates/reset-start.html:6
-#: templates/pin-form.html:29 templates/pin-form.html:30
+#: templates/pin-form.html:18
+#: templates/reset-start.html:6
+#: templates/pin-form.html:29
 msgid "Forgot your PIN?"
-msgstr ""
+msgstr "Uyilibele i-PIN?"
 
-#: public/js/views/locked.js:24 public/js/views/locked.js:22
+#: public/js/views/locked.js:24
+#: public/js/views/locked.js:22
 msgid ""
-"You entered the wrong PIN too many times. Your account is locked. Please try "
-"your purchase again in 5 minutes."
+"You entered the wrong PIN too many times. Your account is locked. Please "
+"try your purchase again in 5 minutes."
 msgstr ""
+"Ungenise i-PIN engachanekanga amaxesha amaninzi kakhulu. I-akhawunti yakho "
+"itshixekile. Nceda uzame intengo yakho kwakhona kwimizuzu emi-5. "
 
 #: templates/was-locked.html:6
 msgid "Your PIN was locked"
-msgstr ""
+msgstr "I-PIN yakho ibitshixekile"
 
 #: templates/was-locked.html:7
 msgid ""
 "Your PIN was locked because you entered it incorrectly too many times. You "
 "can continue and try entering your PIN again or reset your PIN."
 msgstr ""
+"I-PIN yakho itshixekile ngenxa yokuba uyingenise ngokungachanekanga amaxesha "
+"amaninzi kakhulu. Ungaqhubeka kwaye uzame ukungenisa i-PIN yakho kwakhona "
+"okanye yisete ngokutsha i-PIN yakho."
 
-#: templates/reset-start.html:7 templates/reset-start.html:10
+#: templates/reset-start.html:7
 msgid ""
 "Are you sure you want to reset your PIN? You must sign in to Persona to "
 "reset your PIN."
 msgstr ""
+"Uqinisekile ukuba ufuna ukuyiseta ngokutsha i-PIN yakho? Kufuneka usayine "
+"kuMntu ukuyiseta ngokutsha i-PIN yakho."
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6
 #: webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"
-msgstr ""
+msgstr "Iqinisekisa intlawulo"
 
-#: public/js/lib/auth.js:29 public/js/lib/auth.js:30 public/js/lib/auth.js:25
-#: public/js/lib/auth.js:39 public/js/lib/auth.js:26 public/js/lib/auth.js:41
+#: public/js/lib/auth.js:29
+#: public/js/lib/auth.js:30
+#: public/js/lib/auth.js:25
+#: public/js/lib/auth.js:39
 msgid "Retrying"
-msgstr ""
+msgstr "Iyazama kwakhona"
 
 #: public/js/lib/auth.js:64
 msgid "That took longer than expected. Retry?"
-msgstr ""
+msgstr "Oko kuthabathe ixesha elide kunokuba kulindelekile. Zama kwakhona?"
 
-#: public/js/views/create-pin.js:37 templates/reset-start.html:11
-#: public/js/views/create-pin.js:72 templates/reset-start.html:15
-#: public/js/views/create-pin.js:83
+#: public/js/views/create-pin.js:37
+#: templates/reset-start.html:11
+#: public/js/views/create-pin.js:72
 msgid "Back"
-msgstr ""
+msgstr "Emva"
 
-#: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95
-#: public/js/views/enter-pin.js:96 public/js/views/create-pin.js:73
-#: public/js/views/enter-pin.js:100 public/js/views/create-pin.js:84
-#: public/js/views/enter-pin.js:112
+#: public/js/views/create-pin.js:38
+#: public/js/views/enter-pin.js:95
+#: public/js/views/enter-pin.js:96
+#: public/js/views/create-pin.js:73
+#: public/js/views/enter-pin.js:100
 msgid "Submit"
-msgstr ""
+msgstr "Ngenisa"
 
-#: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60
-#: public/js/views/reset-pin.js:28 public/js/lib/wait.js:171
-#: public/js/views/create-pin.js:65 public/js/views/enter-pin.js:61
-#: public/js/views/force-auth.js:53 public/js/views/reset-pin.js:29
-#: public/js/views/reset-start.js:107 public/js/views/create-pin.js:101
-#: public/js/views/enter-pin.js:65 public/js/views/reset-start.js:108
-#: public/js/views/force-auth.js:61 public/js/views/reset-pin.js:30
-#: public/js/views/reset-start.js:112 public/js/views/force-auth.js:60
-#: public/js/views/reset-start.js:122 public/js/lib/auth.js:22
-#: public/js/lib/auth.js:36 public/js/lib/wait.js:180
-#: public/js/views/create-pin.js:116 public/js/views/enter-pin.js:75
-#: public/js/views/page.js:43 public/js/views/reset-pin.js:33
-#: public/js/views/reset-start.js:124
+#: public/js/views/create-pin.js:66
+#: public/js/views/enter-pin.js:60
+#: public/js/views/reset-pin.js:28
+#: public/js/lib/wait.js:171
+#: public/js/views/create-pin.js:65
+#: public/js/views/enter-pin.js:61
+#: public/js/views/force-auth.js:53
+#: public/js/views/reset-pin.js:29
+#: public/js/views/reset-start.js:107
+#: public/js/views/create-pin.js:101
+#: public/js/views/enter-pin.js:65
+#: public/js/views/reset-start.js:108
 msgid "Retry?"
-msgstr ""
+msgstr "Zama kwakhona?"
 
-#: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
-#: public/js/views/create-pin.js:113 public/js/views/create-pin.js:115
-#: public/js/views/create-pin.js:149 public/js/views/create-pin.js:152
-#: public/js/views/create-pin.js:164 public/js/views/create-pin.js:167
+#: public/js/views/create-pin.js:114
+#: public/js/views/create-pin.js:116
+#: public/js/views/create-pin.js:113
+#: public/js/views/create-pin.js:115
+#: public/js/views/create-pin.js:149
+#: public/js/views/create-pin.js:152
 msgid "Create PIN"
-msgstr ""
+msgstr "Yila i-PIN"
 
 #: public/js/views/error.js:45
 msgid "Something went wrong."
-msgstr ""
+msgstr "Ikhona into engahambanga kakuhle"
 
-#: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118
-#: public/js/views/reset-start.js:119 public/js/views/reset-start.js:123
-#: public/js/views/reset-start.js:133 public/js/views/reset-start.js:135
+#: public/js/views/reset-start.js:29
+#: public/js/views/reset-start.js:118
+#: public/js/views/reset-start.js:119
 msgid "Reset your PIN?"
-msgstr ""
+msgstr "Seta ngokutsha i-PIN yakho?"
 
-#: public/js/views/was-locked.js:13 public/js/views/was-locked.js:38
-#: public/js/views/was-locked.js:42
+#: public/js/views/was-locked.js:13
+#: public/js/views/was-locked.js:38
 msgid "Was Locked"
-msgstr ""
+msgstr "Ibitshixekile"
 
-#: public/js/views/wait-for-tx.js:10 public/js/views/wait-to-start.js:13
+#: public/js/views/wait-for-tx.js:10
+#: public/js/views/wait-to-start.js:13
 msgid "Setting up payment"
-msgstr ""
+msgstr "Iyaseta intlawulo"
 
 #: public/js/error-codes.js:12
 msgid "An internal web request timed out."
-msgstr ""
+msgstr "Isicelo sewebhu yangaphakathi siphelelwe lixesha."
 
 #: public/js/error-codes.js:13
 msgid "The system timed out while trying to log in."
-msgstr ""
+msgstr "Isistim iphelelwe lixesha ngelixa uzama ukungena ngaphakathi."
 
 #: public/js/error-codes.js:14
 msgid "An error occurred whilst trying to log out."
-msgstr ""
+msgstr "Kwenzeke imposiso ngelixa uzama ukusayina uphume."
 
 #: public/js/error-codes.js:15
 msgid "The system timed out while trying to log out."
-msgstr ""
+msgstr "Isistimu iphelelwe lixesha ngelixa uzama ukusayina uphume."
 
 #: public/js/error-codes.js:16
 msgid "Payments are temporarily disabled."
-msgstr ""
+msgstr "Iintlawula zenziwe azasebenza okwexeshana."
 
 #: public/js/error-codes.js:17
 msgid "An unexpected error occurred when creating your PIN."
-msgstr ""
+msgstr "Kwenzeke imposiso engalindelekanga xa bekuyilwa i-PIN yakho."
 
-#: public/js/error-codes.js:18 public/js/error-codes.js:27
+#: public/js/error-codes.js:18
+#: public/js/error-codes.js:27
 msgid "The PIN data submitted was invalid."
-msgstr ""
+msgstr "Ingcombolo ye-PIN engenisiweyo ibiyengasebenziyo."
 
 #: public/js/error-codes.js:19
 msgid "No valid user found whilst attempting to create your PIN"
-msgstr ""
+msgstr "Akukho msebenzisi osebenzayo ofunyenweyo ngelixa kuyilwa i-PIN yakho"
 
 #: public/js/error-codes.js:20
 msgid "Permission denied attempting to create your PIN."
-msgstr ""
+msgstr "Imvume yaliwe kuzanywa ukuyilwa i-PIN yakho."
 
 #: public/js/error-codes.js:21
 msgid "The request timed out whilst attempting to create your PIN."
-msgstr ""
+msgstr "Isicelo siphelelwe lixesha ngelixa kuzanywa ukuyilwa i-PIN yakho."
 
 #: public/js/error-codes.js:22
 msgid "An unexpected error occurred whilst checking your PIN."
-msgstr ""
+msgstr "Kwenzeke imposiso engalindelekanga ngelixa ikhangela i-PIN yakho."
 
 #: public/js/error-codes.js:23
 msgid "No valid user found whilst checking your PIN"
 msgstr ""
+"Akukho msebenzisi usebenzayo uye wafunyanwa ngelixa kukhangelwa i-PIN yakho"
 
 #: public/js/error-codes.js:24
 msgid "Permission denied attempting to check your PIN"
-msgstr ""
+msgstr "Imvume yaliwe kuzanywa ukukhangelwa i-PIN yakho"
 
 #: public/js/error-codes.js:25
 msgid "The request timed out whilst trying to check your PIN"
-msgstr ""
+msgstr "Isicelo siphelelwe lixesha ngelixa izama ukukhangela i-PIN yakho"
 
 #: public/js/error-codes.js:26
 msgid "An unexpected error occurred when resetting your PIN."
 msgstr ""
+"Kwenzeke imposiso engalindelekanga ngelixa kusetwa i-PIN yakho ngokutsha."
 
 #: public/js/error-codes.js:28
 msgid "No valid user found whilst attempting to reset your PIN"
 msgstr ""
+"Akukho msebenzisi usebenzayo uye wafunyanwa ngelixa kusetwa i-PIN yakho "
+"ngokutsha "
 
 #: public/js/error-codes.js:29
 msgid "Permission denied attempting to reset your PIN."
-msgstr ""
+msgstr "Imvume yaliwe kuzanywa ukusetwa i-PIN yakho ngokutsha."
 
 #: public/js/error-codes.js:30
 msgid "The request timed out whilst attempting to reset your PIN."
 msgstr ""
+"Isicelo siphelelwe lixesha ngelixa kuzanywa ukusetwa iPIN yakho ngokutsha."
 
 #: public/js/error-codes.js:31
 msgid "The transaction failed. You have not been charged for this purchase."
-msgstr ""
+msgstr "Intengiso ayiphumelelanga. Awuhlawuliswanga ngale ntengo."
 
 #: public/js/error-codes.js:32
 msgid ""
 "The payment method or price point is not supported for this region or "
 "operator."
 msgstr ""
+"Indlela yokuhlawula okanye indawo yamaxabiso ayixhaswanga kule ndawo okanye "
+"umsebenzisi."
 
 #: public/js/lib/auth.js:214
 msgid "Waiting for login"
-msgstr ""
+msgstr "Ilindele ukusayina ungene"
 
 #: public/js/lib/wait.js:56
 msgid "Retrieving Transaction"
-msgstr ""
+msgstr "Ifumana intengiso"
 
-#: public/js/views/error.js:55 public/js/views/error.js:58
+#: public/js/views/error.js:55
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "Kwenzeke imposiso engalindelekanga."
 
-#: public/js/views/force-auth.js:87 public/js/views/force-auth.js:100
-#: public/js/views/force-auth.js:99
+#: public/js/views/force-auth.js:87
 msgid "Sign-in to reset PIN"
-msgstr ""
+msgstr "Sayina ungene ukuseta i-PIN ngokutsha"
 
-#: public/js/views/force-auth.js:90 public/js/views/force-auth.js:103
-#: public/js/views/force-auth.js:102
+#: public/js/views/force-auth.js:90
 msgid "Please sign in to reset your PIN."
-msgstr ""
+msgstr "Nceda usayine ungene ukuseta iPIN yakho ngokutsha."
 
 #: public/js/views/init.js:12
 msgid "Initializing"
-msgstr ""
+msgstr "Iyasungula"
 
 #: public/js/views/locked.js:21
 msgid "PIN Locked"
-msgstr ""
+msgstr "I-PIN itshixiwe"
 
-#: public/js/views/payment-success.js:15 public/js/views/wait-to-finish.js:14
+#: public/js/views/payment-success.js:15
+#: public/js/views/wait-to-finish.js:14
 msgid "Completing payment"
-msgstr ""
+msgstr "Igqibezela intlawulo"
 
 #: public/js/views/simulate.js:23
 msgid "Processing"
-msgstr ""
+msgstr "Iyasetyenzwa"
 
 #: public/js/views/simulate.js:51
 msgid "Simulate Payment"
-msgstr ""
+msgstr "Ulinganiso lwentlawulo"
 
 #: public/js/views/simulate.js:55
 msgid "You will not be charged."
-msgstr ""
+msgstr "Awuyi kuhlawuliswa."
 
-#: templates/reset-start.html:12 templates/reset-start.html:16
+#: templates/reset-start.html:12
 msgid "Reset"
-msgstr ""
+msgstr "Seta ngokutsha"
 
 #: templates/pin-form.html:22
 msgid ""
 "By proceeding you agree to our <a %(terms)s>terms</a> and <a "
 "%(privacy)s>Privacy Policy</a>"
 msgstr ""
-
-#: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68
-#: public/js/views/force-auth.js:90 public/js/views/reset-start.js:70
-msgid "Connecting to Firefox Accounts"
-msgstr ""
-
-#: templates/reset-start.html:8
-msgid ""
-"Are you sure you want to reset your PIN? You must sign in to Firefox "
-"Accounts to reset your PIN."
-msgstr ""
-
-#: public/js/views/page.js:34
-msgid "Logging out"
-msgstr ""
-
-#: templates/signout.html:9
-msgid "You are signed in as:"
-msgstr ""
-
-#: templates/signout.html:11
-msgid "Not you?"
-msgstr ""
+"Ngokuqhubeka uyavumelana <a %(terms)s>nemiqathango yethu</a> kunye <a %"
+"(privacy)s>nePholisi yaBucala</a>"

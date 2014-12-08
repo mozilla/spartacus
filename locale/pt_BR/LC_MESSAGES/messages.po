@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: marketplace-webpay\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-28 17:19+0000\n"
-"PO-Revision-Date: 2014-11-08 16:51+0000\n"
+"PO-Revision-Date: 2014-12-08 15:41+0000\n"
 "Last-Translator: Marco Aurélio <ouesten@me.com>\n"
 "Language-Team: Português (Brasil) <dev-l10n-pt-br@lists.mozilla.org>\n"
 "Language: pt_BR\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1415465517.0\n"
+"X-POOTLE-MTIME: 1418053295.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
 #: public/js/lib/cancel.js:18
@@ -406,27 +406,25 @@ msgstr ""
 
 #: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68
 #: public/js/views/force-auth.js:90 public/js/views/reset-start.js:70
-#, fuzzy
 msgid "Connecting to Firefox Accounts"
-msgstr "Conectando-se ao Persona"
+msgstr "Conectando-se a contas Firefox"
 
 #: templates/reset-start.html:8
-#, fuzzy
 msgid ""
 "Are you sure you want to reset your PIN? You must sign in to Firefox "
 "Accounts to reset your PIN."
 msgstr ""
-"Tem certeza de que deseja redefinir seu PIN? Você deve identificar-se no "
-"Persona para redefinir seu PIN."
+"Tem certeza de que deseja redefinir seu PIN? Você deve entrar com sua conta "
+"Firefox para redefinir seu PIN."
 
 #: public/js/views/page.js:34
 msgid "Logging out"
-msgstr ""
+msgstr "Saindo"
 
 #: templates/signout.html:9
 msgid "You are signed in as:"
-msgstr ""
+msgstr "Você está conectado como:"
 
 #: templates/signout.html:11
 msgid "Not you?"
-msgstr ""
+msgstr "Não é você?"

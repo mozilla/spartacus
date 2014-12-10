@@ -32,7 +32,8 @@ def pre_update(ref):
 def update():
     with lcd(SPARTACUS):
         local('npm install')
-        local('node -e "require(\'grunt\').cli()" null abideCompile')
+        local('node -e "require(\'grunt\').cli()" null abideCompile '
+              '--lockfile-name=i18n-{0}.lock'.format(settings.ENV))
         local('node -e "require(\'grunt\').cli()" null stylus')
         local('node -e "require(\'grunt\').cli()" null nunjucks')
         local('node -e "require(\'grunt\').cli()" null requirejs')

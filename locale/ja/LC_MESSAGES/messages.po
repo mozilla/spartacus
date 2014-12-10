@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-28 17:19+0000\n"
-"PO-Revision-Date: 2014-11-05 23:23-0500\n"
+"PO-Revision-Date: 2014-12-10 10:55-0500\n"
 "Last-Translator: Kohei Yoshino <kohei.yoshino@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -409,12 +409,12 @@ msgstr ""
 
 #: public/js/views/page.js:34
 msgid "Logging out"
-msgstr ""
+msgstr "ログアウト中"
 
 #: templates/signout.html:9
 msgid "You are signed in as:"
-msgstr ""
+msgstr "あなたはこのアカウントでログインしています:"
 
 #: templates/signout.html:11
 msgid "Not you?"
-msgstr ""
+msgstr "あなたではありませんか？"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-28 17:19+0000\n"
-"PO-Revision-Date: 2014-11-20 14:08+0000\n"
+"PO-Revision-Date: 2014-12-11 02:51+0000\n"
 "Last-Translator: Peter <petercpg@mail.moztw.org>\n"
 "Language-Team: MozTW <petercpg@mail.moztw.org>\n"
 "Language: zh_TW\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1416492483.0\n"
+"X-POOTLE-MTIME: 1418266282.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
 #: public/js/lib/cancel.js:18
@@ -400,12 +400,12 @@ msgstr "您確定要重設 PIN 碼嗎？必須以 Firefox 帳號登入才能重�
 
 #: public/js/views/page.js:34
 msgid "Logging out"
-msgstr ""
+msgstr "正在登出"
 
 #: templates/signout.html:9
 msgid "You are signed in as:"
-msgstr ""
+msgstr "您已登入為:"
 
 #: templates/signout.html:11
 msgid "Not you?"
-msgstr ""
+msgstr "不是您？"

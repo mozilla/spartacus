@@ -7,6 +7,7 @@ module.exports = function(grunt) {
   // The requirejs config data.
   var requireConfig = require('./public/js/require-config.js');
 
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
@@ -241,6 +242,7 @@ module.exports = function(grunt) {
       json: {
         dest: 'public/i18n',
         options: {
+          lockFileName: grunt.option('lockfile-name'),
           type: 'json',
           jsVar: '_i18nAbide'
         },

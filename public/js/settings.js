@@ -110,7 +110,8 @@ var settings = {
     'https://zippy-dev.allizom.org',
     'https://zippy.paas.allizom.org'
   ],
-  enableNativeFxA: false
+  enableNativeFxA: false,
+  enableDesktopPayments: false,
 };
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {

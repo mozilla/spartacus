@@ -13,7 +13,7 @@ define([
   var uaTrackingCategory = settings.ua_tracking_category;
   var $body = $('body');
 
-  return {
+  var utils = {
     $body: $body,
     $doc: $(document),
     $html: $('html'),
@@ -24,14 +24,28 @@ define([
     decodeURIComponent: function decodeURIComponent(uri) {
       return window.decodeURIComponent(uri.replace(/\+/g, ' '));
     },
+    getOrigin: function getOrigin(locObject) {
+      var loc = locObject || window.location;
+      return loc.origin || loc.protocol + '//' + loc.host;
+    },
     mozPaymentProvider: window.mozPaymentProvider || {
       paymentSuccess: window.paymentSuccess || function() {
-        logger.error('No paymentSuccess function');
-        return app.error.render({errorCode: 'NO_PAY_SUCCESS_FUNC'});
+        if (settings.enableDesktopPayments === true && window.opener) {
+          window.opener.postMessage({status: 'ok'},
+                                    utils.getOrigin(window.opener.location));
+        } else {
+          logger.error('No paymentSuccess function');
+          return app.error.render({errorCode: 'NO_PAY_SUCCESS_FUNC'});
+        }
       },
-      paymentFailed: window.paymentFailed || function() {
-        logger.error('No paymentFailed function');
-        return app.error.render({errorCode: 'NO_PAY_FAILED_FUNC'});
+      paymentFailed: window.paymentFailed || function(errorCode) {
+        if (settings.enableDesktopPayments === true && window.opener) {
+          window.opener.postMessage({status: 'failed', errorCode: errorCode},
+                                    utils.getOrigin(window.opener.location));
+        } else {
+          logger.error('No paymentFailed function');
+          return app.error.render({errorCode: 'NO_PAY_FAILED_FUNC'});
+        }
       },
     },
     trackEvent: function(options) {
@@ -120,4 +134,6 @@ define([
       window.location.href = this.bodyData.fxaAuthUrl;
     }
   };
+
+  return utils;
 });

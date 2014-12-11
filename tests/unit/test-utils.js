@@ -1,6 +1,7 @@
 define(['utils', 'settings'], function(utils, settings) {
 
   var assert = chai.assert;
+
   suite('Utils Tests', function(){
 
     test('encodeURIComponent should return foo+bar', function(){
@@ -58,7 +59,6 @@ define(['utils', 'settings'], function(utils, settings) {
       assert.equal(utils.isValidRedirURL('http://whatever.com/foo/bar/baz', {validRedirSites: ['http://whatever.com']}), true);
     });
 
-
     test('test errorCodeFromXhr falls back when no JSON', function() {
       assert.equal(utils.errorCodeFromXhr({}, 'FALLBACK'), 'FALLBACK');
     });
@@ -75,10 +75,81 @@ define(['utils', 'settings'], function(utils, settings) {
         'THE_ERROR');
     });
 
-    test('test errorCodeFromXhr uses a default fallback', function() {
-      assert.equal(utils.errorCodeFromXhr({}), 'UNEXPECTED_ERROR');
+    test('test origin util', function() {
+      assert.equal(utils.getOrigin({
+        origin: 'http://foo.com:8080'
+      }), 'http://foo.com:8080');
+
+      assert.equal(utils.getOrigin({
+        protocol: 'http:',
+        host: 'foo.com:90',
+      }), 'http://foo.com:90');
     });
   });
+
+
+  suite('paySuccess Stub tests', function(){
+
+    setup(function(){
+      this.oldEnableDesktopPayments = settings.enableDesktopPayments;
+      this.oldWindowOpener = window.opener;
+      this.oldApp = window.app;
+      window.opener = {
+        location: {
+          origin: 'https://foo.bar.com',
+        },
+        postMessage: function() {},
+      };
+      window.app = {
+        error: {
+          render: function() {},
+        }
+      };
+    });
+
+    teardown(function(){
+      settings.enableDesktopPayments = this.oldEnableDesktopPayments;
+      window.opener = this.oldWindowOpener;
+      window.app = this.oldApp;
+    });
+
+    test('test paymentSuccess enableDesktopPayments true', function() {
+      settings.enableDesktopPayments = true;
+      var stub = sinon.stub(window.opener, 'postMessage');
+      utils.mozPaymentProvider.paymentSuccess();
+      assert.ok(stub.calledOnce, 'postMessage is called once');
+      sinon.assert.calledWith(stub, sinon.match({status: 'ok'}, 'https://foo.bar.com'));
+    });
+
+    test('test paymentFailed enableDesktopPayments true', function() {
+      settings.enableDesktopPayments = true;
+      var stub = sinon.stub(window.opener, 'postMessage');
+      utils.mozPaymentProvider.paymentFailed('WHATEVER');
+      assert.ok(stub.calledOnce, 'postMessage is called once');
+      sinon.assert.calledWith(stub, sinon.match({status: 'failed', errorCode: 'WHATEVER'}, 'https://foo.bar.com'));
+    });
+
+    test('test paymentSuccess enableDesktopPayments false', function() {
+      settings.enableDesktopPayments = false;
+      var stub1 = sinon.spy(window.opener, 'postMessage');
+      var stub2 = sinon.stub(window.app.error, 'render');
+      utils.mozPaymentProvider.paymentSuccess();
+      assert.equal(stub1.callCount, 0, "postMessage isn't called");
+      assert.equal(stub2.callCount, 1, 'app.error.render is called');
+      sinon.assert.calledWith(stub2, sinon.match({errorCode: 'NO_PAY_SUCCESS_FUNC'}));
+    });
+
+    test('test paymentSuccess enableDesktopPayments false', function() {
+      settings.enableDesktopPayments = false;
+      var stub1 = sinon.spy(window.opener, 'postMessage');
+      var stub2 = sinon.stub(window.app.error, 'render');
+      utils.mozPaymentProvider.paymentFailed();
+      assert.equal(stub1.callCount, 0, "postMessage isn't called");
+      assert.equal(stub2.callCount, 1, 'app.error.render is called');
+      sinon.assert.calledWith(stub2, sinon.match({errorCode: 'NO_PAY_FAILED_FUNC'}));
+    });
+  });
+
 
   suite('Utils FxA tests', function(){
 

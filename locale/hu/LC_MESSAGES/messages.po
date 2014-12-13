@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-28 17:19+0000\n"
-"PO-Revision-Date: 2014-12-13 09:19+0000\n"
+"PO-Revision-Date: 2014-12-13 09:20+0000\n"
 "Last-Translator: Gábor <kelemeng@ubuntu.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n !=1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1418462341.0\n"
+"X-POOTLE-MTIME: 1418462418.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
 #: public/js/lib/cancel.js:18
@@ -79,7 +79,7 @@ msgstr "Hiba történt. Megpróbálja ismét?"
 #: templates/iframe-overlay.html:14 public/js/views/error.js:55
 #: public/js/views/error.js:90
 msgid "OK"
-msgstr "A tranzakció sikertelen. Ezt a vásárlást nem számláztuk ki."
+msgstr "OK"
 
 #: public/js/views/error.js:44 public/js/views/locked.js:23
 #: public/js/views/error.js:54 public/js/views/error.js:57
@@ -305,16 +305,16 @@ msgstr "Váratlan hiba történt a PIN ellenőrzése közben."
 
 #: public/js/error-codes.js:23
 msgid "No valid user found whilst checking your PIN"
-msgstr "Nem található érvényes felhasználó a PIN ellenőrzése közben."
+msgstr "Nem található érvényes felhasználó a PIN ellenőrzése közben"
 
 #: public/js/error-codes.js:24
 msgid "Permission denied attempting to check your PIN"
-msgstr "Hozzáférés megtagadva a PIN ellenőrzésére tett kísérlet közben."
+msgstr "Hozzáférés megtagadva a PIN ellenőrzésére tett kísérlet közben"
 
 #: public/js/error-codes.js:25
 msgid "The request timed out whilst trying to check your PIN"
 msgstr ""
-"A kérés túllépte az időkorlátot a PIN ellenőrzésére tett kísérlet közben."
+"A kérés túllépte az időkorlátot a PIN ellenőrzésére tett kísérlet közben"
 
 #: public/js/error-codes.js:26
 msgid "An unexpected error occurred when resetting your PIN."
@@ -324,7 +324,7 @@ msgstr "Váratlan hiba történt a PIN visszaállításakor."
 msgid "No valid user found whilst attempting to reset your PIN"
 msgstr ""
 "Nem található érvényes felhasználó a PIN visszaállítására tett kísérlet "
-"közben."
+"közben"
 
 #: public/js/error-codes.js:29
 msgid "Permission denied attempting to reset your PIN."
@@ -333,8 +333,7 @@ msgstr "Hozzáférés megtagadva a PIN visszaállítására tett kísérlet köz
 #: public/js/error-codes.js:30
 msgid "The request timed out whilst attempting to reset your PIN."
 msgstr ""
-"A kérés túllépte az időkorlátot a a PIN visszaállítására tett kísérlet "
-"közben."
+"A kérés túllépte az időkorlátot a PIN visszaállítására tett kísérlet közben."
 
 #: public/js/error-codes.js:31
 msgid "The transaction failed. You have not been charged for this purchase."

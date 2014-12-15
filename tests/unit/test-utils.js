@@ -91,7 +91,7 @@ define(['utils', 'settings'], function(utils, settings) {
   suite('paySuccess Stub tests', function(){
 
     setup(function(){
-      this.oldEnableDesktopPayments = settings.enableDesktopPayments;
+      this.oldEnableDesktopPayments = settings.enableWebPayments;
       this.oldWindowOpener = window.opener;
       this.oldApp = window.app;
       window.opener = {
@@ -108,45 +108,45 @@ define(['utils', 'settings'], function(utils, settings) {
     });
 
     teardown(function(){
-      settings.enableDesktopPayments = this.oldEnableDesktopPayments;
+      settings.enableWebPayments = this.oldEnableDesktopPayments;
       window.opener = this.oldWindowOpener;
       window.app = this.oldApp;
     });
 
-    test('test paymentSuccess enableDesktopPayments true', function() {
-      settings.enableDesktopPayments = true;
-      var stub = sinon.stub(window.opener, 'postMessage');
+    test('test paymentSuccess enableWebPayments true', function() {
+      settings.enableWebPayments = true;
+      var stubOpener = sinon.stub(window.opener, 'postMessage');
       utils.mozPaymentProvider.paymentSuccess();
-      assert.ok(stub.calledOnce, 'postMessage is called once');
-      sinon.assert.calledWith(stub, sinon.match({status: 'ok'}, 'https://foo.bar.com'));
+      assert.ok(stubOpener.calledOnce, 'postMessage is called once');
+      sinon.assert.calledWith(stubOpener, sinon.match({status: 'ok'}, 'https://foo.bar.com'));
     });
 
-    test('test paymentFailed enableDesktopPayments true', function() {
-      settings.enableDesktopPayments = true;
-      var stub = sinon.stub(window.opener, 'postMessage');
+    test('test paymentFailed enableWebPayments true', function() {
+      settings.enableWebPayments = true;
+      var stubOpener = sinon.stub(window.opener, 'postMessage');
       utils.mozPaymentProvider.paymentFailed('WHATEVER');
-      assert.ok(stub.calledOnce, 'postMessage is called once');
-      sinon.assert.calledWith(stub, sinon.match({status: 'failed', errorCode: 'WHATEVER'}, 'https://foo.bar.com'));
+      assert.ok(stubOpener.calledOnce, 'postMessage is called once');
+      sinon.assert.calledWith(stubOpener, sinon.match({status: 'failed', errorCode: 'WHATEVER'}, 'https://foo.bar.com'));
     });
 
-    test('test paymentSuccess enableDesktopPayments false', function() {
-      settings.enableDesktopPayments = false;
-      var stub1 = sinon.spy(window.opener, 'postMessage');
-      var stub2 = sinon.stub(window.app.error, 'render');
+    test('test paymentSuccess enableWebPayments false', function() {
+      settings.enableWebPayments = false;
+      var stubOpener = sinon.stub(window.opener, 'postMessage');
+      var stubError = sinon.stub(window.app.error, 'render');
       utils.mozPaymentProvider.paymentSuccess();
-      assert.equal(stub1.callCount, 0, "postMessage isn't called");
-      assert.equal(stub2.callCount, 1, 'app.error.render is called');
-      sinon.assert.calledWith(stub2, sinon.match({errorCode: 'NO_PAY_SUCCESS_FUNC'}));
+      assert.equal(stubOpener.callCount, 0, "postMessage isn't called");
+      assert.equal(stubError.callCount, 1, 'app.error.render is called');
+      sinon.assert.calledWith(stubError, sinon.match({errorCode: 'NO_PAY_SUCCESS_FUNC'}));
     });
 
-    test('test paymentSuccess enableDesktopPayments false', function() {
-      settings.enableDesktopPayments = false;
-      var stub1 = sinon.spy(window.opener, 'postMessage');
-      var stub2 = sinon.stub(window.app.error, 'render');
+    test('test paymentSuccess enableWebPayments false', function() {
+      settings.enableWebPayments = false;
+      var stubOpener = sinon.stub(window.opener, 'postMessage');
+      var stubError = sinon.stub(window.app.error, 'render');
       utils.mozPaymentProvider.paymentFailed();
-      assert.equal(stub1.callCount, 0, "postMessage isn't called");
-      assert.equal(stub2.callCount, 1, 'app.error.render is called');
-      sinon.assert.calledWith(stub2, sinon.match({errorCode: 'NO_PAY_FAILED_FUNC'}));
+      assert.equal(stubOpener.callCount, 0, "postMessage isn't called");
+      assert.equal(stubError.callCount, 1, 'app.error.render is called');
+      sinon.assert.calledWith(stubError, sinon.match({errorCode: 'NO_PAY_FAILED_FUNC'}));
     });
   });
 

@@ -30,7 +30,7 @@ define([
     },
     mozPaymentProvider: window.mozPaymentProvider || {
       paymentSuccess: window.paymentSuccess || function() {
-        if (settings.enableDesktopPayments === true && window.opener) {
+        if (settings.enableWebPayments === true && window.opener) {
           window.opener.postMessage({status: 'ok'},
                                     utils.getOrigin(window.opener.location));
         } else {
@@ -39,7 +39,7 @@ define([
         }
       },
       paymentFailed: window.paymentFailed || function(errorCode) {
-        if (settings.enableDesktopPayments === true && window.opener) {
+        if (settings.enableWebPayments === true && window.opener) {
           window.opener.postMessage({status: 'failed', errorCode: errorCode},
                                     utils.getOrigin(window.opener.location));
         } else {

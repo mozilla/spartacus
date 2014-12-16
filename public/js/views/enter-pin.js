@@ -37,7 +37,9 @@ define([
     handleSubmit: function(e) {
       if (e) {
         e.preventDefault();
-        $(e.target).prop('disabled', true);
+        if (e.target && e.target.nodeName.toLowerCase() === 'button') {
+          $(e.target).prop('disabled', true);
+        }
       }
 
       var that = this;

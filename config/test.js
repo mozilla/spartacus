@@ -8,6 +8,7 @@ module.exports = {
   showClientConsole: false,
   staticURL: 'https://marketplace-dev-cdn.allizom.org/',
   appSettingsOverrides: JSON.stringify({
+    enableWebPayments: false,
     validRedirSites: [
       'http://mozilla.bango.net',
       'https://zippy.pass.allizom.org',

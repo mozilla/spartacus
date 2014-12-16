@@ -5,8 +5,6 @@ var settings = {
   ua_tracking_id: 'UA-36116321-6',
   // Allow tracking of events
   ua_action_tracking_enabled: true,
-  // Whether to ignore the users 'Do Not Track' settings.
-  ua_dnt_override: false,
   // The category used in all event tracking.
   ua_tracking_category: 'Consumer Payment Flow',
   // Turn UA tracking on/off wholesale.

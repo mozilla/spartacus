@@ -5,15 +5,6 @@ define(['caps', 'log', 'settings'], function(caps, log, settings) {
   var enabled = settings.ua_tracking_enabled;
   var actionsEnabled = settings.ua_action_tracking_enabled;
 
-  // Respect DNT.
-  var shouldNotTrack = {'yes': 1, '1': 1};
-  if (enabled && !settings.ua_dnt_override &&
-    (navigator.doNotTrack in shouldNotTrack ||
-     navigator.msDoNotTrack in shouldNotTrack)) {
-    logger.log('[tracking] DNT enabled; disabling tracking');
-    enabled = false;
-  }
-
   if (caps.hasLocalStorage) {
     clientID = window.localStorage.getItem('clientID');
     if (!clientID && enabled) {

@@ -5,6 +5,7 @@ helpers.startCasper({
     helpers.fakeLogout();
     helpers.fakeVerification();
     helpers.fakeStartTransaction();
+    helpers.spyOnMozPaymentProvider();
     helpers.fakePinData({data: {pin: true}});
     helpers.fakePinData({data: {pin: true, pin_is_locked_out: true}, method: 'POST', statusCode: 400, url: '/mozpay/v1/api/pin/check/'});
   },
@@ -31,11 +32,9 @@ casper.test.begin('Login Enter Pin API call returns locked screen when API says 
       casper.click('.locked .button');
     });
 
-    casper.waitForSelector('.full-error', function() {
-      // This is shown when paymentFailed is called.
-      // TODO: This will need updating at the point
-      // we have an API on desktop.
-      helpers.assertErrorCode('NO_PAY_FAILED_FUNC');
+    helpers.waitForMozPayment(function(mozPayProviderSpy) {
+      test.assertEqual(mozPayProviderSpy.paymentFailed.firstCall.args,
+                       ['PIN_LOCKED']);
     });
 
     casper.run(function() {

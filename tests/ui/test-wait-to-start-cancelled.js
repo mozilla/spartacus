@@ -13,6 +13,7 @@ helpers.startCasper({
     helpers.fakePinData({data: {pin: true}, method: 'POST', statusCode: 200, url:'/mozpay/v1/api/pin/check/'});
     helpers.fakeWaitPoll({type: 'start', statusData: 3});
     helpers.fakeWaitPoll({type: 'start', statusData: 5});
+    helpers.spyOnMozPaymentProvider();
   },
 });
 
@@ -33,11 +34,9 @@ casper.test.begin('Test wait to start polling', {
       test.assertVisible('.progress', 'Check progress is shown on wait-to-start');
     });
 
-    casper.waitForSelector('.full-error', function() {
-      // This is due to no native paymentFailed function. But it does
-      // show we've reached the cancellation point in the app.
-      // TODO: When a shim is added this will need to be updated.
-      helpers.assertErrorCode('NO_PAY_FAILED_FUNC');
+    helpers.waitForMozPayment(function(mozPayProviderSpy) {
+      test.assertEqual(mozPayProviderSpy.paymentFailed.firstCall.args,
+                       ['USER_CANCELLED']);
     });
 
     casper.run(function() {

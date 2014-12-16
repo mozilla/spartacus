@@ -5,6 +5,7 @@ helpers.startCasper({
     helpers.fakeLogout();
     helpers.fakeVerification();
     helpers.fakeStartTransaction({statusCode: 500});
+    helpers.spyOnMozPaymentProvider();
   },
 });
 
@@ -21,11 +22,9 @@ casper.test.begin('Transaction failure should only have cancel option.', {
       casper.click('.full-error .button');
     });
 
-    casper.waitForSelector('.full-error', function() {
-      // This is shown when paymentFailed is called.
-      // TODO: This will need updating at the point
-      // we have an API on desktop.
-      helpers.assertErrorCode('NO_PAY_FAILED_FUNC');
+    helpers.waitForMozPayment(function(mozPayProviderSpy) {
+      test.assertEqual(mozPayProviderSpy.paymentFailed.firstCall.args,
+                       ['TRANS_REQUEST_FAILED']);
     });
 
     casper.run(function() {

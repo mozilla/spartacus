@@ -29,15 +29,15 @@ function makeToken() {
 }
 
 casper.on('page.error', function(error, trace) {
-    if (error.indexOf('INVALID_STATE_ERR') !== -1) {
-      casper.echo(error, 'WARNING');
-    } else {
-      var lines = [error];
-      trace.forEach(function(line) {
-          lines.push([line.file, 'line', line.line].join(' '));
-      });
-      casper.echo(lines.join('\n'), 'ERROR');
-    }
+  if (error.indexOf('INVALID_STATE_ERR') !== -1) {
+    casper.echo(error, 'WARNING');
+  } else {
+    var lines = [error];
+    trace.forEach(function(line) {
+        lines.push([line.file, 'line', line.line].join(' '));
+    });
+    casper.echo(lines.join('\n'), 'ERROR');
+  }
 });
 
 casper.on('page.initialized', function(page) {
@@ -525,6 +525,46 @@ function startCasper(options) {
 }
 
 
+function spyOnMozPaymentProvider() {
+  casper.evaluate(function(){
+    // On B2G, the platform defines a mozPaymentProvider object. For tests,
+    // we want to stub it out and then spy on it to make assertions.
+    window.mozPaymentProvider = {
+      paymentSuccess: function() {
+        console.log('called fake paymentSuccess');
+      },
+      paymentFailed: function(errorCode) {
+        console.log('called fake paymentFailed');
+      }
+    };
+    window._mozPaymentProviderSpy = {
+      paymentSuccess: sinon.spy(window.mozPaymentProvider,
+                                'paymentSuccess'),
+      paymentFailed: sinon.spy(window.mozPaymentProvider,
+                               'paymentFailed')
+    };
+  });
+}
+
+
+function waitForMozPayment(callback) {
+  var mozPayProviderSpy;
+
+  casper.waitFor(function() {
+    mozPayProviderSpy = this.evaluate(function() {
+      return window._mozPaymentProviderSpy;
+    })
+    if (!mozPayProviderSpy) {
+      throw new Error('test setUp did not create a mozPayProvider spy');
+    }
+    return (mozPayProviderSpy.paymentSuccess.called ||
+            mozPayProviderSpy.paymentFailed.called);
+  }, function() {
+    callback(mozPayProviderSpy);
+  });
+}
+
+
 function assertErrorCode(errorCode) {
   casper.test.assertSelectorHasText(
     '.error-code', errorCode,
@@ -568,6 +608,8 @@ module.exports = {
   injectSinon: injectSinon,
   setLoginFilter: setLoginFilter,
   sendEnterKey: sendEnterKey,
+  spyOnMozPaymentProvider: spyOnMozPaymentProvider,
   startCasper: startCasper,
   url: url,
+  waitForMozPayment: waitForMozPayment
 };

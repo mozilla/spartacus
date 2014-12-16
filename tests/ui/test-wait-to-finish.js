@@ -9,6 +9,7 @@ helpers.startCasper({
     // As consumeStack is true, responses added with respondWith will be consumed in order.
     helpers.fakeLogout();
     helpers.fakeVerification();
+    helpers.spyOnMozPaymentProvider();
     helpers.fakeWaitPoll({type: 'finish', statusData: 3});
     helpers.fakeWaitPoll({type: 'finish'});
   },
@@ -27,11 +28,8 @@ casper.test.begin('Check wait-to-finish polling.', {
       test.assertVisible('.progress', 'Check progress is shown on wait-to-finish');
     });
 
-    casper.waitForSelector('.full-error', function() {
-      // This is due to no native paymentSuccess function. But it does
-      // show we've reached the success point in the app.
-      // TODO: When a shim is added this will need to be updated.
-      helpers.assertErrorCode('NO_PAY_SUCCESS_FUNC');
+    helpers.waitForMozPayment(function(mozPayProviderSpy) {
+      test.assertTrue(mozPayProviderSpy.paymentSuccess.called);
     });
 
     casper.run(function() {

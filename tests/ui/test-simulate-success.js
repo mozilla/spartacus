@@ -6,6 +6,7 @@ helpers.startCasper({
     helpers.fakeVerification();
     helpers.fakeStartTransaction({simulate: {result: "postback"}});
     helpers.fakeSimulate();
+    helpers.spyOnMozPaymentProvider();
   },
 });
 
@@ -19,11 +20,8 @@ casper.test.begin('Simulate success', {
       this.click('.cta');
     });
 
-    casper.waitForSelector('.full-error', function() {
-      // This is due to no native paymentSuccess function. But it does
-      // show we've reached the success point in the app.
-      // TODO: When a shim is added this will need to be updated.
-      helpers.assertErrorCode('NO_PAY_SUCCESS_FUNC');
+    helpers.waitForMozPayment(function(mozPayProviderSpy) {
+      test.assertTrue(mozPayProviderSpy.paymentSuccess.called);
     });
 
     casper.run(function() {

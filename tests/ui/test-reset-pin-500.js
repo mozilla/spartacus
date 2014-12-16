@@ -6,6 +6,7 @@ helpers.startCasper({
     helpers.fakeVerification();
     helpers.fakeStartTransaction();
     helpers.fakePinData({data: {pin: true}});
+    helpers.spyOnMozPaymentProvider();
   },
 });
 
@@ -52,11 +53,9 @@ casper.test.begin('Reset pin returns 500', {
       casper.click('.full-error .button');
     });
 
-    casper.waitForSelector('.full-error', function() {
-      // This is shown when paymentFailed is called.
-      // TODO: This will need updating at the point
-      // we have an API on desktop.
-      helpers.assertErrorCode('NO_PAY_FAILED_FUNC');
+    helpers.waitForMozPayment(function(mozPayProviderSpy) {
+      test.assertEqual(mozPayProviderSpy.paymentFailed.firstCall.args,
+                       ['PIN_RESET_ERROR']);
     });
 
     casper.run(function() {

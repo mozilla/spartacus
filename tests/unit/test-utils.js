@@ -75,16 +75,6 @@ define(['utils', 'settings'], function(utils, settings) {
         'THE_ERROR');
     });
 
-    test('test origin util', function() {
-      assert.equal(utils.getOrigin({
-        origin: 'http://foo.com:8080'
-      }), 'http://foo.com:8080');
-
-      assert.equal(utils.getOrigin({
-        protocol: 'http:',
-        host: 'foo.com:90',
-      }), 'http://foo.com:90');
-    });
   });
 
 

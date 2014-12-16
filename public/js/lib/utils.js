@@ -24,10 +24,6 @@ define([
     decodeURIComponent: function decodeURIComponent(uri) {
       return window.decodeURIComponent(uri.replace(/\+/g, ' '));
     },
-    getOrigin: function getOrigin(locObject) {
-      var loc = locObject || window.location;
-      return loc.origin || loc.protocol + '//' + loc.host;
-    },
     mozPaymentProvider: window.mozPaymentProvider || {
       paymentSuccess: window.paymentSuccess || function() {
         if (settings.enableWebPayments === true) {

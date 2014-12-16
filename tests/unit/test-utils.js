@@ -118,7 +118,7 @@ define(['utils', 'settings'], function(utils, settings) {
       var stubOpener = sinon.stub(window.opener, 'postMessage');
       utils.mozPaymentProvider.paymentSuccess();
       assert.ok(stubOpener.calledOnce, 'postMessage is called once');
-      sinon.assert.calledWith(stubOpener, sinon.match({status: 'ok'}, 'https://foo.bar.com'));
+      sinon.assert.calledWithMatch(stubOpener, {status: 'ok'});
     });
 
     test('test paymentFailed enableWebPayments true', function() {
@@ -126,7 +126,7 @@ define(['utils', 'settings'], function(utils, settings) {
       var stubOpener = sinon.stub(window.opener, 'postMessage');
       utils.mozPaymentProvider.paymentFailed('WHATEVER');
       assert.ok(stubOpener.calledOnce, 'postMessage is called once');
-      sinon.assert.calledWith(stubOpener, sinon.match({status: 'failed', errorCode: 'WHATEVER'}, 'https://foo.bar.com'));
+      sinon.assert.calledWithMatch(stubOpener, {status: 'failed', errorCode: 'WHATEVER'});
     });
 
     test('test paymentSuccess enableWebPayments false', function() {

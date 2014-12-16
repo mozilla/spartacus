@@ -111,7 +111,7 @@ var settings = {
   enableNativeFxA: false,
   // Web payments are anything that don't have a native
   // mozPay / mozPaymentProvider implementation.
-  enableWebPayments: false,
+  enableWebPayments: true,
 };
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {

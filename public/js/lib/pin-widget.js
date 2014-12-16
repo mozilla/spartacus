@@ -32,10 +32,8 @@ define([
   function focusPin() {
     // In the trusted UI we need to ensure it has
     // focus otherwise programmatic focus doesn't work.
-    if (window.focus && !caps.isFirefoxAndroid()) {
-      logger.log('Focusing window');
-      window.focus();
-    }
+    logger.log('Focusing window');
+    window.focus();
     updatePinUI();
     logger.log('Focusing pin');
     $pinInput.focus();

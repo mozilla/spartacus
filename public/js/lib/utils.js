@@ -13,7 +13,7 @@ define([
   var uaTrackingCategory = settings.ua_tracking_category;
   var $body = $('body');
 
-  return {
+  var utils = {
     $body: $body,
     $doc: $(document),
     $html: $('html'),
@@ -26,12 +26,24 @@ define([
     },
     mozPaymentProvider: window.mozPaymentProvider || {
       paymentSuccess: window.paymentSuccess || function() {
-        logger.error('No paymentSuccess function');
-        return app.error.render({errorCode: 'NO_PAY_SUCCESS_FUNC'});
+        if (settings.enableWebPayments === true) {
+          // Note: Do not add sensitive data to this
+          // as it's sent to unspecified origins.
+          window.opener.postMessage({status: 'ok'}, '*');
+        } else {
+          logger.error('No paymentSuccess function');
+          return app.error.render({errorCode: 'NO_PAY_SUCCESS_FUNC'});
+        }
       },
-      paymentFailed: window.paymentFailed || function() {
-        logger.error('No paymentFailed function');
-        return app.error.render({errorCode: 'NO_PAY_FAILED_FUNC'});
+      paymentFailed: window.paymentFailed || function(errorCode) {
+        if (settings.enableWebPayments === true) {
+          // Note: Do not add sensitive data to this
+          // as it's sent to unspecified origins.
+          window.opener.postMessage({status: 'failed', errorCode: errorCode}, '*');
+        } else {
+          logger.error('No paymentFailed function');
+          return app.error.render({errorCode: 'NO_PAY_FAILED_FUNC'});
+        }
       },
     },
     trackEvent: function(options) {
@@ -120,4 +132,6 @@ define([
       window.location.href = this.bodyData.fxaAuthUrl;
     }
   };
+
+  return utils;
 });

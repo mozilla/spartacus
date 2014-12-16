@@ -108,7 +108,10 @@ var settings = {
     'https://zippy-dev.allizom.org',
     'https://zippy.paas.allizom.org'
   ],
-  enableNativeFxA: false
+  enableNativeFxA: false,
+  // Web payments are anything that don't have a native
+  // mozPay / mozPaymentProvider implementation.
+  enableWebPayments: false,
 };
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {

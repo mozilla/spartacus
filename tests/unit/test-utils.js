@@ -1,6 +1,7 @@
 define(['utils', 'settings'], function(utils, settings) {
 
   var assert = chai.assert;
+
   suite('Utils Tests', function(){
 
     test('encodeURIComponent should return foo+bar', function(){
@@ -58,7 +59,6 @@ define(['utils', 'settings'], function(utils, settings) {
       assert.equal(utils.isValidRedirURL('http://whatever.com/foo/bar/baz', {validRedirSites: ['http://whatever.com']}), true);
     });
 
-
     test('test errorCodeFromXhr falls back when no JSON', function() {
       assert.equal(utils.errorCodeFromXhr({}, 'FALLBACK'), 'FALLBACK');
     });
@@ -75,10 +75,71 @@ define(['utils', 'settings'], function(utils, settings) {
         'THE_ERROR');
     });
 
-    test('test errorCodeFromXhr uses a default fallback', function() {
-      assert.equal(utils.errorCodeFromXhr({}), 'UNEXPECTED_ERROR');
+  });
+
+
+  suite('paySuccess Stub tests', function(){
+
+    setup(function(){
+      this.oldEnableDesktopPayments = settings.enableWebPayments;
+      this.oldWindowOpener = window.opener;
+      this.oldApp = window.app;
+      window.opener = {
+        location: {
+          origin: 'https://foo.bar.com',
+        },
+        postMessage: function() {},
+      };
+      window.app = {
+        error: {
+          render: function() {},
+        }
+      };
+    });
+
+    teardown(function(){
+      settings.enableWebPayments = this.oldEnableDesktopPayments;
+      window.opener = this.oldWindowOpener;
+      window.app = this.oldApp;
+    });
+
+    test('test paymentSuccess enableWebPayments true', function() {
+      settings.enableWebPayments = true;
+      var stubOpener = sinon.stub(window.opener, 'postMessage');
+      utils.mozPaymentProvider.paymentSuccess();
+      assert.ok(stubOpener.calledOnce, 'postMessage is called once');
+      sinon.assert.calledWithMatch(stubOpener, {status: 'ok'});
+    });
+
+    test('test paymentFailed enableWebPayments true', function() {
+      settings.enableWebPayments = true;
+      var stubOpener = sinon.stub(window.opener, 'postMessage');
+      utils.mozPaymentProvider.paymentFailed('WHATEVER');
+      assert.ok(stubOpener.calledOnce, 'postMessage is called once');
+      sinon.assert.calledWithMatch(stubOpener, {status: 'failed', errorCode: 'WHATEVER'});
+    });
+
+    test('test paymentSuccess enableWebPayments false', function() {
+      settings.enableWebPayments = false;
+      var stubOpener = sinon.stub(window.opener, 'postMessage');
+      var stubError = sinon.stub(window.app.error, 'render');
+      utils.mozPaymentProvider.paymentSuccess();
+      assert.equal(stubOpener.callCount, 0, "postMessage isn't called");
+      assert.equal(stubError.callCount, 1, 'app.error.render is called');
+      sinon.assert.calledWith(stubError, sinon.match({errorCode: 'NO_PAY_SUCCESS_FUNC'}));
+    });
+
+    test('test paymentSuccess enableWebPayments false', function() {
+      settings.enableWebPayments = false;
+      var stubOpener = sinon.stub(window.opener, 'postMessage');
+      var stubError = sinon.stub(window.app.error, 'render');
+      utils.mozPaymentProvider.paymentFailed();
+      assert.equal(stubOpener.callCount, 0, "postMessage isn't called");
+      assert.equal(stubError.callCount, 1, 'app.error.render is called');
+      sinon.assert.calledWith(stubError, sinon.match({errorCode: 'NO_PAY_FAILED_FUNC'}));
     });
   });
+
 
   suite('Utils FxA tests', function(){
 

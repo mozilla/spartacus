@@ -88,7 +88,7 @@ define([
     handleSubmit: function(e) {
       e.preventDefault();
       if (this.curPin === pin.getPin()) {
-        if (e.target && e.target.nodeName.toLowerCase() === 'button') {
+        if (e.target && e.target.nodeName === 'BUTTON') {
           $(e.target).prop('disabled', true);
         }
         this.submitData(this.curPin);

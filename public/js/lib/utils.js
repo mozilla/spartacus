@@ -26,24 +26,24 @@ define([
     },
     mozPaymentProvider: window.mozPaymentProvider || {
       paymentSuccess: window.paymentSuccess || function() {
-        if (settings.enableWebPayments === true) {
-          // Note: Do not add sensitive data to this
-          // as it's sent to unspecified origins.
-          window.opener.postMessage({status: 'ok'}, '*');
-        } else {
-          logger.error('No paymentSuccess function');
-          return app.error.render({errorCode: 'NO_PAY_SUCCESS_FUNC'});
+        logger.log('web based mozPaymentProvider: paymentSuccess');
+        if (!window.opener) {
+          logger.error('paymentSuccess called but no window.opener was found');
+          return app.error.render({errorCode: 'INCOMPLETE_PAY_SUCCESS'});
         }
+        // Note: Do not add sensitive data to this
+        // as it's sent to unspecified origins.
+        window.opener.postMessage({status: 'ok'}, '*');
       },
       paymentFailed: window.paymentFailed || function(errorCode) {
-        if (settings.enableWebPayments === true) {
-          // Note: Do not add sensitive data to this
-          // as it's sent to unspecified origins.
-          window.opener.postMessage({status: 'failed', errorCode: errorCode}, '*');
-        } else {
-          logger.error('No paymentFailed function');
-          return app.error.render({errorCode: 'NO_PAY_FAILED_FUNC'});
+        logger.log('web based mozPaymentProvider: paymentFailed');
+        if (!window.opener) {
+          logger.error('paymentFailed called but no window.opener was found');
+          return app.error.render({errorCode: 'INCOMPLETE_PAY_FAIL'});
         }
+        // Note: Do not add sensitive data to this
+        // as it's sent to unspecified origins.
+        window.opener.postMessage({status: 'failed', errorCode: errorCode}, '*');
       },
     },
     trackEvent: function(options) {

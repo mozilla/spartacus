@@ -4,6 +4,7 @@ helpers.startCasper({
   setUp: function(){
     helpers.fakeLogout();
     helpers.fakeVerification({statusCode: 403});
+    helpers.spyOnMozPaymentProvider();
   },
 });
 
@@ -19,11 +20,9 @@ casper.test.begin('Denied verification should only have cancel option.', {
       casper.click('.full-error .button');
     });
 
-    casper.waitForSelector('.full-error', function() {
-      // This is shown when paymentFailed is called.
-      // TODO: This will need updating at the point
-      // we have an API on desktop.
-      helpers.assertErrorCode('NO_PAY_FAILED_FUNC');
+    helpers.waitForMozPayment(function(mozPayProviderSpy) {
+      test.assertEqual(mozPayProviderSpy.paymentFailed.firstCall.args,
+                       ['VERIFY_DENIED']);
     });
 
     casper.run(function() {

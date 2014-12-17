@@ -6,6 +6,7 @@ helpers.startCasper({
     helpers.fakeVerification();
     helpers.fakeStartTransaction();
     helpers.fakePinData({statusCode: 500});
+    helpers.spyOnMozPaymentProvider();
   }
 });
 
@@ -21,11 +22,9 @@ casper.test.begin('Make initial pin fetch error, then retry with success.', {
       casper.click('.full-error .button');
     });
 
-    casper.waitForSelector('.full-error', function() {
-      // This is shown when paymentFailed is called.
-      // TODO: This will need updating at the point
-      // we have an API on desktop.
-      helpers.assertErrorCode('NO_PAY_FAILED_FUNC');
+    helpers.waitForMozPayment(function(mozPayProviderSpy) {
+      test.assertEqual(mozPayProviderSpy.paymentFailed.firstCall.args,
+                       ['PIN_STATE_ERROR']);
     });
 
     casper.run(function() {

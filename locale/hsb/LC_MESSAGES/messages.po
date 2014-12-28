@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-28 17:19+0000\n"
-"PO-Revision-Date: 2014-12-28 20:25+0000\n"
+"PO-Revision-Date: 2014-12-28 22:41+0000\n"
 "Last-Translator: milupo <milupo@sorbzilla.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: hsb\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
 "n%100==4 ? 2 : 3);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1419798345.0\n"
+"X-POOTLE-MTIME: 1419806498.0\n"
 
 #: public/js/lib/cancel.js:33
 #: public/js/lib/cancel.js:16
@@ -215,7 +215,7 @@ msgid ""
 "You entered the wrong PIN too many times. Your account is locked. Please "
 "try your purchase again in 5 minutes."
 msgstr ""
-"Sće přehusto wopačny PIN zapodał. Waše konto je so zawrěł. Prošu spytajće "
+"Sće přehusto wopačny PIN zapodał. Waše konto je so zawrěło. Prošu spytajće "
 "swoju kup za 5 mjeńšin hišće raz."
 
 #: templates/was-locked.html:6

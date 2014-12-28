@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: AMO Webpay\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-28 17:19+0000\n"
-"PO-Revision-Date: 2014-12-28 19:57+0000\n"
+"PO-Revision-Date: 2014-12-28 20:29+0000\n"
 "Last-Translator: Michael <michael.koehler1@gmx.de>\n"
 "Language-Team: German (de) <coce@nufuerspam.de>\n"
 "Language: de\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1419796676.0\n"
+"X-POOTLE-MTIME: 1419798546.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
 #: public/js/lib/cancel.js:18
@@ -332,8 +332,8 @@ msgstr "Beim Versuch, Ihre PIN zurückzusetzen, wurde die Erlaubnis verweigert."
 #: public/js/error-codes.js:30
 msgid "The request timed out whilst attempting to reset your PIN."
 msgstr ""
-"Beim Versuch, Ihre PIN zurückzusetzen, wurde die Zeitüberschreitung für die "
-"Anfrage überschritten."
+"Beim Versuch, Ihre PIN zurückzusetzen, wurde das Zeitlimit für die Anfrage "
+"überschritten."
 
 #: public/js/error-codes.js:31
 msgid "The transaction failed. You have not been charged for this purchase."

@@ -24,7 +24,8 @@ define([
     decodeURIComponent: function decodeURIComponent(uri) {
       return window.decodeURIComponent(uri.replace(/\+/g, ' '));
     },
-    mozPaymentProvider: window.mozPaymentProvider || {
+    mozPaymentProvider: window.navigator.mozPaymentProvider ||
+                        window.mozPaymentProvider || {
       paymentSuccess: window.paymentSuccess || function() {
         logger.log('web based mozPaymentProvider: paymentSuccess');
         if (!window.opener) {

@@ -529,7 +529,7 @@ function spyOnMozPaymentProvider() {
   casper.evaluate(function(){
     // On B2G, the platform defines a mozPaymentProvider object. For tests,
     // we want to stub it out and then spy on it to make assertions.
-    window.mozPaymentProvider = {
+    window.navigator.mozPaymentProvider = {
       paymentSuccess: function() {
         console.log('called fake paymentSuccess');
       },
@@ -538,9 +538,9 @@ function spyOnMozPaymentProvider() {
       }
     };
     window._mozPaymentProviderSpy = {
-      paymentSuccess: sinon.spy(window.mozPaymentProvider,
+      paymentSuccess: sinon.spy(window.navigator.mozPaymentProvider,
                                 'paymentSuccess'),
-      paymentFailed: sinon.spy(window.mozPaymentProvider,
+      paymentFailed: sinon.spy(window.navigator.mozPaymentProvider,
                                'paymentFailed')
     };
   });

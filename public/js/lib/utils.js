@@ -25,6 +25,7 @@ define([
       return window.decodeURIComponent(uri.replace(/\+/g, ' '));
     },
     mozPaymentProvider: window.navigator.mozPaymentProvider ||
+                        // Prior to bug 1097928 this was on window:
                         window.mozPaymentProvider || {
       paymentSuccess: window.paymentSuccess || function() {
         logger.log('web based mozPaymentProvider: paymentSuccess');

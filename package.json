@@ -27,7 +27,7 @@
     "underscore": "1.7.0"
   },
   "scripts": {
-    "start" : "node media/js/main.js",
+    "start" : "node -e \"require('grunt').cli()\" start",
     "test": "node -e \"require('grunt').cli()\" null test",
     "uitest": "node -e \"require('grunt').cli()\" null uitest"
   },

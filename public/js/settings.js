@@ -108,7 +108,7 @@ var settings = {
     'https://zippy-dev.allizom.org',
     'https://zippy.paas.allizom.org'
   ],
-  enableNativeFxA: false,
+  enableNativeFxA: true,
 };
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {

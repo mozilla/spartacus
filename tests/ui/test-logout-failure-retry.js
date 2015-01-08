@@ -37,10 +37,15 @@ casper.test.begin('Login, then logout (which will fail) and retry', {
       casper.click('.full-error .cta');
     });
 
-    casper.waitForSelector('#signin', function() {
-      test.assertVisible('#signin', 'Signin should be visible');
+    casper.then(function() {
+      casper.log('Logging back in.');
+      helpers.fakeVerification();
+      helpers.fakePinData({data: {pin: true}});
     });
 
+    casper.waitForUrl(helpers.url('enter-pin'), function() {
+      test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
+    });
     casper.run(function() {
       test.done();
     });

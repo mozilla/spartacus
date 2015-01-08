@@ -403,14 +403,6 @@ function doLogin() {
   // Sets the filter so we always login as a new user.
   var email = genEmail();
   setLoginFilter(email);
-  casper.waitFor(function check() {
-    return this.visible('#signin');
-  }, function then() {
-    casper.test.assertVisible('#signin', 'Check signin element is present.');
-    this.click('#signin');
-  }, function timeout() {
-    casper.test.fail('#signin was not visible');
-  });
   return email;
 }
 

@@ -10,7 +10,6 @@ define([
   'views/init',
   'views/locked',
   'views/logged-in-state',
-  'views/login',
   'views/payment-failed',
   'views/payment-success',
   'views/reset-pin',
@@ -31,7 +30,6 @@ define([
   InitView,
   LockedView,
   LoggedInStateView,
-  LoginView,
   PaymentFailedView,
   PaymentSuccessView,
   ResetPinView,
@@ -91,7 +89,6 @@ define([
       this.viewManager.renderView(FxAAuthView);
     },
 
-
     showInit: function() {
       // Doesn't have a URL so no calls to navigate.
       this.viewManager.renderView(InitView);
@@ -120,12 +117,6 @@ define([
     showLoggedInState: function() {
       // Doesn't have a URL so no calls to navigate.
       this.viewManager.renderView(LoggedInStateView);
-    },
-
-    // TODO: Persona only - remove after move to FxA.
-    showLogin: function() {
-      // Doesn't have a URL so no calls to navigate.
-      this.viewManager.renderView(LoginView);
     },
 
     showPaymentFailed: function() {

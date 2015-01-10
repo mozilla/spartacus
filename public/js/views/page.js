@@ -72,12 +72,12 @@ define([
       logger.log('logged_in state changed to ' + value);
       if (value === false) {
         if (utils.useOAuthFxA()) {
-          // FxA
+          // FxA Web Flow
           utils.fxaLogin();
         } else {
-          // Persona
-          logger.log('Displaying login view.');
-          app.router.showLogin();
+          // Native FxA
+          app.throbber.render(this.gettext('Connecting to Firefox Accounts'));
+          app.session.login();
         }
       } else if (value === true) {
         if (app.startView) {

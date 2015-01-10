@@ -27,11 +27,18 @@ casper.test.begin('Login, then logout and wait for #signin.', {
     casper.waitForUrl(helpers.url('enter-pin'), function() {
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
       test.assertExists('.forgot-pin', 'Forgot-pin should be shown for when you enter your pin.');
+      casper.log('Logging out');
       helpers.doLogout();
     });
 
-    casper.waitForSelector('#signin', function() {
-      test.assertVisible('#signin', 'Signin should be visible');
+    casper.then(function() {
+      casper.log('Logging back in.');
+      helpers.fakeVerification();
+      helpers.fakePinData({data: {pin: true}});
+    });
+
+    casper.waitForUrl(helpers.url('enter-pin'), function() {
+      test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
     });
 
     casper.run(function() {

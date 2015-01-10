@@ -66,11 +66,7 @@ define([
         e.preventDefault();
       }
 
-      if (utils.useOAuthFxA()) {
-        app.throbber.render(this.gettext('Connecting to Firefox Accounts'));
-      } else {
-        app.throbber.render(this.gettext('Connecting to Persona'));
-      }
+      app.throbber.render(this.gettext('Connecting to Firefox Accounts'));
 
       var authResetUser = auth.resetUser();
       var personaLogout = null;

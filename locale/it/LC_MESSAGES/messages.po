@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Webpay\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-28 17:19+0000\n"
-"PO-Revision-Date: 2014-12-09 14:24+0000\n"
-"Last-Translator: Sara <sara.todaro@mozillaitalia.org>\n"
+"PO-Revision-Date: 2015-01-10 09:49+0000\n"
+"Last-Translator: Sandro <gialloporpora@mozillaitalia.org>\n"
 "Language-Team: mozillaitalia\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1418135047.0\n"
+"X-POOTLE-MTIME: 1420883388.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
 #: public/js/lib/cancel.js:18
@@ -302,7 +302,7 @@ msgstr "Errore inatteso durante la verifica del PIN."
 
 #: public/js/error-codes.js:23
 msgid "No valid user found whilst checking your PIN"
-msgstr "Durante la verifica del PIN non è stato trovato un nome utente valido "
+msgstr "Durante la verifica del PIN non è stato trovato un nome utente valido"
 
 #: public/js/error-codes.js:24
 msgid "Permission denied attempting to check your PIN"

@@ -34,6 +34,11 @@ module.exports = {
     res.render('iframed/locked.html', context.locked);
   },
 
+  login: function(req, res) {
+    res.render('iframed/login.html', context.login);
+  },
+
+
   signout: function(req, res) {
     res.render('iframed/signout.html', context.signout);
   },

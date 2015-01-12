@@ -73,6 +73,14 @@ module.exports = {
     });
   },
 
+  login: function(req, res) {
+    res.render('pages/login.html', {
+      code: utils.prettyTemplateRender('login.html', req, context.login),
+      iframe: 'login',
+      active_page: 'login'
+    });
+  },
+
   signout: function(req, res) {
     res.render('pages/signout.html', {
       code: utils.prettyTemplateRender('signout.html', req, context.signout),

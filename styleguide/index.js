@@ -45,6 +45,7 @@ app.get('/typography', views.typography);
 app.get('/throbber', views.throbber);
 app.get('/was-locked', views.waslocked);
 app.get('/locked', views.locked);
+app.get('/login', views.login);
 app.get('/signout', views.signout);
 
 // Iframed Example Pages
@@ -56,6 +57,7 @@ app.get('/if/typography', viewsiframe.typography);
 app.get('/if/throbber', viewsiframe.throbber);
 app.get('/if/was-locked', viewsiframe.waslocked);
 app.get('/if/locked', viewsiframe.locked);
+app.get('/if/login', viewsiframe.login);
 app.get('/if/signout', viewsiframe.signout);
 
 http.createServer(app).listen(config.styleguide.port, function() {

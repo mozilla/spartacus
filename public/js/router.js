@@ -122,7 +122,7 @@ define([
       this.viewManager.renderView(LoggedInStateView);
     },
 
-    // TODO: Persona only - remove after move to FxA.
+    // Used by Native FxA
     showLogin: function() {
       // Doesn't have a URL so no calls to navigate.
       this.viewManager.renderView(LoginView);

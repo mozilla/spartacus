@@ -31,7 +31,12 @@ define([
         logger.log('web based mozPaymentProvider: paymentSuccess');
         if (!window.opener) {
           logger.error('paymentSuccess called but no window.opener was found');
-          return app.error.render({errorCode: 'INCOMPLETE_PAY_SUCCESS'});
+          return app.error.render({
+            errorCode: 'INCOMPLETE_PAY_SUCCESS',
+            cancelCallback: function() {
+              window.close();
+            },
+          });
         }
         // Note: Do not add sensitive data to this
         // as it's sent to unspecified origins.
@@ -41,7 +46,12 @@ define([
         logger.log('web based mozPaymentProvider: paymentFailed');
         if (!window.opener) {
           logger.error('paymentFailed called but no window.opener was found');
-          return app.error.render({errorCode: 'INCOMPLETE_PAY_FAIL'});
+          return app.error.render({
+            errorCode: 'INCOMPLETE_PAY_FAIL',
+            cancelCallback: function() {
+              window.close();
+            },
+          });
         }
         // Note: Do not add sensitive data to this
         // as it's sent to unspecified origins.

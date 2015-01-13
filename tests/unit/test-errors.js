@@ -79,5 +79,13 @@ define(['jquery', 'views/error'], function($, ErrorView) {
       assert.equal($('button.cancel').hasClass('cta'), false);
       assert.equal($('button.cancel').text(), 'Cancel');
     });
+
+    test('cancelCallback is called when cancel button is clicked', function() {
+      var spy = sinon.spy();
+      this.error.render({errorCode: 'TESTING_CANCEL_TXT', cancelCallback: spy});
+      $('.cancel').click();
+      assert.ok(spy.calledOnce);
+    });
+
   });
 });

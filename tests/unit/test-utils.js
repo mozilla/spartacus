@@ -94,11 +94,13 @@ define(['utils', 'settings'], function(utils, settings) {
           render: function() {},
         }
       };
+      this.clock = sinon.useFakeTimers();
     });
 
     teardown(function(){
       window.opener = this.oldWindowOpener;
       window.app = this.oldApp;
+      this.clock.restore();
     });
 
     test('test paymentSuccess', function() {
@@ -128,6 +130,21 @@ define(['utils', 'settings'], function(utils, settings) {
       utils.mozPaymentProvider.paymentFailed();
       sinon.assert.calledWith(stubError, sinon.match({errorCode: 'INCOMPLETE_PAY_FAIL'}));
     });
+
+   test('test paymentSuccess timeout', function() {
+      var stubError = sinon.stub(window.app.error, 'render');
+      utils.mozPaymentProvider.paymentSuccess();
+      this.clock.tick(3000);
+      sinon.assert.calledWith(stubError, sinon.match({errorCode: 'PAY_SUCCESS_TIMEOUT'}));
+    });
+
+    test('test paymentFailed timeout', function() {
+      var stubError = sinon.stub(window.app.error, 'render');
+      utils.mozPaymentProvider.paymentFailed();
+      this.clock.tick(3000);
+      sinon.assert.calledWith(stubError, sinon.match({errorCode: 'PAY_FAILURE_TIMEOUT'}));
+    });
+
   });
 
 

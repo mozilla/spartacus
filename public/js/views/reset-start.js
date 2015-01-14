@@ -42,20 +42,6 @@ define([
 
     handlePersonaLogout: function() {
       app.session.set({logged_in: false}, {silent: true});
-      this.deferredLogout.resolve();
-    },
-
-    // Wrap logout in deferred.
-    logoutPersona: function() {
-      this.deferredLogout = $.Deferred();
-      if (app.session.get('logged_in') === true) {
-        logger.log('Logging out of Persona');
-        navigator.mozId.logout();
-      } else {
-        logger.log('Already logged out of Persona resolving the deferred.');
-        this.deferredLogout.resolve();
-      }
-      return this.deferredLogout;
     },
 
     handleResetStart: function(e) {
@@ -69,12 +55,6 @@ define([
       app.throbber.render(this.gettext('Connecting to Firefox Accounts'));
 
       var authResetUser = auth.resetUser();
-      var personaLogout = null;
-      if (utils.useOAuthFxA()) {
-        personaLogout = $.Deferred().resolve();
-      } else {
-        personaLogout = this.logoutPersona();
-      }
 
       if (this.resetLogoutTimeout) {
         window.clearTimeout(this.resetLogoutTimeout);
@@ -85,17 +65,10 @@ define([
         // If the log-out times-out then abort/reject the requests/deferred.
         logger.log('logout timed-out');
         authResetUser.abort();
-        personaLogout.reject();
       }, settings.logout_timeout);
 
-      $.when(authResetUser, personaLogout)
+      $.when(authResetUser)
         .done(function _allLoggedOut() {
-          logger.log('Clearing logout reset timer.');
-          window.clearTimeout(that.resetLogoutTimeout);
-          logger.log('Forgot-pin logout done');
-          utils.trackEvent({'action': 'forgot pin',
-                            'label': 'Logout Success'});
-
           if (utils.useOAuthFxA()) {
             app.transaction.saveJWT();
             sessionStorage.setItem('fxa-reverification', 'true');

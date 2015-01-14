@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
+{% import "_macros.html" as macro %}
 
 {% block page %}
-<section class="login">
+<section class="content">
   <h1>{{ heading }}</h1>
   <p>{{ msg }}</p>
+  <div class="user-logo"></div>
+</section>
+
+<menu class="buttons" type="toolbar">
   {# 'needsclick' class is needed to prevent fastclick firing a synthetic
      click event otherwise persona will ignore the login #}
-  <a id="signin" class="sign-in needsclick" href="#">{{ gettext('Sign in') }}</a>
-</section>
+  {{ macro.button(gettext('Sign in'), modifier='cta needsclick', identifier='signin') }}
+</menu>
 {% endblock %}

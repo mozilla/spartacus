@@ -15,7 +15,7 @@ define([
 
     handleSignIn: function(e) {
       e.preventDefault();
-      app.throbber.render(this.gettext('Connecting to Persona'));
+      app.throbber.render(this.gettext('Connecting to Firefox Accounts'));
       app.session.login();
     },
 

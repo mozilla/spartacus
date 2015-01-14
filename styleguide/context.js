@@ -27,6 +27,10 @@ module.exports = {
     cancelText: 'OK',
     cancelModifier: 'cancel cta',
   },
+  login: {
+    heading: 'Sign In',
+    msg: 'Sign in to continue with the payment'
+  },
   iframeoverlay: {
     iframeSrc: "https://marketplace-dev-cdn.allizom.org/media/docs/terms/es.html?20140717",
     ctaText: 'OK'

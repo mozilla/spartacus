@@ -71,7 +71,7 @@ define([
         auth.startFxA(true);
       } else {
         app.session.login({
-          experimental_forceAuthentication: true,
+          refreshAuthentication: 0,
           oncancel: function() {
             utils.trackEvent({'action': 'reset force auth',
                               'label': 'cancelled'});

@@ -206,6 +206,13 @@
     },
     request: function navigator_id_request(options) {
       options = options || {};
+      // treating any refreshAuthentication value as a demand for a password
+      // prompt
+      if (options.refreshAuthentication !== undefined) {
+        log("Setting login state to null since refreshAuthentication " +
+            "was requested");
+        setLoginState(null, false);
+      };
       var response = window.prompt("Enter email address");
       if (!response) {
         if (options.oncancel)

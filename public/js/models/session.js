@@ -44,13 +44,6 @@ define([
 
       defaults.termsOfService = utils.getTermsLink();
       defaults.privacyPolicy = utils.getPrivacyLink();
-
-      // Persona calls it 'experimental_forceAuthentication', FxA calls it
-      // 'refreshAuthentication'.
-      if (utils.supportsNativeFxA() && options.experimental_forceAuthentication) {
-        // See https://developer.mozilla.org/en-US/docs/Firefox-Accounts-on-FirefoxOS
-        options.refreshAuthentication = 0;
-      }
       return $.extend({}, defaults, options);
     },
 

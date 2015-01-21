@@ -77,6 +77,10 @@ define([
         });
       }
 
+      var superPowers = utils.bodyData.superPowers;
+      logger.log('Server granted user super powers?', !!superPowers);
+      this.session.set('super_powers', superPowers);
+
       return this;
     },
 

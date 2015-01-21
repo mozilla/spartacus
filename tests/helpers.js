@@ -197,12 +197,35 @@ function clientTimeoutResponse(method, url) {
 }
 
 
+function getApiRequest(url) {
+  // Gets the last sinon request object for an API request that the app
+  // under test made to this url.
+  // If no request was made to that url, it fails the test with an assertion error.
+  var allRequests = casper.evaluate(function() {
+    return window.server.requests;
+  });
+  var request;
+  var allUrls = {};
+  allRequests.forEach(function(candidate) {
+    allUrls[candidate.url] = true;
+    if (candidate.url == url) {
+      request = candidate;
+    }
+  });
+  casper.test.assert(!!request,
+      "app did not make request to " + url + "; requests: " + Object.keys(allUrls).join(', '));
+  return request;
+}
+
+
 function fakeFxA(options) {
   options = options || {};
   console.log("Installing stubs for FxA login");
   var email = genEmail();
   _currentEmail = email;
-  var data = options.data || JSON.stringify({user_email: email});
+  var data = (options.data ||
+              JSON.stringify({user_email: email,
+                              super_powers: options.super_powers || false}));
   var statusCode = options.statusCode || 200;
   var timeout = options.timeout || false;
   // clientScripts doesn't seem to apply to requests caused by redirects, so
@@ -571,14 +594,17 @@ function assertErrorCode(errorCode) {
     '.error-code should contain: ' + errorCode);
 }
 
+
 function assertNoError() {
   casper.test.assertDoesntExist('.full-error');
 }
+
 
 function url(path) {
   path = path.replace(/^\//, '');
   return basePath + '/' + path;
 }
+
 
 function sendEnterKey(selector) {
   casper.evaluate(function(selector) {
@@ -589,6 +615,18 @@ function sendEnterKey(selector) {
     $(selector).trigger(e);
   }, selector || 'body');
 }
+
+
+function selectOption(optionContainer, optVal) {
+  // Select a form option.
+  // optionContainer: a CSS selector that matches the parent select tag for the options.
+  // optVal: exact option value (not the option text) that you want to select.
+  casper.evaluate(function(optionContainer, optVal) {
+    var opt = $(optionContainer + ' option[value="' + optVal + '"]');
+    opt.prop('selected', true);
+  }, optionContainer, optVal);
+}
+
 
 module.exports = {
   assertErrorCode: assertErrorCode,
@@ -605,7 +643,9 @@ module.exports = {
   fakeStartTransaction: fakeStartTransaction,
   fakeVerification: fakeVerification,
   fakeWaitPoll: fakeWaitPoll,
+  getApiRequest: getApiRequest,
   injectSinon: injectSinon,
+  selectOption: selectOption,
   setLoginFilter: setLoginFilter,
   sendEnterKey: sendEnterKey,
   spyOnMozPaymentProvider: spyOnMozPaymentProvider,

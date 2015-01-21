@@ -16,7 +16,8 @@ define([
     defaults: {
       logged_in_user: utils.bodyData.loggedInUser,
       logged_in: null,
-      simulate_result: null
+      simulate_result: null,
+      super_powers: false,
     },
 
     initialize: function() {

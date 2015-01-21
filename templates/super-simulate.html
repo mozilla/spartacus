@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% import "_macros.html" as macro %}
+
+{% block pageclass %}super-simulate{% endblock %}
+
+{% block page %}
+<section class="content">
+  <h1>{{ gettext('Simulate Something?') }}</h1>
+  <p>
+    <select id="network-simulation">
+      <option value="">{{ gettext('No network simulation') }}</option>
+      {# The option value is formatted as MCC:MNC #}
+      <option value="334:020">Mexico: AMX</option>
+    </select>
+  </p>
+</section>
+
+{% block buttons %}
+<menu class="buttons" type="toolbar">
+  {{ macro.button(gettext('Continue'), modifier='cta') }}
+</menu>
+{% endblock %}
+
+{% endblock %}

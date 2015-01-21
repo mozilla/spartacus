@@ -22,9 +22,17 @@ define([
       logger.log('Transaction model inited');
     },
 
-    startTransaction: function() {
+    startTransaction: function(overrides) {
+      overrides = overrides || {};
       var options = {};
       var networkCodes = this.getNetworkCodes();
+      if (overrides.networkCodes) {
+        logger.warn('overriding network codes', JSON.stringify(networkCodes),
+                    'with:', JSON.stringify(overrides.networkCodes));
+        networkCodes = overrides.networkCodes;
+      } else {
+        logger.log('not applying any overrides');
+      }
 
       options.data = {
         req: this.jwt(),

@@ -16,6 +16,7 @@ define([
   'views/reset-pin',
   'views/reset-start',
   'views/simulate',
+  'views/super-simulate',
   'views/wait-to-finish',
   'views/wait-to-start',
   'views/was-locked'
@@ -37,6 +38,7 @@ define([
   ResetPinView,
   ResetStartView,
   SimulateView,
+  SuperSimulateView,
   WaitToFinishView,
   WaitToStartView,
   WasLockedView
@@ -151,6 +153,11 @@ define([
     showSimulate: function() {
       this.navigate('spa/simulate');
       this.viewManager.renderView(SimulateView);
+    },
+
+    showSuperSimulate: function() {
+      this.navigate('spa/super-simulate');
+      this.viewManager.renderView(SuperSimulateView);
     },
 
     showWaitToFinish: function() {

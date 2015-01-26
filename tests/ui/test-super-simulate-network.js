@@ -1,14 +1,17 @@
 var helpers = require('../helpers');
+var expectedMCC = '334';
+var expectedMNC = '020';
 
 helpers.startCasper({
   useFxA: true,
   setUp: function(){
-    helpers.fakeFxA();
+    helpers.fakeFxA({super_powers: true});
     casper.on('url.changed', function () {
-      helpers.fakeFxA();
+      helpers.fakeFxA({super_powers: true});
       helpers.fakeStartTransaction();
       helpers.fakePinData({data: {pin: true}});
-      helpers.fakePinData({data: {pin: true}, method: 'POST', statusCode: 200, url: '/mozpay/v1/api/pin/check/'});
+      helpers.fakePinData({data: {pin: true}, method: 'POST',
+                           statusCode: 200, url: '/mozpay/v1/api/pin/check/'});
     });
   },
   tearDown: function() {
@@ -16,8 +19,16 @@ helpers.startCasper({
   }
 });
 
-casper.test.begin('Enter Pin API call returns 200', {
+casper.test.begin('super user can simulate network to begin payment with', {
   test: function(test) {
+
+    casper.waitForUrl(helpers.url('super-simulate'), function() {
+      test.assertVisible('#network-simulation',
+                         'network simulation dropdown is visible');
+      helpers.selectOption('#network-simulation',
+                           expectedMCC + ':' + expectedMNC);
+      this.click('.cta');
+    });
 
     casper.waitForUrl(helpers.url('enter-pin'), function() {
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
@@ -29,9 +40,9 @@ casper.test.begin('Enter Pin API call returns 200', {
 
     casper.then(function() {
       var request = helpers.getApiRequest('/mozpay/v1/api/pay/');
-      casper.test.assertEqual(request.requestBody,
-                              '{"req":"foo"}',
-                              'invalid jwt sent');
+      data = JSON.parse(request.requestBody);
+      casper.test.assertEqual(data.mcc, expectedMCC);
+      casper.test.assertEqual(data.mnc, expectedMNC);
     });
 
     casper.waitForUrl(helpers.url('wait-to-start'), function() {

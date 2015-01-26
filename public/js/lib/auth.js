@@ -60,6 +60,7 @@ define([
       utils.trackEvent({'action': 'FxA login',
                         'label': 'Success'});
       app.session.set('logged_in_user', data.user_email);
+      app.session.set('super_powers', data.super_powers);
       if (reverify === true) {
         logger.log("Reverifying FxA login");
         // Set logged_in and manually direct to reset-pin which is

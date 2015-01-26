@@ -97,7 +97,12 @@ define([
           logger.log('Setting up payment');
           // Otherwise we're now needing to setup a payment before
           // checking the app state to hand off to the correct view.
-          this.setUpPayment();
+          if (app.session.get('super_powers')) {
+            logger.log('Deferring payment setup; this user has super powers');
+            app.router.showSuperSimulate();
+          } else {
+            this.setUpPayment();
+          }
         }
       } else {
         utils.trackEvent({action: 'login state change',
@@ -142,11 +147,11 @@ define([
       });
     },
 
-    setUpPayment: function() {
+    setUpPayment: function(overrides) {
       var that = this;
 
       if (app.transaction.jwt()) {
-        var req = app.transaction.startTransaction();
+        var req = app.transaction.startTransaction(overrides);
         var getTransaction = $.Deferred();
 
         req.done(function(result) {

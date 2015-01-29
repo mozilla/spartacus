@@ -91,6 +91,7 @@ define([
         if (e.target && e.target.nodeName === 'BUTTON') {
           $(e.target).prop('disabled', true);
         }
+        app.throbber.render();
         this.submitData(this.curPin);
       } else {
         this.clearPin();

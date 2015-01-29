@@ -178,11 +178,11 @@ define([
   }
 
   function resetUser() {
-    logger.log('Begin webpay user reset');
     var reqConfig = {
       type: 'POST',
       url: utils.bodyData.resetUserUrl
     };
+    logger.log('Begin webpay user reset at', reqConfig.url);
 
     var req = $.ajax(reqConfig);
 

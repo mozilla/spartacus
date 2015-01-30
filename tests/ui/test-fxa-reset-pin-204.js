@@ -1,10 +1,12 @@
 var helpers = require('../helpers');
+var pageUrls = [];
 
 helpers.startCasper({
   useFxA: true,
   setUp: function(){
     helpers.fakeFxA();
-    casper.on('url.changed', function () {
+    casper.on('url.changed', function(url) {
+      pageUrls.push(url);
       helpers.fakeFxA();
       helpers.fakeStartTransaction();
       helpers.fakePinData({data: {pin: true}});
@@ -31,6 +33,11 @@ casper.test.begin('Reset pin returns 204, then onto wait for tx.', {
     });
 
     casper.waitForUrl(helpers.url('reset-pin'), function() {
+      // Make sure FxA was loaded with the force_auth parameter.
+      var lastUrl = pageUrls.slice(-1)[0];
+      test.assert(lastUrl.indexOf('action=force_auth') !== -1,
+                  'Unexpected FxA URL: ' + lastUrl);
+
       // Setup 204 for a successful reset.
       helpers.fakePinData({data: {pin: true}, method: 'PATCH', statusCode: 204});
 

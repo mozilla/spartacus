@@ -67,38 +67,44 @@ define([
       }, settings.logout_timeout);
 
       authResetUser.done(function _allLoggedOut() {
-          logger.log('Clearing logout reset timer.');
-          window.clearTimeout(that.resetLogoutTimeout);
-          logger.log('Forgot-pin logout done');
-          utils.trackEvent({'action': 'forgot pin',
-                            'label': 'Logout Success'});
+        var fxaUrl;
+        logger.log('Clearing logout reset timer.');
+        window.clearTimeout(that.resetLogoutTimeout);
+        logger.log('Forgot-pin logout done');
+        utils.trackEvent({'action': 'forgot pin',
+                          'label': 'Logout Success'});
 
-          if (utils.useOAuthFxA()) {
-            app.transaction.saveJWT();
-            sessionStorage.setItem('fxa-reverification', 'true');
-            window.location.href = utils.bodyData.fxaAuthUrl +
-              '&email=' + encodeURIComponent(app.session.get('logged_in_user'));
-          } else {
-            // Call directly rather than change the URL to workaround bug 1063575.
-            app.router.showForceAuth();
+        if (utils.useOAuthFxA()) {
+          app.transaction.saveJWT();
+          sessionStorage.setItem('fxa-reverification', 'true');
+
+          fxaUrl = utils.bodyData.fxaAuthUrl;  // should already have query params
+          fxaUrl += '&email=' + encodeURIComponent(app.session.get('logged_in_user')) +
+                    '&action=force_auth';
+
+          logger.log('redirecting to', fxaUrl);
+          window.location.href = fxaUrl;
+        } else {
+          // Call directly rather than change the URL to workaround bug 1063575.
+          app.router.showForceAuth();
+        }
+
+      })
+
+      .fail(function _failedLogout() {
+        // Called when we manually abort everything
+        // or if something fails.
+        utils.trackEvent({'action': 'forgot pin',
+                          'label': 'Logout Error'});
+        // This can be a timeout or a failure. So a more generic message is needed.
+        return app.error.render({
+          ctaText: that.gettext('Retry?'),
+          errorCode: 'LOGOUT_ERROR',
+          ctaCallback: function(e) {
+            that.handleResetStart(e);
           }
-
-        })
-
-        .fail(function _failedLogout() {
-          // Called when we manually abort everything
-          // or if something fails.
-          utils.trackEvent({'action': 'forgot pin',
-                            'label': 'Logout Error'});
-          // This can be a timeout or a failure. So a more generic message is needed.
-          return app.error.render({
-            ctaText: that.gettext('Retry?'),
-            errorCode: 'LOGOUT_ERROR',
-            ctaCallback: function(e) {
-              that.handleResetStart(e);
-            }
-          });
         });
+      });
     },
 
     render: function(){

@@ -432,7 +432,7 @@ function doLogin() {
     casper.test.assertVisible('#signin', 'Check signin element is present.');
     this.click('#signin');
   }, function timeout() {
-    casper.test.fail('#signin was not visible');
+    casper.test.fail('#signin was not visible for doLogin()');
   });
   return email;
 }

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-28 17:19+0000\n"
+"POT-Creation-Date: 2015-01-30 19:53+0000\n"
 "PO-Revision-Date: 2014-12-11 02:51+0000\n"
 "Last-Translator: Peter <petercpg@mail.moztw.org>\n"
 "Language-Team: MozTW <petercpg@mail.moztw.org>\n"
@@ -14,22 +14,16 @@ msgstr ""
 "X-Generator: Pootle 2.5.0\n"
 "X-POOTLE-MTIME: 1418266282.0\n"
 
-#: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
-#: public/js/lib/cancel.js:18
+#: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18
 msgid "Payment cancelled."
 msgstr "已取消付款。"
 
-#: public/js/views/create-pin.js:105 templates/error.html:20
-#: templates/pin-form.html:26 public/js/views/create-pin.js:104
-#: public/js/views/error.js:51 templates/simulate.html:17
-#: public/js/views/create-pin.js:140 templates/pin-form.html:37
-#: public/js/views/create-pin.js:155 public/js/views/error.js:54
+#: public/js/views/create-pin.js:105 templates/error.html:20 templates/pin-form.html:26 public/js/views/create-pin.js:104 public/js/views/error.js:51 templates/simulate.html:17
+#: public/js/views/create-pin.js:140 templates/pin-form.html:37 public/js/views/create-pin.js:155 public/js/views/error.js:54 public/js/views/create-pin.js:158
 msgid "Cancel"
 msgstr "取消"
 
-#: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64
-#: public/js/lib/pin-widget.js:68 public/js/lib/pin-widget.js:65
-#: public/js/lib/pin-widget.js:83
+#: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64 public/js/lib/pin-widget.js:68 public/js/lib/pin-widget.js:65 public/js/lib/pin-widget.js:83 public/js/lib/pin-widget.js:82
 msgid "PIN can only contain digits."
 msgstr "PIN 碼只能包含數字。"
 
@@ -37,8 +31,7 @@ msgstr "PIN 碼只能包含數字。"
 msgid "You logged in as a different user, you must start the payment again."
 msgstr "您已登入為不同使用者，必須重新開始付款流程。"
 
-#: public/js/views/throbber.js:15 public/js/views/throbber.js:16
-#: templates/throbber.html:7
+#: public/js/views/throbber.js:15 public/js/views/throbber.js:16 templates/throbber.html:7
 msgid "Loading"
 msgstr "載入中"
 
@@ -46,9 +39,7 @@ msgstr "載入中"
 msgid "Beginning payment"
 msgstr "正在開始付款"
 
-#: public/js/views/login.js:19 public/js/views/force-auth.js:81
-#: public/js/views/login.js:18 public/js/views/reset-start.js:67
-#: public/js/views/force-auth.js:93 public/js/views/reset-start.js:70
+#: public/js/views/login.js:19 public/js/views/force-auth.js:81 public/js/views/login.js:18 public/js/views/reset-start.js:67 public/js/views/force-auth.js:93 public/js/views/reset-start.js:70
 #: public/js/views/force-auth.js:92 public/js/views/reset-start.js:72
 msgid "Connecting to Persona"
 msgstr "正在連線至 Persona"
@@ -57,13 +48,11 @@ msgstr "正在連線至 Persona"
 msgid "Payment complete"
 msgstr "付款完成"
 
-#: public/js/lib/auth.js:22 public/js/lib/auth.js:20
-#: public/js/views/page.js:41
+#: public/js/lib/auth.js:22 public/js/lib/auth.js:20 public/js/views/page.js:41
 msgid "Oops"
 msgstr "喔喔"
 
-#: public/js/lib/auth.js:65 public/js/lib/auth.js:84 public/js/lib/auth.js:155
-#: public/js/lib/auth.js:86 public/js/lib/auth.js:157
+#: public/js/lib/auth.js:65 public/js/lib/auth.js:84 public/js/lib/auth.js:155 public/js/lib/auth.js:86 public/js/lib/auth.js:157
 msgid "This is taking longer than expected. Try again?"
 msgstr "花的時間比預期的還久，再是一次？"
 
@@ -71,61 +60,44 @@ msgstr "花的時間比預期的還久，再是一次？"
 msgid "Something went wrong. Try again?"
 msgstr "有些東西不對勁。再試試看？"
 
-#: templates/error.html:27 public/js/views/error.js:52
-#: public/js/views/error.js:87 public/js/views/locked.js:24
-#: templates/iframe-overlay.html:14 public/js/views/error.js:55
+#: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55
 #: public/js/views/error.js:90
 msgid "OK"
 msgstr "確定"
 
-#: public/js/views/error.js:44 public/js/views/locked.js:23
-#: public/js/views/error.js:54 public/js/views/error.js:57
+#: public/js/views/error.js:44 public/js/views/locked.js:23 public/js/views/error.js:54 public/js/views/error.js:57
 msgid "Error"
 msgstr "錯誤"
 
-#: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100
-#: public/js/views/enter-pin.js:97 public/js/views/enter-pin.js:101
-#: public/js/views/enter-pin.js:105 public/js/views/enter-pin.js:113
-#: public/js/views/enter-pin.js:117
+#: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100 public/js/views/enter-pin.js:97 public/js/views/enter-pin.js:101 public/js/views/enter-pin.js:105 public/js/views/enter-pin.js:113
+#: public/js/views/enter-pin.js:117 public/js/views/enter-pin.js:115 public/js/views/enter-pin.js:119
 msgid "Enter PIN"
 msgstr "輸入 PIN 碼"
 
-#: public/js/views/login.js:25 templates/login.html:5
-#: public/js/views/fxa-login.js:25 public/js/views/fxa-login.js:27
-#: public/js/views/login.js:24 public/js/views/login.js:26
-#: public/js/views/fxa-login.js:26 public/js/views/fxa-login.js:28
-#: public/js/views/fxa-login.js:29
+#: public/js/views/login.js:25 templates/login.html:5 public/js/views/fxa-login.js:25 public/js/views/fxa-login.js:27 public/js/views/login.js:24 public/js/views/login.js:26
+#: public/js/views/fxa-login.js:26 public/js/views/fxa-login.js:28 public/js/views/fxa-login.js:29
 msgid "Sign In"
 msgstr "登入"
 
-#: templates/login.html:6 public/js/views/fxa-login.js:28
-#: public/js/views/login.js:27 public/js/views/fxa-login.js:29
-#: public/js/views/fxa-login.js:30
+#: templates/login.html:6 public/js/views/fxa-login.js:28 public/js/views/login.js:27 public/js/views/fxa-login.js:29 public/js/views/fxa-login.js:30
 msgid "Sign in to continue with the payment"
 msgstr "登入以繼續付款"
 
-#: templates/login.html:7 templates/login.html:9
+#: templates/login.html:7 templates/login.html:9 templates/login.html:14
 msgid "Sign in"
 msgstr "登入"
 
-#: public/js/views/create-pin.js:106 public/js/views/create-pin.js:113
-#: public/js/views/reset-pin.js:64 templates/reset-start.html:12
-#: templates/was-locked.html:12 public/js/views/create-pin.js:105
-#: public/js/views/create-pin.js:112 templates/simulate.html:18
-#: public/js/views/create-pin.js:141 public/js/views/create-pin.js:148
-#: public/js/views/reset-pin.js:65 public/js/views/create-pin.js:156
-#: public/js/views/create-pin.js:163 public/js/views/reset-pin.js:68
-#: templates/signout.html:14
+#: public/js/views/create-pin.js:106 public/js/views/create-pin.js:113 public/js/views/reset-pin.js:64 templates/reset-start.html:12 templates/was-locked.html:12 public/js/views/create-pin.js:105
+#: public/js/views/create-pin.js:112 templates/simulate.html:18 public/js/views/create-pin.js:141 public/js/views/create-pin.js:148 public/js/views/reset-pin.js:65 public/js/views/create-pin.js:156
+#: public/js/views/create-pin.js:163 public/js/views/reset-pin.js:68 templates/signout.html:14 public/js/views/create-pin.js:159 public/js/views/create-pin.js:166 templates/super-simulate.html:20
 msgid "Continue"
 msgstr "繼續"
 
-#: public/js/views/enter-pin.js:73 public/js/views/enter-pin.js:74
-#: public/js/views/enter-pin.js:78 public/js/views/enter-pin.js:90
+#: public/js/views/enter-pin.js:73 public/js/views/enter-pin.js:74 public/js/views/enter-pin.js:78 public/js/views/enter-pin.js:90 public/js/views/enter-pin.js:92
 msgid "Wrong PIN"
 msgstr "PIN 碼錯誤"
 
-#: public/js/views/create-pin.js:48 public/js/views/create-pin.js:84
-#: public/js/views/create-pin.js:97
+#: public/js/views/create-pin.js:48 public/js/views/create-pin.js:84 public/js/views/create-pin.js:97 public/js/views/create-pin.js:100
 msgid "PINs do not match."
 msgstr "輸入的 PIN 碼不同。"
 
@@ -133,33 +105,24 @@ msgstr "輸入的 PIN 碼不同。"
 msgid "Create a PIN"
 msgstr "建立 PIN 碼"
 
-#: webpay/pin/views.py:68 webpay/pin/views.py:185
-#: public/js/views/create-pin.js:36 public/js/views/create-pin.js:71
-#: public/js/views/create-pin.js:82
+#: webpay/pin/views.py:68 webpay/pin/views.py:185 public/js/views/create-pin.js:36 public/js/views/create-pin.js:71 public/js/views/create-pin.js:82
 msgid "Confirm PIN"
 msgstr "確認 PIN 碼"
 
-#: webpay/pin/views.py:131 webpay/pin/views.py:157
-#: webpay/pin/templates/pin/pin_was_locked.html:13
-#: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
-#: templates/was-locked.html:11 public/js/views/force-auth.js:89
-#: public/js/views/force-auth.js:102 public/js/views/reset-pin.js:66
-#: public/js/views/reset-pin.js:69 public/js/views/force-auth.js:101
-#: public/js/views/reset-pin.js:72
+#: webpay/pin/views.py:131 webpay/pin/views.py:157 webpay/pin/templates/pin/pin_was_locked.html:13 public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68 templates/was-locked.html:11
+#: public/js/views/force-auth.js:89 public/js/views/force-auth.js:102 public/js/views/reset-pin.js:66 public/js/views/reset-pin.js:69 public/js/views/force-auth.js:101 public/js/views/reset-pin.js:72
+#: public/js/views/force-auth.js:96
 msgid "Reset PIN"
 msgstr "重設 PIN 碼"
 
 #. This is the same as the standard forgot
 #. password that most sites have.
-#: templates/pin-form.html:18 templates/reset-start.html:6
-#: templates/pin-form.html:29 templates/pin-form.html:30
+#: templates/pin-form.html:18 templates/reset-start.html:6 templates/pin-form.html:29 templates/pin-form.html:30
 msgid "Forgot your PIN?"
 msgstr "忘記您的 PIN 碼？"
 
 #: public/js/views/locked.js:24 public/js/views/locked.js:22
-msgid ""
-"You entered the wrong PIN too many times. Your account is locked. Please try "
-"your purchase again in 5 minutes."
+msgid "You entered the wrong PIN too many times. Your account is locked. Please try your purchase again in 5 minutes."
 msgstr "您輸入了錯誤的 PIN 碼太多次，帳號已被鎖定。請等五分鐘後再嘗試購買。"
 
 #: templates/was-locked.html:6
@@ -167,24 +130,18 @@ msgid "Your PIN was locked"
 msgstr "您的 PIN 碼已被鎖定"
 
 #: templates/was-locked.html:7
-msgid ""
-"Your PIN was locked because you entered it incorrectly too many times. You "
-"can continue and try entering your PIN again or reset your PIN."
+msgid "Your PIN was locked because you entered it incorrectly too many times. You can continue and try entering your PIN again or reset your PIN."
 msgstr "您輸錯太多次 PIN 碼，已被鎖定。您可以繼續嘗試輸入，或重設您的 PIN 碼。"
 
 #: templates/reset-start.html:7 templates/reset-start.html:10
-msgid ""
-"Are you sure you want to reset your PIN? You must sign in to Persona to "
-"reset your PIN."
+msgid "Are you sure you want to reset your PIN? You must sign in to Persona to reset your PIN."
 msgstr "您確定要重設 PIN 碼嗎？必須登入至 Persona 才能重設您的 PIN 碼。"
 
-#: webpay/provider/templates/provider/wait-to-finish.html:6
-#: webpay/provider/templates/provider/wait-to-finish.html:12
+#: webpay/provider/templates/provider/wait-to-finish.html:6 webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"
 msgstr "付款確認中"
 
-#: public/js/lib/auth.js:29 public/js/lib/auth.js:30 public/js/lib/auth.js:25
-#: public/js/lib/auth.js:39 public/js/lib/auth.js:26 public/js/lib/auth.js:41
+#: public/js/lib/auth.js:29 public/js/lib/auth.js:30 public/js/lib/auth.js:25 public/js/lib/auth.js:39 public/js/lib/auth.js:26 public/js/lib/auth.js:41
 msgid "Retrying"
 msgstr "重試中"
 
@@ -192,39 +149,26 @@ msgstr "重試中"
 msgid "That took longer than expected. Retry?"
 msgstr "花的時間比預期的還久，再試一次？"
 
-#: public/js/views/create-pin.js:37 templates/reset-start.html:11
-#: public/js/views/create-pin.js:72 templates/reset-start.html:15
-#: public/js/views/create-pin.js:83
+#: public/js/views/create-pin.js:37 templates/reset-start.html:11 public/js/views/create-pin.js:72 templates/reset-start.html:15 public/js/views/create-pin.js:83
 msgid "Back"
 msgstr "返回"
 
-#: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95
-#: public/js/views/enter-pin.js:96 public/js/views/create-pin.js:73
-#: public/js/views/enter-pin.js:100 public/js/views/create-pin.js:84
-#: public/js/views/enter-pin.js:112
+#: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95 public/js/views/enter-pin.js:96 public/js/views/create-pin.js:73 public/js/views/enter-pin.js:100 public/js/views/create-pin.js:84
+#: public/js/views/enter-pin.js:112 public/js/views/enter-pin.js:114
 msgid "Submit"
 msgstr "送出"
 
-#: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60
-#: public/js/views/reset-pin.js:28 public/js/lib/wait.js:171
-#: public/js/views/create-pin.js:65 public/js/views/enter-pin.js:61
-#: public/js/views/force-auth.js:53 public/js/views/reset-pin.js:29
-#: public/js/views/reset-start.js:107 public/js/views/create-pin.js:101
-#: public/js/views/enter-pin.js:65 public/js/views/reset-start.js:108
-#: public/js/views/force-auth.js:61 public/js/views/reset-pin.js:30
-#: public/js/views/reset-start.js:112 public/js/views/force-auth.js:60
-#: public/js/views/reset-start.js:122 public/js/lib/auth.js:22
-#: public/js/lib/auth.js:36 public/js/lib/wait.js:180
-#: public/js/views/create-pin.js:116 public/js/views/enter-pin.js:75
-#: public/js/views/page.js:43 public/js/views/reset-pin.js:33
-#: public/js/views/reset-start.js:124
+#: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60 public/js/views/reset-pin.js:28 public/js/lib/wait.js:171 public/js/views/create-pin.js:65 public/js/views/enter-pin.js:61
+#: public/js/views/force-auth.js:53 public/js/views/reset-pin.js:29 public/js/views/reset-start.js:107 public/js/views/create-pin.js:101 public/js/views/enter-pin.js:65
+#: public/js/views/reset-start.js:108 public/js/views/force-auth.js:61 public/js/views/reset-pin.js:30 public/js/views/reset-start.js:112 public/js/views/force-auth.js:60
+#: public/js/views/reset-start.js:122 public/js/lib/auth.js:22 public/js/lib/auth.js:36 public/js/lib/wait.js:180 public/js/views/create-pin.js:116 public/js/views/enter-pin.js:75
+#: public/js/views/page.js:43 public/js/views/reset-pin.js:33 public/js/views/reset-start.js:124 public/js/lib/wait.js:170 public/js/views/create-pin.js:119 public/js/views/enter-pin.js:77
+#: public/js/views/reset-start.js:101
 msgid "Retry?"
 msgstr "重試？"
 
-#: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
-#: public/js/views/create-pin.js:113 public/js/views/create-pin.js:115
-#: public/js/views/create-pin.js:149 public/js/views/create-pin.js:152
-#: public/js/views/create-pin.js:164 public/js/views/create-pin.js:167
+#: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116 public/js/views/create-pin.js:113 public/js/views/create-pin.js:115 public/js/views/create-pin.js:149
+#: public/js/views/create-pin.js:152 public/js/views/create-pin.js:164 public/js/views/create-pin.js:167 public/js/views/create-pin.js:170
 msgid "Create PIN"
 msgstr "建立 PIN 碼"
 
@@ -232,14 +176,12 @@ msgstr "建立 PIN 碼"
 msgid "Something went wrong."
 msgstr "有些東西不對勁。"
 
-#: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118
-#: public/js/views/reset-start.js:119 public/js/views/reset-start.js:123
-#: public/js/views/reset-start.js:133 public/js/views/reset-start.js:135
+#: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118 public/js/views/reset-start.js:119 public/js/views/reset-start.js:123 public/js/views/reset-start.js:133
+#: public/js/views/reset-start.js:135 public/js/views/reset-start.js:112
 msgid "Reset your PIN?"
 msgstr "重設您的 PIN 碼？"
 
-#: public/js/views/was-locked.js:13 public/js/views/was-locked.js:38
-#: public/js/views/was-locked.js:42
+#: public/js/views/was-locked.js:13 public/js/views/was-locked.js:38 public/js/views/was-locked.js:42
 msgid "Was Locked"
 msgstr "已被鎖定"
 
@@ -324,9 +266,7 @@ msgid "The transaction failed. You have not been charged for this purchase."
 msgstr "交易失敗，此次購買您尚未被收費。"
 
 #: public/js/error-codes.js:32
-msgid ""
-"The payment method or price point is not supported for this region or "
-"operator."
+msgid "The payment method or price point is not supported for this region or operator."
 msgstr "此地區或電信業者不支援使用此付款方式或價格。"
 
 #: public/js/lib/auth.js:214
@@ -341,13 +281,11 @@ msgstr "正在取回交易資訊"
 msgid "An unexpected error occurred."
 msgstr "發生未逾期的錯誤。"
 
-#: public/js/views/force-auth.js:87 public/js/views/force-auth.js:100
-#: public/js/views/force-auth.js:99
+#: public/js/views/force-auth.js:87 public/js/views/force-auth.js:100 public/js/views/force-auth.js:99 public/js/views/force-auth.js:94
 msgid "Sign-in to reset PIN"
 msgstr "登入以重設 PIN 碼"
 
-#: public/js/views/force-auth.js:90 public/js/views/force-auth.js:103
-#: public/js/views/force-auth.js:102
+#: public/js/views/force-auth.js:90 public/js/views/force-auth.js:103 public/js/views/force-auth.js:102 public/js/views/force-auth.js:97
 msgid "Please sign in to reset your PIN."
 msgstr "請登入以重設您的 PIN 碼。"
 
@@ -380,22 +318,16 @@ msgid "Reset"
 msgstr "重設"
 
 #: templates/pin-form.html:22
-msgid ""
-"By proceeding you agree to our <a %(terms)s>terms</a> and <a "
-"%(privacy)s>Privacy Policy</a>"
-msgstr ""
-"繼續使用，代表您同意我們的 <a %(terms)s>使用條款</a> 及 <a %(privacy)s>隱私權"
-"保護政策</a>"
+msgid "By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)s>Privacy Policy</a>"
+msgstr "繼續使用，代表您同意我們的 <a %(terms)s>使用條款</a> 及 <a %(privacy)s>隱私權保護政策</a>"
 
-#: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68
-#: public/js/views/force-auth.js:90 public/js/views/reset-start.js:70
+#: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68 public/js/views/force-auth.js:90 public/js/views/reset-start.js:70 public/js/views/force-auth.js:88 public/js/views/login.js:18
+#: public/js/views/reset-start.js:55
 msgid "Connecting to Firefox Accounts"
 msgstr "正在連線至 Firefox Accounts"
 
-#: templates/reset-start.html:8
-msgid ""
-"Are you sure you want to reset your PIN? You must sign in to Firefox "
-"Accounts to reset your PIN."
+#: templates/reset-start.html:8 templates/reset-start.html:7
+msgid "Are you sure you want to reset your PIN? You must sign in to Firefox Accounts to reset your PIN."
 msgstr "您確定要重設 PIN 碼嗎？必須以 Firefox 帳號登入才能重設您的 PIN 碼。"
 
 #: public/js/views/page.js:34
@@ -409,3 +341,16 @@ msgstr "您已登入為:"
 #: templates/signout.html:11
 msgid "Not you?"
 msgstr "不是您？"
+
+#: public/js/views/super-simulate.js:44
+msgid "Super Simulate"
+msgstr ""
+
+#: templates/super-simulate.html:8
+#, fuzzy
+msgid "Simulate Something?"
+msgstr "模擬付款"
+
+#: templates/super-simulate.html:11
+msgid "No network simulation"
+msgstr ""

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-28 17:19+0000\n"
+"POT-Creation-Date: 2015-01-30 19:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,6 +27,7 @@ msgstr ""
 #: templates/pin-form.html:37
 #: public/js/views/create-pin.js:155
 #: public/js/views/error.js:54
+#: public/js/views/create-pin.js:158
 msgid "Cancel"
 msgstr ""
 
@@ -35,6 +36,7 @@ msgstr ""
 #: public/js/lib/pin-widget.js:68
 #: public/js/lib/pin-widget.js:65
 #: public/js/lib/pin-widget.js:83
+#: public/js/lib/pin-widget.js:82
 msgid "PIN can only contain digits."
 msgstr ""
 
@@ -109,6 +111,8 @@ msgstr ""
 #: public/js/views/enter-pin.js:105
 #: public/js/views/enter-pin.js:113
 #: public/js/views/enter-pin.js:117
+#: public/js/views/enter-pin.js:115
+#: public/js/views/enter-pin.js:119
 msgid "Enter PIN"
 msgstr ""
 
@@ -134,6 +138,7 @@ msgstr ""
 
 #: templates/login.html:7
 #: templates/login.html:9
+#: templates/login.html:14
 msgid "Sign in"
 msgstr ""
 
@@ -152,6 +157,9 @@ msgstr ""
 #: public/js/views/create-pin.js:163
 #: public/js/views/reset-pin.js:68
 #: templates/signout.html:14
+#: public/js/views/create-pin.js:159
+#: public/js/views/create-pin.js:166
+#: templates/super-simulate.html:20
 msgid "Continue"
 msgstr ""
 
@@ -159,12 +167,14 @@ msgstr ""
 #: public/js/views/enter-pin.js:74
 #: public/js/views/enter-pin.js:78
 #: public/js/views/enter-pin.js:90
+#: public/js/views/enter-pin.js:92
 msgid "Wrong PIN"
 msgstr ""
 
 #: public/js/views/create-pin.js:48
 #: public/js/views/create-pin.js:84
 #: public/js/views/create-pin.js:97
+#: public/js/views/create-pin.js:100
 msgid "PINs do not match."
 msgstr ""
 
@@ -193,6 +203,7 @@ msgstr ""
 #: public/js/views/reset-pin.js:69
 #: public/js/views/force-auth.js:101
 #: public/js/views/reset-pin.js:72
+#: public/js/views/force-auth.js:96
 msgid "Reset PIN"
 msgstr ""
 
@@ -262,6 +273,7 @@ msgstr ""
 #: public/js/views/enter-pin.js:100
 #: public/js/views/create-pin.js:84
 #: public/js/views/enter-pin.js:112
+#: public/js/views/enter-pin.js:114
 msgid "Submit"
 msgstr ""
 
@@ -290,6 +302,10 @@ msgstr ""
 #: public/js/views/page.js:43
 #: public/js/views/reset-pin.js:33
 #: public/js/views/reset-start.js:124
+#: public/js/lib/wait.js:170
+#: public/js/views/create-pin.js:119
+#: public/js/views/enter-pin.js:77
+#: public/js/views/reset-start.js:101
 msgid "Retry?"
 msgstr ""
 
@@ -301,6 +317,7 @@ msgstr ""
 #: public/js/views/create-pin.js:152
 #: public/js/views/create-pin.js:164
 #: public/js/views/create-pin.js:167
+#: public/js/views/create-pin.js:170
 msgid "Create PIN"
 msgstr ""
 
@@ -314,6 +331,7 @@ msgstr ""
 #: public/js/views/reset-start.js:123
 #: public/js/views/reset-start.js:133
 #: public/js/views/reset-start.js:135
+#: public/js/views/reset-start.js:112
 msgid "Reset your PIN?"
 msgstr ""
 
@@ -427,12 +445,14 @@ msgstr ""
 #: public/js/views/force-auth.js:87
 #: public/js/views/force-auth.js:100
 #: public/js/views/force-auth.js:99
+#: public/js/views/force-auth.js:94
 msgid "Sign-in to reset PIN"
 msgstr ""
 
 #: public/js/views/force-auth.js:90
 #: public/js/views/force-auth.js:103
 #: public/js/views/force-auth.js:102
+#: public/js/views/force-auth.js:97
 msgid "Please sign in to reset your PIN."
 msgstr ""
 
@@ -476,10 +496,14 @@ msgstr ""
 #: public/js/views/reset-start.js:68
 #: public/js/views/force-auth.js:90
 #: public/js/views/reset-start.js:70
+#: public/js/views/force-auth.js:88
+#: public/js/views/login.js:18
+#: public/js/views/reset-start.js:55
 msgid "Connecting to Firefox Accounts"
 msgstr ""
 
 #: templates/reset-start.html:8
+#: templates/reset-start.html:7
 msgid ""
 "Are you sure you want to reset your PIN? You must sign in to Firefox "
 "Accounts to reset your PIN."
@@ -495,4 +519,16 @@ msgstr ""
 
 #: templates/signout.html:11
 msgid "Not you?"
+msgstr ""
+
+#: public/js/views/super-simulate.js:44
+msgid "Super Simulate"
+msgstr ""
+
+#: templates/super-simulate.html:8
+msgid "Simulate Something?"
+msgstr ""
+
+#: templates/super-simulate.html:11
+msgid "No network simulation"
 msgstr ""

@@ -2,33 +2,41 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-28 17:19+0000\n"
-"PO-Revision-Date: 2013-01-08 08:50-0700\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
-"Language: en_US\n"
+"POT-Creation-Date: 2015-01-30 19:53+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Translate Toolkit 1.9.0\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16
+#: public/js/lib/cancel.js:33
+#: public/js/lib/cancel.js:16
 #: public/js/lib/cancel.js:18
 msgid "Payment cancelled."
 msgstr "‮Ԁɐʎɯǝuʇ ɔɐuɔǝʅʅǝp˙"
 
-#: public/js/views/create-pin.js:105 templates/error.html:20
-#: templates/pin-form.html:26 public/js/views/create-pin.js:104
-#: public/js/views/error.js:51 templates/simulate.html:17
-#: public/js/views/create-pin.js:140 templates/pin-form.html:37
-#: public/js/views/create-pin.js:155 public/js/views/error.js:54
+#: public/js/views/create-pin.js:105
+#: templates/error.html:20
+#: templates/pin-form.html:26
+#: public/js/views/create-pin.js:104
+#: public/js/views/error.js:51
+#: templates/simulate.html:17
+#: public/js/views/create-pin.js:140
+#: templates/pin-form.html:37
+#: public/js/views/create-pin.js:155
+#: public/js/views/error.js:54
+#: public/js/views/create-pin.js:158
 msgid "Cancel"
 msgstr "‮Ↄɐuɔǝʅ"
 
-#: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64
-#: public/js/lib/pin-widget.js:68 public/js/lib/pin-widget.js:65
+#: public/js/lib/pin-widget.js:58
+#: public/js/lib/pin-widget.js:64
+#: public/js/lib/pin-widget.js:68
+#: public/js/lib/pin-widget.js:65
 #: public/js/lib/pin-widget.js:83
+#: public/js/lib/pin-widget.js:82
 msgid "PIN can only contain digits."
 msgstr "‮ԀIN ɔɐu ouʅʎ ɔouʇɐıu pıƃıʇs˙"
 
@@ -36,7 +44,8 @@ msgstr "‮ԀIN ɔɐu ouʅʎ ɔouʇɐıu pıƃıʇs˙"
 msgid "You logged in as a different user, you must start the payment again."
 msgstr "‮⅄on ʅoƃƃǝp ıu ɐs ɐ pıɟɟǝɹǝuʇ nsǝɹ´ ʎon ɯnsʇ sʇɐɹʇ ʇɥǝ dɐʎɯǝuʇ ɐƃɐıu˙"
 
-#: public/js/views/throbber.js:15 public/js/views/throbber.js:16
+#: public/js/views/throbber.js:15
+#: public/js/views/throbber.js:16
 #: templates/throbber.html:7
 msgid "Loading"
 msgstr "‮⅂oɐpıuƃ"
@@ -45,10 +54,14 @@ msgstr "‮⅂oɐpıuƃ"
 msgid "Beginning payment"
 msgstr "‮Ԑǝƃıuuıuƃ dɐʎɯǝuʇ"
 
-#: public/js/views/login.js:19 public/js/views/force-auth.js:81
-#: public/js/views/login.js:18 public/js/views/reset-start.js:67
-#: public/js/views/force-auth.js:93 public/js/views/reset-start.js:70
-#: public/js/views/force-auth.js:92 public/js/views/reset-start.js:72
+#: public/js/views/login.js:19
+#: public/js/views/force-auth.js:81
+#: public/js/views/login.js:18
+#: public/js/views/reset-start.js:67
+#: public/js/views/force-auth.js:93
+#: public/js/views/reset-start.js:70
+#: public/js/views/force-auth.js:92
+#: public/js/views/reset-start.js:72
 msgid "Connecting to Persona"
 msgstr "‮Ↄouuǝɔʇıuƃ ʇo Ԁǝɹsouɐ"
 
@@ -56,13 +69,17 @@ msgstr "‮Ↄouuǝɔʇıuƃ ʇo Ԁǝɹsouɐ"
 msgid "Payment complete"
 msgstr "‮Ԁɐʎɯǝuʇ ɔoɯdʅǝʇǝ"
 
-#: public/js/lib/auth.js:22 public/js/lib/auth.js:20
+#: public/js/lib/auth.js:22
+#: public/js/lib/auth.js:20
 #: public/js/views/page.js:41
 msgid "Oops"
 msgstr "‮Oods"
 
-#: public/js/lib/auth.js:65 public/js/lib/auth.js:84 public/js/lib/auth.js:155
-#: public/js/lib/auth.js:86 public/js/lib/auth.js:157
+#: public/js/lib/auth.js:65
+#: public/js/lib/auth.js:84
+#: public/js/lib/auth.js:155
+#: public/js/lib/auth.js:86
+#: public/js/lib/auth.js:157
 msgid "This is taking longer than expected. Try again?"
 msgstr "‮⊥ɥıs ıs ʇɐʞıuƃ ʅouƃǝɹ ʇɥɐu ǝxdǝɔʇǝp˙ ⊥ɹʎ ɐƃɐıu¿"
 
@@ -70,95 +87,140 @@ msgstr "‮⊥ɥıs ıs ʇɐʞıuƃ ʅouƃǝɹ ʇɥɐu ǝxdǝɔʇǝp˙ ⊥ɹʎ �
 msgid "Something went wrong. Try again?"
 msgstr "‮Soɯǝʇɥıuƃ ʍǝuʇ ʍɹouƃ˙ ⊥ɹʎ ɐƃɐıu¿"
 
-#: templates/error.html:27 public/js/views/error.js:52
-#: public/js/views/error.js:87 public/js/views/locked.js:24
-#: templates/iframe-overlay.html:14 public/js/views/error.js:55
+#: templates/error.html:27
+#: public/js/views/error.js:52
+#: public/js/views/error.js:87
+#: public/js/views/locked.js:24
+#: templates/iframe-overlay.html:14
+#: public/js/views/error.js:55
 #: public/js/views/error.js:90
 msgid "OK"
 msgstr "‮OӼ"
 
-#: public/js/views/error.js:44 public/js/views/locked.js:23
-#: public/js/views/error.js:54 public/js/views/error.js:57
+#: public/js/views/error.js:44
+#: public/js/views/locked.js:23
+#: public/js/views/error.js:54
+#: public/js/views/error.js:57
 msgid "Error"
 msgstr "‮Ǝɹɹoɹ"
 
-#: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100
-#: public/js/views/enter-pin.js:97 public/js/views/enter-pin.js:101
-#: public/js/views/enter-pin.js:105 public/js/views/enter-pin.js:113
+#: public/js/views/enter-pin.js:96
+#: public/js/views/enter-pin.js:100
+#: public/js/views/enter-pin.js:97
+#: public/js/views/enter-pin.js:101
+#: public/js/views/enter-pin.js:105
+#: public/js/views/enter-pin.js:113
 #: public/js/views/enter-pin.js:117
+#: public/js/views/enter-pin.js:115
+#: public/js/views/enter-pin.js:119
 msgid "Enter PIN"
 msgstr "‮Ǝuʇǝɹ ԀIN"
 
-#: public/js/views/login.js:25 templates/login.html:5
-#: public/js/views/fxa-login.js:25 public/js/views/fxa-login.js:27
-#: public/js/views/login.js:24 public/js/views/login.js:26
-#: public/js/views/fxa-login.js:26 public/js/views/fxa-login.js:28
+#: public/js/views/login.js:25
+#: templates/login.html:5
+#: public/js/views/fxa-login.js:25
+#: public/js/views/fxa-login.js:27
+#: public/js/views/login.js:24
+#: public/js/views/login.js:26
+#: public/js/views/fxa-login.js:26
+#: public/js/views/fxa-login.js:28
 #: public/js/views/fxa-login.js:29
 msgid "Sign In"
 msgstr "‮Sıƃu Iu"
 
-#: templates/login.html:6 public/js/views/fxa-login.js:28
-#: public/js/views/login.js:27 public/js/views/fxa-login.js:29
+#: templates/login.html:6
+#: public/js/views/fxa-login.js:28
+#: public/js/views/login.js:27
+#: public/js/views/fxa-login.js:29
 #: public/js/views/fxa-login.js:30
 msgid "Sign in to continue with the payment"
 msgstr "‮Sıƃu ıu ʇo ɔouʇıunǝ ʍıʇɥ ʇɥǝ dɐʎɯǝuʇ"
 
-#: templates/login.html:7 templates/login.html:9
+#: templates/login.html:7
+#: templates/login.html:9
+#: templates/login.html:14
 msgid "Sign in"
 msgstr "‮Sıƃu ıu"
 
-#: public/js/views/create-pin.js:106 public/js/views/create-pin.js:113
-#: public/js/views/reset-pin.js:64 templates/reset-start.html:12
-#: templates/was-locked.html:12 public/js/views/create-pin.js:105
-#: public/js/views/create-pin.js:112 templates/simulate.html:18
-#: public/js/views/create-pin.js:141 public/js/views/create-pin.js:148
-#: public/js/views/reset-pin.js:65 public/js/views/create-pin.js:156
-#: public/js/views/create-pin.js:163 public/js/views/reset-pin.js:68
+#: public/js/views/create-pin.js:106
+#: public/js/views/create-pin.js:113
+#: public/js/views/reset-pin.js:64
+#: templates/reset-start.html:12
+#: templates/was-locked.html:12
+#: public/js/views/create-pin.js:105
+#: public/js/views/create-pin.js:112
+#: templates/simulate.html:18
+#: public/js/views/create-pin.js:141
+#: public/js/views/create-pin.js:148
+#: public/js/views/reset-pin.js:65
+#: public/js/views/create-pin.js:156
+#: public/js/views/create-pin.js:163
+#: public/js/views/reset-pin.js:68
 #: templates/signout.html:14
+#: public/js/views/create-pin.js:159
+#: public/js/views/create-pin.js:166
+#: templates/super-simulate.html:20
 msgid "Continue"
 msgstr "‮Ↄouʇıunǝ"
 
-#: public/js/views/enter-pin.js:73 public/js/views/enter-pin.js:74
-#: public/js/views/enter-pin.js:78 public/js/views/enter-pin.js:90
+#: public/js/views/enter-pin.js:73
+#: public/js/views/enter-pin.js:74
+#: public/js/views/enter-pin.js:78
+#: public/js/views/enter-pin.js:90
+#: public/js/views/enter-pin.js:92
 msgid "Wrong PIN"
 msgstr "‮Ｍɹouƃ ԀIN"
 
-#: public/js/views/create-pin.js:48 public/js/views/create-pin.js:84
+#: public/js/views/create-pin.js:48
+#: public/js/views/create-pin.js:84
 #: public/js/views/create-pin.js:97
+#: public/js/views/create-pin.js:100
 msgid "PINs do not match."
 msgstr "‮ԀINs po uoʇ ɯɐʇɔɥ˙"
 
-#: webpay/pin/views.py:46 webpay/testing/views.py:25
+#: webpay/pin/views.py:46
+#: webpay/testing/views.py:25
 msgid "Create a PIN"
 msgstr "‮Ↄɹǝɐʇǝ ɐ ԀIN"
 
-#: webpay/pin/views.py:68 webpay/pin/views.py:185
-#: public/js/views/create-pin.js:36 public/js/views/create-pin.js:71
+#: webpay/pin/views.py:68
+#: webpay/pin/views.py:185
+#: public/js/views/create-pin.js:36
+#: public/js/views/create-pin.js:71
 #: public/js/views/create-pin.js:82
 msgid "Confirm PIN"
 msgstr "‮Ↄouɟıɹɯ ԀIN"
 
-#: webpay/pin/views.py:131 webpay/pin/views.py:157
+#: webpay/pin/views.py:131
+#: webpay/pin/views.py:157
 #: webpay/pin/templates/pin/pin_was_locked.html:13
-#: public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68
-#: templates/was-locked.html:11 public/js/views/force-auth.js:89
-#: public/js/views/force-auth.js:102 public/js/views/reset-pin.js:66
-#: public/js/views/reset-pin.js:69 public/js/views/force-auth.js:101
+#: public/js/views/reset-pin.js:65
+#: public/js/views/reset-pin.js:68
+#: templates/was-locked.html:11
+#: public/js/views/force-auth.js:89
+#: public/js/views/force-auth.js:102
+#: public/js/views/reset-pin.js:66
+#: public/js/views/reset-pin.js:69
+#: public/js/views/force-auth.js:101
 #: public/js/views/reset-pin.js:72
+#: public/js/views/force-auth.js:96
 msgid "Reset PIN"
 msgstr "‮ᴚǝsǝʇ ԀIN"
 
 #. This is the same as the standard forgot
 #. password that most sites have.
-#: templates/pin-form.html:18 templates/reset-start.html:6
-#: templates/pin-form.html:29 templates/pin-form.html:30
+#: templates/pin-form.html:18
+#: templates/reset-start.html:6
+#: templates/pin-form.html:29
+#: templates/pin-form.html:30
 msgid "Forgot your PIN?"
 msgstr "‮Ⅎoɹƃoʇ ʎonɹ ԀIN¿"
 
-#: public/js/views/locked.js:24 public/js/views/locked.js:22
+#: public/js/views/locked.js:24
+#: public/js/views/locked.js:22
 msgid ""
-"You entered the wrong PIN too many times. Your account is locked. Please try "
-"your purchase again in 5 minutes."
+"You entered the wrong PIN too many times. Your account is locked. Please "
+"try your purchase again in 5 minutes."
 msgstr ""
 "‮⅄on ǝuʇǝɹǝp ʇɥǝ ʍɹouƃ ԀIN ʇoo ɯɐuʎ ʇıɯǝs˙ ⅄onɹ ɐɔɔonuʇ ıs ʅoɔʞǝp˙ Ԁʅǝɐsǝ "
 "ʇɹʎ ʎonɹ dnɹɔɥɐsǝ ɐƃɐıu ıu 5‮ ɯıunʇǝs˙"
@@ -175,7 +237,8 @@ msgstr ""
 "‮⅄onɹ ԀIN ʍɐs ʅoɔʞǝp qǝɔɐnsǝ ʎon ǝuʇǝɹǝp ıʇ ıuɔoɹɹǝɔʇʅʎ ʇoo ɯɐuʎ ʇıɯǝs˙ ⅄on "
 "ɔɐu ɔouʇıunǝ ɐup ʇɹʎ ǝuʇǝɹıuƃ ʎonɹ ԀIN ɐƃɐıu oɹ ɹǝsǝʇ ʎonɹ ԀIN˙"
 
-#: templates/reset-start.html:7 templates/reset-start.html:10
+#: templates/reset-start.html:7
+#: templates/reset-start.html:10
 msgid ""
 "Are you sure you want to reset your PIN? You must sign in to Persona to "
 "reset your PIN."
@@ -188,71 +251,104 @@ msgstr ""
 msgid "Verifying payment"
 msgstr "‮Ʌǝɹıɟʎıuƃ dɐʎɯǝuʇ"
 
-#: public/js/lib/auth.js:29 public/js/lib/auth.js:30 public/js/lib/auth.js:25
-#: public/js/lib/auth.js:39 public/js/lib/auth.js:26 public/js/lib/auth.js:41
+#: public/js/lib/auth.js:29
+#: public/js/lib/auth.js:30
+#: public/js/lib/auth.js:25
+#: public/js/lib/auth.js:39
+#: public/js/lib/auth.js:26
+#: public/js/lib/auth.js:41
 msgid "Retrying"
 msgstr "‮ᴚǝʇɹʎıuƃ"
 
 #: public/js/lib/auth.js:64
-#, fuzzy
 msgid "That took longer than expected. Retry?"
 msgstr "‮⊥ɥɐʇ ʇooʞ ʅouƃǝɹ ʇɥɐu ǝxdǝɔʇǝp˙ ᴚǝʇɹʎ¿"
 
-#: public/js/views/create-pin.js:37 templates/reset-start.html:11
-#: public/js/views/create-pin.js:72 templates/reset-start.html:15
+#: public/js/views/create-pin.js:37
+#: templates/reset-start.html:11
+#: public/js/views/create-pin.js:72
+#: templates/reset-start.html:15
 #: public/js/views/create-pin.js:83
 msgid "Back"
 msgstr "‮Ԑɐɔʞ"
 
-#: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95
-#: public/js/views/enter-pin.js:96 public/js/views/create-pin.js:73
-#: public/js/views/enter-pin.js:100 public/js/views/create-pin.js:84
+#: public/js/views/create-pin.js:38
+#: public/js/views/enter-pin.js:95
+#: public/js/views/enter-pin.js:96
+#: public/js/views/create-pin.js:73
+#: public/js/views/enter-pin.js:100
+#: public/js/views/create-pin.js:84
 #: public/js/views/enter-pin.js:112
+#: public/js/views/enter-pin.js:114
 msgid "Submit"
 msgstr "‮Snqɯıʇ"
 
-#: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60
-#: public/js/views/reset-pin.js:28 public/js/lib/wait.js:171
-#: public/js/views/create-pin.js:65 public/js/views/enter-pin.js:61
-#: public/js/views/force-auth.js:53 public/js/views/reset-pin.js:29
-#: public/js/views/reset-start.js:107 public/js/views/create-pin.js:101
-#: public/js/views/enter-pin.js:65 public/js/views/reset-start.js:108
-#: public/js/views/force-auth.js:61 public/js/views/reset-pin.js:30
-#: public/js/views/reset-start.js:112 public/js/views/force-auth.js:60
-#: public/js/views/reset-start.js:122 public/js/lib/auth.js:22
-#: public/js/lib/auth.js:36 public/js/lib/wait.js:180
-#: public/js/views/create-pin.js:116 public/js/views/enter-pin.js:75
-#: public/js/views/page.js:43 public/js/views/reset-pin.js:33
+#: public/js/views/create-pin.js:66
+#: public/js/views/enter-pin.js:60
+#: public/js/views/reset-pin.js:28
+#: public/js/lib/wait.js:171
+#: public/js/views/create-pin.js:65
+#: public/js/views/enter-pin.js:61
+#: public/js/views/force-auth.js:53
+#: public/js/views/reset-pin.js:29
+#: public/js/views/reset-start.js:107
+#: public/js/views/create-pin.js:101
+#: public/js/views/enter-pin.js:65
+#: public/js/views/reset-start.js:108
+#: public/js/views/force-auth.js:61
+#: public/js/views/reset-pin.js:30
+#: public/js/views/reset-start.js:112
+#: public/js/views/force-auth.js:60
+#: public/js/views/reset-start.js:122
+#: public/js/lib/auth.js:22
+#: public/js/lib/auth.js:36
+#: public/js/lib/wait.js:180
+#: public/js/views/create-pin.js:116
+#: public/js/views/enter-pin.js:75
+#: public/js/views/page.js:43
+#: public/js/views/reset-pin.js:33
 #: public/js/views/reset-start.js:124
+#: public/js/lib/wait.js:170
+#: public/js/views/create-pin.js:119
+#: public/js/views/enter-pin.js:77
+#: public/js/views/reset-start.js:101
 msgid "Retry?"
 msgstr "‮ᴚǝʇɹʎ¿"
 
-#: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116
-#: public/js/views/create-pin.js:113 public/js/views/create-pin.js:115
-#: public/js/views/create-pin.js:149 public/js/views/create-pin.js:152
-#: public/js/views/create-pin.js:164 public/js/views/create-pin.js:167
-#, fuzzy
+#: public/js/views/create-pin.js:114
+#: public/js/views/create-pin.js:116
+#: public/js/views/create-pin.js:113
+#: public/js/views/create-pin.js:115
+#: public/js/views/create-pin.js:149
+#: public/js/views/create-pin.js:152
+#: public/js/views/create-pin.js:164
+#: public/js/views/create-pin.js:167
+#: public/js/views/create-pin.js:170
 msgid "Create PIN"
 msgstr "‮Ↄɹǝɐʇǝ ԀIN"
 
 #: public/js/views/error.js:45
-#, fuzzy
 msgid "Something went wrong."
 msgstr "‮Soɯǝʇɥıuƃ ʍǝuʇ ʍɹouƃ˙"
 
-#: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118
-#: public/js/views/reset-start.js:119 public/js/views/reset-start.js:123
-#: public/js/views/reset-start.js:133 public/js/views/reset-start.js:135
-#, fuzzy
+#: public/js/views/reset-start.js:29
+#: public/js/views/reset-start.js:118
+#: public/js/views/reset-start.js:119
+#: public/js/views/reset-start.js:123
+#: public/js/views/reset-start.js:133
+#: public/js/views/reset-start.js:135
+#: public/js/views/reset-start.js:112
 msgid "Reset your PIN?"
 msgstr "‮ᴚǝsǝʇ ʎonɹ ԀIN¿"
 
-#: public/js/views/was-locked.js:13 public/js/views/was-locked.js:38
+#: public/js/views/was-locked.js:13
+#: public/js/views/was-locked.js:38
 #: public/js/views/was-locked.js:42
 msgid "Was Locked"
 msgstr "‮Ｍɐs ⅂oɔʞǝp"
 
-#: public/js/views/wait-for-tx.js:10 public/js/views/wait-to-start.js:13
+#: public/js/views/wait-for-tx.js:10
+#: public/js/views/wait-to-start.js:13
 msgid "Setting up payment"
 msgstr "‮Sǝʇʇıuƃ nd dɐʎɯǝuʇ"
 
@@ -280,7 +376,8 @@ msgstr "‮Ԁɐʎɯǝuʇs ɐɹǝ ʇǝɯdoɹɐɹıʅʎ pısɐqʅǝp˙"
 msgid "An unexpected error occurred when creating your PIN."
 msgstr "‮∀u nuǝxdǝɔʇǝp ǝɹɹoɹ oɔɔnɹɹǝp ʍɥǝu ɔɹǝɐʇıuƃ ʎonɹ ԀIN˙"
 
-#: public/js/error-codes.js:18 public/js/error-codes.js:27
+#: public/js/error-codes.js:18
+#: public/js/error-codes.js:27
 msgid "The PIN data submitted was invalid."
 msgstr "‮⊥ɥǝ ԀIN pɐʇɐ snqɯıʇʇǝp ʍɐs ıuʌɐʅıp˙"
 
@@ -348,17 +445,22 @@ msgstr "‮Ｍɐıʇıuƃ ɟoɹ ʅoƃıu"
 msgid "Retrieving Transaction"
 msgstr "‮ᴚǝʇɹıǝʌıuƃ ⊥ɹɐusɐɔʇıou"
 
-#: public/js/views/error.js:55 public/js/views/error.js:58
+#: public/js/views/error.js:55
+#: public/js/views/error.js:58
 msgid "An unexpected error occurred."
 msgstr "‮∀u nuǝxdǝɔʇǝp ǝɹɹoɹ oɔɔnɹɹǝp˙"
 
-#: public/js/views/force-auth.js:87 public/js/views/force-auth.js:100
+#: public/js/views/force-auth.js:87
+#: public/js/views/force-auth.js:100
 #: public/js/views/force-auth.js:99
+#: public/js/views/force-auth.js:94
 msgid "Sign-in to reset PIN"
 msgstr "‮Sıƃu-ıu ʇo ɹǝsǝʇ ԀIN"
 
-#: public/js/views/force-auth.js:90 public/js/views/force-auth.js:103
+#: public/js/views/force-auth.js:90
+#: public/js/views/force-auth.js:103
 #: public/js/views/force-auth.js:102
+#: public/js/views/force-auth.js:97
 msgid "Please sign in to reset your PIN."
 msgstr "‮Ԁʅǝɐsǝ sıƃu ıu ʇo ɹǝsǝʇ ʎonɹ ԀIN˙"
 
@@ -367,12 +469,11 @@ msgid "Initializing"
 msgstr "‮Iuıʇıɐʅızıuƃ"
 
 #: public/js/views/locked.js:21
-#, fuzzy
 msgid "PIN Locked"
 msgstr "‮ԀIN ⅂oɔʞǝp"
 
-#: public/js/views/payment-success.js:15 public/js/views/wait-to-finish.js:14
-#, fuzzy
+#: public/js/views/payment-success.js:15
+#: public/js/views/wait-to-finish.js:14
 msgid "Completing payment"
 msgstr "‮Ↄoɯdʅǝʇıuƃ dɐʎɯǝuʇ"
 
@@ -388,8 +489,8 @@ msgstr "‮Sıɯnʅɐʇǝ Ԁɐʎɯǝuʇ"
 msgid "You will not be charged."
 msgstr "‮⅄on ʍıʅʅ uoʇ qǝ ɔɥɐɹƃǝp˙"
 
-#: templates/reset-start.html:12 templates/reset-start.html:16
-#, fuzzy
+#: templates/reset-start.html:12
+#: templates/reset-start.html:16
 msgid "Reset"
 msgstr "‮ᴚǝsǝʇ"
 
@@ -401,14 +502,18 @@ msgstr ""
 "‮Ԑʎ dɹoɔǝǝpıuƃ ʎon ɐƃɹǝǝ ʇo onɹ <ɐ %(terms)s‮>ʇǝɹɯs</a>‮ ɐup <ɐ %(privacy)s‮>"
 "Ԁɹıʌɐɔʎ Ԁoʅıɔʎ</a>"
 
-#: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68
-#: public/js/views/force-auth.js:90 public/js/views/reset-start.js:70
-#, fuzzy
+#: public/js/views/force-auth.js:91
+#: public/js/views/reset-start.js:68
+#: public/js/views/force-auth.js:90
+#: public/js/views/reset-start.js:70
+#: public/js/views/force-auth.js:88
+#: public/js/views/login.js:18
+#: public/js/views/reset-start.js:55
 msgid "Connecting to Firefox Accounts"
 msgstr "‮Ↄouuǝɔʇıuƃ ʇo Ⅎıɹǝɟox ∀ɔɔonuʇs"
 
 #: templates/reset-start.html:8
-#, fuzzy
+#: templates/reset-start.html:7
 msgid ""
 "Are you sure you want to reset your PIN? You must sign in to Firefox "
 "Accounts to reset your PIN."
@@ -427,3 +532,15 @@ msgstr "‮⅄on ɐɹǝ sıƃuǝp ıu ɐs:"
 #: templates/signout.html:11
 msgid "Not you?"
 msgstr "‮Noʇ ʎon¿"
+
+#: public/js/views/super-simulate.js:44
+msgid "Super Simulate"
+msgstr "‮Sndǝɹ Sıɯnʅɐʇǝ"
+
+#: templates/super-simulate.html:8
+msgid "Simulate Something?"
+msgstr "‮Sıɯnʅɐʇǝ Soɯǝʇɥıuƃ¿"
+
+#: templates/super-simulate.html:11
+msgid "No network simulation"
+msgstr "‮No uǝʇʍoɹʞ sıɯnʅɐʇıou"

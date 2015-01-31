@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Webpay\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-30 19:53+0000\n"
-"PO-Revision-Date: 2014-12-16 04:28+0000\n"
+"PO-Revision-Date: 2015-01-31 13:38+0000\n"
 "Last-Translator: yfdyh000 <yfdyh000@gmail.com>\n"
 "Language-Team: Chinese Simplified, China <LL@li.org>\n"
 "Language: zh_CN\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1418704104.0\n"
+"X-POOTLE-MTIME: 1422711500.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18
 msgid "Payment cancelled."
@@ -344,13 +344,12 @@ msgstr "不是您？"
 
 #: public/js/views/super-simulate.js:44
 msgid "Super Simulate"
-msgstr ""
+msgstr "超级模拟"
 
 #: templates/super-simulate.html:8
-#, fuzzy
 msgid "Simulate Something?"
-msgstr "模拟支付"
+msgstr "要模拟什么？"
 
 #: templates/super-simulate.html:11
 msgid "No network simulation"
-msgstr ""
+msgstr "模拟无网络"

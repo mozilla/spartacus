@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-30 19:53+0000\n"
-"PO-Revision-Date: 2014-12-11 02:51+0000\n"
+"PO-Revision-Date: 2015-01-31 11:03+0000\n"
 "Last-Translator: Peter <petercpg@mail.moztw.org>\n"
 "Language-Team: MozTW <petercpg@mail.moztw.org>\n"
 "Language: zh_TW\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1418266282.0\n"
+"X-POOTLE-MTIME: 1422702219.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18
 msgid "Payment cancelled."
@@ -344,13 +344,12 @@ msgstr "不是您？"
 
 #: public/js/views/super-simulate.js:44
 msgid "Super Simulate"
-msgstr ""
+msgstr "超級模擬"
 
 #: templates/super-simulate.html:8
-#, fuzzy
 msgid "Simulate Something?"
-msgstr "模擬付款"
+msgstr "要模擬什麼東西？"
 
 #: templates/super-simulate.html:11
 msgid "No network simulation"
-msgstr ""
+msgstr "模擬無網路"

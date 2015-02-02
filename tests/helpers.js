@@ -624,6 +624,7 @@ function selectOption(optionContainer, optVal) {
   casper.evaluate(function(optionContainer, optVal) {
     var opt = $(optionContainer + ' option[value="' + optVal + '"]');
     opt.prop('selected', true);
+    $(optionContainer).change();
   }, optionContainer, optVal);
 }
 

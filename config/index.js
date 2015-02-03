@@ -1,6 +1,5 @@
 var _ = require('underscore');
 
-
 function getNodeEnv() {
   var env;
   if (typeof process !== 'undefined' && process.env) {

@@ -1,4 +1,3 @@
-var helpers = require('../helpers');
 var expectedMCC = '334';
 var expectedMNC = '020';
 

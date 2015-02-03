@@ -1,4 +1,3 @@
-var helpers = require('../helpers');
 var pageUrls = [];
 
 helpers.startCasper({

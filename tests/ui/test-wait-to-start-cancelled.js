@@ -1,11 +1,10 @@
-var helpers = require('../helpers');
-
 helpers.startCasper({
   sinon: {
     consumeStack: true
   },
   setUp: function(){
     // As consumeStack is true, responses added with respondWith will be consumed in order.
+    helpers.spyOnMozPaymentProvider();
     helpers.fakeLogout();
     helpers.fakeVerification();
     helpers.fakeStartTransaction();
@@ -13,7 +12,6 @@ helpers.startCasper({
     helpers.fakePinData({data: {pin: true}, method: 'POST', statusCode: 200, url:'/mozpay/v1/api/pin/check/'});
     helpers.fakeWaitPoll({type: 'start', statusData: 3});
     helpers.fakeWaitPoll({type: 'start', statusData: 5});
-    helpers.spyOnMozPaymentProvider();
   },
 });
 

@@ -1,5 +1,14 @@
-var _ = require('underscore');
-var config = require('../config');
+if (require.globals) {
+  var fs = require('fs');
+  require.paths.push(fs.absolute(fs.workingDirectory + '/config/'));
+  var _ = require(fs.absolute('node_modules/underscore/underscore'));
+  var config = require('default');
+  var testConf = require('test');
+  _.extend(config, testConf || {});
+} else {
+  var config = require('../config');
+  var _ = require('underscore');
+}
 
 var _currTestId;
 var _currentEmail;
@@ -208,7 +217,7 @@ function getApiRequest(url) {
   var allUrls = {};
   allRequests.forEach(function(candidate) {
     allUrls[candidate.url] = true;
-    if (candidate.url == url) {
+    if (candidate.url === url) {
       request = candidate;
     }
   });
@@ -545,6 +554,8 @@ function startCasper(options) {
     casper.echo(JSON.stringify(headers));
     casper.open(url, {headers: headers});
   }
+
+  return casper;
 }
 
 
@@ -556,7 +567,7 @@ function spyOnMozPaymentProvider() {
       paymentSuccess: function() {
         console.log('called fake paymentSuccess');
       },
-      paymentFailed: function(errorCode) {
+      paymentFailed: function() {
         console.log('called fake paymentFailed');
       }
     };
@@ -576,7 +587,7 @@ function waitForMozPayment(callback) {
   casper.waitFor(function() {
     mozPayProviderSpy = this.evaluate(function() {
       return window._mozPaymentProviderSpy;
-    })
+    });
     if (!mozPayProviderSpy) {
       throw new Error('test setUp did not create a mozPayProvider spy');
     }

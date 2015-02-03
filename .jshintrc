@@ -25,6 +25,7 @@
     "describe",
     "expect",
     "exports",
+    "helpers",
     "it",
     "mocha",
     "process",

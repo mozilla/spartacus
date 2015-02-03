@@ -13,8 +13,11 @@ module.exports = function(grunt) {
 
     casper: {
       options : {
+        //engine: 'slimerjs',
         test: true,
-        includes: ['tests/static/testlib/bind-poly.js'],
+        includes: ['tests/static/testlib/helper-shim.js', 'tests/static/testlib/bind-poly.js'],
+        //verbose: true,
+        //'log-level': 'debug',
       },
       runtests : {
         src: [grunt.option('test') || 'tests/ui/test-*.js'],
@@ -288,6 +291,8 @@ module.exports = function(grunt) {
   grunt.registerTask('default', 'Does the same thing as grunt start', ['start']);
   grunt.registerTask('start', 'Run the development server',
                      ['abideCompile', 'env:dev', 'jshint', 'clean:templates', 'nunjucks', 'requirejs', 'stylus', 'express:dev', 'watch']);
+grunt.registerTask('start-test-server', 'Run the development server',
+                     ['abideCompile', 'env:test', 'jshint', 'clean:templates', 'nunjucks', 'requirejs', 'stylus', 'express:test', 'watch']);
   grunt.registerTask('docker', 'Run the processes for docker',
                      ['abideCompile', 'jshint', 'clean:templates', 'nunjucks', 'requirejs', 'stylus', 'watch']);
   grunt.registerTask('styleguide', 'Run the styleguide server',

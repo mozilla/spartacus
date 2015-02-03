@@ -1,5 +1,3 @@
-var helpers = require('../helpers');
-
 helpers.startCasper({
   onLoadFinished: function() {
     casper.evaluate(function() {

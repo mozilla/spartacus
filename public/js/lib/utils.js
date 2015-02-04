@@ -122,6 +122,17 @@ define([
       }
       return false;
     },
+    hasMozId: function(nav) {
+      nav = nav || navigator;
+      var mozId;
+      try {
+        mozId = nav.mozId;
+      } catch(e) {
+        // Handle exception due to bug 1129650
+        logger.error(e);
+      }
+      return typeof mozId !== 'undefined';
+    },
     supportsNativeFxA: function(nav) {
       // Until Native FxA is ready, let's not check this.
       if (!settings.enableNativeFxA) {
@@ -131,7 +142,7 @@ define([
         // native FxA support.
         nav = nav || navigator;
         var uaMatch = nav.userAgent.match(/rv:(\d{2})/);
-        var hasNativeFxA = this.bodyData.fxaAuthUrl && nav.mozId && uaMatch && uaMatch[1] >= 34;
+        var hasNativeFxA = this.bodyData.fxaAuthUrl && utils.hasMozId(nav) && uaMatch && uaMatch[1] >= 34;
         return hasNativeFxA;
       }
     },

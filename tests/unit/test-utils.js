@@ -180,7 +180,27 @@ define(['utils', 'settings'], function(utils, settings) {
         mozId: {},
         userAgent: 'Mozilla/5.0 (Mobile; rv:34.0) Gecko/26.0 Firefox/34.0'
       }));
+
+      assert.notOk(utils.supportsNativeFxA({
+        userAgent: 'Mozilla/5.0 (Mobile; rv:34.0) Gecko/26.0 Firefox/34.0'
+      }));
     });
+
+
+    test('hasMozID util', function() {
+      assert.equal(utils.hasMozId({
+        get mozId(){
+          throw new Error('AWOOGA');
+        }
+      }), false);
+
+      assert.equal(utils.hasMozId({
+        mozId: {}
+      }), true);
+
+      assert.equal(utils.hasMozId({}), false);
+    });
+
 
     test('test native-FxA UA detection when enableNativeFxA is false', function() {
       settings.enableNativeFxA = false;

@@ -43,6 +43,10 @@ define([
         options.data.mcc = networkCodes.mcc;
       }
 
+      logger.log('starting transaction with MCC:MNC ' +
+                 (options.data.mcc || 'NULL') + ':' +
+                 (options.data.mnc || 'NULL'));
+
       options.data = JSON.stringify(options.data);
       options.contentType = 'application/json';
       options.dataType = 'json';

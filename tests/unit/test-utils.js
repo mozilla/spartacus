@@ -134,14 +134,14 @@ define(['utils', 'settings'], function(utils, settings) {
    test('test paymentSuccess timeout', function() {
       var stubError = sinon.stub(window.app.error, 'render');
       utils.mozPaymentProvider.paymentSuccess();
-      this.clock.tick(3000);
+      this.clock.tick(10000);
       sinon.assert.calledWith(stubError, sinon.match({errorCode: 'PAY_SUCCESS_TIMEOUT'}));
     });
 
     test('test paymentFailed timeout', function() {
       var stubError = sinon.stub(window.app.error, 'render');
       utils.mozPaymentProvider.paymentFailed();
-      this.clock.tick(3000);
+      this.clock.tick(10000);
       sinon.assert.calledWith(stubError, sinon.match({errorCode: 'PAY_FAILURE_TIMEOUT'}));
     });
 

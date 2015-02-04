@@ -14,7 +14,7 @@ define([
   var $body = $('body');
 
   var fxPayCompletionTimer;
-  var fxPayCompletionTimeoutMs = 3000;
+  var fxPayCompletionTimeoutMs = 10000;
 
   function fxPayCompletionError(errorCode) {
     return app.error.render({

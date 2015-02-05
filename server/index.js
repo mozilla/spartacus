@@ -50,7 +50,7 @@ spa.use(rewriteModule.getMiddleware([
   // This is emulating the url used by webpay for wait-to-finish.
   {from: '^/mozpay/provider/boku/wait-to-finish', to: '/mozpay/'},
   // This is emulating the url used by webpay for payment success/failure.
-  {from: '^/mozpay/provider/reference/(?:success|error|no-error-code)', to: '/mozpay/'},
+  {from: '^/mozpay/provider/reference/(?:success|error|no-error-code|user-cancelled)', to: '/mozpay/'},
   // Allow a view that sets an incorrect data-start-view attr.
   {from: '^/mozpay/bogus-start-attr', to: '/mozpay/'},
   // Internally redirect urls to be handled by the client-side spa serving view.
@@ -81,6 +81,10 @@ spa.get('/mozpay/', function (req, res) {
     // Setup a view that sets a example of an error like webpay would
     // but this time withn no error code attr.
     context.startView = 'payment-failed';
+  } else if (req.originalUrl === '/mozpay/provider/reference/user-cancelled') {
+    // Setup a view that sets a example of an error like webpay would.
+    context.startView = 'payment-failed';
+    context.errorCode = 'USER_CANCELLED';
   } else if (req.originalUrl.match(/\/mozpay\/spa\/fxa-auth/)) {
     context.useFxA = true;
   }

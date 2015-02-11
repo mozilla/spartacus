@@ -142,7 +142,7 @@ define([
         // native FxA support.
         nav = nav || navigator;
         var uaMatch = nav.userAgent.match(/rv:(\d{2})/);
-        var hasNativeFxA = this.bodyData.fxaAuthUrl && utils.hasMozId(nav) && uaMatch && uaMatch[1] >= 34;
+        var hasNativeFxA = this.bodyData.fxaAuthUrl && utils.hasMozId(nav) && uaMatch && uaMatch[1] >= 32;
         return hasNativeFxA;
       }
     },

@@ -171,13 +171,18 @@ define(['utils', 'settings'], function(utils, settings) {
         userAgent: 'Mozilla/5.0 (Mobile; rv:26.0) Gecko/26.0 Firefox/26.0'
       }));
 
+      assert.notOk(utils.supportsNativeFxA({
+        mozId: {},
+        userAgent: 'Mozilla/5.0 (Mobile; rv:32.0) Gecko/26.0 Firefox/32.0'
+      }));
+
       assert.ok(utils.supportsNativeFxA({
         mozId: {},
-        userAgent: 'Mozilla/5.0 (Mobile; rv:34.0) Gecko/26.0 Firefox/32.0'
+        userAgent: 'Mozilla/5.0 (Mobile; rv:34.0) Gecko/26.0 Firefox/34.0'
       }));
 
       assert.notOk(utils.supportsNativeFxA({
-        userAgent: 'Mozilla/5.0 (Mobile; rv:34.0) Gecko/26.0 Firefox/32.0'
+        userAgent: 'Mozilla/5.0 (Mobile; rv:34.0) Gecko/26.0 Firefox/34.0'
       }));
     });
 

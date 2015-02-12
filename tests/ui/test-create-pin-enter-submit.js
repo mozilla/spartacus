@@ -17,7 +17,15 @@ casper.test.begin('Check Create PIN submission on enter', {
 
     casper.waitForUrl(helpers.url('create-pin'), function() {
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
-      this.sendKeys('.pinbox', '1234');
+      this.sendKeys('.pinbox', '12', {keepFocus: true});
+      test.assertNotExists('.cta:enabled', 'Submit button is enabled');
+      // This way of submitting enter is required for the keyCode to be caught.
+      // helpers.sendEnterKey doesn't work in this case.
+      this.sendKeys('.pinbox', casper.page.event.key.Enter);
+      test.assertVisible('.err-msg', 'Error message should be visible on too short input.');
+      test.assertNotVisible('.forgot-pin', 'Forgot PIN should not be shown on create-pin screen');
+      this.sendKeys('.pinbox', '34', {keepFocus: true});
+      test.assertNotVisible('.err-msg', 'Error message should be gone');
       test.assertExists('.cta:enabled', 'Submit button is enabled');
       helpers.sendEnterKey('.pinbox');
     });

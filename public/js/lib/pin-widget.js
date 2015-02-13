@@ -9,6 +9,8 @@ define([
   'use strict';
 
   var backspace = 8;
+  var enterKeyCode = 13;
+
   var logger = log('lib', 'pin-widget');
   var pinMaxLength = 4;
   var pinBuffer = '';
@@ -60,6 +62,15 @@ define([
   function handleKeyPress(e) {
     var key = String.fromCharCode(e.charCode);
     var keyCode = e.keyCode;
+
+    // Show an error if enter is used to submit when the number of chars
+    // is less that pinMaxLength
+    if (keyCode === enterKeyCode && pinBuffer.length !== pinMaxLength) {
+      utils.trackEvent({'action': 'pin form',
+                        'label': 'Pin Error Displayed'});
+      showError(i18n.gettext('PIN too short'), {showForgotPin: true});
+      return false;
+    }
 
     // Don't prevent non-char keys save for backspace which we handle
     // specially.

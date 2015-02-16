@@ -1,4 +1,3 @@
-var helpers = require('../helpers');
 var selectedNetwork = '334:020';
 
 helpers.startCasper({

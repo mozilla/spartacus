@@ -1,4 +1,5 @@
 if (require.globals) {
+  // SlimerJS setup required to workaround require path issues.
   var fs = require('fs');
   require.paths.push(fs.absolute(fs.workingDirectory + '/config/'));
   var _ = require(fs.absolute('node_modules/underscore/underscore'));
@@ -6,6 +7,7 @@ if (require.globals) {
   var testConf = require('test');
   _.extend(config, testConf || {});
 } else {
+  // PhantomJS setup.
   var config = require('../config');
   var _ = require('underscore');
 }
@@ -13,10 +15,8 @@ if (require.globals) {
 var _currTestId;
 var _currentEmail;
 var _testInited = {};
-
 var baseTestUrl = 'http://localhost:' + config.test.port;
 var basePath = '/mozpay/spa';
-
 var pinDefaults = {
   pin: false,
   pin_is_locked_out: false,
@@ -37,6 +37,7 @@ function makeToken() {
   return Math.random().toString(36).slice(2);
 }
 
+
 casper.on('page.error', function(error, trace) {
   if (error.indexOf('INVALID_STATE_ERR') !== -1) {
     casper.echo(error, 'WARNING');
@@ -48,6 +49,7 @@ casper.on('page.error', function(error, trace) {
     casper.echo(lines.join('\n'), 'ERROR');
   }
 });
+
 
 casper.on('page.initialized', function(page) {
   if (!_testInited[_currTestId]) {
@@ -427,9 +429,11 @@ function fakePinData(options) {
   }
 }
 
+
 function genEmail() {
   return "tester+" + makeToken() + "@fakepersona.mozilla.org";
 }
+
 
 function doLogin() {
   // Sets the filter so we always login as a new user.
@@ -560,7 +564,8 @@ function startCasper(options) {
 
 
 function spyOnMozPaymentProvider() {
-  casper.evaluate(function(){
+  casper.echo('Spying on window.mozPaymentProvider');
+  casper.evaluate(function(isSlimer){
     // On B2G, the platform defines a mozPaymentProvider object. For tests,
     // we want to stub it out and then spy on it to make assertions.
     window.navigator.mozPaymentProvider = {
@@ -571,31 +576,43 @@ function spyOnMozPaymentProvider() {
         console.log('called fake paymentFailed');
       }
     };
-    window._mozPaymentProviderSpy = {
-      paymentSuccess: sinon.spy(window.navigator.mozPaymentProvider,
-                                'paymentSuccess'),
-      paymentFailed: sinon.spy(window.navigator.mozPaymentProvider,
-                               'paymentFailed')
-    };
+    sinon.spy(window.navigator.mozPaymentProvider, 'paymentSuccess');
+    sinon.spy(window.navigator.mozPaymentProvider, 'paymentFailed');
+
+    if (isSlimer) {
+      require('utils').mozPaymentProvider = window.navigator.mozPaymentProvider;
+    }
+  }, casper.isSlimer);
+}
+
+
+function assertPaymentFunc(type, argsList) {
+  casper.waitFor(function() {
+    return casper.evaluate(function(type) {
+      return window.navigator.mozPaymentProvider[type].called;
+    }, type);
+  }, function() {
+    casper.test.assert(casper.evaluate(function(type) {
+      return window.navigator.mozPaymentProvider[type].called;
+    }, type), type + ' function called as expected');
+    if (argsList) {
+      casper.test.assertEqual(casper.evaluate(function(type) {
+        return window.navigator.mozPaymentProvider[type].firstCall.args;
+      }, type), argsList, type + ' function called with args: ' + JSON.stringify(argsList));
+    }
+  }, function timeout() {
+    casper.test.fail(type + ' Spy not called in time. Check helpers.spyOnMozPaymentProvider() was called');
   });
 }
 
 
-function waitForMozPayment(callback) {
-  var mozPayProviderSpy;
+function assertPaymentFailed(argsList) {
+  return  assertPaymentFunc('paymentFailed', argsList);
+}
 
-  casper.waitFor(function() {
-    mozPayProviderSpy = this.evaluate(function() {
-      return window._mozPaymentProviderSpy;
-    });
-    if (!mozPayProviderSpy) {
-      throw new Error('test setUp did not create a mozPayProvider spy');
-    }
-    return (mozPayProviderSpy.paymentSuccess.called ||
-            mozPayProviderSpy.paymentFailed.called);
-  }, function() {
-    callback(mozPayProviderSpy);
-  });
+
+function assertPaymentSuccess(argsList) {
+  return  assertPaymentFunc('paymentSuccess', argsList);
 }
 
 
@@ -643,6 +660,8 @@ function selectOption(optionContainer, optVal) {
 module.exports = {
   assertErrorCode: assertErrorCode,
   assertNoError: assertNoError,
+  assertPaymentFailed: assertPaymentFailed,
+  assertPaymentSuccess: assertPaymentSuccess,
   doLogin: doLogin,
   doLogout: doLogout,
   basePath: basePath,
@@ -663,5 +682,4 @@ module.exports = {
   spyOnMozPaymentProvider: spyOnMozPaymentProvider,
   startCasper: startCasper,
   url: url,
-  waitForMozPayment: waitForMozPayment
 };

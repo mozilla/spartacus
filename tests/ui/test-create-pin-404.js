@@ -30,11 +30,7 @@ casper.test.begin('Create pin returns 404 (no user)', {
       helpers.assertErrorCode('PIN_CREATE_NO_USER');
       test.assertElementCount('.full-error .button', 1, 'Should only be one button for cancelling the flow');
       casper.click('.full-error .button');
-    });
-
-    helpers.waitForMozPayment(function(mozPayProviderSpy) {
-      test.assertEqual(mozPayProviderSpy.paymentFailed.firstCall.args,
-                       ['PIN_CREATE_NO_USER']);
+      helpers.assertPaymentFailed(['PIN_CREATE_NO_USER']);
     });
 
     casper.run(function() {

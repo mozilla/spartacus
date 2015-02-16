@@ -18,11 +18,7 @@ casper.test.begin('Make initial pin fetch error, then retry with success.', {
       test.assertVisible('.full-error .button', 'Cancel button should be visible');
       test.assertElementCount('.full-error .button', 1, 'Should only be one button for cancelling the flow');
       casper.click('.full-error .button');
-    });
-
-    helpers.waitForMozPayment(function(mozPayProviderSpy) {
-      test.assertEqual(mozPayProviderSpy.paymentFailed.firstCall.args,
-                       ['PIN_STATE_ERROR']);
+      helpers.assertPaymentFailed(['PIN_STATE_ERROR']);
     });
 
     casper.run(function() {

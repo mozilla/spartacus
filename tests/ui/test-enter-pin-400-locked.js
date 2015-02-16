@@ -28,11 +28,7 @@ casper.test.begin('Login Enter Pin API call returns locked screen when API says 
       helpers.assertErrorCode('PIN_LOCKED');
       test.assertElementCount('.locked .button', 1, 'Should only be one button for cancelling the flow');
       casper.click('.locked .button');
-    });
-
-    helpers.waitForMozPayment(function(mozPayProviderSpy) {
-      test.assertEqual(mozPayProviderSpy.paymentFailed.firstCall.args,
-                       ['PIN_LOCKED']);
+      helpers.assertPaymentFailed(['PIN_LOCKED']);
     });
 
     casper.run(function() {

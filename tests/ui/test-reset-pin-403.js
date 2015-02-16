@@ -50,11 +50,7 @@ casper.test.begin('Reset pin returns 403 (not authed / CSRF fail)', {
       helpers.assertErrorCode('PIN_RESET_PERM_DENIED');
       test.assertElementCount('.full-error .button', 1, 'Should only be one button for cancelling the flow');
       casper.click('.full-error .button');
-    });
-
-    helpers.waitForMozPayment(function(mozPayProviderSpy) {
-      test.assertEqual(mozPayProviderSpy.paymentFailed.firstCall.args,
-                       ['PIN_RESET_PERM_DENIED']);
+      helpers.assertPaymentFailed(['PIN_RESET_PERM_DENIED']);
     });
 
     casper.run(function() {

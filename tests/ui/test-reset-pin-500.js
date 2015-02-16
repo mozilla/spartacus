@@ -49,11 +49,7 @@ casper.test.begin('Reset pin returns 500', {
       helpers.assertErrorCode('PIN_RESET_ERROR');
       test.assertElementCount('.full-error .button', 1, 'Should only be one button for cancelling the flow');
       casper.click('.full-error .button');
-    });
-
-    helpers.waitForMozPayment(function(mozPayProviderSpy) {
-      test.assertEqual(mozPayProviderSpy.paymentFailed.firstCall.args,
-                       ['PIN_RESET_ERROR']);
+      helpers.assertPaymentFailed(['PIN_RESET_ERROR']);
     });
 
     casper.run(function() {

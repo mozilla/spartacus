@@ -24,11 +24,7 @@ casper.test.begin('Check wait-to-finish polling.', {
     casper.waitForSelector('.throbber', function() {
       // Progress will be shown as we are returning a non-pending state for the first request.
       test.assertVisible('.progress', 'Check progress is shown on wait-to-finish');
-    });
-
-    helpers.waitForMozPayment(function(mozPayProviderSpy) {
-      test.assertEqual(mozPayProviderSpy.paymentFailed.firstCall.args,
-                       ['USER_CANCELLED']);
+      helpers.assertPaymentFailed(['USER_CANCELLED']);
     });
 
     casper.run(function() {

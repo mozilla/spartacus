@@ -16,11 +16,7 @@ casper.test.begin('Denied verification should only have cancel option.', {
       helpers.assertErrorCode('VERIFY_DENIED');
       test.assertElementCount('.full-error .button', 1, 'Should only be one button for cancelling the flow');
       casper.click('.full-error .button');
-    });
-
-    helpers.waitForMozPayment(function(mozPayProviderSpy) {
-      test.assertEqual(mozPayProviderSpy.paymentFailed.firstCall.args,
-                       ['VERIFY_DENIED']);
+      helpers.assertPaymentFailed(['VERIFY_DENIED']);
     });
 
     casper.run(function() {

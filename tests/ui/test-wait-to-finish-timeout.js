@@ -1,3 +1,4 @@
+
 helpers.startCasper({
   path: '/mozpay/provider/boku/wait-to-finish',
   sinon: {
@@ -39,10 +40,7 @@ casper.test.begin('Check wait-to-finish polling timeout followed by retry.', {
 
     casper.waitForSelector('.throbber', function() {
       test.assertVisible('.progress', 'Check progress is shown on wait-to-finish');
-    });
-
-    helpers.waitForMozPayment(function(mozPayProviderSpy) {
-      test.assertTrue(mozPayProviderSpy.paymentSuccess.called);
+      helpers.assertPaymentSuccess();
     });
 
     casper.run(function() {

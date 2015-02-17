@@ -123,6 +123,9 @@ function injectSinon(options) {
   var consumeStack = options.consumeStack || false;
 
   casper.echo('Injecting Sinon', 'INFO');
+
+  casper.page.injectJs('public/lib/js/sinon/index.js');
+
   casper.echo('Sinon Server autoRespond: ' + autoRespond);
   casper.echo('Sinon Server consumeStack: ' + consumeStack);
   casper.evaluate(function(autoRespond, consumeStack) {
@@ -241,7 +244,8 @@ function fakeFxA(options) {
   var timeout = options.timeout || false;
   // clientScripts doesn't seem to apply to requests caused by redirects, so
   // we reinstall sinon here.
-  casper.page.injectJs('public/lib/js/sinon/index.js');
+  //casper.page.injectJs('public/lib/js/sinon/index.js');
+
   injectSinon();
   if (timeout) {
     casper.echo('Setting up a fake XHR timeout for FxA', 'INFO');
@@ -249,8 +253,8 @@ function fakeFxA(options) {
   } else {
     casper.evaluate(function (data, statusCode) {
       window.server.respondWith(
-          'POST', /\/fake-fxa-callback/,
-          [statusCode, {"Content-Type": "application/json"}, data]);
+        'POST', /\/fake-fxa-callback/,
+        [statusCode, {"Content-Type": "application/json"}, data]);
       console.log("Stubs installed");
     }, data, statusCode);
   }
@@ -461,11 +465,9 @@ function doLogout() {
 function setUpFxA(options) {
   options = options || {};
   casper.evaluate(function(fakeFxaSession, mktUser, fakeFxaEmail) {
-
     if (typeof mktUser === 'undefined') {
       mktUser = true;
     }
-
     console.log('injecting FxA test config');
     if (fakeFxaSession === true) {
       console.log('Faking a logged-in user');
@@ -490,6 +492,25 @@ function tearDownFxA() {
   });
 }
 
+if (casper.showClientConsole) {
+  casper.on('navigation.requested', function(url) {
+    console.log(url);
+  });
+}
+
+casper.on('resource.requested', function(requestData) {
+  if (requestData.url.indexOf('main.min.js') > -1) {
+    casper.emit('mainjs.requested');
+  }
+});
+
+casper.on('resource.received', function(requestData) {
+  if (requestData.url.indexOf('main.min.js') > -1) {
+    casper.emit('mainjs.received');
+  }
+});
+
+
 
 function startCasper(options) {
   options = options || {};
@@ -509,7 +530,7 @@ function startCasper(options) {
 
   // One-off event for setup of things that need to be in
   // place before JS execution.
-  casper.once('load.finished', function() {
+  casper.once('mainjs.received', function() {
     if (useFxA) {
       setUpFxA({
         fakeFxaSession: options.fakeFxaSession,
@@ -521,6 +542,7 @@ function startCasper(options) {
     }
 
     injectSinon(sinonOptions);
+
     if (typeof setUp === 'function') {
       casper.echo('Running test setUp func');
       setUp();
@@ -565,7 +587,7 @@ function startCasper(options) {
 
 function spyOnMozPaymentProvider() {
   casper.echo('Spying on window.mozPaymentProvider');
-  casper.evaluate(function(isSlimer){
+  casper.evaluate(function(){
     // On B2G, the platform defines a mozPaymentProvider object. For tests,
     // we want to stub it out and then spy on it to make assertions.
     window.navigator.mozPaymentProvider = {
@@ -578,11 +600,7 @@ function spyOnMozPaymentProvider() {
     };
     sinon.spy(window.navigator.mozPaymentProvider, 'paymentSuccess');
     sinon.spy(window.navigator.mozPaymentProvider, 'paymentFailed');
-
-    if (isSlimer) {
-      require('utils').mozPaymentProvider = window.navigator.mozPaymentProvider;
-    }
-  }, casper.isSlimer);
+  });
 }
 
 
@@ -634,6 +652,11 @@ function url(path) {
 }
 
 
+function getFullUrl(path) {
+  return baseTestUrl + url(path);
+}
+
+
 function sendEnterKey(selector) {
   casper.evaluate(function(selector) {
     /*global $ */
@@ -675,6 +698,7 @@ module.exports = {
   fakeVerification: fakeVerification,
   fakeWaitPoll: fakeWaitPoll,
   getApiRequest: getApiRequest,
+  getFullUrl: getFullUrl,
   injectSinon: injectSinon,
   selectOption: selectOption,
   setLoginFilter: setLoginFilter,

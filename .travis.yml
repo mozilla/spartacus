@@ -1,6 +1,8 @@
 language: node_js
 node_js:
  - "0.10"
+addons:
+  firefox: "18.0"
 notifications:
   irc:
     channels:
@@ -10,10 +12,18 @@ notifications:
 install:
   - "npm install"
 before_script:
-   - git clone -q git://github.com/n1k0/casperjs.git
-   - cd casperjs; git checkout -q tags/1.1-beta3; cd ../
-   - export PATH=$PATH:`pwd`/casperjs/bin
-   - phantomjs --version; casperjs --version
+  - export SLIMERJSLAUNCHER=$(which firefox) DISPLAY=:99.0 PATH=$TRAVIS_BUILD_DIR/slimerjs:$PATH
+  - export SLIMERVERSION=0.9.5
+  - export CASPERVERSION=1.1-beta3
+  - git clone -q git://github.com/n1k0/casperjs.git
+  - cd casperjs; git checkout -q tags/$CASPERVERSION; cd ../
+  - export PATH=$PATH:`pwd`/casperjs/bin
+  - sh -e /etc/init.d/xvfb start
+  - wget http://download.slimerjs.org/releases/latest-slimerjs-stable/slimerjs-$SLIMERVERSION.zip
+  - unzip slimerjs-0.9.5.zip
+  - mv slimerjs-$SLIMERVERSION ./slimerjs
+  - phantomjs --version; casperjs --version; slimerjs --version
 script:
   - "npm test"
   - "npm run-script uitest"
+  - "npm run-script uitest-slimer"

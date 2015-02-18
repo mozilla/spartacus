@@ -29,8 +29,7 @@
   "scripts": {
     "start" : "node -e \"require('grunt').cli()\" start",
     "test": "node -e \"require('grunt').cli()\" null test",
-    "uitest": "node -e \"require('grunt').cli()\" null uitest",
-    "uitest-slimer": "node -e \"require('grunt').cli()\" null uitest --engine slimerjs"
+    "uitest": "node -e \"require('grunt').cli()\" null uitest"
   },
   "repository": {
     "type": "git",

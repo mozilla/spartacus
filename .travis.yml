@@ -26,4 +26,3 @@ before_script:
 script:
   - "npm test"
   - "npm run-script uitest"
-  - "npm run-script uitest-slimer"

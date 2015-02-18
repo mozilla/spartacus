@@ -6,10 +6,8 @@ module.exports = function(grunt) {
   var settings = require('./public/js/settings.js');
   // The requirejs config data.
   var requireConfig = require('./public/js/require-config.js');
-  // Check for slimer being specified for tests.
-  var useSlimer = grunt.option('engine') === 'slimerjs';
 
-  if (useSlimer && !process.env.SLIMERJSLAUNCHER) {
+  if (!process.env.SLIMERJSLAUNCHER) {
     grunt.warn('You need to set the env var SLIMERJSLAUNCHER to point at the version of Firefox you want to use\n' +
                'See http://docs.slimerjs.org/current/installation.html#configuring-slimerjs for more details\n\n');
   }
@@ -19,12 +17,20 @@ module.exports = function(grunt) {
 
     casper: {
       options : {
-        engine: grunt.option('engine') || 'phantomjs',
         test: true,
         includes: ['tests/static/testlib/helper-shim.js', 'tests/static/testlib/bind-poly.js'],
         verbose: true,
       },
-      runtests : {
+      slimer : {
+        options: {
+          engine: 'slimerjs'
+        },
+        src: [grunt.option('test') || 'tests/ui/test-*.js'],
+      },
+      phantom: {
+        options: {
+          engine: 'phantomjs'
+        },
         src: [grunt.option('test') || 'tests/ui/test-*.js'],
       }
     },

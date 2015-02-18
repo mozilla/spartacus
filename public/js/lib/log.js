@@ -17,7 +17,7 @@ define(['underscore'], function(_) {
     }
 
     return {
-      log: _.bind(console.log, console),
+      log: _.bind(console.log, console, prefix),
       warn: _.bind(console.warn, console, prefix),
       error: _.bind(console.error, console, prefix),
       dir: _.bind(console.dir, console),

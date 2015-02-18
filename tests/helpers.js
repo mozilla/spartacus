@@ -491,24 +491,31 @@ function tearDownFxA() {
   });
 }
 
+
 if (casper.showClientConsole) {
   casper.on('navigation.requested', function(url) {
     console.log(url);
   });
 }
 
+
+function isMainJsUrl(url) {
+  return url.indexOf('main.js') > -1 || url.indexOf('main.min.js') > -1;
+}
+
+
 casper.on('resource.requested', function(requestData) {
-  if (requestData.url.indexOf('main.min.js') > -1) {
+  if (isMainJsUrl(requestData.url)) {
     casper.emit('mainjs.requested');
   }
 });
 
+
 casper.on('resource.received', function(requestData) {
-  if (requestData.url.indexOf('main.min.js') > -1) {
+  if (isMainJsUrl(requestData.url)) {
     casper.emit('mainjs.received');
   }
 });
-
 
 
 function startCasper(options) {

@@ -12,6 +12,8 @@ module.exports = function(grunt) {
                'See http://docs.slimerjs.org/current/installation.html#configuring-slimerjs for more details\n\n');
   }
 
+  var uitestSrc = [grunt.option('test') || 'tests/ui/test-*.js'];
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
@@ -25,13 +27,13 @@ module.exports = function(grunt) {
         options: {
           engine: 'slimerjs'
         },
-        src: [grunt.option('test') || 'tests/ui/test-*.js'],
+        src: uitestSrc,
       },
       phantom: {
         options: {
           engine: 'phantomjs'
         },
-        src: [grunt.option('test') || 'tests/ui/test-*.js'],
+        src: uitestSrc,
       }
     },
 

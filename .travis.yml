@@ -1,6 +1,6 @@
 language: node_js
 node_js:
- - "0.10"
+  - "0.10"
 addons:
   firefox: "18.0"
 notifications:
@@ -16,7 +16,9 @@ before_script:
   - export SLIMERVERSION=0.9.5
   - export CASPERVERSION=1.1-beta3
   - git clone -q git://github.com/n1k0/casperjs.git
-  - cd casperjs; git checkout -q tags/$CASPERVERSION; cd ../
+  - pushd casperjs
+  - git checkout -q tags/$CASPERVERSION
+  - popd
   - export PATH=$PATH:`pwd`/casperjs/bin
   - sh -e /etc/init.d/xvfb start
   - wget http://download.slimerjs.org/releases/latest-slimerjs-stable/slimerjs-$SLIMERVERSION.zip

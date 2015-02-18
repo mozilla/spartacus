@@ -302,7 +302,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', 'Does the same thing as grunt start', ['start']);
   grunt.registerTask('start', 'Run the development server',
                      ['abideCompile', 'env:dev', 'jshint', 'clean:templates', 'nunjucks', 'requirejs', 'stylus', 'express:dev', 'watch']);
-grunt.registerTask('start-test-server', 'Run the development server',
+  grunt.registerTask('start-test-server', 'Run the development server',
                      ['abideCompile', 'env:test', 'jshint', 'clean:templates', 'nunjucks', 'requirejs', 'stylus', 'express:test', 'watch']);
   grunt.registerTask('docker', 'Run the processes for docker',
                      ['abideCompile', 'jshint', 'clean:templates', 'nunjucks', 'requirejs', 'stylus', 'watch']);

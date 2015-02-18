@@ -124,6 +124,8 @@ function injectSinon(options) {
 
   casper.echo('Injecting Sinon', 'INFO');
 
+  // clientScripts doesn't seem to apply to requests caused by redirects, so
+  // we reinstall sinon here.
   casper.page.injectJs('public/lib/js/sinon/index.js');
 
   casper.echo('Sinon Server autoRespond: ' + autoRespond);
@@ -242,9 +244,6 @@ function fakeFxA(options) {
                               super_powers: options.super_powers || false}));
   var statusCode = options.statusCode || 200;
   var timeout = options.timeout || false;
-  // clientScripts doesn't seem to apply to requests caused by redirects, so
-  // we reinstall sinon here.
-  //casper.page.injectJs('public/lib/js/sinon/index.js');
 
   injectSinon();
   if (timeout) {

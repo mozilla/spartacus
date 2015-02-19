@@ -610,7 +610,7 @@ function spyOnMozPaymentProvider() {
 }
 
 
-function assertPaymentFunc(type, argsList) {
+function assertPaymentCompletionFunc(type, argsList) {
   casper.waitFor(function() {
     return casper.evaluate(function(type) {
       return window.navigator.mozPaymentProvider[type].called;
@@ -631,12 +631,12 @@ function assertPaymentFunc(type, argsList) {
 
 
 function assertPaymentFailed(argsList) {
-  return  assertPaymentFunc('paymentFailed', argsList);
+  return  assertPaymentCompletionFunc('paymentFailed', argsList);
 }
 
 
 function assertPaymentSuccess(argsList) {
-  return  assertPaymentFunc('paymentSuccess', argsList);
+  return  assertPaymentCompletionFunc('paymentSuccess', argsList);
 }
 
 

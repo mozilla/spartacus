@@ -13,7 +13,7 @@ helpers.startCasper({
     });
   },
   teardown: function() {
-    casper.removealllisteners('url.changed');
+    casper.removeAllListeners('url.changed');
   }
 });
 

@@ -1,5 +1,3 @@
-var helpers = require('../helpers');
-
 helpers.startCasper({
   setUp: function(){
     helpers.fakeLogout();
@@ -18,10 +16,7 @@ casper.test.begin('Simulate success', {
     casper.waitForUrl(helpers.url('simulate'), function() {
       test.assertVisible('.simulate', 'Simulate page should be displayed');
       this.click('.cta');
-    });
-
-    helpers.waitForMozPayment(function(mozPayProviderSpy) {
-      test.assertTrue(mozPayProviderSpy.paymentSuccess.called);
+      helpers.assertPaymentSuccess();
     });
 
     casper.run(function() {

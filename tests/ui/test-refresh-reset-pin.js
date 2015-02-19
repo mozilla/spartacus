@@ -1,12 +1,20 @@
-var helpers = require('../helpers');
-
 helpers.startCasper({
   setUp: function(){
     helpers.fakeLogout();
     helpers.fakeVerification();
     helpers.fakeStartTransaction();
     helpers.fakePinData({data: {pin: true}});
+
+    casper.on('url.changed', function () {
+      helpers.injectSinon();
+      helpers.fakeLogout();
+      helpers.fakeVerification();
+      helpers.fakePinData({data: {pin: true}});
+    });
   },
+  tearDown: function() {
+    casper.removeAllListeners('url.changed');
+  }
 });
 
 casper.test.begin('Refresh from reset-pin page.', {
@@ -33,13 +41,6 @@ casper.test.begin('Refresh from reset-pin page.', {
 
     casper.waitForUrl(helpers.url('reset-pin'), function() {
 
-      // Re-load sinon when load.finished fires.
-      casper.once('load.finished', function() {
-        helpers.injectSinon();
-        helpers.fakeLogout();
-        helpers.fakeVerification();
-        helpers.fakePinData({data: {pin: true}});
-      });
 
       this.reload(function() {
         casper.waitForUrl(helpers.url('enter-pin'), function() {

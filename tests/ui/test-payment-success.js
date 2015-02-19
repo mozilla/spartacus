@@ -1,5 +1,3 @@
-var helpers = require('../helpers');
-
 helpers.startCasper({
   path: '/mozpay/provider/reference/success',
   setUp: function(){
@@ -14,8 +12,8 @@ casper.test.begin('Check a payment success', {
 
     helpers.doLogin();
 
-    helpers.waitForMozPayment(function(mozPayProviderSpy) {
-      test.assertTrue(mozPayProviderSpy.paymentSuccess.called);
+    casper.then(function() {
+      helpers.assertPaymentSuccess();
     });
 
     casper.run(function() {

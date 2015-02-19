@@ -1,5 +1,3 @@
-var helpers = require('../helpers');
-
 helpers.startCasper({
   path: '/mozpay/provider/reference/error',
   setUp: function(){

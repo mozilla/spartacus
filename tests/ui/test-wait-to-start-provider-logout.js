@@ -1,5 +1,3 @@
-var helpers = require('../helpers');
-
 helpers.startCasper({
   sinon: {
     // Process respondWith calls in order.

@@ -1,4 +1,3 @@
-var helpers = require('../helpers');
 var errorCode = 'SIM_ONLY_KEY';  // some server error
 
 helpers.startCasper({

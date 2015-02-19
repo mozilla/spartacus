@@ -1,5 +1,3 @@
-var helpers = require('../helpers');
-
 helpers.startCasper({
   setUp: function(){
     helpers.fakeLogout();
@@ -19,9 +17,7 @@ casper.test.begin('Check Create PIN submission on enter', {
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
       this.sendKeys('.pinbox', '12', {keepFocus: true});
       test.assertNotExists('.cta:enabled', 'Submit button is enabled');
-      // This way of submitting enter is required for the keyCode to be caught.
-      // helpers.sendEnterKey doesn't work in this case.
-      this.sendKeys('.pinbox', casper.page.event.key.Enter);
+      helpers.sendEnterKey('#pin');
       test.assertVisible('.err-msg', 'Error message should be visible on too short input.');
       test.assertNotVisible('.forgot-pin', 'Forgot PIN should not be shown on create-pin screen');
       this.sendKeys('.pinbox', '34', {keepFocus: true});

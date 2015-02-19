@@ -7,6 +7,12 @@ module.exports = function(grunt) {
   // The requirejs config data.
   var requireConfig = require('./public/js/require-config.js');
 
+  if (!process.env.SLIMERJSLAUNCHER) {
+    grunt.warn('You need to set the env var SLIMERJSLAUNCHER to point at the version of Firefox you want to use\n' +
+               'See http://docs.slimerjs.org/current/installation.html#configuring-slimerjs for more details\n\n');
+  }
+
+  var uitestSrc = [grunt.option('test') || 'tests/ui/test-*.js'];
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -14,10 +20,20 @@ module.exports = function(grunt) {
     casper: {
       options : {
         test: true,
-        includes: ['tests/static/testlib/bind-poly.js'],
+        includes: ['tests/static/testlib/helper-shim.js', 'tests/static/testlib/bind-poly.js'],
+        verbose: true,
       },
-      runtests : {
-        src: [grunt.option('test') || 'tests/ui/test-*.js'],
+      slimer : {
+        options: {
+          engine: 'slimerjs'
+        },
+        src: uitestSrc,
+      },
+      phantom: {
+        options: {
+          engine: 'phantomjs'
+        },
+        src: uitestSrc,
       }
     },
 
@@ -288,6 +304,8 @@ module.exports = function(grunt) {
   grunt.registerTask('default', 'Does the same thing as grunt start', ['start']);
   grunt.registerTask('start', 'Run the development server',
                      ['abideCompile', 'env:dev', 'jshint', 'clean:templates', 'nunjucks', 'requirejs', 'stylus', 'express:dev', 'watch']);
+  grunt.registerTask('start-test-server', 'Run the development server',
+                     ['abideCompile', 'env:test', 'jshint', 'clean:templates', 'nunjucks', 'requirejs', 'stylus', 'express:test', 'watch']);
   grunt.registerTask('docker', 'Run the processes for docker',
                      ['abideCompile', 'jshint', 'clean:templates', 'nunjucks', 'requirejs', 'stylus', 'watch']);
   grunt.registerTask('styleguide', 'Run the styleguide server',

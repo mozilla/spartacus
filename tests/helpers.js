@@ -1,13 +1,22 @@
-var _ = require('underscore');
-var config = require('../config');
+if (require.globals) {
+  // SlimerJS setup required to workaround require path issues.
+  var fs = require('fs');
+  require.paths.push(fs.absolute(fs.workingDirectory + '/config/'));
+  var _ = require(fs.absolute('node_modules/underscore/underscore'));
+  var config = require('default');
+  var testConf = require('test');
+  _.extend(config, testConf || {});
+} else {
+  // PhantomJS setup.
+  var config = require('../config');
+  var _ = require('underscore');
+}
 
 var _currTestId;
 var _currentEmail;
 var _testInited = {};
-
 var baseTestUrl = 'http://localhost:' + config.test.port;
 var basePath = '/mozpay/spa';
-
 var pinDefaults = {
   pin: false,
   pin_is_locked_out: false,
@@ -28,6 +37,7 @@ function makeToken() {
   return Math.random().toString(36).slice(2);
 }
 
+
 casper.on('page.error', function(error, trace) {
   if (error.indexOf('INVALID_STATE_ERR') !== -1) {
     casper.echo(error, 'WARNING');
@@ -39,6 +49,7 @@ casper.on('page.error', function(error, trace) {
     casper.echo(lines.join('\n'), 'ERROR');
   }
 });
+
 
 casper.on('page.initialized', function(page) {
   if (!_testInited[_currTestId]) {
@@ -112,6 +123,11 @@ function injectSinon(options) {
   var consumeStack = options.consumeStack || false;
 
   casper.echo('Injecting Sinon', 'INFO');
+
+  // clientScripts doesn't seem to apply to requests caused by redirects, so
+  // we reinstall sinon here.
+  casper.page.injectJs('public/lib/js/sinon/index.js');
+
   casper.echo('Sinon Server autoRespond: ' + autoRespond);
   casper.echo('Sinon Server consumeStack: ' + consumeStack);
   casper.evaluate(function(autoRespond, consumeStack) {
@@ -208,7 +224,7 @@ function getApiRequest(url) {
   var allUrls = {};
   allRequests.forEach(function(candidate) {
     allUrls[candidate.url] = true;
-    if (candidate.url == url) {
+    if (candidate.url === url) {
       request = candidate;
     }
   });
@@ -228,9 +244,7 @@ function fakeFxA(options) {
                               super_powers: options.super_powers || false}));
   var statusCode = options.statusCode || 200;
   var timeout = options.timeout || false;
-  // clientScripts doesn't seem to apply to requests caused by redirects, so
-  // we reinstall sinon here.
-  casper.page.injectJs('public/lib/js/sinon/index.js');
+
   injectSinon();
   if (timeout) {
     casper.echo('Setting up a fake XHR timeout for FxA', 'INFO');
@@ -238,8 +252,8 @@ function fakeFxA(options) {
   } else {
     casper.evaluate(function (data, statusCode) {
       window.server.respondWith(
-          'POST', /\/fake-fxa-callback/,
-          [statusCode, {"Content-Type": "application/json"}, data]);
+        'POST', /\/fake-fxa-callback/,
+        [statusCode, {"Content-Type": "application/json"}, data]);
       console.log("Stubs installed");
     }, data, statusCode);
   }
@@ -418,9 +432,11 @@ function fakePinData(options) {
   }
 }
 
+
 function genEmail() {
   return "tester+" + makeToken() + "@fakepersona.mozilla.org";
 }
+
 
 function doLogin() {
   // Sets the filter so we always login as a new user.
@@ -448,11 +464,9 @@ function doLogout() {
 function setUpFxA(options) {
   options = options || {};
   casper.evaluate(function(fakeFxaSession, mktUser, fakeFxaEmail) {
-
     if (typeof mktUser === 'undefined') {
       mktUser = true;
     }
-
     console.log('injecting FxA test config');
     if (fakeFxaSession === true) {
       console.log('Faking a logged-in user');
@@ -478,6 +492,32 @@ function tearDownFxA() {
 }
 
 
+if (casper.showClientConsole) {
+  casper.on('navigation.requested', function(url) {
+    console.log(url);
+  });
+}
+
+
+function isMainJsUrl(url) {
+  return url.indexOf('main.js') > -1 || url.indexOf('main.min.js') > -1;
+}
+
+
+casper.on('resource.requested', function(requestData) {
+  if (isMainJsUrl(requestData.url)) {
+    casper.emit('mainjs.requested');
+  }
+});
+
+
+casper.on('resource.received', function(requestData) {
+  if (isMainJsUrl(requestData.url)) {
+    casper.emit('mainjs.received');
+  }
+});
+
+
 function startCasper(options) {
   options = options || {};
   if (options.url) {
@@ -496,7 +536,7 @@ function startCasper(options) {
 
   // One-off event for setup of things that need to be in
   // place before JS execution.
-  casper.once('load.finished', function() {
+  casper.once('mainjs.received', function() {
     if (useFxA) {
       setUpFxA({
         fakeFxaSession: options.fakeFxaSession,
@@ -508,6 +548,7 @@ function startCasper(options) {
     }
 
     injectSinon(sinonOptions);
+
     if (typeof setUp === 'function') {
       casper.echo('Running test setUp func');
       setUp();
@@ -545,10 +586,13 @@ function startCasper(options) {
     casper.echo(JSON.stringify(headers));
     casper.open(url, {headers: headers});
   }
+
+  return casper;
 }
 
 
 function spyOnMozPaymentProvider() {
+  casper.echo('Spying on window.mozPaymentProvider');
   casper.evaluate(function(){
     // On B2G, the platform defines a mozPaymentProvider object. For tests,
     // we want to stub it out and then spy on it to make assertions.
@@ -556,35 +600,43 @@ function spyOnMozPaymentProvider() {
       paymentSuccess: function() {
         console.log('called fake paymentSuccess');
       },
-      paymentFailed: function(errorCode) {
+      paymentFailed: function() {
         console.log('called fake paymentFailed');
       }
     };
-    window._mozPaymentProviderSpy = {
-      paymentSuccess: sinon.spy(window.navigator.mozPaymentProvider,
-                                'paymentSuccess'),
-      paymentFailed: sinon.spy(window.navigator.mozPaymentProvider,
-                               'paymentFailed')
-    };
+    sinon.spy(window.navigator.mozPaymentProvider, 'paymentSuccess');
+    sinon.spy(window.navigator.mozPaymentProvider, 'paymentFailed');
   });
 }
 
 
-function waitForMozPayment(callback) {
-  var mozPayProviderSpy;
-
+function assertPaymentCompletionFunc(type, argsList) {
   casper.waitFor(function() {
-    mozPayProviderSpy = this.evaluate(function() {
-      return window._mozPaymentProviderSpy;
-    })
-    if (!mozPayProviderSpy) {
-      throw new Error('test setUp did not create a mozPayProvider spy');
-    }
-    return (mozPayProviderSpy.paymentSuccess.called ||
-            mozPayProviderSpy.paymentFailed.called);
+    return casper.evaluate(function(type) {
+      return window.navigator.mozPaymentProvider[type].called;
+    }, type);
   }, function() {
-    callback(mozPayProviderSpy);
+    casper.test.assert(casper.evaluate(function(type) {
+      return window.navigator.mozPaymentProvider[type].called;
+    }, type), type + ' function called as expected');
+    if (argsList) {
+      casper.test.assertEqual(casper.evaluate(function(type) {
+        return window.navigator.mozPaymentProvider[type].firstCall.args;
+      }, type), argsList, type + ' function called with args: ' + JSON.stringify(argsList));
+    }
+  }, function timeout() {
+    casper.test.fail(type + ' Spy not called in time. Check helpers.spyOnMozPaymentProvider() was called');
   });
+}
+
+
+function assertPaymentFailed(argsList) {
+  return  assertPaymentCompletionFunc('paymentFailed', argsList);
+}
+
+
+function assertPaymentSuccess(argsList) {
+  return  assertPaymentCompletionFunc('paymentSuccess', argsList);
 }
 
 
@@ -603,6 +655,11 @@ function assertNoError() {
 function url(path) {
   path = path.replace(/^\//, '');
   return basePath + '/' + path;
+}
+
+
+function getFullUrl(path) {
+  return baseTestUrl + url(path);
 }
 
 
@@ -632,6 +689,8 @@ function selectOption(optionContainer, optVal) {
 module.exports = {
   assertErrorCode: assertErrorCode,
   assertNoError: assertNoError,
+  assertPaymentFailed: assertPaymentFailed,
+  assertPaymentSuccess: assertPaymentSuccess,
   doLogin: doLogin,
   doLogout: doLogout,
   basePath: basePath,
@@ -645,6 +704,7 @@ module.exports = {
   fakeVerification: fakeVerification,
   fakeWaitPoll: fakeWaitPoll,
   getApiRequest: getApiRequest,
+  getFullUrl: getFullUrl,
   injectSinon: injectSinon,
   selectOption: selectOption,
   setLoginFilter: setLoginFilter,
@@ -652,5 +712,4 @@ module.exports = {
   spyOnMozPaymentProvider: spyOnMozPaymentProvider,
   startCasper: startCasper,
   url: url,
-  waitForMozPayment: waitForMozPayment
 };

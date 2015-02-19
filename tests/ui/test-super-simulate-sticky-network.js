@@ -1,4 +1,3 @@
-var helpers = require('../helpers');
 var selectedNetwork = '334:020';
 
 helpers.startCasper({
@@ -24,15 +23,22 @@ casper.test.begin('simulated network selection is sticky', {
       helpers.selectOption('#network-simulation', selectedNetwork);
     });
 
-    casper.then(function () {
-      this.back();
-      this.reload();
+    casper.then(function() {
+      if (casper.isSlimer) {
+        // For some daft reason casper.back() is not working with slimer
+        // See: https://github.com/laurentj/slimerjs/issues/199
+        casper.open(helpers.getFullUrl('fxa-auth?'));
+      } else {
+        casper.back();
+        casper.reload();
+      }
     });
 
     casper.waitForUrl(helpers.url('super-simulate'), function() {
       test.assertVisible('#network-simulation',
                          'network simulation dropdown is visible');
       var selected = casper.evaluate(function() {
+        /* global $ */
         return $('#network-simulation option:selected').val();
       });
       test.assertEqual(selected, selectedNetwork);

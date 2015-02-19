@@ -1,5 +1,3 @@
-var helpers = require('../helpers');
-
 helpers.startCasper({
   path: '/mozpay/bogus-start-attr',
   setUp: function(){

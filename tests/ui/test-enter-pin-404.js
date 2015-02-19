@@ -1,5 +1,3 @@
-var helpers = require('../helpers');
-
 helpers.startCasper({
   setUp: function(){
     helpers.fakeLogout();
@@ -28,11 +26,7 @@ casper.test.begin('Login Enter Pin API call returns 404', {
       helpers.assertErrorCode('PIN_ENTER_NO_USER');
       test.assertElementCount('.full-error .button', 1, 'Should only be one button for cancelling the flow');
       casper.click('.full-error .button');
-    });
-
-    helpers.waitForMozPayment(function(mozPayProviderSpy) {
-      test.assertEqual(mozPayProviderSpy.paymentFailed.firstCall.args,
-                       ['PIN_ENTER_NO_USER']);
+      helpers.assertPaymentFailed(['PIN_ENTER_NO_USER']);
     });
 
     casper.run(function() {

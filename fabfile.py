@@ -1,3 +1,4 @@
+import os
 import fabdeploytools.envs
 from fabric.api import env, lcd, local, task
 from fabdeploytools import helpers
@@ -16,6 +17,8 @@ SPARTACUS_REF = helpers.git_ref(SPARTACUS)
 SCL_NAME = getattr(settings, 'SCL_NAME', False)
 if SCL_NAME:
     helpers.scl_enable(SCL_NAME)
+
+os.environ['SLIMERJSLAUNCHER'] = '/usr/bin/firefox'
 
 
 @task

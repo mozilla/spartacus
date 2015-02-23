@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: marketplace-webpay\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-30 19:53+0000\n"
-"PO-Revision-Date: 2015-02-03 20:36+0000\n"
+"PO-Revision-Date: 2015-02-23 16:54+0000\n"
 "Last-Translator: Marco Aurélio <ouesten@me.com>\n"
 "Language-Team: Português (Brasil) <dev-l10n-pt-br@lists.mozilla.org>\n"
 "Language: pt_BR\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1422995778.0\n"
+"X-POOTLE-MTIME: 1424710477.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18
 msgid "Payment cancelled."
@@ -28,11 +28,13 @@ msgstr "Cancelar"
 
 #: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64 public/js/lib/pin-widget.js:68 public/js/lib/pin-widget.js:65 public/js/lib/pin-widget.js:83 public/js/lib/pin-widget.js:82
 msgid "PIN can only contain digits."
-msgstr "Seu PIN pode conter apenas dígitos."
+msgstr "O PIN só pode conter números."
 
 #: webpay/base/templates/base.html:30
 msgid "You logged in as a different user, you must start the payment again."
-msgstr "Você está conectado como um usuário diferente, você deve iniciar o pagamento novamente."
+msgstr ""
+"Você está conectado como um usuário diferente, o pagamento deve ser iniciado "
+"novamente."
 
 #: public/js/views/throbber.js:15 public/js/views/throbber.js:16 templates/throbber.html:7
 msgid "Loading"
@@ -45,7 +47,7 @@ msgstr "Iniciando pagamento"
 #: public/js/views/login.js:19 public/js/views/force-auth.js:81 public/js/views/login.js:18 public/js/views/reset-start.js:67 public/js/views/force-auth.js:93 public/js/views/reset-start.js:70
 #: public/js/views/force-auth.js:92 public/js/views/reset-start.js:72
 msgid "Connecting to Persona"
-msgstr "Conectando-se ao Persona"
+msgstr "Conectando com Persona"
 
 #: webpay/base/templates/base.html:34
 msgid "Payment complete"
@@ -53,15 +55,15 @@ msgstr "Pagamento concluído"
 
 #: public/js/lib/auth.js:22 public/js/lib/auth.js:20 public/js/views/page.js:41
 msgid "Oops"
-msgstr "Oopshellip;"
+msgstr "Oops"
 
 #: public/js/lib/auth.js:65 public/js/lib/auth.js:84 public/js/lib/auth.js:155 public/js/lib/auth.js:86 public/js/lib/auth.js:157
 msgid "This is taking longer than expected. Try again?"
-msgstr "Isto está demorando mais do que o esperado. Tente novamente?"
+msgstr "Está demorando mais do que o esperado. Tente novamente?"
 
 #: public/js/lib/auth.js:19
 msgid "Something went wrong. Try again?"
-msgstr "Algo deu errado. Tente de novo?"
+msgstr "Algo deu errado. Tente novamente?"
 
 #: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55
 #: public/js/views/error.js:90
@@ -80,15 +82,15 @@ msgstr "Inserir PIN"
 #: public/js/views/login.js:25 templates/login.html:5 public/js/views/fxa-login.js:25 public/js/views/fxa-login.js:27 public/js/views/login.js:24 public/js/views/login.js:26
 #: public/js/views/fxa-login.js:26 public/js/views/fxa-login.js:28 public/js/views/fxa-login.js:29
 msgid "Sign In"
-msgstr "Identificar-me"
+msgstr "Entrar"
 
 #: templates/login.html:6 public/js/views/fxa-login.js:28 public/js/views/login.js:27 public/js/views/fxa-login.js:29 public/js/views/fxa-login.js:30
 msgid "Sign in to continue with the payment"
-msgstr "Identifique-se para continuar o pagamento"
+msgstr "Entre para continuar o pagamento"
 
 #: templates/login.html:7 templates/login.html:9 templates/login.html:14
 msgid "Sign in"
-msgstr "Identificar-me"
+msgstr "Entrar"
 
 #: public/js/views/create-pin.js:106 public/js/views/create-pin.js:113 public/js/views/reset-pin.js:64 templates/reset-start.html:12 templates/was-locked.html:12 public/js/views/create-pin.js:105
 #: public/js/views/create-pin.js:112 templates/simulate.html:18 public/js/views/create-pin.js:141 public/js/views/create-pin.js:148 public/js/views/reset-pin.js:65 public/js/views/create-pin.js:156
@@ -98,11 +100,11 @@ msgstr "Continuar"
 
 #: public/js/views/enter-pin.js:73 public/js/views/enter-pin.js:74 public/js/views/enter-pin.js:78 public/js/views/enter-pin.js:90 public/js/views/enter-pin.js:92
 msgid "Wrong PIN"
-msgstr "PIN incorreto"
+msgstr "PIN errado"
 
 #: public/js/views/create-pin.js:48 public/js/views/create-pin.js:84 public/js/views/create-pin.js:97 public/js/views/create-pin.js:100
 msgid "PINs do not match."
-msgstr "Os PINs inseridos não correspondem."
+msgstr "Os PINs não coincidem."
 
 #: webpay/pin/views.py:46 webpay/testing/views.py:25
 msgid "Create a PIN"
@@ -126,7 +128,9 @@ msgstr "Esqueceu seu PIN?"
 
 #: public/js/views/locked.js:24 public/js/views/locked.js:22
 msgid "You entered the wrong PIN too many times. Your account is locked. Please try your purchase again in 5 minutes."
-msgstr "Você inseriu um PIN incorreto muitas vezes. Sua conta está bloqueada. Por favor, tente efetuar uma aquisição novamente daqui a 5 minutos."
+msgstr ""
+"Você digitou o PIN errado muitas vezes.. Sua conta está bloqueada. Por "
+"favor, tente fazer a compra novamente daqui a 5 minutos."
 
 #: templates/was-locked.html:6
 msgid "Your PIN was locked"
@@ -134,11 +138,15 @@ msgstr "Seu PIN está bloqueado"
 
 #: templates/was-locked.html:7
 msgid "Your PIN was locked because you entered it incorrectly too many times. You can continue and try entering your PIN again or reset your PIN."
-msgstr "Seu PIN foi bloqueado porque você inseriu um PIN incorreto muitas vezes. Você pode continuar e tentar inserir seu PIN novamente ou redefinir seu PIN."
+msgstr ""
+"Seu PIN foi bloqueado porque digitou um PIN errado muitas vezes. Você pode "
+"continuar e tentar digitar o PIN novamente ou redefinir seu PIN."
 
 #: templates/reset-start.html:7 templates/reset-start.html:10
 msgid "Are you sure you want to reset your PIN? You must sign in to Persona to reset your PIN."
-msgstr "Tem certeza de que deseja redefinir seu PIN? Você deve identificar-se no Persona para redefinir seu PIN."
+msgstr ""
+"Tem certeza de que deseja redefinir seu PIN? Você deve entrar com o Persona "
+"para redefinir seu PIN."
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6 webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"
@@ -150,7 +158,7 @@ msgstr "Tentando novamente"
 
 #: public/js/lib/auth.js:64
 msgid "That took longer than expected. Retry?"
-msgstr "Isso levou mais tempo do que o esperado. Tentar de novo?"
+msgstr "Está levando mais tempo do que o esperado. Tentar novamente?"
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11 public/js/views/create-pin.js:72 templates/reset-start.html:15 public/js/views/create-pin.js:83
 msgid "Back"
@@ -190,7 +198,7 @@ msgstr "Foi bloqueado"
 
 #: public/js/views/wait-for-tx.js:10 public/js/views/wait-to-start.js:13
 msgid "Setting up payment"
-msgstr "Configurando payment"
+msgstr "Configurando o pagamento"
 
 #: public/js/error-codes.js:12
 msgid "An internal web request timed out."
@@ -206,7 +214,7 @@ msgstr "Ocorreu um erro enquanto tentava sair."
 
 #: public/js/error-codes.js:15
 msgid "The system timed out while trying to log out."
-msgstr "O sistema expirou durante a tentativa de sair."
+msgstr "O sistema expirou enquanto tentava sair."
 
 #: public/js/error-codes.js:16
 msgid "Payments are temporarily disabled."
@@ -214,7 +222,7 @@ msgstr "Os pagamentos estão temporariamente desativados."
 
 #: public/js/error-codes.js:17
 msgid "An unexpected error occurred when creating your PIN."
-msgstr "Ocorreu um erro inesperado ao criar o seu PIN."
+msgstr "Ocorreu um erro inesperado ao criar seu PIN."
 
 #: public/js/error-codes.js:18 public/js/error-codes.js:27
 msgid "The PIN data submitted was invalid."
@@ -286,11 +294,11 @@ msgstr "Ocorreu um erro inesperado."
 
 #: public/js/views/force-auth.js:87 public/js/views/force-auth.js:100 public/js/views/force-auth.js:99 public/js/views/force-auth.js:94
 msgid "Sign-in to reset PIN"
-msgstr "Entre para repor o PIN"
+msgstr "Entre para redefinir o PIN"
 
 #: public/js/views/force-auth.js:90 public/js/views/force-auth.js:103 public/js/views/force-auth.js:102 public/js/views/force-auth.js:97
 msgid "Please sign in to reset your PIN."
-msgstr "Por favor, entre para repor o seu PIN."
+msgstr "Por favor, entre para redefinir o PIN."
 
 #: public/js/views/init.js:12
 msgid "Initializing"
@@ -339,7 +347,7 @@ msgstr "Saindo"
 
 #: templates/signout.html:9
 msgid "You are signed in as:"
-msgstr "Você está conectado como:"
+msgstr "Você entrou como:"
 
 #: templates/signout.html:11
 msgid "Not you?"
@@ -351,7 +359,7 @@ msgstr "Super Simulate"
 
 #: templates/super-simulate.html:8
 msgid "Simulate Something?"
-msgstr "Tem algo para simular?"
+msgstr "Simular alguma coisa?"
 
 #: templates/super-simulate.html:11
 msgid "No network simulation"

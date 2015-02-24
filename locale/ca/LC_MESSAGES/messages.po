@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-30 19:53+0000\n"
-"PO-Revision-Date: 2015-02-24 16:14+0000\n"
+"PO-Revision-Date: 2015-02-24 16:18+0000\n"
 "Last-Translator: Jordi <jordis@softcatala.cat>\n"
 "Language-Team: Catalan <ca@dodds.net>\n"
 "Language: ca\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1424794496.0\n"
+"X-POOTLE-MTIME: 1424794704.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18
 msgid "Payment cancelled."
@@ -199,7 +199,7 @@ msgstr "S'ha esgotat el temps d'espera d'una sol·licitud web interna."
 #: public/js/error-codes.js:13
 msgid "The system timed out while trying to log in."
 msgstr ""
-"S'ha esgotat el temps d'espera del sistema en provar d'iniciar la sessió."
+"S'ha esgotat el temps d'espera del sistema en intentar iniciar la sessió."
 
 #: public/js/error-codes.js:14
 msgid "An error occurred whilst trying to log out."
@@ -208,7 +208,7 @@ msgstr "S'ha produït un error en intentar tancar la sessió."
 #: public/js/error-codes.js:15
 msgid "The system timed out while trying to log out."
 msgstr ""
-"S'ha esgotat el temps d'espera del sistema en provar de tancar la sessió."
+"S'ha esgotat el temps d'espera del sistema en intentar tancar la sessió."
 
 #: public/js/error-codes.js:16
 msgid "Payments are temporarily disabled."
@@ -245,7 +245,7 @@ msgstr "No s'ha trobat cap usuari vàlid en comprovar el PIN"
 
 #: public/js/error-codes.js:24
 msgid "Permission denied attempting to check your PIN"
-msgstr "S'ha denegat el permís en intentar comprovar el PIN."
+msgstr "S'ha denegat el permís en intentar comprovar el PIN"
 
 #: public/js/error-codes.js:25
 msgid "The request timed out whilst trying to check your PIN"

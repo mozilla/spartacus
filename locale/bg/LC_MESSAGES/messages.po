@@ -3,15 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-30 19:53+0000\n"
-"PO-Revision-Date: 2013-09-02 16:55+0200\n"
-"Last-Translator: Mihail Chilyashev <chilyashev@gmail.com>\n"
+"PO-Revision-Date: 2015-02-27 09:10+0000\n"
+"Last-Translator: Стоян <stoyan@gmx.com>\n"
 "Language-Team: Bulgarian (bg)\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1425028237.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18
 msgid "Payment cancelled."
@@ -24,7 +25,7 @@ msgstr "Отказ"
 
 #: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64 public/js/lib/pin-widget.js:68 public/js/lib/pin-widget.js:65 public/js/lib/pin-widget.js:83 public/js/lib/pin-widget.js:82
 msgid "PIN can only contain digits."
-msgstr "ПИН-ът може да съръдржа само цифри"
+msgstr "PIN трябва да е само цифри."
 
 #: webpay/base/templates/base.html:30
 msgid "You logged in as a different user, you must start the payment again."
@@ -62,7 +63,7 @@ msgstr "Нещо се обърка. Опитване отново?"
 #: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55
 #: public/js/views/error.js:90
 msgid "OK"
-msgstr "ОК"
+msgstr "Добре"
 
 #: public/js/views/error.js:44 public/js/views/locked.js:23 public/js/views/error.js:54 public/js/views/error.js:57
 msgid "Error"
@@ -71,7 +72,7 @@ msgstr "Грешка"
 #: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100 public/js/views/enter-pin.js:97 public/js/views/enter-pin.js:101 public/js/views/enter-pin.js:105 public/js/views/enter-pin.js:113
 #: public/js/views/enter-pin.js:117 public/js/views/enter-pin.js:115 public/js/views/enter-pin.js:119
 msgid "Enter PIN"
-msgstr "Въведете ПИН"
+msgstr "Въведете PIN"
 
 #: public/js/views/login.js:25 templates/login.html:5 public/js/views/fxa-login.js:25 public/js/views/fxa-login.js:27 public/js/views/login.js:24 public/js/views/login.js:26
 #: public/js/views/fxa-login.js:26 public/js/views/fxa-login.js:28 public/js/views/fxa-login.js:29
@@ -94,47 +95,53 @@ msgstr "Продължи"
 
 #: public/js/views/enter-pin.js:73 public/js/views/enter-pin.js:74 public/js/views/enter-pin.js:78 public/js/views/enter-pin.js:90 public/js/views/enter-pin.js:92
 msgid "Wrong PIN"
-msgstr "Грешен ПИН"
+msgstr "Грешен PIN"
 
 #: public/js/views/create-pin.js:48 public/js/views/create-pin.js:84 public/js/views/create-pin.js:97 public/js/views/create-pin.js:100
 msgid "PINs do not match."
-msgstr "ПИН-вете не съвпадат"
+msgstr "PIN-oвете не съвпадат."
 
 #: webpay/pin/views.py:46 webpay/testing/views.py:25
 msgid "Create a PIN"
-msgstr "Създай ПИН"
+msgstr "Създаване на PIN"
 
 #: webpay/pin/views.py:68 webpay/pin/views.py:185 public/js/views/create-pin.js:36 public/js/views/create-pin.js:71 public/js/views/create-pin.js:82
 msgid "Confirm PIN"
-msgstr "Потвърди ПИН"
+msgstr "Потвърждаване на PIN"
 
 #: webpay/pin/views.py:131 webpay/pin/views.py:157 webpay/pin/templates/pin/pin_was_locked.html:13 public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68 templates/was-locked.html:11
 #: public/js/views/force-auth.js:89 public/js/views/force-auth.js:102 public/js/views/reset-pin.js:66 public/js/views/reset-pin.js:69 public/js/views/force-auth.js:101 public/js/views/reset-pin.js:72
 #: public/js/views/force-auth.js:96
 msgid "Reset PIN"
-msgstr "Изчисти пин"
+msgstr "Нулиране на PIN"
 
 #. This is the same as the standard forgot
 #. password that most sites have.
 #: templates/pin-form.html:18 templates/reset-start.html:6 templates/pin-form.html:29 templates/pin-form.html:30
 msgid "Forgot your PIN?"
-msgstr "Забравили сте вашия ПИН?"
+msgstr "Забравили сте своя PIN?"
 
 #: public/js/views/locked.js:24 public/js/views/locked.js:22
 msgid "You entered the wrong PIN too many times. Your account is locked. Please try your purchase again in 5 minutes."
-msgstr "Въвели сте грешен ПИН прекалено много пъти. Акаунтът ви е заключен. Моля, опитайте покупката си отново след 5 минути."
+msgstr ""
+"Въведохте грешен PIN твърде много пъти. Профилът ви е заключен. Моля, "
+"опитайте покупката отново след 5 минути."
 
 #: templates/was-locked.html:6
 msgid "Your PIN was locked"
-msgstr "ПИН-ът ви е заключен"
+msgstr "Вашият PIN е заключен"
 
 #: templates/was-locked.html:7
 msgid "Your PIN was locked because you entered it incorrectly too many times. You can continue and try entering your PIN again or reset your PIN."
-msgstr "ПИН-ът ви беше заключен, защото сте го въвели грешно прекалено много пъти. Може да продължите и да опитате да въведете ПИН-а си отново или да го възстановите."
+msgstr ""
+"Вашият PIN беше заключен, защото е грешно въведен твърде много пъти. Може да "
+"продължите и да опитате да въведете PIN отново или да го нулирате."
 
 #: templates/reset-start.html:7 templates/reset-start.html:10
 msgid "Are you sure you want to reset your PIN? You must sign in to Persona to reset your PIN."
-msgstr "Сигурни ли сте, че искате да изчистите вашия ПИН? Трябва да влезете в Persona, за да изчистите."
+msgstr ""
+"Сигурни ли сте, че искате да нулиране своя PIN? За да го направите трябва да "
+"се впишете в Persona."
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6 webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"
@@ -142,21 +149,20 @@ msgstr "Потвърждаване на плащането"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30 public/js/lib/auth.js:25 public/js/lib/auth.js:39 public/js/lib/auth.js:26 public/js/lib/auth.js:41
 msgid "Retrying"
-msgstr ""
+msgstr "Опитване отново"
 
 #: public/js/lib/auth.js:64
-#, fuzzy
 msgid "That took longer than expected. Retry?"
-msgstr "Това отнема повече, отколкото се очаква. Опитване отново?"
+msgstr "Това отне повече то очакваното. Нов опит?"
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11 public/js/views/create-pin.js:72 templates/reset-start.html:15 public/js/views/create-pin.js:83
 msgid "Back"
-msgstr ""
+msgstr "Назад"
 
 #: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95 public/js/views/enter-pin.js:96 public/js/views/create-pin.js:73 public/js/views/enter-pin.js:100 public/js/views/create-pin.js:84
 #: public/js/views/enter-pin.js:112 public/js/views/enter-pin.js:114
 msgid "Submit"
-msgstr ""
+msgstr "Изпращане"
 
 #: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60 public/js/views/reset-pin.js:28 public/js/lib/wait.js:171 public/js/views/create-pin.js:65 public/js/views/enter-pin.js:61
 #: public/js/views/force-auth.js:53 public/js/views/reset-pin.js:29 public/js/views/reset-start.js:107 public/js/views/create-pin.js:101 public/js/views/enter-pin.js:65
@@ -165,28 +171,25 @@ msgstr ""
 #: public/js/views/page.js:43 public/js/views/reset-pin.js:33 public/js/views/reset-start.js:124 public/js/lib/wait.js:170 public/js/views/create-pin.js:119 public/js/views/enter-pin.js:77
 #: public/js/views/reset-start.js:101
 msgid "Retry?"
-msgstr ""
+msgstr "Нов опит?"
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116 public/js/views/create-pin.js:113 public/js/views/create-pin.js:115 public/js/views/create-pin.js:149
 #: public/js/views/create-pin.js:152 public/js/views/create-pin.js:164 public/js/views/create-pin.js:167 public/js/views/create-pin.js:170
-#, fuzzy
 msgid "Create PIN"
-msgstr "Създай ПИН"
+msgstr "Създаване PIN"
 
 #: public/js/views/error.js:45
-#, fuzzy
 msgid "Something went wrong."
-msgstr "Нещо се обърка!"
+msgstr "Нещо се обърка."
 
 #: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118 public/js/views/reset-start.js:119 public/js/views/reset-start.js:123 public/js/views/reset-start.js:133
 #: public/js/views/reset-start.js:135 public/js/views/reset-start.js:112
-#, fuzzy
 msgid "Reset your PIN?"
-msgstr "Изчисти пин"
+msgstr "Нулиране на вашия PIN?"
 
 #: public/js/views/was-locked.js:13 public/js/views/was-locked.js:38 public/js/views/was-locked.js:42
 msgid "Was Locked"
-msgstr ""
+msgstr "Беше заключен"
 
 #: public/js/views/wait-for-tx.js:10 public/js/views/wait-to-start.js:13
 msgid "Setting up payment"
@@ -210,7 +213,7 @@ msgstr ""
 
 #: public/js/error-codes.js:16
 msgid "Payments are temporarily disabled."
-msgstr ""
+msgstr "Плащанията са временно спрени."
 
 #: public/js/error-codes.js:17
 msgid "An unexpected error occurred when creating your PIN."
@@ -297,31 +300,28 @@ msgid "Initializing"
 msgstr ""
 
 #: public/js/views/locked.js:21
-#, fuzzy
 msgid "PIN Locked"
-msgstr "ПИН-ът ви е заключен"
+msgstr "Заключен PIN"
 
 #: public/js/views/payment-success.js:15 public/js/views/wait-to-finish.js:14
-#, fuzzy
 msgid "Completing payment"
-msgstr "Настройване на плащането"
+msgstr "Завършване на плащането"
 
 #: public/js/views/simulate.js:23
 msgid "Processing"
-msgstr ""
+msgstr "Обработване"
 
 #: public/js/views/simulate.js:51
 msgid "Simulate Payment"
-msgstr ""
+msgstr "Симулиране на плащане"
 
 #: public/js/views/simulate.js:55
 msgid "You will not be charged."
 msgstr ""
 
 #: templates/reset-start.html:12 templates/reset-start.html:16
-#, fuzzy
 msgid "Reset"
-msgstr "Изчисти пин"
+msgstr "Нулиране"
 
 #: templates/pin-form.html:22
 msgid "By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)s>Privacy Policy</a>"
@@ -329,26 +329,26 @@ msgstr ""
 
 #: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68 public/js/views/force-auth.js:90 public/js/views/reset-start.js:70 public/js/views/force-auth.js:88 public/js/views/login.js:18
 #: public/js/views/reset-start.js:55
-#, fuzzy
 msgid "Connecting to Firefox Accounts"
-msgstr "Свързване с Persona"
+msgstr "Свързване с Firefox Accounts"
 
 #: templates/reset-start.html:8 templates/reset-start.html:7
-#, fuzzy
 msgid "Are you sure you want to reset your PIN? You must sign in to Firefox Accounts to reset your PIN."
-msgstr "Сигурни ли сте, че искате да изчистите вашия ПИН? Трябва да влезете в Persona, за да изчистите."
+msgstr ""
+"Сигурни ли сте, че искате да нулиране своя PIN? За да го направите трябва да "
+"се впишете във Firefox Accounts."
 
 #: public/js/views/page.js:34
 msgid "Logging out"
-msgstr ""
+msgstr "Отписване"
 
 #: templates/signout.html:9
 msgid "You are signed in as:"
-msgstr ""
+msgstr "Вписани сте като:"
 
 #: templates/signout.html:11
 msgid "Not you?"
-msgstr ""
+msgstr "Не сте вие?"
 
 #: public/js/views/super-simulate.js:44
 msgid "Super Simulate"

@@ -1,5 +1,6 @@
 
 helpers.startCasper({
+  userAgent: 'firefox-os',
   path: '/mozpay/provider/boku/wait-to-finish',
   sinon: {
     consumeStack: true

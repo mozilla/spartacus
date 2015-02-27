@@ -1,4 +1,5 @@
 helpers.startCasper({
+  userAgent: 'firefox-os',
   setUp: function(){
     helpers.fakeLogout();
     helpers.fakeVerification({statusCode: 403});

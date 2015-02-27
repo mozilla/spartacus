@@ -36,6 +36,15 @@ define([
     decodeURIComponent: function decodeURIComponent(uri) {
       return window.decodeURIComponent(uri.replace(/\+/g, ' '));
     },
+    onBrokenWebRT: function() {
+      // This is a workaround for bug 1133963.
+      // The crux of the bug is that mozPaymentProvider has not
+      // been ported to WebIDL on webRT.
+      return (window.mozPaymentProvider &&
+              window.navigator.userAgent.indexOf('Mobile') === -1);
+    },
+    // Note that mozPaymentProvider gets overidden below when
+    // onBrokenWebRT() is true.
     mozPaymentProvider: window.navigator.mozPaymentProvider ||
                         // Prior to bug 1097928 this was on window:
                         window.mozPaymentProvider || {
@@ -169,6 +178,38 @@ define([
       window.location.href = this.bodyData.fxaAuthUrl;
     }
   };
+
+  if (utils.onBrokenWebRT()) {
+    // This is a workaround for bug 1133963.
+    logger.warn('overiding mozPaymentProvider on webRT; user agent:',
+                window.navigator.userAgent);
+
+    utils.mozPaymentProvider = {
+      paymentSuccess: function() {
+        logger.log('webRT override: handling paymentSuccess()');
+        app.error.render({
+          heading: i18n.gettext('Success'),
+          msg: i18n.gettext(
+            'Your purchase is complete. Close the window to continue'),
+          showCancel: false,
+          showCta: false,
+        });
+      },
+      paymentFailed: function(errorCode) {
+        logger.log(
+          'webRT override: handling paymentFailed(); code:', errorCode);
+        app.error.render({
+          errorCode: errorCode,
+          msg: i18n.gettext(
+                 'An error occurred. Close the window to continue'),
+          showCancel: false,
+          showCta: false,
+        });
+      },
+    };
+  } else {
+    logger.log('not overriding mozPaymentProvider :)');
+  }
 
   return utils;
 });

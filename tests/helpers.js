@@ -532,6 +532,18 @@ function startCasper(options) {
   var sinonOptions = options.sinon || {};
   var useFxA = options.useFxA;
 
+  var predefinedAgents = {
+    'firefox-os': 'Mozilla/5.0 (Mobile; rv:32.0) Gecko/20100101 Firefox/32.0',
+    'mac-webrt': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:37.0) Gecko/20100101 Firefox/37.0',
+  };
+  if (options.userAgent) {
+    if (predefinedAgents[options.userAgent]) {
+      options.userAgent = predefinedAgents[options.userAgent];
+    }
+    casper.echo('Setting user agent to: ' + options.userAgent);
+    casper.userAgent(options.userAgent);
+  }
+
   casper.echo('Starting with url: ' + url);
 
   // One-off event for setup of things that need to be in
@@ -591,12 +603,25 @@ function startCasper(options) {
 }
 
 
-function spyOnMozPaymentProvider() {
+function spyOnMozPaymentProvider(opt) {
+  opt = opt || {
+    onNavigator: true,
+  };
   casper.echo('Spying on window.mozPaymentProvider');
-  casper.evaluate(function(){
+  casper.evaluate(function(onNavigator) {
     // On B2G, the platform defines a mozPaymentProvider object. For tests,
     // we want to stub it out and then spy on it to make assertions.
-    window.navigator.mozPaymentProvider = {
+
+    // WebIDL implementations put mozPaymentProvider on navigator,
+    // otherwise it's on window.
+    var _parent;
+    if (onNavigator) {
+      _parent = window.navigator;
+    } else {
+      _parent = window;
+    }
+
+    _parent.mozPaymentProvider = {
       paymentSuccess: function() {
         console.log('called fake paymentSuccess');
       },
@@ -604,9 +629,9 @@ function spyOnMozPaymentProvider() {
         console.log('called fake paymentFailed');
       }
     };
-    sinon.spy(window.navigator.mozPaymentProvider, 'paymentSuccess');
-    sinon.spy(window.navigator.mozPaymentProvider, 'paymentFailed');
-  });
+    sinon.spy(_parent.mozPaymentProvider, 'paymentSuccess');
+    sinon.spy(_parent.mozPaymentProvider, 'paymentFailed');
+  }, opt.onNavigator);
 }
 
 

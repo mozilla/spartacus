@@ -1,4 +1,5 @@
 helpers.startCasper({
+  userAgent: 'firefox-os',
   sinon: {
     consumeStack: true
   },

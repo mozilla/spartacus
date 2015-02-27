@@ -1,4 +1,5 @@
 helpers.startCasper({
+  userAgent: 'firefox-os',
   useFxA: true,
   setUp: function(){
     helpers.fakeFxA({statusCode: 403, data: ''});

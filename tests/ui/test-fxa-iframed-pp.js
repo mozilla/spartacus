@@ -52,6 +52,21 @@ casper.test.begin('Check iframed FxA privacy link', {
 
     casper.waitWhileSelector('.iframe-overlay', function() {
       test.assertNotVisible('.iframe-overlay iframe', 'Check overlay is removed');
+      this.click('.pinbox');
+      this.sendKeys('.pinbox', '1234');
+      test.assertExists('.cta:enabled', 'Submit button is enabled');
+      this.click('.cta');
+      casper.click('.pp');
+    });
+
+    casper.waitForSelector('.iframe-overlay', function() {
+      // Check that the link works on the confirm pin page.
+      casper.echo(casper.getElementAttribute('.iframe-overlay iframe', 'src'));
+      test.assertMatch(
+        casper.getElementAttribute('.iframe-overlay iframe', 'src'),
+        /privacy\/en-US\.html/,
+        'Check privacy src attr set ok'
+      );
     });
 
     casper.run(function() {

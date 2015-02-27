@@ -75,7 +75,9 @@ define([
           if ($('.cta:enabled').length && e.keyCode === enterKeyCode) {
             this.handleSubmit(e);
           }
-        }
+        },
+        'click .tos': this._origEvents['click .tos'],
+        'click .pp': this._origEvents['click .pp'],
       });
       this.curPin = pin.getPin();
       this._origHeading = this.getSelectorText('h1');

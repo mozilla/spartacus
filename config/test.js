@@ -6,7 +6,7 @@ module.exports = {
   useMinCSS: true,
   useMinJS: true,
   showClientConsole: false,
-  staticURL: 'https://marketplace-dev-cdn.allizom.org/',
+  staticURL: 'http://localhost:2599/',
   appSettingsOverrides: JSON.stringify({
     validRedirSites: [
       'http://mozilla.bango.net',

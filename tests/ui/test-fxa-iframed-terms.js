@@ -1,3 +1,5 @@
+var termsUrlRx = /\/media\/docs\/terms\/en-US\.html\?20131014-4/;
+
 helpers.startCasper({
   useFxA: true,
   setUp: function(){
@@ -35,10 +37,9 @@ casper.test.begin('Check iframed FxA terms link', {
     });
 
     casper.waitForSelector('.iframe-overlay', function() {
-      casper.echo(casper.getElementAttribute('.iframe-overlay iframe', 'src'));
       test.assertMatch(
         casper.getElementAttribute('.iframe-overlay iframe', 'src'),
-        /terms\/en-US\.html/,
+        termsUrlRx,
         'Check terms src attr set ok'
       );
       test.assertVisible('.iframe-overlay iframe[sandbox=""]', 'Check iframe has sandbox attr set');
@@ -52,19 +53,18 @@ casper.test.begin('Check iframed FxA terms link', {
 
     casper.waitWhileSelector('.iframe-overlay', function() {
       test.assertNotVisible('.iframe-overlay iframe', 'Check overlay is removed');
-      this.click('.pinbox');
-      this.sendKeys('.pinbox', '1234');
+      casper.click('.pinbox');
+      casper.sendKeys('.pinbox', '1234');
       test.assertExists('.cta:enabled', 'Submit button is enabled');
-      this.click('.cta');
+      casper.click('.cta');
       casper.click('.tos');
     });
 
     casper.waitForSelector('.iframe-overlay', function() {
       // Check that the link works on the confirm pin page.
-      casper.echo(casper.getElementAttribute('.iframe-overlay iframe', 'src'));
       test.assertMatch(
         casper.getElementAttribute('.iframe-overlay iframe', 'src'),
-        /terms\/en-US\.html/,
+        termsUrlRx,
         'Check terms src attr set ok'
       );
     });

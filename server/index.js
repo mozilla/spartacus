@@ -56,6 +56,8 @@ spa.use(rewriteModule.getMiddleware([
   // Internally redirect urls to be handled by the client-side spa serving view.
   {from: '^/mozpay/spa/(?:' + servedViews.join('|') + ')$', to: '/mozpay/'},
   {from: '^/mozpay/spa/fxa-auth.*', to: '/mozpay/'},
+  {from: '^/media/docs/terms/en-US.html.*?', to: '/terms'},
+  {from: '^/media/docs/privacy/en-US.html.*?', to: '/privacy'}
 ]));
 
 spa.get(/\/(?:css|fonts|i18n|images|js|lib)\/?.*/, express.static(__dirname + '/../public'));
@@ -180,6 +182,16 @@ if (env !== 'test') {
 spa.get('/fake-provider', function(req, res) {
   res.render('fake-provider.html');
 });
+
+spa.get('/terms', function(req, res) {
+  res.render('fake-terms.html');
+});
+
+spa.get('/privacy', function(req, res) {
+  res.render('fake-privacy.html');
+});
+
+
 
 // Fake logout
 spa.post('/logout', function (req, res) {

@@ -7,7 +7,7 @@ module.exports = function(grunt) {
   // The requirejs config data.
   var requireConfig = require('./public/js/require-config.js');
 
-  if (!process.env.SLIMERJSLAUNCHER) {
+  if (grunt.cli.tasks.indexOf('uitest') > -1 && !process.env.SLIMERJSLAUNCHER) {
     grunt.warn('You need to set the env var SLIMERJSLAUNCHER to point at the version of Firefox you want to use\n' +
                'See http://docs.slimerjs.org/current/installation.html#configuring-slimerjs for more details\n\n');
   }

@@ -13,7 +13,7 @@ install:
   - "npm install"
 before_script:
   - export SLIMERJSLAUNCHER=$(which firefox) DISPLAY=:99.0 PATH=$TRAVIS_BUILD_DIR/slimerjs:$PATH
-  - export SLIMERVERSION=0.9.5
+  - export SLIMERVERSION=0.10.0pre
   - export CASPERVERSION=1.1-beta3
   - git clone -q git://github.com/n1k0/casperjs.git
   - pushd casperjs
@@ -21,8 +21,9 @@ before_script:
   - popd
   - export PATH=$PATH:`pwd`/casperjs/bin
   - sh -e /etc/init.d/xvfb start
-  - wget http://download.slimerjs.org/releases/latest-slimerjs-stable/slimerjs-$SLIMERVERSION.zip
-  - unzip slimerjs-0.9.5.zip
+  # - wget http://download.slimerjs.org/releases/latest-slimerjs-stable/slimerjs-$SLIMERVERSION.zip
+  - wget http://download.slimerjs.org/nightlies/latest-slimerjs-master/slimerjs-$SLIMERVERSION.zip
+  - unzip slimerjs-$SLIMERVERSION.zip
   - mv slimerjs-$SLIMERVERSION ./slimerjs
   - phantomjs --version; casperjs --version; slimerjs --version
 script:

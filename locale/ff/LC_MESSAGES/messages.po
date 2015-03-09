@@ -1,161 +1,168 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-30 19:53+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2015-02-05 14:14+0000\n"
+"Last-Translator: Ibrahima <ibrahima.sarr@pulaagu.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: ff\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.6.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1423145680.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18
 msgid "Payment cancelled."
-msgstr ""
+msgstr "Joɓgol haaytinaama."
 
 #: public/js/views/create-pin.js:105 templates/error.html:20 templates/pin-form.html:26 public/js/views/create-pin.js:104 public/js/views/error.js:51 templates/simulate.html:17
 #: public/js/views/create-pin.js:140 templates/pin-form.html:37 public/js/views/create-pin.js:155 public/js/views/error.js:54 public/js/views/create-pin.js:158
 msgid "Cancel"
-msgstr ""
+msgstr "Haaytu"
 
 #: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64 public/js/lib/pin-widget.js:68 public/js/lib/pin-widget.js:65 public/js/lib/pin-widget.js:83 public/js/lib/pin-widget.js:82
 msgid "PIN can only contain digits."
-msgstr ""
+msgstr "PIN waɗata tan ko limooje."
 
 #: webpay/base/templates/base.html:30
 msgid "You logged in as a different user, you must start the payment again."
-msgstr ""
+msgstr "Ceŋori-ɗaa ko innde woɗnde, alaa e sago puɗɗito-ɗaa joɓgol."
 
 #: public/js/views/throbber.js:15 public/js/views/throbber.js:16 templates/throbber.html:7
 msgid "Loading"
-msgstr ""
+msgstr "Nana loowa"
 
 #: webpay/base/templates/base.html:32
 msgid "Beginning payment"
-msgstr ""
+msgstr "Nana fuɗɗoo joɓngol"
 
 #: public/js/views/login.js:19 public/js/views/force-auth.js:81 public/js/views/login.js:18 public/js/views/reset-start.js:67 public/js/views/force-auth.js:93 public/js/views/reset-start.js:70
 #: public/js/views/force-auth.js:92 public/js/views/reset-start.js:72
 msgid "Connecting to Persona"
-msgstr ""
+msgstr "Nana seŋoo e Persona"
 
 #: webpay/base/templates/base.html:34
 msgid "Payment complete"
-msgstr ""
+msgstr "Joɓgol gasii"
 
 #: public/js/lib/auth.js:22 public/js/lib/auth.js:20 public/js/views/page.js:41
 msgid "Oops"
-msgstr ""
+msgstr "Ndo"
 
 #: public/js/lib/auth.js:65 public/js/lib/auth.js:84 public/js/lib/auth.js:155 public/js/lib/auth.js:86 public/js/lib/auth.js:157
 msgid "This is taking longer than expected. Try again?"
-msgstr ""
+msgstr "Ɗum juutii haa ɓurti. Fuɗɗito?q"
 
 #: public/js/lib/auth.js:19
 msgid "Something went wrong. Try again?"
-msgstr ""
+msgstr "Won caɗeele mbaɗi. Fuɗɗito?"
 
 #: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55
 #: public/js/views/error.js:90
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: public/js/views/error.js:44 public/js/views/locked.js:23 public/js/views/error.js:54 public/js/views/error.js:57
 msgid "Error"
-msgstr ""
+msgstr "Juumre"
 
 #: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100 public/js/views/enter-pin.js:97 public/js/views/enter-pin.js:101 public/js/views/enter-pin.js:105 public/js/views/enter-pin.js:113
 #: public/js/views/enter-pin.js:117 public/js/views/enter-pin.js:115 public/js/views/enter-pin.js:119
 msgid "Enter PIN"
-msgstr ""
+msgstr "Naatnu kod PIN"
 
 #: public/js/views/login.js:25 templates/login.html:5 public/js/views/fxa-login.js:25 public/js/views/fxa-login.js:27 public/js/views/login.js:24 public/js/views/login.js:26
 #: public/js/views/fxa-login.js:26 public/js/views/fxa-login.js:28 public/js/views/fxa-login.js:29
 msgid "Sign In"
-msgstr ""
+msgstr "Seŋo"
 
 #: templates/login.html:6 public/js/views/fxa-login.js:28 public/js/views/login.js:27 public/js/views/fxa-login.js:29 public/js/views/fxa-login.js:30
 msgid "Sign in to continue with the payment"
-msgstr ""
+msgstr "Seŋo ngam jokkunde to joɓgol"
 
 #: templates/login.html:7 templates/login.html:9 templates/login.html:14
 msgid "Sign in"
-msgstr ""
+msgstr "Seŋo"
 
 #: public/js/views/create-pin.js:106 public/js/views/create-pin.js:113 public/js/views/reset-pin.js:64 templates/reset-start.html:12 templates/was-locked.html:12 public/js/views/create-pin.js:105
 #: public/js/views/create-pin.js:112 templates/simulate.html:18 public/js/views/create-pin.js:141 public/js/views/create-pin.js:148 public/js/views/reset-pin.js:65 public/js/views/create-pin.js:156
 #: public/js/views/create-pin.js:163 public/js/views/reset-pin.js:68 templates/signout.html:14 public/js/views/create-pin.js:159 public/js/views/create-pin.js:166 templates/super-simulate.html:20
 msgid "Continue"
-msgstr ""
+msgstr "Jokku"
 
 #: public/js/views/enter-pin.js:73 public/js/views/enter-pin.js:74 public/js/views/enter-pin.js:78 public/js/views/enter-pin.js:90 public/js/views/enter-pin.js:92
 msgid "Wrong PIN"
-msgstr ""
+msgstr "Kod PIN moƴƴaani"
 
 #: public/js/views/create-pin.js:48 public/js/views/create-pin.js:84 public/js/views/create-pin.js:97 public/js/views/create-pin.js:100
 msgid "PINs do not match."
-msgstr ""
+msgstr "Kodduuji PIN ɗii nanndaani."
 
 #: webpay/pin/views.py:46 webpay/testing/views.py:25
 msgid "Create a PIN"
-msgstr ""
+msgstr "Sos kod PIN"
 
 #: webpay/pin/views.py:68 webpay/pin/views.py:185 public/js/views/create-pin.js:36 public/js/views/create-pin.js:71 public/js/views/create-pin.js:82
 msgid "Confirm PIN"
-msgstr ""
+msgstr "Teeŋtin kod PIN"
 
 #: webpay/pin/views.py:131 webpay/pin/views.py:157 webpay/pin/templates/pin/pin_was_locked.html:13 public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68 templates/was-locked.html:11
 #: public/js/views/force-auth.js:89 public/js/views/force-auth.js:102 public/js/views/reset-pin.js:66 public/js/views/reset-pin.js:69 public/js/views/force-auth.js:101 public/js/views/reset-pin.js:72
 #: public/js/views/force-auth.js:96
 msgid "Reset PIN"
-msgstr ""
+msgstr "Firlit kod PIN"
 
 #. This is the same as the standard forgot
 #. password that most sites have.
 #: templates/pin-form.html:18 templates/reset-start.html:6 templates/pin-form.html:29 templates/pin-form.html:30
 msgid "Forgot your PIN?"
-msgstr ""
+msgstr "A yejjitii kod PIN maa?"
 
 #: public/js/views/locked.js:24 public/js/views/locked.js:22
 msgid "You entered the wrong PIN too many times. Your account is locked. Please try your purchase again in 5 minutes."
 msgstr ""
+"A naatnii kod PIN mo moƴƴaani laa bi keewɗi. Konte maa ndaaƴaama. Tiiɗno eto "
+"kadi ɗoo e hojomaaji 5."
 
 #: templates/was-locked.html:6
 msgid "Your PIN was locked"
-msgstr ""
+msgstr "Kod PIN maa koko daaƴanoo"
 
 #: templates/was-locked.html:7
 msgid "Your PIN was locked because you entered it incorrectly too many times. You can continue and try entering your PIN again or reset your PIN."
 msgstr ""
+"Kod PIN maa koko daaƴanoo sabu a naatnii mo moƴƴaani laabi keewɗi. Aɗa waawi "
+"jokkude kisa eto-ɗaa kadi walla pirlitaa kod PIN maa."
 
 #: templates/reset-start.html:7 templates/reset-start.html:10
 msgid "Are you sure you want to reset your PIN? You must sign in to Persona to reset your PIN."
 msgstr ""
+"Aɗa yenanaa yiɗde firlitde kod PIN maa? Maa ceŋo-ɗaa e Persona ndee pirlitaa "
+"kod PIN oo."
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6 webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"
-msgstr ""
+msgstr "Nana ƴeewtoo joɓgol"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30 public/js/lib/auth.js:25 public/js/lib/auth.js:39 public/js/lib/auth.js:26 public/js/lib/auth.js:41
 msgid "Retrying"
-msgstr ""
+msgstr "Nana fuɗɗitoo"
 
 #: public/js/lib/auth.js:64
 msgid "That took longer than expected. Retry?"
-msgstr ""
+msgstr "Ɗuum ɗeɓii juutde haa wooroo. Fuɗɗito?"
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11 public/js/views/create-pin.js:72 templates/reset-start.html:15 public/js/views/create-pin.js:83
 msgid "Back"
-msgstr ""
+msgstr "Rutto"
 
 #: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95 public/js/views/enter-pin.js:96 public/js/views/create-pin.js:73 public/js/views/enter-pin.js:100 public/js/views/create-pin.js:84
 #: public/js/views/enter-pin.js:112 public/js/views/enter-pin.js:114
 msgid "Submit"
-msgstr ""
+msgstr "Naatnu"
 
 #: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60 public/js/views/reset-pin.js:28 public/js/lib/wait.js:171 public/js/views/create-pin.js:65 public/js/views/enter-pin.js:61
 #: public/js/views/force-auth.js:53 public/js/views/reset-pin.js:29 public/js/views/reset-start.js:107 public/js/views/create-pin.js:101 public/js/views/enter-pin.js:65
@@ -164,191 +171,196 @@ msgstr ""
 #: public/js/views/page.js:43 public/js/views/reset-pin.js:33 public/js/views/reset-start.js:124 public/js/lib/wait.js:170 public/js/views/create-pin.js:119 public/js/views/enter-pin.js:77
 #: public/js/views/reset-start.js:101
 msgid "Retry?"
-msgstr ""
+msgstr "Fuɗɗito?"
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116 public/js/views/create-pin.js:113 public/js/views/create-pin.js:115 public/js/views/create-pin.js:149
 #: public/js/views/create-pin.js:152 public/js/views/create-pin.js:164 public/js/views/create-pin.js:167 public/js/views/create-pin.js:170
 msgid "Create PIN"
-msgstr ""
+msgstr "Sos kod PIN"
 
 #: public/js/views/error.js:45
 msgid "Something went wrong."
-msgstr ""
+msgstr "Won juumre waɗi."
 
 #: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118 public/js/views/reset-start.js:119 public/js/views/reset-start.js:123 public/js/views/reset-start.js:133
 #: public/js/views/reset-start.js:135 public/js/views/reset-start.js:112
 msgid "Reset your PIN?"
-msgstr ""
+msgstr "Firlit kod PIN maa?"
 
 #: public/js/views/was-locked.js:13 public/js/views/was-locked.js:38 public/js/views/was-locked.js:42
 msgid "Was Locked"
-msgstr ""
+msgstr "Koko Daañanoo"
 
 #: public/js/views/wait-for-tx.js:10 public/js/views/wait-to-start.js:13
 msgid "Setting up payment"
-msgstr ""
+msgstr "Nana fewja joɓgol"
 
 #: public/js/error-codes.js:12
 msgid "An internal web request timed out."
-msgstr ""
+msgstr "Ɗaɓɓitannde geese ndernderol honaama waktu."
 
 #: public/js/error-codes.js:13
 msgid "The system timed out while trying to log in."
-msgstr ""
+msgstr "Yuɓɓo honaama waktu tuma etotoo seŋaade."
 
 #: public/js/error-codes.js:14
 msgid "An error occurred whilst trying to log out."
-msgstr ""
+msgstr "Juumre waɗii tuma ceŋtagol."
 
 #: public/js/error-codes.js:15
 msgid "The system timed out while trying to log out."
-msgstr ""
+msgstr "Yuɓɓo honaama waktu tuma etotoo seŋtaade."
 
 #: public/js/error-codes.js:16
 msgid "Payments are temporarily disabled."
-msgstr ""
+msgstr "Joɓgol koko dartinaa oo sahaa."
 
 #: public/js/error-codes.js:17
 msgid "An unexpected error occurred when creating your PIN."
-msgstr ""
+msgstr "Juumre ɗe ɗaminaaka waɗii tuma cosgol kod PIN maa."
 
 #: public/js/error-codes.js:18 public/js/error-codes.js:27
 msgid "The PIN data submitted was invalid."
-msgstr ""
+msgstr "Keɓe PIN naatnaaɗe ɗee peewaani."
 
 #: public/js/error-codes.js:19
 msgid "No valid user found whilst attempting to create your PIN"
-msgstr ""
+msgstr "Alaa kuutoro jaaliiɗo yiytaa tuma cosgol kod PIN maa"
 
 #: public/js/error-codes.js:20
 msgid "Permission denied attempting to create your PIN."
-msgstr ""
+msgstr "Yamiroore salaama e etagol sosde kod PIN maa."
 
 #: public/js/error-codes.js:21
 msgid "The request timed out whilst attempting to create your PIN."
-msgstr ""
+msgstr "Ɗaɓɓitannde honaama waktu tuma etagol sosde kod PIN maa."
 
 #: public/js/error-codes.js:22
 msgid "An unexpected error occurred whilst checking your PIN."
-msgstr ""
+msgstr "Juumre ɗe ɗaminaaka waɗii tuma ƴeewtagol kod PIN maa."
 
 #: public/js/error-codes.js:23
 msgid "No valid user found whilst checking your PIN"
-msgstr ""
+msgstr "Alaa kuutoro jaaliiɗo yiytaa tuma ƴeewtagol kod PIN maa"
 
 #: public/js/error-codes.js:24
 msgid "Permission denied attempting to check your PIN"
-msgstr ""
+msgstr "Yamiroore salaama e etagol ƴeewtaade kod PIN maa"
 
 #: public/js/error-codes.js:25
 msgid "The request timed out whilst trying to check your PIN"
-msgstr ""
+msgstr "Ɗaɓɓitannde honaama waktu tuma etagol ƴeewtaade kod PIN maa"
 
 #: public/js/error-codes.js:26
 msgid "An unexpected error occurred when resetting your PIN."
-msgstr ""
+msgstr "Juumre ɗe ɗaminaaka waɗii tuma pirlitgol kod PIN maa."
 
 #: public/js/error-codes.js:28
 msgid "No valid user found whilst attempting to reset your PIN"
-msgstr ""
+msgstr "Alaa kuutoro jaaliiɗo yiytaa tuma ƴeewtagol kod PIN maa"
 
 #: public/js/error-codes.js:29
 msgid "Permission denied attempting to reset your PIN."
-msgstr ""
+msgstr "Yamiroore salaama e etagol firlitde kod PIN maa."
 
 #: public/js/error-codes.js:30
 msgid "The request timed out whilst attempting to reset your PIN."
-msgstr ""
+msgstr "Ɗaɓɓitannde honaama waktu tuma etagol firlitde kod PIN maa."
 
 #: public/js/error-codes.js:31
 msgid "The transaction failed. You have not been charged for this purchase."
-msgstr ""
+msgstr "Coodtondiral nguu woorii. A yoɓaani hay huunde kisa e ngol duggol."
 
 #: public/js/error-codes.js:32
 msgid "The payment method or price point is not supported for this region or operator."
 msgstr ""
+"Joɓirgol ngol walla codgu nguu jaaɓetaake e oo diiwaan walla oo carwinoowo."
 
 #: public/js/lib/auth.js:214
 msgid "Waiting for login"
-msgstr ""
+msgstr "Nana sabbii ceŋagol"
 
 #: public/js/lib/wait.js:56
 msgid "Retrieving Transaction"
-msgstr ""
+msgstr "Nana aaftoo coodtondiral"
 
 #: public/js/views/error.js:55 public/js/views/error.js:58
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "Juumre nde tijjaaka waɗii."
 
 #: public/js/views/force-auth.js:87 public/js/views/force-auth.js:100 public/js/views/force-auth.js:99 public/js/views/force-auth.js:94
 msgid "Sign-in to reset PIN"
-msgstr ""
+msgstr "Seŋo ngam firlitde kod PIN"
 
 #: public/js/views/force-auth.js:90 public/js/views/force-auth.js:103 public/js/views/force-auth.js:102 public/js/views/force-auth.js:97
 msgid "Please sign in to reset your PIN."
-msgstr ""
+msgstr "Tiiɗno seŋo ngam firlitde kod PIN."
 
 #: public/js/views/init.js:12
 msgid "Initializing"
-msgstr ""
+msgstr "Nana heblitoo"
 
 #: public/js/views/locked.js:21
 msgid "PIN Locked"
-msgstr ""
+msgstr "PIN Daaƴaama"
 
 #: public/js/views/payment-success.js:15 public/js/views/wait-to-finish.js:14
 msgid "Completing payment"
-msgstr ""
+msgstr "Nana timmina joɓgol"
 
 #: public/js/views/simulate.js:23
 msgid "Processing"
-msgstr ""
+msgstr "Nana lijjita"
 
 #: public/js/views/simulate.js:51
 msgid "Simulate Payment"
-msgstr ""
+msgstr "Ñemmbito Joɓgol"
 
 #: public/js/views/simulate.js:55
 msgid "You will not be charged."
-msgstr ""
+msgstr "A fawetaaka e mbuuɗo kisa."
 
 #: templates/reset-start.html:12 templates/reset-start.html:16
 msgid "Reset"
-msgstr ""
+msgstr "Firlit"
 
 #: templates/pin-form.html:22
 msgid "By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)s>Privacy Policy</a>"
 msgstr ""
+"Jokkude ɗii firti ko a jaɓii <a %(terms)s>sarɗiiji</a> e <a %"
+"(privacy)s>Dawirgol Suturo</a> amen"
 
 #: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68 public/js/views/force-auth.js:90 public/js/views/reset-start.js:70 public/js/views/force-auth.js:88 public/js/views/login.js:18
 #: public/js/views/reset-start.js:55
 msgid "Connecting to Firefox Accounts"
-msgstr ""
+msgstr "Nana seŋoo e Firefox Accounts"
 
 #: templates/reset-start.html:8 templates/reset-start.html:7
 msgid "Are you sure you want to reset your PIN? You must sign in to Firefox Accounts to reset your PIN."
 msgstr ""
+"Aɗa yenanaa yiɗde firlitde kod PIN maa? Maa ceŋo-ɗaa e Firefox Accounts ndee "
+"pirlitaa kod PIN oo."
 
 #: public/js/views/page.js:34
 msgid "Logging out"
-msgstr ""
+msgstr "Nana seŋtoo"
 
 #: templates/signout.html:9
 msgid "You are signed in as:"
-msgstr ""
+msgstr "Ceŋori-ɗaa ko innde:"
 
 #: templates/signout.html:11
 msgid "Not you?"
-msgstr ""
+msgstr "Wonaa aan?"
 
 #: public/js/views/super-simulate.js:44
 msgid "Super Simulate"
-msgstr ""
+msgstr "Ñemmbita"
 
 #: templates/super-simulate.html:8
 msgid "Simulate Something?"
-msgstr ""
+msgstr "Ñemmbito Huunde?"
 
 #: templates/super-simulate.html:11
 msgid "No network simulation"
-msgstr ""
+msgstr "Alaa ñemmbitol resoo"

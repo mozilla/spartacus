@@ -15,7 +15,7 @@ casper.test.begin('Login successful pin creation.', {
 
     casper.waitForUrl(helpers.url('create-pin'), function() {
       test.assertVisible('.pinbox', 'Pin entry widget should be displayed');
-      test.assertDoesntExist('.terms', 'Terms are not visible on create-pin if not FxA enabled');
+      test.assertExists('.terms', 'Terms exist on create-pin for native too');
       this.sendKeys('.pinbox', '1234');
       test.assertExists('.cta:enabled', 'Submit button is enabled');
       this.click('.cta');

@@ -167,7 +167,7 @@ define([
       var context = {
         ctaText: this.gettext('Continue'),
         pinTitle: this.gettext('Create PIN'),
-        showFxATerms: utils.useOAuthFxA(),
+        showFxATerms: true,
       };
       this.setTitle(this.gettext('Create PIN'));
       this.renderTemplate('pin-form.html', context);

@@ -4,8 +4,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-30 19:53+0000\n"
-"PO-Revision-Date: 2014-05-18 09:35+0000\n"
-"Last-Translator: Matjaž <m@owca.info>\n"
+"PO-Revision-Date: 2015-03-11 22:19+0000\n"
+"Last-Translator: Ibai <ibai@oihanguren.com>\n"
 "Language-Team: 89578-OEM-7332157-00211\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1400405731.0\n"
+"X-POOTLE-MTIME: 1426112348.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18
 msgid "Payment cancelled."
@@ -144,21 +144,20 @@ msgstr "Ordainketa egiaztatzen"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30 public/js/lib/auth.js:25 public/js/lib/auth.js:39 public/js/lib/auth.js:26 public/js/lib/auth.js:41
 msgid "Retrying"
-msgstr ""
+msgstr "Berriro saiatzen"
 
 #: public/js/lib/auth.js:64
-#, fuzzy
 msgid "That took longer than expected. Retry?"
 msgstr "Hau espero baino gehiago ari da luzatzen. Berriro saiatu?"
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11 public/js/views/create-pin.js:72 templates/reset-start.html:15 public/js/views/create-pin.js:83
 msgid "Back"
-msgstr ""
+msgstr "Atzera"
 
 #: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95 public/js/views/enter-pin.js:96 public/js/views/create-pin.js:73 public/js/views/enter-pin.js:100 public/js/views/create-pin.js:84
 #: public/js/views/enter-pin.js:112 public/js/views/enter-pin.js:114
 msgid "Submit"
-msgstr ""
+msgstr "Bidali"
 
 #: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60 public/js/views/reset-pin.js:28 public/js/lib/wait.js:171 public/js/views/create-pin.js:65 public/js/views/enter-pin.js:61
 #: public/js/views/force-auth.js:53 public/js/views/reset-pin.js:29 public/js/views/reset-start.js:107 public/js/views/create-pin.js:101 public/js/views/enter-pin.js:65
@@ -167,28 +166,25 @@ msgstr ""
 #: public/js/views/page.js:43 public/js/views/reset-pin.js:33 public/js/views/reset-start.js:124 public/js/lib/wait.js:170 public/js/views/create-pin.js:119 public/js/views/enter-pin.js:77
 #: public/js/views/reset-start.js:101
 msgid "Retry?"
-msgstr ""
+msgstr "Berriro saiatu?"
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116 public/js/views/create-pin.js:113 public/js/views/create-pin.js:115 public/js/views/create-pin.js:149
 #: public/js/views/create-pin.js:152 public/js/views/create-pin.js:164 public/js/views/create-pin.js:167 public/js/views/create-pin.js:170
-#, fuzzy
 msgid "Create PIN"
 msgstr "Sortu PINa"
 
 #: public/js/views/error.js:45
-#, fuzzy
 msgid "Something went wrong."
-msgstr "Zerbait oker joan da!"
+msgstr "Zerbait oker joan da."
 
 #: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118 public/js/views/reset-start.js:119 public/js/views/reset-start.js:123 public/js/views/reset-start.js:133
 #: public/js/views/reset-start.js:135 public/js/views/reset-start.js:112
-#, fuzzy
 msgid "Reset your PIN?"
-msgstr "Berrezarri PINa"
+msgstr "PINa berrezarri?"
 
 #: public/js/views/was-locked.js:13 public/js/views/was-locked.js:38 public/js/views/was-locked.js:42
 msgid "Was Locked"
-msgstr ""
+msgstr "Blokeatuta zegoen"
 
 #: public/js/views/wait-for-tx.js:10 public/js/views/wait-to-start.js:13
 msgid "Setting up payment"
@@ -196,39 +192,39 @@ msgstr "Ordainketa konfiguratzen"
 
 #: public/js/error-codes.js:12
 msgid "An internal web request timed out."
-msgstr ""
+msgstr "Barneko web-eskaera bat iraungi da."
 
 #: public/js/error-codes.js:13
 msgid "The system timed out while trying to log in."
-msgstr ""
+msgstr "Sistema iraungi da saioa hasten saiatzean."
 
 #: public/js/error-codes.js:14
 msgid "An error occurred whilst trying to log out."
-msgstr ""
+msgstr "Errore bat gertatu da saioa amaitzen saiatzean."
 
 #: public/js/error-codes.js:15
 msgid "The system timed out while trying to log out."
-msgstr ""
+msgstr "Sistema iraungi da saioa amaitzen saiatzean."
 
 #: public/js/error-codes.js:16
 msgid "Payments are temporarily disabled."
-msgstr ""
+msgstr "Ordainketak aldi baterako desgaitu dira."
 
 #: public/js/error-codes.js:17
 msgid "An unexpected error occurred when creating your PIN."
-msgstr ""
+msgstr "Ustegabeko errore bat gertatu da PINa sortzean."
 
 #: public/js/error-codes.js:18 public/js/error-codes.js:27
 msgid "The PIN data submitted was invalid."
-msgstr ""
+msgstr "Emandako PIN datua baliogabea zen."
 
 #: public/js/error-codes.js:19
 msgid "No valid user found whilst attempting to create your PIN"
-msgstr ""
+msgstr "Ez da baliozko erabiltzailerik aurkitu PINa sortzen saiatzean"
 
 #: public/js/error-codes.js:20
 msgid "Permission denied attempting to create your PIN."
-msgstr ""
+msgstr "Baimena ukatu da PINa sortzen saiatzean."
 
 #: public/js/error-codes.js:21
 msgid "The request timed out whilst attempting to create your PIN."
@@ -273,40 +269,40 @@ msgstr ""
 #: public/js/error-codes.js:32
 msgid "The payment method or price point is not supported for this region or operator."
 msgstr ""
+"Ordainketa-metodoa edo prezioa ez da eskualde edo operadore honekin "
+"bateragarria."
 
 #: public/js/lib/auth.js:214
 msgid "Waiting for login"
-msgstr ""
+msgstr "Saio-hasieraren zain"
 
 #: public/js/lib/wait.js:56
 msgid "Retrieving Transaction"
-msgstr ""
+msgstr "Transakzioa berreskuratzen"
 
 #: public/js/views/error.js:55 public/js/views/error.js:58
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "Ustegabeko errore bat gertatu da."
 
 #: public/js/views/force-auth.js:87 public/js/views/force-auth.js:100 public/js/views/force-auth.js:99 public/js/views/force-auth.js:94
 msgid "Sign-in to reset PIN"
-msgstr ""
+msgstr "Hasi saioa PINa berrezartzeko"
 
 #: public/js/views/force-auth.js:90 public/js/views/force-auth.js:103 public/js/views/force-auth.js:102 public/js/views/force-auth.js:97
 msgid "Please sign in to reset your PIN."
-msgstr ""
+msgstr "Hasi saioa zure PINa berrezartzeko."
 
 #: public/js/views/init.js:12
 msgid "Initializing"
-msgstr ""
+msgstr "Hasieratzen"
 
 #: public/js/views/locked.js:21
-#, fuzzy
 msgid "PIN Locked"
-msgstr "Zure PINa blokeatu da"
+msgstr "PINa blokeatuta"
 
 #: public/js/views/payment-success.js:15 public/js/views/wait-to-finish.js:14
-#, fuzzy
 msgid "Completing payment"
-msgstr "Ordainketa konfiguratzen"
+msgstr "Ordainketa burutzen"
 
 #: public/js/views/simulate.js:23
 msgid "Processing"
@@ -346,20 +342,20 @@ msgstr ""
 
 #: templates/signout.html:9
 msgid "You are signed in as:"
-msgstr ""
+msgstr "Honela hasi duzu saioa:"
 
 #: templates/signout.html:11
 msgid "Not you?"
-msgstr ""
+msgstr "Ez zara zu?"
 
 #: public/js/views/super-simulate.js:44
 msgid "Super Simulate"
-msgstr ""
+msgstr "Super Simulate"
 
 #: templates/super-simulate.html:8
 msgid "Simulate Something?"
-msgstr ""
+msgstr "Zerbait simulatu?"
 
 #: templates/super-simulate.html:11
 msgid "No network simulation"
-msgstr ""
+msgstr "Ez dago sare-simulaziorik"

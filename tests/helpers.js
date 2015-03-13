@@ -362,13 +362,18 @@ function fakeWaitPoll(options) {
 function fakeStartTransaction(options) {
   var url = '/mozpay/v1/api/pay/';
   options = options || {};
-  options.simulate = options.simulate || false;
-  options.timeout = options.timeout || false;
-  options.response = options.response || {simulation: options.simulate,
-                                          status: 'ok'};
-  var response = JSON.stringify(options.response);
+  var simulate = options.simulate || false;
+  var payment_required = options.payment_required;
+  payment_required = typeof payment_required === 'undefined' ? true : payment_required;
+  var timeout = options.timeout || false;
+  var response = options.response || {
+    payment_required: payment_required,
+    simulation: simulate,
+    status: 'ok',
+  };
+  response = JSON.stringify(response);
 
-  if (options.timeout) {
+  if (timeout) {
     casper.echo('Setting up an XHR timeout for start of transaction', 'INFO');
     clientTimeoutResponse('POST', url);
   } else {

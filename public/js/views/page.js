@@ -155,6 +155,13 @@ define([
         var getTransaction = $.Deferred();
 
         req.done(function(result) {
+
+          if (result.payment_required === false) {
+            console.log('No payment required. Running paymentSuccess()');
+            app.throbber.render(that.gettext('Completing Payment'));
+            return utils.mozPaymentProvider.paymentSuccess();
+          }
+
           logger.log('Transaction started successfully; simulation?',
                       result.simulation);
           var action = (result.simulation ? 'start-simulated-transaction':

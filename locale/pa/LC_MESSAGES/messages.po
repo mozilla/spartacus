@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-30 19:53+0000\n"
-"PO-Revision-Date: 2015-01-22 15:50+0000\n"
-"Last-Translator: Aman <amanpreet.alam@gmail.com>\n"
+"PO-Revision-Date: 2015-03-15 00:14+0000\n"
+"Last-Translator: Anonymous Pootle User\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pa\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1) ;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1421941834.0\n"
+"X-POOTLE-MTIME: 1426378488.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18
 msgid "Payment cancelled."
@@ -50,7 +50,7 @@ msgstr "ਭੁਗਤਾਨ ਪੂਰਾ"
 
 #: public/js/lib/auth.js:22 public/js/lib/auth.js:20 public/js/views/page.js:41
 msgid "Oops"
-msgstr "ਉਪਸ"
+msgstr "ਉਹ ਹੋ"
 
 #: public/js/lib/auth.js:65 public/js/lib/auth.js:84 public/js/lib/auth.js:155 public/js/lib/auth.js:86 public/js/lib/auth.js:157
 msgid "This is taking longer than expected. Try again?"
@@ -63,7 +63,7 @@ msgstr "ਕੁੱਝ ਗਲਤ ਹੋਇਆ ਹੈ। ਫਿਰ ਕੋਸ਼ਿ�
 #: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55
 #: public/js/views/error.js:90
 msgid "OK"
-msgstr "ਉਕੇ"
+msgstr "ਠੀਕ ਹੈ"
 
 #: public/js/views/error.js:44 public/js/views/locked.js:23 public/js/views/error.js:54 public/js/views/error.js:57
 msgid "Error"
@@ -344,13 +344,12 @@ msgstr "ਤੁਸੀਂ ਨਹੀਂ ਹੋ?"
 
 #: public/js/views/super-simulate.js:44
 msgid "Super Simulate"
-msgstr ""
+msgstr "ਸੁਪਰ ਸਿਮੁਲੇਟ"
 
 #: templates/super-simulate.html:8
-#, fuzzy
 msgid "Simulate Something?"
-msgstr "ਭੁਗਤਾਨ ਦੀ ਨਕਲ ਕਰੋ"
+msgstr "ਕੀ ਕਿਸੇ ਨੂੰ ਸਿਮੁਲੇਟ ਕਰਨਾ ਹੈ?"
 
 #: templates/super-simulate.html:11
 msgid "No network simulation"
-msgstr ""
+msgstr "ਕੋਈ ਨੈਟਵਰਕ ਸਿਮੁਲੇਸ਼ਨ ਨਹੀਂ"

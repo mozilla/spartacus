@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-30 19:53+0000\n"
-"PO-Revision-Date: 2014-10-31 15:06+0000\n"
-"Last-Translator: zu-ZA25_Lungile <lungilekunene@ymail.com>\n"
+"PO-Revision-Date: 2015-03-16 11:30+0000\n"
+"Last-Translator: zu-ZA26_Lungile <bhelekazelihle@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: zu\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1414768015.0\n"
+"X-POOTLE-MTIME: 1426505451.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18
 msgid "Payment cancelled."
@@ -323,36 +323,35 @@ msgstr "Ngokuqhubeka uyavumelana <a %(imigomo)>nemigomo</a> kanye<a %(ukuvikelwa
 
 #: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68 public/js/views/force-auth.js:90 public/js/views/reset-start.js:70 public/js/views/force-auth.js:88 public/js/views/login.js:18
 #: public/js/views/reset-start.js:55
-#, fuzzy
 msgid "Connecting to Firefox Accounts"
-msgstr "Isaxhumana Nemininingwane yomuntu"
+msgstr "Isaxhumana Nama-akhawunti e-Firefox"
 
 #: templates/reset-start.html:8 templates/reset-start.html:7
-#, fuzzy
 msgid "Are you sure you want to reset your PIN? You must sign in to Firefox Accounts to reset your PIN."
-msgstr "Unesiqinisekiso sokuthi ufuna ukusetha kabusha i-PIN yakho? Kufanele usayinele ukungena ku-Persona ukuze usethe kabusha i-PIN yakho."
+msgstr ""
+"Unesiqinisekiso sokuthi ufuna ukusetha kabusha i-PIN yakho? Kufanele "
+"usayinele ukungena ku-Firefox Accounts ukuze usethe kabusha i-PIN yakho."
 
 #: public/js/views/page.js:34
 msgid "Logging out"
-msgstr ""
+msgstr "Ulogela ukuphuma"
 
 #: templates/signout.html:9
 msgid "You are signed in as:"
-msgstr ""
+msgstr "Usayinele ukungena njengo:"
 
 #: templates/signout.html:11
 msgid "Not you?"
-msgstr ""
+msgstr "Akuwena?"
 
 #: public/js/views/super-simulate.js:44
 msgid "Super Simulate"
-msgstr ""
+msgstr "Ukwenza ngokufana ncimishi"
 
 #: templates/super-simulate.html:8
-#, fuzzy
 msgid "Simulate Something?"
-msgstr "Ukuqalisa ukukhokha"
+msgstr "Ufuna ukwenza kufane nokuthile?"
 
 #: templates/super-simulate.html:11
 msgid "No network simulation"
-msgstr ""
+msgstr "Akukho kufaniswa kwamanethiwekhi"

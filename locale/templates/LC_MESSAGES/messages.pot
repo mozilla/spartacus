@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-30 19:53+0000\n"
+"POT-Creation-Date: 2015-03-18 16:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,6 +14,7 @@ msgstr ""
 #: public/js/lib/cancel.js:33
 #: public/js/lib/cancel.js:16
 #: public/js/lib/cancel.js:18
+#: public/js/views/payment-failed.js:19
 msgid "Payment cancelled."
 msgstr ""
 
@@ -28,6 +29,7 @@ msgstr ""
 #: public/js/views/create-pin.js:155
 #: public/js/views/error.js:54
 #: public/js/views/create-pin.js:158
+#: public/js/views/create-pin.js:160
 msgid "Cancel"
 msgstr ""
 
@@ -37,6 +39,7 @@ msgstr ""
 #: public/js/lib/pin-widget.js:65
 #: public/js/lib/pin-widget.js:83
 #: public/js/lib/pin-widget.js:82
+#: public/js/lib/pin-widget.js:93
 msgid "PIN can only contain digits."
 msgstr ""
 
@@ -160,6 +163,8 @@ msgstr ""
 #: public/js/views/create-pin.js:159
 #: public/js/views/create-pin.js:166
 #: templates/super-simulate.html:20
+#: public/js/views/create-pin.js:161
+#: public/js/views/create-pin.js:168
 msgid "Continue"
 msgstr ""
 
@@ -175,6 +180,7 @@ msgstr ""
 #: public/js/views/create-pin.js:84
 #: public/js/views/create-pin.js:97
 #: public/js/views/create-pin.js:100
+#: public/js/views/create-pin.js:102
 msgid "PINs do not match."
 msgstr ""
 
@@ -188,6 +194,7 @@ msgstr ""
 #: public/js/views/create-pin.js:36
 #: public/js/views/create-pin.js:71
 #: public/js/views/create-pin.js:82
+#: public/js/views/create-pin.js:84
 msgid "Confirm PIN"
 msgstr ""
 
@@ -263,6 +270,7 @@ msgstr ""
 #: public/js/views/create-pin.js:72
 #: templates/reset-start.html:15
 #: public/js/views/create-pin.js:83
+#: public/js/views/create-pin.js:85
 msgid "Back"
 msgstr ""
 
@@ -274,6 +282,7 @@ msgstr ""
 #: public/js/views/create-pin.js:84
 #: public/js/views/enter-pin.js:112
 #: public/js/views/enter-pin.js:114
+#: public/js/views/create-pin.js:86
 msgid "Submit"
 msgstr ""
 
@@ -306,6 +315,7 @@ msgstr ""
 #: public/js/views/create-pin.js:119
 #: public/js/views/enter-pin.js:77
 #: public/js/views/reset-start.js:101
+#: public/js/views/create-pin.js:121
 msgid "Retry?"
 msgstr ""
 
@@ -318,6 +328,8 @@ msgstr ""
 #: public/js/views/create-pin.js:164
 #: public/js/views/create-pin.js:167
 #: public/js/views/create-pin.js:170
+#: public/js/views/create-pin.js:169
+#: public/js/views/create-pin.js:172
 msgid "Create PIN"
 msgstr ""
 
@@ -522,6 +534,7 @@ msgid "Not you?"
 msgstr ""
 
 #: public/js/views/super-simulate.js:44
+#: public/js/views/super-simulate.js:64
 msgid "Super Simulate"
 msgstr ""
 
@@ -531,4 +544,24 @@ msgstr ""
 
 #: templates/super-simulate.html:11
 msgid "No network simulation"
+msgstr ""
+
+#: public/js/lib/pin-widget.js:71
+msgid "PIN too short"
+msgstr ""
+
+#: public/js/lib/utils.js:191
+msgid "Success"
+msgstr ""
+
+#: public/js/lib/utils.js:192
+msgid "Your purchase is complete. Close the window to continue"
+msgstr ""
+
+#: public/js/lib/utils.js:203
+msgid "An error occurred. Close the window to continue"
+msgstr ""
+
+#: public/js/views/page.js:161
+msgid "Completing Payment"
 msgstr ""

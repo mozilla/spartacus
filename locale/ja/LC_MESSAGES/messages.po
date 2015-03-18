@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-18 16:05+0000\n"
-"PO-Revision-Date: 2015-01-30 15:24-0500\n"
+"PO-Revision-Date: 2015-03-18 12:50-0400\n"
 "Last-Translator: Kohei Yoshino <kohei.yoshino@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -358,22 +358,20 @@ msgstr "ネットワークシミュレーションは利用できません"
 
 #: public/js/lib/pin-widget.js:71
 msgid "PIN too short"
-msgstr ""
+msgstr "暗証番号が短すぎます"
 
 #: public/js/lib/utils.js:191
 msgid "Success"
-msgstr ""
+msgstr "成功"
 
 #: public/js/lib/utils.js:192
 msgid "Your purchase is complete. Close the window to continue"
-msgstr ""
+msgstr "あなたの購入は完了しました。続けるにはウィンドウを閉じてください"
 
 #: public/js/lib/utils.js:203
-#, fuzzy
 msgid "An error occurred. Close the window to continue"
-msgstr "ログアウト試行中に問題が発生しました。"
+msgstr "問題が発生しました。続けるにはウィンドウを閉じてください"
 
 #: public/js/views/page.js:161
-#, fuzzy
 msgid "Completing Payment"
 msgstr "決済を完了しています"

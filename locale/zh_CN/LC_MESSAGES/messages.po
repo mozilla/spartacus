@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Webpay\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-18 16:05+0000\n"
-"PO-Revision-Date: 2015-01-31 13:38+0000\n"
+"PO-Revision-Date: 2015-03-18 17:45+0000\n"
 "Last-Translator: yfdyh000 <yfdyh000@gmail.com>\n"
 "Language-Team: Chinese Simplified, China <LL@li.org>\n"
 "Language: zh_CN\n"
@@ -12,11 +12,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1422711500.0\n"
+"X-POOTLE-MTIME: 1426700742.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18 public/js/views/payment-failed.js:19
 msgid "Payment cancelled."
-msgstr "付款已取消。"
+msgstr "支付已取消。"
 
 #: public/js/views/create-pin.js:105 templates/error.html:20 templates/pin-form.html:26 public/js/views/create-pin.js:104 public/js/views/error.js:51 templates/simulate.html:17
 #: public/js/views/create-pin.js:140 templates/pin-form.html:37 public/js/views/create-pin.js:155 public/js/views/error.js:54 public/js/views/create-pin.js:158 public/js/views/create-pin.js:160
@@ -38,7 +38,7 @@ msgstr "正在载入"
 
 #: webpay/base/templates/base.html:32
 msgid "Beginning payment"
-msgstr "正在开始付款"
+msgstr "正在开始支付"
 
 #: public/js/views/login.js:19 public/js/views/force-auth.js:81 public/js/views/login.js:18 public/js/views/reset-start.js:67 public/js/views/force-auth.js:93 public/js/views/reset-start.js:70
 #: public/js/views/force-auth.js:92 public/js/views/reset-start.js:72
@@ -47,7 +47,7 @@ msgstr "正在连接至 Persona"
 
 #: webpay/base/templates/base.html:34
 msgid "Payment complete"
-msgstr "付款完成"
+msgstr "支付完成"
 
 #: public/js/lib/auth.js:22 public/js/lib/auth.js:20 public/js/views/page.js:41
 msgid "Oops"
@@ -82,7 +82,7 @@ msgstr "登录"
 
 #: templates/login.html:6 public/js/views/fxa-login.js:28 public/js/views/login.js:27 public/js/views/fxa-login.js:29 public/js/views/fxa-login.js:30
 msgid "Sign in to continue with the payment"
-msgstr "登录以继续付款"
+msgstr "登录以继续支付"
 
 #: templates/login.html:7 templates/login.html:9 templates/login.html:14
 msgid "Sign in"
@@ -141,7 +141,7 @@ msgstr "您确定要重置 PIN 码吗？必须登录 Persona 才能重置您的 
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6 webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"
-msgstr "正在确认付款"
+msgstr "正在确认支付"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30 public/js/lib/auth.js:25 public/js/lib/auth.js:39 public/js/lib/auth.js:26 public/js/lib/auth.js:41
 msgid "Retrying"
@@ -190,7 +190,7 @@ msgstr "已锁定"
 
 #: public/js/views/wait-for-tx.js:10 public/js/views/wait-to-start.js:13
 msgid "Setting up payment"
-msgstr "设置付款"
+msgstr "设置支付"
 
 #: public/js/error-codes.js:12
 msgid "An internal web request timed out."
@@ -359,22 +359,20 @@ msgstr "模拟无网络"
 
 #: public/js/lib/pin-widget.js:71
 msgid "PIN too short"
-msgstr ""
+msgstr "PIN 太短"
 
 #: public/js/lib/utils.js:191
 msgid "Success"
-msgstr ""
+msgstr "成功"
 
 #: public/js/lib/utils.js:192
 msgid "Your purchase is complete. Close the window to continue"
-msgstr ""
+msgstr "您的购买已完成。关闭此窗口以继续"
 
 #: public/js/lib/utils.js:203
-#, fuzzy
 msgid "An error occurred. Close the window to continue"
-msgstr "尝试登出时发生错误。"
+msgstr "发生错误。关闭此窗口以继续"
 
 #: public/js/views/page.js:161
-#, fuzzy
 msgid "Completing Payment"
 msgstr "正在完成支付"

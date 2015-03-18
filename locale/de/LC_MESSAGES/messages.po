@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: AMO Webpay\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-18 16:05+0000\n"
-"PO-Revision-Date: 2015-01-30 19:58+0000\n"
+"PO-Revision-Date: 2015-03-18 17:14+0000\n"
 "Last-Translator: Michael <michael.koehler1@gmx.de>\n"
 "Language-Team: German (de) <coce@nufuerspam.de>\n"
 "Language: de\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1422647897.0\n"
+"X-POOTLE-MTIME: 1426698895.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18 public/js/views/payment-failed.js:19
 msgid "Payment cancelled."
@@ -359,22 +359,22 @@ msgstr "Keine Netzwerksimulation"
 
 #: public/js/lib/pin-widget.js:71
 msgid "PIN too short"
-msgstr ""
+msgstr "PIN zu kurz"
 
 #: public/js/lib/utils.js:191
 msgid "Success"
-msgstr ""
+msgstr "Erfolgreich"
 
 #: public/js/lib/utils.js:192
 msgid "Your purchase is complete. Close the window to continue"
 msgstr ""
+"Ihr Kauf ist abgeschlossen. Schließen Sie dieses Fenster, um fortzufahren"
 
 #: public/js/lib/utils.js:203
-#, fuzzy
 msgid "An error occurred. Close the window to continue"
-msgstr "Beim Abmeldeversuch ist ein Fehler aufgetreten."
+msgstr ""
+"Ein Fehler ist aufgetreten. Schließen Sie dieses Fenster, um fortzufahren"
 
 #: public/js/views/page.js:161
-#, fuzzy
 msgid "Completing Payment"
 msgstr "Zahlung wird abgeschlossen"

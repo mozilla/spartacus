@@ -97,7 +97,7 @@ if confirm "Compile all the .po files?"; then
 fi
 
 if confirm "Commit your changes?"; then
-    git commit i18n locale -m "L10n Extract/compile script. Today's lucky number is $RANDOM."
+    git commit locale -m "L10n Extract/compile script. Today's lucky number is $RANDOM."
     git push mozilla master
 fi
 

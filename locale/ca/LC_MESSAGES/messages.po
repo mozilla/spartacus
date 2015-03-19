@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-18 16:05+0000\n"
-"PO-Revision-Date: 2015-02-24 16:18+0000\n"
+"PO-Revision-Date: 2015-03-19 02:16+0000\n"
 "Last-Translator: Jordi <jordis@softcatala.cat>\n"
 "Language-Team: Catalan <ca@dodds.net>\n"
 "Language: ca\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1424794704.0\n"
+"X-POOTLE-MTIME: 1426731404.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18 public/js/views/payment-failed.js:19
 msgid "Payment cancelled."
@@ -360,22 +360,20 @@ msgstr "No hi ha cap simulació de xarxa"
 
 #: public/js/lib/pin-widget.js:71
 msgid "PIN too short"
-msgstr ""
+msgstr "El PIN és massa curt"
 
 #: public/js/lib/utils.js:191
 msgid "Success"
-msgstr ""
+msgstr "Correcte"
 
 #: public/js/lib/utils.js:192
 msgid "Your purchase is complete. Close the window to continue"
-msgstr ""
+msgstr "La compra ha acabat. Tanqueu la finestra per continuar"
 
 #: public/js/lib/utils.js:203
-#, fuzzy
 msgid "An error occurred. Close the window to continue"
-msgstr "S'ha produït un error en intentar tancar la sessió."
+msgstr "S'ha produït un error. Tanqueu la finestra per continuar"
 
 #: public/js/views/page.js:161
-#, fuzzy
 msgid "Completing Payment"
 msgstr "S'està completant el pagament"

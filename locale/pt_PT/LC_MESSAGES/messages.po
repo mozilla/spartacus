@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WebPay\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-18 16:05+0000\n"
-"PO-Revision-Date: 2015-02-10 00:02+0000\n"
+"PO-Revision-Date: 2015-03-20 19:41+0000\n"
 "Last-Translator: Cláudio <cesperanc@gmail.com>\n"
 "Language-Team: Cláudio Esperança <cesperanc+mozilla@gmail.com>\n"
 "Language: pt\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1423526530.0\n"
+"X-POOTLE-MTIME: 1426880516.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18 public/js/views/payment-failed.js:19
 msgid "Payment cancelled."
@@ -359,22 +359,20 @@ msgstr "Simulação sem rede"
 
 #: public/js/lib/pin-widget.js:71
 msgid "PIN too short"
-msgstr ""
+msgstr "PIN demasiado curto"
 
 #: public/js/lib/utils.js:191
 msgid "Success"
-msgstr ""
+msgstr "Sucesso"
 
 #: public/js/lib/utils.js:192
 msgid "Your purchase is complete. Close the window to continue"
-msgstr ""
+msgstr "A sua compra está concluída. Feche a janela para continuar"
 
 #: public/js/lib/utils.js:203
-#, fuzzy
 msgid "An error occurred. Close the window to continue"
-msgstr "Ocorreu um erro durante a tentativa de fim da sessão."
+msgstr "Ocorreu um erro. Feche a janela para continuar"
 
 #: public/js/views/page.js:161
-#, fuzzy
 msgid "Completing Payment"
 msgstr "A concluir o pagamento"

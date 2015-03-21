@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Webpay\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-18 16:05+0000\n"
-"PO-Revision-Date: 2015-01-31 13:04+0000\n"
+"PO-Revision-Date: 2015-03-21 10:31+0000\n"
 "Last-Translator: Sara <sara.todaro@mozillaitalia.org>\n"
 "Language-Team: mozillaitalia\n"
 "Language: it\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1422709449.0\n"
+"X-POOTLE-MTIME: 1426933861.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18 public/js/views/payment-failed.js:19
 msgid "Payment cancelled."
@@ -359,22 +359,20 @@ msgstr "Nessuna rete disponibile per la simulazione"
 
 #: public/js/lib/pin-widget.js:71
 msgid "PIN too short"
-msgstr ""
+msgstr "Codice PIN troppo corto"
 
 #: public/js/lib/utils.js:191
 msgid "Success"
-msgstr ""
+msgstr "Operazione completata correttamente"
 
 #: public/js/lib/utils.js:192
 msgid "Your purchase is complete. Close the window to continue"
-msgstr ""
+msgstr "L’acquisto è stato effettuato. Chiudi la finestra per continuare"
 
 #: public/js/lib/utils.js:203
-#, fuzzy
 msgid "An error occurred. Close the window to continue"
-msgstr "Si è verificato un errore durante il tentativo di disconnessione."
+msgstr "Si è verificato un errore. Chiudi la finestra per continuare"
 
 #: public/js/views/page.js:161
-#, fuzzy
 msgid "Completing Payment"
 msgstr "Pagamento in corso…"

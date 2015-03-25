@@ -13,6 +13,8 @@ define([
 
     render: function(){
       app.throbber.render(this.gettext('Completing payment'));
+      utils.trackEvent({'action': 'payment-success',
+                        'label': 'Payment Complete'});
       logger.log('Completing payment');
       utils.mozPaymentProvider.paymentSuccess();
       return this;

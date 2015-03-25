@@ -128,7 +128,8 @@ define([
           }
         } else {
           logger.log('transaction completed; closing pay flow');
-          trackClosePayFlow();
+          utils.trackEvent({'action': 'payment-success',
+                            'label': 'Payment Complete'});
           utils.mozPaymentProvider.paymentSuccess();
         }
       } else if (data.status === utils.bodyData.transStatusFailed) {

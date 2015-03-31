@@ -74,7 +74,7 @@ define([
 
     request = $.ajax({
       type: 'GET',
-      url: startUrl,
+      url: startUrl
     });
 
     request.done(function(data) {
@@ -160,6 +160,7 @@ define([
     });
 
     request.fail(function($xhr, textStatus) {
+      var error_reason = utils.errorCodeFromXhr($xhr, '');
 
       if (textStatus === 'timeout') {
         clear();
@@ -176,6 +177,13 @@ define([
           }
         });
 
+      } else if (error_reason) {
+        clear();
+        logger.log('error reason', error_reason);
+        app.throbber.close();
+        return app.error.render({
+          errorCode: error_reason,
+        });
       } else {
         logger.log('error checking transaction');
         utils.trackEvent({'action': 'payment',

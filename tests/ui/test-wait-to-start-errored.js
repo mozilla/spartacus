@@ -10,7 +10,6 @@ helpers.startCasper({
     helpers.fakePinData({data: {pin: true}});
     helpers.fakePinData({data: {pin: true}, method: 'POST', statusCode: 200, url:'/mozpay/v1/api/pin/check/'});
     helpers.fakeWaitPoll({type: 'start', statusData: 3});
-    // 7 is an error on solitudes end
     helpers.fakeWaitPoll({type: 'start', statusCode: 400, errorCode: 'NO_VALID_SELLER'});
   },
 });

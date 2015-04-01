@@ -74,7 +74,7 @@ define([
 
     request = $.ajax({
       type: 'GET',
-      url: startUrl
+      url: startUrl,
     });
 
     request.done(function(data) {
@@ -177,20 +177,15 @@ define([
           }
         });
 
-      } else if (error_reason) {
+      } else {
         clear();
         logger.log('error reason', error_reason);
+        utils.trackEvent({'action': 'payment',
+                          'label': 'Error Checking Transaction'});
         app.throbber.close();
         return app.error.render({
           errorCode: error_reason,
         });
-      } else {
-        logger.log('error checking transaction');
-        utils.trackEvent({'action': 'payment',
-                          'label': 'Error Checking Transaction'});
-        pollTimeout = window.setTimeout(function() {
-          poll(expectedStatus);
-        }, settings.poll_interval);
       }
     });
   }

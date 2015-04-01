@@ -9,13 +9,13 @@ define([
   var gettext = i18n.gettext;
 
   return {
-    BUYER_NOT_CONFIGURED: gettext('No valid buyer setup.'),
+    BUYER_NOT_CONFIGURED: gettext('Product cannot be purchased due to configuration error.'),
     INTERNAL_TIMEOUT: gettext('An internal web request timed out.'),
     LOGIN_TIMEOUT: gettext('The system timed out while trying to log in.'),
     LOGOUT_ERROR: gettext('An error occurred whilst trying to log out.'),
     LOGOUT_TIMEOUT: gettext('The system timed out while trying to log out.'),
-    NO_PUBLICID_IN_JWT: gettext('Payment configured incorrectly.'),
-    NO_VALID_SELLER: gettext('No payment provider could be found.'),
+    NO_PUBLICID_IN_JWT: gettext('Product cannot be purchased due to configuration error.'),
+    NO_VALID_SELLER: gettext('Product cannot be purchased due to configuration error.'),
     PAY_DISABLED: gettext('Payments are temporarily disabled.'),
     PIN_CREATE_ERROR: gettext('An unexpected error occurred when creating your PIN.'),
     PIN_CREATE_INVALID: gettext('The PIN data submitted was invalid.'),
@@ -31,7 +31,7 @@ define([
     PIN_RESET_NO_USER: gettext('No valid user found whilst attempting to reset your PIN'),
     PIN_RESET_PERM_DENIED: gettext('Permission denied attempting to reset your PIN.'),
     PIN_RESET_TIMEOUT: gettext('The request timed out whilst attempting to reset your PIN.'),
-    SELLER_NOT_CONFIGURED: gettext('No valid seller setup.'),
+    SELLER_NOT_CONFIGURED: gettext('Product cannot be purchased due to configuration error.'),
     TRANS_FAILED: gettext('The transaction failed. You have not been charged for this purchase.'),
     UNSUPPORTED_PAY: gettext('The payment method or price point is not supported for this region or operator.'),
   };

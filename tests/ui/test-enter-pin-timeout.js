@@ -5,6 +5,7 @@ helpers.startCasper({
     helpers.fakeStartTransaction();
     helpers.fakePinData({data: {pin: true}});
     helpers.fakePinData({timeout:true, method: 'POST', url:'/mozpay/v1/api/pin/check/'});
+    helpers.fakeWaitPoll({type: 'start', statusData: 3});
   },
 });
 

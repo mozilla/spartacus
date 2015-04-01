@@ -5,6 +5,7 @@ helpers.startCasper({
     helpers.fakeStartTransaction();
     helpers.fakePinData({data: {pin: false}});
     helpers.fakePinData({timeout: true, method: 'POST'});
+    helpers.fakeWaitPoll({type: 'start', statusData: 3});
   },
 });
 

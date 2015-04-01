@@ -4,6 +4,7 @@ helpers.startCasper({
     helpers.fakeVerification();
     helpers.fakeStartTransaction();
     helpers.fakePinData({data: {pin: true}});
+    helpers.fakeWaitPoll({type: 'start', statusData: 3});
   },
 });
 

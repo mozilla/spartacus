@@ -9,6 +9,7 @@ helpers.startCasper({
       helpers.fakeFxA();
       helpers.fakeStartTransaction();
       helpers.fakePinData({data: {pin: true}});
+      helpers.fakeWaitPoll({type: 'start', statusData: 3});
     });
   },
   tearDown: function() {

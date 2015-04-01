@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-18 16:05+0000\n"
+"POT-Creation-Date: 2015-04-01 16:02+0000\n"
 "PO-Revision-Date: 2014-11-24 16:41+0000\n"
 "Last-Translator: Biraj <brnet00@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -165,7 +165,7 @@ msgstr "জমা করুন"
 #: public/js/views/reset-start.js:108 public/js/views/force-auth.js:61 public/js/views/reset-pin.js:30 public/js/views/reset-start.js:112 public/js/views/force-auth.js:60
 #: public/js/views/reset-start.js:122 public/js/lib/auth.js:22 public/js/lib/auth.js:36 public/js/lib/wait.js:180 public/js/views/create-pin.js:116 public/js/views/enter-pin.js:75
 #: public/js/views/page.js:43 public/js/views/reset-pin.js:33 public/js/views/reset-start.js:124 public/js/lib/wait.js:170 public/js/views/create-pin.js:119 public/js/views/enter-pin.js:77
-#: public/js/views/reset-start.js:101 public/js/views/create-pin.js:121
+#: public/js/views/reset-start.js:101 public/js/views/create-pin.js:121 public/js/lib/wait.js:172
 msgid "Retry?"
 msgstr "পুনরায় চেষ্টা করবেন?"
 
@@ -192,83 +192,83 @@ msgstr "লক করা ছিলো"
 msgid "Setting up payment"
 msgstr "পেমেন্ট সেট আপ করা চলছে"
 
-#: public/js/error-codes.js:12
+#: public/js/error-codes.js:12 public/js/error-codes.js:13
 msgid "An internal web request timed out."
 msgstr "একটি অভ্যন্তরীণ ওয়েব অনুরোধের সময়সীমা শেষ হয়েছে।"
 
-#: public/js/error-codes.js:13
+#: public/js/error-codes.js:13 public/js/error-codes.js:14
 msgid "The system timed out while trying to log in."
 msgstr "লগ ইন করার সময় সিস্টেমের সময়সীমা শেষ হয়েছে।"
 
-#: public/js/error-codes.js:14
+#: public/js/error-codes.js:14 public/js/error-codes.js:15
 msgid "An error occurred whilst trying to log out."
 msgstr "লগ আউট করার সময় একটি ত্রুটি ধরা পরেছে।"
 
-#: public/js/error-codes.js:15
+#: public/js/error-codes.js:15 public/js/error-codes.js:16
 msgid "The system timed out while trying to log out."
 msgstr "লগ আউট করার সময় সিস্টেমের সময়সীমা শেষ হয়েছে।"
 
-#: public/js/error-codes.js:16
+#: public/js/error-codes.js:16 public/js/error-codes.js:19
 msgid "Payments are temporarily disabled."
 msgstr "পেমেণ্ট অস্থায়ীভাবে নিষ্ক্রিয় করা হয়েছে।"
 
-#: public/js/error-codes.js:17
+#: public/js/error-codes.js:17 public/js/error-codes.js:20
 msgid "An unexpected error occurred when creating your PIN."
 msgstr "একটি অপ্রত্যাশিত ত্রুটি ঘটেছে আপনার পিন তৈরি করার সময়।"
 
-#: public/js/error-codes.js:18 public/js/error-codes.js:27
+#: public/js/error-codes.js:18 public/js/error-codes.js:27 public/js/error-codes.js:21 public/js/error-codes.js:30
 msgid "The PIN data submitted was invalid."
 msgstr "জমা করা পিন তথ্য অবৈধ।"
 
-#: public/js/error-codes.js:19
+#: public/js/error-codes.js:19 public/js/error-codes.js:22
 msgid "No valid user found whilst attempting to create your PIN"
 msgstr "কোন বৈধ ব্যবহারকারী পাওয়া যায়েনি আপনার পিন তৈরি করার সময়"
 
-#: public/js/error-codes.js:20
+#: public/js/error-codes.js:20 public/js/error-codes.js:23
 msgid "Permission denied attempting to create your PIN."
 msgstr "আপনার পিন তৈরি করার সময় অনুমতি অস্বীকৃত।"
 
-#: public/js/error-codes.js:21
+#: public/js/error-codes.js:21 public/js/error-codes.js:24
 msgid "The request timed out whilst attempting to create your PIN."
 msgstr "অনুমতির সময়সীমা সমাপ্ত হয়েছে আপানার পিন তৈরি করতে গিয়ে।"
 
-#: public/js/error-codes.js:22
+#: public/js/error-codes.js:22 public/js/error-codes.js:25
 msgid "An unexpected error occurred whilst checking your PIN."
 msgstr "একটি অপ্রত্যাশিত ত্রুটি ঘটেছে আপনার পিন চেক করার সময়।"
 
-#: public/js/error-codes.js:23
+#: public/js/error-codes.js:23 public/js/error-codes.js:26
 msgid "No valid user found whilst checking your PIN"
 msgstr "কোন বৈধ ব্যবহারকারী পাওয়া যায়েনি আপনার পিন চেক করার সময়"
 
-#: public/js/error-codes.js:24
+#: public/js/error-codes.js:24 public/js/error-codes.js:27
 msgid "Permission denied attempting to check your PIN"
 msgstr "আপনার পিন চেক করার সময় অনুমতি অস্বীকৃত"
 
-#: public/js/error-codes.js:25
+#: public/js/error-codes.js:25 public/js/error-codes.js:28
 msgid "The request timed out whilst trying to check your PIN"
 msgstr "অনুমতির সময়সীমা সমাপ্ত হয়েছে আমার পিন চেক করতে গিয়ে"
 
-#: public/js/error-codes.js:26
+#: public/js/error-codes.js:26 public/js/error-codes.js:29
 msgid "An unexpected error occurred when resetting your PIN."
 msgstr "একটি অপ্রত্যাশিত ত্রুটি ঘটেছে আপনার পিন রিসেট করতে গিয়ে।"
 
-#: public/js/error-codes.js:28
+#: public/js/error-codes.js:28 public/js/error-codes.js:31
 msgid "No valid user found whilst attempting to reset your PIN"
 msgstr "আপানার পিন রিসেট করতে গিয়ে কোন বৈধ ব্যবহারকারী পাওয়া যায়েনি"
 
-#: public/js/error-codes.js:29
+#: public/js/error-codes.js:29 public/js/error-codes.js:32
 msgid "Permission denied attempting to reset your PIN."
 msgstr "অনুমতি অস্বীকৃত আপনার পিন রিসেট করতে গিয়ে।"
 
-#: public/js/error-codes.js:30
+#: public/js/error-codes.js:30 public/js/error-codes.js:33
 msgid "The request timed out whilst attempting to reset your PIN."
 msgstr "আপানার পিন রিসেট করতে গিয়ে অনুরোধের সময়সীমা সমাপ্ত হয়েছে।"
 
-#: public/js/error-codes.js:31
+#: public/js/error-codes.js:31 public/js/error-codes.js:35
 msgid "The transaction failed. You have not been charged for this purchase."
 msgstr "লেনদেন ব্যর্থ হয়েছে। এর জন্য আপনাকে অভিযুক্ত করা হয়েনি।"
 
-#: public/js/error-codes.js:32
+#: public/js/error-codes.js:32 public/js/error-codes.js:36
 msgid "The payment method or price point is not supported for this region or operator."
 msgstr "এই অঞ্ছল বা অপারেটর এই পেমেণ্ট পদ্ধতি বা দাম বিন্দু সমর্থন করে না।"
 
@@ -381,3 +381,7 @@ msgstr "লগ আউট করার সময় একটি ত্রুটি 
 #, fuzzy
 msgid "Completing Payment"
 msgstr "পেমেন্ট পূরণ করা"
+
+#: public/js/error-codes.js:12 public/js/error-codes.js:17 public/js/error-codes.js:18 public/js/error-codes.js:34
+msgid "Product cannot be purchased due to configuration error."
+msgstr ""

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-18 16:05+0000\n"
+"POT-Creation-Date: 2015-04-01 16:02+0000\n"
 "PO-Revision-Date: 2015-03-20 12:00+0000\n"
 "Last-Translator: af-ZA09_Samuel <leuce.com@gmail.com>\n"
 "Language-Team: none\n"
@@ -165,7 +165,7 @@ msgstr "Stuur in"
 #: public/js/views/reset-start.js:108 public/js/views/force-auth.js:61 public/js/views/reset-pin.js:30 public/js/views/reset-start.js:112 public/js/views/force-auth.js:60
 #: public/js/views/reset-start.js:122 public/js/lib/auth.js:22 public/js/lib/auth.js:36 public/js/lib/wait.js:180 public/js/views/create-pin.js:116 public/js/views/enter-pin.js:75
 #: public/js/views/page.js:43 public/js/views/reset-pin.js:33 public/js/views/reset-start.js:124 public/js/lib/wait.js:170 public/js/views/create-pin.js:119 public/js/views/enter-pin.js:77
-#: public/js/views/reset-start.js:101 public/js/views/create-pin.js:121
+#: public/js/views/reset-start.js:101 public/js/views/create-pin.js:121 public/js/lib/wait.js:172
 msgid "Retry?"
 msgstr "Probeer weer?"
 
@@ -192,83 +192,83 @@ msgstr "Was gegrendel"
 msgid "Setting up payment"
 msgstr "Betaling opstel"
 
-#: public/js/error-codes.js:12
+#: public/js/error-codes.js:12 public/js/error-codes.js:13
 msgid "An internal web request timed out."
 msgstr "'n Interne webversoek het uitgetel."
 
-#: public/js/error-codes.js:13
+#: public/js/error-codes.js:13 public/js/error-codes.js:14
 msgid "The system timed out while trying to log in."
 msgstr "Die stelsel het uitgetel terwyl daar probeer is om aan te meld."
 
-#: public/js/error-codes.js:14
+#: public/js/error-codes.js:14 public/js/error-codes.js:15
 msgid "An error occurred whilst trying to log out."
 msgstr "'n Fout het voorgekom terwyl daar probeer is om af te meld."
 
-#: public/js/error-codes.js:15
+#: public/js/error-codes.js:15 public/js/error-codes.js:16
 msgid "The system timed out while trying to log out."
 msgstr "Die stelsel het uitgetel terwyl daar probeer is om af te teken."
 
-#: public/js/error-codes.js:16
+#: public/js/error-codes.js:16 public/js/error-codes.js:19
 msgid "Payments are temporarily disabled."
 msgstr "Betalings is tydelik gedeaktiveer."
 
-#: public/js/error-codes.js:17
+#: public/js/error-codes.js:17 public/js/error-codes.js:20
 msgid "An unexpected error occurred when creating your PIN."
 msgstr "'n Onverwagse fout het voorgekom toe jou PIN geskep is."
 
-#: public/js/error-codes.js:18 public/js/error-codes.js:27
+#: public/js/error-codes.js:18 public/js/error-codes.js:27 public/js/error-codes.js:21 public/js/error-codes.js:30
 msgid "The PIN data submitted was invalid."
 msgstr "Die PIN-data wat ingestuur is, was ongeldig."
 
-#: public/js/error-codes.js:19
+#: public/js/error-codes.js:19 public/js/error-codes.js:22
 msgid "No valid user found whilst attempting to create your PIN"
 msgstr "Geen geldige gebruiker gevind terwyl daar probeer is om jou PIN te skep"
 
-#: public/js/error-codes.js:20
+#: public/js/error-codes.js:20 public/js/error-codes.js:23
 msgid "Permission denied attempting to create your PIN."
 msgstr "Toestemming is geweier terwyl daar probeer is om jou PIN te skep."
 
-#: public/js/error-codes.js:21
+#: public/js/error-codes.js:21 public/js/error-codes.js:24
 msgid "The request timed out whilst attempting to create your PIN."
 msgstr "Die versoek het uitgetel terwyl daar probeer is om jou PIN te skep."
 
-#: public/js/error-codes.js:22
+#: public/js/error-codes.js:22 public/js/error-codes.js:25
 msgid "An unexpected error occurred whilst checking your PIN."
 msgstr "'n Onverwagse fout het voorgekom terwyl jou PIN gekontroleer is."
 
-#: public/js/error-codes.js:23
+#: public/js/error-codes.js:23 public/js/error-codes.js:26
 msgid "No valid user found whilst checking your PIN"
 msgstr "Geen geldige gebruiker gevind terwyl jou PIN gekontroleer is"
 
-#: public/js/error-codes.js:24
+#: public/js/error-codes.js:24 public/js/error-codes.js:27
 msgid "Permission denied attempting to check your PIN"
 msgstr "Toestemming is geweier terwyl daar probeer is om jou PIN te kontroleer"
 
-#: public/js/error-codes.js:25
+#: public/js/error-codes.js:25 public/js/error-codes.js:28
 msgid "The request timed out whilst trying to check your PIN"
 msgstr "Die versoek het uitgetel terwyl daar probeer is om jou PIN te kontroleer"
 
-#: public/js/error-codes.js:26
+#: public/js/error-codes.js:26 public/js/error-codes.js:29
 msgid "An unexpected error occurred when resetting your PIN."
 msgstr "Geen geldige gebruiker gevind terwyl daar probeer is om jou PIN terug te stel"
 
-#: public/js/error-codes.js:28
+#: public/js/error-codes.js:28 public/js/error-codes.js:31
 msgid "No valid user found whilst attempting to reset your PIN"
 msgstr "Geen geldige gebruiker gevind terwyl daar probeer is om jou PIN terug te stel"
 
-#: public/js/error-codes.js:29
+#: public/js/error-codes.js:29 public/js/error-codes.js:32
 msgid "Permission denied attempting to reset your PIN."
 msgstr "Toestemming is geweier terwyl daar probeer is om jou PIN terug te stel."
 
-#: public/js/error-codes.js:30
+#: public/js/error-codes.js:30 public/js/error-codes.js:33
 msgid "The request timed out whilst attempting to reset your PIN."
 msgstr "Die versoek het uitgetel terwyl daar probeer is om jou PIN terug te stel."
 
-#: public/js/error-codes.js:31
+#: public/js/error-codes.js:31 public/js/error-codes.js:35
 msgid "The transaction failed. You have not been charged for this purchase."
 msgstr "Die transaksie het misluk. Jy sal nie vir hierdie aankoop hoef te betaal nie."
 
-#: public/js/error-codes.js:32
+#: public/js/error-codes.js:32 public/js/error-codes.js:36
 msgid "The payment method or price point is not supported for this region or operator."
 msgstr "Die betalingsmetode of pryspunt word nie deur hierdie streek of operateur ondersteun nie."
 
@@ -331,9 +331,7 @@ msgstr "Koppel tans aan Firefox Accounts"
 
 #: templates/reset-start.html:8 templates/reset-start.html:7
 msgid "Are you sure you want to reset your PIN? You must sign in to Firefox Accounts to reset your PIN."
-msgstr ""
-"Is jy seker dat jy jou PIN wil terugstel? Jy moet by Firefox Accounts "
-"aanmeld om jou PIN terug te stel."
+msgstr "Is jy seker dat jy jou PIN wil terugstel? Jy moet by Firefox Accounts aanmeld om jou PIN terug te stel."
 
 #: public/js/views/page.js:34
 msgid "Logging out"
@@ -378,3 +376,7 @@ msgstr "'n Fout het voorgekom. Maak die venster toe om voort te gaan."
 #: public/js/views/page.js:161
 msgid "Completing Payment"
 msgstr "Voltooi tans betaling"
+
+#: public/js/error-codes.js:12 public/js/error-codes.js:17 public/js/error-codes.js:18 public/js/error-codes.js:34
+msgid "Product cannot be purchased due to configuration error."
+msgstr ""

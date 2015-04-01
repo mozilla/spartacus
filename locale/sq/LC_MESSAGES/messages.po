@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-18 16:05+0000\n"
+"POT-Creation-Date: 2015-04-01 16:02+0000\n"
 "PO-Revision-Date: 2014-12-23 10:17+0200\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: none\n"
@@ -165,7 +165,7 @@ msgstr "Parashtroje"
 #: public/js/views/reset-start.js:108 public/js/views/force-auth.js:61 public/js/views/reset-pin.js:30 public/js/views/reset-start.js:112 public/js/views/force-auth.js:60
 #: public/js/views/reset-start.js:122 public/js/lib/auth.js:22 public/js/lib/auth.js:36 public/js/lib/wait.js:180 public/js/views/create-pin.js:116 public/js/views/enter-pin.js:75
 #: public/js/views/page.js:43 public/js/views/reset-pin.js:33 public/js/views/reset-start.js:124 public/js/lib/wait.js:170 public/js/views/create-pin.js:119 public/js/views/enter-pin.js:77
-#: public/js/views/reset-start.js:101 public/js/views/create-pin.js:121
+#: public/js/views/reset-start.js:101 public/js/views/create-pin.js:121 public/js/lib/wait.js:172
 msgid "Retry?"
 msgstr "Të riprovohet?"
 
@@ -192,83 +192,83 @@ msgstr "Qe Kyçur"
 msgid "Setting up payment"
 msgstr "Po përgatitet pagesa"
 
-#: public/js/error-codes.js:12
+#: public/js/error-codes.js:12 public/js/error-codes.js:13
 msgid "An internal web request timed out."
 msgstr "Një kërkese web të brendshme i mbaroi koha."
 
-#: public/js/error-codes.js:13
+#: public/js/error-codes.js:13 public/js/error-codes.js:14
 msgid "The system timed out while trying to log in."
 msgstr "Sistemit i mbaroi koha teksa provonte të bënte hyrjen."
 
-#: public/js/error-codes.js:14
+#: public/js/error-codes.js:14 public/js/error-codes.js:15
 msgid "An error occurred whilst trying to log out."
 msgstr "Ndodhi një gabim teksa provohej të dilej."
 
-#: public/js/error-codes.js:15
+#: public/js/error-codes.js:15 public/js/error-codes.js:16
 msgid "The system timed out while trying to log out."
 msgstr "Sistemit i mbaroi koha teksa provonte të bënte daljen."
 
-#: public/js/error-codes.js:16
+#: public/js/error-codes.js:16 public/js/error-codes.js:19
 msgid "Payments are temporarily disabled."
 msgstr "Pagesat janë çaktivizuar përkohësisht."
 
-#: public/js/error-codes.js:17
+#: public/js/error-codes.js:17 public/js/error-codes.js:20
 msgid "An unexpected error occurred when creating your PIN."
 msgstr "Ndodhi një gabim i papritur gjatë krijimit të PIN-it tuaj."
 
-#: public/js/error-codes.js:18 public/js/error-codes.js:27
+#: public/js/error-codes.js:18 public/js/error-codes.js:27 public/js/error-codes.js:21 public/js/error-codes.js:30
 msgid "The PIN data submitted was invalid."
 msgstr "Të dhënat e parashtruara për PIN-in qenë të pavlefshme."
 
-#: public/js/error-codes.js:19
+#: public/js/error-codes.js:19 public/js/error-codes.js:22
 msgid "No valid user found whilst attempting to create your PIN"
 msgstr "Nuk u gjet përdorues i vlefshëm ndërsa po përpiqej të krijohej PIN-i juaj"
 
-#: public/js/error-codes.js:20
+#: public/js/error-codes.js:20 public/js/error-codes.js:23
 msgid "Permission denied attempting to create your PIN."
 msgstr "Leje e mohuar gjatë përpjekjes për krijim të PIN-it tuaj."
 
-#: public/js/error-codes.js:21
+#: public/js/error-codes.js:21 public/js/error-codes.js:24
 msgid "The request timed out whilst attempting to create your PIN."
 msgstr "Kërkesës i mbaroi koha teksa përpiqej të krijonte PIN-in tuaj."
 
-#: public/js/error-codes.js:22
+#: public/js/error-codes.js:22 public/js/error-codes.js:25
 msgid "An unexpected error occurred whilst checking your PIN."
 msgstr "Ndodhi një gabim i papritur gjatë kontrollit të PIN-it tuaj."
 
-#: public/js/error-codes.js:23
+#: public/js/error-codes.js:23 public/js/error-codes.js:26
 msgid "No valid user found whilst checking your PIN"
 msgstr "Nuk u gjet përdorues i vlefshëm ndërsa po përpiqej të kontrollohej PIN-i juaj"
 
-#: public/js/error-codes.js:24
+#: public/js/error-codes.js:24 public/js/error-codes.js:27
 msgid "Permission denied attempting to check your PIN"
 msgstr "Leje e mohuar gjatë përpjekjes për kontroll të PIN-it tuaj."
 
-#: public/js/error-codes.js:25
+#: public/js/error-codes.js:25 public/js/error-codes.js:28
 msgid "The request timed out whilst trying to check your PIN"
 msgstr "Kërkesës i mbaroi koha teksa përpiqej të kontrollonte PIN-in tuaj."
 
-#: public/js/error-codes.js:26
+#: public/js/error-codes.js:26 public/js/error-codes.js:29
 msgid "An unexpected error occurred when resetting your PIN."
 msgstr "Ndodhi një gabim i papritur gjatë ricaktimit të PIN-it tuaj."
 
-#: public/js/error-codes.js:28
+#: public/js/error-codes.js:28 public/js/error-codes.js:31
 msgid "No valid user found whilst attempting to reset your PIN"
 msgstr "Nuk u gjet përdorues i vlefshëm ndërsa po përpiqej të ricaktohej PIN-i juaj"
 
-#: public/js/error-codes.js:29
+#: public/js/error-codes.js:29 public/js/error-codes.js:32
 msgid "Permission denied attempting to reset your PIN."
 msgstr "Leje e mohuar gjatë përpjekjes për ricaktim të PIN-it tuaj."
 
-#: public/js/error-codes.js:30
+#: public/js/error-codes.js:30 public/js/error-codes.js:33
 msgid "The request timed out whilst attempting to reset your PIN."
 msgstr "Kërkesës i mbaroi koha teksa përpiqej të ricaktonte PIN-in tuaj."
 
-#: public/js/error-codes.js:31
+#: public/js/error-codes.js:31 public/js/error-codes.js:35
 msgid "The transaction failed. You have not been charged for this purchase."
 msgstr "Transaksioni dështoi. Kjo blerje nuk ju është faturuar."
 
-#: public/js/error-codes.js:32
+#: public/js/error-codes.js:32 public/js/error-codes.js:36
 msgid "The payment method or price point is not supported for this region or operator."
 msgstr "Metoda e pagesës ose çmimi nuk mbulohet për këtë rajon ose operator."
 
@@ -379,3 +379,7 @@ msgstr "Ndodhi një gabim teksa provohej të dilej."
 #, fuzzy
 msgid "Completing Payment"
 msgstr "Po plotësohet pagesa"
+
+#: public/js/error-codes.js:12 public/js/error-codes.js:17 public/js/error-codes.js:18 public/js/error-codes.js:34
+msgid "Product cannot be purchased due to configuration error."
+msgstr ""

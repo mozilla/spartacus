@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-18 16:05+0000\n"
+"POT-Creation-Date: 2015-04-01 16:02+0000\n"
 "PO-Revision-Date: 2015-03-19 07:37+0000\n"
 "Last-Translator: Artem <a.polivanchuk@outlook.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,8 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.5.0\n"
 "X-POOTLE-MTIME: 1426750655.0\n"
 
@@ -166,7 +165,7 @@ msgstr "Надіслати"
 #: public/js/views/reset-start.js:108 public/js/views/force-auth.js:61 public/js/views/reset-pin.js:30 public/js/views/reset-start.js:112 public/js/views/force-auth.js:60
 #: public/js/views/reset-start.js:122 public/js/lib/auth.js:22 public/js/lib/auth.js:36 public/js/lib/wait.js:180 public/js/views/create-pin.js:116 public/js/views/enter-pin.js:75
 #: public/js/views/page.js:43 public/js/views/reset-pin.js:33 public/js/views/reset-start.js:124 public/js/lib/wait.js:170 public/js/views/create-pin.js:119 public/js/views/enter-pin.js:77
-#: public/js/views/reset-start.js:101 public/js/views/create-pin.js:121
+#: public/js/views/reset-start.js:101 public/js/views/create-pin.js:121 public/js/lib/wait.js:172
 msgid "Retry?"
 msgstr "Повторити?"
 
@@ -193,83 +192,83 @@ msgstr "Було заблоковано"
 msgid "Setting up payment"
 msgstr "Налаштування оплати"
 
-#: public/js/error-codes.js:12
+#: public/js/error-codes.js:12 public/js/error-codes.js:13
 msgid "An internal web request timed out."
 msgstr "Час очікування внутрішнього веб запиту вийшов."
 
-#: public/js/error-codes.js:13
+#: public/js/error-codes.js:13 public/js/error-codes.js:14
 msgid "The system timed out while trying to log in."
 msgstr "При спробі виконати вхід, вийшов час очікування системи."
 
-#: public/js/error-codes.js:14
+#: public/js/error-codes.js:14 public/js/error-codes.js:15
 msgid "An error occurred whilst trying to log out."
 msgstr "Поки тривав вихід, сталася помилка."
 
-#: public/js/error-codes.js:15
+#: public/js/error-codes.js:15 public/js/error-codes.js:16
 msgid "The system timed out while trying to log out."
 msgstr "При спробі виконати вихід, вийшов час очікування системи."
 
-#: public/js/error-codes.js:16
+#: public/js/error-codes.js:16 public/js/error-codes.js:19
 msgid "Payments are temporarily disabled."
 msgstr "Платежі тимчасово відключено."
 
-#: public/js/error-codes.js:17
+#: public/js/error-codes.js:17 public/js/error-codes.js:20
 msgid "An unexpected error occurred when creating your PIN."
 msgstr "При створенні вашого PIN-коду, сталася непередбачувана помилка."
 
-#: public/js/error-codes.js:18 public/js/error-codes.js:27
+#: public/js/error-codes.js:18 public/js/error-codes.js:27 public/js/error-codes.js:21 public/js/error-codes.js:30
 msgid "The PIN data submitted was invalid."
 msgstr "Відправлений PIN був недійсним."
 
-#: public/js/error-codes.js:19
+#: public/js/error-codes.js:19 public/js/error-codes.js:22
 msgid "No valid user found whilst attempting to create your PIN"
 msgstr "Поки тривала спроба створити ваш PIN, не знайдено дійсного користувача"
 
-#: public/js/error-codes.js:20
+#: public/js/error-codes.js:20 public/js/error-codes.js:23
 msgid "Permission denied attempting to create your PIN."
 msgstr "При спробі створити ваш PIN, заборонено дозвіл."
 
-#: public/js/error-codes.js:21
+#: public/js/error-codes.js:21 public/js/error-codes.js:24
 msgid "The request timed out whilst attempting to create your PIN."
 msgstr "При спробі створити ваш PIN, вийшов час очікування запиту."
 
-#: public/js/error-codes.js:22
+#: public/js/error-codes.js:22 public/js/error-codes.js:25
 msgid "An unexpected error occurred whilst checking your PIN."
 msgstr "При перевірці вашого PIN сталася неочікувана помилка."
 
-#: public/js/error-codes.js:23
+#: public/js/error-codes.js:23 public/js/error-codes.js:26
 msgid "No valid user found whilst checking your PIN"
 msgstr "Поки тривала перевірка вашого PIN, не знайдено дійсного користувача"
 
-#: public/js/error-codes.js:24
+#: public/js/error-codes.js:24 public/js/error-codes.js:27
 msgid "Permission denied attempting to check your PIN"
 msgstr "Заборонено дозвіл при спробі перевірити ваш PIN"
 
-#: public/js/error-codes.js:25
+#: public/js/error-codes.js:25 public/js/error-codes.js:28
 msgid "The request timed out whilst trying to check your PIN"
 msgstr "Час очікування запиту вийшов поки тривала спроба перевірки вашого PIN"
 
-#: public/js/error-codes.js:26
+#: public/js/error-codes.js:26 public/js/error-codes.js:29
 msgid "An unexpected error occurred when resetting your PIN."
 msgstr "Під час скидання вашого PIN-коду сталася непередбачувана помилка."
 
-#: public/js/error-codes.js:28
+#: public/js/error-codes.js:28 public/js/error-codes.js:31
 msgid "No valid user found whilst attempting to reset your PIN"
 msgstr "Поки тривала спроба скинути ваш PIN, не знайдено дійсного користувача"
 
-#: public/js/error-codes.js:29
+#: public/js/error-codes.js:29 public/js/error-codes.js:32
 msgid "Permission denied attempting to reset your PIN."
 msgstr "Заборонено дозвіл при спробі скинути ваш PIN."
 
-#: public/js/error-codes.js:30
+#: public/js/error-codes.js:30 public/js/error-codes.js:33
 msgid "The request timed out whilst attempting to reset your PIN."
 msgstr "Поки тривала спроба скинути ваш PIN, вийшов час очікування запиту."
 
-#: public/js/error-codes.js:31
+#: public/js/error-codes.js:31 public/js/error-codes.js:35
 msgid "The transaction failed. You have not been charged for this purchase."
 msgstr "Транзакція невдала. З вас не знято гроші за цю покупку."
 
-#: public/js/error-codes.js:32
+#: public/js/error-codes.js:32 public/js/error-codes.js:36
 msgid "The payment method or price point is not supported for this region or operator."
 msgstr "Тип оплати або стандартна ціна не підтримується для цього регіону або оператора."
 
@@ -377,3 +376,7 @@ msgstr "Сталася помилка. Закрийте вікно для про
 #: public/js/views/page.js:161
 msgid "Completing Payment"
 msgstr "Завершення платежу"
+
+#: public/js/error-codes.js:12 public/js/error-codes.js:17 public/js/error-codes.js:18 public/js/error-codes.js:34
+msgid "Product cannot be purchased due to configuration error."
+msgstr ""

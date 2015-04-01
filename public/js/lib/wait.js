@@ -160,6 +160,7 @@ define([
     });
 
     request.fail(function($xhr, textStatus) {
+      var error_reason = utils.errorCodeFromXhr($xhr, '');
 
       if (textStatus === 'timeout') {
         clear();
@@ -177,12 +178,14 @@ define([
         });
 
       } else {
-        logger.log('error checking transaction');
+        clear();
+        logger.log('error reason', error_reason);
         utils.trackEvent({'action': 'payment',
                           'label': 'Error Checking Transaction'});
-        pollTimeout = window.setTimeout(function() {
-          poll(expectedStatus);
-        }, settings.poll_interval);
+        app.throbber.close();
+        return app.error.render({
+          errorCode: error_reason,
+        });
       }
     });
   }

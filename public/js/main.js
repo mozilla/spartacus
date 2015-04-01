@@ -14,8 +14,9 @@ require(['require-config'], function() {
     // Common ajax settings.
     $.ajaxSetup({
       headers: {
-        "X-CSRFToken": $('meta[name=csrf]').attr('content')
+        "X-CSRFToken": $('meta[name=csrf]').attr('content'),
       },
+      dataType: "json",
       timeout: settings.ajax_timeout
     });
 

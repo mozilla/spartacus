@@ -324,6 +324,7 @@ function fakeWaitPoll(options) {
   if (typeof options.provider === 'undefined') {
     options.provider = 'bango';
   }
+  var errorCode = options.errorCode || null;
   var statusCode = options.statusCode || 200;
   var timeout = options.timeout || false;
   var url;
@@ -347,14 +348,21 @@ function fakeWaitPoll(options) {
     casper.echo('Setting up a fake XHR timeout for wait Poll', 'INFO');
     clientTimeoutResponse('GET', url);
   } else {
-    casper.evaluate(function(url, provider, statusCode, statusData, urlData) {
-      window.server.respondWith('GET', url,
-        [statusCode, {'Content-Type': 'application/json'}, JSON.stringify({
-          'provider': provider,
-          'status': statusData,
-          'url': urlData,
-        })]);
-    }, url, options.provider, statusCode, statusData, urlData);
+    casper.evaluate(
+      function(url, provider, statusCode, statusData, urlData, errorCode) {
+        var res;
+        if (errorCode === null) {
+          res = {'provider': provider, 'status': statusData, 'url': urlData};
+        } else {
+          res = {'error_code': errorCode};
+        }
+        window.server.respondWith('GET', url, [
+          statusCode,
+          {'Content-Type': 'application/json'},
+          JSON.stringify(res)
+        ]);
+      },
+      url, options.provider, statusCode, statusData, urlData, errorCode);
   }
 }
 

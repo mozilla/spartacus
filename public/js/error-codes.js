@@ -9,6 +9,7 @@ define([
   var gettext = i18n.gettext;
 
   return {
+    PROVIDER_TRANSACTION: gettext('Product cannot be purchased due to configuration error.'),
     BUYER_NOT_CONFIGURED: gettext('Product cannot be purchased due to configuration error.'),
     INTERNAL_TIMEOUT: gettext('An internal web request timed out.'),
     LOGIN_TIMEOUT: gettext('The system timed out while trying to log in.'),

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-04-01 16:02+0000\n"
-"PO-Revision-Date: 2015-03-19 23:01+0000\n"
+"PO-Revision-Date: 2015-04-02 17:51+0000\n"
 "Last-Translator: Andreas <az@kth.se>\n"
 "Language-Team: none\n"
 "Language: sv_SE\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1426806103.0\n"
+"X-POOTLE-MTIME: 1427997079.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18 public/js/views/payment-failed.js:19
 msgid "Payment cancelled."
@@ -379,4 +379,4 @@ msgstr "Slutför betalning"
 
 #: public/js/error-codes.js:12 public/js/error-codes.js:17 public/js/error-codes.js:18 public/js/error-codes.js:34
 msgid "Product cannot be purchased due to configuration error."
-msgstr ""
+msgstr "Produkten kan inte köpas på grund av konfigurationsfel."

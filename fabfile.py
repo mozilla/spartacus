@@ -54,6 +54,8 @@ def deploy_jenkins():
     rpm.local_install()
     rpm.remote_install(['web'])
 
+    rpm.clean()
+
 
 @task
 def update():

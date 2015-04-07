@@ -5,7 +5,7 @@ module.exports = {
     pageclass: 'full-error',
     heading: "Error Heading",
     msg: "An error message telling the user what happened",
-    errorCode: "ERROR_CODE",
+    errorCode: "ERROR_CODE_TOO_LONG_DOESNT_FIT",
     cancelModifier: 'cancel cta',
     cancelText: 'Cancel',
     showCancel: true,

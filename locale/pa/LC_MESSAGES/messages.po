@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-01 16:02+0000\n"
+"POT-Creation-Date: 2015-04-08 16:08+0000\n"
 "PO-Revision-Date: 2015-03-15 00:14+0000\n"
 "Last-Translator: Anonymous Pootle User\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -192,83 +192,83 @@ msgstr "ਲਾਕ ਸੀ"
 msgid "Setting up payment"
 msgstr "ਭੁਗਤਾਨ ਸੈਟ ਕਰ ਰਿਹਾ"
 
-#: public/js/error-codes.js:12 public/js/error-codes.js:13
+#: public/js/error-codes.js:12 public/js/error-codes.js:13 public/js/error-codes.js:14
 msgid "An internal web request timed out."
 msgstr "ਅੰਦਰੂਨੀ ਵੈੱਬ ਬੇਨਤੀ ਲਈ ਸਮਾਂ ਸਮਾਪਤ ਹੋਇਆ।"
 
-#: public/js/error-codes.js:13 public/js/error-codes.js:14
+#: public/js/error-codes.js:13 public/js/error-codes.js:14 public/js/error-codes.js:15
 msgid "The system timed out while trying to log in."
 msgstr "ਸਿਸਟਮ ਸਮਾਂ-ਸਮਾਪਤ ਹੋਇਆ, ਜਦੋਂ ਕਿ ਲਾਗਇਨ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕੀਤੀ।"
 
-#: public/js/error-codes.js:14 public/js/error-codes.js:15
+#: public/js/error-codes.js:14 public/js/error-codes.js:15 public/js/error-codes.js:16
 msgid "An error occurred whilst trying to log out."
 msgstr "ਲਾਗਆਉਟ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਦੇ ਦੌਰਾਨ ਗਲਤੀ ਆਈ।"
 
-#: public/js/error-codes.js:15 public/js/error-codes.js:16
+#: public/js/error-codes.js:15 public/js/error-codes.js:16 public/js/error-codes.js:17
 msgid "The system timed out while trying to log out."
 msgstr "ਲਾਗ ਆਉਟ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਦੇ ਦੌਰਾਨ ਸਿਸਟਮ ਸਮਾਂ-ਸਮਾਪਤ ਹੋਇਆ।"
 
-#: public/js/error-codes.js:16 public/js/error-codes.js:19
+#: public/js/error-codes.js:16 public/js/error-codes.js:19 public/js/error-codes.js:20
 msgid "Payments are temporarily disabled."
 msgstr "ਭੁਗਤਾਨ ਆਰਜ਼ੀ ਤੌਰ ਉੱਤੇ ਅਸਮਰੱਥ ਹੈ।"
 
-#: public/js/error-codes.js:17 public/js/error-codes.js:20
+#: public/js/error-codes.js:17 public/js/error-codes.js:20 public/js/error-codes.js:21
 msgid "An unexpected error occurred when creating your PIN."
 msgstr "ਤੁਹਾਡਾ ਪਿੰਨ ਬਣਾਉਣ ਦੌਰਾਨ ਅਚਾਨਕ ਗਲਤੀ ਆਈ ਹੈ।"
 
-#: public/js/error-codes.js:18 public/js/error-codes.js:27 public/js/error-codes.js:21 public/js/error-codes.js:30
+#: public/js/error-codes.js:18 public/js/error-codes.js:27 public/js/error-codes.js:21 public/js/error-codes.js:30 public/js/error-codes.js:22 public/js/error-codes.js:31
 msgid "The PIN data submitted was invalid."
 msgstr "ਦਿੱਤਾ ਗਿਆ ਪਿੰਨ ਡਾਟਾ ਗਲਤ ਹੈ।"
 
-#: public/js/error-codes.js:19 public/js/error-codes.js:22
+#: public/js/error-codes.js:19 public/js/error-codes.js:22 public/js/error-codes.js:23
 msgid "No valid user found whilst attempting to create your PIN"
 msgstr "ਤੁਹਾਡਾ ਪਿੰਨ ਬਣਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਦੇ ਦੌਰਾਨ ਕੋਈ ਜ਼ਾਇਜ਼ ਯੂਜ਼ਰ ਨਹੀਂ ਲੱਭਿਆ"
 
-#: public/js/error-codes.js:20 public/js/error-codes.js:23
+#: public/js/error-codes.js:20 public/js/error-codes.js:23 public/js/error-codes.js:24
 msgid "Permission denied attempting to create your PIN."
 msgstr "ਤੁਹਾਡਾ ਪਿੰਨ ਬਣਾਉਣ ਦੇ ਦੌਰਾਨ ਅਧਿਕਾਰ ਪਾਬੰਦੀ ਹੈ।"
 
-#: public/js/error-codes.js:21 public/js/error-codes.js:24
+#: public/js/error-codes.js:21 public/js/error-codes.js:24 public/js/error-codes.js:25
 msgid "The request timed out whilst attempting to create your PIN."
 msgstr "ਤੁਹਾਡਾ ਪਿੰਨ ਬਣਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਦੌਰਾਨ ਸਮਾਂ ਬੇਨਤੀ ਸਮਾਪਤ ਹੋਈ।"
 
-#: public/js/error-codes.js:22 public/js/error-codes.js:25
+#: public/js/error-codes.js:22 public/js/error-codes.js:25 public/js/error-codes.js:26
 msgid "An unexpected error occurred whilst checking your PIN."
 msgstr "ਤੁਹਾਡੇ ਪਿੰਨ ਨੂੰ ਚੈੱਕ ਕਰਨ ਦੇ ਦੌਰਾਨ ਅਚਾਨਕ ਗਲਤੀ ਆਈ।"
 
-#: public/js/error-codes.js:23 public/js/error-codes.js:26
+#: public/js/error-codes.js:23 public/js/error-codes.js:26 public/js/error-codes.js:27
 msgid "No valid user found whilst checking your PIN"
 msgstr "ਤੁਹਾਡਾ ਪਿੰਨ ਚੈੱਕ ਕਰਨ ਦੇ ਦੌਰਾਨ ਕੋਈ ਜਾਇਜ਼ ਯੂਜ਼ਰ ਨਹੀਂ ਲੱਭਿਆ"
 
-#: public/js/error-codes.js:24 public/js/error-codes.js:27
+#: public/js/error-codes.js:24 public/js/error-codes.js:27 public/js/error-codes.js:28
 msgid "Permission denied attempting to check your PIN"
 msgstr "ਤੁਹਾਡਾ ਪੈਨ ਚੈੱਕ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਦੌਰਾਨ ਅਧਿਕਾਰ ਪਾਬੰਦੀ"
 
-#: public/js/error-codes.js:25 public/js/error-codes.js:28
+#: public/js/error-codes.js:25 public/js/error-codes.js:28 public/js/error-codes.js:29
 msgid "The request timed out whilst trying to check your PIN"
 msgstr "ਤੁਹਾਡੇ ਪਿੰਨ ਨੂੰ ਚੈੱਕ ਕਰਨ ਦੇ ਦੌਰਾਨ ਬੇਨਤੀ ਲਈ ਸਮਾਂ-ਸਮਾਪਤ"
 
-#: public/js/error-codes.js:26 public/js/error-codes.js:29
+#: public/js/error-codes.js:26 public/js/error-codes.js:29 public/js/error-codes.js:30
 msgid "An unexpected error occurred when resetting your PIN."
 msgstr "ਤੁਹਾਡੇ ਪਿੰਨ ਨੂੰ ਮੁੜ-ਸੈੱਟ ਕਰਨ ਦੇ ਦੌਰਾਨ ਅਚਾਨਕ ਗਲਤੀ ਆਈ।"
 
-#: public/js/error-codes.js:28 public/js/error-codes.js:31
+#: public/js/error-codes.js:28 public/js/error-codes.js:31 public/js/error-codes.js:32
 msgid "No valid user found whilst attempting to reset your PIN"
 msgstr "ਤੁਹਾਡੇ ਪਿੰਨ ਨੂੰ ਮੁੜ-ਸੈੱਟ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਦੌਰਾਨ ਕੋਈ ਜਾਇਜ਼ ਯੂਜ਼ਰ ਨਹੀਂ ਲੱਭਿਆ"
 
-#: public/js/error-codes.js:29 public/js/error-codes.js:32
+#: public/js/error-codes.js:29 public/js/error-codes.js:32 public/js/error-codes.js:33
 msgid "Permission denied attempting to reset your PIN."
 msgstr "ਤੁਹਾਡੇ ਪਿੰਨ ਨੂੰ ਮੁੜ-ਸੈੱਟ ਕਰਨ ਦੇ ਦੌਰਾਨ ਅਧਿਕਾਰ ਪਾਬੰਦੀ ਹੈ।"
 
-#: public/js/error-codes.js:30 public/js/error-codes.js:33
+#: public/js/error-codes.js:30 public/js/error-codes.js:33 public/js/error-codes.js:34
 msgid "The request timed out whilst attempting to reset your PIN."
 msgstr "ਤੁਹਾਡੇ ਪਿੰਨ ਨੂੰ ਮੁੜ-ਸੈੱਟ ਕਰਨ ਦੇ ਦੌਰਾਨ ਬੇਨਤੀ ਲਈ ਸਮਾਂ-ਸਮਾਪਤ ਹੋਇਆ।"
 
-#: public/js/error-codes.js:31 public/js/error-codes.js:35
+#: public/js/error-codes.js:31 public/js/error-codes.js:35 public/js/error-codes.js:36
 msgid "The transaction failed. You have not been charged for this purchase."
 msgstr "ਲੈਣ-ਦੇਣ ਫੇਲ੍ਹ ਹੋਇਆ। ਤੁਹਾਨੂੰ ਇਹ ਖਰੀਦਦਾਰੀ ਲਈ ਕੋਈ ਖ਼ਰਚਾ ਨਹੀਂ ਲੱਗੇਗਾ।"
 
-#: public/js/error-codes.js:32 public/js/error-codes.js:36
+#: public/js/error-codes.js:32 public/js/error-codes.js:36 public/js/error-codes.js:37
 msgid "The payment method or price point is not supported for this region or operator."
 msgstr "ਇਹ ਖੇਤਰ ਜਾਂ ਓਪਰੇਟਰ ਲਈ ਭੁਗਤਾਨ ਢੰਗ ਜਾਂ ਕੀਮਤ ਸਹਾਇਕ ਨਹੀਂ ਹੈ।"
 
@@ -379,6 +379,6 @@ msgstr "ਲਾਗਆਉਟ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਦੇ ਦੌਰਾ�
 msgid "Completing Payment"
 msgstr "ਭੁਗਤਾਨ ਪੂਰਾ ਕੀਤਾ ਜਾਂਦਾ ਹੈ"
 
-#: public/js/error-codes.js:12 public/js/error-codes.js:17 public/js/error-codes.js:18 public/js/error-codes.js:34
+#: public/js/error-codes.js:12 public/js/error-codes.js:17 public/js/error-codes.js:18 public/js/error-codes.js:34 public/js/error-codes.js:13 public/js/error-codes.js:19 public/js/error-codes.js:35
 msgid "Product cannot be purchased due to configuration error."
 msgstr ""

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-01 16:02+0000\n"
+"POT-Creation-Date: 2015-04-08 16:08+0000\n"
 "PO-Revision-Date: 2015-03-20 13:22+0000\n"
 "Last-Translator: ig-NG02_Chigozie <ezeanichigozie@ikolo.com.ng>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -192,83 +192,83 @@ msgstr "Akpọchiri ya                "
 msgid "Setting up payment"
 msgstr " A na eguzobe ịkwụ ụgwọ                "
 
-#: public/js/error-codes.js:12 public/js/error-codes.js:13
+#: public/js/error-codes.js:12 public/js/error-codes.js:13 public/js/error-codes.js:14
 msgid "An internal web request timed out."
 msgstr "  Oge gwụnahụrụ ikike web nke ime.                "
 
-#: public/js/error-codes.js:13 public/js/error-codes.js:14
+#: public/js/error-codes.js:13 public/js/error-codes.js:14 public/js/error-codes.js:15
 msgid "The system timed out while trying to log in."
 msgstr "Oge dị n'igwe komputa gwụrụ mgbe ọ na anwa ịbanye                 "
 
-#: public/js/error-codes.js:14 public/js/error-codes.js:15
+#: public/js/error-codes.js:14 public/js/error-codes.js:15 public/js/error-codes.js:16
 msgid "An error occurred whilst trying to log out."
 msgstr " Enwere nsogbu mgbe ọ na anwa ịpụ.                "
 
-#: public/js/error-codes.js:15 public/js/error-codes.js:16
+#: public/js/error-codes.js:15 public/js/error-codes.js:16 public/js/error-codes.js:17
 msgid "The system timed out while trying to log out."
 msgstr "Oge gwụrụ mgbe ọchọrọ ịpụ.                "
 
-#: public/js/error-codes.js:16 public/js/error-codes.js:19
+#: public/js/error-codes.js:16 public/js/error-codes.js:19 public/js/error-codes.js:20
 msgid "Payments are temporarily disabled."
 msgstr "Agbanyụrụ ebe ịkwụ ụgwọ na mkpirimkpi oge.                "
 
-#: public/js/error-codes.js:17 public/js/error-codes.js:20
+#: public/js/error-codes.js:17 public/js/error-codes.js:20 public/js/error-codes.js:21
 msgid "An unexpected error occurred when creating your PIN."
 msgstr "Enwere ọdachi mgbe ana ekepụta ikike mbanye."
 
-#: public/js/error-codes.js:18 public/js/error-codes.js:27 public/js/error-codes.js:21 public/js/error-codes.js:30
+#: public/js/error-codes.js:18 public/js/error-codes.js:27 public/js/error-codes.js:21 public/js/error-codes.js:30 public/js/error-codes.js:22 public/js/error-codes.js:31
 msgid "The PIN data submitted was invalid."
 msgstr " Ndekọ enyefere adabaghị.                "
 
-#: public/js/error-codes.js:19 public/js/error-codes.js:22
+#: public/js/error-codes.js:19 public/js/error-codes.js:22 public/js/error-codes.js:23
 msgid "No valid user found whilst attempting to create your PIN"
 msgstr "Onweghị onye ahụrụ nwe ya mgbe achọrọ ikepụta ikike mbanye gị                                "
 
-#: public/js/error-codes.js:20 public/js/error-codes.js:23
+#: public/js/error-codes.js:20 public/js/error-codes.js:23 public/js/error-codes.js:24
 msgid "Permission denied attempting to create your PIN."
 msgstr "Ekweghị ka ịbanye mgbe ịchọrọ ikepụta ikike mbanye gị.                                "
 
-#: public/js/error-codes.js:21 public/js/error-codes.js:24
+#: public/js/error-codes.js:21 public/js/error-codes.js:24 public/js/error-codes.js:25
 msgid "The request timed out whilst attempting to create your PIN."
 msgstr "Oge gwụrụ mgbe achọrọ ikepụta ikike mbanye gị.                                "
 
-#: public/js/error-codes.js:22 public/js/error-codes.js:25
+#: public/js/error-codes.js:22 public/js/error-codes.js:25 public/js/error-codes.js:26
 msgid "An unexpected error occurred whilst checking your PIN."
 msgstr "Enwere ihe mgbochi mgbe ana elebara ikike mbanye gị anya.                "
 
-#: public/js/error-codes.js:23 public/js/error-codes.js:26
+#: public/js/error-codes.js:23 public/js/error-codes.js:26 public/js/error-codes.js:27
 msgid "No valid user found whilst checking your PIN"
 msgstr " Onweghị onye ahụrụ nwe ya mgbe ana elebara ikike mbanye gị anya                "
 
-#: public/js/error-codes.js:24 public/js/error-codes.js:27
+#: public/js/error-codes.js:24 public/js/error-codes.js:27 public/js/error-codes.js:28
 msgid "Permission denied attempting to check your PIN"
 msgstr "Ekweghị ka ịbanye mgbe ịnwara ile maka ikike mbanye gị                "
 
-#: public/js/error-codes.js:25 public/js/error-codes.js:28
+#: public/js/error-codes.js:25 public/js/error-codes.js:28 public/js/error-codes.js:29
 msgid "The request timed out whilst trying to check your PIN"
 msgstr " Oge gwụrụ mgbe ịchọrọ ile ikike mbanye gị                "
 
-#: public/js/error-codes.js:26 public/js/error-codes.js:29
+#: public/js/error-codes.js:26 public/js/error-codes.js:29 public/js/error-codes.js:30
 msgid "An unexpected error occurred when resetting your PIN."
 msgstr "Enwere ọdachi mgbe achọrọ idezigharị ikike mbanye gị.                "
 
-#: public/js/error-codes.js:28 public/js/error-codes.js:31
+#: public/js/error-codes.js:28 public/js/error-codes.js:31 public/js/error-codes.js:32
 msgid "No valid user found whilst attempting to reset your PIN"
 msgstr "Onweghị onye nwe ya ahụrụ mgbe achọrọ idezigharị ikike mbanye gị                "
 
-#: public/js/error-codes.js:29 public/js/error-codes.js:32
+#: public/js/error-codes.js:29 public/js/error-codes.js:32 public/js/error-codes.js:33
 msgid "Permission denied attempting to reset your PIN."
 msgstr "Ekweghị ka ịbanye dezigharịa ikike mbanye gị.                "
 
-#: public/js/error-codes.js:30 public/js/error-codes.js:33
+#: public/js/error-codes.js:30 public/js/error-codes.js:33 public/js/error-codes.js:34
 msgid "The request timed out whilst attempting to reset your PIN."
 msgstr "Oge gwụrụ mgbe achọrọ idezigharị ikike mbanye gị.                "
 
-#: public/js/error-codes.js:31 public/js/error-codes.js:35
+#: public/js/error-codes.js:31 public/js/error-codes.js:35 public/js/error-codes.js:36
 msgid "The transaction failed. You have not been charged for this purchase."
 msgstr " Azụahịa ahụ agaghị. Onwebeghị ego anara gị na ya.                "
 
-#: public/js/error-codes.js:32 public/js/error-codes.js:36
+#: public/js/error-codes.js:32 public/js/error-codes.js:36 public/js/error-codes.js:37
 msgid "The payment method or price point is not supported for this region or operator."
 msgstr " Anaghị anabata usoro ịkwụ ụgwọ a n'oke ala ebe a.                "
 
@@ -377,6 +377,6 @@ msgstr "Mperi dapụtara. Mechie mpio ahụ iji gaa n'ihu"
 msgid "Completing Payment"
 msgstr "Na-emezu Akwụmụgwọ"
 
-#: public/js/error-codes.js:12 public/js/error-codes.js:17 public/js/error-codes.js:18 public/js/error-codes.js:34
+#: public/js/error-codes.js:12 public/js/error-codes.js:17 public/js/error-codes.js:18 public/js/error-codes.js:34 public/js/error-codes.js:13 public/js/error-codes.js:19 public/js/error-codes.js:35
 msgid "Product cannot be purchased due to configuration error."
 msgstr ""

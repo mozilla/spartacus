@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-01 16:02+0000\n"
+"POT-Creation-Date: 2015-04-08 16:08+0000\n"
 "PO-Revision-Date: 2015-03-19 02:16+0000\n"
 "Last-Translator: Jordi <jordis@softcatala.cat>\n"
 "Language-Team: Catalan <ca@dodds.net>\n"
@@ -193,83 +193,83 @@ msgstr "Estava blocat"
 msgid "Setting up payment"
 msgstr "S'està configurant el pagament"
 
-#: public/js/error-codes.js:12 public/js/error-codes.js:13
+#: public/js/error-codes.js:12 public/js/error-codes.js:13 public/js/error-codes.js:14
 msgid "An internal web request timed out."
 msgstr "S'ha esgotat el temps d'espera d'una sol·licitud web interna."
 
-#: public/js/error-codes.js:13 public/js/error-codes.js:14
+#: public/js/error-codes.js:13 public/js/error-codes.js:14 public/js/error-codes.js:15
 msgid "The system timed out while trying to log in."
 msgstr "S'ha esgotat el temps d'espera del sistema en intentar iniciar la sessió."
 
-#: public/js/error-codes.js:14 public/js/error-codes.js:15
+#: public/js/error-codes.js:14 public/js/error-codes.js:15 public/js/error-codes.js:16
 msgid "An error occurred whilst trying to log out."
 msgstr "S'ha produït un error en intentar tancar la sessió."
 
-#: public/js/error-codes.js:15 public/js/error-codes.js:16
+#: public/js/error-codes.js:15 public/js/error-codes.js:16 public/js/error-codes.js:17
 msgid "The system timed out while trying to log out."
 msgstr "S'ha esgotat el temps d'espera del sistema en intentar tancar la sessió."
 
-#: public/js/error-codes.js:16 public/js/error-codes.js:19
+#: public/js/error-codes.js:16 public/js/error-codes.js:19 public/js/error-codes.js:20
 msgid "Payments are temporarily disabled."
 msgstr "Els pagaments estan desactivats temporalment."
 
-#: public/js/error-codes.js:17 public/js/error-codes.js:20
+#: public/js/error-codes.js:17 public/js/error-codes.js:20 public/js/error-codes.js:21
 msgid "An unexpected error occurred when creating your PIN."
 msgstr "S'ha produït un error inesperat en crear el PIN."
 
-#: public/js/error-codes.js:18 public/js/error-codes.js:27 public/js/error-codes.js:21 public/js/error-codes.js:30
+#: public/js/error-codes.js:18 public/js/error-codes.js:27 public/js/error-codes.js:21 public/js/error-codes.js:30 public/js/error-codes.js:22 public/js/error-codes.js:31
 msgid "The PIN data submitted was invalid."
 msgstr "Les dades del PIN indicades no són vàlides."
 
-#: public/js/error-codes.js:19 public/js/error-codes.js:22
+#: public/js/error-codes.js:19 public/js/error-codes.js:22 public/js/error-codes.js:23
 msgid "No valid user found whilst attempting to create your PIN"
 msgstr "No s'ha trobat cap usuari vàlid en intentar crear el PIN"
 
-#: public/js/error-codes.js:20 public/js/error-codes.js:23
+#: public/js/error-codes.js:20 public/js/error-codes.js:23 public/js/error-codes.js:24
 msgid "Permission denied attempting to create your PIN."
 msgstr "S'ha denegat el permís en intentar crear el PIN."
 
-#: public/js/error-codes.js:21 public/js/error-codes.js:24
+#: public/js/error-codes.js:21 public/js/error-codes.js:24 public/js/error-codes.js:25
 msgid "The request timed out whilst attempting to create your PIN."
 msgstr "S'ha esgotat el temps d'espera de la sol·licitud en intentar crear el PIN."
 
-#: public/js/error-codes.js:22 public/js/error-codes.js:25
+#: public/js/error-codes.js:22 public/js/error-codes.js:25 public/js/error-codes.js:26
 msgid "An unexpected error occurred whilst checking your PIN."
 msgstr "S'ha produït un error en comprovar el PIN."
 
-#: public/js/error-codes.js:23 public/js/error-codes.js:26
+#: public/js/error-codes.js:23 public/js/error-codes.js:26 public/js/error-codes.js:27
 msgid "No valid user found whilst checking your PIN"
 msgstr "No s'ha trobat cap usuari vàlid en comprovar el PIN"
 
-#: public/js/error-codes.js:24 public/js/error-codes.js:27
+#: public/js/error-codes.js:24 public/js/error-codes.js:27 public/js/error-codes.js:28
 msgid "Permission denied attempting to check your PIN"
 msgstr "S'ha denegat el permís en intentar comprovar el PIN"
 
-#: public/js/error-codes.js:25 public/js/error-codes.js:28
+#: public/js/error-codes.js:25 public/js/error-codes.js:28 public/js/error-codes.js:29
 msgid "The request timed out whilst trying to check your PIN"
 msgstr "S'ha esgotat el temps d'espera de la sol·licitud en intentar comprovar el PIN"
 
-#: public/js/error-codes.js:26 public/js/error-codes.js:29
+#: public/js/error-codes.js:26 public/js/error-codes.js:29 public/js/error-codes.js:30
 msgid "An unexpected error occurred when resetting your PIN."
 msgstr "S'ha produït un error inesperat en reiniciar el PIN."
 
-#: public/js/error-codes.js:28 public/js/error-codes.js:31
+#: public/js/error-codes.js:28 public/js/error-codes.js:31 public/js/error-codes.js:32
 msgid "No valid user found whilst attempting to reset your PIN"
 msgstr "No s'ha trobat cap usuari vàlid en intentar reiniciar el PIN"
 
-#: public/js/error-codes.js:29 public/js/error-codes.js:32
+#: public/js/error-codes.js:29 public/js/error-codes.js:32 public/js/error-codes.js:33
 msgid "Permission denied attempting to reset your PIN."
 msgstr "S'ha denegat el permís en intentar reiniciar el PIN."
 
-#: public/js/error-codes.js:30 public/js/error-codes.js:33
+#: public/js/error-codes.js:30 public/js/error-codes.js:33 public/js/error-codes.js:34
 msgid "The request timed out whilst attempting to reset your PIN."
 msgstr "S'ha esgotat el temps d'espera de la sol·licitud en intentar reiniciar el PIN."
 
-#: public/js/error-codes.js:31 public/js/error-codes.js:35
+#: public/js/error-codes.js:31 public/js/error-codes.js:35 public/js/error-codes.js:36
 msgid "The transaction failed. You have not been charged for this purchase."
 msgstr "Ha fallat la transacció. Aquesta compra no se us ha cobrat."
 
-#: public/js/error-codes.js:32 public/js/error-codes.js:36
+#: public/js/error-codes.js:32 public/js/error-codes.js:36 public/js/error-codes.js:37
 msgid "The payment method or price point is not supported for this region or operator."
 msgstr "Aquesta regió o aquest operador no admeten el mètode de pagament o el preu."
 
@@ -378,6 +378,6 @@ msgstr "S'ha produït un error. Tanqueu la finestra per continuar"
 msgid "Completing Payment"
 msgstr "S'està completant el pagament"
 
-#: public/js/error-codes.js:12 public/js/error-codes.js:17 public/js/error-codes.js:18 public/js/error-codes.js:34
+#: public/js/error-codes.js:12 public/js/error-codes.js:17 public/js/error-codes.js:18 public/js/error-codes.js:34 public/js/error-codes.js:13 public/js/error-codes.js:19 public/js/error-codes.js:35
 msgid "Product cannot be purchased due to configuration error."
 msgstr ""

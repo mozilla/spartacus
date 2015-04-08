@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-01 16:02+0000\n"
+"POT-Creation-Date: 2015-04-08 16:08+0000\n"
 "PO-Revision-Date: 2015-03-20 14:52+0000\n"
 "Last-Translator: yo-NG02_Oluwatosin <dir22004@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -192,83 +192,83 @@ msgstr "Titì Pa"
 msgid "Setting up payment"
 msgstr "Ṣe ààtò fún ìsanwó                "
 
-#: public/js/error-codes.js:12 public/js/error-codes.js:13
+#: public/js/error-codes.js:12 public/js/error-codes.js:13 public/js/error-codes.js:14
 msgid "An internal web request timed out."
 msgstr "Wẹ́ẹ̀bù tinú́ tí o béèrè tí a fún ní àkókò titán.                "
 
-#: public/js/error-codes.js:13 public/js/error-codes.js:14
+#: public/js/error-codes.js:13 public/js/error-codes.js:14 public/js/error-codes.js:15
 msgid "The system timed out while trying to log in."
 msgstr "Ìlànà ètò náà tí a fún ní àkókò titán nígbà tí o ń gbìyànjú láti wọlé.                "
 
-#: public/js/error-codes.js:14 public/js/error-codes.js:15
+#: public/js/error-codes.js:14 public/js/error-codes.js:15 public/js/error-codes.js:16
 msgid "An error occurred whilst trying to log out."
 msgstr "Ìlànà ètò wáyé nígbà tí o ń gbìyànjú láti wọlé.                "
 
-#: public/js/error-codes.js:15 public/js/error-codes.js:16
+#: public/js/error-codes.js:15 public/js/error-codes.js:16 public/js/error-codes.js:17
 msgid "The system timed out while trying to log out."
 msgstr "Ìlànà ètò naa tí a fún ní àkókò tan ni àkókò ìtẹ̀jáde.                "
 
-#: public/js/error-codes.js:16 public/js/error-codes.js:19
+#: public/js/error-codes.js:16 public/js/error-codes.js:19 public/js/error-codes.js:20
 msgid "Payments are temporarily disabled."
 msgstr "Ọ̀nà ìsanwó ni ìdádúró diẹ.                "
 
-#: public/js/error-codes.js:17 public/js/error-codes.js:20
+#: public/js/error-codes.js:17 public/js/error-codes.js:20 public/js/error-codes.js:21
 msgid "An unexpected error occurred when creating your PIN."
 msgstr "Àṣìṣe àìrótẹ́lẹ̀ wáyé nígbà ìṣẹ̀dá PIN rẹ.                "
 
-#: public/js/error-codes.js:18 public/js/error-codes.js:27 public/js/error-codes.js:21 public/js/error-codes.js:30
+#: public/js/error-codes.js:18 public/js/error-codes.js:27 public/js/error-codes.js:21 public/js/error-codes.js:30 public/js/error-codes.js:22 public/js/error-codes.js:31
 msgid "The PIN data submitted was invalid."
 msgstr "Dátà PIN tí o fílẹ̀ kòtọ́.                "
 
-#: public/js/error-codes.js:19 public/js/error-codes.js:22
+#: public/js/error-codes.js:19 public/js/error-codes.js:22 public/js/error-codes.js:23
 msgid "No valid user found whilst attempting to create your PIN"
 msgstr "Kòsí olùṣàmúlò gbóógì nígbà ìgbìyànjú láti ṣẹ̀dá PIN                "
 
-#: public/js/error-codes.js:20 public/js/error-codes.js:23
+#: public/js/error-codes.js:20 public/js/error-codes.js:23 public/js/error-codes.js:24
 msgid "Permission denied attempting to create your PIN."
 msgstr "Kòsí àyè ní ìgbìyàjú láti ṣẹ̀dá PIN rẹ.                "
 
-#: public/js/error-codes.js:21 public/js/error-codes.js:24
+#: public/js/error-codes.js:21 public/js/error-codes.js:24 public/js/error-codes.js:25
 msgid "The request timed out whilst attempting to create your PIN."
 msgstr "Ohun tí o bèèrè fún tán nígbà ìbéère ìṣẹ̀dá PIN rẹ.                "
 
-#: public/js/error-codes.js:22 public/js/error-codes.js:25
+#: public/js/error-codes.js:22 public/js/error-codes.js:25 public/js/error-codes.js:26
 msgid "An unexpected error occurred whilst checking your PIN."
 msgstr "Àṣìṣe àìrótẹ́lẹ̀ wáyé lákòkò àyẹ̀wò PIN rẹ.                "
 
-#: public/js/error-codes.js:23 public/js/error-codes.js:26
+#: public/js/error-codes.js:23 public/js/error-codes.js:26 public/js/error-codes.js:27
 msgid "No valid user found whilst checking your PIN"
 msgstr "Kòsí olùṣàmúlò tó tọ̀nà lákòkó àyẹ̀wò PIN rẹ                "
 
-#: public/js/error-codes.js:24 public/js/error-codes.js:27
+#: public/js/error-codes.js:24 public/js/error-codes.js:27 public/js/error-codes.js:28
 msgid "Permission denied attempting to check your PIN"
 msgstr "Kòsí àyè lákokó ìgbìyànjú àyẹ̀wò PIN rẹ                "
 
-#: public/js/error-codes.js:25 public/js/error-codes.js:28
+#: public/js/error-codes.js:25 public/js/error-codes.js:28 public/js/error-codes.js:29
 msgid "The request timed out whilst trying to check your PIN"
 msgstr "Àkókò tí o bèèrè tán ní ìgbà àyẹ̀wò PIN rẹ                "
 
-#: public/js/error-codes.js:26 public/js/error-codes.js:29
+#: public/js/error-codes.js:26 public/js/error-codes.js:29 public/js/error-codes.js:30
 msgid "An unexpected error occurred when resetting your PIN."
 msgstr "Àṣìṣe àìròtẹ́lẹ̀ wáyé nígbà àtúntò PIN rẹ.                "
 
-#: public/js/error-codes.js:28 public/js/error-codes.js:31
+#: public/js/error-codes.js:28 public/js/error-codes.js:31 public/js/error-codes.js:32
 msgid "No valid user found whilst attempting to reset your PIN"
 msgstr "Kòsí olùṣàmúlò tó tọ́nà nígbà ìgbìyànjú àtúntò PIN rẹ                "
 
-#: public/js/error-codes.js:29 public/js/error-codes.js:32
+#: public/js/error-codes.js:29 public/js/error-codes.js:32 public/js/error-codes.js:33
 msgid "Permission denied attempting to reset your PIN."
 msgstr "Kòsí àyè nígbà ìgbìyànjú àtúntò PIN rẹ.                "
 
-#: public/js/error-codes.js:30 public/js/error-codes.js:33
+#: public/js/error-codes.js:30 public/js/error-codes.js:33 public/js/error-codes.js:34
 msgid "The request timed out whilst attempting to reset your PIN."
 msgstr "Àkókò tán nígbà ìgbìyànjú àtúntò PIN rẹ.                "
 
-#: public/js/error-codes.js:31 public/js/error-codes.js:35
+#: public/js/error-codes.js:31 public/js/error-codes.js:35 public/js/error-codes.js:36
 msgid "The transaction failed. You have not been charged for this purchase."
 msgstr "Ìbáṣepọ̀ kúnà. Akòíti gba owó fún ríra yíì.                "
 
-#: public/js/error-codes.js:32 public/js/error-codes.js:36
+#: public/js/error-codes.js:32 public/js/error-codes.js:36 public/js/error-codes.js:37
 msgid "The payment method or price point is not supported for this region or operator."
 msgstr "Ọ̀nà ìṣanwó tàbi ibi ìdíyelé ni akògbà fún ẹkùn tàbí iṣẹ́ yìí.                "
 
@@ -377,6 +377,6 @@ msgstr "Àṣiṣe wáyé. Ti wíńdò láti tẹ̀sìwajú"
 msgid "Completing Payment"
 msgstr "Ìsa Ń Parí"
 
-#: public/js/error-codes.js:12 public/js/error-codes.js:17 public/js/error-codes.js:18 public/js/error-codes.js:34
+#: public/js/error-codes.js:12 public/js/error-codes.js:17 public/js/error-codes.js:18 public/js/error-codes.js:34 public/js/error-codes.js:13 public/js/error-codes.js:19 public/js/error-codes.js:35
 msgid "Product cannot be purchased due to configuration error."
 msgstr ""

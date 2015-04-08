@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Webpay\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-01 16:02+0000\n"
+"POT-Creation-Date: 2015-04-08 16:08+0000\n"
 "PO-Revision-Date: 2015-03-20 00:10+0000\n"
 "Last-Translator: Jørgen   <joergenr@stofanet.dk>\n"
 "Language-Team: MozillaDanmark\n"
@@ -192,83 +192,83 @@ msgstr "Blev spærret"
 msgid "Setting up payment"
 msgstr "Opsæt betaling"
 
-#: public/js/error-codes.js:12 public/js/error-codes.js:13
+#: public/js/error-codes.js:12 public/js/error-codes.js:13 public/js/error-codes.js:14
 msgid "An internal web request timed out."
 msgstr "En intern webforespørgsel fik time out."
 
-#: public/js/error-codes.js:13 public/js/error-codes.js:14
+#: public/js/error-codes.js:13 public/js/error-codes.js:14 public/js/error-codes.js:15
 msgid "The system timed out while trying to log in."
 msgstr "Systemet fik time out under forsøget på at logge ind."
 
-#: public/js/error-codes.js:14 public/js/error-codes.js:15
+#: public/js/error-codes.js:14 public/js/error-codes.js:15 public/js/error-codes.js:16
 msgid "An error occurred whilst trying to log out."
 msgstr "Der opstod en fejl under forsøget på at logge ud."
 
-#: public/js/error-codes.js:15 public/js/error-codes.js:16
+#: public/js/error-codes.js:15 public/js/error-codes.js:16 public/js/error-codes.js:17
 msgid "The system timed out while trying to log out."
 msgstr "Systemet fik time out under forsøget på at logge ud."
 
-#: public/js/error-codes.js:16 public/js/error-codes.js:19
+#: public/js/error-codes.js:16 public/js/error-codes.js:19 public/js/error-codes.js:20
 msgid "Payments are temporarily disabled."
 msgstr "Betalinger er midlertidig deaktiveret."
 
-#: public/js/error-codes.js:17 public/js/error-codes.js:20
+#: public/js/error-codes.js:17 public/js/error-codes.js:20 public/js/error-codes.js:21
 msgid "An unexpected error occurred when creating your PIN."
 msgstr "Der opstod en uventet fejl under oprettelse af din pinkode."
 
-#: public/js/error-codes.js:18 public/js/error-codes.js:27 public/js/error-codes.js:21 public/js/error-codes.js:30
+#: public/js/error-codes.js:18 public/js/error-codes.js:27 public/js/error-codes.js:21 public/js/error-codes.js:30 public/js/error-codes.js:22 public/js/error-codes.js:31
 msgid "The PIN data submitted was invalid."
 msgstr "De indsendte pinkode-data var ugyldige."
 
-#: public/js/error-codes.js:19 public/js/error-codes.js:22
+#: public/js/error-codes.js:19 public/js/error-codes.js:22 public/js/error-codes.js:23
 msgid "No valid user found whilst attempting to create your PIN"
 msgstr "Ingen gyldig bruger fundet under forsøget på at oprette din pinkode"
 
-#: public/js/error-codes.js:20 public/js/error-codes.js:23
+#: public/js/error-codes.js:20 public/js/error-codes.js:23 public/js/error-codes.js:24
 msgid "Permission denied attempting to create your PIN."
 msgstr "Tilladelse nægtet under forsøget på at oprette din pinkode."
 
-#: public/js/error-codes.js:21 public/js/error-codes.js:24
+#: public/js/error-codes.js:21 public/js/error-codes.js:24 public/js/error-codes.js:25
 msgid "The request timed out whilst attempting to create your PIN."
 msgstr "Forespørgslen fik time out under forsøget på at oprette din pinkode."
 
-#: public/js/error-codes.js:22 public/js/error-codes.js:25
+#: public/js/error-codes.js:22 public/js/error-codes.js:25 public/js/error-codes.js:26
 msgid "An unexpected error occurred whilst checking your PIN."
 msgstr "Der opstod en uventet fejl da din pinkode blev kontrolleret."
 
-#: public/js/error-codes.js:23 public/js/error-codes.js:26
+#: public/js/error-codes.js:23 public/js/error-codes.js:26 public/js/error-codes.js:27
 msgid "No valid user found whilst checking your PIN"
 msgstr "Ingen gyldig bruger fundet da din pinkode blev kontrolleret"
 
-#: public/js/error-codes.js:24 public/js/error-codes.js:27
+#: public/js/error-codes.js:24 public/js/error-codes.js:27 public/js/error-codes.js:28
 msgid "Permission denied attempting to check your PIN"
 msgstr "Tilladelse nægtet under forsøget på at kontrollere din pinkode"
 
-#: public/js/error-codes.js:25 public/js/error-codes.js:28
+#: public/js/error-codes.js:25 public/js/error-codes.js:28 public/js/error-codes.js:29
 msgid "The request timed out whilst trying to check your PIN"
 msgstr "Forespørgslen fik time out under forsøget på at kontrollere din pinkode"
 
-#: public/js/error-codes.js:26 public/js/error-codes.js:29
+#: public/js/error-codes.js:26 public/js/error-codes.js:29 public/js/error-codes.js:30
 msgid "An unexpected error occurred when resetting your PIN."
 msgstr "Der opstod en uventet fejl da din pinkode blev nulstillet."
 
-#: public/js/error-codes.js:28 public/js/error-codes.js:31
+#: public/js/error-codes.js:28 public/js/error-codes.js:31 public/js/error-codes.js:32
 msgid "No valid user found whilst attempting to reset your PIN"
 msgstr "Ingen gyldig bruger fundet under forsøget på at nulstille din pinkode"
 
-#: public/js/error-codes.js:29 public/js/error-codes.js:32
+#: public/js/error-codes.js:29 public/js/error-codes.js:32 public/js/error-codes.js:33
 msgid "Permission denied attempting to reset your PIN."
 msgstr "Tilladelse nægtet under forsøget på at nulstille din pinkode."
 
-#: public/js/error-codes.js:30 public/js/error-codes.js:33
+#: public/js/error-codes.js:30 public/js/error-codes.js:33 public/js/error-codes.js:34
 msgid "The request timed out whilst attempting to reset your PIN."
 msgstr "Forespørgslen fik time out under forsøget på at nulstille din pinkode."
 
-#: public/js/error-codes.js:31 public/js/error-codes.js:35
+#: public/js/error-codes.js:31 public/js/error-codes.js:35 public/js/error-codes.js:36
 msgid "The transaction failed. You have not been charged for this purchase."
 msgstr "Transaktionen mislykkedes. Du er ikke blevet opkrævet for dette køb."
 
-#: public/js/error-codes.js:32 public/js/error-codes.js:36
+#: public/js/error-codes.js:32 public/js/error-codes.js:36 public/js/error-codes.js:37
 msgid "The payment method or price point is not supported for this region or operator."
 msgstr "Betalingsmetoden eller prisniveauet understøttes ikke i dette område eller af denne operatør."
 
@@ -377,6 +377,6 @@ msgstr "Der opstod en fejl. Luk vinduet for at fortsætte"
 msgid "Completing Payment"
 msgstr "Fuldfører betaling"
 
-#: public/js/error-codes.js:12 public/js/error-codes.js:17 public/js/error-codes.js:18 public/js/error-codes.js:34
+#: public/js/error-codes.js:12 public/js/error-codes.js:17 public/js/error-codes.js:18 public/js/error-codes.js:34 public/js/error-codes.js:13 public/js/error-codes.js:19 public/js/error-codes.js:35
 msgid "Product cannot be purchased due to configuration error."
 msgstr ""

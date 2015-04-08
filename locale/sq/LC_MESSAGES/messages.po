@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-01 16:02+0000\n"
+"POT-Creation-Date: 2015-04-08 16:08+0000\n"
 "PO-Revision-Date: 2015-04-06 15:33+0200\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: none\n"
@@ -14,34 +14,16 @@ msgstr ""
 "X-Generator: Pootle 2.5.0\n"
 "X-POOTLE-MTIME: 1415017403.0\n"
 
-#: public/js/lib/cancel.js:33
-#: public/js/lib/cancel.js:16
-#: public/js/lib/cancel.js:18
-#: public/js/views/payment-failed.js:19
+#: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18 public/js/views/payment-failed.js:19
 msgid "Payment cancelled."
 msgstr "Pagesa u anulua."
 
-#: public/js/views/create-pin.js:105
-#: templates/error.html:20
-#: templates/pin-form.html:26
-#: public/js/views/create-pin.js:104
-#: public/js/views/error.js:51
-#: templates/simulate.html:17
-#: public/js/views/create-pin.js:140
-#: templates/pin-form.html:37
-#: public/js/views/create-pin.js:155
-#: public/js/views/error.js:54
-#: public/js/views/create-pin.js:158
-#: public/js/views/create-pin.js:160
+#: public/js/views/create-pin.js:105 templates/error.html:20 templates/pin-form.html:26 public/js/views/create-pin.js:104 public/js/views/error.js:51 templates/simulate.html:17
+#: public/js/views/create-pin.js:140 templates/pin-form.html:37 public/js/views/create-pin.js:155 public/js/views/error.js:54 public/js/views/create-pin.js:158 public/js/views/create-pin.js:160
 msgid "Cancel"
 msgstr "Anuloje"
 
-#: public/js/lib/pin-widget.js:58
-#: public/js/lib/pin-widget.js:64
-#: public/js/lib/pin-widget.js:68
-#: public/js/lib/pin-widget.js:65
-#: public/js/lib/pin-widget.js:83
-#: public/js/lib/pin-widget.js:82
+#: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64 public/js/lib/pin-widget.js:68 public/js/lib/pin-widget.js:65 public/js/lib/pin-widget.js:83 public/js/lib/pin-widget.js:82
 #: public/js/lib/pin-widget.js:93
 msgid "PIN can only contain digits."
 msgstr "PIN-i mund të përmbajë vetëm shifra."
@@ -50,9 +32,7 @@ msgstr "PIN-i mund të përmbajë vetëm shifra."
 msgid "You logged in as a different user, you must start the payment again."
 msgstr "Hytë si tjetër përdorues, duhet ta filloni sërish pagimin."
 
-#: public/js/views/throbber.js:15
-#: public/js/views/throbber.js:16
-#: templates/throbber.html:7
+#: public/js/views/throbber.js:15 public/js/views/throbber.js:16 templates/throbber.html:7
 msgid "Loading"
 msgstr "Po ngarkohet"
 
@@ -60,14 +40,8 @@ msgstr "Po ngarkohet"
 msgid "Beginning payment"
 msgstr "Po fillohet pagimi"
 
-#: public/js/views/login.js:19
-#: public/js/views/force-auth.js:81
-#: public/js/views/login.js:18
-#: public/js/views/reset-start.js:67
-#: public/js/views/force-auth.js:93
-#: public/js/views/reset-start.js:70
-#: public/js/views/force-auth.js:92
-#: public/js/views/reset-start.js:72
+#: public/js/views/login.js:19 public/js/views/force-auth.js:81 public/js/views/login.js:18 public/js/views/reset-start.js:67 public/js/views/force-auth.js:93 public/js/views/reset-start.js:70
+#: public/js/views/force-auth.js:92 public/js/views/reset-start.js:72
 msgid "Connecting to Persona"
 msgstr "Po lidhet me Persona-n"
 
@@ -75,17 +49,11 @@ msgstr "Po lidhet me Persona-n"
 msgid "Payment complete"
 msgstr "Pagim i plotësuar"
 
-#: public/js/lib/auth.js:22
-#: public/js/lib/auth.js:20
-#: public/js/views/page.js:41
+#: public/js/lib/auth.js:22 public/js/lib/auth.js:20 public/js/views/page.js:41
 msgid "Oops"
 msgstr "Oops"
 
-#: public/js/lib/auth.js:65
-#: public/js/lib/auth.js:84
-#: public/js/lib/auth.js:155
-#: public/js/lib/auth.js:86
-#: public/js/lib/auth.js:157
+#: public/js/lib/auth.js:65 public/js/lib/auth.js:84 public/js/lib/auth.js:155 public/js/lib/auth.js:86 public/js/lib/auth.js:157
 msgid "This is taking longer than expected. Try again?"
 msgstr "Kjo po zgjat më shumë se sa pritej. Të riprovohet?"
 
@@ -93,141 +61,69 @@ msgstr "Kjo po zgjat më shumë se sa pritej. Të riprovohet?"
 msgid "Something went wrong. Try again?"
 msgstr "Diç shkoi ters. Të riprovohet?"
 
-#: templates/error.html:27
-#: public/js/views/error.js:52
-#: public/js/views/error.js:87
-#: public/js/views/locked.js:24
-#: templates/iframe-overlay.html:14
-#: public/js/views/error.js:55
+#: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55
 #: public/js/views/error.js:90
 msgid "OK"
 msgstr "OK"
 
-#: public/js/views/error.js:44
-#: public/js/views/locked.js:23
-#: public/js/views/error.js:54
-#: public/js/views/error.js:57
+#: public/js/views/error.js:44 public/js/views/locked.js:23 public/js/views/error.js:54 public/js/views/error.js:57
 msgid "Error"
 msgstr "Gabim"
 
-#: public/js/views/enter-pin.js:96
-#: public/js/views/enter-pin.js:100
-#: public/js/views/enter-pin.js:97
-#: public/js/views/enter-pin.js:101
-#: public/js/views/enter-pin.js:105
-#: public/js/views/enter-pin.js:113
-#: public/js/views/enter-pin.js:117
-#: public/js/views/enter-pin.js:115
-#: public/js/views/enter-pin.js:119
+#: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100 public/js/views/enter-pin.js:97 public/js/views/enter-pin.js:101 public/js/views/enter-pin.js:105 public/js/views/enter-pin.js:113
+#: public/js/views/enter-pin.js:117 public/js/views/enter-pin.js:115 public/js/views/enter-pin.js:119
 msgid "Enter PIN"
 msgstr "Jepni PIN-in"
 
-#: public/js/views/login.js:25
-#: templates/login.html:5
-#: public/js/views/fxa-login.js:25
-#: public/js/views/fxa-login.js:27
-#: public/js/views/login.js:24
-#: public/js/views/login.js:26
-#: public/js/views/fxa-login.js:26
-#: public/js/views/fxa-login.js:28
-#: public/js/views/fxa-login.js:29
+#: public/js/views/login.js:25 templates/login.html:5 public/js/views/fxa-login.js:25 public/js/views/fxa-login.js:27 public/js/views/login.js:24 public/js/views/login.js:26
+#: public/js/views/fxa-login.js:26 public/js/views/fxa-login.js:28 public/js/views/fxa-login.js:29
 msgid "Sign In"
 msgstr "Hyni"
 
-#: templates/login.html:6
-#: public/js/views/fxa-login.js:28
-#: public/js/views/login.js:27
-#: public/js/views/fxa-login.js:29
-#: public/js/views/fxa-login.js:30
+#: templates/login.html:6 public/js/views/fxa-login.js:28 public/js/views/login.js:27 public/js/views/fxa-login.js:29 public/js/views/fxa-login.js:30
 msgid "Sign in to continue with the payment"
 msgstr "Bëni hyrjen që të vazhdohet me pagesën"
 
-#: templates/login.html:7
-#: templates/login.html:9
-#: templates/login.html:14
+#: templates/login.html:7 templates/login.html:9 templates/login.html:14
 msgid "Sign in"
 msgstr "Hyni"
 
-#: public/js/views/create-pin.js:106
-#: public/js/views/create-pin.js:113
-#: public/js/views/reset-pin.js:64
-#: templates/reset-start.html:12
-#: templates/was-locked.html:12
-#: public/js/views/create-pin.js:105
-#: public/js/views/create-pin.js:112
-#: templates/simulate.html:18
-#: public/js/views/create-pin.js:141
-#: public/js/views/create-pin.js:148
-#: public/js/views/reset-pin.js:65
-#: public/js/views/create-pin.js:156
-#: public/js/views/create-pin.js:163
-#: public/js/views/reset-pin.js:68
-#: templates/signout.html:14
-#: public/js/views/create-pin.js:159
-#: public/js/views/create-pin.js:166
-#: templates/super-simulate.html:20
-#: public/js/views/create-pin.js:161
-#: public/js/views/create-pin.js:168
+#: public/js/views/create-pin.js:106 public/js/views/create-pin.js:113 public/js/views/reset-pin.js:64 templates/reset-start.html:12 templates/was-locked.html:12 public/js/views/create-pin.js:105
+#: public/js/views/create-pin.js:112 templates/simulate.html:18 public/js/views/create-pin.js:141 public/js/views/create-pin.js:148 public/js/views/reset-pin.js:65 public/js/views/create-pin.js:156
+#: public/js/views/create-pin.js:163 public/js/views/reset-pin.js:68 templates/signout.html:14 public/js/views/create-pin.js:159 public/js/views/create-pin.js:166 templates/super-simulate.html:20
+#: public/js/views/create-pin.js:161 public/js/views/create-pin.js:168
 msgid "Continue"
 msgstr "Vazhdo"
 
-#: public/js/views/enter-pin.js:73
-#: public/js/views/enter-pin.js:74
-#: public/js/views/enter-pin.js:78
-#: public/js/views/enter-pin.js:90
-#: public/js/views/enter-pin.js:92
+#: public/js/views/enter-pin.js:73 public/js/views/enter-pin.js:74 public/js/views/enter-pin.js:78 public/js/views/enter-pin.js:90 public/js/views/enter-pin.js:92
 msgid "Wrong PIN"
 msgstr "PIN i gabuar"
 
-#: public/js/views/create-pin.js:48
-#: public/js/views/create-pin.js:84
-#: public/js/views/create-pin.js:97
-#: public/js/views/create-pin.js:100
-#: public/js/views/create-pin.js:102
+#: public/js/views/create-pin.js:48 public/js/views/create-pin.js:84 public/js/views/create-pin.js:97 public/js/views/create-pin.js:100 public/js/views/create-pin.js:102
 msgid "PINs do not match."
 msgstr "PIN-et nuk përputhen."
 
-#: webpay/pin/views.py:46
-#: webpay/testing/views.py:25
+#: webpay/pin/views.py:46 webpay/testing/views.py:25
 msgid "Create a PIN"
 msgstr "Krijoni një PIN"
 
-#: webpay/pin/views.py:68
-#: webpay/pin/views.py:185
-#: public/js/views/create-pin.js:36
-#: public/js/views/create-pin.js:71
-#: public/js/views/create-pin.js:82
-#: public/js/views/create-pin.js:84
+#: webpay/pin/views.py:68 webpay/pin/views.py:185 public/js/views/create-pin.js:36 public/js/views/create-pin.js:71 public/js/views/create-pin.js:82 public/js/views/create-pin.js:84
 msgid "Confirm PIN"
 msgstr "Konfirmoni PIN-in"
 
-#: webpay/pin/views.py:131
-#: webpay/pin/views.py:157
-#: webpay/pin/templates/pin/pin_was_locked.html:13
-#: public/js/views/reset-pin.js:65
-#: public/js/views/reset-pin.js:68
-#: templates/was-locked.html:11
-#: public/js/views/force-auth.js:89
-#: public/js/views/force-auth.js:102
-#: public/js/views/reset-pin.js:66
-#: public/js/views/reset-pin.js:69
-#: public/js/views/force-auth.js:101
-#: public/js/views/reset-pin.js:72
+#: webpay/pin/views.py:131 webpay/pin/views.py:157 webpay/pin/templates/pin/pin_was_locked.html:13 public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68 templates/was-locked.html:11
+#: public/js/views/force-auth.js:89 public/js/views/force-auth.js:102 public/js/views/reset-pin.js:66 public/js/views/reset-pin.js:69 public/js/views/force-auth.js:101 public/js/views/reset-pin.js:72
 #: public/js/views/force-auth.js:96
 msgid "Reset PIN"
 msgstr "Ricaktoni PIN-in"
 
 #. This is the same as the standard forgot
 #. password that most sites have.
-#: templates/pin-form.html:18
-#: templates/reset-start.html:6
-#: templates/pin-form.html:29
-#: templates/pin-form.html:30
+#: templates/pin-form.html:18 templates/reset-start.html:6 templates/pin-form.html:29 templates/pin-form.html:30
 msgid "Forgot your PIN?"
 msgstr "Harruat PIN-in tuaj?"
 
-#: public/js/views/locked.js:24
-#: public/js/views/locked.js:22
+#: public/js/views/locked.js:24 public/js/views/locked.js:22
 msgid "You entered the wrong PIN too many times. Your account is locked. Please try your purchase again in 5 minutes."
 msgstr "Dhatë PIN-in e gabuar shumë herë. Llogaria juaj është bllokuar. Ju lutemi, riprovojeni blerjen pas 5 minutash."
 
@@ -239,22 +135,15 @@ msgstr "PIN-i juaj është bllokuar"
 msgid "Your PIN was locked because you entered it incorrectly too many times. You can continue and try entering your PIN again or reset your PIN."
 msgstr "PIN-i juaj u bllokua ngaqë e dhatë pasaktësisht shumë herë. Mund të vazhdoni dhe të provoni ta jepni sërish PIN-in tuaj ose ta ricaktoni atë."
 
-#: templates/reset-start.html:7
-#: templates/reset-start.html:10
+#: templates/reset-start.html:7 templates/reset-start.html:10
 msgid "Are you sure you want to reset your PIN? You must sign in to Persona to reset your PIN."
 msgstr "Jeni i sigurt se doni të ricaktoni PIN-in tuaj? Duhet të keni bërë hyrjen te Persona që të ricaktoni PIN-in tuaj."
 
-#: webpay/provider/templates/provider/wait-to-finish.html:6
-#: webpay/provider/templates/provider/wait-to-finish.html:12
+#: webpay/provider/templates/provider/wait-to-finish.html:6 webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"
 msgstr "Po verifikohet pagesa"
 
-#: public/js/lib/auth.js:29
-#: public/js/lib/auth.js:30
-#: public/js/lib/auth.js:25
-#: public/js/lib/auth.js:39
-#: public/js/lib/auth.js:26
-#: public/js/lib/auth.js:41
+#: public/js/lib/auth.js:29 public/js/lib/auth.js:30 public/js/lib/auth.js:25 public/js/lib/auth.js:39 public/js/lib/auth.js:26 public/js/lib/auth.js:41
 msgid "Retrying"
 msgstr "Po riprovohet"
 
@@ -262,71 +151,26 @@ msgstr "Po riprovohet"
 msgid "That took longer than expected. Retry?"
 msgstr "Zgjati më shumë se sa pritej. Të riprovohet?"
 
-#: public/js/views/create-pin.js:37
-#: templates/reset-start.html:11
-#: public/js/views/create-pin.js:72
-#: templates/reset-start.html:15
-#: public/js/views/create-pin.js:83
-#: public/js/views/create-pin.js:85
+#: public/js/views/create-pin.js:37 templates/reset-start.html:11 public/js/views/create-pin.js:72 templates/reset-start.html:15 public/js/views/create-pin.js:83 public/js/views/create-pin.js:85
 msgid "Back"
 msgstr "Mbrapsht"
 
-#: public/js/views/create-pin.js:38
-#: public/js/views/enter-pin.js:95
-#: public/js/views/enter-pin.js:96
-#: public/js/views/create-pin.js:73
-#: public/js/views/enter-pin.js:100
-#: public/js/views/create-pin.js:84
-#: public/js/views/enter-pin.js:112
-#: public/js/views/enter-pin.js:114
-#: public/js/views/create-pin.js:86
+#: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95 public/js/views/enter-pin.js:96 public/js/views/create-pin.js:73 public/js/views/enter-pin.js:100 public/js/views/create-pin.js:84
+#: public/js/views/enter-pin.js:112 public/js/views/enter-pin.js:114 public/js/views/create-pin.js:86
 msgid "Submit"
 msgstr "Parashtroje"
 
-#: public/js/views/create-pin.js:66
-#: public/js/views/enter-pin.js:60
-#: public/js/views/reset-pin.js:28
-#: public/js/lib/wait.js:171
-#: public/js/views/create-pin.js:65
-#: public/js/views/enter-pin.js:61
-#: public/js/views/force-auth.js:53
-#: public/js/views/reset-pin.js:29
-#: public/js/views/reset-start.js:107
-#: public/js/views/create-pin.js:101
-#: public/js/views/enter-pin.js:65
-#: public/js/views/reset-start.js:108
-#: public/js/views/force-auth.js:61
-#: public/js/views/reset-pin.js:30
-#: public/js/views/reset-start.js:112
-#: public/js/views/force-auth.js:60
-#: public/js/views/reset-start.js:122
-#: public/js/lib/auth.js:22
-#: public/js/lib/auth.js:36
-#: public/js/lib/wait.js:180
-#: public/js/views/create-pin.js:116
-#: public/js/views/enter-pin.js:75
-#: public/js/views/page.js:43
-#: public/js/views/reset-pin.js:33
-#: public/js/views/reset-start.js:124
-#: public/js/lib/wait.js:170
-#: public/js/views/create-pin.js:119
-#: public/js/views/enter-pin.js:77
-#: public/js/views/reset-start.js:101
-#: public/js/views/create-pin.js:121
-#: public/js/lib/wait.js:172
+#: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60 public/js/views/reset-pin.js:28 public/js/lib/wait.js:171 public/js/views/create-pin.js:65 public/js/views/enter-pin.js:61
+#: public/js/views/force-auth.js:53 public/js/views/reset-pin.js:29 public/js/views/reset-start.js:107 public/js/views/create-pin.js:101 public/js/views/enter-pin.js:65
+#: public/js/views/reset-start.js:108 public/js/views/force-auth.js:61 public/js/views/reset-pin.js:30 public/js/views/reset-start.js:112 public/js/views/force-auth.js:60
+#: public/js/views/reset-start.js:122 public/js/lib/auth.js:22 public/js/lib/auth.js:36 public/js/lib/wait.js:180 public/js/views/create-pin.js:116 public/js/views/enter-pin.js:75
+#: public/js/views/page.js:43 public/js/views/reset-pin.js:33 public/js/views/reset-start.js:124 public/js/lib/wait.js:170 public/js/views/create-pin.js:119 public/js/views/enter-pin.js:77
+#: public/js/views/reset-start.js:101 public/js/views/create-pin.js:121 public/js/lib/wait.js:172
 msgid "Retry?"
 msgstr "Të riprovohet?"
 
-#: public/js/views/create-pin.js:114
-#: public/js/views/create-pin.js:116
-#: public/js/views/create-pin.js:113
-#: public/js/views/create-pin.js:115
-#: public/js/views/create-pin.js:149
-#: public/js/views/create-pin.js:152
-#: public/js/views/create-pin.js:164
-#: public/js/views/create-pin.js:167
-#: public/js/views/create-pin.js:170
-#: public/js/views/create-pin.js:169
+#: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116 public/js/views/create-pin.js:113 public/js/views/create-pin.js:115 public/js/views/create-pin.js:149
+#: public/js/views/create-pin.js:152 public/js/views/create-pin.js:164 public/js/views/create-pin.js:167 public/js/views/create-pin.js:170 public/js/views/create-pin.js:169
 #: public/js/views/create-pin.js:172
 msgid "Create PIN"
 msgstr "Krijoni një PIN"
@@ -335,126 +179,96 @@ msgstr "Krijoni një PIN"
 msgid "Something went wrong."
 msgstr "Diçka shkoi ters."
 
-#: public/js/views/reset-start.js:29
-#: public/js/views/reset-start.js:118
-#: public/js/views/reset-start.js:119
-#: public/js/views/reset-start.js:123
-#: public/js/views/reset-start.js:133
-#: public/js/views/reset-start.js:135
-#: public/js/views/reset-start.js:112
+#: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118 public/js/views/reset-start.js:119 public/js/views/reset-start.js:123 public/js/views/reset-start.js:133
+#: public/js/views/reset-start.js:135 public/js/views/reset-start.js:112
 msgid "Reset your PIN?"
 msgstr "Të ricaktohet PIN-i juaj?"
 
-#: public/js/views/was-locked.js:13
-#: public/js/views/was-locked.js:38
-#: public/js/views/was-locked.js:42
+#: public/js/views/was-locked.js:13 public/js/views/was-locked.js:38 public/js/views/was-locked.js:42
 msgid "Was Locked"
 msgstr "Qe Kyçur"
 
-#: public/js/views/wait-for-tx.js:10
-#: public/js/views/wait-to-start.js:13
+#: public/js/views/wait-for-tx.js:10 public/js/views/wait-to-start.js:13
 msgid "Setting up payment"
 msgstr "Po përgatitet pagesa"
 
-#: public/js/error-codes.js:12
-#: public/js/error-codes.js:13
+#: public/js/error-codes.js:12 public/js/error-codes.js:13 public/js/error-codes.js:14
 msgid "An internal web request timed out."
 msgstr "Një kërkese web të brendshme i mbaroi koha."
 
-#: public/js/error-codes.js:13
-#: public/js/error-codes.js:14
+#: public/js/error-codes.js:13 public/js/error-codes.js:14 public/js/error-codes.js:15
 msgid "The system timed out while trying to log in."
 msgstr "Sistemit i mbaroi koha teksa provonte të bënte hyrjen."
 
-#: public/js/error-codes.js:14
-#: public/js/error-codes.js:15
+#: public/js/error-codes.js:14 public/js/error-codes.js:15 public/js/error-codes.js:16
 msgid "An error occurred whilst trying to log out."
 msgstr "Ndodhi një gabim teksa provohej të dilej."
 
-#: public/js/error-codes.js:15
-#: public/js/error-codes.js:16
+#: public/js/error-codes.js:15 public/js/error-codes.js:16 public/js/error-codes.js:17
 msgid "The system timed out while trying to log out."
 msgstr "Sistemit i mbaroi koha teksa provonte të bënte daljen."
 
-#: public/js/error-codes.js:16
-#: public/js/error-codes.js:19
+#: public/js/error-codes.js:16 public/js/error-codes.js:19 public/js/error-codes.js:20
 msgid "Payments are temporarily disabled."
 msgstr "Pagesat janë çaktivizuar përkohësisht."
 
-#: public/js/error-codes.js:17
-#: public/js/error-codes.js:20
+#: public/js/error-codes.js:17 public/js/error-codes.js:20 public/js/error-codes.js:21
 msgid "An unexpected error occurred when creating your PIN."
 msgstr "Ndodhi një gabim i papritur gjatë krijimit të PIN-it tuaj."
 
-#: public/js/error-codes.js:18
-#: public/js/error-codes.js:27
-#: public/js/error-codes.js:21
-#: public/js/error-codes.js:30
+#: public/js/error-codes.js:18 public/js/error-codes.js:27 public/js/error-codes.js:21 public/js/error-codes.js:30 public/js/error-codes.js:22 public/js/error-codes.js:31
 msgid "The PIN data submitted was invalid."
 msgstr "Të dhënat e parashtruara për PIN-in qenë të pavlefshme."
 
-#: public/js/error-codes.js:19
-#: public/js/error-codes.js:22
+#: public/js/error-codes.js:19 public/js/error-codes.js:22 public/js/error-codes.js:23
 msgid "No valid user found whilst attempting to create your PIN"
 msgstr "Nuk u gjet përdorues i vlefshëm ndërsa po përpiqej të krijohej PIN-i juaj"
 
-#: public/js/error-codes.js:20
-#: public/js/error-codes.js:23
+#: public/js/error-codes.js:20 public/js/error-codes.js:23 public/js/error-codes.js:24
 msgid "Permission denied attempting to create your PIN."
 msgstr "Leje e mohuar gjatë përpjekjes për krijim të PIN-it tuaj."
 
-#: public/js/error-codes.js:21
-#: public/js/error-codes.js:24
+#: public/js/error-codes.js:21 public/js/error-codes.js:24 public/js/error-codes.js:25
 msgid "The request timed out whilst attempting to create your PIN."
 msgstr "Kërkesës i mbaroi koha teksa përpiqej të krijonte PIN-in tuaj."
 
-#: public/js/error-codes.js:22
-#: public/js/error-codes.js:25
+#: public/js/error-codes.js:22 public/js/error-codes.js:25 public/js/error-codes.js:26
 msgid "An unexpected error occurred whilst checking your PIN."
 msgstr "Ndodhi një gabim i papritur gjatë kontrollit të PIN-it tuaj."
 
-#: public/js/error-codes.js:23
-#: public/js/error-codes.js:26
+#: public/js/error-codes.js:23 public/js/error-codes.js:26 public/js/error-codes.js:27
 msgid "No valid user found whilst checking your PIN"
 msgstr "Nuk u gjet përdorues i vlefshëm ndërsa po përpiqej të kontrollohej PIN-i juaj"
 
-#: public/js/error-codes.js:24
-#: public/js/error-codes.js:27
+#: public/js/error-codes.js:24 public/js/error-codes.js:27 public/js/error-codes.js:28
 msgid "Permission denied attempting to check your PIN"
 msgstr "Leje e mohuar gjatë përpjekjes për kontroll të PIN-it tuaj."
 
-#: public/js/error-codes.js:25
-#: public/js/error-codes.js:28
+#: public/js/error-codes.js:25 public/js/error-codes.js:28 public/js/error-codes.js:29
 msgid "The request timed out whilst trying to check your PIN"
 msgstr "Kërkesës i mbaroi koha teksa përpiqej të kontrollonte PIN-in tuaj."
 
-#: public/js/error-codes.js:26
-#: public/js/error-codes.js:29
+#: public/js/error-codes.js:26 public/js/error-codes.js:29 public/js/error-codes.js:30
 msgid "An unexpected error occurred when resetting your PIN."
 msgstr "Ndodhi një gabim i papritur gjatë ricaktimit të PIN-it tuaj."
 
-#: public/js/error-codes.js:28
-#: public/js/error-codes.js:31
+#: public/js/error-codes.js:28 public/js/error-codes.js:31 public/js/error-codes.js:32
 msgid "No valid user found whilst attempting to reset your PIN"
 msgstr "Nuk u gjet përdorues i vlefshëm ndërsa po përpiqej të ricaktohej PIN-i juaj"
 
-#: public/js/error-codes.js:29
-#: public/js/error-codes.js:32
+#: public/js/error-codes.js:29 public/js/error-codes.js:32 public/js/error-codes.js:33
 msgid "Permission denied attempting to reset your PIN."
 msgstr "Leje e mohuar gjatë përpjekjes për ricaktim të PIN-it tuaj."
 
-#: public/js/error-codes.js:30
-#: public/js/error-codes.js:33
+#: public/js/error-codes.js:30 public/js/error-codes.js:33 public/js/error-codes.js:34
 msgid "The request timed out whilst attempting to reset your PIN."
 msgstr "Kërkesës i mbaroi koha teksa përpiqej të ricaktonte PIN-in tuaj."
 
-#: public/js/error-codes.js:31
-#: public/js/error-codes.js:35
+#: public/js/error-codes.js:31 public/js/error-codes.js:35 public/js/error-codes.js:36
 msgid "The transaction failed. You have not been charged for this purchase."
 msgstr "Transaksioni dështoi. Kjo blerje nuk ju është faturuar."
 
-#: public/js/error-codes.js:32
-#: public/js/error-codes.js:36
+#: public/js/error-codes.js:32 public/js/error-codes.js:36 public/js/error-codes.js:37
 msgid "The payment method or price point is not supported for this region or operator."
 msgstr "Metoda e pagesës ose çmimi nuk mbulohet për këtë rajon ose operator."
 
@@ -466,22 +280,15 @@ msgstr "Po pritet për hyrjen"
 msgid "Retrieving Transaction"
 msgstr "Po merret Transaksioni"
 
-#: public/js/views/error.js:55
-#: public/js/views/error.js:58
+#: public/js/views/error.js:55 public/js/views/error.js:58
 msgid "An unexpected error occurred."
 msgstr "Ndodhi një gabim i papritur."
 
-#: public/js/views/force-auth.js:87
-#: public/js/views/force-auth.js:100
-#: public/js/views/force-auth.js:99
-#: public/js/views/force-auth.js:94
+#: public/js/views/force-auth.js:87 public/js/views/force-auth.js:100 public/js/views/force-auth.js:99 public/js/views/force-auth.js:94
 msgid "Sign-in to reset PIN"
 msgstr "Për ricaktim PIN-i bëni hyrjen"
 
-#: public/js/views/force-auth.js:90
-#: public/js/views/force-auth.js:103
-#: public/js/views/force-auth.js:102
-#: public/js/views/force-auth.js:97
+#: public/js/views/force-auth.js:90 public/js/views/force-auth.js:103 public/js/views/force-auth.js:102 public/js/views/force-auth.js:97
 msgid "Please sign in to reset your PIN."
 msgstr "Ju lutemi, bëni hyrjen, që të ricaktoni PIN-in tuaj."
 
@@ -493,8 +300,7 @@ msgstr "Po fillohet"
 msgid "PIN Locked"
 msgstr "PIN i Kyçur"
 
-#: public/js/views/payment-success.js:15
-#: public/js/views/wait-to-finish.js:14
+#: public/js/views/payment-success.js:15 public/js/views/wait-to-finish.js:14
 msgid "Completing payment"
 msgstr "Po plotësohet pagesa"
 
@@ -510,8 +316,7 @@ msgstr "Simuloni Pagesën"
 msgid "You will not be charged."
 msgstr "Nuk do t’ju faturohet gjë."
 
-#: templates/reset-start.html:12
-#: templates/reset-start.html:16
+#: templates/reset-start.html:12 templates/reset-start.html:16
 msgid "Reset"
 msgstr "Ricaktoje"
 
@@ -519,18 +324,12 @@ msgstr "Ricaktoje"
 msgid "By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)s>Privacy Policy</a>"
 msgstr "Duke vazhduar shprehni pajtimin tuaj me <a %(terms)s>kushtet</a> dhe <a %(privacy)s>Rregullat tonë mbi Privatësinë</a>"
 
-#: public/js/views/force-auth.js:91
-#: public/js/views/reset-start.js:68
-#: public/js/views/force-auth.js:90
-#: public/js/views/reset-start.js:70
-#: public/js/views/force-auth.js:88
-#: public/js/views/login.js:18
+#: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68 public/js/views/force-auth.js:90 public/js/views/reset-start.js:70 public/js/views/force-auth.js:88 public/js/views/login.js:18
 #: public/js/views/reset-start.js:55
 msgid "Connecting to Firefox Accounts"
 msgstr "Po lidhet me Firefox Accounts"
 
-#: templates/reset-start.html:8
-#: templates/reset-start.html:7
+#: templates/reset-start.html:8 templates/reset-start.html:7
 msgid "Are you sure you want to reset your PIN? You must sign in to Firefox Accounts to reset your PIN."
 msgstr "Jeni i sigurt se doni të ricaktoni PIN-in tuaj? Që të ricaktoni PIN-in tuaj, duhet të keni bërë hyrjen te Firefox Accounts."
 
@@ -546,8 +345,7 @@ msgstr "Keni hyrë si:"
 msgid "Not you?"
 msgstr "Nuk jeni ju?"
 
-#: public/js/views/super-simulate.js:44
-#: public/js/views/super-simulate.js:64
+#: public/js/views/super-simulate.js:44 public/js/views/super-simulate.js:64
 msgid "Super Simulate"
 msgstr ""
 
@@ -579,10 +377,6 @@ msgstr "Ndodhi një gabim. Mbylleni dritaren që të vazhdohet"
 msgid "Completing Payment"
 msgstr "Po plotësohet Pagesa"
 
-#: public/js/error-codes.js:12
-#: public/js/error-codes.js:17
-#: public/js/error-codes.js:18
-#: public/js/error-codes.js:34
+#: public/js/error-codes.js:12 public/js/error-codes.js:17 public/js/error-codes.js:18 public/js/error-codes.js:34 public/js/error-codes.js:13 public/js/error-codes.js:19 public/js/error-codes.js:35
 msgid "Product cannot be purchased due to configuration error."
 msgstr "Produkti nuk mund të blihet, për shkak të një gabimi formësimi."
-

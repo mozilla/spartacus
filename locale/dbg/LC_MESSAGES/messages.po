@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-01 16:02+0000\n"
+"POT-Creation-Date: 2015-04-08 16:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -367,31 +367,37 @@ msgstr "Şḗŧŧīƞɠ ŭƥ ƥȧẏḿḗƞŧ"
 
 #: public/js/error-codes.js:12
 #: public/js/error-codes.js:13
+#: public/js/error-codes.js:14
 msgid "An internal web request timed out."
 msgstr "Ȧƞ īƞŧḗřƞȧŀ ẇḗƀ řḗɋŭḗşŧ ŧīḿḗḓ ǿŭŧ."
 
 #: public/js/error-codes.js:13
 #: public/js/error-codes.js:14
+#: public/js/error-codes.js:15
 msgid "The system timed out while trying to log in."
 msgstr "Ŧħḗ şẏşŧḗḿ ŧīḿḗḓ ǿŭŧ ẇħīŀḗ ŧřẏīƞɠ ŧǿ ŀǿɠ īƞ."
 
 #: public/js/error-codes.js:14
 #: public/js/error-codes.js:15
+#: public/js/error-codes.js:16
 msgid "An error occurred whilst trying to log out."
 msgstr "Ȧƞ ḗřřǿř ǿƈƈŭřřḗḓ ẇħīŀşŧ ŧřẏīƞɠ ŧǿ ŀǿɠ ǿŭŧ."
 
 #: public/js/error-codes.js:15
 #: public/js/error-codes.js:16
+#: public/js/error-codes.js:17
 msgid "The system timed out while trying to log out."
 msgstr "Ŧħḗ şẏşŧḗḿ ŧīḿḗḓ ǿŭŧ ẇħīŀḗ ŧřẏīƞɠ ŧǿ ŀǿɠ ǿŭŧ."
 
 #: public/js/error-codes.js:16
 #: public/js/error-codes.js:19
+#: public/js/error-codes.js:20
 msgid "Payments are temporarily disabled."
 msgstr "Ƥȧẏḿḗƞŧş ȧřḗ ŧḗḿƥǿřȧřīŀẏ ḓīşȧƀŀḗḓ."
 
 #: public/js/error-codes.js:17
 #: public/js/error-codes.js:20
+#: public/js/error-codes.js:21
 msgid "An unexpected error occurred when creating your PIN."
 msgstr "Ȧƞ ŭƞḗẋƥḗƈŧḗḓ ḗřřǿř ǿƈƈŭřřḗḓ ẇħḗƞ ƈřḗȧŧīƞɠ ẏǿŭř ƤĪȠ."
 
@@ -399,71 +405,86 @@ msgstr "Ȧƞ ŭƞḗẋƥḗƈŧḗḓ ḗřřǿř ǿƈƈŭřřḗḓ ẇħḗƞ
 #: public/js/error-codes.js:27
 #: public/js/error-codes.js:21
 #: public/js/error-codes.js:30
+#: public/js/error-codes.js:22
+#: public/js/error-codes.js:31
 msgid "The PIN data submitted was invalid."
 msgstr "Ŧħḗ ƤĪȠ ḓȧŧȧ şŭƀḿīŧŧḗḓ ẇȧş īƞṽȧŀīḓ."
 
 #: public/js/error-codes.js:19
 #: public/js/error-codes.js:22
+#: public/js/error-codes.js:23
 msgid "No valid user found whilst attempting to create your PIN"
 msgstr "Ƞǿ ṽȧŀīḓ ŭşḗř ƒǿŭƞḓ ẇħīŀşŧ ȧŧŧḗḿƥŧīƞɠ ŧǿ ƈřḗȧŧḗ ẏǿŭř ƤĪȠ"
 
 #: public/js/error-codes.js:20
 #: public/js/error-codes.js:23
+#: public/js/error-codes.js:24
 msgid "Permission denied attempting to create your PIN."
 msgstr "Ƥḗřḿīşşīǿƞ ḓḗƞīḗḓ ȧŧŧḗḿƥŧīƞɠ ŧǿ ƈřḗȧŧḗ ẏǿŭř ƤĪȠ."
 
 #: public/js/error-codes.js:21
 #: public/js/error-codes.js:24
+#: public/js/error-codes.js:25
 msgid "The request timed out whilst attempting to create your PIN."
 msgstr "Ŧħḗ řḗɋŭḗşŧ ŧīḿḗḓ ǿŭŧ ẇħīŀşŧ ȧŧŧḗḿƥŧīƞɠ ŧǿ ƈřḗȧŧḗ ẏǿŭř ƤĪȠ."
 
 #: public/js/error-codes.js:22
 #: public/js/error-codes.js:25
+#: public/js/error-codes.js:26
 msgid "An unexpected error occurred whilst checking your PIN."
 msgstr "Ȧƞ ŭƞḗẋƥḗƈŧḗḓ ḗřřǿř ǿƈƈŭřřḗḓ ẇħīŀşŧ ƈħḗƈķīƞɠ ẏǿŭř ƤĪȠ."
 
 #: public/js/error-codes.js:23
 #: public/js/error-codes.js:26
+#: public/js/error-codes.js:27
 msgid "No valid user found whilst checking your PIN"
 msgstr "Ƞǿ ṽȧŀīḓ ŭşḗř ƒǿŭƞḓ ẇħīŀşŧ ƈħḗƈķīƞɠ ẏǿŭř ƤĪȠ"
 
 #: public/js/error-codes.js:24
 #: public/js/error-codes.js:27
+#: public/js/error-codes.js:28
 msgid "Permission denied attempting to check your PIN"
 msgstr "Ƥḗřḿīşşīǿƞ ḓḗƞīḗḓ ȧŧŧḗḿƥŧīƞɠ ŧǿ ƈħḗƈķ ẏǿŭř ƤĪȠ"
 
 #: public/js/error-codes.js:25
 #: public/js/error-codes.js:28
+#: public/js/error-codes.js:29
 msgid "The request timed out whilst trying to check your PIN"
 msgstr "Ŧħḗ řḗɋŭḗşŧ ŧīḿḗḓ ǿŭŧ ẇħīŀşŧ ŧřẏīƞɠ ŧǿ ƈħḗƈķ ẏǿŭř ƤĪȠ"
 
 #: public/js/error-codes.js:26
 #: public/js/error-codes.js:29
+#: public/js/error-codes.js:30
 msgid "An unexpected error occurred when resetting your PIN."
 msgstr "Ȧƞ ŭƞḗẋƥḗƈŧḗḓ ḗřřǿř ǿƈƈŭřřḗḓ ẇħḗƞ řḗşḗŧŧīƞɠ ẏǿŭř ƤĪȠ."
 
 #: public/js/error-codes.js:28
 #: public/js/error-codes.js:31
+#: public/js/error-codes.js:32
 msgid "No valid user found whilst attempting to reset your PIN"
 msgstr "Ƞǿ ṽȧŀīḓ ŭşḗř ƒǿŭƞḓ ẇħīŀşŧ ȧŧŧḗḿƥŧīƞɠ ŧǿ řḗşḗŧ ẏǿŭř ƤĪȠ"
 
 #: public/js/error-codes.js:29
 #: public/js/error-codes.js:32
+#: public/js/error-codes.js:33
 msgid "Permission denied attempting to reset your PIN."
 msgstr "Ƥḗřḿīşşīǿƞ ḓḗƞīḗḓ ȧŧŧḗḿƥŧīƞɠ ŧǿ řḗşḗŧ ẏǿŭř ƤĪȠ."
 
 #: public/js/error-codes.js:30
 #: public/js/error-codes.js:33
+#: public/js/error-codes.js:34
 msgid "The request timed out whilst attempting to reset your PIN."
 msgstr "Ŧħḗ řḗɋŭḗşŧ ŧīḿḗḓ ǿŭŧ ẇħīŀşŧ ȧŧŧḗḿƥŧīƞɠ ŧǿ řḗşḗŧ ẏǿŭř ƤĪȠ."
 
 #: public/js/error-codes.js:31
 #: public/js/error-codes.js:35
+#: public/js/error-codes.js:36
 msgid "The transaction failed. You have not been charged for this purchase."
 msgstr "Ŧħḗ ŧřȧƞşȧƈŧīǿƞ ƒȧīŀḗḓ. Ẏǿŭ ħȧṽḗ ƞǿŧ ƀḗḗƞ ƈħȧřɠḗḓ ƒǿř ŧħīş ƥŭřƈħȧşḗ."
 
 #: public/js/error-codes.js:32
 #: public/js/error-codes.js:36
+#: public/js/error-codes.js:37
 msgid ""
 "The payment method or price point is not supported for this region or "
 "operator."
@@ -604,5 +625,8 @@ msgstr "Ƈǿḿƥŀḗŧīƞɠ Ƥȧẏḿḗƞŧ"
 #: public/js/error-codes.js:17
 #: public/js/error-codes.js:18
 #: public/js/error-codes.js:34
+#: public/js/error-codes.js:13
+#: public/js/error-codes.js:19
+#: public/js/error-codes.js:35
 msgid "Product cannot be purchased due to configuration error."
 msgstr "Ƥřǿḓŭƈŧ ƈȧƞƞǿŧ ƀḗ ƥŭřƈħȧşḗḓ ḓŭḗ ŧǿ ƈǿƞƒīɠŭřȧŧīǿƞ ḗřřǿř."

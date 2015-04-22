@@ -3,95 +3,98 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-04-08 16:08+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2015-04-22 03:53+0000\n"
+"Last-Translator: Robert <bob@mozillaph.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: tl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.9.0\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1429674807.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18 public/js/views/payment-failed.js:19
 msgid "Payment cancelled."
-msgstr ""
+msgstr "Hindi ipinagpatuloy ang pagbabayad."
 
 #: public/js/views/create-pin.js:105 templates/error.html:20 templates/pin-form.html:26 public/js/views/create-pin.js:104 public/js/views/error.js:51 templates/simulate.html:17
 #: public/js/views/create-pin.js:140 templates/pin-form.html:37 public/js/views/create-pin.js:155 public/js/views/error.js:54 public/js/views/create-pin.js:158 public/js/views/create-pin.js:160
 msgid "Cancel"
-msgstr ""
+msgstr "Kanselahin"
 
 #: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64 public/js/lib/pin-widget.js:68 public/js/lib/pin-widget.js:65 public/js/lib/pin-widget.js:83 public/js/lib/pin-widget.js:82
 #: public/js/lib/pin-widget.js:93
 msgid "PIN can only contain digits."
-msgstr ""
+msgstr "Mga bilang lang ang pwede bilang PIN."
 
 #: webpay/base/templates/base.html:30
 msgid "You logged in as a different user, you must start the payment again."
 msgstr ""
+"Ikaw ay nakalogin bilang ibang user, kailangan mong magsimula muli sa "
+"proseso ng pagbabayad."
 
 #: public/js/views/throbber.js:15 public/js/views/throbber.js:16 templates/throbber.html:7
 msgid "Loading"
-msgstr ""
+msgstr "Loading"
 
 #: webpay/base/templates/base.html:32
 msgid "Beginning payment"
-msgstr ""
+msgstr "Simulan ang pagbabayad"
 
 #: public/js/views/login.js:19 public/js/views/force-auth.js:81 public/js/views/login.js:18 public/js/views/reset-start.js:67 public/js/views/force-auth.js:93 public/js/views/reset-start.js:70
 #: public/js/views/force-auth.js:92 public/js/views/reset-start.js:72
 msgid "Connecting to Persona"
-msgstr ""
+msgstr "Kumukunekta sa Person"
 
 #: webpay/base/templates/base.html:34
 msgid "Payment complete"
-msgstr ""
+msgstr "Kumpleto na ang pagbabayad"
 
 #: public/js/lib/auth.js:22 public/js/lib/auth.js:20 public/js/views/page.js:41
 msgid "Oops"
-msgstr ""
+msgstr "Oops"
 
 #: public/js/lib/auth.js:65 public/js/lib/auth.js:84 public/js/lib/auth.js:155 public/js/lib/auth.js:86 public/js/lib/auth.js:157
 msgid "This is taking longer than expected. Try again?"
-msgstr ""
+msgstr "Ang prosesong ito ay mas matagal kaysa sa inaasahan. Subukan muli?"
 
 #: public/js/lib/auth.js:19
 msgid "Something went wrong. Try again?"
-msgstr ""
+msgstr "May kamaliang nangyari. Subukan muli?"
 
 #: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55
 #: public/js/views/error.js:90
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: public/js/views/error.js:44 public/js/views/locked.js:23 public/js/views/error.js:54 public/js/views/error.js:57
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100 public/js/views/enter-pin.js:97 public/js/views/enter-pin.js:101 public/js/views/enter-pin.js:105 public/js/views/enter-pin.js:113
 #: public/js/views/enter-pin.js:117 public/js/views/enter-pin.js:115 public/js/views/enter-pin.js:119
 msgid "Enter PIN"
-msgstr ""
+msgstr "Ipasok ang PIN"
 
 #: public/js/views/login.js:25 templates/login.html:5 public/js/views/fxa-login.js:25 public/js/views/fxa-login.js:27 public/js/views/login.js:24 public/js/views/login.js:26
 #: public/js/views/fxa-login.js:26 public/js/views/fxa-login.js:28 public/js/views/fxa-login.js:29
 msgid "Sign In"
-msgstr ""
+msgstr "Sign In"
 
 #: templates/login.html:6 public/js/views/fxa-login.js:28 public/js/views/login.js:27 public/js/views/fxa-login.js:29 public/js/views/fxa-login.js:30
 msgid "Sign in to continue with the payment"
-msgstr ""
+msgstr "Mag-sign in para magpatuloy sa pagbabayad"
 
 #: templates/login.html:7 templates/login.html:9 templates/login.html:14
 msgid "Sign in"
-msgstr ""
+msgstr "Sign in"
 
 #: public/js/views/create-pin.js:106 public/js/views/create-pin.js:113 public/js/views/reset-pin.js:64 templates/reset-start.html:12 templates/was-locked.html:12 public/js/views/create-pin.js:105
 #: public/js/views/create-pin.js:112 templates/simulate.html:18 public/js/views/create-pin.js:141 public/js/views/create-pin.js:148 public/js/views/reset-pin.js:65 public/js/views/create-pin.js:156
 #: public/js/views/create-pin.js:163 public/js/views/reset-pin.js:68 templates/signout.html:14 public/js/views/create-pin.js:159 public/js/views/create-pin.js:166 templates/super-simulate.html:20
 #: public/js/views/create-pin.js:161 public/js/views/create-pin.js:168
 msgid "Continue"
-msgstr ""
+msgstr "Ipagpatuloy"
 
 #: public/js/views/enter-pin.js:73 public/js/views/enter-pin.js:74 public/js/views/enter-pin.js:78 public/js/views/enter-pin.js:90 public/js/views/enter-pin.js:92
 msgid "Wrong PIN"
@@ -139,11 +142,11 @@ msgstr ""
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6 webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"
-msgstr ""
+msgstr "Binibiripika ang iyong bayad"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30 public/js/lib/auth.js:25 public/js/lib/auth.js:39 public/js/lib/auth.js:26 public/js/lib/auth.js:41
 msgid "Retrying"
-msgstr ""
+msgstr "Sinusubukan muli"
 
 #: public/js/lib/auth.js:64
 msgid "That took longer than expected. Retry?"
@@ -151,12 +154,12 @@ msgstr ""
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11 public/js/views/create-pin.js:72 templates/reset-start.html:15 public/js/views/create-pin.js:83 public/js/views/create-pin.js:85
 msgid "Back"
-msgstr ""
+msgstr "Magbalik"
 
 #: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95 public/js/views/enter-pin.js:96 public/js/views/create-pin.js:73 public/js/views/enter-pin.js:100 public/js/views/create-pin.js:84
 #: public/js/views/enter-pin.js:112 public/js/views/enter-pin.js:114 public/js/views/create-pin.js:86
 msgid "Submit"
-msgstr ""
+msgstr "I-submit"
 
 #: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60 public/js/views/reset-pin.js:28 public/js/lib/wait.js:171 public/js/views/create-pin.js:65 public/js/views/enter-pin.js:61
 #: public/js/views/force-auth.js:53 public/js/views/reset-pin.js:29 public/js/views/reset-start.js:107 public/js/views/create-pin.js:101 public/js/views/enter-pin.js:65
@@ -165,13 +168,13 @@ msgstr ""
 #: public/js/views/page.js:43 public/js/views/reset-pin.js:33 public/js/views/reset-start.js:124 public/js/lib/wait.js:170 public/js/views/create-pin.js:119 public/js/views/enter-pin.js:77
 #: public/js/views/reset-start.js:101 public/js/views/create-pin.js:121 public/js/lib/wait.js:172
 msgid "Retry?"
-msgstr ""
+msgstr "Subukan muli?"
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116 public/js/views/create-pin.js:113 public/js/views/create-pin.js:115 public/js/views/create-pin.js:149
 #: public/js/views/create-pin.js:152 public/js/views/create-pin.js:164 public/js/views/create-pin.js:167 public/js/views/create-pin.js:170 public/js/views/create-pin.js:169
 #: public/js/views/create-pin.js:172
 msgid "Create PIN"
-msgstr ""
+msgstr "Gumawa ng PIN"
 
 #: public/js/views/error.js:45
 msgid "Something went wrong."
@@ -180,7 +183,7 @@ msgstr ""
 #: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118 public/js/views/reset-start.js:119 public/js/views/reset-start.js:123 public/js/views/reset-start.js:133
 #: public/js/views/reset-start.js:135 public/js/views/reset-start.js:112
 msgid "Reset your PIN?"
-msgstr ""
+msgstr "I-reset ang iyong PIN?"
 
 #: public/js/views/was-locked.js:13 public/js/views/was-locked.js:38 public/js/views/was-locked.js:42
 msgid "Was Locked"
@@ -292,11 +295,11 @@ msgstr ""
 
 #: public/js/views/init.js:12
 msgid "Initializing"
-msgstr ""
+msgstr "Sinisimulan"
 
 #: public/js/views/locked.js:21
 msgid "PIN Locked"
-msgstr ""
+msgstr "Nakapinid ang PIN"
 
 #: public/js/views/payment-success.js:15 public/js/views/wait-to-finish.js:14
 msgid "Completing payment"
@@ -325,7 +328,7 @@ msgstr ""
 #: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68 public/js/views/force-auth.js:90 public/js/views/reset-start.js:70 public/js/views/force-auth.js:88 public/js/views/login.js:18
 #: public/js/views/reset-start.js:55
 msgid "Connecting to Firefox Accounts"
-msgstr ""
+msgstr "Kumukunekta sa Firefox Accounts"
 
 #: templates/reset-start.html:8 templates/reset-start.html:7
 msgid "Are you sure you want to reset your PIN? You must sign in to Firefox Accounts to reset your PIN."
@@ -341,7 +344,7 @@ msgstr ""
 
 #: templates/signout.html:11
 msgid "Not you?"
-msgstr ""
+msgstr "Hindi ikaw?"
 
 #: public/js/views/super-simulate.js:44 public/js/views/super-simulate.js:64
 msgid "Super Simulate"
@@ -353,7 +356,7 @@ msgstr ""
 
 #: templates/super-simulate.html:11
 msgid "No network simulation"
-msgstr ""
+msgstr "Walang network simulation"
 
 #: public/js/lib/pin-widget.js:71
 msgid "PIN too short"

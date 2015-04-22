@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-08 16:08+0000\n"
+"POT-Creation-Date: 2015-04-22 21:26+0000\n"
 "PO-Revision-Date: 2015-04-14 15:27+0000\n"
 "Last-Translator: ha-NG03_Bashir <bashirmudi2020@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -125,9 +125,7 @@ msgstr "Ka manta PIN naka"
 
 #: public/js/views/locked.js:24 public/js/views/locked.js:22
 msgid "You entered the wrong PIN too many times. Your account is locked. Please try your purchase again in 5 minutes."
-msgstr ""
-"Ka shigar da PIN ba dai dai sau da yawa. An rufe asusunka. Gwada sake "
-"sayenka a mintina 5."
+msgstr "Ka shigar da PIN ba dai dai sau da yawa. An rufe asusunka. Gwada sake sayenka a mintina 5."
 
 #: templates/was-locked.html:6
 msgid "Your PIN was locked"
@@ -135,15 +133,11 @@ msgstr "An rufe PIN naka"
 
 #: templates/was-locked.html:7
 msgid "Your PIN was locked because you entered it incorrectly too many times. You can continue and try entering your PIN again or reset your PIN."
-msgstr ""
-"An rufe asusunka sabo da ka shigar da shi ba dai dai ba sau da dama. Za ka "
-"iya ci gaba kuma ka gwada sake shigar da PIN ko ka sake saita PIN ɗinka."
+msgstr "An rufe asusunka sabo da ka shigar da shi ba dai dai ba sau da dama. Za ka iya ci gaba kuma ka gwada sake shigar da PIN ko ka sake saita PIN ɗinka."
 
 #: templates/reset-start.html:7 templates/reset-start.html:10
 msgid "Are you sure you want to reset your PIN? You must sign in to Persona to reset your PIN."
-msgstr ""
-"Ka tabbata ka na so ka sake saita PIN ɗinka? Dole ka shiga zuwa na Ƙashin "
-"kai domin sake saita PIN ɗinka."
+msgstr "Ka tabbata ka na so ka sake saita PIN ɗinka? Dole ka shiga zuwa na Ƙashin kai domin sake saita PIN ɗinka."
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6 webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"
@@ -276,9 +270,7 @@ msgstr "Harkar ta ci tura. Ba'a cajeka kuɗin wannan siyayyar ba."
 
 #: public/js/error-codes.js:32 public/js/error-codes.js:36 public/js/error-codes.js:37
 msgid "The payment method or price point is not supported for this region or operator."
-msgstr ""
-"Yadda ake biya ko gurbin farashin ba shi da tallafi a wannan nahiyar ko mai "
-"gudanarwa."
+msgstr "Yadda ake biya ko gurbin farashin ba shi da tallafi a wannan nahiyar ko mai gudanarwa."
 
 #: public/js/lib/auth.js:214
 msgid "Waiting for login"
@@ -330,9 +322,7 @@ msgstr "Sake saitawa"
 
 #: templates/pin-form.html:22
 msgid "By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)s>Privacy Policy</a>"
-msgstr ""
-"Ta ci gaba ka yarda da  <a %(terms)s>terms</a> da <a %(privacy)s>Privacy "
-"Policy</a>"
+msgstr "Ta ci gaba ka yarda da  <a %(terms)s>terms</a> da <a %(privacy)s>Privacy Policy</a>"
 
 #: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68 public/js/views/force-auth.js:90 public/js/views/reset-start.js:70 public/js/views/force-auth.js:88 public/js/views/login.js:18
 #: public/js/views/reset-start.js:55
@@ -341,9 +331,7 @@ msgstr "Haɗawa da Asusun Firefox"
 
 #: templates/reset-start.html:8 templates/reset-start.html:7
 msgid "Are you sure you want to reset your PIN? You must sign in to Firefox Accounts to reset your PIN."
-msgstr ""
-"Ka tabbatar ka na so ka sake saita PIN ɗinka? Dole ka shiga cikin Asusun "
-"Firefox domin sake saita PIN ɗinka."
+msgstr "Ka tabbatar ka na so ka sake saita PIN ɗinka? Dole ka shiga cikin Asusun Firefox domin sake saita PIN ɗinka."
 
 #: public/js/views/page.js:34
 msgid "Logging out"

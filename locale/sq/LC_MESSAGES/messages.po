@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-01 15:20+0000\n"
-"PO-Revision-Date: 2015-04-06 15:33+0200\n"
-"Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
+"PO-Revision-Date: 2015-05-01 16:30+0000\n"
+"Last-Translator: Besnik <besnik@programeshqip.org>\n"
 "Language-Team: none\n"
 "Language: sq\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1415017403.0\n"
+"X-POOTLE-MTIME: 1430497859.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18 public/js/views/payment-failed.js:19
 msgid "Payment cancelled."
@@ -347,7 +347,7 @@ msgstr "Nuk jeni ju?"
 
 #: public/js/views/super-simulate.js:44 public/js/views/super-simulate.js:64
 msgid "Super Simulate"
-msgstr ""
+msgstr "Supersimuloje"
 
 #: templates/super-simulate.html:8
 msgid "Simulate Something?"

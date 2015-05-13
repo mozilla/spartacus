@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-06 15:32+0000\n"
+"POT-Creation-Date: 2015-05-13 15:38+0000\n"
 "PO-Revision-Date: 2015-05-11 12:41+0000\n"
 "Last-Translator: Devon <devon.bezuidenhout@rubric.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -125,9 +125,7 @@ msgstr "Obosani PIN nayo?"
 
 #: public/js/views/locked.js:24 public/js/views/locked.js:22
 msgid "You entered the wrong PIN too many times. Your account is locked. Please try your purchase again in 5 minutes."
-msgstr ""
-"Okomaki PIN ya mabe mbala ebele mpeza. Compte nayo eza bloquer. Meka kosomba "
-"lisusu sima ya minuti 5."
+msgstr "Okomaki PIN ya mabe mbala ebele mpeza. Compte nayo eza bloquer. Meka kosomba lisusu sima ya minuti 5."
 
 #: templates/was-locked.html:6
 msgid "Your PIN was locked"
@@ -135,15 +133,11 @@ msgstr "PIN nayo ezalaki bloquer"
 
 #: templates/was-locked.html:7
 msgid "Your PIN was locked because you entered it incorrectly too many times. You can continue and try entering your PIN again or reset your PIN."
-msgstr ""
-"PIN nayo ezalaki bloquer mpo okomaki yango malamu te mbala ebele mpeza. "
-"Okoki kokoba mpe komeka kokoma PIN nayo lisusu to koréinitialiser PIN."
+msgstr "PIN nayo ezalaki bloquer mpo okomaki yango malamu te mbala ebele mpeza. Okoki kokoba mpe komeka kokoma PIN nayo lisusu to koréinitialiser PIN."
 
 #: templates/reset-start.html:7 templates/reset-start.html:10
 msgid "Are you sure you want to reset your PIN? You must sign in to Persona to reset your PIN."
-msgstr ""
-"Oza sure olingi koréinitialiser PIN nayo? Esengeli okota na Persona mpo na "
-"koréinitialiser PIN nayo."
+msgstr "Oza sure olingi koréinitialiser PIN nayo? Esengeli okota na Persona mpo na koréinitialiser PIN nayo."
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6 webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"
@@ -228,8 +222,7 @@ msgstr "Badonnée ya PIN oyo opesaki elongobani te."
 
 #: public/js/error-codes.js:19 public/js/error-codes.js:22 public/js/error-codes.js:23
 msgid "No valid user found whilst attempting to create your PIN"
-msgstr ""
-"Mosaleli moko te oyo alongobani azwamaki tango ya bomeki kokela PIN nayo"
+msgstr "Mosaleli moko te oyo alongobani azwamaki tango ya bomeki kokela PIN nayo"
 
 #: public/js/error-codes.js:20 public/js/error-codes.js:23 public/js/error-codes.js:24
 msgid "Permission denied attempting to create your PIN."
@@ -241,13 +234,11 @@ msgstr "Tango ya bosenga esilaki na eleko ya bomeki kokela PIN nayo."
 
 #: public/js/error-codes.js:22 public/js/error-codes.js:25 public/js/error-codes.js:26
 msgid "An unexpected error occurred whilst checking your PIN."
-msgstr ""
-"Erreur moko oyo ekanamaki te esalemaki tango ya vérification ya PIN nayo."
+msgstr "Erreur moko oyo ekanamaki te esalemaki tango ya vérification ya PIN nayo."
 
 #: public/js/error-codes.js:23 public/js/error-codes.js:26 public/js/error-codes.js:27
 msgid "No valid user found whilst checking your PIN"
-msgstr ""
-"Mosaleli moko te oyo alongobani azwamaki tango ya vérification ya PIN nayo"
+msgstr "Mosaleli moko te oyo alongobani azwamaki tango ya vérification ya PIN nayo"
 
 #: public/js/error-codes.js:24 public/js/error-codes.js:27 public/js/error-codes.js:28
 msgid "Permission denied attempting to check your PIN"
@@ -259,14 +250,11 @@ msgstr "Tango ya bosenga esilaki na eleko ya bomeki vérification ya PIN nayo"
 
 #: public/js/error-codes.js:26 public/js/error-codes.js:29 public/js/error-codes.js:30
 msgid "An unexpected error occurred when resetting your PIN."
-msgstr ""
-"Erreur moko oyo ekanamaki te esalemaki tango réinitialisation ya PIN nayo."
+msgstr "Erreur moko oyo ekanamaki te esalemaki tango réinitialisation ya PIN nayo."
 
 #: public/js/error-codes.js:28 public/js/error-codes.js:31 public/js/error-codes.js:32
 msgid "No valid user found whilst attempting to reset your PIN"
-msgstr ""
-"Mosaleli moko te oyo alongobani azwamaki tango ya bomeki réinitialisation ya "
-"PIN nayo"
+msgstr "Mosaleli moko te oyo alongobani azwamaki tango ya bomeki réinitialisation ya PIN nayo"
 
 #: public/js/error-codes.js:29 public/js/error-codes.js:32 public/js/error-codes.js:33
 msgid "Permission denied attempting to reset your PIN."
@@ -274,19 +262,15 @@ msgstr "Ndingisa epesamaki te tango ya bomeki réinitialisation ya PIN nayo."
 
 #: public/js/error-codes.js:30 public/js/error-codes.js:33 public/js/error-codes.js:34
 msgid "The request timed out whilst attempting to reset your PIN."
-msgstr ""
-"Tango ya bosenga esilaki na eleko ya bomeki réinitialisation ya PIN nayo."
+msgstr "Tango ya bosenga esilaki na eleko ya bomeki réinitialisation ya PIN nayo."
 
 #: public/js/error-codes.js:31 public/js/error-codes.js:35 public/js/error-codes.js:36
 msgid "The transaction failed. You have not been charged for this purchase."
-msgstr ""
-"Transaction esimbaki te. Mbongo moko te ba charger yo mpo na bosombi oyo."
+msgstr "Transaction esimbaki te. Mbongo moko te ba charger yo mpo na bosombi oyo."
 
 #: public/js/error-codes.js:32 public/js/error-codes.js:36 public/js/error-codes.js:37
 msgid "The payment method or price point is not supported for this region or operator."
-msgstr ""
-"Motindo ya bofuti to lolenge ya talo ekoki te mpo na etuka oyo to operateur "
-"oyo."
+msgstr "Motindo ya bofuti to lolenge ya talo ekoki te mpo na etuka oyo to operateur oyo."
 
 #: public/js/lib/auth.js:214
 msgid "Waiting for login"
@@ -338,9 +322,7 @@ msgstr "Koréinitialiser"
 
 #: templates/pin-form.html:22
 msgid "By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)s>Privacy Policy</a>"
-msgstr ""
-"Na bokobi ondimi ba <a %(terms)s>conditions</a> mpe <a %(privacy)s>Politiki "
-"ya confidentialité</a> nabiso"
+msgstr "Na bokobi ondimi ba <a %(terms)s>conditions</a> mpe <a %(privacy)s>Politiki ya confidentialité</a> nabiso"
 
 #: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68 public/js/views/force-auth.js:90 public/js/views/reset-start.js:70 public/js/views/force-auth.js:88 public/js/views/login.js:18
 #: public/js/views/reset-start.js:55
@@ -349,9 +331,7 @@ msgstr "Eza koconnecter na bacompte ya Firefox"
 
 #: templates/reset-start.html:8 templates/reset-start.html:7
 msgid "Are you sure you want to reset your PIN? You must sign in to Firefox Accounts to reset your PIN."
-msgstr ""
-"Oza sure olingi koréinitialiser PIN nayo? Esengeli okota-na bacompte ya "
-"Firefox mpo na koréinitialiser PIN nayo."
+msgstr "Oza sure olingi koréinitialiser PIN nayo? Esengeli okota-na bacompte ya Firefox mpo na koréinitialiser PIN nayo."
 
 #: public/js/views/page.js:34
 msgid "Logging out"

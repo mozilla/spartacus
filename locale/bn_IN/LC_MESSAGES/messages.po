@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-13 15:38+0000\n"
+"POT-Creation-Date: 2015-05-20 17:14+0000\n"
 "PO-Revision-Date: 2015-05-14 11:12+0000\n"
 "Last-Translator: Ayan <ayay700@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -331,9 +331,7 @@ msgstr "Firefox Accounts-এ সংযোগ স্থাপন করা হচ
 
 #: templates/reset-start.html:8 templates/reset-start.html:7
 msgid "Are you sure you want to reset your PIN? You must sign in to Firefox Accounts to reset your PIN."
-msgstr ""
-"আপনি কি নিশ্চিতরূপে অাপনার PIN পুনরায় নির্ধারণ করতে চান? অাপনাকে Firefox "
-"Accounts দিয়ে সাইন ইন করতে হবে PIN পুনরায় নির্ধারণ করতে।"
+msgstr "আপনি কি নিশ্চিতরূপে অাপনার PIN পুনরায় নির্ধারণ করতে চান? অাপনাকে Firefox Accounts দিয়ে সাইন ইন করতে হবে PIN পুনরায় নির্ধারণ করতে।"
 
 #: public/js/views/page.js:34
 msgid "Logging out"
@@ -373,9 +371,7 @@ msgstr "আপনার ক্রয় সম্পূর্ণ হয়েছে।
 
 #: public/js/lib/utils.js:203
 msgid "An error occurred. Close the window to continue"
-msgstr ""
-"লগ আউট করার সময় একটি ত্রুটি ধরা পরেছে। কাজ চালূ রাখার জন্য উইন্ডোটি বন্ধ "
-"করুন"
+msgstr "লগ আউট করার সময় একটি ত্রুটি ধরা পরেছে। কাজ চালূ রাখার জন্য উইন্ডোটি বন্ধ করুন"
 
 #: public/js/views/page.js:161
 msgid "Completing Payment"

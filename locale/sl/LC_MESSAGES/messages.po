@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-20 17:14+0000\n"
+"POT-Creation-Date: 2015-05-29 20:27+0000\n"
 "PO-Revision-Date: 2015-05-23 13:44+0000\n"
 "Last-Translator: Matjaž <m@owca.info>\n"
 "Language-Team: none\n"
@@ -10,8 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 "X-Generator: Pootle 2.5.0\n"
 "X-POOTLE-MTIME: 1432388687.0\n"
 
@@ -31,9 +30,7 @@ msgstr "PIN lahko vsebuje samo števke."
 
 #: webpay/base/templates/base.html:30
 msgid "You logged in as a different user, you must start the payment again."
-msgstr ""
-"Prijavil/-ila si se kot drugi/-ga uporabnik/-ca, zato moraš znova začeti s "
-"plačilom."
+msgstr "Prijavil/-ila si se kot drugi/-ga uporabnik/-ca, zato moraš znova začeti s plačilom."
 
 #: public/js/views/throbber.js:15 public/js/views/throbber.js:16 templates/throbber.html:7
 msgid "Loading"
@@ -128,9 +125,7 @@ msgstr "Si pozabil/-ila svoj PIN"
 
 #: public/js/views/locked.js:24 public/js/views/locked.js:22
 msgid "You entered the wrong PIN too many times. Your account is locked. Please try your purchase again in 5 minutes."
-msgstr ""
-"Napačem PIN si vnesel/-sla prevečkrat. Tvoj račun je zaklenjen. Prosim, "
-"ponovno poskusi z nakupom čez pet minut. "
+msgstr "Napačem PIN si vnesel/-sla prevečkrat. Tvoj račun je zaklenjen. Prosim, ponovno poskusi z nakupom čez pet minut. "
 
 #: templates/was-locked.html:6
 msgid "Your PIN was locked"
@@ -138,15 +133,11 @@ msgstr "Tvoj PIN je bil zaklenjen"
 
 #: templates/was-locked.html:7
 msgid "Your PIN was locked because you entered it incorrectly too many times. You can continue and try entering your PIN again or reset your PIN."
-msgstr ""
-"Tvoj PIN je bil zaklenjen, ker si prevečkat vnesel napačnega. Nadaljuješ "
-"lahko in poskušaš ponovno vnesti svoj PIN ali PIN ponastaviš. "
+msgstr "Tvoj PIN je bil zaklenjen, ker si prevečkat vnesel napačnega. Nadaljuješ lahko in poskušaš ponovno vnesti svoj PIN ali PIN ponastaviš. "
 
 #: templates/reset-start.html:7 templates/reset-start.html:10
 msgid "Are you sure you want to reset your PIN? You must sign in to Persona to reset your PIN."
-msgstr ""
-"Si prepričan/-a. da želiš ponastaviti svoj PIN? Če želiš to storiti. se "
-"moraš prijaviti k nadzorniku. "
+msgstr "Si prepričan/-a. da želiš ponastaviti svoj PIN? Če želiš to storiti. se moraš prijaviti k nadzorniku. "
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6 webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"
@@ -231,8 +222,7 @@ msgstr "Predloženi podatki za PIN so neveljavni. "
 
 #: public/js/error-codes.js:19 public/js/error-codes.js:22 public/js/error-codes.js:23
 msgid "No valid user found whilst attempting to create your PIN"
-msgstr ""
-"V postopku določanja vašega PIN-a ni bil odkrit noben veljaven uporabnik. "
+msgstr "V postopku določanja vašega PIN-a ni bil odkrit noben veljaven uporabnik. "
 
 #: public/js/error-codes.js:20 public/js/error-codes.js:23 public/js/error-codes.js:24
 msgid "Permission denied attempting to create your PIN."
@@ -244,13 +234,11 @@ msgstr "Prošnja za določitev vašeka PIN-a se je iztekla."
 
 #: public/js/error-codes.js:22 public/js/error-codes.js:25 public/js/error-codes.js:26
 msgid "An unexpected error occurred whilst checking your PIN."
-msgstr ""
-"V postopku preverjanja vašega PIN-a se je pojavila nepričakovana napaka. "
+msgstr "V postopku preverjanja vašega PIN-a se je pojavila nepričakovana napaka. "
 
 #: public/js/error-codes.js:23 public/js/error-codes.js:26 public/js/error-codes.js:27
 msgid "No valid user found whilst checking your PIN"
-msgstr ""
-"V postopku preverjanja vašaga PIN-a ni bil najden noben veljaven uporabnik. "
+msgstr "V postopku preverjanja vašaga PIN-a ni bil najden noben veljaven uporabnik. "
 
 #: public/js/error-codes.js:24 public/js/error-codes.js:27 public/js/error-codes.js:28
 msgid "Permission denied attempting to check your PIN"
@@ -262,14 +250,11 @@ msgstr "Prošnja za preverjanje vašega PIN-a se je iztekla."
 
 #: public/js/error-codes.js:26 public/js/error-codes.js:29 public/js/error-codes.js:30
 msgid "An unexpected error occurred when resetting your PIN."
-msgstr ""
-"V postopku ponastavitve vašega PIN-a se je pojavila nepričakovana napaka. "
+msgstr "V postopku ponastavitve vašega PIN-a se je pojavila nepričakovana napaka. "
 
 #: public/js/error-codes.js:28 public/js/error-codes.js:31 public/js/error-codes.js:32
 msgid "No valid user found whilst attempting to reset your PIN"
-msgstr ""
-"V postopku ponastavitve vašega PIN-a ni bil najden noben veljaven uporabnik. "
-""
+msgstr "V postopku ponastavitve vašega PIN-a ni bil najden noben veljaven uporabnik. "
 
 #: public/js/error-codes.js:29 public/js/error-codes.js:32 public/js/error-codes.js:33
 msgid "Permission denied attempting to reset your PIN."
@@ -337,9 +322,7 @@ msgstr "Ponastavite"
 
 #: templates/pin-form.html:22
 msgid "By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)s>Privacy Policy</a>"
-msgstr ""
-"Če nadaljujete postopek, se strinjate z našimi <a %(terms)s>terms</a> in <a "
-"%(privacy)s>Privacy Policy</a>"
+msgstr "Če nadaljujete postopek, se strinjate z našimi <a %(terms)s>terms</a> in <a %(privacy)s>Privacy Policy</a>"
 
 #: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68 public/js/views/force-auth.js:90 public/js/views/reset-start.js:70 public/js/views/force-auth.js:88 public/js/views/login.js:18
 #: public/js/views/reset-start.js:55
@@ -348,9 +331,7 @@ msgstr "Povezujem se s Firefox Accounts"
 
 #: templates/reset-start.html:8 templates/reset-start.html:7
 msgid "Are you sure you want to reset your PIN? You must sign in to Firefox Accounts to reset your PIN."
-msgstr ""
-"Ste prepričani, da želite ponastaviti svoj PIN? Potem se morate najprej "
-"prijaviti v Firefox Accounts."
+msgstr "Ste prepričani, da želite ponastaviti svoj PIN? Potem se morate najprej prijaviti v Firefox Accounts."
 
 #: public/js/views/page.js:34
 msgid "Logging out"

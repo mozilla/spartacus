@@ -1,163 +1,172 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-29 20:27+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2015-05-22 18:26+0000\n"
+"Last-Translator: Abdelrahman <abood.fcb@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.6.0\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1432319189.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18 public/js/views/payment-failed.js:19
 msgid "Payment cancelled."
-msgstr ""
+msgstr "تم إلغاء عملية الدفع."
 
 #: public/js/views/create-pin.js:105 templates/error.html:20 templates/pin-form.html:26 public/js/views/create-pin.js:104 public/js/views/error.js:51 templates/simulate.html:17
 #: public/js/views/create-pin.js:140 templates/pin-form.html:37 public/js/views/create-pin.js:155 public/js/views/error.js:54 public/js/views/create-pin.js:158 public/js/views/create-pin.js:160
 msgid "Cancel"
-msgstr ""
+msgstr "إلغاء"
 
 #: public/js/lib/pin-widget.js:58 public/js/lib/pin-widget.js:64 public/js/lib/pin-widget.js:68 public/js/lib/pin-widget.js:65 public/js/lib/pin-widget.js:83 public/js/lib/pin-widget.js:82
 #: public/js/lib/pin-widget.js:93
 msgid "PIN can only contain digits."
-msgstr ""
+msgstr "PIN يمكن أن يتكون من الأرقام فقط."
 
 #: webpay/base/templates/base.html:30
 msgid "You logged in as a different user, you must start the payment again."
-msgstr ""
+msgstr "سجلت الدخول كمستخدم آخر , يجب أن تبدأ عملية الدفع من جديد."
 
 #: public/js/views/throbber.js:15 public/js/views/throbber.js:16 templates/throbber.html:7
 msgid "Loading"
-msgstr ""
+msgstr "جار التحميل"
 
 #: webpay/base/templates/base.html:32
 msgid "Beginning payment"
-msgstr ""
+msgstr "بداية الدفع"
 
 #: public/js/views/login.js:19 public/js/views/force-auth.js:81 public/js/views/login.js:18 public/js/views/reset-start.js:67 public/js/views/force-auth.js:93 public/js/views/reset-start.js:70
 #: public/js/views/force-auth.js:92 public/js/views/reset-start.js:72
 msgid "Connecting to Persona"
-msgstr ""
+msgstr "جار الاتصال ببيرسونا"
 
 #: webpay/base/templates/base.html:34
 msgid "Payment complete"
-msgstr ""
+msgstr "تمت عملية الدفع"
 
 #: public/js/lib/auth.js:22 public/js/lib/auth.js:20 public/js/views/page.js:41
 msgid "Oops"
-msgstr ""
+msgstr "Oops"
 
 #: public/js/lib/auth.js:65 public/js/lib/auth.js:84 public/js/lib/auth.js:155 public/js/lib/auth.js:86 public/js/lib/auth.js:157
 msgid "This is taking longer than expected. Try again?"
-msgstr ""
+msgstr "هذا يأخد وقتاً أطول مما كان متوقع. المحاولة مرة أخرى؟"
 
 #: public/js/lib/auth.js:19
 msgid "Something went wrong. Try again?"
-msgstr ""
+msgstr "حدث خطأ. إعادة المحاولة؟"
 
 #: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55
 #: public/js/views/error.js:90
 msgid "OK"
-msgstr ""
+msgstr "حسنا"
 
 #: public/js/views/error.js:44 public/js/views/locked.js:23 public/js/views/error.js:54 public/js/views/error.js:57
 msgid "Error"
-msgstr ""
+msgstr "خطأ"
 
 #: public/js/views/enter-pin.js:96 public/js/views/enter-pin.js:100 public/js/views/enter-pin.js:97 public/js/views/enter-pin.js:101 public/js/views/enter-pin.js:105 public/js/views/enter-pin.js:113
 #: public/js/views/enter-pin.js:117 public/js/views/enter-pin.js:115 public/js/views/enter-pin.js:119
 msgid "Enter PIN"
-msgstr ""
+msgstr "أدخل رمز PIN"
 
 #: public/js/views/login.js:25 templates/login.html:5 public/js/views/fxa-login.js:25 public/js/views/fxa-login.js:27 public/js/views/login.js:24 public/js/views/login.js:26
 #: public/js/views/fxa-login.js:26 public/js/views/fxa-login.js:28 public/js/views/fxa-login.js:29
 msgid "Sign In"
-msgstr ""
+msgstr "تسجيل الدخول"
 
 #: templates/login.html:6 public/js/views/fxa-login.js:28 public/js/views/login.js:27 public/js/views/fxa-login.js:29 public/js/views/fxa-login.js:30
 msgid "Sign in to continue with the payment"
-msgstr ""
+msgstr "سجل الدخول لإكمال الدفع"
 
 #: templates/login.html:7 templates/login.html:9 templates/login.html:14
 msgid "Sign in"
-msgstr ""
+msgstr "تسجيل الدخول"
 
 #: public/js/views/create-pin.js:106 public/js/views/create-pin.js:113 public/js/views/reset-pin.js:64 templates/reset-start.html:12 templates/was-locked.html:12 public/js/views/create-pin.js:105
 #: public/js/views/create-pin.js:112 templates/simulate.html:18 public/js/views/create-pin.js:141 public/js/views/create-pin.js:148 public/js/views/reset-pin.js:65 public/js/views/create-pin.js:156
 #: public/js/views/create-pin.js:163 public/js/views/reset-pin.js:68 templates/signout.html:14 public/js/views/create-pin.js:159 public/js/views/create-pin.js:166 templates/super-simulate.html:20
 #: public/js/views/create-pin.js:161 public/js/views/create-pin.js:168
 msgid "Continue"
-msgstr ""
+msgstr "تابع"
 
 #: public/js/views/enter-pin.js:73 public/js/views/enter-pin.js:74 public/js/views/enter-pin.js:78 public/js/views/enter-pin.js:90 public/js/views/enter-pin.js:92
 msgid "Wrong PIN"
-msgstr ""
+msgstr "رمز PIN خاطئ"
 
 #: public/js/views/create-pin.js:48 public/js/views/create-pin.js:84 public/js/views/create-pin.js:97 public/js/views/create-pin.js:100 public/js/views/create-pin.js:102
 msgid "PINs do not match."
-msgstr ""
+msgstr "رموز ال PIN غير متطابقة."
 
 #: webpay/pin/views.py:46 webpay/testing/views.py:25
 msgid "Create a PIN"
-msgstr ""
+msgstr "أنشئ رمزPIN"
 
 #: webpay/pin/views.py:68 webpay/pin/views.py:185 public/js/views/create-pin.js:36 public/js/views/create-pin.js:71 public/js/views/create-pin.js:82 public/js/views/create-pin.js:84
 msgid "Confirm PIN"
-msgstr ""
+msgstr "تأكيد رمز PIN"
 
 #: webpay/pin/views.py:131 webpay/pin/views.py:157 webpay/pin/templates/pin/pin_was_locked.html:13 public/js/views/reset-pin.js:65 public/js/views/reset-pin.js:68 templates/was-locked.html:11
 #: public/js/views/force-auth.js:89 public/js/views/force-auth.js:102 public/js/views/reset-pin.js:66 public/js/views/reset-pin.js:69 public/js/views/force-auth.js:101 public/js/views/reset-pin.js:72
 #: public/js/views/force-auth.js:96
 msgid "Reset PIN"
-msgstr ""
+msgstr "إعادة تعيين ال PIN"
 
 #. This is the same as the standard forgot
 #. password that most sites have.
 #: templates/pin-form.html:18 templates/reset-start.html:6 templates/pin-form.html:29 templates/pin-form.html:30
 msgid "Forgot your PIN?"
-msgstr ""
+msgstr "هل نسيت رمز ال PIN الخاص بك؟"
 
 #: public/js/views/locked.js:24 public/js/views/locked.js:22
 msgid "You entered the wrong PIN too many times. Your account is locked. Please try your purchase again in 5 minutes."
 msgstr ""
+"لقد أدخلت ال PIN الخطأ عدة مرات. لقد تم إغلاق حسابك. رجاءا قم بعملية الشراء "
+"مرة أخرى بعد 5 دقائق."
 
 #: templates/was-locked.html:6
 msgid "Your PIN was locked"
-msgstr ""
+msgstr "لقد تم إغلاق رمز PIN الخاص بك"
 
 #: templates/was-locked.html:7
 msgid "Your PIN was locked because you entered it incorrectly too many times. You can continue and try entering your PIN again or reset your PIN."
 msgstr ""
+"لقد تم إغلاق رمز الPIN الخاص بك لأنك قمت بإدخاله بشكل خاطئ عدة مرات. يمكنك "
+"المتابعة و إدخال رمز الPIN الخاص بك مرة أخرى أو إعادة تعيين رمز الPIN الخاص "
+"بك."
 
 #: templates/reset-start.html:7 templates/reset-start.html:10
 msgid "Are you sure you want to reset your PIN? You must sign in to Persona to reset your PIN."
 msgstr ""
+"هل أنت متأكد من إعادة تعيين رمز الPIN الخاص بك؟ يجب عليك تسجيل الدخول "
+"لبيرسونا لإعادة تعيين رمز الPIN الخاص بك."
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6 webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"
-msgstr ""
+msgstr "تأكيد الدفع"
 
 #: public/js/lib/auth.js:29 public/js/lib/auth.js:30 public/js/lib/auth.js:25 public/js/lib/auth.js:39 public/js/lib/auth.js:26 public/js/lib/auth.js:41
 msgid "Retrying"
-msgstr ""
+msgstr "إعادة المحاولة"
 
 #: public/js/lib/auth.js:64
 msgid "That took longer than expected. Retry?"
-msgstr ""
+msgstr "لقد أخذ وقتاً أكثر من المتوقع. إعادة المحاولة؟"
 
 #: public/js/views/create-pin.js:37 templates/reset-start.html:11 public/js/views/create-pin.js:72 templates/reset-start.html:15 public/js/views/create-pin.js:83 public/js/views/create-pin.js:85
 msgid "Back"
-msgstr ""
+msgstr "رجوع"
 
 #: public/js/views/create-pin.js:38 public/js/views/enter-pin.js:95 public/js/views/enter-pin.js:96 public/js/views/create-pin.js:73 public/js/views/enter-pin.js:100 public/js/views/create-pin.js:84
 #: public/js/views/enter-pin.js:112 public/js/views/enter-pin.js:114 public/js/views/create-pin.js:86
 msgid "Submit"
-msgstr ""
+msgstr "عرض"
 
 #: public/js/views/create-pin.js:66 public/js/views/enter-pin.js:60 public/js/views/reset-pin.js:28 public/js/lib/wait.js:171 public/js/views/create-pin.js:65 public/js/views/enter-pin.js:61
 #: public/js/views/force-auth.js:53 public/js/views/reset-pin.js:29 public/js/views/reset-start.js:107 public/js/views/create-pin.js:101 public/js/views/enter-pin.js:65
@@ -166,216 +175,222 @@ msgstr ""
 #: public/js/views/page.js:43 public/js/views/reset-pin.js:33 public/js/views/reset-start.js:124 public/js/lib/wait.js:170 public/js/views/create-pin.js:119 public/js/views/enter-pin.js:77
 #: public/js/views/reset-start.js:101 public/js/views/create-pin.js:121 public/js/lib/wait.js:172
 msgid "Retry?"
-msgstr ""
+msgstr "إعادة المحاولة؟"
 
 #: public/js/views/create-pin.js:114 public/js/views/create-pin.js:116 public/js/views/create-pin.js:113 public/js/views/create-pin.js:115 public/js/views/create-pin.js:149
 #: public/js/views/create-pin.js:152 public/js/views/create-pin.js:164 public/js/views/create-pin.js:167 public/js/views/create-pin.js:170 public/js/views/create-pin.js:169
 #: public/js/views/create-pin.js:172
 msgid "Create PIN"
-msgstr ""
+msgstr "إنشاء رمز PIN"
 
 #: public/js/views/error.js:45
 msgid "Something went wrong."
-msgstr ""
+msgstr "حدث خطأ ما."
 
 #: public/js/views/reset-start.js:29 public/js/views/reset-start.js:118 public/js/views/reset-start.js:119 public/js/views/reset-start.js:123 public/js/views/reset-start.js:133
 #: public/js/views/reset-start.js:135 public/js/views/reset-start.js:112
 msgid "Reset your PIN?"
-msgstr ""
+msgstr "إعادة تعيين رمز الPIN الخاص بك؟"
 
 #: public/js/views/was-locked.js:13 public/js/views/was-locked.js:38 public/js/views/was-locked.js:42
 msgid "Was Locked"
-msgstr ""
+msgstr "تم قفله"
 
 #: public/js/views/wait-for-tx.js:10 public/js/views/wait-to-start.js:13
 msgid "Setting up payment"
-msgstr ""
+msgstr "إنشاء عملية الدفع"
 
 #: public/js/error-codes.js:12 public/js/error-codes.js:13 public/js/error-codes.js:14
 msgid "An internal web request timed out."
-msgstr ""
+msgstr "انتهاء وقت الطلب من الإنترنت"
 
 #: public/js/error-codes.js:13 public/js/error-codes.js:14 public/js/error-codes.js:15
 msgid "The system timed out while trying to log in."
-msgstr ""
+msgstr "انقضت مهلة النظام بينما يتم إعادة تسجيل الدخول الى النظام."
 
 #: public/js/error-codes.js:14 public/js/error-codes.js:15 public/js/error-codes.js:16
 msgid "An error occurred whilst trying to log out."
-msgstr ""
+msgstr "حدث خطأ أثناء محاولة تسجيل الخروج."
 
 #: public/js/error-codes.js:15 public/js/error-codes.js:16 public/js/error-codes.js:17
 msgid "The system timed out while trying to log out."
-msgstr ""
+msgstr "انتهت مهلة النظام أثناء محاولة تسجيل الخروج"
 
 #: public/js/error-codes.js:16 public/js/error-codes.js:19 public/js/error-codes.js:20
 msgid "Payments are temporarily disabled."
-msgstr ""
+msgstr "تم ايقاف عمليه الدفع لوقت محدد."
 
 #: public/js/error-codes.js:17 public/js/error-codes.js:20 public/js/error-codes.js:21
 msgid "An unexpected error occurred when creating your PIN."
-msgstr ""
+msgstr "عند إنشاء رمزPIN سوف يتم حدوث أخطاء غير متوقعه."
 
 #: public/js/error-codes.js:18 public/js/error-codes.js:27 public/js/error-codes.js:21 public/js/error-codes.js:30 public/js/error-codes.js:22 public/js/error-codes.js:31
 msgid "The PIN data submitted was invalid."
-msgstr ""
+msgstr "بيانات رمز ال PIN التي أدخلتها خاطئه."
 
 #: public/js/error-codes.js:19 public/js/error-codes.js:22 public/js/error-codes.js:23
 msgid "No valid user found whilst attempting to create your PIN"
-msgstr ""
+msgstr "لم يتم العثور على أي مستخدم متوفر أثناء محاولة إنشاء PIN خاص بك"
 
 #: public/js/error-codes.js:20 public/js/error-codes.js:23 public/js/error-codes.js:24
 msgid "Permission denied attempting to create your PIN."
-msgstr ""
+msgstr "تم رفض تصريح محاولة إنشاء PIN الخاص بك."
 
 #: public/js/error-codes.js:21 public/js/error-codes.js:24 public/js/error-codes.js:25
 msgid "The request timed out whilst attempting to create your PIN."
-msgstr ""
+msgstr "انتهت صلاحية طلبك أثناء إنشاء رمز PIN الخاص بك."
 
 #: public/js/error-codes.js:22 public/js/error-codes.js:25 public/js/error-codes.js:26
 msgid "An unexpected error occurred whilst checking your PIN."
-msgstr ""
+msgstr "حدث خطأ غير متوقع أثناء التحقق من رمز ال PIN الخاص بك."
 
 #: public/js/error-codes.js:23 public/js/error-codes.js:26 public/js/error-codes.js:27
 msgid "No valid user found whilst checking your PIN"
-msgstr ""
+msgstr "لا يوجد اسم مستخدم متوفر أثناء تفقد رمز ال PIN الخاص بك."
 
 #: public/js/error-codes.js:24 public/js/error-codes.js:27 public/js/error-codes.js:28
 msgid "Permission denied attempting to check your PIN"
-msgstr ""
+msgstr "تم رفض إذن محاولة التحقق من رمز الPIN الخاص بك"
 
 #: public/js/error-codes.js:25 public/js/error-codes.js:28 public/js/error-codes.js:29
 msgid "The request timed out whilst trying to check your PIN"
-msgstr ""
+msgstr "انتهت مهلة طلب محاولة التحقق من رمز الPIN الخاص بك"
 
 #: public/js/error-codes.js:26 public/js/error-codes.js:29 public/js/error-codes.js:30
 msgid "An unexpected error occurred when resetting your PIN."
-msgstr ""
+msgstr "حدث خطأ غير متوقع أثناء إعادة ضبط رمز ال PIN الخاص بك."
 
 #: public/js/error-codes.js:28 public/js/error-codes.js:31 public/js/error-codes.js:32
 msgid "No valid user found whilst attempting to reset your PIN"
 msgstr ""
+"لم يتم العثور على أي مستخدم صالح أثناء محاولة إعادة تعيين رمز ال PIN الخاص "
+"بك"
 
 #: public/js/error-codes.js:29 public/js/error-codes.js:32 public/js/error-codes.js:33
 msgid "Permission denied attempting to reset your PIN."
-msgstr ""
+msgstr " تم رفض تصريح محاولة إعادة تعيين رمز ال PIN الخاص بك."
 
 #: public/js/error-codes.js:30 public/js/error-codes.js:33 public/js/error-codes.js:34
 msgid "The request timed out whilst attempting to reset your PIN."
-msgstr ""
+msgstr "انتهت مهلة الطلب أثناء محاولة إعادة تعيين رمز ال PIN الخاص بك."
 
 #: public/js/error-codes.js:31 public/js/error-codes.js:35 public/js/error-codes.js:36
 msgid "The transaction failed. You have not been charged for this purchase."
-msgstr ""
+msgstr "فشلت الحركة. لم تتم محاسبتك على هذا الشراء."
 
 #: public/js/error-codes.js:32 public/js/error-codes.js:36 public/js/error-codes.js:37
 msgid "The payment method or price point is not supported for this region or operator."
-msgstr ""
+msgstr "لا يتم اعتماد طريقة الدفع أو نقطة السعر لهذه المنطقة أو المشغل."
 
 #: public/js/lib/auth.js:214
 msgid "Waiting for login"
-msgstr ""
+msgstr "في انتظار تسجيل الدخول"
 
 #: public/js/lib/wait.js:56
 msgid "Retrieving Transaction"
-msgstr ""
+msgstr "استرجاع العمليات"
 
 #: public/js/views/error.js:55 public/js/views/error.js:58
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "حدث خطأ غير متوقع"
 
 #: public/js/views/force-auth.js:87 public/js/views/force-auth.js:100 public/js/views/force-auth.js:99 public/js/views/force-auth.js:94
 msgid "Sign-in to reset PIN"
-msgstr ""
+msgstr "تسجيل الدخول لإعادة ضبط رمزPIN"
 
 #: public/js/views/force-auth.js:90 public/js/views/force-auth.js:103 public/js/views/force-auth.js:102 public/js/views/force-auth.js:97
 msgid "Please sign in to reset your PIN."
-msgstr ""
+msgstr "الرجاء تسجيل الدخول لإعادة ضبط رمزPINالخاص بك."
 
 #: public/js/views/init.js:12
 msgid "Initializing"
-msgstr ""
+msgstr "جار التهيئة"
 
 #: public/js/views/locked.js:21
 msgid "PIN Locked"
-msgstr ""
+msgstr "رمز PIN مغلق"
 
 #: public/js/views/payment-success.js:15 public/js/views/wait-to-finish.js:14
 msgid "Completing payment"
-msgstr ""
+msgstr "إكمال عملية الدفع"
 
 #: public/js/views/simulate.js:23
 msgid "Processing"
-msgstr ""
+msgstr "تتم المعالجة          "
 
 #: public/js/views/simulate.js:51
 msgid "Simulate Payment"
-msgstr ""
+msgstr "عمليات الدفع المتشابهة"
 
 #: public/js/views/simulate.js:55
 msgid "You will not be charged."
-msgstr ""
+msgstr "لن تتم محاسبتك."
 
 #: templates/reset-start.html:12 templates/reset-start.html:16
 msgid "Reset"
-msgstr ""
+msgstr "إعادة تعيين"
 
 #: templates/pin-form.html:22
 msgid "By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)s>Privacy Policy</a>"
 msgstr ""
+"اذا تريد المتابعة فأنت توافق على <a %(terms)s>شروطنا</a> و<a %(privacy)s> "
+"سياسة الخصوصية</a>                "
 
 #: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68 public/js/views/force-auth.js:90 public/js/views/reset-start.js:70 public/js/views/force-auth.js:88 public/js/views/login.js:18
 #: public/js/views/reset-start.js:55
 msgid "Connecting to Firefox Accounts"
-msgstr ""
+msgstr "الربط بحسابات فيرفكس"
 
 #: templates/reset-start.html:8 templates/reset-start.html:7
 msgid "Are you sure you want to reset your PIN? You must sign in to Firefox Accounts to reset your PIN."
 msgstr ""
+"هل أنت متأكد أنك تريد إعادة تعيين رمز الPIN الخاص بك؟ يجب عليك تسجيل الدخول "
+"إلى حسابات فيرفكس لإعادة تعيين رمز الPIN الخاص بك."
 
 #: public/js/views/page.js:34
 msgid "Logging out"
-msgstr ""
+msgstr "تسجيل الخروج"
 
 #: templates/signout.html:9
 msgid "You are signed in as:"
-msgstr ""
+msgstr "تم تسجيل دخولك ك:"
 
 #: templates/signout.html:11
 msgid "Not you?"
-msgstr ""
+msgstr "ليس أنت؟"
 
 #: public/js/views/super-simulate.js:44 public/js/views/super-simulate.js:64
 msgid "Super Simulate"
-msgstr ""
+msgstr "المحاكاة الفائقة"
 
 #: templates/super-simulate.html:8
 msgid "Simulate Something?"
-msgstr ""
+msgstr "محاكاة شيء ما؟"
 
 #: templates/super-simulate.html:11
 msgid "No network simulation"
-msgstr ""
+msgstr "لا يوجد محاكاة للشبكة"
 
 #: public/js/lib/pin-widget.js:71
 msgid "PIN too short"
-msgstr ""
+msgstr "رمز الPIN قصير جداً"
 
 #: public/js/lib/utils.js:191
 msgid "Success"
-msgstr ""
+msgstr "نجاح"
 
 #: public/js/lib/utils.js:192
 msgid "Your purchase is complete. Close the window to continue"
-msgstr ""
+msgstr "تم إكمال عملية الشراء. أغلق النافذة للمتابعة"
 
 #: public/js/lib/utils.js:203
 msgid "An error occurred. Close the window to continue"
-msgstr ""
+msgstr "حدث خطأ. قم بإغلاق النافذة للمتابعة"
 
 #: public/js/views/page.js:161
 msgid "Completing Payment"
-msgstr ""
+msgstr "استكمال الدفع"
 
 #: public/js/error-codes.js:12 public/js/error-codes.js:17 public/js/error-codes.js:18 public/js/error-codes.js:34 public/js/error-codes.js:13 public/js/error-codes.js:19 public/js/error-codes.js:35
 msgid "Product cannot be purchased due to configuration error."
-msgstr ""
+msgstr "لا يمكن شراء هذا المنتج بسبب خطأ في التهيئة."

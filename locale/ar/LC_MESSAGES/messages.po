@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-29 20:27+0000\n"
+"POT-Creation-Date: 2015-06-17 16:40+0000\n"
 "PO-Revision-Date: 2015-05-22 18:26+0000\n"
 "Last-Translator: Abdelrahman <abood.fcb@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,8 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Generator: Pootle 2.5.0\n"
 "X-POOTLE-MTIME: 1432319189.0\n"
 
@@ -126,9 +125,7 @@ msgstr "هل نسيت رمز ال PIN الخاص بك؟"
 
 #: public/js/views/locked.js:24 public/js/views/locked.js:22
 msgid "You entered the wrong PIN too many times. Your account is locked. Please try your purchase again in 5 minutes."
-msgstr ""
-"لقد أدخلت ال PIN الخطأ عدة مرات. لقد تم إغلاق حسابك. رجاءا قم بعملية الشراء "
-"مرة أخرى بعد 5 دقائق."
+msgstr "لقد أدخلت ال PIN الخطأ عدة مرات. لقد تم إغلاق حسابك. رجاءا قم بعملية الشراء مرة أخرى بعد 5 دقائق."
 
 #: templates/was-locked.html:6
 msgid "Your PIN was locked"
@@ -136,16 +133,11 @@ msgstr "لقد تم إغلاق رمز PIN الخاص بك"
 
 #: templates/was-locked.html:7
 msgid "Your PIN was locked because you entered it incorrectly too many times. You can continue and try entering your PIN again or reset your PIN."
-msgstr ""
-"لقد تم إغلاق رمز الPIN الخاص بك لأنك قمت بإدخاله بشكل خاطئ عدة مرات. يمكنك "
-"المتابعة و إدخال رمز الPIN الخاص بك مرة أخرى أو إعادة تعيين رمز الPIN الخاص "
-"بك."
+msgstr "لقد تم إغلاق رمز الPIN الخاص بك لأنك قمت بإدخاله بشكل خاطئ عدة مرات. يمكنك المتابعة و إدخال رمز الPIN الخاص بك مرة أخرى أو إعادة تعيين رمز الPIN الخاص بك."
 
 #: templates/reset-start.html:7 templates/reset-start.html:10
 msgid "Are you sure you want to reset your PIN? You must sign in to Persona to reset your PIN."
-msgstr ""
-"هل أنت متأكد من إعادة تعيين رمز الPIN الخاص بك؟ يجب عليك تسجيل الدخول "
-"لبيرسونا لإعادة تعيين رمز الPIN الخاص بك."
+msgstr "هل أنت متأكد من إعادة تعيين رمز الPIN الخاص بك؟ يجب عليك تسجيل الدخول لبيرسونا لإعادة تعيين رمز الPIN الخاص بك."
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6 webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"
@@ -262,9 +254,7 @@ msgstr "حدث خطأ غير متوقع أثناء إعادة ضبط رمز ال
 
 #: public/js/error-codes.js:28 public/js/error-codes.js:31 public/js/error-codes.js:32
 msgid "No valid user found whilst attempting to reset your PIN"
-msgstr ""
-"لم يتم العثور على أي مستخدم صالح أثناء محاولة إعادة تعيين رمز ال PIN الخاص "
-"بك"
+msgstr "لم يتم العثور على أي مستخدم صالح أثناء محاولة إعادة تعيين رمز ال PIN الخاص بك"
 
 #: public/js/error-codes.js:29 public/js/error-codes.js:32 public/js/error-codes.js:33
 msgid "Permission denied attempting to reset your PIN."
@@ -332,9 +322,7 @@ msgstr "إعادة تعيين"
 
 #: templates/pin-form.html:22
 msgid "By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)s>Privacy Policy</a>"
-msgstr ""
-"اذا تريد المتابعة فأنت توافق على <a %(terms)s>شروطنا</a> و<a %(privacy)s> "
-"سياسة الخصوصية</a>                "
+msgstr "اذا تريد المتابعة فأنت توافق على <a %(terms)s>شروطنا</a> و<a %(privacy)s> سياسة الخصوصية</a>                "
 
 #: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68 public/js/views/force-auth.js:90 public/js/views/reset-start.js:70 public/js/views/force-auth.js:88 public/js/views/login.js:18
 #: public/js/views/reset-start.js:55
@@ -343,9 +331,7 @@ msgstr "الربط بحسابات فيرفكس"
 
 #: templates/reset-start.html:8 templates/reset-start.html:7
 msgid "Are you sure you want to reset your PIN? You must sign in to Firefox Accounts to reset your PIN."
-msgstr ""
-"هل أنت متأكد أنك تريد إعادة تعيين رمز الPIN الخاص بك؟ يجب عليك تسجيل الدخول "
-"إلى حسابات فيرفكس لإعادة تعيين رمز الPIN الخاص بك."
+msgstr "هل أنت متأكد أنك تريد إعادة تعيين رمز الPIN الخاص بك؟ يجب عليك تسجيل الدخول إلى حسابات فيرفكس لإعادة تعيين رمز الPIN الخاص بك."
 
 #: public/js/views/page.js:34
 msgid "Logging out"

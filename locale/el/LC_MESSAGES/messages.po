@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-29 20:27+0000\n"
+"POT-Creation-Date: 2015-06-17 16:40+0000\n"
 "PO-Revision-Date: 2015-06-14 20:28+0000\n"
 "Last-Translator: Joseph <sirios2222@yahoo.gr>\n"
 "Language-Team: none\n"
@@ -125,9 +125,7 @@ msgstr "Ξεχάσατε το PIN σας;"
 
 #: public/js/views/locked.js:24 public/js/views/locked.js:22
 msgid "You entered the wrong PIN too many times. Your account is locked. Please try your purchase again in 5 minutes."
-msgstr ""
-"Εισάγατε λάθος PIN πάρα πολλές φορές. Ο λογαριασμός σας κλειδώθηκε. "
-"Παρακαλούμε δοκιμάστε την αγορά ξανά σε 5 λεπτά."
+msgstr "Εισάγατε λάθος PIN πάρα πολλές φορές. Ο λογαριασμός σας κλειδώθηκε. Παρακαλούμε δοκιμάστε την αγορά ξανά σε 5 λεπτά."
 
 #: templates/was-locked.html:6
 msgid "Your PIN was locked"
@@ -135,9 +133,7 @@ msgstr "Το PIN σας κλειδώθηκε"
 
 #: templates/was-locked.html:7
 msgid "Your PIN was locked because you entered it incorrectly too many times. You can continue and try entering your PIN again or reset your PIN."
-msgstr ""
-"Το PIN σας κλειδώθηκε επειδή το εισάγατε λάθος πολλές φορές. Μπορείτε να "
-"συνεχίσετε δοκιμάζοντας να εισάγετε το  PIN ξανά ή να το επαναφέρετε."
+msgstr "Το PIN σας κλειδώθηκε επειδή το εισάγατε λάθος πολλές φορές. Μπορείτε να συνεχίσετε δοκιμάζοντας να εισάγετε το  PIN ξανά ή να το επαναφέρετε."
 
 #: templates/reset-start.html:7 templates/reset-start.html:10
 msgid "Are you sure you want to reset your PIN? You must sign in to Persona to reset your PIN."
@@ -335,9 +331,7 @@ msgstr "Σύνδεση στον λογαριασμό Firefox"
 
 #: templates/reset-start.html:8 templates/reset-start.html:7
 msgid "Are you sure you want to reset your PIN? You must sign in to Firefox Accounts to reset your PIN."
-msgstr ""
-"Είστε σίγουροι πως θέλετε να επαναφέρετε το PIN σας; Πρέπει να συνδεθείτε με "
-"τον λογαριασμό Firefox που διαθέτετε για να επαναφέρετε το PIN σας."
+msgstr "Είστε σίγουροι πως θέλετε να επαναφέρετε το PIN σας; Πρέπει να συνδεθείτε με τον λογαριασμό Firefox που διαθέτετε για να επαναφέρετε το PIN σας."
 
 #: public/js/views/page.js:34
 msgid "Logging out"

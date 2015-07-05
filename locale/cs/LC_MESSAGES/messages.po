@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Czech (cs)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-07-01 15:34+0000\n"
-"PO-Revision-Date: 2015-07-02 23:08+0000\n"
+"PO-Revision-Date: 2015-07-05 12:20+0000\n"
 "Last-Translator: Michal <michal.stanke@mikk.cz>\n"
 "Language-Team: Czech Mozilla Team <info@mozilla.cz>\n"
 "Language: cs\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1435878515.0\n"
+"X-POOTLE-MTIME: 1436098833.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18 public/js/views/payment-failed.js:19
 msgid "Payment cancelled."
@@ -353,7 +353,7 @@ msgstr "Nejste to vy?"
 
 #: public/js/views/super-simulate.js:44 public/js/views/super-simulate.js:64
 msgid "Super Simulate"
-msgstr "Super Simulate"
+msgstr "Super Simulace"
 
 #: templates/super-simulate.html:8
 msgid "Simulate Something?"

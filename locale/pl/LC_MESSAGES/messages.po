@@ -12,8 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.4\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18 public/js/views/payment-failed.js:19
 msgid "Payment cancelled."
@@ -31,8 +30,7 @@ msgstr "Kod PIN może zawierać tylko cyfry."
 
 #: webpay/base/templates/base.html:30
 msgid "You logged in as a different user, you must start the payment again."
-msgstr ""
-"Zalogowano jako innego użytkownika, musisz ponownie rozpocząć płatność."
+msgstr "Zalogowano jako innego użytkownika, musisz ponownie rozpocząć płatność."
 
 #: public/js/views/throbber.js:15 public/js/views/throbber.js:16 templates/throbber.html:7
 msgid "Loading"
@@ -126,33 +124,20 @@ msgid "Forgot your PIN?"
 msgstr "Nie pamiętasz swojego kodu PIN?"
 
 #: public/js/views/locked.js:24 public/js/views/locked.js:22
-msgid ""
-"You entered the wrong PIN too many times. Your account is locked. Please try "
-"your purchase again in 5 minutes."
-msgstr ""
-"Błędny kod PIN wprowadzono zbyt wiele razy. Twoje konto jest zablokowane. "
-"Spróbuj ponownie dokonać zakupu za 5 minut."
+msgid "You entered the wrong PIN too many times. Your account is locked. Please try your purchase again in 5 minutes."
+msgstr "Błędny kod PIN wprowadzono zbyt wiele razy. Twoje konto jest zablokowane. Spróbuj ponownie dokonać zakupu za 5 minut."
 
 #: templates/was-locked.html:6
 msgid "Your PIN was locked"
 msgstr "Twój kod PIN został zablokowany"
 
 #: templates/was-locked.html:7
-msgid ""
-"Your PIN was locked because you entered it incorrectly too many times. You "
-"can continue and try entering your PIN again or reset your PIN."
-msgstr ""
-"Twój kod PIN został zablokowany, ponieważ wprowadzono go niepoprawnie zbyt "
-"wiele razy. Możesz kontynuować i spróbować wprowadzić swój kod PIN ponownie "
-"lub zresetować go."
+msgid "Your PIN was locked because you entered it incorrectly too many times. You can continue and try entering your PIN again or reset your PIN."
+msgstr "Twój kod PIN został zablokowany, ponieważ wprowadzono go niepoprawnie zbyt wiele razy. Możesz kontynuować i spróbować wprowadzić swój kod PIN ponownie lub zresetować go."
 
 #: templates/reset-start.html:7 templates/reset-start.html:10
-msgid ""
-"Are you sure you want to reset your PIN? You must sign in to Persona to reset "
-"your PIN."
-msgstr ""
-"Czy na pewno chcesz zresetować kod PIN? Musisz zalogować się do usługi "
-"Persona, by to zrobić."
+msgid "Are you sure you want to reset your PIN? You must sign in to Persona to reset your PIN."
+msgstr "Czy na pewno chcesz zresetować kod PIN? Musisz zalogować się do usługi Persona, by to zrobić."
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6 webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"
@@ -281,16 +266,11 @@ msgstr "Upłynął limit czas podczas próby resetowania kodu PIN."
 
 #: public/js/error-codes.js:31 public/js/error-codes.js:35 public/js/error-codes.js:36
 msgid "The transaction failed. You have not been charged for this purchase."
-msgstr ""
-"Transakcja nie powiodła się. Nie obciążono ciebie płatnością za ten zakup."
+msgstr "Transakcja nie powiodła się. Nie obciążono ciebie płatnością za ten zakup."
 
 #: public/js/error-codes.js:32 public/js/error-codes.js:36 public/js/error-codes.js:37
-msgid ""
-"The payment method or price point is not supported for this region or "
-"operator."
-msgstr ""
-"Metoda płatności lub cena bazowa nie jest obsługiwana przez tego operatora "
-"lub w tym regionie."
+msgid "The payment method or price point is not supported for this region or operator."
+msgstr "Metoda płatności lub cena bazowa nie jest obsługiwana przez tego operatora lub w tym regionie."
 
 #: public/js/lib/auth.js:214
 msgid "Waiting for login"
@@ -341,12 +321,8 @@ msgid "Reset"
 msgstr "Resetuj"
 
 #: templates/pin-form.html:22
-msgid ""
-"By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)s>"
-"Privacy Policy</a>"
-msgstr ""
-"Kontynuując, zgadzasz się z naszą <a %(terms)s>zasadami</a> i <a %(privacy)s>"
-"polityką prywatności</a>"
+msgid "By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)s>Privacy Policy</a>"
+msgstr "Kontynuując, zgadzasz się z naszą <a %(terms)s>zasadami</a> i <a %(privacy)s>polityką prywatności</a>"
 
 #: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68 public/js/views/force-auth.js:90 public/js/views/reset-start.js:70 public/js/views/force-auth.js:88 public/js/views/login.js:18
 #: public/js/views/reset-start.js:55
@@ -354,12 +330,8 @@ msgid "Connecting to Firefox Accounts"
 msgstr "Łączenie z usługą Firefox Accounts"
 
 #: templates/reset-start.html:8 templates/reset-start.html:7
-msgid ""
-"Are you sure you want to reset your PIN? You must sign in to Firefox Accounts "
-"to reset your PIN."
-msgstr ""
-"Czy na pewno chcesz zresetować kod PIN? Musisz zalogować się do usługi "
-"Firefox Accounts, by to zrobić."
+msgid "Are you sure you want to reset your PIN? You must sign in to Firefox Accounts to reset your PIN."
+msgstr "Czy na pewno chcesz zresetować kod PIN? Musisz zalogować się do usługi Firefox Accounts, by to zrobić."
 
 #: public/js/views/page.js:34
 msgid "Logging out"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Czech (cs)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-01 15:34+0000\n"
+"POT-Creation-Date: 2015-07-15 18:35+0000\n"
 "PO-Revision-Date: 2015-07-05 12:20+0000\n"
 "Last-Translator: Michal <michal.stanke@mikk.cz>\n"
 "Language-Team: Czech Mozilla Team <info@mozilla.cz>\n"
@@ -125,9 +125,7 @@ msgstr "Zapomněli jste svůj PIN?"
 
 #: public/js/views/locked.js:24 public/js/views/locked.js:22
 msgid "You entered the wrong PIN too many times. Your account is locked. Please try your purchase again in 5 minutes."
-msgstr ""
-"Zadali jste opakovaně špatný kód PIN. Váš účet je nyní zablokován. Zkuste "
-"znovu svůj nákup za 5 minut."
+msgstr "Zadali jste opakovaně špatný kód PIN. Váš účet je nyní zablokován. Zkuste znovu svůj nákup za 5 minut."
 
 #: templates/was-locked.html:6
 msgid "Your PIN was locked"
@@ -135,15 +133,11 @@ msgstr "PIN byl uzamčen"
 
 #: templates/was-locked.html:7
 msgid "Your PIN was locked because you entered it incorrectly too many times. You can continue and try entering your PIN again or reset your PIN."
-msgstr ""
-"PIN byl zablokován, protože jste jej vložili opakovaně chybně. Můžete "
-"pokračovat a zkusit jej zadat znovu či PIN obnovit."
+msgstr "PIN byl zablokován, protože jste jej vložili opakovaně chybně. Můžete pokračovat a zkusit jej zadat znovu či PIN obnovit."
 
 #: templates/reset-start.html:7 templates/reset-start.html:10
 msgid "Are you sure you want to reset your PIN? You must sign in to Persona to reset your PIN."
-msgstr ""
-"Jste si jisti, že chcete obnovit svůj PIN? Pro obnovu svého PINu se musíte "
-"přihlásit pomocí Persona."
+msgstr "Jste si jisti, že chcete obnovit svůj PIN? Pro obnovu svého PINu se musíte přihlásit pomocí Persona."
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6 webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"

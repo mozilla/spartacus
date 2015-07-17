@@ -1,3 +1,4 @@
+sudo: false
 language: node_js
 node_js:
   - "0.10"
@@ -21,7 +22,6 @@ before_script:
   - popd
   - export PATH=$PATH:`pwd`/casperjs/bin
   - sh -e /etc/init.d/xvfb start
-  # - wget http://download.slimerjs.org/releases/latest-slimerjs-stable/slimerjs-$SLIMERVERSION.zip
   - wget http://download.slimerjs.org/nightlies/latest-slimerjs-master/slimerjs-$SLIMERVERSION.zip
   - unzip slimerjs-$SLIMERVERSION.zip
   - mv slimerjs-$SLIMERVERSION ./slimerjs

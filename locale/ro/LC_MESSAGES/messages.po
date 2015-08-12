@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-29 20:05+0000\n"
+"POT-Creation-Date: 2015-08-12 15:28+0000\n"
 "PO-Revision-Date: 2015-08-06 08:05+0000\n"
 "Last-Translator: Jobava <jobaval10n@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,8 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
-"20)) ? 1 : 2);;\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);;\n"
 "X-Generator: Pootle 2.5.0\n"
 "X-POOTLE-MTIME: 1438848336.0\n"
 
@@ -31,9 +30,7 @@ msgstr "PIN-ul poate conține doar cifre."
 
 #: webpay/base/templates/base.html:30
 msgid "You logged in as a different user, you must start the payment again."
-msgstr ""
-"Te-ai autentificat într-un cont de utilizator diferit, trebuie să reîncepi "
-"plata."
+msgstr "Te-ai autentificat într-un cont de utilizator diferit, trebuie să reîncepi plata."
 
 #: public/js/views/throbber.js:15 public/js/views/throbber.js:16 templates/throbber.html:7
 msgid "Loading"
@@ -128,9 +125,7 @@ msgstr "Ai uitat PIN-ul?"
 
 #: public/js/views/locked.js:24 public/js/views/locked.js:22
 msgid "You entered the wrong PIN too many times. Your account is locked. Please try your purchase again in 5 minutes."
-msgstr ""
-"Ai introdus PIN-ul greșit de prea multe ori. Contul tău este blocat. Te "
-"rugăm să încerci achiziția din nou în 5 minute."
+msgstr "Ai introdus PIN-ul greșit de prea multe ori. Contul tău este blocat. Te rugăm să încerci achiziția din nou în 5 minute."
 
 #: templates/was-locked.html:6
 msgid "Your PIN was locked"
@@ -138,16 +133,11 @@ msgstr "PIN-ul tău a fost blocat"
 
 #: templates/was-locked.html:7
 msgid "Your PIN was locked because you entered it incorrectly too many times. You can continue and try entering your PIN again or reset your PIN."
-msgstr ""
-"PIN-ul tău a fost blocat deoarece l-ai introdus greșit de prea multe ori. "
-"Poți continua și să încerci să introduci PIN-ul din nou sau să-ți resetezi "
-"PIN-ul."
+msgstr "PIN-ul tău a fost blocat deoarece l-ai introdus greșit de prea multe ori. Poți continua și să încerci să introduci PIN-ul din nou sau să-ți resetezi PIN-ul."
 
 #: templates/reset-start.html:7 templates/reset-start.html:10
 msgid "Are you sure you want to reset your PIN? You must sign in to Persona to reset your PIN."
-msgstr ""
-"Sigur dorești să resetezi PIN-ul? Trebuie să te autentifici în Persona "
-"pentru a-ți reseta PIN-ul."
+msgstr "Sigur dorești să resetezi PIN-ul? Trebuie să te autentifici în Persona pentru a-ți reseta PIN-ul."
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6 webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"
@@ -280,9 +270,7 @@ msgstr "Tranzacția a eșuat. Nu ai fost taxat pentru această achiziție."
 
 #: public/js/error-codes.js:32 public/js/error-codes.js:36 public/js/error-codes.js:37
 msgid "The payment method or price point is not supported for this region or operator."
-msgstr ""
-"Metoda de plată sau prețul de referință nu este suportat(ă) pentru această "
-"regiune sau operator."
+msgstr "Metoda de plată sau prețul de referință nu este suportat(ă) pentru această regiune sau operator."
 
 #: public/js/lib/auth.js:214
 msgid "Waiting for login"
@@ -334,9 +322,7 @@ msgstr "Resetează"
 
 #: templates/pin-form.html:22
 msgid "By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)s>Privacy Policy</a>"
-msgstr ""
-"Continuând ești de acord cu <a %(terms)s>termenii</a> și <a %"
-"(privacy)s>politica noastră de confidențialitate</a>"
+msgstr "Continuând ești de acord cu <a %(terms)s>termenii</a> și <a %(privacy)s>politica noastră de confidențialitate</a>"
 
 #: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68 public/js/views/force-auth.js:90 public/js/views/reset-start.js:70 public/js/views/force-auth.js:88 public/js/views/login.js:18
 #: public/js/views/reset-start.js:55
@@ -345,9 +331,7 @@ msgstr "Conectare la Conturi Firefox"
 
 #: templates/reset-start.html:8 templates/reset-start.html:7
 msgid "Are you sure you want to reset your PIN? You must sign in to Firefox Accounts to reset your PIN."
-msgstr ""
-"Sigur dorești să îți resetezi PIN-ul? Trebuie să te autentifici în Conturi "
-"Firefox pentru a reseta PIN-ul."
+msgstr "Sigur dorești să îți resetezi PIN-ul? Trebuie să te autentifici în Conturi Firefox pentru a reseta PIN-ul."
 
 #: public/js/views/page.js:34
 msgid "Logging out"

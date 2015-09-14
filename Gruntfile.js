@@ -29,12 +29,6 @@ module.exports = function(grunt) {
         },
         src: uitestSrc,
       },
-      phantom: {
-        options: {
-          engine: 'phantomjs'
-        },
-        src: uitestSrc,
-      }
     },
 
     clean: {

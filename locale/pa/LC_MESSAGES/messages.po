@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-08-26 16:26+0000\n"
-"PO-Revision-Date: 2015-03-15 00:14+0000\n"
-"Last-Translator: Anonymous Pootle User\n"
+"PO-Revision-Date: 2015-09-16 12:04+0000\n"
+"Last-Translator: Aman <amanpreet.alam@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pa\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1) ;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1426378488.0\n"
+"X-POOTLE-MTIME: 1442405079.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18 public/js/views/payment-failed.js:19
 msgid "Payment cancelled."
@@ -359,20 +359,19 @@ msgstr "ਕੋਈ ਨੈਟਵਰਕ ਸਿਮੁਲੇਸ਼ਨ ਨਹੀਂ"
 
 #: public/js/lib/pin-widget.js:71
 msgid "PIN too short"
-msgstr ""
+msgstr "ਪਿੰਨ ਬਹੁਤ ਛੋਟਾ ਹੈ"
 
 #: public/js/lib/utils.js:191
 msgid "Success"
-msgstr ""
+msgstr "ਕਾਮਯਾਬ"
 
 #: public/js/lib/utils.js:192
 msgid "Your purchase is complete. Close the window to continue"
-msgstr ""
+msgstr "ਤੁਹਾਡੀ ਖਰੀਦ ਪੂਰੀ ਹੋਈ। ਜਾਰੀ ਰੱਖਣ ਲਈ ਵਿੰਡੋ ਨੂੰ ਬੰਦ ਕਰੋ"
 
 #: public/js/lib/utils.js:203
-#, fuzzy
 msgid "An error occurred. Close the window to continue"
-msgstr "ਲਾਗਆਉਟ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਦੇ ਦੌਰਾਨ ਗਲਤੀ ਆਈ।"
+msgstr "ਗਲਤੀ ਆਈ। ਜਾਰੀ ਰੱਖਣ ਲਈ ਵਿੰਡੋ ਨੂੰ ਬੰਦ ਕਰੋ"
 
 #: public/js/views/page.js:161
 #, fuzzy

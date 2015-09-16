@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-08-26 16:26+0000\n"
-"PO-Revision-Date: 2015-09-16 12:04+0000\n"
+"PO-Revision-Date: 2015-09-16 12:07+0000\n"
 "Last-Translator: Aman <amanpreet.alam@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pa\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1) ;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1442405079.0\n"
+"X-POOTLE-MTIME: 1442405235.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18 public/js/views/payment-failed.js:19
 msgid "Payment cancelled."
@@ -374,10 +374,9 @@ msgid "An error occurred. Close the window to continue"
 msgstr "ਗਲਤੀ ਆਈ। ਜਾਰੀ ਰੱਖਣ ਲਈ ਵਿੰਡੋ ਨੂੰ ਬੰਦ ਕਰੋ"
 
 #: public/js/views/page.js:161
-#, fuzzy
 msgid "Completing Payment"
-msgstr "ਭੁਗਤਾਨ ਪੂਰਾ ਕੀਤਾ ਜਾਂਦਾ ਹੈ"
+msgstr "ਭੁਗਤਾਨ ਪੂਰਾ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
 #: public/js/error-codes.js:12 public/js/error-codes.js:17 public/js/error-codes.js:18 public/js/error-codes.js:34 public/js/error-codes.js:13 public/js/error-codes.js:19 public/js/error-codes.js:35
 msgid "Product cannot be purchased due to configuration error."
-msgstr ""
+msgstr "ਉਤਪਾਦ ਨੂੰ ਸੰਰਚਨਾ ਗਲਤੀ ਕਰਕੇ ਖਰੀਦਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ।"

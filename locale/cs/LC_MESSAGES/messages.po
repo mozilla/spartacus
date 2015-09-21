@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Czech (cs)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-26 16:26+0000\n"
+"POT-Creation-Date: 2015-09-21 16:50+0000\n"
 "PO-Revision-Date: 2015-09-10 07:23+0000\n"
 "Last-Translator: Michal <michal.stanke@mikk.cz>\n"
 "Language-Team: Czech Mozilla Team <info@mozilla.cz>\n"
@@ -137,9 +137,7 @@ msgstr "PIN byl zablokován, protože jste jej vložili opakovaně chybně. Mů�
 
 #: templates/reset-start.html:7 templates/reset-start.html:10
 msgid "Are you sure you want to reset your PIN? You must sign in to Persona to reset your PIN."
-msgstr ""
-"Opravdu chcete obnovit svůj PIN? Pro obnovu svého PINu se musíte přihlásit "
-"pomocí Persona."
+msgstr "Opravdu chcete obnovit svůj PIN? Pro obnovu svého PINu se musíte přihlásit pomocí Persona."
 
 #: webpay/provider/templates/provider/wait-to-finish.html:6 webpay/provider/templates/provider/wait-to-finish.html:12
 msgid "Verifying payment"
@@ -333,9 +331,7 @@ msgstr "Připojování k Firefox účtu"
 
 #: templates/reset-start.html:8 templates/reset-start.html:7
 msgid "Are you sure you want to reset your PIN? You must sign in to Firefox Accounts to reset your PIN."
-msgstr ""
-"Opravdu chcete obnovit svůj PIN? Pro obnovu svého PINu se musíte přihlásit "
-"pomocí účtu Firefox."
+msgstr "Opravdu chcete obnovit svůj PIN? Pro obnovu svého PINu se musíte přihlásit pomocí účtu Firefox."
 
 #: public/js/views/page.js:34
 msgid "Logging out"

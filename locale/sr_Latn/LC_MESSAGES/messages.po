@@ -3,9 +3,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-26 16:26+0000\n"
-"PO-Revision-Date: 2015-04-17 11:52+0000\n"
-"Last-Translator: Vanja <tumbas93@gmail.com>\n"
+"POT-Creation-Date: 2015-09-21 16:50+0000\n"
+"PO-Revision-Date: 2015-09-19 12:12+0000\n"
+"Last-Translator: Vanja Tumbas <tumbas93@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
@@ -170,19 +170,19 @@ msgid ""
 "You entered the wrong PIN too many times. Your account is locked. Please try "
 "your purchase again in 5 minutes."
 msgstr ""
-"Uneli ste pogrešan PIN previše puta. Vaš nalog je zaključan. Molimo Vas "
-"pokušajte ponovo da obavite kupovinu za 5 minuta."
+"Uneli ste pogrešan PIN previše puta. Vaš nalog je zaključan. Pokušajte "
+"ponovo da obavite kupovinu za 5 minuta."
 
 #: templates/was-locked.html:6
 msgid "Your PIN was locked"
-msgstr "Vaš PIN je bio zaključan"
+msgstr "PIN je bio zaključan"
 
 #: templates/was-locked.html:7
 msgid ""
 "Your PIN was locked because you entered it incorrectly too many times. You "
 "can continue and try entering your PIN again or reset your PIN."
 msgstr ""
-"Vaš PIN je bio zaključan jer ste ga uneli pogrešno previše puta. Možete "
+"PIN je bio zaključan jer ste ga uneli pogrešno previše puta. Možete "
 "nastaviti i ponovo uneti svoj PIN ili ga možete resetovati."
 
 #: templates/reset-start.html:7 templates/reset-start.html:10
@@ -297,7 +297,7 @@ msgstr "Uplate su privremeno onemogućene."
 #: public/js/error-codes.js:17 public/js/error-codes.js:20
 #: public/js/error-codes.js:21
 msgid "An unexpected error occurred when creating your PIN."
-msgstr "Desila se neočekivana greška pri pravljenju Vašeg PIN-a."
+msgstr "Desila se neočekivana greška pri pravljenju vašeg PIN-a."
 
 #: public/js/error-codes.js:18 public/js/error-codes.js:27
 #: public/js/error-codes.js:21 public/js/error-codes.js:30
@@ -308,64 +308,62 @@ msgstr "PIN podaci koji su poslati su neispravni."
 #: public/js/error-codes.js:19 public/js/error-codes.js:22
 #: public/js/error-codes.js:23
 msgid "No valid user found whilst attempting to create your PIN"
-msgstr ""
-"Nije pronađen ni jedan validan korisnik pri pokušaju pravljenja Vašeg PIN-a"
+msgstr "Nije pronađen ni jedan validan korisnik pri pokušaju pravljenja PIN-a"
 
 #: public/js/error-codes.js:20 public/js/error-codes.js:23
 #: public/js/error-codes.js:24
 msgid "Permission denied attempting to create your PIN."
-msgstr "Dozvola je odbijena pri pokušaju da se napravi Vaš PIN."
+msgstr "Dozvola je odbijena pri pokušaju da se napravi PIN."
 
 #: public/js/error-codes.js:21 public/js/error-codes.js:24
 #: public/js/error-codes.js:25
 msgid "The request timed out whilst attempting to create your PIN."
-msgstr "Zahtev je istekao dok je pokušavao da napravi Vaš PIN."
+msgstr "Zahtev je istekao dok je pokušavao da napravi PIN."
 
 #: public/js/error-codes.js:22 public/js/error-codes.js:25
 #: public/js/error-codes.js:26
 msgid "An unexpected error occurred whilst checking your PIN."
-msgstr "Desila se neočekivana greška pri pravljenju Vašeg PIN-a."
+msgstr "Desila se neočekivana greška pri pravljenju PIN-a."
 
 #: public/js/error-codes.js:23 public/js/error-codes.js:26
 #: public/js/error-codes.js:27
 msgid "No valid user found whilst checking your PIN"
-msgstr "Ni jedan validan korisnik nije pronađen pri proveri Vašeg PIN-a"
+msgstr "Ni jedan validan korisnik nije pronađen pri proveri PIN-a"
 
 #: public/js/error-codes.js:24 public/js/error-codes.js:27
 #: public/js/error-codes.js:28
 msgid "Permission denied attempting to check your PIN"
-msgstr "Dozvola je odbijena pri pokušaju provere Vašeg PIN-a"
+msgstr "Dozvola je odbijena pri pokušaju provere PIN-a"
 
 #: public/js/error-codes.js:25 public/js/error-codes.js:28
 #: public/js/error-codes.js:29
 msgid "The request timed out whilst trying to check your PIN"
-msgstr "Zahtev je istekao pri pokušaju provere Vašeg PIN-a"
+msgstr "Zahtev je istekao pri pokušaju provere PIN-a"
 
 #: public/js/error-codes.js:26 public/js/error-codes.js:29
 #: public/js/error-codes.js:30
 msgid "An unexpected error occurred when resetting your PIN."
-msgstr "Desila se neočekivana greška pri resetovanju Vašeg PIN-a."
+msgstr "Desila se neočekivana greška pri resetovanju PIN-a."
 
 #: public/js/error-codes.js:28 public/js/error-codes.js:31
 #: public/js/error-codes.js:32
 msgid "No valid user found whilst attempting to reset your PIN"
-msgstr ""
-"Ni jedan validan korisnik nije pronađen pri pokušaju resetovanja Vašeg PIN-a"
+msgstr "Ni jedan validan korisnik nije pronađen pri pokušaju resetovanja PIN-a"
 
 #: public/js/error-codes.js:29 public/js/error-codes.js:32
 #: public/js/error-codes.js:33
 msgid "Permission denied attempting to reset your PIN."
-msgstr "Dozvola je odbijena pri pokušaju resetovanja Vašeg PIN-a."
+msgstr "Dozvola je odbijena pri pokušaju resetovanja PIN-a."
 
 #: public/js/error-codes.js:30 public/js/error-codes.js:33
 #: public/js/error-codes.js:34
 msgid "The request timed out whilst attempting to reset your PIN."
-msgstr "Zahtev je istekao pri pokušaju resetovanja Vašeg PIN-a."
+msgstr "Zahtev je istekao pri pokušaju resetovanja PIN-a."
 
 #: public/js/error-codes.js:31 public/js/error-codes.js:35
 #: public/js/error-codes.js:36
 msgid "The transaction failed. You have not been charged for this purchase."
-msgstr "Transakcija nije uspela. Ova kupovina Vam neće biti naplaćena."
+msgstr "Transakcija nije uspela. Ova kupovina neće biti naplaćena."
 
 #: public/js/error-codes.js:32 public/js/error-codes.js:36
 #: public/js/error-codes.js:37
@@ -394,7 +392,7 @@ msgstr "Prijavite se da biste resetovali PIN"
 #: public/js/views/force-auth.js:90 public/js/views/force-auth.js:103
 #: public/js/views/force-auth.js:102 public/js/views/force-auth.js:97
 msgid "Please sign in to reset your PIN."
-msgstr "Molimo da se prijavite da biste resetovali Vaš PIN."
+msgstr "Molimo da se prijavite da biste resetovali PIN."
 
 #: public/js/views/init.js:12
 msgid "Initializing"
@@ -481,7 +479,7 @@ msgstr "Uspeh"
 
 #: public/js/lib/utils.js:192
 msgid "Your purchase is complete. Close the window to continue"
-msgstr "Vaša kupovina je završena. Zatvorite prozor da nastavite"
+msgstr "Kupovina je završena. Zatvorite prozor da nastavite"
 
 #: public/js/lib/utils.js:203
 msgid "An error occurred. Close the window to continue"

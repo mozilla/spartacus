@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-21 16:50+0000\n"
-"PO-Revision-Date: 2014-08-15 02:25+0000\n"
-"Last-Translator: Channy <channy@mozilla.or.kr>\n"
+"PO-Revision-Date: 2015-10-12 02:38+0000\n"
+"Last-Translator: Wef2 <qhrud5725@hanmail.net>\n"
 "Language-Team: none\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1408069502.0\n"
+"X-POOTLE-MTIME: 1444617522.0\n"
 
 #: public/js/lib/cancel.js:33 public/js/lib/cancel.js:16 public/js/lib/cancel.js:18 public/js/views/payment-failed.js:19
 msgid "Payment cancelled."
@@ -198,19 +198,19 @@ msgstr ""
 
 #: public/js/error-codes.js:13 public/js/error-codes.js:14 public/js/error-codes.js:15
 msgid "The system timed out while trying to log in."
-msgstr ""
+msgstr "로그인을 시도하는 중 시스템 요청 시간이 초과되었습니다."
 
 #: public/js/error-codes.js:14 public/js/error-codes.js:15 public/js/error-codes.js:16
 msgid "An error occurred whilst trying to log out."
-msgstr ""
+msgstr "로그아웃을 시도하는 중에 오류가 발생하였습니다."
 
 #: public/js/error-codes.js:15 public/js/error-codes.js:16 public/js/error-codes.js:17
 msgid "The system timed out while trying to log out."
-msgstr ""
+msgstr "로그아웃을 시도하는 중에 시스템 요청 시간이 초과되었습니다."
 
 #: public/js/error-codes.js:16 public/js/error-codes.js:19 public/js/error-codes.js:20
 msgid "Payments are temporarily disabled."
-msgstr ""
+msgstr "결제가 일시적으로 불가능합니다."
 
 #: public/js/error-codes.js:17 public/js/error-codes.js:20 public/js/error-codes.js:21
 msgid "An unexpected error occurred when creating your PIN."
@@ -218,23 +218,23 @@ msgstr ""
 
 #: public/js/error-codes.js:18 public/js/error-codes.js:27 public/js/error-codes.js:21 public/js/error-codes.js:30 public/js/error-codes.js:22 public/js/error-codes.js:31
 msgid "The PIN data submitted was invalid."
-msgstr ""
+msgstr "제출된 PIN 데이터가 유효하지 않습니다."
 
 #: public/js/error-codes.js:19 public/js/error-codes.js:22 public/js/error-codes.js:23
 msgid "No valid user found whilst attempting to create your PIN"
-msgstr ""
+msgstr "PIN 생성을 시도하는 도중 유효한 사용자를 찾지 못 함"
 
 #: public/js/error-codes.js:20 public/js/error-codes.js:23 public/js/error-codes.js:24
 msgid "Permission denied attempting to create your PIN."
-msgstr ""
+msgstr "PIN을 생성하려는 시도가 허가 거부되었습니다."
 
 #: public/js/error-codes.js:21 public/js/error-codes.js:24 public/js/error-codes.js:25
 msgid "The request timed out whilst attempting to create your PIN."
-msgstr ""
+msgstr "PIN을 생성하는 도중 요청시간이 초과되었습니다."
 
 #: public/js/error-codes.js:22 public/js/error-codes.js:25 public/js/error-codes.js:26
 msgid "An unexpected error occurred whilst checking your PIN."
-msgstr ""
+msgstr "PIN을 확인하는 중 예기치 못한 오류가 발생하였습니다."
 
 #: public/js/error-codes.js:23 public/js/error-codes.js:26 public/js/error-codes.js:27
 msgid "No valid user found whilst checking your PIN"
@@ -242,31 +242,31 @@ msgstr ""
 
 #: public/js/error-codes.js:24 public/js/error-codes.js:27 public/js/error-codes.js:28
 msgid "Permission denied attempting to check your PIN"
-msgstr ""
+msgstr "PIN을 확인하려는 시도가 허가 거부되었습니다."
 
 #: public/js/error-codes.js:25 public/js/error-codes.js:28 public/js/error-codes.js:29
 msgid "The request timed out whilst trying to check your PIN"
-msgstr ""
+msgstr "PIN을 확인하려는 시도 중에 요청 시간이 만료되었습니다."
 
 #: public/js/error-codes.js:26 public/js/error-codes.js:29 public/js/error-codes.js:30
 msgid "An unexpected error occurred when resetting your PIN."
-msgstr ""
+msgstr "PIN을 재설정할 때 예기치못한 오류가 발생하였습니다."
 
 #: public/js/error-codes.js:28 public/js/error-codes.js:31 public/js/error-codes.js:32
 msgid "No valid user found whilst attempting to reset your PIN"
-msgstr ""
+msgstr "PIN 재생성을 위해 시도하는 도중 유효한 사용자를 찾지 못함"
 
 #: public/js/error-codes.js:29 public/js/error-codes.js:32 public/js/error-codes.js:33
 msgid "Permission denied attempting to reset your PIN."
-msgstr ""
+msgstr "PIN 재설정을 위한 시도의 허가가 거부됐습니다."
 
 #: public/js/error-codes.js:30 public/js/error-codes.js:33 public/js/error-codes.js:34
 msgid "The request timed out whilst attempting to reset your PIN."
-msgstr ""
+msgstr "PIN 재생성을 위해 시도하는 도중 요청 시간이 초과되었습니다."
 
 #: public/js/error-codes.js:31 public/js/error-codes.js:35 public/js/error-codes.js:36
 msgid "The transaction failed. You have not been charged for this purchase."
-msgstr ""
+msgstr "거래가 실패했습니다. 이 구매에 대한 요금은 청구되지 않았습니다."
 
 #: public/js/error-codes.js:32 public/js/error-codes.js:36 public/js/error-codes.js:37
 msgid "The payment method or price point is not supported for this region or operator."
@@ -274,7 +274,7 @@ msgstr ""
 
 #: public/js/lib/auth.js:214
 msgid "Waiting for login"
-msgstr ""
+msgstr "로그인을 기다리는 중"
 
 #: public/js/lib/wait.js:56
 msgid "Retrieving Transaction"
@@ -282,19 +282,19 @@ msgstr ""
 
 #: public/js/views/error.js:55 public/js/views/error.js:58
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "예기치 못한 오류가 발생하였습니다."
 
 #: public/js/views/force-auth.js:87 public/js/views/force-auth.js:100 public/js/views/force-auth.js:99 public/js/views/force-auth.js:94
 msgid "Sign-in to reset PIN"
-msgstr ""
+msgstr "PIN 초기화를 위한 서명"
 
 #: public/js/views/force-auth.js:90 public/js/views/force-auth.js:103 public/js/views/force-auth.js:102 public/js/views/force-auth.js:97
 msgid "Please sign in to reset your PIN."
-msgstr ""
+msgstr "PIN 재설정을 위해 서명해주세요."
 
 #: public/js/views/init.js:12
 msgid "Initializing"
-msgstr ""
+msgstr "초기화 중"
 
 #: public/js/views/locked.js:21
 #, fuzzy
@@ -308,24 +308,23 @@ msgstr "결제 설정"
 
 #: public/js/views/simulate.js:23
 msgid "Processing"
-msgstr ""
+msgstr "처리 중"
 
 #: public/js/views/simulate.js:51
 msgid "Simulate Payment"
-msgstr ""
+msgstr "모의 결제"
 
 #: public/js/views/simulate.js:55
 msgid "You will not be charged."
-msgstr ""
+msgstr "결제가 이루어지지 않았습니다."
 
 #: templates/reset-start.html:12 templates/reset-start.html:16
-#, fuzzy
 msgid "Reset"
-msgstr "비밀번호 재성정"
+msgstr "비밀번호 재설정"
 
 #: templates/pin-form.html:22
 msgid "By proceeding you agree to our <a %(terms)s>terms</a> and <a %(privacy)s>Privacy Policy</a>"
-msgstr ""
+msgstr "우리의 <a %(terms)s>이용 약관</a> 과 <a %(privacy)s>보안 정책</a> 에 동의함에 따라 제공됨"
 
 #: public/js/views/force-auth.js:91 public/js/views/reset-start.js:68 public/js/views/force-auth.js:90 public/js/views/reset-start.js:70 public/js/views/force-auth.js:88 public/js/views/login.js:18
 #: public/js/views/reset-start.js:55
@@ -340,7 +339,7 @@ msgstr "비밀번호를 재설정하시겠습니까? Persona 로그인을 다시
 
 #: public/js/views/page.js:34
 msgid "Logging out"
-msgstr ""
+msgstr "로그아웃 중"
 
 #: templates/signout.html:9
 msgid "You are signed in as:"
@@ -368,15 +367,15 @@ msgstr ""
 
 #: public/js/lib/utils.js:191
 msgid "Success"
-msgstr ""
+msgstr "성공"
 
 #: public/js/lib/utils.js:192
 msgid "Your purchase is complete. Close the window to continue"
-msgstr ""
+msgstr "구매가 완료되었습니다. 계속하려면 창을 닫아주세요."
 
 #: public/js/lib/utils.js:203
 msgid "An error occurred. Close the window to continue"
-msgstr ""
+msgstr "오류가 발생하였습니다. 계속하려면 창을 닫아주세요."
 
 #: public/js/views/page.js:161
 #, fuzzy

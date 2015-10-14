@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: marketplace-webpay\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-21 16:50+0000\n"
-"PO-Revision-Date: 2015-04-01 18:59+0000\n"
+"PO-Revision-Date: 2015-10-14 16:25+0000\n"
 "Last-Translator: Marco Aurélio <ouesten@me.com>\n"
 "Language-Team: Português (Brasil) <dev-l10n-pt-br@lists.mozilla.org>\n"
 "Language: pt_BR\n"
@@ -35,7 +35,7 @@ msgstr "Cancelar"
 #: public/js/lib/pin-widget.js:83 public/js/lib/pin-widget.js:82
 #: public/js/lib/pin-widget.js:93
 msgid "PIN can only contain digits."
-msgstr "O PIN só pode conter números."
+msgstr "O PIN só pode ter números."
 
 #: webpay/base/templates/base.html:30
 msgid "You logged in as a different user, you must start the payment again."

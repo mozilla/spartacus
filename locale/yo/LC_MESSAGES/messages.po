@@ -61,7 +61,8 @@ msgstr "O ń pẹ́ ju bí ó ti yẹ. Gbìyànjú si?                "
 msgid "Something went wrong. Try again?"
 msgstr "Ìṣòro kan wáyé. Gbìyànjú si?                "
 
-#: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55 public/js/views/error.js:90
+#: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55
+#: public/js/views/error.js:90
 msgid "OK"
 msgstr "Ó DÁRA                "
 

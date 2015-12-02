@@ -62,8 +62,7 @@ msgstr "Ez tovább tart a vártnál. Újra megpróbálja?"
 msgid "Something went wrong. Try again?"
 msgstr "Hiba történt. Megpróbálja ismét?"
 
-#: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55
-#: public/js/views/error.js:90
+#: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55 public/js/views/error.js:90
 msgid "OK"
 msgstr "OK"
 

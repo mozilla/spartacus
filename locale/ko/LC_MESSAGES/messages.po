@@ -61,8 +61,7 @@ msgstr "생각 보다 시간이 오래 걸리고 있습니다. 다시 하시겠�
 msgid "Something went wrong. Try again?"
 msgstr "무언가 잘못된 것 같습니다. 다시 하시겠습니까?"
 
-#: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55
-#: public/js/views/error.js:90
+#: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55 public/js/views/error.js:90
 msgid "OK"
 msgstr "확인"
 

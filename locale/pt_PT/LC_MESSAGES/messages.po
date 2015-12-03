@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WebPay\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-12 18:30+0000\n"
+"POT-Creation-Date: 2015-12-03 19:58+0000\n"
 "PO-Revision-Date: 2015-04-02 23:37+0000\n"
 "Last-Translator: Cláudio Esperança <cesperanc@gmail.com>\n"
 "Language-Team: Cláudio Esperança <cesperanc+mozilla@gmail.com>\n"
@@ -62,8 +62,7 @@ msgstr "Isto está a demorar mais do que era esperado. Tentar novamente?"
 msgid "Something went wrong. Try again?"
 msgstr "Algo correu mal. Tentar novamente?"
 
-#: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55
-#: public/js/views/error.js:90
+#: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55 public/js/views/error.js:90
 msgid "OK"
 msgstr "OK"
 

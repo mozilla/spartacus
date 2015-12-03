@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-12 18:30+0000\n"
+"POT-Creation-Date: 2015-12-03 19:58+0000\n"
 "PO-Revision-Date: 2015-04-01 17:34+0000\n"
 "Last-Translator: Pin-guang Chen <petercpg@mail.moztw.org>\n"
 "Language-Team: MozTW <petercpg@mail.moztw.org>\n"
@@ -62,8 +62,7 @@ msgstr "花的時間比預期的還久，再是一次？"
 msgid "Something went wrong. Try again?"
 msgstr "有些東西不對勁。再試試看？"
 
-#: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55
-#: public/js/views/error.js:90
+#: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55 public/js/views/error.js:90
 msgid "OK"
 msgstr "確定"
 

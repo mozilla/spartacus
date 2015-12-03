@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-12 18:30+0000\n"
+"POT-Creation-Date: 2015-12-03 19:58+0000\n"
 "PO-Revision-Date: 2013-12-11 13:32+0000\n"
 "Last-Translator: Goce <goce.mitevski@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,8 +60,7 @@ msgstr "Ова трае подолго од очекуваното. Да про�
 msgid "Something went wrong. Try again?"
 msgstr "Нешто тргна наопаку. Да пробаме повторно?"
 
-#: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55
-#: public/js/views/error.js:90
+#: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55 public/js/views/error.js:90
 msgid "OK"
 msgstr "Во ред"
 

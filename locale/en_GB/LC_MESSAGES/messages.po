@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-12 18:30+0000\n"
+"POT-Creation-Date: 2015-12-03 19:58+0000\n"
 "PO-Revision-Date: 2015-08-10 23:32\n"
 "Last-Translator: Ian Neal <iann_bugzilla@blueyonder.co.uk>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,8 +61,7 @@ msgstr "This is taking longer than expected. Try again?"
 msgid "Something went wrong. Try again?"
 msgstr "Something went wrong. Try again?"
 
-#: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55
-#: public/js/views/error.js:90
+#: templates/error.html:27 public/js/views/error.js:52 public/js/views/error.js:87 public/js/views/locked.js:24 templates/iframe-overlay.html:14 public/js/views/error.js:55 public/js/views/error.js:90
 msgid "OK"
 msgstr "OK"
 

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-12 18:30+0000\n"
+"POT-Creation-Date: 2015-12-03 19:58+0000\n"
 "PO-Revision-Date: 2015-09-19 12:12+0000\n"
 "Last-Translator: Vanja Tumbas <tumbas93@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,8 +61,7 @@ msgstr "Povezivanje sa Persona servisom"
 msgid "Payment complete"
 msgstr "Plaćanje izvršeno"
 
-#: public/js/lib/auth.js:22 public/js/lib/auth.js:20
-#: public/js/views/page.js:41
+#: public/js/lib/auth.js:22 public/js/lib/auth.js:20 public/js/views/page.js:41
 msgid "Oops"
 msgstr "Ups"
 

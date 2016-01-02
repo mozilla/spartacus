@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-03 19:58+0000\n"
-"PO-Revision-Date: 2015-12-25 17:39+0000\n"
+"PO-Revision-Date: 2016-01-02 12:44+0000\n"
 "Last-Translator: Selim Şumlu <selim@sum.lu>\n"
 "Language-Team: Mozilla Turkey <bilgi@mozilla.org.tr>\n"
 "Language: tr\n"
@@ -273,38 +273,38 @@ msgstr "Ödeme ayarlanıyor"
 #: public/js/error-codes.js:12 public/js/error-codes.js:13
 #: public/js/error-codes.js:14
 msgid "An internal web request timed out."
-msgstr ""
+msgstr "İç web isteği zaman aşımına uğradı."
 
 #: public/js/error-codes.js:13 public/js/error-codes.js:14
 #: public/js/error-codes.js:15
 msgid "The system timed out while trying to log in."
-msgstr ""
+msgstr "Giriş yapmaya çalışılırken sistem zaman aşımına uğradı."
 
 #: public/js/error-codes.js:14 public/js/error-codes.js:15
 #: public/js/error-codes.js:16
 msgid "An error occurred whilst trying to log out."
-msgstr ""
+msgstr "Çıkış yapmaya çalışılırken bir hata oluştu."
 
 #: public/js/error-codes.js:15 public/js/error-codes.js:16
 #: public/js/error-codes.js:17
 msgid "The system timed out while trying to log out."
-msgstr ""
+msgstr "Çıkış yapmaya çalışılırken sistem zaman aşımına uğradı."
 
 #: public/js/error-codes.js:16 public/js/error-codes.js:19
 #: public/js/error-codes.js:20
 msgid "Payments are temporarily disabled."
-msgstr ""
+msgstr "Ödemeler geçici olarak devre dışıdır."
 
 #: public/js/error-codes.js:17 public/js/error-codes.js:20
 #: public/js/error-codes.js:21
 msgid "An unexpected error occurred when creating your PIN."
-msgstr ""
+msgstr "PIN'iniz oluşturulurken beklenmeyen bir hata oluştu."
 
 #: public/js/error-codes.js:18 public/js/error-codes.js:27
 #: public/js/error-codes.js:21 public/js/error-codes.js:30
 #: public/js/error-codes.js:22 public/js/error-codes.js:31
 msgid "The PIN data submitted was invalid."
-msgstr ""
+msgstr "Gönderilen PIN verisi geçersizdi."
 
 #: public/js/error-codes.js:19 public/js/error-codes.js:22
 #: public/js/error-codes.js:23
@@ -375,7 +375,7 @@ msgstr ""
 
 #: public/js/lib/auth.js:214
 msgid "Waiting for login"
-msgstr ""
+msgstr "Giriş yapılması bekleniyor"
 
 #: public/js/lib/wait.js:56
 msgid "Retrieving Transaction"
@@ -388,26 +388,24 @@ msgstr "Beklenmeyen bir hata oluştu."
 #: public/js/views/force-auth.js:87 public/js/views/force-auth.js:100
 #: public/js/views/force-auth.js:99 public/js/views/force-auth.js:94
 msgid "Sign-in to reset PIN"
-msgstr ""
+msgstr "PIN'i sıfırlamak için giriş yapın"
 
 #: public/js/views/force-auth.js:90 public/js/views/force-auth.js:103
 #: public/js/views/force-auth.js:102 public/js/views/force-auth.js:97
 msgid "Please sign in to reset your PIN."
-msgstr ""
+msgstr "PIN'inizi sıfırlamak için lütfen giriş yapın."
 
 #: public/js/views/init.js:12
 msgid "Initializing"
 msgstr ""
 
 #: public/js/views/locked.js:21
-#, fuzzy
 msgid "PIN Locked"
-msgstr "Kilitli"
+msgstr "PIN kilitli"
 
 #: public/js/views/payment-success.js:15 public/js/views/wait-to-finish.js:14
-#, fuzzy
 msgid "Completing payment"
-msgstr "Ödeme ayarlanıyor"
+msgstr "Ödeme tamamlanıyor"
 
 #: public/js/views/simulate.js:23
 msgid "Processing"
@@ -419,12 +417,11 @@ msgstr "Benzer ödeme"
 
 #: public/js/views/simulate.js:55
 msgid "You will not be charged."
-msgstr ""
+msgstr "Ödeme alınmayacaktır."
 
 #: templates/reset-start.html:12 templates/reset-start.html:16
-#, fuzzy
 msgid "Reset"
-msgstr "PIN'i sıfırla"
+msgstr "Sıfırla"
 
 #: templates/pin-form.html:22
 msgid ""
@@ -436,18 +433,16 @@ msgstr ""
 #: public/js/views/force-auth.js:90 public/js/views/reset-start.js:70
 #: public/js/views/force-auth.js:88 public/js/views/login.js:18
 #: public/js/views/reset-start.js:55
-#, fuzzy
 msgid "Connecting to Firefox Accounts"
-msgstr "Persona'ya bağlanılıyor"
+msgstr "Firefox Hesapları'na bağlanılıyor"
 
 #: templates/reset-start.html:8 templates/reset-start.html:7
-#, fuzzy
 msgid ""
 "Are you sure you want to reset your PIN? You must sign in to Firefox "
 "Accounts to reset your PIN."
 msgstr ""
 "PIN'inizi sıfırlamak istediğinizden emin misiniz? PIN'inizi sıfırlamak için "
-"Persona'da oturum açmalısınız."
+"Firefox Hesapları'na giriş yapmalısınız."
 
 #: public/js/views/page.js:34
 msgid "Logging out"
@@ -483,20 +478,19 @@ msgstr "Başarılı"
 
 #: public/js/lib/utils.js:192
 msgid "Your purchase is complete. Close the window to continue"
-msgstr ""
+msgstr "Satın almanız tamamlandı. Devam etmek için pencereyi kapatın"
 
 #: public/js/lib/utils.js:203
 msgid "An error occurred. Close the window to continue"
-msgstr ""
+msgstr "Bir hata oluştu. Devam etmek için pencereyi kapatın"
 
 #: public/js/views/page.js:161
-#, fuzzy
 msgid "Completing Payment"
-msgstr "Ödeme ayarlanıyor"
+msgstr "Ödeme tamamlanıyor"
 
 #: public/js/error-codes.js:12 public/js/error-codes.js:17
 #: public/js/error-codes.js:18 public/js/error-codes.js:34
 #: public/js/error-codes.js:13 public/js/error-codes.js:19
 #: public/js/error-codes.js:35
 msgid "Product cannot be purchased due to configuration error."
-msgstr ""
+msgstr "Yapılandırma hatası nedeniyle ürün satın alınamıyor."

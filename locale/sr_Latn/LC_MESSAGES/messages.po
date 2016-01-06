@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-03 19:58+0000\n"
-"PO-Revision-Date: 2015-09-19 12:12+0000\n"
+"POT-Creation-Date: 2016-01-06 22:24+0000\n"
+"PO-Revision-Date: 2016-01-03 15:28+0000\n"
 "Last-Translator: Vanja Tumbas <tumbas93@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: sr\n"
@@ -415,7 +415,7 @@ msgstr "Simuliraj uplatu"
 
 #: public/js/views/simulate.js:55
 msgid "You will not be charged."
-msgstr "Neće Vam biti naplaćeno."
+msgstr "Neće vam biti naplaćeno."
 
 #: templates/reset-start.html:12 templates/reset-start.html:16
 msgid "Reset"

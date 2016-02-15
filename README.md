@@ -1,5 +1,8 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 [![Build Status](https://travis-ci.org/mozilla/spartacus.svg?branch=master)](https://travis-ci.org/mozilla/spartacus)
 [![devDependency Status](https://david-dm.org/mozilla/spartacus/dev-status.svg)](https://david-dm.org/mozilla/spartacus#info=devDependencies)
+
+Please note: this project is currently unmaintained and is not (or soon will not) be in active use by Mozilla.
 
 ![SPARTACUS](https://raw.github.com/mozilla/spartacus/master/spartacus.png)
 

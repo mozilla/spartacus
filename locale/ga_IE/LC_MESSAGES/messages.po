@@ -377,4 +377,4 @@ msgstr "Íocaíocht á cur i gcrích"
 
 #: public/js/error-codes.js:12 public/js/error-codes.js:17 public/js/error-codes.js:18 public/js/error-codes.js:34 public/js/error-codes.js:13 public/js/error-codes.js:19 public/js/error-codes.js:35
 msgid "Product cannot be purchased due to configuration error."
-msgstr ""
+msgstr "Ní féidir an táirge a cheannach mar gheall ar earráid chumraíochta."

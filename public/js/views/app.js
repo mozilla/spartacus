@@ -67,16 +67,6 @@ define([
       // app.router.mapping are allowed.
       this.startView = utils.bodyData.startView || null;
 
-      if (window.opener) {
-        logger.log("Setting up unload event as we're in a window");
-        $(window).unload(function() {
-          // Note: the origin we're posting to is '*' so we shouldn't
-          // send anything sensitive here.
-          logger.log('unload fired');
-          window.opener.postMessage({status: 'unloaded'}, '*');
-        });
-      }
-
       var superPowers = utils.bodyData.superPowers;
       logger.log('Server granted user super powers?', !!superPowers);
       this.session.set('super_powers', superPowers);
